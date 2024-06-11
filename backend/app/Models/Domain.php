@@ -1,0 +1,239 @@
+<?php
+
+namespace App\Models;
+
+use App\Observers\DomainObservers;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use Rennokki\QueryCache\Traits\QueryCacheable;
+use Spatie\SchemalessAttributes\SchemalessAttributesTrait;
+use Throwable;
+
+
+class Domain extends Model
+{
+
+
+    use SchemalessAttributesTrait;
+    use SoftDeletes;
+
+
+    /**
+     * The primary key associated with the table.
+     *
+     * @var string
+     */
+
+    protected $primaryKey = 'id';
+    protected $fillable = [
+        'id',
+        'domain',
+        'tenant_id',
+        'created_at',
+        'updated_at',
+        'extra_attributes',
+        'deleted_at',
+        'identifiants_sadge',
+        'creat_by',
+
+    ];
+    protected $casts = [
+
+        'created_at' => 'datetime:Y-m-d H:m:s',
+        'updated_at' => 'datetime:Y-m-d H:m:s',
+        'deleted_at' => 'datetime:Y-m-d H:m:s',
+    ];
+    protected $with = [
+
+
+        'tenant',
+
+
+    ];
+    protected $appends = [
+        'Selectvalue', 'Selectlabel'
+    ];
+    protected $schemalessAttributes = [
+        'extra_attributes',
+        'other_extra_attributes',
+    ];
+
+    public function __construct(array $attributes = [])
+    {
+        parent::__construct($attributes);
+        $this->table = 'domains';
+    }
+
+    public static function boot()
+    {
+        parent::boot();
+
+        self::creating(function ($model) {
+            if (
+                class_exists('\App\Observers\DomainObservers') &&
+                method_exists('\App\Observers\DomainObservers', 'creating')
+            ) {
+
+                try {
+                    DomainObservers::creating($model);
+
+                } catch (Throwable $e) {
+
+                }
+            }
+        });
+
+        self::created(function ($model) {
+            if (
+                class_exists('\App\Observers\DomainObservers') &&
+                method_exists('\App\Observers\DomainObservers', 'created')
+            ) {
+
+                try {
+                    DomainObservers::created($model);
+
+                } catch (Throwable $e) {
+
+                }
+            }
+        });
+
+        self::updating(function ($model) {
+            if (
+                class_exists('\App\Observers\DomainObservers') &&
+                method_exists('\App\Observers\DomainObservers', 'updating')
+            ) {
+
+                try {
+                    DomainObservers::updating($model);
+
+                } catch (Throwable $e) {
+
+                }
+            }
+        });
+
+        self::updated(function ($model) {
+            if (
+                class_exists('\App\Observers\DomainObservers') &&
+                method_exists('\App\Observers\DomainObservers', 'updated')
+            ) {
+
+                try {
+                    DomainObservers::updated($model);
+
+                } catch (Throwable $e) {
+
+                }
+            }
+        });
+
+        self::deleting(function ($model) {
+            if (
+                class_exists('\App\Observers\DomainObservers') &&
+                method_exists('\App\Observers\DomainObservers', 'deleting')
+            ) {
+
+                try {
+                    DomainObservers::deleting($model);
+
+                } catch (Throwable $e) {
+
+                }
+            }
+        });
+
+        self::deleted(function ($model) {
+            if (
+                class_exists('\App\Observers\DomainObservers') &&
+                method_exists('\App\Observers\DomainObservers', 'deleted')
+            ) {
+
+                try {
+                    DomainObservers::deleted($model);
+
+                } catch (Throwable $e) {
+
+                }
+            }
+        });
+    }
+
+    public function tenant()
+    {
+        return $this->belongsTo(Tenant::class, 'tenant_id', 'id');
+    }
+
+    public function getDomainAttribute($value)
+    {
+        return $value;
+    }
+
+    public function setDomainAttribute($value)
+    {
+        $this->attributes['domain'] = $value ?? "";
+    }
+
+    public function getTenantIdAttribute($value)
+    {
+        return $value;
+    }
+
+    public function setTenantIdAttribute($value)
+    {
+        $this->attributes['tenant_id'] = $value ?? "";
+    }
+
+    public function getIdentifiantsSadgeAttribute($value)
+    {
+        return $value;
+    }
+
+    public function setIdentifiantsSadgeAttribute($value)
+    {
+        $this->attributes['identifiants_sadge'] = $value ?? "";
+    }
+
+    public function getCreatByAttribute($value)
+    {
+        return $value;
+    }
+
+    public function setCreatByAttribute($value)
+    {
+        $this->attributes['creat_by'] = $value ?? "";
+    }
+
+    public function getSelectvalueAttribute()
+    {
+        $select = "";
+
+
+        return trim($select);
+
+    }
+
+    public function getSelectlabelAttribute()
+    {
+        $select = "";
+
+
+        return trim($select);
+
+
+    }
+
+    public function scopeWithExtraAttributes(): Builder
+    {
+        return $this->extra_attributes->modelScope();
+    }
+
+    public function scopeWithOtherExtraAttributes(): Builder
+    {
+        return $this->other_extra_attributes->modelScope();
+    }
+
+
+}
+

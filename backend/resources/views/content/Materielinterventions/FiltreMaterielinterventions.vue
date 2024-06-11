@@ -1,0 +1,123 @@
+<template>
+    <b-overlay :show="isLoading">
+        <form @submit.prevent="createLine()">
+            <div class="mb-3">
+
+
+                <div v-if="canShowFilter('type')" class="form-group">
+                    <label>type </label>
+                    <input v-model="form.type" class="form-control"
+                           type="text">
+
+                    <div v-if="errors.type" class='div-error' show variant="danger">
+                        {{ errors.type }}
+                    </div>
+                </div>
+
+
+                <div v-if="canShowFilter('libelle')" class="form-group">
+                    <label>libelle </label>
+                    <input v-model="form.libelle" class="form-control"
+                           type="text">
+
+                    <div v-if="errors.libelle" class='div-error' show variant="danger">
+                        {{ errors.libelle }}
+                    </div>
+                </div>
+
+
+                <div v-if="canShowFilter('date')" class="form-group">
+                    <label>date </label>
+                    <input v-model="form.date" class="form-control"
+                           type="text">
+
+                    <div v-if="errors.date" class='div-error' show variant="danger">
+                        {{ errors.date }}
+                    </div>
+                </div>
+
+
+                <div v-if="canShowFilter('valider')" class="form-group">
+                    <label>valider </label>
+                    <input v-model="form.valider" class="form-control"
+                           type="text">
+
+                    <div v-if="errors.valider" class='div-error' show variant="danger">
+                        {{ errors.valider }}
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label>interventions </label>
+                    <v-select
+                        v-model="form.intervention_id"
+                        :options="interventionsData"
+                        :reduce="ele => ele.id"
+                        label="Selectlabel"
+                        multiple
+                    />
+                </div>
+
+            </div>
+
+            <button class="btn btn-primary" type="submit">
+                <i class="fas fas fa-search"></i> Appliquer
+            </button>
+        </form>
+    </b-overlay>
+</template>
+
+<script>
+import CustomSelect from "@/components/CustomSelect.vue";
+
+import Files from "@/components/Files.vue"
+import VSelect from 'vue-select'
+
+export default {
+    name: 'FiltreMaterielinterventions',
+    components: {VSelect, CustomSelect, Files},
+    props: [
+        'table',
+        'interventionsData',
+    ],
+    data() {
+        return {
+            errors: [],
+            isLoading: false,
+            form: {
+
+                id: "",
+
+                intervention_id: "",
+
+                type: "",
+
+                libelle: "",
+
+                date: "",
+
+                created_at: "",
+
+                updated_at: "",
+
+                valider: "",
+            }
+        }
+    },
+    methods: {
+        createLine() {
+            this.$emit('applyfilter', this.form)
+        },
+        canShowFilter(name) {
+            let can = true
+            const queryString = window.location.search
+            const urlParams = new URLSearchParams(queryString);
+            if (urlParams.has(`filter_${name}`)) {
+                can = false
+            }
+            return can
+        }
+    }
+}
+</script>

@@ -1,0 +1,40 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+      public function up()
+    {
+        try{
+        Schema::create('matrices',function(Blueprint $table){
+            $table->id();
+            $table->text('libelle')->nullable();
+            $table->dateTime('date_debut')->nullable();
+            $table->dateTime('date_fin')->nullable();
+            $table->string('etats')->nullable();
+            $table->schemalessAttributes('extra_attributes')->nullable();
+            $table->timestamps();
+        });
+     }catch (\Throwable $e){
+
+        }
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        //
+    }
+};

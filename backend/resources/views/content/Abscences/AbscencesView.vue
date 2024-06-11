@@ -1,0 +1,359 @@
+<template>
+    <div class="row">
+        <b-modal :id="formId" :size="formWidth">
+            <template #modal-title>
+                <div v-if="formState == 'Update'">Update Abscences #{{ formData.id }}</div>
+                <div v-if="formState == 'Create'">Create Abscences</div>
+            </template>
+
+            <EditAbscences v-if="formState == 'Update'" :key="formKey" :data="formData" :gridApi="formGridApi"
+                           :modalFormId="formId" :typesabscencesData="typesabscencesData" :usersData="usersData"
+                           @close="closeForm"/>
+
+
+            <CreateAbscences v-if="formState == 'Create'" :key="formKey" :gridApi="formGridApi" :modalFormId="formId"
+                             :typesabscencesData="typesabscencesData" :usersData="usersData" @close="closeForm"/>
+
+            <template #modal-footer>
+                <div></div>
+            </template>
+        </b-modal>
+
+
+        <div class="col-sm-12">
+            <AgGridTable :key="tableKey" :cacheBlockSize="cacheBlockSize" :columnDefs="columnDefs"
+                         :maxBlocksInCache="maxBlocksInCache" :pagination="pagination"
+                         :paginationPageSize="paginationPageSize"
+                         :rowData="rowData" :rowModelType="rowModelType" :url="url" className="ag-theme-alpine"
+                         domLayout='autoHeight' rowSelection="multiple" @gridReady="onGridReady">
+                <template #header_buttons>
+                    <div v-if="!$routeData.meta.hideCreate" class="btn btn-primary" @click="openCreate"><i
+                        class="fa fa-plus"></i>
+                        Creer une absences
+                    </div>
+                </template>
+
+            </AgGridTable>
+
+        </div>
+    </div>
+</template>
+
+
+<script>
+import DataTable from '@/components/DataTable.vue'
+import AgGridTable from "@/components/AgGridTable.vue"
+import CreateAbscences from './CreateAbscences.vue'
+import EditAbscences from './EditAbscences.vue'
+import CustomFiltre from "@/components/CustomFiltre.vue";
+import DataModal from '@/components/DataModal.vue'
+
+import AgGridBtnClicked from "@/components/AgGridBtnClicked.vue";
+
+export default {
+    name: 'AbscencesView',
+    components: {DataTable, AgGridTable, CreateAbscences, EditAbscences, DataModal, AgGridBtnClicked, CustomFiltre},
+    data() {
+
+        return {
+            formId: "abscences",
+            formState: "",
+            formData: {},
+            formWidth: 'lg',
+            formGridApi: {},
+            formKey: 0,
+            tableKey: 0,
+            url: 'http://127.0.0.1:8000/api/abscences-Aggrid',
+            table: 'abscences',
+            typesabscencesData: [],
+            usersData: [],
+            requette: 2,
+            columnDefs: null,
+            rowData: null,
+            gridApi: null,
+            columnApi: null,
+            rowModelType: null,
+            pagination: true,
+            paginationPageSize: 100,
+            cacheBlockSize: 10,
+            maxBlocksInCache: 1,
+        }
+    },
+
+    computed: {
+        $routeData: function () {
+            let router = {meta: {}};
+            try {
+                if (typeof window.routeData != 'undefined') {
+                    router = window.routeData
+                }
+            } catch (e) {
+            }
+
+            return router;
+        },
+        taille: function () {
+            let result = 'col-sm-12'
+            if (this.filtre) {
+                result = 'col-sm-9'
+            }
+            return result
+        },
+    },
+    watch: {
+        '$route': {
+            handler: function (after, before) {
+                this.gridApi.setFilterModel(null)
+                this.gridApi.refreshServerSide()
+                this.tableKey++
+            },
+            deep: true
+        },
+    },
+    created() {
+        this.url = this.axios.defaults.baseURL + '/api/abscences-Aggrid',
+            this.formId = this.table + "_" + Date.now()
+        this.rowBuffer = 0;
+        this.rowModelType = 'serverSide';
+        this.cacheBlockSize = 50;
+        this.maxBlocksInCache = 2;
+
+    },
+    beforeMount() {
+        this.columnDefs =
+            [
+                {
+                    field: "id",
+                    sortable: true,
+                    filter: 'agTextColumnFilter',
+                    filterParams: {suppressAndOrCondition: true,},
+                    hide: true,
+                    headerName: '#Id',
+                },
+                {
+                    field: null,
+                    headerName: '',
+                    suppressCellSelection: true,
+                    minWidth: 80, maxWidth: 80,
+                    pinned: 'left',
+                    cellRendererSelector: params => {
+                        return {
+                            component: 'AgGridBtnClicked',
+                            params: {
+                                clicked: field => {
+                                    this.showForm('Update', field, params.api)
+                                },
+                                render: `<div class="" style="width:100%;height:100%;background:#28a745;color:#fff;border-radius:5px;text-align:center;cursor:pointer">  <i class="fa-solid fa-pen-to-square "></i></div>`
+                            }
+                        };
+                    },
+
+                },
+
+
+                {
+                    field: "raison",
+                    sortable: true,
+                    filter: 'agTextColumnFilter', filterParams: {suppressAndOrCondition: true,},
+                    headerName: 'raison',
+                },
+
+
+                {
+                    field: "debut",
+                    sortable: true,
+                    filter: 'agTextColumnFilter', filterParams: {suppressAndOrCondition: true,},
+                    headerName: 'debut',
+                    valueFormatter: params => {
+                        let retour = params.value
+                        try {
+                            retour = params.value.split(' ')[0]
+                        } catch (e) {
+
+                        }
+                        return retour
+                    }
+                },
+
+
+                {
+                    field: "fin",
+                    sortable: true,
+                    filter: 'agTextColumnFilter', filterParams: {suppressAndOrCondition: true,},
+                    headerName: 'fin',
+                    valueFormatter: params => {
+                        let retour = params.value
+                        try {
+                            retour = params.value.split(' ')[0]
+                        } catch (e) {
+
+                        }
+                        return retour
+                    }
+                },
+
+
+                {
+                    field: "etats",
+                    sortable: true,
+                    filter: 'agTextColumnFilter', filterParams: {suppressAndOrCondition: true,},
+                    headerName: 'etats',
+                },
+
+
+                {
+                    headerName: 'typesabscence',
+                    field: 'typesabscence.Selectlabel',
+                },
+                {
+
+                    headerName: 'typesabscence',
+                    field: 'typesabscence_id',
+                    hide: true,
+                    suppressColumnsToolPanel: true,
+                    valueFormatter: params => {
+                        let retour = ''
+                        try {
+                            return params.data['typesabscence']['Selectlabel']
+                        } catch (e) {
+
+                        }
+                        return retour
+                    },
+                    filter: "CustomFiltre",
+                    filterParams: {
+                        url: this.axios.defaults.baseURL + '/api/typesabscences-Aggrid',
+                        columnDefs: [
+                            {
+                                field: "",
+                                sortable: true,
+                                filter: "agTextColumnFilter",
+                                filterParams: {suppressAndOrCondition: true},
+                                headerName: "",
+                                cellStyle: {fontSize: '11px'},
+                                valueFormatter: (params) => {
+                                    let retour = "";
+                                    try {
+                                        return `${params.data["Selectlabel"]}`;
+                                    } catch (e) {
+                                    }
+                                    return retour;
+                                },
+                            },
+                        ],
+                        filterFields: ['libelle'],
+                    },
+                },
+
+
+                {
+                    headerName: 'user',
+                    field: 'user.Selectlabel',
+                },
+                {
+
+                    headerName: 'user',
+                    field: 'user_id',
+                    hide: true,
+                    suppressColumnsToolPanel: true,
+                    valueFormatter: params => {
+                        let retour = ''
+                        try {
+                            return params.data['user']['Selectlabel']
+                        } catch (e) {
+
+                        }
+                        return retour
+                    },
+                    filter: "CustomFiltre",
+                    filterParams: {
+                        url: this.axios.defaults.baseURL + '/api/users-Aggrid',
+                        columnDefs: [
+                            {
+                                field: "",
+                                sortable: true,
+                                filter: "agTextColumnFilter",
+                                filterParams: {suppressAndOrCondition: true},
+                                headerName: "",
+                                cellStyle: {fontSize: '11px'},
+                                valueFormatter: (params) => {
+                                    let retour = "";
+                                    try {
+                                        return `${params.data["matricule"]} ${params.data["nom"]} ${params.data["prenom"]} `;
+                                    } catch (e) {
+                                    }
+                                    return retour;
+                                },
+                            },
+                        ],
+                        filterFields: ['matricule', 'nom', 'prenom'],
+                    },
+                },
+
+            ];
+
+
+    },
+    mounted() {
+        if (this.requette > 0) {
+            // this.$store.commit('setIsLoading', true)
+        }
+
+        // this.gettypesabscences();
+        // this.getusers();
+
+    },
+    methods: {
+        openCreate() {
+            this.showForm('Create', {}, this.gridApi)
+        },
+        closeForm() {
+            this.tableKey++
+        },
+        showForm(type, data, gridApi, width = 'lg') {
+            this.formKey++
+            this.formWidth = width
+            this.formState = type
+            this.formData = data
+            this.formGridApi = gridApi
+            this.$bvModal.show(this.formId)
+        },
+        onGridReady(params) {
+            console.log('on demarre', params)
+            this.gridApi = params.api;
+            this.columnApi = params.columnApi;
+            this.isLoading = false
+        },
+        gettypesabscences() {
+            this.axios.get('/api/typesabscences').then((response) => {
+                this.requette--
+                if (this.requette == 0) {
+                    // this.$store.commit('setIsLoading', false)
+                }
+                this.typesabscencesData = response.data
+
+            }).catch(error => {
+                console.log(error.response.data)
+                // this.$store.commit('setIsLoading', false)
+                this.$toast.error('Erreur survenue lors de la récuperation')
+            })
+        },
+
+        getusers() {
+            this.axios.get('/api/users').then((response) => {
+                this.requette--
+                if (this.requette == 0) {
+                    // this.$store.commit('setIsLoading', false)
+                }
+                this.usersData = response.data
+
+            }).catch(error => {
+                console.log(error.response.data)
+                // this.$store.commit('setIsLoading', false)
+                this.$toast.error('Erreur survenue lors de la récuperation')
+            })
+        },
+
+    }
+}
+</script>

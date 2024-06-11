@@ -1,0 +1,46 @@
+{
+    "menu": [
+        {
+            "name": "Introduction",
+            "icon": "fa-regular fa-circle",
+            "slug": "HOMES_web_index",
+            "permission": "Voir la page d'acceuil"
+        },
+        {
+            "name": "Architecture du Système",
+            "icon": "fa-regular fa-circle",
+            "slug": "Actifs_web_index",
+            "permission": "Voir la page d'acceuil"
+        },
+        {
+            "name": "Description Fonctionnelle",
+            "icon": "fa-regular fa-circle",
+            "slug": "Actions_web_index",
+            "permission": "Voir la page d'acceuil"
+        },
+        {
+            "name": "Conception Technique",
+            "icon": "fa-regular fa-circle",
+            "slug": "Activites_web_index",
+            "permission": "Voir la page d'acceuil"
+        },
+        {
+            "name": "Sécurité",
+            "icon": "fa-regular fa-circle",
+            "slug": "HOMES_web_index",
+            "permission": "Voir la page d'acceuil"
+        },
+        {
+            "name": "Maintenance et Support",
+            "icon": "fa-regular fa-circle",
+            "slug": "HOMES_web_index",
+            "permission": "Voir la page d'acceuil"
+        },
+        {
+            "name": "Conclusion et Annexes",
+            "icon": "fa-regular fa-circle",
+            "slug": "HOMES_web_index",
+            "permission": "Voir la page d'acceuil"
+        }
+    ]
+}

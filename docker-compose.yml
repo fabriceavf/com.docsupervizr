@@ -1,0 +1,87 @@
+version: '3.7'
+services:
+
+#container de l'application
+  docsupervizr_application:
+    build:
+      context: /home/gtech-fabrice/lab/com.docsupervizr/images/laravel-php
+      args:
+        USER_ID: 1000
+        GROUP_ID: 1000
+    image: laravel_www:latest
+    container_name: docsupervizr_app
+    depends_on:
+      - redis
+      - mariadb
+    networks:
+      - docsupervizr_network
+      - haproxy
+      - loadbalander_network
+    sysctls:
+      net.ipv4.ip_unprivileged_port_start: 0
+    volumes:
+      - /home/gtech-fabrice/lab/com.docsupervizr/frontend:/var/www/test
+      - /home/gtech-fabrice/lab/com.docsupervizr/backend:/var/www/html
+      - /home/gtech-fabrice/lab/com.docsupervizr/fastapi:/var/www/fastapi
+      - /home/gtech-fabrice/lab/com.docsupervizr/flutterApp:/var/www/flutterApp
+      - /home/gtech-fabrice/lab/com.docsupervizr/apache/vhost.conf:/etc/apache2/sites-available/000-default.conf
+      - /home/gtech-fabrice/lab/com.docsupervizr/certbot/conf:/etc/letsencrypt
+    environment:
+      APP_ENV: local
+      CONTAINER_ROLE: app-prod
+      CACHE_DRIVER: redis
+      SESSION_DRIVER: redis
+      QUEUE_DRIVER: redis
+      REDIS_HOST: redis
+    ports:
+      - "8001:80"
+      - "5173:5173"
+    restart: always
+#container phpmyadmin
+  docsupervizr_phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: docsupervizr_pma
+    networks:
+      - docsupervizr_network
+      - haproxy
+    environment:
+      PMA_ARBITRARY: 1
+    restart: always
+    ports:
+      - "8006:80"
+ #  le service mariadb
+  mariadb:
+    ports:
+      - "3306:3306"
+    container_name: docsupervizr_mariadb_app
+    image: mariadb
+    restart: always
+    networks:
+      - docsupervizr_network
+    environment:
+      MYSQL_DATABASE: docsupervizr_backend
+      MYSQL_ROOT_PASSWORD: BFrf9852Yfravf
+    tmpfs: /var/mysqltmp/
+    volumes:
+      - /home/gtech-fabrice/lab/com.docsupervizr/bdd/mariadb/databases:/var/lib/mysql/
+      - /home/gtech-fabrice/lab/com.docsupervizr/bdd/mariadb/my.cnf:/etc/mysql/mariadb.conf.d/custom.cnf
+    labels:
+      - "traefik.enable=false"
+  #    le service de base de donnees redis
+  redis:
+    container_name: docsupervizr_redis_app
+    image: redis:latest
+    restart: always
+    networks:
+      - docsupervizr_network
+    labels:
+      - "traefik.enable=false"
+networks:
+  docsupervizr_network:
+    driver: bridge
+  haproxy:
+    driver: bridge
+  loadbalander_network:
+    name: comloadbalancer_nginx_load_balancer_network
+    external: true
+

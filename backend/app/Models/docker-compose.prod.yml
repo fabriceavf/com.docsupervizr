@@ -1,0 +1,177 @@
+version: '3.7'
+services:
+
+  #container de l'application
+  sgs_application:
+    build:
+      context: /home/debian/com.sgs/images/laravel-php
+      args:
+        USER_ID: 1000
+        GROUP_ID: 1000
+    image: laravel_www:latest
+    container_name: sgs_app
+    depends_on:
+      - redis
+      - mariadb
+    networks:
+      - sgs_network
+      - haproxy
+    sysctls:
+      net.ipv4.ip_unprivileged_port_start: 0
+    volumes:
+      - /home/debian/com.sgs/frontend:/var/www/test
+      - /home/debian/com.sgs/backend:/var/www/html
+      - /home/debian/com.sgs/apache/vhost.conf:/etc/apache2/sites-available/000-default.conf
+      - /home/debian/com.sgs/certbot/conf:/etc/letsencrypt
+    environment:
+      APP_ENV: local
+      CONTAINER_ROLE: app-prod
+      CACHE_DRIVER: redis
+      SESSION_DRIVER: redis
+      QUEUE_DRIVER: redis
+      REDIS_HOST: redis
+    restart: always
+  #le service sheduler de laravel
+  sgs_sheduler:
+    image: laravel_www:latest
+    container_name: sgs_sheduler
+    depends_on:
+      - redis
+      - mariadb
+      - sgs_application
+    networks:
+      - sgs_network
+      - haproxy
+    sysctls:
+      net.ipv4.ip_unprivileged_port_start: 0
+    volumes:
+      - /home/debian/com.sgs/backend:/var/www/html
+      - /home/debian/com.sgs/apache/vhost.conf:/etc/apache2/sites-available/000-default.conf
+    environment:
+      APP_ENV: local
+      CONTAINER_ROLE: scheduler
+      CACHE_DRIVER: redis
+      SESSION_DRIVER: redis
+      QUEUE_DRIVER: redis
+      REDIS_HOST: redis
+    restart: always
+  #le service queue de laravel
+  #  sgs_queue:
+  #    image: laravel_www:latest
+  #    scale: 3
+  #    depends_on:
+  #      - redis
+  #      - mariadb
+  #      - sgs_application
+  ##    ports:
+  ##      - "8004:80"
+  #    networks:
+  #      - sgs_network
+  #      - haproxy
+  #    sysctls:
+  #      net.ipv4.ip_unprivileged_port_start: 0
+  #    volumes:
+  #      - /home/debian/com.sgs/backend:/var/www/html
+  #      - /home/debian/com.sgs/apache/vhost.conf:/etc/apache2/sites-available/000-default.conf
+  #    environment:
+  #      APP_ENV: local
+  #      CONTAINER_ROLE: queue
+  #      CACHE_DRIVER: redis
+  #      SESSION_DRIVER: redis
+  #      QUEUE_DRIVER: redis
+  #      REDIS_HOST: redis
+  #    restart: always
+  #    le service phpmyadmin
+  sgs_phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: sgs_pma
+    networks:
+      - sgs_network
+      - haproxy
+    links:
+      - mariadb
+    environment:
+      PMA_ARBITRARY: 1
+    restart: always
+
+  #  le service mariadb
+  mariadb:
+    container_name: sgs_mariadb_app
+    image: mariadb
+    restart: always
+    networks:
+      - sgs_network
+    command: bash -c "chmod 644 /etc/mysql/conf.d/*.cnf && docker-entrypoint.sh && mysqld --user=root"
+    environment:
+      MYSQL_DATABASE: sgs_backend
+      MYSQL_ROOT_PASSWORD: BFrf9852Yfravf
+    volumes:
+      - /home/debian/com.sgs/bdd/mariadb/databases:/var/lib/mysql/
+      - /home/debian/com.sgs/bdd/mariadb/my.cnf:/etc/mysql/conf.d/custom.cnf
+    labels:
+      - "traefik.enable=false"
+
+  #  #  le service mariadbtest
+  #  mariadbtest:
+  #    container_name: sgs_mariadbtest_app
+  #    image: mariadb
+  #    restart: always
+  #    networks:
+  #      - sgs_network
+  #    environment:
+  #      MYSQL_DATABASE: sgs_backend
+  #      MYSQL_ROOT_PASSWORD: BFrf9852Yfravf
+  #    tmpfs: /var/lib/mysql/
+  #    volumes:
+  #      - /home/debian/com.sgs/bdd/mariadbtest/my.cnf:/etc/mysql/mariadb.conf.d/custom.cnf
+  #
+  #
+  #    labels:
+  #      - "traefik.enable=false"
+  #  le service de base de donnees redis
+  redis:
+    container_name: sgs_redis_app
+    image: redis:latest
+    restart: always
+    networks:
+      - sgs_network
+    labels:
+      - "traefik.enable=false"
+  #
+  #  sgs_sftp:
+  #    container_name: sgs_sftp_app
+  #    image: atmoz/sftp
+  #    volumes:
+  #      - /home/debian/com.sgs/backend:/home/sgs_back
+  #    command: sgs_back:fiZX867rW:::/
+
+
+  sgs_robot:
+    image: puppeter-images:latest
+    container_name: sgs_robot
+    restart: always
+    volumes:
+      - /home/debian/com.sgs/backend/auto/index.js:/puppeteer/index.js
+      - /home/debian/com.sgs/backend/auto/start.sh:/puppeteer/start.sh
+    entrypoint: [ 'sh','start.sh' ]
+    networks:
+      - haproxy
+      - sgs_network
+
+
+  gotenberg:
+    image: gotenberg/gotenberg:7
+    command:
+      - "gotenberg"
+      - "--log-level=debug"
+      - "--chromium-ignore-certificate-errors=true"
+    networks:
+      - sgs_network
+
+networks:
+  sgs_network:
+    driver: bridge
+  haproxy:
+    name: comhaproxy_haproxy
+    external: true
+

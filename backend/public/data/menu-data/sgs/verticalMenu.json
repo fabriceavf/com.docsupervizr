@@ -1,0 +1,352 @@
+{
+    "menu": [
+        {
+            "url": "home",
+            "name": "Home",
+            "icon": "fa-solid fa-house",
+            "slug": "HOMES_web_index",
+            "permission": "Voir la page d'acceuil"
+        },
+        {
+            "name": "Effectifs",
+            "icon": "fa-solid fa-users",
+            "slug": "",
+            "submenu": [
+                {
+                    "name": "salariés ",
+                    "slug": "Users_VALIDER_web_index",
+                    "icon": "fa-regular fa-circle",
+                    "permission": "Voir la page des  salariés",
+                    "params": {
+                        "id": 4987
+                    }
+                },
+                {
+                    "name": "ONE",
+                    "slug": "Users_ONE_web_index",
+                    "icon": "fa-regular fa-circle",
+                    "permission": "Voir la page des ONE"
+                },
+                {
+                    "name": "Importations",
+                    "slug": "Imports_web_index",
+                    "icon": "fa-regular fa-circle",
+                    "permission": "Voir la page des importations"
+                }
+            ]
+        },
+        {
+            "name": "Entreprises",
+            "icon": "fa-solid fa-building",
+            "slug": "",
+            "submenu": [
+                {
+                    "name": "Directions",
+                    "slug": "Directions_web_index",
+                    "icon": "fa-regular fa-circle",
+                    "permission": "Voir la page des directions",
+                    "params": {
+                        "type": "brute"
+                    }
+                },
+                {
+                    "name": "Services",
+                    "slug": "Services_web_index",
+                    "icon": "fa-regular fa-circle",
+                    "permission": "Voir la page des services"
+                },
+                {
+                    "name": "Fonctions",
+                    "slug": "Fonctions_web_index",
+                    "icon": "fa-regular fa-circle",
+                    "permission": "Voir la page des fonctions",
+                    "params": {
+                        "id": 4987
+                    }
+                },
+                {
+                    "name": "Clients",
+                    "slug": "Clients_web_index",
+                    "icon": "fa-regular fa-circle",
+                    "permission": "Voir la page des clients",
+                    "params": {
+                        "type": "brute"
+                    }
+                },
+                {
+                    "name": "Postes clients",
+                    "slug": "Postes_web_index",
+                    "permission": "Voir la page des postes",
+                    "icon": "fa-regular fa-circle"
+                },
+                {
+                    "name": "Postes internes",
+                    "slug": "Postes_non_importer_web_index",
+                    "permission": "Voir la page des postes",
+                    "icon": "fa-regular fa-circle"
+                }
+            ]
+        },
+        {
+            "name": "Listings",
+            "icon": "fa-solid fa-list-check",
+            "slug": "",
+            "submenu": [
+                {
+                    "name": "Planification",
+                    "slug": "Modelslistings_web_index",
+                    "icon": "fa-regular fa-circle",
+                    "params": {
+                        "type": "brute"
+                    },
+                    "permission": "Voir la page des planifications"
+                },
+                {
+                    "name": "Listings",
+                    "slug": "Programmations_LISTINGS_web_index",
+                    "icon": "fa-regular fa-circle",
+                    "params": {
+                        "type": "brute"
+                    },
+                    "permission": "Voir la page des listings"
+                },
+                {
+                    "name": "Listings valider1",
+                    "slug": "Programmations_LISTINGS_Valider1_web_index",
+                    "icon": "fa-regular fa-circle",
+                    "params": {
+                        "type": "brute"
+                    },
+                    "permission": "Voir la page des listings valider par le responsable de mise en place"
+                },
+                {
+                    "name": "Listings valider2",
+                    "slug": "Programmations_LISTINGS_Valider2_web_index",
+                    "icon": "fa-regular fa-circle",
+                    "params": {
+                        "type": "brute"
+                    },
+                    "permission": "Voir la page des listings valider par le chef de zone"
+                }
+            ]
+        },
+        {
+            "name": "Rapports",
+            "icon": "fa-regular fa-newspaper",
+            "slug": "",
+            "submenu": [
+                {
+                    "name": "Presences",
+                    "slug": "Programmes_PRESENCES_web_index",
+                    "icon": "fa-regular fa-circle",
+                    "permission": "Voir la page des presences"
+                },
+                {
+                    "name": "Abscences",
+                    "slug": "Programmes_ABSCENCES_web_index",
+                    "icon": "fa-regular fa-circle",
+                    "permission": "Voir la page des abscences"
+                },
+                {
+                    "name": "Exceptions",
+                    "slug": "Programmes_EXCEPTIONS_web_index",
+                    "icon": "fa-regular fa-circle",
+                    "permission": "Voir la page des exceptions"
+                },
+                {
+                    "name": "Pointages",
+                    "icon": "fa-regular fa-circle",
+                    "slug": "JOURNALS_web_index",
+                    "params": {
+                        "type": "journal"
+                    },
+                    "permission": "Voir la page des pointages brutes"
+                },
+                {
+                    "name": "vacation par Postes",
+                    "slug": "Rapports_web_index",
+                    "icon": "fa-regular fa-circle",
+                    "params": {
+                        "type": "brute"
+                    },
+                    "permission": "Voir la page des vacations par postes"
+                },
+                {
+                    "name": "vacation par Agents",
+                    "slug": "Agentsrapports_web_index",
+                    "icon": "fa-regular fa-circle",
+                    "params": {
+                        "type": "brute"
+                    },
+                    "permission": "Voir la page des vacations par agents"
+                }
+            ]
+        },
+        {
+            "name": "Configurations",
+            "icon": "fa-solid fa-gear",
+            "slug": "",
+            "submenu": [
+                {
+                    "name": "Zones",
+                    "slug": "Zones_web_index",
+                    "icon": "fa-regular fa-circle",
+                    "params": {
+                        "type": "brute"
+                    },
+                    "permission": "Voir la page des zones"
+                },
+                {
+                    "name": "Sites",
+                    "slug": "Sites_web_index",
+                    "icon": "fa-regular fa-circle",
+                    "params": {
+                        "type": "brute"
+                    },
+                    "permission": "Voir la page des sites"
+                },
+                {
+                    "name": "Categories",
+                    "slug": "Categories_web_index",
+                    "icon": "fa-regular fa-circle",
+                    "params": {
+                        "type": "brute"
+                    },
+                    "permission": "Voir la page des categories"
+                },
+                {
+                    "name": "Nationalites",
+                    "slug": "Nationalites_web_index",
+                    "icon": "fa-regular fa-circle",
+                    "params": {
+                        "type": "brute"
+                    },
+                    "permission": "Voir la page des nationalites"
+                },
+                {
+                    "name": "Contrats",
+                    "slug": "Contrats_web_index",
+                    "icon": "fa-regular fa-circle",
+                    "params": {
+                        "type": "brute"
+                    },
+                    "permission": "Voir la page des contrats"
+                },
+                {
+                    "name": "Villes",
+                    "slug": "Villes_web_index",
+                    "icon": "fa-regular fa-circle",
+                    "params": {
+                        "type": "brute"
+                    },
+                    "permission": "Voir la page des villes"
+                },
+                {
+                    "name": "Situations",
+                    "slug": "Situations_web_index",
+                    "icon": "fa-regular fa-circle",
+                    "params": {
+                        "type": "brute"
+                    },
+                    "permission": "Voir la page des situations"
+                },
+
+                {
+                    "name": "Jours feries",
+                    "slug": "Joursferies_web_index",
+                    "icon": "fa-regular fa-circle",
+                    "params": {
+                        "type": "brute"
+                    },
+                    "permission": "Voir la page des jours feries"
+                },
+                {
+                    "name": "Types abscences",
+                    "slug": "Typesabscences_web_index",
+                    "icon": "fa-regular fa-circle",
+                    "params": {
+                        "type": "brute"
+                    },
+                    "permission": "Voir la page des types d'abscences"
+                },
+                {
+                    "name": "Contratsclients",
+                    "slug": "Contratsclients_web_index",
+                    "icon": "fa-regular fa-circle",
+                    "params": {
+                        "type": "brute"
+                    },
+                    "permission": "Voir la page des contrats clients"
+                },
+                {
+                    "name": "Facturations",
+                    "slug": "Facturationuploads_web_index",
+                    "icon": "fa-regular fa-circle",
+                    "params": {
+                        "type": "brute"
+                    },
+                    "permission": "Voir la page des facturations"
+                },
+                {
+                    "name": "Prestations",
+                    "slug": "Prestations_web_index",
+                    "icon": "fa-regular fa-circle",
+                    "params": {
+                        "type": "brute"
+                    },
+                    "permission": "Voir la page des prestations"
+                }
+            ]
+        },
+        {
+            "name": "Pointeuses",
+            "slug": "Pointeuses_web_index",
+            "icon": "fa-regular fa-circle",
+            "permission": "Voir la page des pointeuses"
+        },
+        {
+            "name": "Les users",
+            "slug": "Users_web_index",
+            "icon": "fa-solid fa-user-large",
+            "permission": "Voir la page des utilisateurs"
+        },
+        {
+            "name": "Les super admin",
+            "slug": "Users_SU_web_index",
+            "icon": "fa-solid fa-user-shield",
+            "isSu": true
+        },
+
+        {
+            "name": "Securites",
+            "icon": "fa-solid fa-lock",
+            "slug": "",
+            "submenu": [
+                {
+                    "name": "Permissions",
+                    "slug": "Permissions_web_index",
+                    "icon": "fa-regular fa-circle",
+                    "params": {
+                        "type": "brute"
+                    },
+                    "permission": "Voir la page des permissions"
+                },
+                {
+                    "name": "Logs",
+                    "slug": "Logs_web_index",
+                    "icon": "fa-regular fa-circle",
+                    "params": {
+                        "type": "brute"
+                    },
+                    "permission": "Voir la page des logs"
+                },
+                {
+                    "name": "Activite recente",
+                    "slug": "Cruds_web_index",
+                    "icon": "fa-regular fa-circle",
+                    "permission": "Voir la page des activites recentes"
+                }
+            ]
+        }
+    ]
+}

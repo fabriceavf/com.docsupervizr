@@ -1,0 +1,7 @@
+version: '3'
+
+services:
+  puppeteer:
+    build: .
+    # just run the container doing nothing
+    entrypoint: ["node", "index.js"]

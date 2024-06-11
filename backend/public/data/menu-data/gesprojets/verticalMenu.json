@@ -1,0 +1,19 @@
+{
+    "menu": [
+        {
+            "url": "home",
+            "name": "Home",
+            "icon": "fa-solid fa-house",
+            "slug": "HOMES_web_index",
+            "permission": "Voir la page d'acceuil"
+        },
+        {
+            "name": "Projets",
+            "slug": "Projets_web_index",
+            "icon": "fa-regular fa-circle",
+            "params": {
+                "type": "brute"
+            }
+        }
+    ]
+}

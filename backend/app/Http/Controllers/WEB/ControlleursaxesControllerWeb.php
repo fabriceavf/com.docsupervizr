@@ -1,0 +1,388 @@
+<?php
+
+namespace App\Http\Controllers\WEB;
+
+use App\Http\Controllers\Controller;
+use App\Models\prod\Controlleursaxe;
+use App\Models\prod\GroupesModel;
+use App\Models\prod\Ligne;
+use App\Models\prod\Moyenstransport;
+use App\Models\prod\Pointeuse;
+use App\Models\prod\Site;
+use App\Models\prod\UsersModel;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
+
+
+// use App\Repository\prod\ControlleursaxesRepository;
+
+
+ini_set('memory_limit', '8192M');
+ini_set('max_execution_time', '300');
+
+class ControlleursaxesControllerWeb extends Controller
+{
+
+    private $ControlleursaxesRepository;
+    private $menu;
+
+
+    /**
+     * Return .
+     * @param \Illuminate\Http\Request $request
+     * @param App\Repository\prod\ControlleursaxesRepository $ControlleursaxesRepository
+     * @param int $id
+     */
+    public function __construct(Request $request)
+    {
+        if (!$request->has('__internalId__')) {
+            $id = "Controlleursaxes_" . Str::uuid()->toString() . '_unique';
+            $id = Str::replace('-', '_', $id);
+
+            $request->merge(['__internalId__' => $id]);
+        }
+
+    }
+
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index(Request $request)
+    {
+        try {
+            \Illuminate\Support\Facades\DB::table('surveillances')->insert([
+                'user_id' => Auth::id(),
+                'action' => 'Navigation vers page controlleursaxes Reussi',
+                'ip' => 'Non defini',
+                'pays' => 'Non defini',
+                'ville' => 'Non defini',
+                'navigateur' => $request->header('User-Agent'),
+                'created_at' => now(),
+            ]);
+
+        } catch (\Throwable) {
+
+        }
+
+// La securite qui empeiche darriver sur cette sans avoir une signature valide
+        if (
+            true
+            && !$request->hasValidSignature()
+            && !Auth::user()->can("Voir les controlleursaxes")
+        ) {
+            abort(401);
+        }
+
+        $params = collect($request->all());
+        $params = $params->filter(function ($value, $key) {
+//            dd($key);
+            return Str::is('__key__*', $key);
+        })->toArray();
+        $new = [];
+        foreach ($params as $key => $par) {
+            $new[Str::replace('__key__', "", $key)] = $par;
+        }
+
+
+        $pageConfig = [
+            'mainLayoutType' => 'vertical',
+            'type' => 'admin',
+            'menu_type' => 'admin',
+            'is_navbar' => $request->has('is_navbar') ? $request->get('is_navbar') : true,
+            'footer' => $request->has('footer') ? $request->get('footer') : true,
+            'showMenu' => $request->has('showMenu') ? $request->get('showMenu') : true,
+            'pageHeader' => $request->has('pageHeader') ? $request->get('pageHeader') : true,
+
+        ];
+
+
+        $vue = view('/content/Controlleursaxes.Controlleursaxes', ['pageConfigs' => $pageConfig, 'menu' => $this->menu, 'preselect' => $new, 'options' => $donnees ?? [], 'options' => $donnees ?? [],
+
+        ]);
+        return response($vue, 200);
+    }
+
+    public function index_component(Request $request)
+    {
+
+// La securite qui empeiche darriver sur cette sans avoir une signature valide
+        if (!$request->hasValidSignature() && !Auth::user()->can("Voir les controlleursaxes")) {
+            abort(401);
+        }
+
+        $params = collect($request->all());
+        $params = $params->filter(function ($value, $key) {
+//            dd($key);
+            return Str::is('__key__*', $key);
+        })->toArray();
+        $new = [];
+        foreach ($params as $key => $par) {
+            $new[Str::replace('__key__', "", $key)] = $par;
+        }
+
+
+        if ($request->has('disposition')) {
+            $controlleursaxes_disposition->disposition = $request->get('disposition');
+        }
+
+
+        $pageConfig = [
+            'mainLayoutType' => 'vertical',
+            'type' => 'admin',
+            'menu_type' => 'admin',
+            'is_navbar' => $request->has('is_navbar') ? $request->get('is_navbar') : true,
+            'footer' => $request->has('footer') ? $request->get('footer') : true,
+            'showMenu' => $request->has('showMenu') ? $request->get('showMenu') : true,
+            'pageHeader' => $request->has('pageHeader') ? $request->get('pageHeader') : true,
+
+        ];
+
+
+        $vue = view('/content/Controlleursaxes.controlleursaxes_component', ['pageConfigs' => $pageConfig, 'menu' => $this->menu, 'controlleursaxes_disposition' => $controlleursaxes_disposition, 'preselect' => $new, 'options' => $donnees ?? [], 'options' => $donnees ?? [],
+
+            'transactions_disposition' => $transactions_disposition,
+
+        ]);
+        return response($vue, 200);
+    }
+
+    /**
+     * Display a listing of the resource.
+     *
+     * @return  \Illuminate\Http\Response
+     */
+    public function index_two(Request $request, $key, $val)
+    {
+// La securite qui empeiche darriver sur cette sans avoir une signature valide
+        if (!$request->hasValidSignature() && !Auth::user()->can("Voir les controlleursaxes")) {
+            abort(401);
+        }
+        $params = collect($request->all());
+        $params = $params->filter(function ($value, $k) {
+//            dd($k);
+            return Str::is('__key__*', $k);
+        })->toArray();
+        $new = [];
+        foreach ($params as $k => $par) {
+            $new[Str::replace('__key__', "", $k)] = $par;
+        }
+// some additional logic or checking
+        $request->request->add([
+            'pkey' => $key,
+            'pval' => $val,
+        ]);
+
+
+        if ($request->has('disposition')) {
+            $controlleursaxes_disposition->disposition = $request->get('disposition');
+        }
+
+
+        $pageConfig = [
+            'mainLayoutType' => 'vertical',
+            'type' => 'admin',
+            'menu_type' => 'admin',
+            'is_navbar' => $request->has('is_navbar') ? $request->get('is_navbar') : true,
+            'footer' => $request->has('footer') ? $request->get('footer') : true,
+            'showMenu' => $request->has('showMenu') ? $request->get('showMenu') : true,
+            'pageHeader' => $request->has('pageHeader') ? $request->get('pageHeader') : true,
+
+        ];
+
+
+        $vue = view('/content/Controlleursaxes.Controlleursaxes', ['pageConfigs' => $pageConfig, 'menu' => $this->menu, 'controlleursaxes_disposition' => $controlleursaxes_disposition, 'preselect' => $new, 'options' => $donnees ?? [],
+
+            'transactions_disposition' => $transactions_disposition,
+
+        ]);
+        return response($vue, 200);
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     * Return .
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\Response
+     */
+
+    public function index_one(Request $request, Controlleursaxe $Controlleursaxes)
+    {
+
+
+        if ($request->has('disposition')) {
+            $controlleursaxes_disposition->disposition = $request->get('disposition');
+        }
+
+
+        $params = collect($request->all());
+        $params = $params->filter(function ($value, $key) {
+//            dd($key);
+            return Str::is('__key__*', $key);
+        })->toArray();
+        $new = [];
+        foreach ($params as $key => $par) {
+            $new[Str::replace('__key__', "", $key)] = $par;
+        }
+
+        $pageConfig = [
+            'mainLayoutType' => 'vertical',
+            'type' => 'admin',
+            'menu_type' => 'admin',
+            'is_navbar' => $request->has('is_navbar') ? $request->get('is_navbar') : true,
+            'footer' => $request->has('footer') ? $request->get('footer') : true,
+            'showMenu' => $request->has('showMenu') ? $request->get('showMenu') : true,
+            'pageHeader' => $request->has('pageHeader') ? $request->get('pageHeader') : true,
+
+        ];
+// La securite qui empeiche darriver sur cette sans avoir une signature valide
+        if (!$request->hasValidSignature()) {
+            abort(401);
+        }
+
+
+        $vue = view('/content/Controlleursaxes.controlleursaxes_one', [
+            'pageConfigs' => $pageConfig,
+            'editorData' => $request->All(),
+            'Controlleursaxes' => $Controlleursaxes,
+            'controlleursaxes_disposition' => $controlleursaxes_disposition
+            , 'preselect' => $new, 'options' => $donnees ?? [],
+
+            'transactions_disposition' => $transactions_disposition,
+
+        ]);
+
+
+        return response($vue, 200);
+
+    }
+
+    public function index_one_component(Request $request, Controlleursaxe $Controlleursaxes)
+    {
+
+
+        if ($request->has('disposition')) {
+            $controlleursaxes_disposition->disposition = $request->get('disposition');
+        }
+
+
+        $params = collect($request->all());
+        $params = $params->filter(function ($value, $key) {
+//            dd($key);
+            return Str::is('__key__*', $key);
+        })->toArray();
+        $new = [];
+        foreach ($params as $key => $par) {
+            $new[Str::replace('__key__', "", $key)] = $par;
+        }
+
+        $pageConfig = [
+            'mainLayoutType' => 'vertical',
+            'type' => 'admin',
+            'menu_type' => 'admin',
+            'is_navbar' => $request->has('is_navbar') ? $request->get('is_navbar') : true,
+            'footer' => $request->has('footer') ? $request->get('footer') : true,
+            'showMenu' => $request->has('showMenu') ? $request->get('showMenu') : true,
+            'pageHeader' => $request->has('pageHeader') ? $request->get('pageHeader') : true,
+
+        ];
+// La securite qui empeiche darriver sur cette sans avoir une signature valide
+        if (!$request->hasValidSignature()) {
+            abort(401);
+        }
+
+
+        $vue = view('/content/Controlleursaxes.controlleursaxes_one_component', [
+            'pageConfigs' => $pageConfig,
+            'editorData' => $request->All(),
+            'Controlleursaxes' => $Controlleursaxes,
+            'controlleursaxes_disposition' => $controlleursaxes_disposition
+            , 'preselect' => $new, 'options' => $donnees ?? [],
+
+            'transactions_disposition' => $transactions_disposition,
+
+        ]);
+
+
+        return response($vue, 200);
+
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     * Return .
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\Response
+     */
+
+    public function show_impression(Request $request, Controlleursaxe $Controlleursaxes)
+    {
+// La securite qui empeiche darriver sur cette sans avoir une signature valide
+        if (!$request->hasValidSignature()) {
+            abort(401);
+        }
+
+
+        if ($request->has('disposition')) {
+            $controlleursaxes_disposition->disposition = $request->get('disposition');
+        }
+
+
+        $params = collect($request->all());
+        $params = $params->filter(function ($value, $key) {
+//            dd($key);
+            return Str::is('__key__*', $key);
+        })->toArray();
+        $new = [];
+        foreach ($params as $key => $par) {
+            $new[Str::replace('__key__', "", $key)] = $par;
+        }
+
+        $pageConfig = [
+            'mainLayoutType' => 'vertical',
+            'type' => 'admin',
+            'menu_type' => 'admin',
+            'is_navbar' => false,
+            'showMenu' => false,
+            'footer' => false,
+            'pageHeader' => false,
+        ];
+
+
+        $vue = view('/content/Controlleursaxes.impression', [
+            'pageConfigs' => $pageConfig,
+            'editorData' => $request->All(),
+            'Controlleursaxes' => $Controlleursaxes,
+            'controlleursaxes_disposition' => $controlleursaxes_disposition
+            , 'preselect' => $new, 'options' => $donnees ?? [],
+
+            'transactions_disposition' => $transactions_disposition,
+
+        ]);
+        return response($vue, 200);
+
+    }
+
+
+    /**
+     * Display the specified resource.
+     *
+     * @param int $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+//
+
+        $this->ControlleursaxesRepository->show($id);
+
+    }
+
+
+}
+
+
+
