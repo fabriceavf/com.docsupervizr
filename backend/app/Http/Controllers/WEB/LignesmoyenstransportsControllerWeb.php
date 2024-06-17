@@ -1,4 +1,4 @@
-<?php
+<?php 
 namespace App\Http\Controllers\WEB;
 
 use Illuminate\Database\Schema\Blueprint;
@@ -38,7 +38,7 @@ ini_set('max_execution_time', '300');
 
             use App\Models\prod\Ligne;
                 use App\Models\prod\Moyenstransport;
-
+    
 class LignesmoyenstransportsControllerWeb extends Controller
 {
 
@@ -162,137 +162,145 @@ $lignesmoyenstransports_disposition->disposition=$request->get('disposition');
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -370,137 +378,145 @@ $pageConfig = [
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -537,7 +553,7 @@ $lignesmoyenstransports_disposition->disposition=$request->get('disposition');
 
 
 
-
+    
 $params=collect($request->all());
 $params=$params->filter(function ($value, $key) {
 //            dd($key);
@@ -569,137 +585,145 @@ abort(401);
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -739,7 +763,7 @@ $lignesmoyenstransports_disposition->disposition=$request->get('disposition');
 
 
 
-
+    
 $params=collect($request->all());
 $params=$params->filter(function ($value, $key) {
 //            dd($key);
@@ -771,137 +795,145 @@ abort(401);
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -952,7 +984,7 @@ $lignesmoyenstransports_disposition->disposition=$request->get('disposition');
 
 
 
-
+    
 $params=collect($request->all());
 $params=$params->filter(function ($value, $key) {
 //            dd($key);

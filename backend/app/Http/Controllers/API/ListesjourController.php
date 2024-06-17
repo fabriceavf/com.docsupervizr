@@ -29,8 +29,7 @@ use Spatie\QueryBuilder\QueryBuilder;
 
 
 
-            use App\Models\Listesappel;
-    
+
 class ListesjourController extends Controller
 {
 
@@ -296,13 +295,9 @@ return $query;
 
     
 ])
-    
 ->allowedIncludes([
 
-            'listesappel',
-        
-
-    ]);
+]);
 
 if(!empty($_REQUEST["paginate"]) && $_REQUEST["paginate"]==1 ){
 $data=$data->paginate(isset($_REQUEST["limit"]) ? max(0, intval($_REQUEST["limit"])) : 20);
@@ -571,12 +566,8 @@ return $query;
 
     
 ])
-    
 ->allowedIncludes([
-            'listesappel',
-        
-
-    ]);
+]);
 
 if(!empty($_REQUEST["count"]) && $_REQUEST["count"]==1 ){
 return response()->json($data->count());
@@ -1015,7 +1006,7 @@ $newCrudData=[];
                                 $newCrudData['identifiants_sadge']=$Listesjours->identifiants_sadge;
                 $newCrudData['creat_by']=$Listesjours->creat_by;
     
- try{ $newCrudData['listesappel']=$Listesjours->listesappel->Selectlabel; }catch(\Throwable $e){}  
+
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Create", 'entite' => 'Listesjours','entite_cle' => $Listesjours->id, 'ancien' => json_encode($newCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);
 
 
@@ -1070,7 +1061,7 @@ $oldCrudData=[];
                                 $oldCrudData['identifiants_sadge']=$Listesjours->identifiants_sadge;
                 $oldCrudData['creat_by']=$Listesjours->creat_by;
     
- try{ $oldCrudData['listesappel']=$Listesjours->listesappel->Selectlabel; }catch(\Throwable $e){}  
+
 
 $data=$request->all();
 foreach ($request->allFiles() as $key=>$file){
@@ -1392,7 +1383,7 @@ $newCrudData=[];
                                 $newCrudData['identifiants_sadge']=$Listesjours->identifiants_sadge;
                 $newCrudData['creat_by']=$Listesjours->creat_by;
     
- try{ $newCrudData['listesappel']=$Listesjours->listesappel->Selectlabel; }catch(\Throwable $e){}  
+
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Update", 'entite' => 'Listesjours','entite_cle' => $Listesjours->id, 'ancien' => json_encode($oldCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);
 
 $response = $Listesjours->toArray();
@@ -1442,7 +1433,7 @@ $newCrudData=[];
                                 $newCrudData['identifiants_sadge']=$Listesjours->identifiants_sadge;
                 $newCrudData['creat_by']=$Listesjours->creat_by;
     
- try{ $newCrudData['listesappel']=$Listesjours->listesappel->Selectlabel; }catch(\Throwable $e){}  
+
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Delete", 'entite' => 'Listesjours','entite_cle' => $Listesjours->id, 'ancien' => json_encode($newCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);
 
 

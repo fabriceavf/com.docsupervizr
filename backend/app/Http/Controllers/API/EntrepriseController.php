@@ -183,12 +183,6 @@ $data = QueryBuilder::for(Entreprise::class)
             AllowedFilter::exact('status'),
 
     
-            AllowedFilter::exact('identifiants_sadge'),
-
-    
-            AllowedFilter::exact('creat_by'),
-
-    
             AllowedFilter::exact('db_host'),
 
     
@@ -208,6 +202,12 @@ $data = QueryBuilder::for(Entreprise::class)
 
     
             AllowedFilter::exact('filemodules'),
+
+    
+            AllowedFilter::exact('identifiants_sadge'),
+
+    
+            AllowedFilter::exact('creat_by'),
 
     
 AllowedFilter::callback('not_null', function (Builder $query, $value) {
@@ -327,12 +327,6 @@ return $query;
             AllowedSort::field('status'),
 
     
-            AllowedSort::field('identifiants_sadge'),
-
-    
-            AllowedSort::field('creat_by'),
-
-    
             AllowedSort::field('db_host'),
 
     
@@ -352,6 +346,12 @@ return $query;
 
     
             AllowedSort::field('filemodules'),
+
+    
+            AllowedSort::field('identifiants_sadge'),
+
+    
+            AllowedSort::field('creat_by'),
 
     
 ])
@@ -590,12 +590,6 @@ $data = QueryBuilder::for(Entreprise::class)
             AllowedFilter::exact('status'),
 
     
-            AllowedFilter::exact('identifiants_sadge'),
-
-    
-            AllowedFilter::exact('creat_by'),
-
-    
             AllowedFilter::exact('db_host'),
 
     
@@ -615,6 +609,12 @@ $data = QueryBuilder::for(Entreprise::class)
 
     
             AllowedFilter::exact('filemodules'),
+
+    
+            AllowedFilter::exact('identifiants_sadge'),
+
+    
+            AllowedFilter::exact('creat_by'),
 
     
 AllowedFilter::callback('not_null', function (Builder $query, $value) {
@@ -734,12 +734,6 @@ return $query;
             AllowedSort::field('status'),
 
     
-            AllowedSort::field('identifiants_sadge'),
-
-    
-            AllowedSort::field('creat_by'),
-
-    
             AllowedSort::field('db_host'),
 
     
@@ -759,6 +753,12 @@ return $query;
 
     
             AllowedSort::field('filemodules'),
+
+    
+            AllowedSort::field('identifiants_sadge'),
+
+    
+            AllowedSort::field('creat_by'),
 
     
 ])
@@ -999,8 +999,6 @@ $champsRechercher=[
     'icon',
     'favicon',
     'status',
-    'identifiants_sadge',
-    'creat_by',
     'db_host',
     'db_user',
     'db_pass',
@@ -1008,6 +1006,8 @@ $champsRechercher=[
     'badge_arriere',
     'modules',
     'filemodules',
+    'identifiants_sadge',
+    'creat_by',
 ];
 $envoyer=[];
 foreach($data as $key=>$d){
@@ -1060,18 +1060,6 @@ Validator::make($data, [
         
     
     
-                    'identifiants_sadge' => [
-            //'required'
-            ],
-        
-    
-    
-                    'creat_by' => [
-            //'required'
-            ],
-        
-    
-    
                     'db_host' => [
             //'required'
             ],
@@ -1113,6 +1101,18 @@ Validator::make($data, [
             ],
         
     
+    
+                    'identifiants_sadge' => [
+            //'required'
+            ],
+        
+    
+    
+                    'creat_by' => [
+            //'required'
+            ],
+        
+    
 
 
 ], $messages = [
@@ -1147,14 +1147,6 @@ Validator::make($data, [
 
     
     
-        'identifiants_sadge' => ['cette donnee est obligatoire'],
-
-    
-    
-        'creat_by' => ['cette donnee est obligatoire'],
-
-    
-    
         'db_host' => ['cette donnee est obligatoire'],
 
     
@@ -1180,6 +1172,14 @@ Validator::make($data, [
     
     
         'filemodules' => ['cette donnee est obligatoire'],
+
+    
+    
+        'identifiants_sadge' => ['cette donnee est obligatoire'],
+
+    
+    
+        'creat_by' => ['cette donnee est obligatoire'],
 
     
 ])->validate();
@@ -1354,42 +1354,6 @@ $data['creat_by']=Auth::id();
 
     
 
-        if(!empty($data['identifiants_sadge'])){
-        
-            $Entreprises->identifiants_sadge = $data['identifiants_sadge'];
-        
-        }
-
-
-
-    
-
-
-
-
-
-
-
-    
-
-        if(!empty($data['creat_by'])){
-        
-            $Entreprises->creat_by = $data['creat_by'];
-        
-        }
-
-
-
-    
-
-
-
-
-
-
-
-    
-
         if(!empty($data['db_host'])){
         
             $Entreprises->db_host = $data['db_host'];
@@ -1514,6 +1478,42 @@ $data['creat_by']=Auth::id();
 
 
 
+    
+
+        if(!empty($data['identifiants_sadge'])){
+        
+            $Entreprises->identifiants_sadge = $data['identifiants_sadge'];
+        
+        }
+
+
+
+    
+
+
+
+
+
+
+
+    
+
+        if(!empty($data['creat_by'])){
+        
+            $Entreprises->creat_by = $data['creat_by'];
+        
+        }
+
+
+
+    
+
+
+
+
+
+
+
 
 
 
@@ -1568,8 +1568,6 @@ $newCrudData=[];
                                 $newCrudData['icon']=$Entreprises->icon;
                 $newCrudData['favicon']=$Entreprises->favicon;
                 $newCrudData['status']=$Entreprises->status;
-                $newCrudData['identifiants_sadge']=$Entreprises->identifiants_sadge;
-                $newCrudData['creat_by']=$Entreprises->creat_by;
                 $newCrudData['db_host']=$Entreprises->db_host;
                 $newCrudData['db_user']=$Entreprises->db_user;
                 $newCrudData['db_pass']=$Entreprises->db_pass;
@@ -1577,6 +1575,8 @@ $newCrudData=[];
                 $newCrudData['badge_arriere']=$Entreprises->badge_arriere;
                 $newCrudData['modules']=$Entreprises->modules;
                 $newCrudData['filemodules']=$Entreprises->filemodules;
+                $newCrudData['identifiants_sadge']=$Entreprises->identifiants_sadge;
+                $newCrudData['creat_by']=$Entreprises->creat_by;
     
 
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Create", 'entite' => 'Entreprises','entite_cle' => $Entreprises->id, 'ancien' => json_encode($newCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);
@@ -1633,8 +1633,6 @@ $oldCrudData=[];
                                 $oldCrudData['icon']=$Entreprises->icon;
                 $oldCrudData['favicon']=$Entreprises->favicon;
                 $oldCrudData['status']=$Entreprises->status;
-                $oldCrudData['identifiants_sadge']=$Entreprises->identifiants_sadge;
-                $oldCrudData['creat_by']=$Entreprises->creat_by;
                 $oldCrudData['db_host']=$Entreprises->db_host;
                 $oldCrudData['db_user']=$Entreprises->db_user;
                 $oldCrudData['db_pass']=$Entreprises->db_pass;
@@ -1642,6 +1640,8 @@ $oldCrudData=[];
                 $oldCrudData['badge_arriere']=$Entreprises->badge_arriere;
                 $oldCrudData['modules']=$Entreprises->modules;
                 $oldCrudData['filemodules']=$Entreprises->filemodules;
+                $oldCrudData['identifiants_sadge']=$Entreprises->identifiants_sadge;
+                $oldCrudData['creat_by']=$Entreprises->creat_by;
     
 
 
@@ -1666,8 +1666,6 @@ $champsRechercher=[
     'icon',
     'favicon',
     'status',
-    'identifiants_sadge',
-    'creat_by',
     'db_host',
     'db_user',
     'db_pass',
@@ -1675,6 +1673,8 @@ $champsRechercher=[
     'badge_arriere',
     'modules',
     'filemodules',
+    'identifiants_sadge',
+    'creat_by',
 ];
 $envoyer=[];
 foreach($data as $key=>$d){
@@ -1727,18 +1727,6 @@ Validator::make($data, [
         
     
     
-                    'identifiants_sadge' => [
-            //'required'
-            ],
-        
-    
-    
-                    'creat_by' => [
-            //'required'
-            ],
-        
-    
-    
                     'db_host' => [
             //'required'
             ],
@@ -1780,6 +1768,18 @@ Validator::make($data, [
             ],
         
     
+    
+                    'identifiants_sadge' => [
+            //'required'
+            ],
+        
+    
+    
+                    'creat_by' => [
+            //'required'
+            ],
+        
+    
 
 
 ], $messages = [
@@ -1814,14 +1814,6 @@ Validator::make($data, [
 
     
     
-        'identifiants_sadge' => ['cette donnee est obligatoire'],
-
-    
-    
-        'creat_by' => ['cette donnee est obligatoire'],
-
-    
-    
         'db_host' => ['cette donnee est obligatoire'],
 
     
@@ -1847,6 +1839,14 @@ Validator::make($data, [
     
     
         'filemodules' => ['cette donnee est obligatoire'],
+
+    
+    
+        'identifiants_sadge' => ['cette donnee est obligatoire'],
+
+    
+    
+        'creat_by' => ['cette donnee est obligatoire'],
 
     
 ])->validate();
@@ -2037,48 +2037,6 @@ $extra_data=array_diff($envoyer,$champsRechercher);
 
     
 
-        if(array_key_exists("identifiants_sadge",$data)){
-
-
-        if(!empty($data['identifiants_sadge'])){
-        
-            $Entreprises->identifiants_sadge = $data['identifiants_sadge'];
-        
-        }
-
-        }
-
-    
-
-
-
-
-
-
-
-    
-
-        if(array_key_exists("creat_by",$data)){
-
-
-        if(!empty($data['creat_by'])){
-        
-            $Entreprises->creat_by = $data['creat_by'];
-        
-        }
-
-        }
-
-    
-
-
-
-
-
-
-
-    
-
         if(array_key_exists("db_host",$data)){
 
 
@@ -2224,6 +2182,48 @@ $extra_data=array_diff($envoyer,$champsRechercher);
 
 
 
+    
+
+        if(array_key_exists("identifiants_sadge",$data)){
+
+
+        if(!empty($data['identifiants_sadge'])){
+        
+            $Entreprises->identifiants_sadge = $data['identifiants_sadge'];
+        
+        }
+
+        }
+
+    
+
+
+
+
+
+
+
+    
+
+        if(array_key_exists("creat_by",$data)){
+
+
+        if(!empty($data['creat_by'])){
+        
+            $Entreprises->creat_by = $data['creat_by'];
+        
+        }
+
+        }
+
+    
+
+
+
+
+
+
+
 
 
 
@@ -2285,8 +2285,6 @@ $newCrudData=[];
                                 $newCrudData['icon']=$Entreprises->icon;
                 $newCrudData['favicon']=$Entreprises->favicon;
                 $newCrudData['status']=$Entreprises->status;
-                $newCrudData['identifiants_sadge']=$Entreprises->identifiants_sadge;
-                $newCrudData['creat_by']=$Entreprises->creat_by;
                 $newCrudData['db_host']=$Entreprises->db_host;
                 $newCrudData['db_user']=$Entreprises->db_user;
                 $newCrudData['db_pass']=$Entreprises->db_pass;
@@ -2294,6 +2292,8 @@ $newCrudData=[];
                 $newCrudData['badge_arriere']=$Entreprises->badge_arriere;
                 $newCrudData['modules']=$Entreprises->modules;
                 $newCrudData['filemodules']=$Entreprises->filemodules;
+                $newCrudData['identifiants_sadge']=$Entreprises->identifiants_sadge;
+                $newCrudData['creat_by']=$Entreprises->creat_by;
     
 
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Update", 'entite' => 'Entreprises','entite_cle' => $Entreprises->id, 'ancien' => json_encode($oldCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);
@@ -2345,8 +2345,6 @@ $newCrudData=[];
                                 $newCrudData['icon']=$Entreprises->icon;
                 $newCrudData['favicon']=$Entreprises->favicon;
                 $newCrudData['status']=$Entreprises->status;
-                $newCrudData['identifiants_sadge']=$Entreprises->identifiants_sadge;
-                $newCrudData['creat_by']=$Entreprises->creat_by;
                 $newCrudData['db_host']=$Entreprises->db_host;
                 $newCrudData['db_user']=$Entreprises->db_user;
                 $newCrudData['db_pass']=$Entreprises->db_pass;
@@ -2354,6 +2352,8 @@ $newCrudData=[];
                 $newCrudData['badge_arriere']=$Entreprises->badge_arriere;
                 $newCrudData['modules']=$Entreprises->modules;
                 $newCrudData['filemodules']=$Entreprises->filemodules;
+                $newCrudData['identifiants_sadge']=$Entreprises->identifiants_sadge;
+                $newCrudData['creat_by']=$Entreprises->creat_by;
     
 
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Delete", 'entite' => 'Entreprises','entite_cle' => $Entreprises->id, 'ancien' => json_encode($newCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);

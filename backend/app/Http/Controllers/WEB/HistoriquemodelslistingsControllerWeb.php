@@ -1,4 +1,4 @@
-<?php
+<?php 
 namespace App\Http\Controllers\WEB;
 
 use Illuminate\Database\Schema\Blueprint;
@@ -36,7 +36,7 @@ use Illuminate\Support\Facades\Session;
 ini_set('memory_limit', '8192M');
 ini_set('max_execution_time', '300');
 
-
+    
 class HistoriquemodelslistingsControllerWeb extends Controller
 {
 
@@ -154,97 +154,97 @@ $historiquemodelslistings_disposition->disposition=$request->get('disposition');
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -313,97 +313,97 @@ $pageConfig = [
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -461,97 +461,97 @@ abort(401);
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -612,97 +612,97 @@ abort(401);
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 

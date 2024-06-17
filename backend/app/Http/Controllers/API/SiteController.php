@@ -188,14 +188,6 @@ $data = QueryBuilder::for(Site::class)
             AllowedFilter::exact('type'),
 
     
-    
-    
-            AllowedFilter::exact('identifiants_sadge'),
-
-    
-            AllowedFilter::exact('creat_by'),
-
-    
             AllowedFilter::exact('pastille'),
 
     
@@ -206,6 +198,14 @@ $data = QueryBuilder::for(Site::class)
 
     
             AllowedFilter::exact('date_fin'),
+
+    
+    
+    
+            AllowedFilter::exact('identifiants_sadge'),
+
+    
+            AllowedFilter::exact('creat_by'),
 
     
 AllowedFilter::callback('not_null', function (Builder $query, $value) {
@@ -326,14 +326,6 @@ return $query;
             AllowedSort::field('type'),
 
     
-    
-    
-            AllowedSort::field('identifiants_sadge'),
-
-    
-            AllowedSort::field('creat_by'),
-
-    
             AllowedSort::field('pastille'),
 
     
@@ -346,6 +338,14 @@ return $query;
             AllowedSort::field('date_fin'),
 
     
+    
+    
+            AllowedSort::field('identifiants_sadge'),
+
+    
+            AllowedSort::field('creat_by'),
+
+    
 ])
     
     
@@ -355,16 +355,7 @@ return $query;
             'cartes',
         
 
-                'contratssites',
-        
-
                 'controlleursacces',
-        
-
-                'interventions',
-        
-
-                'listings',
         
 
                 'passagesrondes',
@@ -386,9 +377,6 @@ return $query;
         
 
                 'sitessdeplacements',
-        
-
-                'taches',
         
 
                 'trajets',
@@ -624,14 +612,6 @@ $data = QueryBuilder::for(Site::class)
             AllowedFilter::exact('type'),
 
     
-    
-    
-            AllowedFilter::exact('identifiants_sadge'),
-
-    
-            AllowedFilter::exact('creat_by'),
-
-    
             AllowedFilter::exact('pastille'),
 
     
@@ -642,6 +622,14 @@ $data = QueryBuilder::for(Site::class)
 
     
             AllowedFilter::exact('date_fin'),
+
+    
+    
+    
+            AllowedFilter::exact('identifiants_sadge'),
+
+    
+            AllowedFilter::exact('creat_by'),
 
     
 AllowedFilter::callback('not_null', function (Builder $query, $value) {
@@ -762,14 +750,6 @@ return $query;
             AllowedSort::field('type'),
 
     
-    
-    
-            AllowedSort::field('identifiants_sadge'),
-
-    
-            AllowedSort::field('creat_by'),
-
-    
             AllowedSort::field('pastille'),
 
     
@@ -782,6 +762,14 @@ return $query;
             AllowedSort::field('date_fin'),
 
     
+    
+    
+            AllowedSort::field('identifiants_sadge'),
+
+    
+            AllowedSort::field('creat_by'),
+
+    
 ])
     
     
@@ -791,16 +779,7 @@ return $query;
             'cartes',
         
 
-                'contratssites',
-        
-
                 'controlleursacces',
-        
-
-                'interventions',
-        
-
-                'listings',
         
 
                 'passagesrondes',
@@ -822,9 +801,6 @@ return $query;
         
 
                 'sitessdeplacements',
-        
-
-                'taches',
         
 
                 'trajets',
@@ -1060,14 +1036,14 @@ $champsRechercher=[
     'NbrsJours',
     'NbrsNuits',
     'type',
-    'extra_attributes',
-    'deleted_at',
-    'identifiants_sadge',
-    'creat_by',
     'pastille',
     'typessite_id',
     'date_debut',
     'date_fin',
+    'extra_attributes',
+    'deleted_at',
+    'identifiants_sadge',
+    'creat_by',
 ];
 $envoyer=[];
 foreach($data as $key=>$d){
@@ -1124,20 +1100,6 @@ Validator::make($data, [
         
     
     
-    
-    
-                    'identifiants_sadge' => [
-            //'required'
-            ],
-        
-    
-    
-                    'creat_by' => [
-            //'required'
-            ],
-        
-    
-    
                     'pastille' => [
             //'required'
             ],
@@ -1157,6 +1119,20 @@ Validator::make($data, [
     
     
                     'date_fin' => [
+            //'required'
+            ],
+        
+    
+    
+    
+    
+                    'identifiants_sadge' => [
+            //'required'
+            ],
+        
+    
+    
+                    'creat_by' => [
             //'required'
             ],
         
@@ -1197,16 +1173,6 @@ Validator::make($data, [
 
     
     
-    
-    
-        'identifiants_sadge' => ['cette donnee est obligatoire'],
-
-    
-    
-        'creat_by' => ['cette donnee est obligatoire'],
-
-    
-    
         'pastille' => ['cette donnee est obligatoire'],
 
     
@@ -1220,6 +1186,16 @@ Validator::make($data, [
     
     
         'date_fin' => ['cette donnee est obligatoire'],
+
+    
+    
+    
+    
+        'identifiants_sadge' => ['cette donnee est obligatoire'],
+
+    
+    
+        'creat_by' => ['cette donnee est obligatoire'],
 
     
 ])->validate();
@@ -1396,58 +1372,6 @@ $data['creat_by']=Auth::id();
 
     
 
-
-
-
-
-
-
-    
-
-
-
-
-
-
-
-    
-
-        if(!empty($data['identifiants_sadge'])){
-        
-            $Sites->identifiants_sadge = $data['identifiants_sadge'];
-        
-        }
-
-
-
-    
-
-
-
-
-
-
-
-    
-
-        if(!empty($data['creat_by'])){
-        
-            $Sites->creat_by = $data['creat_by'];
-        
-        }
-
-
-
-    
-
-
-
-
-
-
-
-    
-
         if(!empty($data['pastille'])){
         
             $Sites->pastille = $data['pastille'];
@@ -1518,6 +1442,58 @@ $data['creat_by']=Auth::id();
 
 
 
+    
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+    
+
+        if(!empty($data['identifiants_sadge'])){
+        
+            $Sites->identifiants_sadge = $data['identifiants_sadge'];
+        
+        }
+
+
+
+    
+
+
+
+
+
+
+
+    
+
+        if(!empty($data['creat_by'])){
+        
+            $Sites->creat_by = $data['creat_by'];
+        
+        }
+
+
+
+    
+
+
+
+
+
+
+
 
 
 
@@ -1573,12 +1549,12 @@ $newCrudData=[];
                 $newCrudData['NbrsJours']=$Sites->NbrsJours;
                 $newCrudData['NbrsNuits']=$Sites->NbrsNuits;
                 $newCrudData['type']=$Sites->type;
-                        $newCrudData['identifiants_sadge']=$Sites->identifiants_sadge;
-                $newCrudData['creat_by']=$Sites->creat_by;
                 $newCrudData['pastille']=$Sites->pastille;
                 $newCrudData['typessite_id']=$Sites->typessite_id;
                 $newCrudData['date_debut']=$Sites->date_debut;
                 $newCrudData['date_fin']=$Sites->date_fin;
+                        $newCrudData['identifiants_sadge']=$Sites->identifiants_sadge;
+                $newCrudData['creat_by']=$Sites->creat_by;
     
  try{ $newCrudData['client']=$Sites->client->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['pointeuse']=$Sites->pointeuse->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['typessite']=$Sites->typessite->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['zone']=$Sites->zone->Selectlabel; }catch(\Throwable $e){}  
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Create", 'entite' => 'Sites','entite_cle' => $Sites->id, 'ancien' => json_encode($newCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);
@@ -1636,12 +1612,12 @@ $oldCrudData=[];
                 $oldCrudData['NbrsJours']=$Sites->NbrsJours;
                 $oldCrudData['NbrsNuits']=$Sites->NbrsNuits;
                 $oldCrudData['type']=$Sites->type;
-                        $oldCrudData['identifiants_sadge']=$Sites->identifiants_sadge;
-                $oldCrudData['creat_by']=$Sites->creat_by;
                 $oldCrudData['pastille']=$Sites->pastille;
                 $oldCrudData['typessite_id']=$Sites->typessite_id;
                 $oldCrudData['date_debut']=$Sites->date_debut;
                 $oldCrudData['date_fin']=$Sites->date_fin;
+                        $oldCrudData['identifiants_sadge']=$Sites->identifiants_sadge;
+                $oldCrudData['creat_by']=$Sites->creat_by;
     
  try{ $oldCrudData['client']=$Sites->client->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['pointeuse']=$Sites->pointeuse->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['typessite']=$Sites->typessite->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['zone']=$Sites->zone->Selectlabel; }catch(\Throwable $e){}  
 
@@ -1665,14 +1641,14 @@ $champsRechercher=[
     'NbrsJours',
     'NbrsNuits',
     'type',
-    'extra_attributes',
-    'deleted_at',
-    'identifiants_sadge',
-    'creat_by',
     'pastille',
     'typessite_id',
     'date_debut',
     'date_fin',
+    'extra_attributes',
+    'deleted_at',
+    'identifiants_sadge',
+    'creat_by',
 ];
 $envoyer=[];
 foreach($data as $key=>$d){
@@ -1729,20 +1705,6 @@ Validator::make($data, [
         
     
     
-    
-    
-                    'identifiants_sadge' => [
-            //'required'
-            ],
-        
-    
-    
-                    'creat_by' => [
-            //'required'
-            ],
-        
-    
-    
                     'pastille' => [
             //'required'
             ],
@@ -1762,6 +1724,20 @@ Validator::make($data, [
     
     
                     'date_fin' => [
+            //'required'
+            ],
+        
+    
+    
+    
+    
+                    'identifiants_sadge' => [
+            //'required'
+            ],
+        
+    
+    
+                    'creat_by' => [
             //'required'
             ],
         
@@ -1802,16 +1778,6 @@ Validator::make($data, [
 
     
     
-    
-    
-        'identifiants_sadge' => ['cette donnee est obligatoire'],
-
-    
-    
-        'creat_by' => ['cette donnee est obligatoire'],
-
-    
-    
         'pastille' => ['cette donnee est obligatoire'],
 
     
@@ -1825,6 +1791,16 @@ Validator::make($data, [
     
     
         'date_fin' => ['cette donnee est obligatoire'],
+
+    
+    
+    
+    
+        'identifiants_sadge' => ['cette donnee est obligatoire'],
+
+    
+    
+        'creat_by' => ['cette donnee est obligatoire'],
 
     
 ])->validate();
@@ -2020,64 +1996,6 @@ $extra_data=array_diff($envoyer,$champsRechercher);
 
     
 
-
-
-
-
-
-
-    
-
-
-
-
-
-
-
-    
-
-        if(array_key_exists("identifiants_sadge",$data)){
-
-
-        if(!empty($data['identifiants_sadge'])){
-        
-            $Sites->identifiants_sadge = $data['identifiants_sadge'];
-        
-        }
-
-        }
-
-    
-
-
-
-
-
-
-
-    
-
-        if(array_key_exists("creat_by",$data)){
-
-
-        if(!empty($data['creat_by'])){
-        
-            $Sites->creat_by = $data['creat_by'];
-        
-        }
-
-        }
-
-    
-
-
-
-
-
-
-
-    
-
         if(array_key_exists("pastille",$data)){
 
 
@@ -2160,6 +2078,64 @@ $extra_data=array_diff($envoyer,$champsRechercher);
 
 
 
+    
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+    
+
+        if(array_key_exists("identifiants_sadge",$data)){
+
+
+        if(!empty($data['identifiants_sadge'])){
+        
+            $Sites->identifiants_sadge = $data['identifiants_sadge'];
+        
+        }
+
+        }
+
+    
+
+
+
+
+
+
+
+    
+
+        if(array_key_exists("creat_by",$data)){
+
+
+        if(!empty($data['creat_by'])){
+        
+            $Sites->creat_by = $data['creat_by'];
+        
+        }
+
+        }
+
+    
+
+
+
+
+
+
+
 
 
 
@@ -2222,12 +2198,12 @@ $newCrudData=[];
                 $newCrudData['NbrsJours']=$Sites->NbrsJours;
                 $newCrudData['NbrsNuits']=$Sites->NbrsNuits;
                 $newCrudData['type']=$Sites->type;
-                        $newCrudData['identifiants_sadge']=$Sites->identifiants_sadge;
-                $newCrudData['creat_by']=$Sites->creat_by;
                 $newCrudData['pastille']=$Sites->pastille;
                 $newCrudData['typessite_id']=$Sites->typessite_id;
                 $newCrudData['date_debut']=$Sites->date_debut;
                 $newCrudData['date_fin']=$Sites->date_fin;
+                        $newCrudData['identifiants_sadge']=$Sites->identifiants_sadge;
+                $newCrudData['creat_by']=$Sites->creat_by;
     
  try{ $newCrudData['client']=$Sites->client->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['pointeuse']=$Sites->pointeuse->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['typessite']=$Sites->typessite->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['zone']=$Sites->zone->Selectlabel; }catch(\Throwable $e){}  
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Update", 'entite' => 'Sites','entite_cle' => $Sites->id, 'ancien' => json_encode($oldCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);
@@ -2280,12 +2256,12 @@ $newCrudData=[];
                 $newCrudData['NbrsJours']=$Sites->NbrsJours;
                 $newCrudData['NbrsNuits']=$Sites->NbrsNuits;
                 $newCrudData['type']=$Sites->type;
-                        $newCrudData['identifiants_sadge']=$Sites->identifiants_sadge;
-                $newCrudData['creat_by']=$Sites->creat_by;
                 $newCrudData['pastille']=$Sites->pastille;
                 $newCrudData['typessite_id']=$Sites->typessite_id;
                 $newCrudData['date_debut']=$Sites->date_debut;
                 $newCrudData['date_fin']=$Sites->date_fin;
+                        $newCrudData['identifiants_sadge']=$Sites->identifiants_sadge;
+                $newCrudData['creat_by']=$Sites->creat_by;
     
  try{ $newCrudData['client']=$Sites->client->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['pointeuse']=$Sites->pointeuse->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['typessite']=$Sites->typessite->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['zone']=$Sites->zone->Selectlabel; }catch(\Throwable $e){}  
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Delete", 'entite' => 'Sites','entite_cle' => $Sites->id, 'ancien' => json_encode($newCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);

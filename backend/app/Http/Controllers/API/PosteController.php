@@ -221,14 +221,6 @@ $data = QueryBuilder::for(Poste::class)
             AllowedFilter::exact('type'),
 
     
-    
-    
-            AllowedFilter::exact('identifiants_sadge'),
-
-    
-            AllowedFilter::exact('creat_by'),
-
-    
             AllowedFilter::exact('typeagents'),
 
     
@@ -236,6 +228,14 @@ $data = QueryBuilder::for(Poste::class)
 
     
             AllowedFilter::exact('postesarticle_id'),
+
+    
+    
+    
+            AllowedFilter::exact('identifiants_sadge'),
+
+    
+            AllowedFilter::exact('creat_by'),
 
     
 AllowedFilter::callback('not_null', function (Builder $query, $value) {
@@ -389,14 +389,6 @@ return $query;
             AllowedSort::field('type'),
 
     
-    
-    
-            AllowedSort::field('identifiants_sadge'),
-
-    
-            AllowedSort::field('creat_by'),
-
-    
             AllowedSort::field('typeagents'),
 
     
@@ -406,22 +398,21 @@ return $query;
             AllowedSort::field('postesarticle_id'),
 
     
+    
+    
+            AllowedSort::field('identifiants_sadge'),
+
+    
+            AllowedSort::field('creat_by'),
+
+    
 ])
     
     
     
     
 ->allowedIncludes([
-            'contratspostes',
-        
-
-                'horaires',
-        
-
-                'listings',
-        
-
-                'postesagents',
+            'horaires',
         
 
                 'postespointeuses',
@@ -430,13 +421,7 @@ return $query;
                 'programmations',
         
 
-                'programmationsrondes',
-        
-
                 'programmes',
-        
-
-                'programmesrondes',
         
 
                 'rapportpostes',
@@ -446,9 +431,6 @@ return $query;
         
 
                 'transactions',
-        
-
-                'transactionspostessynthesesvacations',
         
 
                 'users',
@@ -787,14 +769,6 @@ $data = QueryBuilder::for(Poste::class)
             AllowedFilter::exact('type'),
 
     
-    
-    
-            AllowedFilter::exact('identifiants_sadge'),
-
-    
-            AllowedFilter::exact('creat_by'),
-
-    
             AllowedFilter::exact('typeagents'),
 
     
@@ -802,6 +776,14 @@ $data = QueryBuilder::for(Poste::class)
 
     
             AllowedFilter::exact('postesarticle_id'),
+
+    
+    
+    
+            AllowedFilter::exact('identifiants_sadge'),
+
+    
+            AllowedFilter::exact('creat_by'),
 
     
 AllowedFilter::callback('not_null', function (Builder $query, $value) {
@@ -955,14 +937,6 @@ return $query;
             AllowedSort::field('type'),
 
     
-    
-    
-            AllowedSort::field('identifiants_sadge'),
-
-    
-            AllowedSort::field('creat_by'),
-
-    
             AllowedSort::field('typeagents'),
 
     
@@ -972,22 +946,21 @@ return $query;
             AllowedSort::field('postesarticle_id'),
 
     
+    
+    
+            AllowedSort::field('identifiants_sadge'),
+
+    
+            AllowedSort::field('creat_by'),
+
+    
 ])
     
     
     
     
 ->allowedIncludes([
-            'contratspostes',
-        
-
-                'horaires',
-        
-
-                'listings',
-        
-
-                'postesagents',
+            'horaires',
         
 
                 'postespointeuses',
@@ -996,13 +969,7 @@ return $query;
                 'programmations',
         
 
-                'programmationsrondes',
-        
-
                 'programmes',
-        
-
-                'programmesrondes',
         
 
                 'rapportpostes',
@@ -1012,9 +979,6 @@ return $query;
         
 
                 'transactions',
-        
-
-                'transactionspostessynthesesvacations',
         
 
                 'users',
@@ -1331,13 +1295,13 @@ $champsRechercher=[
     'couvertAgentjour',
     'couvertAgentnuit',
     'type',
+    'typeagents',
+    'typesposte_id',
+    'postesarticle_id',
     'extra_attributes',
     'deleted_at',
     'identifiants_sadge',
     'creat_by',
-    'typeagents',
-    'typesposte_id',
-    'postesarticle_id',
 ];
 $envoyer=[];
 foreach($data as $key=>$d){
@@ -1460,20 +1424,6 @@ Validator::make($data, [
         
     
     
-    
-    
-                    'identifiants_sadge' => [
-            //'required'
-            ],
-        
-    
-    
-                    'creat_by' => [
-            //'required'
-            ],
-        
-    
-    
                     'typeagents' => [
             //'required'
             ],
@@ -1487,6 +1437,20 @@ Validator::make($data, [
     
     
                     'postesarticle_id' => [
+            //'required'
+            ],
+        
+    
+    
+    
+    
+                    'identifiants_sadge' => [
+            //'required'
+            ],
+        
+    
+    
+                    'creat_by' => [
             //'required'
             ],
         
@@ -1571,16 +1535,6 @@ Validator::make($data, [
 
     
     
-    
-    
-        'identifiants_sadge' => ['cette donnee est obligatoire'],
-
-    
-    
-        'creat_by' => ['cette donnee est obligatoire'],
-
-    
-    
         'typeagents' => ['cette donnee est obligatoire'],
 
     
@@ -1590,6 +1544,16 @@ Validator::make($data, [
     
     
         'postesarticle_id' => ['cette donnee est obligatoire'],
+
+    
+    
+    
+    
+        'identifiants_sadge' => ['cette donnee est obligatoire'],
+
+    
+    
+        'creat_by' => ['cette donnee est obligatoire'],
 
     
 ])->validate();
@@ -1964,58 +1928,6 @@ $data['creat_by']=Auth::id();
 
     
 
-
-
-
-
-
-
-    
-
-
-
-
-
-
-
-    
-
-        if(!empty($data['identifiants_sadge'])){
-        
-            $Postes->identifiants_sadge = $data['identifiants_sadge'];
-        
-        }
-
-
-
-    
-
-
-
-
-
-
-
-    
-
-        if(!empty($data['creat_by'])){
-        
-            $Postes->creat_by = $data['creat_by'];
-        
-        }
-
-
-
-    
-
-
-
-
-
-
-
-    
-
         if(!empty($data['typeagents'])){
         
             $Postes->typeagents = $data['typeagents'];
@@ -2055,6 +1967,58 @@ $data['creat_by']=Auth::id();
         if(!empty($data['postesarticle_id'])){
         
             $Postes->postesarticle_id = $data['postesarticle_id'];
+        
+        }
+
+
+
+    
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+    
+
+        if(!empty($data['identifiants_sadge'])){
+        
+            $Postes->identifiants_sadge = $data['identifiants_sadge'];
+        
+        }
+
+
+
+    
+
+
+
+
+
+
+
+    
+
+        if(!empty($data['creat_by'])){
+        
+            $Postes->creat_by = $data['creat_by'];
         
         }
 
@@ -2134,11 +2098,11 @@ $newCrudData=[];
                 $newCrudData['couvertAgentjour']=$Postes->couvertAgentjour;
                 $newCrudData['couvertAgentnuit']=$Postes->couvertAgentnuit;
                 $newCrudData['type']=$Postes->type;
-                        $newCrudData['identifiants_sadge']=$Postes->identifiants_sadge;
-                $newCrudData['creat_by']=$Postes->creat_by;
                 $newCrudData['typeagents']=$Postes->typeagents;
                 $newCrudData['typesposte_id']=$Postes->typesposte_id;
                 $newCrudData['postesarticle_id']=$Postes->postesarticle_id;
+                        $newCrudData['identifiants_sadge']=$Postes->identifiants_sadge;
+                $newCrudData['creat_by']=$Postes->creat_by;
     
  try{ $newCrudData['contratsclient']=$Postes->contratsclient->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['postesarticle']=$Postes->postesarticle->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['site']=$Postes->site->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['typesposte']=$Postes->typesposte->Selectlabel; }catch(\Throwable $e){}  
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Create", 'entite' => 'Postes','entite_cle' => $Postes->id, 'ancien' => json_encode($newCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);
@@ -2207,11 +2171,11 @@ $oldCrudData=[];
                 $oldCrudData['couvertAgentjour']=$Postes->couvertAgentjour;
                 $oldCrudData['couvertAgentnuit']=$Postes->couvertAgentnuit;
                 $oldCrudData['type']=$Postes->type;
-                        $oldCrudData['identifiants_sadge']=$Postes->identifiants_sadge;
-                $oldCrudData['creat_by']=$Postes->creat_by;
                 $oldCrudData['typeagents']=$Postes->typeagents;
                 $oldCrudData['typesposte_id']=$Postes->typesposte_id;
                 $oldCrudData['postesarticle_id']=$Postes->postesarticle_id;
+                        $oldCrudData['identifiants_sadge']=$Postes->identifiants_sadge;
+                $oldCrudData['creat_by']=$Postes->creat_by;
     
  try{ $oldCrudData['contratsclient']=$Postes->contratsclient->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['postesarticle']=$Postes->postesarticle->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['site']=$Postes->site->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['typesposte']=$Postes->typesposte->Selectlabel; }catch(\Throwable $e){}  
 
@@ -2246,13 +2210,13 @@ $champsRechercher=[
     'couvertAgentjour',
     'couvertAgentnuit',
     'type',
+    'typeagents',
+    'typesposte_id',
+    'postesarticle_id',
     'extra_attributes',
     'deleted_at',
     'identifiants_sadge',
     'creat_by',
-    'typeagents',
-    'typesposte_id',
-    'postesarticle_id',
 ];
 $envoyer=[];
 foreach($data as $key=>$d){
@@ -2375,20 +2339,6 @@ Validator::make($data, [
         
     
     
-    
-    
-                    'identifiants_sadge' => [
-            //'required'
-            ],
-        
-    
-    
-                    'creat_by' => [
-            //'required'
-            ],
-        
-    
-    
                     'typeagents' => [
             //'required'
             ],
@@ -2402,6 +2352,20 @@ Validator::make($data, [
     
     
                     'postesarticle_id' => [
+            //'required'
+            ],
+        
+    
+    
+    
+    
+                    'identifiants_sadge' => [
+            //'required'
+            ],
+        
+    
+    
+                    'creat_by' => [
             //'required'
             ],
         
@@ -2486,16 +2450,6 @@ Validator::make($data, [
 
     
     
-    
-    
-        'identifiants_sadge' => ['cette donnee est obligatoire'],
-
-    
-    
-        'creat_by' => ['cette donnee est obligatoire'],
-
-    
-    
         'typeagents' => ['cette donnee est obligatoire'],
 
     
@@ -2505,6 +2459,16 @@ Validator::make($data, [
     
     
         'postesarticle_id' => ['cette donnee est obligatoire'],
+
+    
+    
+    
+    
+        'identifiants_sadge' => ['cette donnee est obligatoire'],
+
+    
+    
+        'creat_by' => ['cette donnee est obligatoire'],
 
     
 ])->validate();
@@ -2931,64 +2895,6 @@ $extra_data=array_diff($envoyer,$champsRechercher);
 
     
 
-
-
-
-
-
-
-    
-
-
-
-
-
-
-
-    
-
-        if(array_key_exists("identifiants_sadge",$data)){
-
-
-        if(!empty($data['identifiants_sadge'])){
-        
-            $Postes->identifiants_sadge = $data['identifiants_sadge'];
-        
-        }
-
-        }
-
-    
-
-
-
-
-
-
-
-    
-
-        if(array_key_exists("creat_by",$data)){
-
-
-        if(!empty($data['creat_by'])){
-        
-            $Postes->creat_by = $data['creat_by'];
-        
-        }
-
-        }
-
-    
-
-
-
-
-
-
-
-    
-
         if(array_key_exists("typeagents",$data)){
 
 
@@ -3037,6 +2943,64 @@ $extra_data=array_diff($envoyer,$champsRechercher);
         if(!empty($data['postesarticle_id'])){
         
             $Postes->postesarticle_id = $data['postesarticle_id'];
+        
+        }
+
+        }
+
+    
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+    
+
+        if(array_key_exists("identifiants_sadge",$data)){
+
+
+        if(!empty($data['identifiants_sadge'])){
+        
+            $Postes->identifiants_sadge = $data['identifiants_sadge'];
+        
+        }
+
+        }
+
+    
+
+
+
+
+
+
+
+    
+
+        if(array_key_exists("creat_by",$data)){
+
+
+        if(!empty($data['creat_by'])){
+        
+            $Postes->creat_by = $data['creat_by'];
         
         }
 
@@ -3123,11 +3087,11 @@ $newCrudData=[];
                 $newCrudData['couvertAgentjour']=$Postes->couvertAgentjour;
                 $newCrudData['couvertAgentnuit']=$Postes->couvertAgentnuit;
                 $newCrudData['type']=$Postes->type;
-                        $newCrudData['identifiants_sadge']=$Postes->identifiants_sadge;
-                $newCrudData['creat_by']=$Postes->creat_by;
                 $newCrudData['typeagents']=$Postes->typeagents;
                 $newCrudData['typesposte_id']=$Postes->typesposte_id;
                 $newCrudData['postesarticle_id']=$Postes->postesarticle_id;
+                        $newCrudData['identifiants_sadge']=$Postes->identifiants_sadge;
+                $newCrudData['creat_by']=$Postes->creat_by;
     
  try{ $newCrudData['contratsclient']=$Postes->contratsclient->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['postesarticle']=$Postes->postesarticle->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['site']=$Postes->site->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['typesposte']=$Postes->typesposte->Selectlabel; }catch(\Throwable $e){}  
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Update", 'entite' => 'Postes','entite_cle' => $Postes->id, 'ancien' => json_encode($oldCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);
@@ -3191,11 +3155,11 @@ $newCrudData=[];
                 $newCrudData['couvertAgentjour']=$Postes->couvertAgentjour;
                 $newCrudData['couvertAgentnuit']=$Postes->couvertAgentnuit;
                 $newCrudData['type']=$Postes->type;
-                        $newCrudData['identifiants_sadge']=$Postes->identifiants_sadge;
-                $newCrudData['creat_by']=$Postes->creat_by;
                 $newCrudData['typeagents']=$Postes->typeagents;
                 $newCrudData['typesposte_id']=$Postes->typesposte_id;
                 $newCrudData['postesarticle_id']=$Postes->postesarticle_id;
+                        $newCrudData['identifiants_sadge']=$Postes->identifiants_sadge;
+                $newCrudData['creat_by']=$Postes->creat_by;
     
  try{ $newCrudData['contratsclient']=$Postes->contratsclient->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['postesarticle']=$Postes->postesarticle->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['site']=$Postes->site->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['typesposte']=$Postes->typesposte->Selectlabel; }catch(\Throwable $e){}  
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Delete", 'entite' => 'Postes','entite_cle' => $Postes->id, 'ancien' => json_encode($newCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);

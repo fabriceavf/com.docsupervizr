@@ -298,10 +298,7 @@ return $query;
 ])
     
 ->allowedIncludes([
-            'listings',
-        
-
-                'rapports',
+            'rapports',
         
 
                 'users',
@@ -582,10 +579,7 @@ return $query;
 ])
     
 ->allowedIncludes([
-            'listings',
-        
-
-                'rapports',
+            'rapports',
         
 
                 'users',

@@ -182,6 +182,9 @@ $data = QueryBuilder::for(Sitessdeplacement::class)
             AllowedFilter::exact('date'),
 
     
+            AllowedFilter::exact('identifiants_sadge'),
+
+    
 AllowedFilter::callback('not_null', function (Builder $query, $value) {
 //                    dump($value);
 
@@ -296,6 +299,9 @@ return $query;
             AllowedSort::field('date'),
 
     
+            AllowedSort::field('identifiants_sadge'),
+
+    
 ])
     
     
@@ -315,6 +321,13 @@ $data=$data->paginate(isset($_REQUEST["limit"]) ? max(0, intval($_REQUEST["limit
 $data=$data->get();
 }
 $donnees=$data->toArray();
+
+
+    
+
+
+
+
 
 
     
@@ -461,6 +474,9 @@ $data = QueryBuilder::for(Sitessdeplacement::class)
             AllowedFilter::exact('date'),
 
     
+            AllowedFilter::exact('identifiants_sadge'),
+
+    
 AllowedFilter::callback('not_null', function (Builder $query, $value) {
 //                    dump($value);
 
@@ -575,6 +591,9 @@ return $query;
             AllowedSort::field('date'),
 
     
+            AllowedSort::field('identifiants_sadge'),
+
+    
 ])
     
     
@@ -597,6 +616,13 @@ $data=$data->paginate(isset($_REQUEST["limit"]) ? max(0, intval($_REQUEST["limit
 $data=$data->get();
 }
 $donnees=$data->toArray();
+
+
+
+
+
+    
+
 
 
 
@@ -744,6 +770,7 @@ $champsRechercher=[
     'updated_at',
     'deleted_at',
     'date',
+    'identifiants_sadge',
 ];
 $envoyer=[];
 foreach($data as $key=>$d){
@@ -789,6 +816,12 @@ Validator::make($data, [
             ],
         
     
+    
+                    'identifiants_sadge' => [
+            //'required'
+            ],
+        
+    
 
 
 ], $messages = [
@@ -816,6 +849,10 @@ Validator::make($data, [
     
     
         'date' => ['cette donnee est obligatoire'],
+
+    
+    
+        'identifiants_sadge' => ['cette donnee est obligatoire'],
 
     
 ])->validate();
@@ -970,6 +1007,24 @@ $data['creat_by']=Auth::id();
 
 
 
+    
+
+        if(!empty($data['identifiants_sadge'])){
+        
+            $Sitessdeplacements->identifiants_sadge = $data['identifiants_sadge'];
+        
+        }
+
+
+
+    
+
+
+
+
+
+
+
 
 
 
@@ -1023,6 +1078,7 @@ $newCrudData=[];
                 $newCrudData['durees']=$Sitessdeplacements->durees;
                 $newCrudData['creat_by']=$Sitessdeplacements->creat_by;
                                 $newCrudData['date']=$Sitessdeplacements->date;
+                $newCrudData['identifiants_sadge']=$Sitessdeplacements->identifiants_sadge;
     
  try{ $newCrudData['deplacement']=$Sitessdeplacements->deplacement->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['site']=$Sitessdeplacements->site->Selectlabel; }catch(\Throwable $e){}  
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Create", 'entite' => 'Sitessdeplacements','entite_cle' => $Sitessdeplacements->id, 'ancien' => json_encode($newCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);
@@ -1078,6 +1134,7 @@ $oldCrudData=[];
                 $oldCrudData['durees']=$Sitessdeplacements->durees;
                 $oldCrudData['creat_by']=$Sitessdeplacements->creat_by;
                                 $oldCrudData['date']=$Sitessdeplacements->date;
+                $oldCrudData['identifiants_sadge']=$Sitessdeplacements->identifiants_sadge;
     
  try{ $oldCrudData['deplacement']=$Sitessdeplacements->deplacement->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['site']=$Sitessdeplacements->site->Selectlabel; }catch(\Throwable $e){}  
 
@@ -1101,6 +1158,7 @@ $champsRechercher=[
     'updated_at',
     'deleted_at',
     'date',
+    'identifiants_sadge',
 ];
 $envoyer=[];
 foreach($data as $key=>$d){
@@ -1146,6 +1204,12 @@ Validator::make($data, [
             ],
         
     
+    
+                    'identifiants_sadge' => [
+            //'required'
+            ],
+        
+    
 
 
 ], $messages = [
@@ -1173,6 +1237,10 @@ Validator::make($data, [
     
     
         'date' => ['cette donnee est obligatoire'],
+
+    
+    
+        'identifiants_sadge' => ['cette donnee est obligatoire'],
 
     
 ])->validate();
@@ -1340,6 +1408,27 @@ $extra_data=array_diff($envoyer,$champsRechercher);
 
 
 
+    
+
+        if(array_key_exists("identifiants_sadge",$data)){
+
+
+        if(!empty($data['identifiants_sadge'])){
+        
+            $Sitessdeplacements->identifiants_sadge = $data['identifiants_sadge'];
+        
+        }
+
+        }
+
+    
+
+
+
+
+
+
+
 
 
 
@@ -1400,6 +1489,7 @@ $newCrudData=[];
                 $newCrudData['durees']=$Sitessdeplacements->durees;
                 $newCrudData['creat_by']=$Sitessdeplacements->creat_by;
                                 $newCrudData['date']=$Sitessdeplacements->date;
+                $newCrudData['identifiants_sadge']=$Sitessdeplacements->identifiants_sadge;
     
  try{ $newCrudData['deplacement']=$Sitessdeplacements->deplacement->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['site']=$Sitessdeplacements->site->Selectlabel; }catch(\Throwable $e){}  
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Update", 'entite' => 'Sitessdeplacements','entite_cle' => $Sitessdeplacements->id, 'ancien' => json_encode($oldCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);
@@ -1450,6 +1540,7 @@ $newCrudData=[];
                 $newCrudData['durees']=$Sitessdeplacements->durees;
                 $newCrudData['creat_by']=$Sitessdeplacements->creat_by;
                                 $newCrudData['date']=$Sitessdeplacements->date;
+                $newCrudData['identifiants_sadge']=$Sitessdeplacements->identifiants_sadge;
     
  try{ $newCrudData['deplacement']=$Sitessdeplacements->deplacement->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['site']=$Sitessdeplacements->site->Selectlabel; }catch(\Throwable $e){}  
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Delete", 'entite' => 'Sitessdeplacements','entite_cle' => $Sitessdeplacements->id, 'ancien' => json_encode($newCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);

@@ -1,4 +1,4 @@
-<?php
+<?php 
 namespace App\Http\Controllers\WEB;
 
 use Illuminate\Database\Schema\Blueprint;
@@ -160,79 +160,73 @@ $categories_disposition->disposition=$request->get('disposition');
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -252,9 +246,6 @@ $pageConfig = [
 
 
 $vue = view('/content/Categories.categories_component', ['pageConfigs' => $pageConfig, 'menu' => $this->menu,'categories_disposition'=>$categories_disposition,'preselect'=>$new,'options'=>$donnees??[],'options'=>$donnees??[],
-
-    'listings_disposition'=>$listings_disposition,
-
 
     'users_disposition'=>$users_disposition,
 
@@ -300,12 +291,6 @@ $categories_disposition->disposition=$request->get('disposition');
 
 
 
-
-
-
-
-
-
 $pageConfig = [
  'mainLayoutType' => 'vertical',
 'type' => 'admin',
@@ -319,81 +304,78 @@ $pageConfig = [
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
 
 $vue = view('/content/Categories.Categories', ['pageConfigs' => $pageConfig, 'menu' => $this->menu,'categories_disposition'=>$categories_disposition,'preselect'=>$new,'options'=>$donnees??[],
-
-    'listings_disposition'=>$listings_disposition,
-
 
     'users_disposition'=>$users_disposition,
 
@@ -425,15 +407,7 @@ $categories_disposition->disposition=$request->get('disposition');
 
 
 
-
-
-
-
-
-
-
-
-
+    
 $params=collect($request->all());
 $params=$params->filter(function ($value, $key) {
 //            dd($key);
@@ -465,73 +439,73 @@ abort(401);
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -544,9 +518,6 @@ $vue = view('/content/Categories.categories_one', [
 'Categories' => $Categories,
 'categories_disposition'=>$categories_disposition
 ,'preselect'=>$new,'options'=>$donnees??[],
-
-    'listings_disposition'=>$listings_disposition,
-
 
     'users_disposition'=>$users_disposition,
 
@@ -574,15 +545,7 @@ $categories_disposition->disposition=$request->get('disposition');
 
 
 
-
-
-
-
-
-
-
-
-
+    
 $params=collect($request->all());
 $params=$params->filter(function ($value, $key) {
 //            dd($key);
@@ -614,73 +577,73 @@ abort(401);
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -693,9 +656,6 @@ $vue = view('/content/Categories.categories_one_component', [
 'Categories' => $Categories,
 'categories_disposition'=>$categories_disposition
 ,'preselect'=>$new,'options'=>$donnees??[],
-
-    'listings_disposition'=>$listings_disposition,
-
 
     'users_disposition'=>$users_disposition,
 
@@ -734,15 +694,7 @@ $categories_disposition->disposition=$request->get('disposition');
 
 
 
-
-
-
-
-
-
-
-
-
+    
 $params=collect($request->all());
 $params=$params->filter(function ($value, $key) {
 //            dd($key);
@@ -777,9 +729,6 @@ $vue = view('/content/Categories.impression', [
 'Categories' => $Categories,
 'categories_disposition'=>$categories_disposition
 ,'preselect'=>$new,'options'=>$donnees??[],
-
-    'listings_disposition'=>$listings_disposition,
-
 
     'users_disposition'=>$users_disposition,
 

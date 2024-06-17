@@ -1,4 +1,4 @@
-<?php
+<?php 
 namespace App\Http\Controllers\WEB;
 
 use Illuminate\Database\Schema\Blueprint;
@@ -40,7 +40,7 @@ ini_set('max_execution_time', '300');
                 use App\Models\prod\Postesarticle;
                 use App\Models\prod\Site;
                 use App\Models\prod\Typesposte;
-
+    
 class PostesControllerWeb extends Controller
 {
 
@@ -212,261 +212,225 @@ $postes_disposition->disposition=$request->get('disposition');
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -487,16 +451,7 @@ $pageConfig = [
 
 $vue = view('/content/Postes.postes_component', ['pageConfigs' => $pageConfig, 'menu' => $this->menu,'postes_disposition'=>$postes_disposition,'preselect'=>$new,'options'=>$donnees??[],'options'=>$donnees??[],
 
-    'contratspostes_disposition'=>$contratspostes_disposition,
-
-
     'horaires_disposition'=>$horaires_disposition,
-
-
-    'listings_disposition'=>$listings_disposition,
-
-
-    'postesagents_disposition'=>$postesagents_disposition,
 
 
     'postespointeuses_disposition'=>$postespointeuses_disposition,
@@ -505,13 +460,7 @@ $vue = view('/content/Postes.postes_component', ['pageConfigs' => $pageConfig, '
     'programmations_disposition'=>$programmations_disposition,
 
 
-    'programmationsrondes_disposition'=>$programmationsrondes_disposition,
-
-
     'programmes_disposition'=>$programmes_disposition,
-
-
-    'programmesrondes_disposition'=>$programmesrondes_disposition,
 
 
     'rapportpostes_disposition'=>$rapportpostes_disposition,
@@ -521,9 +470,6 @@ $vue = view('/content/Postes.postes_component', ['pageConfigs' => $pageConfig, '
 
 
     'transactions_disposition'=>$transactions_disposition,
-
-
-    'transactionspostessynthesesvacations_disposition'=>$transactionspostessynthesesvacations_disposition,
 
 
     'users_disposition'=>$users_disposition,
@@ -621,42 +567,6 @@ $postes_disposition->disposition=$request->get('disposition');
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 $pageConfig = [
  'mainLayoutType' => 'vertical',
 'type' => 'admin',
@@ -670,241 +580,232 @@ $pageConfig = [
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
 
 $vue = view('/content/Postes.Postes', ['pageConfigs' => $pageConfig, 'menu' => $this->menu,'postes_disposition'=>$postes_disposition,'preselect'=>$new,'options'=>$donnees??[],
 
-    'contratspostes_disposition'=>$contratspostes_disposition,
-
-
     'horaires_disposition'=>$horaires_disposition,
-
-
-    'listings_disposition'=>$listings_disposition,
-
-
-    'postesagents_disposition'=>$postesagents_disposition,
 
 
     'postespointeuses_disposition'=>$postespointeuses_disposition,
@@ -913,13 +814,7 @@ $vue = view('/content/Postes.Postes', ['pageConfigs' => $pageConfig, 'menu' => $
     'programmations_disposition'=>$programmations_disposition,
 
 
-    'programmationsrondes_disposition'=>$programmationsrondes_disposition,
-
-
     'programmes_disposition'=>$programmes_disposition,
-
-
-    'programmesrondes_disposition'=>$programmesrondes_disposition,
 
 
     'rapportpostes_disposition'=>$rapportpostes_disposition,
@@ -929,9 +824,6 @@ $vue = view('/content/Postes.Postes', ['pageConfigs' => $pageConfig, 'menu' => $
 
 
     'transactions_disposition'=>$transactions_disposition,
-
-
-    'transactionspostessynthesesvacations_disposition'=>$transactionspostessynthesesvacations_disposition,
 
 
     'users_disposition'=>$users_disposition,
@@ -967,6 +859,7 @@ $postes_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -974,6 +867,7 @@ $postes_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -981,6 +875,7 @@ $postes_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -988,6 +883,7 @@ $postes_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -995,6 +891,7 @@ $postes_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1002,6 +899,7 @@ $postes_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1009,6 +907,7 @@ $postes_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1016,6 +915,7 @@ $postes_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1023,63 +923,7 @@ $postes_disposition->disposition=$request->get('disposition');
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 $params=collect($request->all());
 $params=$params->filter(function ($value, $key) {
 //            dd($key);
@@ -1111,225 +955,225 @@ abort(401);
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -1343,16 +1187,7 @@ $vue = view('/content/Postes.postes_one', [
 'postes_disposition'=>$postes_disposition
 ,'preselect'=>$new,'options'=>$donnees??[],
 
-    'contratspostes_disposition'=>$contratspostes_disposition,
-
-
     'horaires_disposition'=>$horaires_disposition,
-
-
-    'listings_disposition'=>$listings_disposition,
-
-
-    'postesagents_disposition'=>$postesagents_disposition,
 
 
     'postespointeuses_disposition'=>$postespointeuses_disposition,
@@ -1361,13 +1196,7 @@ $vue = view('/content/Postes.postes_one', [
     'programmations_disposition'=>$programmations_disposition,
 
 
-    'programmationsrondes_disposition'=>$programmationsrondes_disposition,
-
-
     'programmes_disposition'=>$programmes_disposition,
-
-
-    'programmesrondes_disposition'=>$programmesrondes_disposition,
 
 
     'rapportpostes_disposition'=>$rapportpostes_disposition,
@@ -1377,9 +1206,6 @@ $vue = view('/content/Postes.postes_one', [
 
 
     'transactions_disposition'=>$transactions_disposition,
-
-
-    'transactionspostessynthesesvacations_disposition'=>$transactionspostessynthesesvacations_disposition,
 
 
     'users_disposition'=>$users_disposition,
@@ -1411,6 +1237,7 @@ $postes_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1418,6 +1245,7 @@ $postes_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1425,6 +1253,7 @@ $postes_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1432,6 +1261,7 @@ $postes_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1439,6 +1269,7 @@ $postes_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1446,6 +1277,7 @@ $postes_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1453,6 +1285,7 @@ $postes_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1460,6 +1293,7 @@ $postes_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1467,63 +1301,7 @@ $postes_disposition->disposition=$request->get('disposition');
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 $params=collect($request->all());
 $params=$params->filter(function ($value, $key) {
 //            dd($key);
@@ -1555,225 +1333,225 @@ abort(401);
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -1787,16 +1565,7 @@ $vue = view('/content/Postes.postes_one_component', [
 'postes_disposition'=>$postes_disposition
 ,'preselect'=>$new,'options'=>$donnees??[],
 
-    'contratspostes_disposition'=>$contratspostes_disposition,
-
-
     'horaires_disposition'=>$horaires_disposition,
-
-
-    'listings_disposition'=>$listings_disposition,
-
-
-    'postesagents_disposition'=>$postesagents_disposition,
 
 
     'postespointeuses_disposition'=>$postespointeuses_disposition,
@@ -1805,13 +1574,7 @@ $vue = view('/content/Postes.postes_one_component', [
     'programmations_disposition'=>$programmations_disposition,
 
 
-    'programmationsrondes_disposition'=>$programmationsrondes_disposition,
-
-
     'programmes_disposition'=>$programmes_disposition,
-
-
-    'programmesrondes_disposition'=>$programmesrondes_disposition,
 
 
     'rapportpostes_disposition'=>$rapportpostes_disposition,
@@ -1821,9 +1584,6 @@ $vue = view('/content/Postes.postes_one_component', [
 
 
     'transactions_disposition'=>$transactions_disposition,
-
-
-    'transactionspostessynthesesvacations_disposition'=>$transactionspostessynthesesvacations_disposition,
 
 
     'users_disposition'=>$users_disposition,
@@ -1866,6 +1626,7 @@ $postes_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1873,6 +1634,7 @@ $postes_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1880,6 +1642,7 @@ $postes_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1887,6 +1650,7 @@ $postes_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1894,6 +1658,7 @@ $postes_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1901,6 +1666,7 @@ $postes_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1908,6 +1674,7 @@ $postes_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1915,6 +1682,7 @@ $postes_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1922,63 +1690,7 @@ $postes_disposition->disposition=$request->get('disposition');
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 $params=collect($request->all());
 $params=$params->filter(function ($value, $key) {
 //            dd($key);
@@ -2014,16 +1726,7 @@ $vue = view('/content/Postes.impression', [
 'postes_disposition'=>$postes_disposition
 ,'preselect'=>$new,'options'=>$donnees??[],
 
-    'contratspostes_disposition'=>$contratspostes_disposition,
-
-
     'horaires_disposition'=>$horaires_disposition,
-
-
-    'listings_disposition'=>$listings_disposition,
-
-
-    'postesagents_disposition'=>$postesagents_disposition,
 
 
     'postespointeuses_disposition'=>$postespointeuses_disposition,
@@ -2032,13 +1735,7 @@ $vue = view('/content/Postes.impression', [
     'programmations_disposition'=>$programmations_disposition,
 
 
-    'programmationsrondes_disposition'=>$programmationsrondes_disposition,
-
-
     'programmes_disposition'=>$programmes_disposition,
-
-
-    'programmesrondes_disposition'=>$programmesrondes_disposition,
 
 
     'rapportpostes_disposition'=>$rapportpostes_disposition,
@@ -2048,9 +1745,6 @@ $vue = view('/content/Postes.impression', [
 
 
     'transactions_disposition'=>$transactions_disposition,
-
-
-    'transactionspostessynthesesvacations_disposition'=>$transactionspostessynthesesvacations_disposition,
 
 
     'users_disposition'=>$users_disposition,

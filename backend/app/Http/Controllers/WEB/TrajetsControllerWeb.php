@@ -1,4 +1,4 @@
-<?php
+<?php 
 namespace App\Http\Controllers\WEB;
 
 use Illuminate\Database\Schema\Blueprint;
@@ -38,7 +38,7 @@ ini_set('max_execution_time', '300');
 
             use App\Models\prod\Ligne;
                 use App\Models\prod\Site;
-
+    
 class TrajetsControllerWeb extends Controller
 {
 
@@ -156,103 +156,97 @@ $trajets_disposition->disposition=$request->get('disposition');
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -272,9 +266,6 @@ $pageConfig = [
 
 
 $vue = view('/content/Trajets.trajets_component', ['pageConfigs' => $pageConfig, 'menu' => $this->menu,'trajets_disposition'=>$trajets_disposition,'preselect'=>$new,'options'=>$donnees??[],'options'=>$donnees??[],
-
-    'transporteurstrajets_disposition'=>$transporteurstrajets_disposition,
-
 ]);
 return response($vue, 200);
 }
@@ -311,12 +302,6 @@ $trajets_disposition->disposition=$request->get('disposition');
 
 
 
-
-
-
-
-
-
 $pageConfig = [
  'mainLayoutType' => 'vertical',
 'type' => 'admin',
@@ -330,105 +315,102 @@ $pageConfig = [
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
 
 $vue = view('/content/Trajets.Trajets', ['pageConfigs' => $pageConfig, 'menu' => $this->menu,'trajets_disposition'=>$trajets_disposition,'preselect'=>$new,'options'=>$donnees??[],
-
-    'transporteurstrajets_disposition'=>$transporteurstrajets_disposition,
-
 ]);
 return response($vue, 200);
 }
@@ -450,14 +432,6 @@ $trajets_disposition->disposition=$request->get('disposition');
 }
 
 
-
-
-
-
-
-
-
-
 $params=collect($request->all());
 $params=$params->filter(function ($value, $key) {
 //            dd($key);
@@ -489,97 +463,97 @@ abort(401);
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -592,9 +566,6 @@ $vue = view('/content/Trajets.trajets_one', [
 'Trajets' => $Trajets,
 'trajets_disposition'=>$trajets_disposition
 ,'preselect'=>$new,'options'=>$donnees??[],
-
-    'transporteurstrajets_disposition'=>$transporteurstrajets_disposition,
-
 ]);
 
 
@@ -612,14 +583,6 @@ $trajets_disposition->disposition=$request->get('disposition');
 }
 
 
-
-
-
-
-
-
-
-
 $params=collect($request->all());
 $params=$params->filter(function ($value, $key) {
 //            dd($key);
@@ -651,97 +614,97 @@ abort(401);
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -754,9 +717,6 @@ $vue = view('/content/Trajets.trajets_one_component', [
 'Trajets' => $Trajets,
 'trajets_disposition'=>$trajets_disposition
 ,'preselect'=>$new,'options'=>$donnees??[],
-
-    'transporteurstrajets_disposition'=>$transporteurstrajets_disposition,
-
 ]);
 
 
@@ -783,14 +743,6 @@ abort(401);
 if($request->has('disposition')){
 $trajets_disposition->disposition=$request->get('disposition');
 }
-
-
-
-
-
-
-
-
 
 
 $params=collect($request->all());
@@ -827,9 +779,6 @@ $vue = view('/content/Trajets.impression', [
 'Trajets' => $Trajets,
 'trajets_disposition'=>$trajets_disposition
 ,'preselect'=>$new,'options'=>$donnees??[],
-
-    'transporteurstrajets_disposition'=>$transporteurstrajets_disposition,
-
 ]);
 return response($vue, 200);
 

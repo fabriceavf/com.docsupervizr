@@ -1,4 +1,4 @@
-<?php
+<?php 
 namespace App\Http\Controllers\WEB;
 
 use Illuminate\Database\Schema\Blueprint;
@@ -160,95 +160,89 @@ $contrats_disposition->disposition=$request->get('disposition');
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -268,9 +262,6 @@ $pageConfig = [
 
 
 $vue = view('/content/Contrats.contrats_component', ['pageConfigs' => $pageConfig, 'menu' => $this->menu,'contrats_disposition'=>$contrats_disposition,'preselect'=>$new,'options'=>$donnees??[],'options'=>$donnees??[],
-
-    'listings_disposition'=>$listings_disposition,
-
 
     'users_disposition'=>$users_disposition,
 
@@ -316,12 +307,6 @@ $contrats_disposition->disposition=$request->get('disposition');
 
 
 
-
-
-
-
-
-
 $pageConfig = [
  'mainLayoutType' => 'vertical',
 'type' => 'admin',
@@ -335,97 +320,94 @@ $pageConfig = [
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
 
 $vue = view('/content/Contrats.Contrats', ['pageConfigs' => $pageConfig, 'menu' => $this->menu,'contrats_disposition'=>$contrats_disposition,'preselect'=>$new,'options'=>$donnees??[],
-
-    'listings_disposition'=>$listings_disposition,
-
 
     'users_disposition'=>$users_disposition,
 
@@ -457,15 +439,7 @@ $contrats_disposition->disposition=$request->get('disposition');
 
 
 
-
-
-
-
-
-
-
-
-
+    
 $params=collect($request->all());
 $params=$params->filter(function ($value, $key) {
 //            dd($key);
@@ -497,89 +471,89 @@ abort(401);
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -592,9 +566,6 @@ $vue = view('/content/Contrats.contrats_one', [
 'Contrats' => $Contrats,
 'contrats_disposition'=>$contrats_disposition
 ,'preselect'=>$new,'options'=>$donnees??[],
-
-    'listings_disposition'=>$listings_disposition,
-
 
     'users_disposition'=>$users_disposition,
 
@@ -622,15 +593,7 @@ $contrats_disposition->disposition=$request->get('disposition');
 
 
 
-
-
-
-
-
-
-
-
-
+    
 $params=collect($request->all());
 $params=$params->filter(function ($value, $key) {
 //            dd($key);
@@ -662,89 +625,89 @@ abort(401);
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -757,9 +720,6 @@ $vue = view('/content/Contrats.contrats_one_component', [
 'Contrats' => $Contrats,
 'contrats_disposition'=>$contrats_disposition
 ,'preselect'=>$new,'options'=>$donnees??[],
-
-    'listings_disposition'=>$listings_disposition,
-
 
     'users_disposition'=>$users_disposition,
 
@@ -798,15 +758,7 @@ $contrats_disposition->disposition=$request->get('disposition');
 
 
 
-
-
-
-
-
-
-
-
-
+    
 $params=collect($request->all());
 $params=$params->filter(function ($value, $key) {
 //            dd($key);
@@ -841,9 +793,6 @@ $vue = view('/content/Contrats.impression', [
 'Contrats' => $Contrats,
 'contrats_disposition'=>$contrats_disposition
 ,'preselect'=>$new,'options'=>$donnees??[],
-
-    'listings_disposition'=>$listings_disposition,
-
 
     'users_disposition'=>$users_disposition,
 

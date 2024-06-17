@@ -1,4 +1,4 @@
-<?php
+<?php 
 namespace App\Http\Controllers\WEB;
 
 use Illuminate\Database\Schema\Blueprint;
@@ -37,7 +37,7 @@ ini_set('memory_limit', '8192M');
 ini_set('max_execution_time', '300');
 
             use App\Models\prod\Service;
-
+    
 class FonctionsControllerWeb extends Controller
 {
 
@@ -167,87 +167,81 @@ $fonctions_disposition->disposition=$request->get('disposition');
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -267,9 +261,6 @@ $pageConfig = [
 
 
 $vue = view('/content/Fonctions.fonctions_component', ['pageConfigs' => $pageConfig, 'menu' => $this->menu,'fonctions_disposition'=>$fonctions_disposition,'preselect'=>$new,'options'=>$donnees??[],'options'=>$donnees??[],
-
-    'listings_disposition'=>$listings_disposition,
-
 
     'rapports_disposition'=>$rapports_disposition,
 
@@ -324,12 +315,6 @@ $fonctions_disposition->disposition=$request->get('disposition');
 
 
 
-
-
-
-
-
-
 $pageConfig = [
  'mainLayoutType' => 'vertical',
 'type' => 'admin',
@@ -343,89 +328,86 @@ $pageConfig = [
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
 
 $vue = view('/content/Fonctions.Fonctions', ['pageConfigs' => $pageConfig, 'menu' => $this->menu,'fonctions_disposition'=>$fonctions_disposition,'preselect'=>$new,'options'=>$donnees??[],
-
-    'listings_disposition'=>$listings_disposition,
-
 
     'rapports_disposition'=>$rapports_disposition,
 
@@ -460,6 +442,7 @@ $fonctions_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -467,16 +450,7 @@ $fonctions_disposition->disposition=$request->get('disposition');
 
 
 
-
-
-
-
-
-
-
-
-
-
+    
 $params=collect($request->all());
 $params=$params->filter(function ($value, $key) {
 //            dd($key);
@@ -508,81 +482,81 @@ abort(401);
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -595,9 +569,6 @@ $vue = view('/content/Fonctions.fonctions_one', [
 'Fonctions' => $Fonctions,
 'fonctions_disposition'=>$fonctions_disposition
 ,'preselect'=>$new,'options'=>$donnees??[],
-
-    'listings_disposition'=>$listings_disposition,
-
 
     'rapports_disposition'=>$rapports_disposition,
 
@@ -628,6 +599,7 @@ $fonctions_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -635,16 +607,7 @@ $fonctions_disposition->disposition=$request->get('disposition');
 
 
 
-
-
-
-
-
-
-
-
-
-
+    
 $params=collect($request->all());
 $params=$params->filter(function ($value, $key) {
 //            dd($key);
@@ -676,81 +639,81 @@ abort(401);
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -763,9 +726,6 @@ $vue = view('/content/Fonctions.fonctions_one_component', [
 'Fonctions' => $Fonctions,
 'fonctions_disposition'=>$fonctions_disposition
 ,'preselect'=>$new,'options'=>$donnees??[],
-
-    'listings_disposition'=>$listings_disposition,
-
 
     'rapports_disposition'=>$rapports_disposition,
 
@@ -807,6 +767,7 @@ $fonctions_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -814,16 +775,7 @@ $fonctions_disposition->disposition=$request->get('disposition');
 
 
 
-
-
-
-
-
-
-
-
-
-
+    
 $params=collect($request->all());
 $params=$params->filter(function ($value, $key) {
 //            dd($key);
@@ -858,9 +810,6 @@ $vue = view('/content/Fonctions.impression', [
 'Fonctions' => $Fonctions,
 'fonctions_disposition'=>$fonctions_disposition
 ,'preselect'=>$new,'options'=>$donnees??[],
-
-    'listings_disposition'=>$listings_disposition,
-
 
     'rapports_disposition'=>$rapports_disposition,
 

@@ -1,4 +1,4 @@
-<?php
+<?php 
 namespace App\Http\Controllers\WEB;
 
 use Illuminate\Database\Schema\Blueprint;
@@ -196,85 +196,73 @@ $villes_disposition->disposition=$request->get('disposition');
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -298,16 +286,10 @@ $vue = view('/content/Villes.villes_component', ['pageConfigs' => $pageConfig, '
     'lignes_disposition'=>$lignes_disposition,
 
 
-    'listings_disposition'=>$listings_disposition,
-
-
     'points_disposition'=>$points_disposition,
 
 
     'rapports_disposition'=>$rapports_disposition,
-
-
-    'taches_disposition'=>$taches_disposition,
 
 
     'transactions_disposition'=>$transactions_disposition,
@@ -399,18 +381,6 @@ $villes_disposition->disposition=$request->get('disposition');
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 $pageConfig = [
  'mainLayoutType' => 'vertical',
 'type' => 'admin',
@@ -424,73 +394,73 @@ $pageConfig = [
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -500,16 +470,10 @@ $vue = view('/content/Villes.Villes', ['pageConfigs' => $pageConfig, 'menu' => $
     'lignes_disposition'=>$lignes_disposition,
 
 
-    'listings_disposition'=>$listings_disposition,
-
-
     'points_disposition'=>$points_disposition,
 
 
     'rapports_disposition'=>$rapports_disposition,
-
-
-    'taches_disposition'=>$taches_disposition,
 
 
     'transactions_disposition'=>$transactions_disposition,
@@ -551,6 +515,7 @@ $villes_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -558,6 +523,7 @@ $villes_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -565,6 +531,7 @@ $villes_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -572,6 +539,7 @@ $villes_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -579,6 +547,7 @@ $villes_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -586,6 +555,7 @@ $villes_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -593,29 +563,7 @@ $villes_disposition->disposition=$request->get('disposition');
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 $params=collect($request->all());
 $params=$params->filter(function ($value, $key) {
 //            dd($key);
@@ -647,73 +595,73 @@ abort(401);
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -730,16 +678,10 @@ $vue = view('/content/Villes.villes_one', [
     'lignes_disposition'=>$lignes_disposition,
 
 
-    'listings_disposition'=>$listings_disposition,
-
-
     'points_disposition'=>$points_disposition,
 
 
     'rapports_disposition'=>$rapports_disposition,
-
-
-    'taches_disposition'=>$taches_disposition,
 
 
     'transactions_disposition'=>$transactions_disposition,
@@ -777,6 +719,7 @@ $villes_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -784,6 +727,7 @@ $villes_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -791,6 +735,7 @@ $villes_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -798,6 +743,7 @@ $villes_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -805,6 +751,7 @@ $villes_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -812,6 +759,7 @@ $villes_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -819,29 +767,7 @@ $villes_disposition->disposition=$request->get('disposition');
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 $params=collect($request->all());
 $params=$params->filter(function ($value, $key) {
 //            dd($key);
@@ -873,73 +799,73 @@ abort(401);
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -956,16 +882,10 @@ $vue = view('/content/Villes.villes_one_component', [
     'lignes_disposition'=>$lignes_disposition,
 
 
-    'listings_disposition'=>$listings_disposition,
-
-
     'points_disposition'=>$points_disposition,
 
 
     'rapports_disposition'=>$rapports_disposition,
-
-
-    'taches_disposition'=>$taches_disposition,
 
 
     'transactions_disposition'=>$transactions_disposition,
@@ -1014,6 +934,7 @@ $villes_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1021,6 +942,7 @@ $villes_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1028,6 +950,7 @@ $villes_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1035,6 +958,7 @@ $villes_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1042,6 +966,7 @@ $villes_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1049,6 +974,7 @@ $villes_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1056,29 +982,7 @@ $villes_disposition->disposition=$request->get('disposition');
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 $params=collect($request->all());
 $params=$params->filter(function ($value, $key) {
 //            dd($key);
@@ -1117,16 +1021,10 @@ $vue = view('/content/Villes.impression', [
     'lignes_disposition'=>$lignes_disposition,
 
 
-    'listings_disposition'=>$listings_disposition,
-
-
     'points_disposition'=>$points_disposition,
 
 
     'rapports_disposition'=>$rapports_disposition,
-
-
-    'taches_disposition'=>$taches_disposition,
 
 
     'transactions_disposition'=>$transactions_disposition,

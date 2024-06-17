@@ -201,6 +201,12 @@ $data = QueryBuilder::for(Surveillance::class)
     
     
     
+            AllowedFilter::exact('identifiants_sadge'),
+
+    
+            AllowedFilter::exact('creat_by'),
+
+    
 AllowedFilter::callback('not_null', function (Builder $query, $value) {
 //                    dump($value);
 
@@ -336,6 +342,12 @@ return $query;
     
     
     
+            AllowedSort::field('identifiants_sadge'),
+
+    
+            AllowedSort::field('creat_by'),
+
+    
 ])
     
 ->allowedIncludes([
@@ -351,6 +363,20 @@ $data=$data->paginate(isset($_REQUEST["limit"]) ? max(0, intval($_REQUEST["limit
 $data=$data->get();
 }
 $donnees=$data->toArray();
+
+
+    
+
+
+
+
+
+
+    
+
+
+
+
 
 
     
@@ -567,6 +593,12 @@ $data = QueryBuilder::for(Surveillance::class)
     
     
     
+            AllowedFilter::exact('identifiants_sadge'),
+
+    
+            AllowedFilter::exact('creat_by'),
+
+    
 AllowedFilter::callback('not_null', function (Builder $query, $value) {
 //                    dump($value);
 
@@ -702,6 +734,12 @@ return $query;
     
     
     
+            AllowedSort::field('identifiants_sadge'),
+
+    
+            AllowedSort::field('creat_by'),
+
+    
 ])
     
 ->allowedIncludes([
@@ -720,6 +758,20 @@ $data=$data->paginate(isset($_REQUEST["limit"]) ? max(0, intval($_REQUEST["limit
 $data=$data->get();
 }
 $donnees=$data->toArray();
+
+
+
+
+
+    
+
+
+
+
+
+
+    
+
 
 
 
@@ -923,6 +975,8 @@ $champsRechercher=[
     'updated_at',
     'deleted_at',
     'extra_attributes',
+    'identifiants_sadge',
+    'creat_by',
 ];
 $envoyer=[];
 foreach($data as $key=>$d){
@@ -1005,6 +1059,18 @@ Validator::make($data, [
     
     
     
+    
+                    'identifiants_sadge' => [
+            //'required'
+            ],
+        
+    
+    
+                    'creat_by' => [
+            //'required'
+            ],
+        
+    
 
 
 ], $messages = [
@@ -1058,6 +1124,14 @@ Validator::make($data, [
     
     
     
+    
+    
+        'identifiants_sadge' => ['cette donnee est obligatoire'],
+
+    
+    
+        'creat_by' => ['cette donnee est obligatoire'],
+
     
 ])->validate();
 
@@ -1337,6 +1411,42 @@ $data['creat_by']=Auth::id();
 
 
 
+    
+
+        if(!empty($data['identifiants_sadge'])){
+        
+            $Surveillances->identifiants_sadge = $data['identifiants_sadge'];
+        
+        }
+
+
+
+    
+
+
+
+
+
+
+
+    
+
+        if(!empty($data['creat_by'])){
+        
+            $Surveillances->creat_by = $data['creat_by'];
+        
+        }
+
+
+
+    
+
+
+
+
+
+
+
 
 
 
@@ -1397,7 +1507,9 @@ $newCrudData=[];
                 $newCrudData['pays']=$Surveillances->pays;
                 $newCrudData['ville']=$Surveillances->ville;
                 $newCrudData['id_base']=$Surveillances->id_base;
-                    
+                                $newCrudData['identifiants_sadge']=$Surveillances->identifiants_sadge;
+                $newCrudData['creat_by']=$Surveillances->creat_by;
+    
  try{ $newCrudData['user']=$Surveillances->user->Selectlabel; }catch(\Throwable $e){}  
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Create", 'entite' => 'Surveillances','entite_cle' => $Surveillances->id, 'ancien' => json_encode($newCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);
 
@@ -1459,7 +1571,9 @@ $oldCrudData=[];
                 $oldCrudData['pays']=$Surveillances->pays;
                 $oldCrudData['ville']=$Surveillances->ville;
                 $oldCrudData['id_base']=$Surveillances->id_base;
-                    
+                                $oldCrudData['identifiants_sadge']=$Surveillances->identifiants_sadge;
+                $oldCrudData['creat_by']=$Surveillances->creat_by;
+    
  try{ $oldCrudData['user']=$Surveillances->user->Selectlabel; }catch(\Throwable $e){}  
 
 $data=$request->all();
@@ -1489,6 +1603,8 @@ $champsRechercher=[
     'updated_at',
     'deleted_at',
     'extra_attributes',
+    'identifiants_sadge',
+    'creat_by',
 ];
 $envoyer=[];
 foreach($data as $key=>$d){
@@ -1571,6 +1687,18 @@ Validator::make($data, [
     
     
     
+    
+                    'identifiants_sadge' => [
+            //'required'
+            ],
+        
+    
+    
+                    'creat_by' => [
+            //'required'
+            ],
+        
+    
 
 
 ], $messages = [
@@ -1624,6 +1752,14 @@ Validator::make($data, [
     
     
     
+    
+    
+        'identifiants_sadge' => ['cette donnee est obligatoire'],
+
+    
+    
+        'creat_by' => ['cette donnee est obligatoire'],
+
     
 ])->validate();
 
@@ -1937,6 +2073,48 @@ $extra_data=array_diff($envoyer,$champsRechercher);
 
 
 
+    
+
+        if(array_key_exists("identifiants_sadge",$data)){
+
+
+        if(!empty($data['identifiants_sadge'])){
+        
+            $Surveillances->identifiants_sadge = $data['identifiants_sadge'];
+        
+        }
+
+        }
+
+    
+
+
+
+
+
+
+
+    
+
+        if(array_key_exists("creat_by",$data)){
+
+
+        if(!empty($data['creat_by'])){
+        
+            $Surveillances->creat_by = $data['creat_by'];
+        
+        }
+
+        }
+
+    
+
+
+
+
+
+
+
 
 
 
@@ -2004,7 +2182,9 @@ $newCrudData=[];
                 $newCrudData['pays']=$Surveillances->pays;
                 $newCrudData['ville']=$Surveillances->ville;
                 $newCrudData['id_base']=$Surveillances->id_base;
-                    
+                                $newCrudData['identifiants_sadge']=$Surveillances->identifiants_sadge;
+                $newCrudData['creat_by']=$Surveillances->creat_by;
+    
  try{ $newCrudData['user']=$Surveillances->user->Selectlabel; }catch(\Throwable $e){}  
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Update", 'entite' => 'Surveillances','entite_cle' => $Surveillances->id, 'ancien' => json_encode($oldCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);
 
@@ -2061,7 +2241,9 @@ $newCrudData=[];
                 $newCrudData['pays']=$Surveillances->pays;
                 $newCrudData['ville']=$Surveillances->ville;
                 $newCrudData['id_base']=$Surveillances->id_base;
-                    
+                                $newCrudData['identifiants_sadge']=$Surveillances->identifiants_sadge;
+                $newCrudData['creat_by']=$Surveillances->creat_by;
+    
  try{ $newCrudData['user']=$Surveillances->user->Selectlabel; }catch(\Throwable $e){}  
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Delete", 'entite' => 'Surveillances','entite_cle' => $Surveillances->id, 'ancien' => json_encode($newCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);
 

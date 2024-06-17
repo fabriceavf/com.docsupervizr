@@ -1,4 +1,4 @@
-<?php
+<?php 
 namespace App\Http\Controllers\WEB;
 
 use Illuminate\Database\Schema\Blueprint;
@@ -154,41 +154,41 @@ $role_has_permission_disposition->disposition=$request->get('disposition');
 
 
 
+        
+
+            
 
 
 
 
 
+        
+
+            
 
 
 
 
 
+        
+
+            
 
 
 
 
 
+        
+
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -257,41 +257,41 @@ $pageConfig = [
 
 
 
+        
+
+            
 
 
 
 
 
+        
+
+            
 
 
 
 
 
+        
+
+            
 
 
 
 
 
+        
+
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -349,41 +349,41 @@ abort(401);
 
 
 
+        
+
+            
 
 
 
 
 
+        
+
+            
 
 
 
 
 
+        
+
+            
 
 
 
 
 
+        
+
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -444,41 +444,41 @@ abort(401);
 
 
 
+        
+
+            
 
 
 
 
 
+        
+
+            
 
 
 
 
 
+        
+
+            
 
 
 
 
 
+        
+
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 

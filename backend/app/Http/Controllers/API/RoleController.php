@@ -296,10 +296,7 @@ return $query;
     
 ])
 ->allowedIncludes([
-            'model_has_roles',
-        
-
-                'role_has_permissions',
+            'role_has_permissions',
         
 
                 'users',
@@ -576,10 +573,7 @@ return $query;
     
 ])
 ->allowedIncludes([
-            'model_has_roles',
-        
-
-                'role_has_permissions',
+            'role_has_permissions',
         
 
                 'users',

@@ -189,6 +189,9 @@ $data = QueryBuilder::for(Deplacement::class)
             AllowedFilter::exact('ligne_id'),
 
     
+            AllowedFilter::exact('identifiants_sadge'),
+
+    
 AllowedFilter::callback('not_null', function (Builder $query, $value) {
 //                    dump($value);
 
@@ -309,6 +312,9 @@ return $query;
             AllowedSort::field('ligne_id'),
 
     
+            AllowedSort::field('identifiants_sadge'),
+
+    
 ])
     
     
@@ -338,6 +344,13 @@ $data=$data->paginate(isset($_REQUEST["limit"]) ? max(0, intval($_REQUEST["limit
 $data=$data->get();
 }
 $donnees=$data->toArray();
+
+
+    
+
+
+
+
 
 
     
@@ -504,6 +517,9 @@ $data = QueryBuilder::for(Deplacement::class)
             AllowedFilter::exact('ligne_id'),
 
     
+            AllowedFilter::exact('identifiants_sadge'),
+
+    
 AllowedFilter::callback('not_null', function (Builder $query, $value) {
 //                    dump($value);
 
@@ -624,6 +640,9 @@ return $query;
             AllowedSort::field('ligne_id'),
 
     
+            AllowedSort::field('identifiants_sadge'),
+
+    
 ])
     
     
@@ -656,6 +675,13 @@ $data=$data->paginate(isset($_REQUEST["limit"]) ? max(0, intval($_REQUEST["limit
 $data=$data->get();
 }
 $donnees=$data->toArray();
+
+
+
+
+
+    
+
 
 
 
@@ -819,6 +845,7 @@ $champsRechercher=[
     'deleted_at',
     'moyenstransport_id',
     'ligne_id',
+    'identifiants_sadge',
 ];
 $envoyer=[];
 foreach($data as $key=>$d){
@@ -876,6 +903,12 @@ Validator::make($data, [
             ],
         
     
+    
+                    'identifiants_sadge' => [
+            //'required'
+            ],
+        
+    
 
 
 ], $messages = [
@@ -911,6 +944,10 @@ Validator::make($data, [
     
     
         'ligne_id' => ['cette donnee est obligatoire'],
+
+    
+    
+        'identifiants_sadge' => ['cette donnee est obligatoire'],
 
     
 ])->validate();
@@ -1101,6 +1138,24 @@ $data['creat_by']=Auth::id();
 
 
 
+    
+
+        if(!empty($data['identifiants_sadge'])){
+        
+            $Deplacements->identifiants_sadge = $data['identifiants_sadge'];
+        
+        }
+
+
+
+    
+
+
+
+
+
+
+
 
 
 
@@ -1156,6 +1211,7 @@ $newCrudData=[];
                 $newCrudData['creat_by']=$Deplacements->creat_by;
                                 $newCrudData['moyenstransport_id']=$Deplacements->moyenstransport_id;
                 $newCrudData['ligne_id']=$Deplacements->ligne_id;
+                $newCrudData['identifiants_sadge']=$Deplacements->identifiants_sadge;
     
  try{ $newCrudData['ligne']=$Deplacements->ligne->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['lignesmoyenstransport']=$Deplacements->lignesmoyenstransport->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['moyenstransport']=$Deplacements->moyenstransport->Selectlabel; }catch(\Throwable $e){}  
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Create", 'entite' => 'Deplacements','entite_cle' => $Deplacements->id, 'ancien' => json_encode($newCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);
@@ -1213,6 +1269,7 @@ $oldCrudData=[];
                 $oldCrudData['creat_by']=$Deplacements->creat_by;
                                 $oldCrudData['moyenstransport_id']=$Deplacements->moyenstransport_id;
                 $oldCrudData['ligne_id']=$Deplacements->ligne_id;
+                $oldCrudData['identifiants_sadge']=$Deplacements->identifiants_sadge;
     
  try{ $oldCrudData['ligne']=$Deplacements->ligne->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['lignesmoyenstransport']=$Deplacements->lignesmoyenstransport->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['moyenstransport']=$Deplacements->moyenstransport->Selectlabel; }catch(\Throwable $e){}  
 
@@ -1238,6 +1295,7 @@ $champsRechercher=[
     'deleted_at',
     'moyenstransport_id',
     'ligne_id',
+    'identifiants_sadge',
 ];
 $envoyer=[];
 foreach($data as $key=>$d){
@@ -1295,6 +1353,12 @@ Validator::make($data, [
             ],
         
     
+    
+                    'identifiants_sadge' => [
+            //'required'
+            ],
+        
+    
 
 
 ], $messages = [
@@ -1330,6 +1394,10 @@ Validator::make($data, [
     
     
         'ligne_id' => ['cette donnee est obligatoire'],
+
+    
+    
+        'identifiants_sadge' => ['cette donnee est obligatoire'],
 
     
 ])->validate();
@@ -1539,6 +1607,27 @@ $extra_data=array_diff($envoyer,$champsRechercher);
 
 
 
+    
+
+        if(array_key_exists("identifiants_sadge",$data)){
+
+
+        if(!empty($data['identifiants_sadge'])){
+        
+            $Deplacements->identifiants_sadge = $data['identifiants_sadge'];
+        
+        }
+
+        }
+
+    
+
+
+
+
+
+
+
 
 
 
@@ -1601,6 +1690,7 @@ $newCrudData=[];
                 $newCrudData['creat_by']=$Deplacements->creat_by;
                                 $newCrudData['moyenstransport_id']=$Deplacements->moyenstransport_id;
                 $newCrudData['ligne_id']=$Deplacements->ligne_id;
+                $newCrudData['identifiants_sadge']=$Deplacements->identifiants_sadge;
     
  try{ $newCrudData['ligne']=$Deplacements->ligne->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['lignesmoyenstransport']=$Deplacements->lignesmoyenstransport->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['moyenstransport']=$Deplacements->moyenstransport->Selectlabel; }catch(\Throwable $e){}  
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Update", 'entite' => 'Deplacements','entite_cle' => $Deplacements->id, 'ancien' => json_encode($oldCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);
@@ -1653,6 +1743,7 @@ $newCrudData=[];
                 $newCrudData['creat_by']=$Deplacements->creat_by;
                                 $newCrudData['moyenstransport_id']=$Deplacements->moyenstransport_id;
                 $newCrudData['ligne_id']=$Deplacements->ligne_id;
+                $newCrudData['identifiants_sadge']=$Deplacements->identifiants_sadge;
     
  try{ $newCrudData['ligne']=$Deplacements->ligne->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['lignesmoyenstransport']=$Deplacements->lignesmoyenstransport->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['moyenstransport']=$Deplacements->moyenstransport->Selectlabel; }catch(\Throwable $e){}  
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Delete", 'entite' => 'Deplacements','entite_cle' => $Deplacements->id, 'ancien' => json_encode($newCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);

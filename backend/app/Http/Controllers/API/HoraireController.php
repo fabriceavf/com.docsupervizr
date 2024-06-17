@@ -192,14 +192,14 @@ $data = QueryBuilder::for(Horaire::class)
             AllowedFilter::exact('nmb_pointage_min'),
 
     
+            AllowedFilter::exact('poste_id'),
+
+    
     
             AllowedFilter::exact('identifiants_sadge'),
 
     
             AllowedFilter::exact('creat_by'),
-
-    
-            AllowedFilter::exact('poste_id'),
 
     
 AllowedFilter::callback('not_null', function (Builder $query, $value) {
@@ -327,14 +327,14 @@ return $query;
             AllowedSort::field('nmb_pointage_min'),
 
     
+            AllowedSort::field('poste_id'),
+
+    
     
             AllowedSort::field('identifiants_sadge'),
 
     
             AllowedSort::field('creat_by'),
-
-    
-            AllowedSort::field('poste_id'),
 
     
 ])
@@ -347,12 +347,6 @@ return $query;
         
 
                 'programmes',
-        
-
-                'programmesrondes',
-        
-
-                'travailleurs',
         
 
     
@@ -573,14 +567,14 @@ $data = QueryBuilder::for(Horaire::class)
             AllowedFilter::exact('nmb_pointage_min'),
 
     
+            AllowedFilter::exact('poste_id'),
+
+    
     
             AllowedFilter::exact('identifiants_sadge'),
 
     
             AllowedFilter::exact('creat_by'),
-
-    
-            AllowedFilter::exact('poste_id'),
 
     
 AllowedFilter::callback('not_null', function (Builder $query, $value) {
@@ -708,14 +702,14 @@ return $query;
             AllowedSort::field('nmb_pointage_min'),
 
     
+            AllowedSort::field('poste_id'),
+
+    
     
             AllowedSort::field('identifiants_sadge'),
 
     
             AllowedSort::field('creat_by'),
-
-    
-            AllowedSort::field('poste_id'),
 
     
 ])
@@ -728,12 +722,6 @@ return $query;
         
 
                 'programmes',
-        
-
-                'programmesrondes',
-        
-
-                'travailleurs',
         
 
                 'poste',
@@ -950,10 +938,10 @@ $champsRechercher=[
     'parentId',
     'vol_horaire_min',
     'nmb_pointage_min',
+    'poste_id',
     'deleted_at',
     'identifiants_sadge',
     'creat_by',
-    'poste_id',
 ];
 $envoyer=[];
 foreach($data as $key=>$d){
@@ -1023,6 +1011,12 @@ Validator::make($data, [
         
     
     
+                    'poste_id' => [
+            //'required'
+            ],
+        
+    
+    
     
                     'identifiants_sadge' => [
             //'required'
@@ -1031,12 +1025,6 @@ Validator::make($data, [
     
     
                     'creat_by' => [
-            //'required'
-            ],
-        
-    
-    
-                    'poste_id' => [
             //'required'
             ],
         
@@ -1086,16 +1074,16 @@ Validator::make($data, [
 
     
     
+        'poste_id' => ['cette donnee est obligatoire'],
+
+    
+    
     
         'identifiants_sadge' => ['cette donnee est obligatoire'],
 
     
     
         'creat_by' => ['cette donnee est obligatoire'],
-
-    
-    
-        'poste_id' => ['cette donnee est obligatoire'],
 
     
 ])->validate();
@@ -1316,6 +1304,24 @@ $data['creat_by']=Auth::id();
 
     
 
+        if(!empty($data['poste_id'])){
+        
+            $Horaires->poste_id = $data['poste_id'];
+        
+        }
+
+
+
+    
+
+
+
+
+
+
+
+    
+
 
 
 
@@ -1345,24 +1351,6 @@ $data['creat_by']=Auth::id();
         if(!empty($data['creat_by'])){
         
             $Horaires->creat_by = $data['creat_by'];
-        
-        }
-
-
-
-    
-
-
-
-
-
-
-
-    
-
-        if(!empty($data['poste_id'])){
-        
-            $Horaires->poste_id = $data['poste_id'];
         
         }
 
@@ -1433,9 +1421,9 @@ $newCrudData=[];
                 $newCrudData['parentId']=$Horaires->parentId;
                 $newCrudData['vol_horaire_min']=$Horaires->vol_horaire_min;
                 $newCrudData['nmb_pointage_min']=$Horaires->nmb_pointage_min;
+                $newCrudData['poste_id']=$Horaires->poste_id;
                     $newCrudData['identifiants_sadge']=$Horaires->identifiants_sadge;
                 $newCrudData['creat_by']=$Horaires->creat_by;
-                $newCrudData['poste_id']=$Horaires->poste_id;
     
  try{ $newCrudData['poste']=$Horaires->poste->Selectlabel; }catch(\Throwable $e){}  
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Create", 'entite' => 'Horaires','entite_cle' => $Horaires->id, 'ancien' => json_encode($newCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);
@@ -1495,9 +1483,9 @@ $oldCrudData=[];
                 $oldCrudData['parentId']=$Horaires->parentId;
                 $oldCrudData['vol_horaire_min']=$Horaires->vol_horaire_min;
                 $oldCrudData['nmb_pointage_min']=$Horaires->nmb_pointage_min;
+                $oldCrudData['poste_id']=$Horaires->poste_id;
                     $oldCrudData['identifiants_sadge']=$Horaires->identifiants_sadge;
                 $oldCrudData['creat_by']=$Horaires->creat_by;
-                $oldCrudData['poste_id']=$Horaires->poste_id;
     
  try{ $oldCrudData['poste']=$Horaires->poste->Selectlabel; }catch(\Throwable $e){}  
 
@@ -1524,10 +1512,10 @@ $champsRechercher=[
     'parentId',
     'vol_horaire_min',
     'nmb_pointage_min',
+    'poste_id',
     'deleted_at',
     'identifiants_sadge',
     'creat_by',
-    'poste_id',
 ];
 $envoyer=[];
 foreach($data as $key=>$d){
@@ -1597,6 +1585,12 @@ Validator::make($data, [
         
     
     
+                    'poste_id' => [
+            //'required'
+            ],
+        
+    
+    
     
                     'identifiants_sadge' => [
             //'required'
@@ -1605,12 +1599,6 @@ Validator::make($data, [
     
     
                     'creat_by' => [
-            //'required'
-            ],
-        
-    
-    
-                    'poste_id' => [
             //'required'
             ],
         
@@ -1660,16 +1648,16 @@ Validator::make($data, [
 
     
     
+        'poste_id' => ['cette donnee est obligatoire'],
+
+    
+    
     
         'identifiants_sadge' => ['cette donnee est obligatoire'],
 
     
     
         'creat_by' => ['cette donnee est obligatoire'],
-
-    
-    
-        'poste_id' => ['cette donnee est obligatoire'],
 
     
 ])->validate();
@@ -1915,6 +1903,27 @@ $extra_data=array_diff($envoyer,$champsRechercher);
 
     
 
+        if(array_key_exists("poste_id",$data)){
+
+
+        if(!empty($data['poste_id'])){
+        
+            $Horaires->poste_id = $data['poste_id'];
+        
+        }
+
+        }
+
+    
+
+
+
+
+
+
+
+    
+
 
 
 
@@ -1950,27 +1959,6 @@ $extra_data=array_diff($envoyer,$champsRechercher);
         if(!empty($data['creat_by'])){
         
             $Horaires->creat_by = $data['creat_by'];
-        
-        }
-
-        }
-
-    
-
-
-
-
-
-
-
-    
-
-        if(array_key_exists("poste_id",$data)){
-
-
-        if(!empty($data['poste_id'])){
-        
-            $Horaires->poste_id = $data['poste_id'];
         
         }
 
@@ -2048,9 +2036,9 @@ $newCrudData=[];
                 $newCrudData['parentId']=$Horaires->parentId;
                 $newCrudData['vol_horaire_min']=$Horaires->vol_horaire_min;
                 $newCrudData['nmb_pointage_min']=$Horaires->nmb_pointage_min;
+                $newCrudData['poste_id']=$Horaires->poste_id;
                     $newCrudData['identifiants_sadge']=$Horaires->identifiants_sadge;
                 $newCrudData['creat_by']=$Horaires->creat_by;
-                $newCrudData['poste_id']=$Horaires->poste_id;
     
  try{ $newCrudData['poste']=$Horaires->poste->Selectlabel; }catch(\Throwable $e){}  
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Update", 'entite' => 'Horaires','entite_cle' => $Horaires->id, 'ancien' => json_encode($oldCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);
@@ -2105,9 +2093,9 @@ $newCrudData=[];
                 $newCrudData['parentId']=$Horaires->parentId;
                 $newCrudData['vol_horaire_min']=$Horaires->vol_horaire_min;
                 $newCrudData['nmb_pointage_min']=$Horaires->nmb_pointage_min;
+                $newCrudData['poste_id']=$Horaires->poste_id;
                     $newCrudData['identifiants_sadge']=$Horaires->identifiants_sadge;
                 $newCrudData['creat_by']=$Horaires->creat_by;
-                $newCrudData['poste_id']=$Horaires->poste_id;
     
  try{ $newCrudData['poste']=$Horaires->poste->Selectlabel; }catch(\Throwable $e){}  
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Delete", 'entite' => 'Horaires','entite_cle' => $Horaires->id, 'ancien' => json_encode($newCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);

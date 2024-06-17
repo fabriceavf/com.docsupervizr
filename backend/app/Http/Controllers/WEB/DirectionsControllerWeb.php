@@ -1,4 +1,4 @@
-<?php
+<?php 
 namespace App\Http\Controllers\WEB;
 
 use Illuminate\Database\Schema\Blueprint;
@@ -37,7 +37,7 @@ ini_set('memory_limit', '8192M');
 ini_set('max_execution_time', '300');
 
             use App\Models\prod\Groupedirection;
-
+    
 class DirectionsControllerWeb extends Controller
 {
 
@@ -167,87 +167,81 @@ $directions_disposition->disposition=$request->get('disposition');
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -267,9 +261,6 @@ $pageConfig = [
 
 
 $vue = view('/content/Directions.directions_component', ['pageConfigs' => $pageConfig, 'menu' => $this->menu,'directions_disposition'=>$directions_disposition,'preselect'=>$new,'options'=>$donnees??[],'options'=>$donnees??[],
-
-    'listings_disposition'=>$listings_disposition,
-
 
     'services_disposition'=>$services_disposition,
 
@@ -324,12 +315,6 @@ $directions_disposition->disposition=$request->get('disposition');
 
 
 
-
-
-
-
-
-
 $pageConfig = [
  'mainLayoutType' => 'vertical',
 'type' => 'admin',
@@ -343,89 +328,86 @@ $pageConfig = [
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
 
 $vue = view('/content/Directions.Directions', ['pageConfigs' => $pageConfig, 'menu' => $this->menu,'directions_disposition'=>$directions_disposition,'preselect'=>$new,'options'=>$donnees??[],
-
-    'listings_disposition'=>$listings_disposition,
-
 
     'services_disposition'=>$services_disposition,
 
@@ -460,6 +442,7 @@ $directions_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -467,16 +450,7 @@ $directions_disposition->disposition=$request->get('disposition');
 
 
 
-
-
-
-
-
-
-
-
-
-
+    
 $params=collect($request->all());
 $params=$params->filter(function ($value, $key) {
 //            dd($key);
@@ -508,81 +482,81 @@ abort(401);
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -595,9 +569,6 @@ $vue = view('/content/Directions.directions_one', [
 'Directions' => $Directions,
 'directions_disposition'=>$directions_disposition
 ,'preselect'=>$new,'options'=>$donnees??[],
-
-    'listings_disposition'=>$listings_disposition,
-
 
     'services_disposition'=>$services_disposition,
 
@@ -628,6 +599,7 @@ $directions_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -635,16 +607,7 @@ $directions_disposition->disposition=$request->get('disposition');
 
 
 
-
-
-
-
-
-
-
-
-
-
+    
 $params=collect($request->all());
 $params=$params->filter(function ($value, $key) {
 //            dd($key);
@@ -676,81 +639,81 @@ abort(401);
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -763,9 +726,6 @@ $vue = view('/content/Directions.directions_one_component', [
 'Directions' => $Directions,
 'directions_disposition'=>$directions_disposition
 ,'preselect'=>$new,'options'=>$donnees??[],
-
-    'listings_disposition'=>$listings_disposition,
-
 
     'services_disposition'=>$services_disposition,
 
@@ -807,6 +767,7 @@ $directions_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -814,16 +775,7 @@ $directions_disposition->disposition=$request->get('disposition');
 
 
 
-
-
-
-
-
-
-
-
-
-
+    
 $params=collect($request->all());
 $params=$params->filter(function ($value, $key) {
 //            dd($key);
@@ -858,9 +810,6 @@ $vue = view('/content/Directions.impression', [
 'Directions' => $Directions,
 'directions_disposition'=>$directions_disposition
 ,'preselect'=>$new,'options'=>$donnees??[],
-
-    'listings_disposition'=>$listings_disposition,
-
 
     'services_disposition'=>$services_disposition,
 

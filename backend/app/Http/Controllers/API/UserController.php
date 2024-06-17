@@ -26,17 +26,14 @@ use Spatie\QueryBuilder\QueryBuilder;
 
 
 
-            use App\Models\Actif;
-                use App\Models\Balise;
+            use App\Models\Balise;
                 use App\Models\Categorie;
                 use App\Models\Contrat;
                 use App\Models\Direction;
                 use App\Models\Echelon;
-                use App\Models\Faction;
                 use App\Models\Fonction;
                 use App\Models\Matrimoniale;
                 use App\Models\Nationalite;
-                use App\Models\Online;
                 use App\Models\Poste;
                 use App\Models\Role;
                 use App\Models\Sexe;
@@ -301,17 +298,17 @@ $data = QueryBuilder::for(User::class)
             AllowedFilter::exact('role_id'),
 
     
+            AllowedFilter::exact('typeseffectif_id'),
+
+    
+            AllowedFilter::exact('postes'),
+
+    
     
             AllowedFilter::exact('identifiants_sadge'),
 
     
             AllowedFilter::exact('creat_by'),
-
-    
-            AllowedFilter::exact('typeseffectif_id'),
-
-    
-            AllowedFilter::exact('postes'),
 
     
 AllowedFilter::callback('not_null', function (Builder $query, $value) {
@@ -532,6 +529,12 @@ return $query;
             AllowedSort::field('role_id'),
 
     
+            AllowedSort::field('typeseffectif_id'),
+
+    
+            AllowedSort::field('postes'),
+
+    
     
             AllowedSort::field('identifiants_sadge'),
 
@@ -539,16 +542,7 @@ return $query;
             AllowedSort::field('creat_by'),
 
     
-            AllowedSort::field('typeseffectif_id'),
-
-    
-            AllowedSort::field('postes'),
-
-    
 ])
-    
-    
-    
     
     
     
@@ -571,31 +565,16 @@ return $query;
             'abscences',
         
 
-                'activites',
-        
-
                 'agentsrapports',
         
 
                 'assignations',
         
 
-                'attributions',
-        
-
                 'conges',
         
 
-                'contratsagents',
-        
-
                 'cruds',
-        
-
-                'ecouteurs',
-        
-
-                'empreintes',
         
 
                 'historiquemodelslistings',
@@ -605,12 +584,6 @@ return $query;
         
 
                 'identifications',
-        
-
-                'interventionusers',
-        
-
-                'listesappelsjours',
         
 
                 'listingsetats',
@@ -631,19 +604,10 @@ return $query;
                 'oauth_clients',
         
 
-                'objectifs',
-        
-
-                'permissionsdetails',
-        
-
                 'perms',
         
 
                 'pointages',
-        
-
-                'postesagents',
         
 
                 'presences',
@@ -652,16 +616,7 @@ return $query;
                 'programmations',
         
 
-                'programmationsrondes',
-        
-
-                'programmationsusers',
-        
-
                 'programmes',
-        
-
-                'programmesrondes',
         
 
                 'statszones',
@@ -670,19 +625,7 @@ return $query;
                 'surveillances',
         
 
-                'travailleurs',
-        
-
-                'userbadges',
-        
-
                 'users',
-        
-
-                'usersgraphiques',
-        
-
-                'userstypespostes',
         
 
                 'userszones',
@@ -695,10 +638,7 @@ return $query;
         
 
     
-            'actif',
-        
-
-                'balise',
+            'balise',
         
 
                 'categorie',
@@ -713,9 +653,6 @@ return $query;
                 'echelon',
         
 
-                'faction',
-        
-
                 'fonction',
         
 
@@ -723,9 +660,6 @@ return $query;
         
 
                 'nationalite',
-        
-
-                'online',
         
 
                 'poste',
@@ -1289,17 +1223,17 @@ $data = QueryBuilder::for(User::class)
             AllowedFilter::exact('role_id'),
 
     
+            AllowedFilter::exact('typeseffectif_id'),
+
+    
+            AllowedFilter::exact('postes'),
+
+    
     
             AllowedFilter::exact('identifiants_sadge'),
 
     
             AllowedFilter::exact('creat_by'),
-
-    
-            AllowedFilter::exact('typeseffectif_id'),
-
-    
-            AllowedFilter::exact('postes'),
 
     
 AllowedFilter::callback('not_null', function (Builder $query, $value) {
@@ -1520,6 +1454,12 @@ return $query;
             AllowedSort::field('role_id'),
 
     
+            AllowedSort::field('typeseffectif_id'),
+
+    
+            AllowedSort::field('postes'),
+
+    
     
             AllowedSort::field('identifiants_sadge'),
 
@@ -1527,16 +1467,7 @@ return $query;
             AllowedSort::field('creat_by'),
 
     
-            AllowedSort::field('typeseffectif_id'),
-
-    
-            AllowedSort::field('postes'),
-
-    
 ])
-    
-    
-    
     
     
     
@@ -1559,31 +1490,16 @@ return $query;
             'abscences',
         
 
-                'activites',
-        
-
                 'agentsrapports',
         
 
                 'assignations',
         
 
-                'attributions',
-        
-
                 'conges',
         
 
-                'contratsagents',
-        
-
                 'cruds',
-        
-
-                'ecouteurs',
-        
-
-                'empreintes',
         
 
                 'historiquemodelslistings',
@@ -1593,12 +1509,6 @@ return $query;
         
 
                 'identifications',
-        
-
-                'interventionusers',
-        
-
-                'listesappelsjours',
         
 
                 'listingsetats',
@@ -1619,19 +1529,10 @@ return $query;
                 'oauth_clients',
         
 
-                'objectifs',
-        
-
-                'permissionsdetails',
-        
-
                 'perms',
         
 
                 'pointages',
-        
-
-                'postesagents',
         
 
                 'presences',
@@ -1640,16 +1541,7 @@ return $query;
                 'programmations',
         
 
-                'programmationsrondes',
-        
-
-                'programmationsusers',
-        
-
                 'programmes',
-        
-
-                'programmesrondes',
         
 
                 'statszones',
@@ -1658,19 +1550,7 @@ return $query;
                 'surveillances',
         
 
-                'travailleurs',
-        
-
-                'userbadges',
-        
-
                 'users',
-        
-
-                'usersgraphiques',
-        
-
-                'userstypespostes',
         
 
                 'userszones',
@@ -1680,9 +1560,6 @@ return $query;
         
 
                 'works',
-        
-
-                'actif',
         
 
                 'balise',
@@ -1700,9 +1577,6 @@ return $query;
                 'echelon',
         
 
-                'faction',
-        
-
                 'fonction',
         
 
@@ -1710,9 +1584,6 @@ return $query;
         
 
                 'nationalite',
-        
-
-                'online',
         
 
                 'poste',
@@ -2211,11 +2082,11 @@ $champsRechercher=[
     'created_at',
     'updated_at',
     'role_id',
+    'typeseffectif_id',
+    'postes',
     'deleted_at',
     'identifiants_sadge',
     'creat_by',
-    'typeseffectif_id',
-    'postes',
 ];
 $envoyer=[];
 foreach($data as $key=>$d){
@@ -2452,6 +2323,18 @@ Validator::make($data, [
         
     
     
+                    'typeseffectif_id' => [
+            //'required'
+            ],
+        
+    
+    
+                    'postes' => [
+            //'required'
+            ],
+        
+    
+    
     
                     'identifiants_sadge' => [
             //'required'
@@ -2460,18 +2343,6 @@ Validator::make($data, [
     
     
                     'creat_by' => [
-            //'required'
-            ],
-        
-    
-    
-                    'typeseffectif_id' => [
-            //'required'
-            ],
-        
-    
-    
-                    'postes' => [
             //'required'
             ],
         
@@ -2636,20 +2507,20 @@ Validator::make($data, [
 
     
     
+        'typeseffectif_id' => ['cette donnee est obligatoire'],
+
+    
+    
+        'postes' => ['cette donnee est obligatoire'],
+
+    
+    
     
         'identifiants_sadge' => ['cette donnee est obligatoire'],
 
     
     
         'creat_by' => ['cette donnee est obligatoire'],
-
-    
-    
-        'typeseffectif_id' => ['cette donnee est obligatoire'],
-
-    
-    
-        'postes' => ['cette donnee est obligatoire'],
 
     
 ])->validate();
@@ -3408,6 +3279,42 @@ $data['creat_by']=Auth::id();
 
     
 
+        if(!empty($data['typeseffectif_id'])){
+        
+            $Users->typeseffectif_id = $data['typeseffectif_id'];
+        
+        }
+
+
+
+    
+
+
+
+
+
+
+
+    
+
+        if(!empty($data['postes'])){
+        
+            $Users->postes = $data['postes'];
+        
+        }
+
+
+
+    
+
+
+
+
+
+
+
+    
+
 
 
 
@@ -3437,42 +3344,6 @@ $data['creat_by']=Auth::id();
         if(!empty($data['creat_by'])){
         
             $Users->creat_by = $data['creat_by'];
-        
-        }
-
-
-
-    
-
-
-
-
-
-
-
-    
-
-        if(!empty($data['typeseffectif_id'])){
-        
-            $Users->typeseffectif_id = $data['typeseffectif_id'];
-        
-        }
-
-
-
-    
-
-
-
-
-
-
-
-    
-
-        if(!empty($data['postes'])){
-        
-            $Users->postes = $data['postes'];
         
         }
 
@@ -3572,12 +3443,12 @@ $newCrudData=[];
                 $newCrudData['type_id']=$Users->type_id;
                 $newCrudData['faction_id']=$Users->faction_id;
                                 $newCrudData['role_id']=$Users->role_id;
-                    $newCrudData['identifiants_sadge']=$Users->identifiants_sadge;
-                $newCrudData['creat_by']=$Users->creat_by;
                 $newCrudData['typeseffectif_id']=$Users->typeseffectif_id;
                 $newCrudData['postes']=$Users->postes;
+                    $newCrudData['identifiants_sadge']=$Users->identifiants_sadge;
+                $newCrudData['creat_by']=$Users->creat_by;
     
- try{ $newCrudData['actif']=$Users->actif->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['balise']=$Users->balise->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['categorie']=$Users->categorie->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['contrat']=$Users->contrat->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['direction']=$Users->direction->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['echelon']=$Users->echelon->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['faction']=$Users->faction->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['fonction']=$Users->fonction->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['matrimoniale']=$Users->matrimoniale->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['nationalite']=$Users->nationalite->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['online']=$Users->online->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['poste']=$Users->poste->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['role']=$Users->role->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['sexe']=$Users->sexe->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['site']=$Users->site->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['situation']=$Users->situation->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['type']=$Users->type->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['typeseffectif']=$Users->typeseffectif->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['user']=$Users->user->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['ville']=$Users->ville->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['zone']=$Users->zone->Selectlabel; }catch(\Throwable $e){}  
+ try{ $newCrudData['balise']=$Users->balise->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['categorie']=$Users->categorie->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['contrat']=$Users->contrat->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['direction']=$Users->direction->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['echelon']=$Users->echelon->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['fonction']=$Users->fonction->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['matrimoniale']=$Users->matrimoniale->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['nationalite']=$Users->nationalite->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['poste']=$Users->poste->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['role']=$Users->role->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['sexe']=$Users->sexe->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['site']=$Users->site->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['situation']=$Users->situation->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['type']=$Users->type->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['typeseffectif']=$Users->typeseffectif->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['user']=$Users->user->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['ville']=$Users->ville->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['zone']=$Users->zone->Selectlabel; }catch(\Throwable $e){}  
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Create", 'entite' => 'Users','entite_cle' => $Users->id, 'ancien' => json_encode($newCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);
 
 
@@ -3664,12 +3535,12 @@ $oldCrudData=[];
                 $oldCrudData['type_id']=$Users->type_id;
                 $oldCrudData['faction_id']=$Users->faction_id;
                                 $oldCrudData['role_id']=$Users->role_id;
-                    $oldCrudData['identifiants_sadge']=$Users->identifiants_sadge;
-                $oldCrudData['creat_by']=$Users->creat_by;
                 $oldCrudData['typeseffectif_id']=$Users->typeseffectif_id;
                 $oldCrudData['postes']=$Users->postes;
+                    $oldCrudData['identifiants_sadge']=$Users->identifiants_sadge;
+                $oldCrudData['creat_by']=$Users->creat_by;
     
- try{ $oldCrudData['actif']=$Users->actif->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['balise']=$Users->balise->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['categorie']=$Users->categorie->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['contrat']=$Users->contrat->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['direction']=$Users->direction->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['echelon']=$Users->echelon->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['faction']=$Users->faction->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['fonction']=$Users->fonction->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['matrimoniale']=$Users->matrimoniale->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['nationalite']=$Users->nationalite->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['online']=$Users->online->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['poste']=$Users->poste->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['role']=$Users->role->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['sexe']=$Users->sexe->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['site']=$Users->site->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['situation']=$Users->situation->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['type']=$Users->type->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['typeseffectif']=$Users->typeseffectif->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['user']=$Users->user->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['ville']=$Users->ville->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['zone']=$Users->zone->Selectlabel; }catch(\Throwable $e){}  
+ try{ $oldCrudData['balise']=$Users->balise->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['categorie']=$Users->categorie->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['contrat']=$Users->contrat->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['direction']=$Users->direction->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['echelon']=$Users->echelon->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['fonction']=$Users->fonction->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['matrimoniale']=$Users->matrimoniale->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['nationalite']=$Users->nationalite->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['poste']=$Users->poste->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['role']=$Users->role->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['sexe']=$Users->sexe->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['site']=$Users->site->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['situation']=$Users->situation->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['type']=$Users->type->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['typeseffectif']=$Users->typeseffectif->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['user']=$Users->user->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['ville']=$Users->ville->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['zone']=$Users->zone->Selectlabel; }catch(\Throwable $e){}  
 
 $data=$request->all();
 foreach ($request->allFiles() as $key=>$file){
@@ -3725,11 +3596,11 @@ $champsRechercher=[
     'created_at',
     'updated_at',
     'role_id',
+    'typeseffectif_id',
+    'postes',
     'deleted_at',
     'identifiants_sadge',
     'creat_by',
-    'typeseffectif_id',
-    'postes',
 ];
 $envoyer=[];
 foreach($data as $key=>$d){
@@ -3966,6 +3837,18 @@ Validator::make($data, [
         
     
     
+                    'typeseffectif_id' => [
+            //'required'
+            ],
+        
+    
+    
+                    'postes' => [
+            //'required'
+            ],
+        
+    
+    
     
                     'identifiants_sadge' => [
             //'required'
@@ -3974,18 +3857,6 @@ Validator::make($data, [
     
     
                     'creat_by' => [
-            //'required'
-            ],
-        
-    
-    
-                    'typeseffectif_id' => [
-            //'required'
-            ],
-        
-    
-    
-                    'postes' => [
             //'required'
             ],
         
@@ -4150,20 +4021,20 @@ Validator::make($data, [
 
     
     
+        'typeseffectif_id' => ['cette donnee est obligatoire'],
+
+    
+    
+        'postes' => ['cette donnee est obligatoire'],
+
+    
+    
     
         'identifiants_sadge' => ['cette donnee est obligatoire'],
 
     
     
         'creat_by' => ['cette donnee est obligatoire'],
-
-    
-    
-        'typeseffectif_id' => ['cette donnee est obligatoire'],
-
-    
-    
-        'postes' => ['cette donnee est obligatoire'],
 
     
 ])->validate();
@@ -5034,6 +4905,48 @@ $extra_data=array_diff($envoyer,$champsRechercher);
 
     
 
+        if(array_key_exists("typeseffectif_id",$data)){
+
+
+        if(!empty($data['typeseffectif_id'])){
+        
+            $Users->typeseffectif_id = $data['typeseffectif_id'];
+        
+        }
+
+        }
+
+    
+
+
+
+
+
+
+
+    
+
+        if(array_key_exists("postes",$data)){
+
+
+        if(!empty($data['postes'])){
+        
+            $Users->postes = $data['postes'];
+        
+        }
+
+        }
+
+    
+
+
+
+
+
+
+
+    
+
 
 
 
@@ -5069,48 +4982,6 @@ $extra_data=array_diff($envoyer,$champsRechercher);
         if(!empty($data['creat_by'])){
         
             $Users->creat_by = $data['creat_by'];
-        
-        }
-
-        }
-
-    
-
-
-
-
-
-
-
-    
-
-        if(array_key_exists("typeseffectif_id",$data)){
-
-
-        if(!empty($data['typeseffectif_id'])){
-        
-            $Users->typeseffectif_id = $data['typeseffectif_id'];
-        
-        }
-
-        }
-
-    
-
-
-
-
-
-
-
-    
-
-        if(array_key_exists("postes",$data)){
-
-
-        if(!empty($data['postes'])){
-        
-            $Users->postes = $data['postes'];
         
         }
 
@@ -5217,12 +5088,12 @@ $newCrudData=[];
                 $newCrudData['type_id']=$Users->type_id;
                 $newCrudData['faction_id']=$Users->faction_id;
                                 $newCrudData['role_id']=$Users->role_id;
-                    $newCrudData['identifiants_sadge']=$Users->identifiants_sadge;
-                $newCrudData['creat_by']=$Users->creat_by;
                 $newCrudData['typeseffectif_id']=$Users->typeseffectif_id;
                 $newCrudData['postes']=$Users->postes;
+                    $newCrudData['identifiants_sadge']=$Users->identifiants_sadge;
+                $newCrudData['creat_by']=$Users->creat_by;
     
- try{ $newCrudData['actif']=$Users->actif->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['balise']=$Users->balise->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['categorie']=$Users->categorie->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['contrat']=$Users->contrat->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['direction']=$Users->direction->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['echelon']=$Users->echelon->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['faction']=$Users->faction->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['fonction']=$Users->fonction->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['matrimoniale']=$Users->matrimoniale->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['nationalite']=$Users->nationalite->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['online']=$Users->online->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['poste']=$Users->poste->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['role']=$Users->role->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['sexe']=$Users->sexe->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['site']=$Users->site->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['situation']=$Users->situation->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['type']=$Users->type->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['typeseffectif']=$Users->typeseffectif->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['user']=$Users->user->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['ville']=$Users->ville->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['zone']=$Users->zone->Selectlabel; }catch(\Throwable $e){}  
+ try{ $newCrudData['balise']=$Users->balise->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['categorie']=$Users->categorie->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['contrat']=$Users->contrat->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['direction']=$Users->direction->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['echelon']=$Users->echelon->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['fonction']=$Users->fonction->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['matrimoniale']=$Users->matrimoniale->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['nationalite']=$Users->nationalite->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['poste']=$Users->poste->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['role']=$Users->role->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['sexe']=$Users->sexe->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['site']=$Users->site->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['situation']=$Users->situation->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['type']=$Users->type->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['typeseffectif']=$Users->typeseffectif->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['user']=$Users->user->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['ville']=$Users->ville->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['zone']=$Users->zone->Selectlabel; }catch(\Throwable $e){}  
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Update", 'entite' => 'Users','entite_cle' => $Users->id, 'ancien' => json_encode($oldCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);
 
 $response = $Users->toArray();
@@ -5304,12 +5175,12 @@ $newCrudData=[];
                 $newCrudData['type_id']=$Users->type_id;
                 $newCrudData['faction_id']=$Users->faction_id;
                                 $newCrudData['role_id']=$Users->role_id;
-                    $newCrudData['identifiants_sadge']=$Users->identifiants_sadge;
-                $newCrudData['creat_by']=$Users->creat_by;
                 $newCrudData['typeseffectif_id']=$Users->typeseffectif_id;
                 $newCrudData['postes']=$Users->postes;
+                    $newCrudData['identifiants_sadge']=$Users->identifiants_sadge;
+                $newCrudData['creat_by']=$Users->creat_by;
     
- try{ $newCrudData['actif']=$Users->actif->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['balise']=$Users->balise->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['categorie']=$Users->categorie->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['contrat']=$Users->contrat->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['direction']=$Users->direction->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['echelon']=$Users->echelon->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['faction']=$Users->faction->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['fonction']=$Users->fonction->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['matrimoniale']=$Users->matrimoniale->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['nationalite']=$Users->nationalite->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['online']=$Users->online->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['poste']=$Users->poste->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['role']=$Users->role->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['sexe']=$Users->sexe->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['site']=$Users->site->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['situation']=$Users->situation->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['type']=$Users->type->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['typeseffectif']=$Users->typeseffectif->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['user']=$Users->user->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['ville']=$Users->ville->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['zone']=$Users->zone->Selectlabel; }catch(\Throwable $e){}  
+ try{ $newCrudData['balise']=$Users->balise->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['categorie']=$Users->categorie->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['contrat']=$Users->contrat->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['direction']=$Users->direction->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['echelon']=$Users->echelon->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['fonction']=$Users->fonction->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['matrimoniale']=$Users->matrimoniale->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['nationalite']=$Users->nationalite->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['poste']=$Users->poste->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['role']=$Users->role->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['sexe']=$Users->sexe->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['site']=$Users->site->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['situation']=$Users->situation->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['type']=$Users->type->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['typeseffectif']=$Users->typeseffectif->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['user']=$Users->user->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['ville']=$Users->ville->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['zone']=$Users->zone->Selectlabel; }catch(\Throwable $e){}  
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Delete", 'entite' => 'Users','entite_cle' => $Users->id, 'ancien' => json_encode($newCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);
 
 

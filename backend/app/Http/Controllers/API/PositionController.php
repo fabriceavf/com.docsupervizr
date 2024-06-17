@@ -205,6 +205,9 @@ $data = QueryBuilder::for(Position::class)
             AllowedFilter::exact('balise_id'),
 
     
+            AllowedFilter::exact('identifiants_sadge'),
+
+    
 AllowedFilter::callback('not_null', function (Builder $query, $value) {
 //                    dump($value);
 
@@ -343,6 +346,9 @@ return $query;
             AllowedSort::field('balise_id'),
 
     
+            AllowedSort::field('identifiants_sadge'),
+
+    
 ])
     
 ->allowedIncludes([
@@ -358,6 +364,13 @@ $data=$data->paginate(isset($_REQUEST["limit"]) ? max(0, intval($_REQUEST["limit
 $data=$data->get();
 }
 $donnees=$data->toArray();
+
+
+    
+
+
+
+
 
 
     
@@ -584,6 +597,9 @@ $data = QueryBuilder::for(Position::class)
             AllowedFilter::exact('balise_id'),
 
     
+            AllowedFilter::exact('identifiants_sadge'),
+
+    
 AllowedFilter::callback('not_null', function (Builder $query, $value) {
 //                    dump($value);
 
@@ -722,6 +738,9 @@ return $query;
             AllowedSort::field('balise_id'),
 
     
+            AllowedSort::field('identifiants_sadge'),
+
+    
 ])
     
 ->allowedIncludes([
@@ -740,6 +759,13 @@ $data=$data->paginate(isset($_REQUEST["limit"]) ? max(0, intval($_REQUEST["limit
 $data=$data->get();
 }
 $donnees=$data->toArray();
+
+
+
+
+
+    
+
 
 
 
@@ -951,6 +977,7 @@ $champsRechercher=[
     'traceruniqueid',
     'sim',
     'balise_id',
+    'identifiants_sadge',
 ];
 $envoyer=[];
 foreach($data as $key=>$d){
@@ -1044,6 +1071,12 @@ Validator::make($data, [
             ],
         
     
+    
+                    'identifiants_sadge' => [
+            //'required'
+            ],
+        
+    
 
 
 ], $messages = [
@@ -1103,6 +1136,10 @@ Validator::make($data, [
     
     
         'balise_id' => ['cette donnee est obligatoire'],
+
+    
+    
+        'identifiants_sadge' => ['cette donnee est obligatoire'],
 
     
 ])->validate();
@@ -1401,6 +1438,24 @@ $data['creat_by']=Auth::id();
 
 
 
+    
+
+        if(!empty($data['identifiants_sadge'])){
+        
+            $Positions->identifiants_sadge = $data['identifiants_sadge'];
+        
+        }
+
+
+
+    
+
+
+
+
+
+
+
 
 
 
@@ -1462,6 +1517,7 @@ $newCrudData=[];
                 $newCrudData['traceruniqueid']=$Positions->traceruniqueid;
                 $newCrudData['sim']=$Positions->sim;
                 $newCrudData['balise_id']=$Positions->balise_id;
+                $newCrudData['identifiants_sadge']=$Positions->identifiants_sadge;
     
  try{ $newCrudData['balise']=$Positions->balise->Selectlabel; }catch(\Throwable $e){}  
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Create", 'entite' => 'Positions','entite_cle' => $Positions->id, 'ancien' => json_encode($newCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);
@@ -1525,6 +1581,7 @@ $oldCrudData=[];
                 $oldCrudData['traceruniqueid']=$Positions->traceruniqueid;
                 $oldCrudData['sim']=$Positions->sim;
                 $oldCrudData['balise_id']=$Positions->balise_id;
+                $oldCrudData['identifiants_sadge']=$Positions->identifiants_sadge;
     
  try{ $oldCrudData['balise']=$Positions->balise->Selectlabel; }catch(\Throwable $e){}  
 
@@ -1556,6 +1613,7 @@ $champsRechercher=[
     'traceruniqueid',
     'sim',
     'balise_id',
+    'identifiants_sadge',
 ];
 $envoyer=[];
 foreach($data as $key=>$d){
@@ -1649,6 +1707,12 @@ Validator::make($data, [
             ],
         
     
+    
+                    'identifiants_sadge' => [
+            //'required'
+            ],
+        
+    
 
 
 ], $messages = [
@@ -1708,6 +1772,10 @@ Validator::make($data, [
     
     
         'balise_id' => ['cette donnee est obligatoire'],
+
+    
+    
+        'identifiants_sadge' => ['cette donnee est obligatoire'],
 
     
 ])->validate();
@@ -2043,6 +2111,27 @@ $extra_data=array_diff($envoyer,$champsRechercher);
 
 
 
+    
+
+        if(array_key_exists("identifiants_sadge",$data)){
+
+
+        if(!empty($data['identifiants_sadge'])){
+        
+            $Positions->identifiants_sadge = $data['identifiants_sadge'];
+        
+        }
+
+        }
+
+    
+
+
+
+
+
+
+
 
 
 
@@ -2111,6 +2200,7 @@ $newCrudData=[];
                 $newCrudData['traceruniqueid']=$Positions->traceruniqueid;
                 $newCrudData['sim']=$Positions->sim;
                 $newCrudData['balise_id']=$Positions->balise_id;
+                $newCrudData['identifiants_sadge']=$Positions->identifiants_sadge;
     
  try{ $newCrudData['balise']=$Positions->balise->Selectlabel; }catch(\Throwable $e){}  
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Update", 'entite' => 'Positions','entite_cle' => $Positions->id, 'ancien' => json_encode($oldCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);
@@ -2169,6 +2259,7 @@ $newCrudData=[];
                 $newCrudData['traceruniqueid']=$Positions->traceruniqueid;
                 $newCrudData['sim']=$Positions->sim;
                 $newCrudData['balise_id']=$Positions->balise_id;
+                $newCrudData['identifiants_sadge']=$Positions->identifiants_sadge;
     
  try{ $newCrudData['balise']=$Positions->balise->Selectlabel; }catch(\Throwable $e){}  
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Delete", 'entite' => 'Positions','entite_cle' => $Positions->id, 'ancien' => json_encode($newCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);

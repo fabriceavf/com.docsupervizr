@@ -1,4 +1,4 @@
-<?php
+<?php 
 namespace App\Http\Controllers\WEB;
 
 use Illuminate\Database\Schema\Blueprint;
@@ -154,111 +154,105 @@ $projets_disposition->disposition=$request->get('disposition');
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -278,9 +272,6 @@ $pageConfig = [
 
 
 $vue = view('/content/Projets.projets_component', ['pageConfigs' => $pageConfig, 'menu' => $this->menu,'projets_disposition'=>$projets_disposition,'preselect'=>$new,'options'=>$donnees??[],'options'=>$donnees??[],
-
-    'besoins_disposition'=>$besoins_disposition,
-
 ]);
 return response($vue, 200);
 }
@@ -317,12 +308,6 @@ $projets_disposition->disposition=$request->get('disposition');
 
 
 
-
-
-
-
-
-
 $pageConfig = [
  'mainLayoutType' => 'vertical',
 'type' => 'admin',
@@ -336,113 +321,110 @@ $pageConfig = [
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
 
 $vue = view('/content/Projets.Projets', ['pageConfigs' => $pageConfig, 'menu' => $this->menu,'projets_disposition'=>$projets_disposition,'preselect'=>$new,'options'=>$donnees??[],
-
-    'besoins_disposition'=>$besoins_disposition,
-
 ]);
 return response($vue, 200);
 }
@@ -464,14 +446,6 @@ $projets_disposition->disposition=$request->get('disposition');
 }
 
 
-
-
-
-
-
-
-
-
 $params=collect($request->all());
 $params=$params->filter(function ($value, $key) {
 //            dd($key);
@@ -503,105 +477,105 @@ abort(401);
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -614,9 +588,6 @@ $vue = view('/content/Projets.projets_one', [
 'Projets' => $Projets,
 'projets_disposition'=>$projets_disposition
 ,'preselect'=>$new,'options'=>$donnees??[],
-
-    'besoins_disposition'=>$besoins_disposition,
-
 ]);
 
 
@@ -634,14 +605,6 @@ $projets_disposition->disposition=$request->get('disposition');
 }
 
 
-
-
-
-
-
-
-
-
 $params=collect($request->all());
 $params=$params->filter(function ($value, $key) {
 //            dd($key);
@@ -673,105 +636,105 @@ abort(401);
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -784,9 +747,6 @@ $vue = view('/content/Projets.projets_one_component', [
 'Projets' => $Projets,
 'projets_disposition'=>$projets_disposition
 ,'preselect'=>$new,'options'=>$donnees??[],
-
-    'besoins_disposition'=>$besoins_disposition,
-
 ]);
 
 
@@ -813,14 +773,6 @@ abort(401);
 if($request->has('disposition')){
 $projets_disposition->disposition=$request->get('disposition');
 }
-
-
-
-
-
-
-
-
 
 
 $params=collect($request->all());
@@ -857,9 +809,6 @@ $vue = view('/content/Projets.impression', [
 'Projets' => $Projets,
 'projets_disposition'=>$projets_disposition
 ,'preselect'=>$new,'options'=>$donnees??[],
-
-    'besoins_disposition'=>$besoins_disposition,
-
 ]);
 return response($vue, 200);
 

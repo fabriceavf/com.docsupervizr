@@ -29,8 +29,7 @@ use Spatie\QueryBuilder\QueryBuilder;
 
 
 
-            use App\Models\Approvisionement;
-    
+
 class ApprovisionementdetailController extends Controller
 {
 
@@ -290,13 +289,9 @@ return $query;
 
     
 ])
-    
 ->allowedIncludes([
 
-            'approvisionement',
-        
-
-    ]);
+]);
 
 if(!empty($_REQUEST["paginate"]) && $_REQUEST["paginate"]==1 ){
 $data=$data->paginate(isset($_REQUEST["limit"]) ? max(0, intval($_REQUEST["limit"])) : 20);
@@ -552,12 +547,8 @@ return $query;
 
     
 ])
-    
 ->allowedIncludes([
-            'approvisionement',
-        
-
-    ]);
+]);
 
 if(!empty($_REQUEST["count"]) && $_REQUEST["count"]==1 ){
 return response()->json($data->count());
@@ -959,7 +950,7 @@ $newCrudData=[];
                                 $newCrudData['identifiants_sadge']=$Approvisionementdetails->identifiants_sadge;
                 $newCrudData['creat_by']=$Approvisionementdetails->creat_by;
     
- try{ $newCrudData['approvisionement']=$Approvisionementdetails->approvisionement->Selectlabel; }catch(\Throwable $e){}  
+
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Create", 'entite' => 'Approvisionementdetails','entite_cle' => $Approvisionementdetails->id, 'ancien' => json_encode($newCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);
 
 
@@ -1013,7 +1004,7 @@ $oldCrudData=[];
                                 $oldCrudData['identifiants_sadge']=$Approvisionementdetails->identifiants_sadge;
                 $oldCrudData['creat_by']=$Approvisionementdetails->creat_by;
     
- try{ $oldCrudData['approvisionement']=$Approvisionementdetails->approvisionement->Selectlabel; }catch(\Throwable $e){}  
+
 
 $data=$request->all();
 foreach ($request->allFiles() as $key=>$file){
@@ -1302,7 +1293,7 @@ $newCrudData=[];
                                 $newCrudData['identifiants_sadge']=$Approvisionementdetails->identifiants_sadge;
                 $newCrudData['creat_by']=$Approvisionementdetails->creat_by;
     
- try{ $newCrudData['approvisionement']=$Approvisionementdetails->approvisionement->Selectlabel; }catch(\Throwable $e){}  
+
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Update", 'entite' => 'Approvisionementdetails','entite_cle' => $Approvisionementdetails->id, 'ancien' => json_encode($oldCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);
 
 $response = $Approvisionementdetails->toArray();
@@ -1351,7 +1342,7 @@ $newCrudData=[];
                                 $newCrudData['identifiants_sadge']=$Approvisionementdetails->identifiants_sadge;
                 $newCrudData['creat_by']=$Approvisionementdetails->creat_by;
     
- try{ $newCrudData['approvisionement']=$Approvisionementdetails->approvisionement->Selectlabel; }catch(\Throwable $e){}  
+
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Delete", 'entite' => 'Approvisionementdetails','entite_cle' => $Approvisionementdetails->id, 'ancien' => json_encode($newCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);
 
 

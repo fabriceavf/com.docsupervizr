@@ -1,4 +1,4 @@
-<?php
+<?php 
 namespace App\Http\Controllers\WEB;
 
 use Illuminate\Database\Schema\Blueprint;
@@ -37,7 +37,7 @@ ini_set('memory_limit', '8192M');
 ini_set('max_execution_time', '300');
 
             use App\Models\prod\Client;
-
+    
 class ContratsclientsControllerWeb extends Controller
 {
 
@@ -161,95 +161,89 @@ $contratsclients_disposition->disposition=$request->get('disposition');
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -269,9 +263,6 @@ $pageConfig = [
 
 
 $vue = view('/content/Contratsclients.contratsclients_component', ['pageConfigs' => $pageConfig, 'menu' => $this->menu,'contratsclients_disposition'=>$contratsclients_disposition,'preselect'=>$new,'options'=>$donnees??[],'options'=>$donnees??[],
-
-    'contratssites_disposition'=>$contratssites_disposition,
-
 
     'postes_disposition'=>$postes_disposition,
 
@@ -317,12 +308,6 @@ $contratsclients_disposition->disposition=$request->get('disposition');
 
 
 
-
-
-
-
-
-
 $pageConfig = [
  'mainLayoutType' => 'vertical',
 'type' => 'admin',
@@ -336,97 +321,94 @@ $pageConfig = [
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
 
 $vue = view('/content/Contratsclients.Contratsclients', ['pageConfigs' => $pageConfig, 'menu' => $this->menu,'contratsclients_disposition'=>$contratsclients_disposition,'preselect'=>$new,'options'=>$donnees??[],
-
-    'contratssites_disposition'=>$contratssites_disposition,
-
 
     'postes_disposition'=>$postes_disposition,
 
@@ -458,15 +440,7 @@ $contratsclients_disposition->disposition=$request->get('disposition');
 
 
 
-
-
-
-
-
-
-
-
-
+    
 $params=collect($request->all());
 $params=$params->filter(function ($value, $key) {
 //            dd($key);
@@ -498,89 +472,89 @@ abort(401);
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -593,9 +567,6 @@ $vue = view('/content/Contratsclients.contratsclients_one', [
 'Contratsclients' => $Contratsclients,
 'contratsclients_disposition'=>$contratsclients_disposition
 ,'preselect'=>$new,'options'=>$donnees??[],
-
-    'contratssites_disposition'=>$contratssites_disposition,
-
 
     'postes_disposition'=>$postes_disposition,
 
@@ -623,15 +594,7 @@ $contratsclients_disposition->disposition=$request->get('disposition');
 
 
 
-
-
-
-
-
-
-
-
-
+    
 $params=collect($request->all());
 $params=$params->filter(function ($value, $key) {
 //            dd($key);
@@ -663,89 +626,89 @@ abort(401);
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -758,9 +721,6 @@ $vue = view('/content/Contratsclients.contratsclients_one_component', [
 'Contratsclients' => $Contratsclients,
 'contratsclients_disposition'=>$contratsclients_disposition
 ,'preselect'=>$new,'options'=>$donnees??[],
-
-    'contratssites_disposition'=>$contratssites_disposition,
-
 
     'postes_disposition'=>$postes_disposition,
 
@@ -799,15 +759,7 @@ $contratsclients_disposition->disposition=$request->get('disposition');
 
 
 
-
-
-
-
-
-
-
-
-
+    
 $params=collect($request->all());
 $params=$params->filter(function ($value, $key) {
 //            dd($key);
@@ -842,9 +794,6 @@ $vue = view('/content/Contratsclients.impression', [
 'Contratsclients' => $Contratsclients,
 'contratsclients_disposition'=>$contratsclients_disposition
 ,'preselect'=>$new,'options'=>$donnees??[],
-
-    'contratssites_disposition'=>$contratssites_disposition,
-
 
     'postes_disposition'=>$postes_disposition,
 

@@ -174,9 +174,6 @@ $data = QueryBuilder::for(Typesposte::class)
     
     
     
-            AllowedFilter::exact('identifiants_sadge'),
-
-    
             AllowedFilter::exact('canCreate'),
 
     
@@ -187,6 +184,9 @@ $data = QueryBuilder::for(Typesposte::class)
 
     
             AllowedFilter::exact('maxagent'),
+
+    
+            AllowedFilter::exact('identifiants_sadge'),
 
     
 AllowedFilter::callback('not_null', function (Builder $query, $value) {
@@ -297,9 +297,6 @@ return $query;
     
     
     
-            AllowedSort::field('identifiants_sadge'),
-
-    
             AllowedSort::field('canCreate'),
 
     
@@ -312,6 +309,9 @@ return $query;
             AllowedSort::field('maxagent'),
 
     
+            AllowedSort::field('identifiants_sadge'),
+
+    
 ])
 ->allowedIncludes([
             'horairestypespostes',
@@ -321,9 +321,6 @@ return $query;
         
 
                 'postes',
-        
-
-                'userstypespostes',
         
 
     
@@ -496,9 +493,6 @@ $data = QueryBuilder::for(Typesposte::class)
     
     
     
-            AllowedFilter::exact('identifiants_sadge'),
-
-    
             AllowedFilter::exact('canCreate'),
 
     
@@ -509,6 +503,9 @@ $data = QueryBuilder::for(Typesposte::class)
 
     
             AllowedFilter::exact('maxagent'),
+
+    
+            AllowedFilter::exact('identifiants_sadge'),
 
     
 AllowedFilter::callback('not_null', function (Builder $query, $value) {
@@ -619,9 +616,6 @@ return $query;
     
     
     
-            AllowedSort::field('identifiants_sadge'),
-
-    
             AllowedSort::field('canCreate'),
 
     
@@ -634,6 +628,9 @@ return $query;
             AllowedSort::field('maxagent'),
 
     
+            AllowedSort::field('identifiants_sadge'),
+
+    
 ])
 ->allowedIncludes([
             'horairestypespostes',
@@ -643,9 +640,6 @@ return $query;
         
 
                 'postes',
-        
-
-                'userstypespostes',
         
 
     ]);
@@ -826,11 +820,11 @@ $champsRechercher=[
     'created_at',
     'updated_at',
     'deleted_at',
-    'identifiants_sadge',
     'canCreate',
     'canUpdate',
     'canDelete',
     'maxagent',
+    'identifiants_sadge',
 ];
 $envoyer=[];
 foreach($data as $key=>$d){
@@ -865,12 +859,6 @@ Validator::make($data, [
     
     
     
-                    'identifiants_sadge' => [
-            //'required'
-            ],
-        
-    
-    
                     'canCreate' => [
             //'required'
             ],
@@ -890,6 +878,12 @@ Validator::make($data, [
     
     
                     'maxagent' => [
+            //'required'
+            ],
+        
+    
+    
+                    'identifiants_sadge' => [
             //'required'
             ],
         
@@ -916,10 +910,6 @@ Validator::make($data, [
     
     
     
-        'identifiants_sadge' => ['cette donnee est obligatoire'],
-
-    
-    
         'canCreate' => ['cette donnee est obligatoire'],
 
     
@@ -933,6 +923,10 @@ Validator::make($data, [
     
     
         'maxagent' => ['cette donnee est obligatoire'],
+
+    
+    
+        'identifiants_sadge' => ['cette donnee est obligatoire'],
 
     
 ])->validate();
@@ -1053,24 +1047,6 @@ $data['creat_by']=Auth::id();
 
     
 
-        if(!empty($data['identifiants_sadge'])){
-        
-            $Typespostes->identifiants_sadge = $data['identifiants_sadge'];
-        
-        }
-
-
-
-    
-
-
-
-
-
-
-
-    
-
         if(!empty($data['canCreate'])){
         
             $Typespostes->canCreate = $data['canCreate'];
@@ -1141,6 +1117,24 @@ $data['creat_by']=Auth::id();
 
 
 
+    
+
+        if(!empty($data['identifiants_sadge'])){
+        
+            $Typespostes->identifiants_sadge = $data['identifiants_sadge'];
+        
+        }
+
+
+
+    
+
+
+
+
+
+
+
 
 
 
@@ -1192,11 +1186,11 @@ $newCrudData=[];
                 $newCrudData['code']=$Typespostes->code;
                 $newCrudData['libelle']=$Typespostes->libelle;
                 $newCrudData['creat_by']=$Typespostes->creat_by;
-                                $newCrudData['identifiants_sadge']=$Typespostes->identifiants_sadge;
-                $newCrudData['canCreate']=$Typespostes->canCreate;
+                                $newCrudData['canCreate']=$Typespostes->canCreate;
                 $newCrudData['canUpdate']=$Typespostes->canUpdate;
                 $newCrudData['canDelete']=$Typespostes->canDelete;
                 $newCrudData['maxagent']=$Typespostes->maxagent;
+                $newCrudData['identifiants_sadge']=$Typespostes->identifiants_sadge;
     
 
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Create", 'entite' => 'Typespostes','entite_cle' => $Typespostes->id, 'ancien' => json_encode($newCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);
@@ -1250,11 +1244,11 @@ $oldCrudData=[];
                 $oldCrudData['code']=$Typespostes->code;
                 $oldCrudData['libelle']=$Typespostes->libelle;
                 $oldCrudData['creat_by']=$Typespostes->creat_by;
-                                $oldCrudData['identifiants_sadge']=$Typespostes->identifiants_sadge;
-                $oldCrudData['canCreate']=$Typespostes->canCreate;
+                                $oldCrudData['canCreate']=$Typespostes->canCreate;
                 $oldCrudData['canUpdate']=$Typespostes->canUpdate;
                 $oldCrudData['canDelete']=$Typespostes->canDelete;
                 $oldCrudData['maxagent']=$Typespostes->maxagent;
+                $oldCrudData['identifiants_sadge']=$Typespostes->identifiants_sadge;
     
 
 
@@ -1276,11 +1270,11 @@ $champsRechercher=[
     'created_at',
     'updated_at',
     'deleted_at',
-    'identifiants_sadge',
     'canCreate',
     'canUpdate',
     'canDelete',
     'maxagent',
+    'identifiants_sadge',
 ];
 $envoyer=[];
 foreach($data as $key=>$d){
@@ -1315,12 +1309,6 @@ Validator::make($data, [
     
     
     
-                    'identifiants_sadge' => [
-            //'required'
-            ],
-        
-    
-    
                     'canCreate' => [
             //'required'
             ],
@@ -1340,6 +1328,12 @@ Validator::make($data, [
     
     
                     'maxagent' => [
+            //'required'
+            ],
+        
+    
+    
+                    'identifiants_sadge' => [
             //'required'
             ],
         
@@ -1366,10 +1360,6 @@ Validator::make($data, [
     
     
     
-        'identifiants_sadge' => ['cette donnee est obligatoire'],
-
-    
-    
         'canCreate' => ['cette donnee est obligatoire'],
 
     
@@ -1383,6 +1373,10 @@ Validator::make($data, [
     
     
         'maxagent' => ['cette donnee est obligatoire'],
+
+    
+    
+        'identifiants_sadge' => ['cette donnee est obligatoire'],
 
     
 ])->validate();
@@ -1510,27 +1504,6 @@ $extra_data=array_diff($envoyer,$champsRechercher);
 
     
 
-        if(array_key_exists("identifiants_sadge",$data)){
-
-
-        if(!empty($data['identifiants_sadge'])){
-        
-            $Typespostes->identifiants_sadge = $data['identifiants_sadge'];
-        
-        }
-
-        }
-
-    
-
-
-
-
-
-
-
-    
-
         if(array_key_exists("canCreate",$data)){
 
 
@@ -1613,6 +1586,27 @@ $extra_data=array_diff($envoyer,$champsRechercher);
 
 
 
+    
+
+        if(array_key_exists("identifiants_sadge",$data)){
+
+
+        if(!empty($data['identifiants_sadge'])){
+        
+            $Typespostes->identifiants_sadge = $data['identifiants_sadge'];
+        
+        }
+
+        }
+
+    
+
+
+
+
+
+
+
 
 
 
@@ -1671,11 +1665,11 @@ $newCrudData=[];
                 $newCrudData['code']=$Typespostes->code;
                 $newCrudData['libelle']=$Typespostes->libelle;
                 $newCrudData['creat_by']=$Typespostes->creat_by;
-                                $newCrudData['identifiants_sadge']=$Typespostes->identifiants_sadge;
-                $newCrudData['canCreate']=$Typespostes->canCreate;
+                                $newCrudData['canCreate']=$Typespostes->canCreate;
                 $newCrudData['canUpdate']=$Typespostes->canUpdate;
                 $newCrudData['canDelete']=$Typespostes->canDelete;
                 $newCrudData['maxagent']=$Typespostes->maxagent;
+                $newCrudData['identifiants_sadge']=$Typespostes->identifiants_sadge;
     
 
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Update", 'entite' => 'Typespostes','entite_cle' => $Typespostes->id, 'ancien' => json_encode($oldCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);
@@ -1724,11 +1718,11 @@ $newCrudData=[];
                 $newCrudData['code']=$Typespostes->code;
                 $newCrudData['libelle']=$Typespostes->libelle;
                 $newCrudData['creat_by']=$Typespostes->creat_by;
-                                $newCrudData['identifiants_sadge']=$Typespostes->identifiants_sadge;
-                $newCrudData['canCreate']=$Typespostes->canCreate;
+                                $newCrudData['canCreate']=$Typespostes->canCreate;
                 $newCrudData['canUpdate']=$Typespostes->canUpdate;
                 $newCrudData['canDelete']=$Typespostes->canDelete;
                 $newCrudData['maxagent']=$Typespostes->maxagent;
+                $newCrudData['identifiants_sadge']=$Typespostes->identifiants_sadge;
     
 
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Delete", 'entite' => 'Typespostes','entite_cle' => $Typespostes->id, 'ancien' => json_encode($newCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);

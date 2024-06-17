@@ -182,6 +182,9 @@ $data = QueryBuilder::for(Tracking::class)
     
     
     
+            AllowedFilter::exact('identifiants_sadge'),
+
+    
 AllowedFilter::callback('not_null', function (Builder $query, $value) {
 //                    dump($value);
 
@@ -296,6 +299,9 @@ return $query;
     
     
     
+            AllowedSort::field('identifiants_sadge'),
+
+    
 ])
     
     
@@ -315,6 +321,13 @@ $data=$data->paginate(isset($_REQUEST["limit"]) ? max(0, intval($_REQUEST["limit
 $data=$data->get();
 }
 $donnees=$data->toArray();
+
+
+    
+
+
+
+
 
 
     
@@ -461,6 +474,9 @@ $data = QueryBuilder::for(Tracking::class)
     
     
     
+            AllowedFilter::exact('identifiants_sadge'),
+
+    
 AllowedFilter::callback('not_null', function (Builder $query, $value) {
 //                    dump($value);
 
@@ -575,6 +591,9 @@ return $query;
     
     
     
+            AllowedSort::field('identifiants_sadge'),
+
+    
 ])
     
     
@@ -597,6 +616,13 @@ $data=$data->paginate(isset($_REQUEST["limit"]) ? max(0, intval($_REQUEST["limit
 $data=$data->get();
 }
 $donnees=$data->toArray();
+
+
+
+
+
+    
+
 
 
 
@@ -744,6 +770,7 @@ $champsRechercher=[
     'created_at',
     'updated_at',
     'deleted_at',
+    'identifiants_sadge',
 ];
 $envoyer=[];
 foreach($data as $key=>$d){
@@ -789,6 +816,12 @@ Validator::make($data, [
     
     
     
+    
+                    'identifiants_sadge' => [
+            //'required'
+            ],
+        
+    
 
 
 ], $messages = [
@@ -817,6 +850,10 @@ Validator::make($data, [
     
     
     
+    
+    
+        'identifiants_sadge' => ['cette donnee est obligatoire'],
+
     
 ])->validate();
 
@@ -970,6 +1007,24 @@ $data['creat_by']=Auth::id();
 
 
 
+    
+
+        if(!empty($data['identifiants_sadge'])){
+        
+            $Trackings->identifiants_sadge = $data['identifiants_sadge'];
+        
+        }
+
+
+
+    
+
+
+
+
+
+
+
 
 
 
@@ -1023,7 +1078,8 @@ $newCrudData=[];
                 $newCrudData['date_debut']=$Trackings->date_debut;
                 $newCrudData['date_fin']=$Trackings->date_fin;
                 $newCrudData['creat_by']=$Trackings->creat_by;
-                    
+                                $newCrudData['identifiants_sadge']=$Trackings->identifiants_sadge;
+    
  try{ $newCrudData['balise']=$Trackings->balise->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['moyenstransport']=$Trackings->moyenstransport->Selectlabel; }catch(\Throwable $e){}  
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Create", 'entite' => 'Trackings','entite_cle' => $Trackings->id, 'ancien' => json_encode($newCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);
 
@@ -1078,7 +1134,8 @@ $oldCrudData=[];
                 $oldCrudData['date_debut']=$Trackings->date_debut;
                 $oldCrudData['date_fin']=$Trackings->date_fin;
                 $oldCrudData['creat_by']=$Trackings->creat_by;
-                    
+                                $oldCrudData['identifiants_sadge']=$Trackings->identifiants_sadge;
+    
  try{ $oldCrudData['balise']=$Trackings->balise->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['moyenstransport']=$Trackings->moyenstransport->Selectlabel; }catch(\Throwable $e){}  
 
 $data=$request->all();
@@ -1101,6 +1158,7 @@ $champsRechercher=[
     'created_at',
     'updated_at',
     'deleted_at',
+    'identifiants_sadge',
 ];
 $envoyer=[];
 foreach($data as $key=>$d){
@@ -1146,6 +1204,12 @@ Validator::make($data, [
     
     
     
+    
+                    'identifiants_sadge' => [
+            //'required'
+            ],
+        
+    
 
 
 ], $messages = [
@@ -1174,6 +1238,10 @@ Validator::make($data, [
     
     
     
+    
+    
+        'identifiants_sadge' => ['cette donnee est obligatoire'],
+
     
 ])->validate();
 
@@ -1340,6 +1408,27 @@ $extra_data=array_diff($envoyer,$champsRechercher);
 
 
 
+    
+
+        if(array_key_exists("identifiants_sadge",$data)){
+
+
+        if(!empty($data['identifiants_sadge'])){
+        
+            $Trackings->identifiants_sadge = $data['identifiants_sadge'];
+        
+        }
+
+        }
+
+    
+
+
+
+
+
+
+
 
 
 
@@ -1400,7 +1489,8 @@ $newCrudData=[];
                 $newCrudData['date_debut']=$Trackings->date_debut;
                 $newCrudData['date_fin']=$Trackings->date_fin;
                 $newCrudData['creat_by']=$Trackings->creat_by;
-                    
+                                $newCrudData['identifiants_sadge']=$Trackings->identifiants_sadge;
+    
  try{ $newCrudData['balise']=$Trackings->balise->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['moyenstransport']=$Trackings->moyenstransport->Selectlabel; }catch(\Throwable $e){}  
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Update", 'entite' => 'Trackings','entite_cle' => $Trackings->id, 'ancien' => json_encode($oldCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);
 
@@ -1450,7 +1540,8 @@ $newCrudData=[];
                 $newCrudData['date_debut']=$Trackings->date_debut;
                 $newCrudData['date_fin']=$Trackings->date_fin;
                 $newCrudData['creat_by']=$Trackings->creat_by;
-                    
+                                $newCrudData['identifiants_sadge']=$Trackings->identifiants_sadge;
+    
  try{ $newCrudData['balise']=$Trackings->balise->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['moyenstransport']=$Trackings->moyenstransport->Selectlabel; }catch(\Throwable $e){}  
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Delete", 'entite' => 'Trackings','entite_cle' => $Trackings->id, 'ancien' => json_encode($newCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);
 

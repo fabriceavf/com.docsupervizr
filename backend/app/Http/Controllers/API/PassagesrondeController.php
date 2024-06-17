@@ -199,10 +199,10 @@ $data = QueryBuilder::for(Passagesronde::class)
     
     
     
-            AllowedFilter::exact('identifiants_sadge'),
+            AllowedFilter::exact('libelle'),
 
     
-            AllowedFilter::exact('libelle'),
+            AllowedFilter::exact('identifiants_sadge'),
 
     
 AllowedFilter::callback('not_null', function (Builder $query, $value) {
@@ -337,10 +337,10 @@ return $query;
     
     
     
-            AllowedSort::field('identifiants_sadge'),
+            AllowedSort::field('libelle'),
 
     
-            AllowedSort::field('libelle'),
+            AllowedSort::field('identifiants_sadge'),
 
     
 ])
@@ -578,10 +578,10 @@ $data = QueryBuilder::for(Passagesronde::class)
     
     
     
-            AllowedFilter::exact('identifiants_sadge'),
+            AllowedFilter::exact('libelle'),
 
     
-            AllowedFilter::exact('libelle'),
+            AllowedFilter::exact('identifiants_sadge'),
 
     
 AllowedFilter::callback('not_null', function (Builder $query, $value) {
@@ -716,10 +716,10 @@ return $query;
     
     
     
-            AllowedSort::field('identifiants_sadge'),
+            AllowedSort::field('libelle'),
 
     
-            AllowedSort::field('libelle'),
+            AllowedSort::field('identifiants_sadge'),
 
     
 ])
@@ -949,8 +949,8 @@ $champsRechercher=[
     'updated_at',
     'extra_attributes',
     'deleted_at',
-    'identifiants_sadge',
     'libelle',
+    'identifiants_sadge',
 ];
 $envoyer=[];
 foreach($data as $key=>$d){
@@ -1033,13 +1033,13 @@ Validator::make($data, [
     
     
     
-                    'identifiants_sadge' => [
+                    'libelle' => [
             //'required'
             ],
         
     
     
-                    'libelle' => [
+                    'identifiants_sadge' => [
             //'required'
             ],
         
@@ -1098,11 +1098,11 @@ Validator::make($data, [
     
     
     
-        'identifiants_sadge' => ['cette donnee est obligatoire'],
+        'libelle' => ['cette donnee est obligatoire'],
 
     
     
-        'libelle' => ['cette donnee est obligatoire'],
+        'identifiants_sadge' => ['cette donnee est obligatoire'],
 
     
 ])->validate();
@@ -1367,9 +1367,9 @@ $data['creat_by']=Auth::id();
 
     
 
-        if(!empty($data['identifiants_sadge'])){
+        if(!empty($data['libelle'])){
         
-            $Passagesrondes->identifiants_sadge = $data['identifiants_sadge'];
+            $Passagesrondes->libelle = $data['libelle'];
         
         }
 
@@ -1385,9 +1385,9 @@ $data['creat_by']=Auth::id();
 
     
 
-        if(!empty($data['libelle'])){
+        if(!empty($data['identifiants_sadge'])){
         
-            $Passagesrondes->libelle = $data['libelle'];
+            $Passagesrondes->identifiants_sadge = $data['identifiants_sadge'];
         
         }
 
@@ -1460,8 +1460,8 @@ $newCrudData=[];
                 $newCrudData['dim']=$Passagesrondes->dim;
                 $newCrudData['site_id']=$Passagesrondes->site_id;
                 $newCrudData['creat_by']=$Passagesrondes->creat_by;
-                                $newCrudData['identifiants_sadge']=$Passagesrondes->identifiants_sadge;
-                $newCrudData['libelle']=$Passagesrondes->libelle;
+                                $newCrudData['libelle']=$Passagesrondes->libelle;
+                $newCrudData['identifiants_sadge']=$Passagesrondes->identifiants_sadge;
     
  try{ $newCrudData['site']=$Passagesrondes->site->Selectlabel; }catch(\Throwable $e){}  
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Create", 'entite' => 'Passagesrondes','entite_cle' => $Passagesrondes->id, 'ancien' => json_encode($newCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);
@@ -1523,8 +1523,8 @@ $oldCrudData=[];
                 $oldCrudData['dim']=$Passagesrondes->dim;
                 $oldCrudData['site_id']=$Passagesrondes->site_id;
                 $oldCrudData['creat_by']=$Passagesrondes->creat_by;
-                                $oldCrudData['identifiants_sadge']=$Passagesrondes->identifiants_sadge;
-                $oldCrudData['libelle']=$Passagesrondes->libelle;
+                                $oldCrudData['libelle']=$Passagesrondes->libelle;
+                $oldCrudData['identifiants_sadge']=$Passagesrondes->identifiants_sadge;
     
  try{ $oldCrudData['site']=$Passagesrondes->site->Selectlabel; }catch(\Throwable $e){}  
 
@@ -1554,8 +1554,8 @@ $champsRechercher=[
     'updated_at',
     'extra_attributes',
     'deleted_at',
-    'identifiants_sadge',
     'libelle',
+    'identifiants_sadge',
 ];
 $envoyer=[];
 foreach($data as $key=>$d){
@@ -1638,13 +1638,13 @@ Validator::make($data, [
     
     
     
-                    'identifiants_sadge' => [
+                    'libelle' => [
             //'required'
             ],
         
     
     
-                    'libelle' => [
+                    'identifiants_sadge' => [
             //'required'
             ],
         
@@ -1703,11 +1703,11 @@ Validator::make($data, [
     
     
     
-        'identifiants_sadge' => ['cette donnee est obligatoire'],
+        'libelle' => ['cette donnee est obligatoire'],
 
     
     
-        'libelle' => ['cette donnee est obligatoire'],
+        'identifiants_sadge' => ['cette donnee est obligatoire'],
 
     
 ])->validate();
@@ -2003,33 +2003,33 @@ $extra_data=array_diff($envoyer,$champsRechercher);
 
     
 
-        if(array_key_exists("identifiants_sadge",$data)){
-
-
-        if(!empty($data['identifiants_sadge'])){
-        
-            $Passagesrondes->identifiants_sadge = $data['identifiants_sadge'];
-        
-        }
-
-        }
-
-    
-
-
-
-
-
-
-
-    
-
         if(array_key_exists("libelle",$data)){
 
 
         if(!empty($data['libelle'])){
         
             $Passagesrondes->libelle = $data['libelle'];
+        
+        }
+
+        }
+
+    
+
+
+
+
+
+
+
+    
+
+        if(array_key_exists("identifiants_sadge",$data)){
+
+
+        if(!empty($data['identifiants_sadge'])){
+        
+            $Passagesrondes->identifiants_sadge = $data['identifiants_sadge'];
         
         }
 
@@ -2109,8 +2109,8 @@ $newCrudData=[];
                 $newCrudData['dim']=$Passagesrondes->dim;
                 $newCrudData['site_id']=$Passagesrondes->site_id;
                 $newCrudData['creat_by']=$Passagesrondes->creat_by;
-                                $newCrudData['identifiants_sadge']=$Passagesrondes->identifiants_sadge;
-                $newCrudData['libelle']=$Passagesrondes->libelle;
+                                $newCrudData['libelle']=$Passagesrondes->libelle;
+                $newCrudData['identifiants_sadge']=$Passagesrondes->identifiants_sadge;
     
  try{ $newCrudData['site']=$Passagesrondes->site->Selectlabel; }catch(\Throwable $e){}  
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Update", 'entite' => 'Passagesrondes','entite_cle' => $Passagesrondes->id, 'ancien' => json_encode($oldCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);
@@ -2167,8 +2167,8 @@ $newCrudData=[];
                 $newCrudData['dim']=$Passagesrondes->dim;
                 $newCrudData['site_id']=$Passagesrondes->site_id;
                 $newCrudData['creat_by']=$Passagesrondes->creat_by;
-                                $newCrudData['identifiants_sadge']=$Passagesrondes->identifiants_sadge;
-                $newCrudData['libelle']=$Passagesrondes->libelle;
+                                $newCrudData['libelle']=$Passagesrondes->libelle;
+                $newCrudData['identifiants_sadge']=$Passagesrondes->identifiants_sadge;
     
  try{ $newCrudData['site']=$Passagesrondes->site->Selectlabel; }catch(\Throwable $e){}  
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Delete", 'entite' => 'Passagesrondes','entite_cle' => $Passagesrondes->id, 'ancien' => json_encode($newCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);

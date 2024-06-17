@@ -29,8 +29,7 @@ use Spatie\QueryBuilder\QueryBuilder;
 
 
 
-            use App\Models\Activite;
-        
+    
 class WorkController extends Controller
 {
 
@@ -315,19 +314,12 @@ return $query;
     
 ])
     
-    
 ->allowedIncludes([
             'actions',
         
 
-                'processus',
-        
-
     
-            'activite',
-        
-
-                'user',
+            'user',
         
 
     ]);
@@ -639,15 +631,8 @@ return $query;
     
 ])
     
-    
 ->allowedIncludes([
             'actions',
-        
-
-                'processus',
-        
-
-                'activite',
         
 
                 'user',
@@ -1195,7 +1180,7 @@ $newCrudData=[];
                 $newCrudData['identifiants_sadge']=$Works->identifiants_sadge;
                 $newCrudData['creat_by']=$Works->creat_by;
     
- try{ $newCrudData['activite']=$Works->activite->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['user']=$Works->user->Selectlabel; }catch(\Throwable $e){}  
+ try{ $newCrudData['user']=$Works->user->Selectlabel; }catch(\Throwable $e){}  
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Create", 'entite' => 'Works','entite_cle' => $Works->id, 'ancien' => json_encode($newCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);
 
 
@@ -1253,7 +1238,7 @@ $oldCrudData=[];
                 $oldCrudData['identifiants_sadge']=$Works->identifiants_sadge;
                 $oldCrudData['creat_by']=$Works->creat_by;
     
- try{ $oldCrudData['activite']=$Works->activite->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['user']=$Works->user->Selectlabel; }catch(\Throwable $e){}  
+ try{ $oldCrudData['user']=$Works->user->Selectlabel; }catch(\Throwable $e){}  
 
 $data=$request->all();
 foreach ($request->allFiles() as $key=>$file){
@@ -1666,7 +1651,7 @@ $newCrudData=[];
                 $newCrudData['identifiants_sadge']=$Works->identifiants_sadge;
                 $newCrudData['creat_by']=$Works->creat_by;
     
- try{ $newCrudData['activite']=$Works->activite->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['user']=$Works->user->Selectlabel; }catch(\Throwable $e){}  
+ try{ $newCrudData['user']=$Works->user->Selectlabel; }catch(\Throwable $e){}  
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Update", 'entite' => 'Works','entite_cle' => $Works->id, 'ancien' => json_encode($oldCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);
 
 $response = $Works->toArray();
@@ -1719,7 +1704,7 @@ $newCrudData=[];
                 $newCrudData['identifiants_sadge']=$Works->identifiants_sadge;
                 $newCrudData['creat_by']=$Works->creat_by;
     
- try{ $newCrudData['activite']=$Works->activite->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['user']=$Works->user->Selectlabel; }catch(\Throwable $e){}  
+ try{ $newCrudData['user']=$Works->user->Selectlabel; }catch(\Throwable $e){}  
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Delete", 'entite' => 'Works','entite_cle' => $Works->id, 'ancien' => json_encode($newCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);
 
 

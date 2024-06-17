@@ -1,4 +1,4 @@
-<?php
+<?php 
 namespace App\Http\Controllers\WEB;
 
 use Illuminate\Database\Schema\Blueprint;
@@ -166,87 +166,81 @@ $types_disposition->disposition=$request->get('disposition');
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -266,9 +260,6 @@ $pageConfig = [
 
 
 $vue = view('/content/Types.types_component', ['pageConfigs' => $pageConfig, 'menu' => $this->menu,'types_disposition'=>$types_disposition,'preselect'=>$new,'options'=>$donnees??[],'options'=>$donnees??[],
-
-    'listings_disposition'=>$listings_disposition,
-
 
     'rapports_disposition'=>$rapports_disposition,
 
@@ -323,12 +314,6 @@ $types_disposition->disposition=$request->get('disposition');
 
 
 
-
-
-
-
-
-
 $pageConfig = [
  'mainLayoutType' => 'vertical',
 'type' => 'admin',
@@ -342,89 +327,86 @@ $pageConfig = [
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
 
 $vue = view('/content/Types.Types', ['pageConfigs' => $pageConfig, 'menu' => $this->menu,'types_disposition'=>$types_disposition,'preselect'=>$new,'options'=>$donnees??[],
-
-    'listings_disposition'=>$listings_disposition,
-
 
     'rapports_disposition'=>$rapports_disposition,
 
@@ -459,6 +441,7 @@ $types_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -466,16 +449,7 @@ $types_disposition->disposition=$request->get('disposition');
 
 
 
-
-
-
-
-
-
-
-
-
-
+    
 $params=collect($request->all());
 $params=$params->filter(function ($value, $key) {
 //            dd($key);
@@ -507,81 +481,81 @@ abort(401);
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -594,9 +568,6 @@ $vue = view('/content/Types.types_one', [
 'Types' => $Types,
 'types_disposition'=>$types_disposition
 ,'preselect'=>$new,'options'=>$donnees??[],
-
-    'listings_disposition'=>$listings_disposition,
-
 
     'rapports_disposition'=>$rapports_disposition,
 
@@ -627,6 +598,7 @@ $types_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -634,16 +606,7 @@ $types_disposition->disposition=$request->get('disposition');
 
 
 
-
-
-
-
-
-
-
-
-
-
+    
 $params=collect($request->all());
 $params=$params->filter(function ($value, $key) {
 //            dd($key);
@@ -675,81 +638,81 @@ abort(401);
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -762,9 +725,6 @@ $vue = view('/content/Types.types_one_component', [
 'Types' => $Types,
 'types_disposition'=>$types_disposition
 ,'preselect'=>$new,'options'=>$donnees??[],
-
-    'listings_disposition'=>$listings_disposition,
-
 
     'rapports_disposition'=>$rapports_disposition,
 
@@ -806,6 +766,7 @@ $types_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -813,16 +774,7 @@ $types_disposition->disposition=$request->get('disposition');
 
 
 
-
-
-
-
-
-
-
-
-
-
+    
 $params=collect($request->all());
 $params=$params->filter(function ($value, $key) {
 //            dd($key);
@@ -857,9 +809,6 @@ $vue = view('/content/Types.impression', [
 'Types' => $Types,
 'types_disposition'=>$types_disposition
 ,'preselect'=>$new,'options'=>$donnees??[],
-
-    'listings_disposition'=>$listings_disposition,
-
 
     'rapports_disposition'=>$rapports_disposition,
 

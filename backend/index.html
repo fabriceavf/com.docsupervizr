@@ -1,0 +1,366 @@
+<h3 id="analyse-du-docker-compose-pour-une-application-laravel">Analyse du Docker Compose pour une Application Laravel</h3>
+<h4 id="version-de-docker-compose">Version de Docker Compose</h4>
+<p>La version spécifiée est <code>3.7</code>.</p>
+<h4 id="services-d-finis-et-leur-r-le">Services Définis et Leur Rôle</h4>
+<ol>
+    <li><p><strong>application</strong></p>
+        <ul>
+            <li><strong>Rôle</strong>: Héberge l&#39;application Laravel principale.</li>
+            <li><strong>Build</strong>:<ul>
+                <li>Contexte: <code>${BASE_PATH}/images/laravel-php</code></li>
+                <li>Arguments: <code>USER_ID: 1000</code>, <code>GROUP_ID: 1000</code></li>
+            </ul>
+            </li>
+            <li><strong>Image</strong>: <code>laravel_www:latest</code></li>
+            <li><strong>Dépendances</strong>: Redis, MariaDB</li>
+            <li><strong>Réseaux</strong>: <code>network</code></li>
+            <li><strong>Volumes Montés</strong>:<ul>
+                <li><code>${BASE_PATH}/frontend:/var/www/test</code></li>
+                <li><code>${BASE_PATH}/backend:/var/www/html</code></li>
+                <li><code>${BASE_PATH}/apache/vhost.conf:/etc/apache2/sites-available/000-default.conf</code></li>
+                <li><code>${BASE_PATH}/certbot/conf:/etc/letsencrypt</code></li>
+            </ul>
+            </li>
+            <li><strong>Variables d&#39;Environnement</strong>:<ul>
+                <li><code>APP_ENV: local</code></li>
+                <li><code>CONTAINER_ROLE: app-prod</code></li>
+                <li><code>CACHE_DRIVER: redis</code></li>
+                <li><code>SESSION_DRIVER: redis</code></li>
+                <li><code>QUEUE_DRIVER: redis</code></li>
+                <li><code>REDIS_HOST: redis</code></li>
+            </ul>
+            </li>
+            <li><strong>Ports Exposés</strong>: <code>${APP_HTTP_PORT}:80</code>, <code>${APP_HTTPS_PORT}:443</code></li>
+            <li><strong>Redémarrage</strong>: Toujours</li>
+            <li><strong>Sysctl</strong>: <code>net.ipv4.ip_unprivileged_port_start: 0</code></li>
+        </ul>
+    </li>
+    <li><p><strong>echo-server</strong></p>
+        <ul>
+            <li><strong>Rôle</strong>: Gère les événements en temps réel pour Laravel Echo.</li>
+            <li><strong>Image</strong>: <code>laravel_www:latest</code></li>
+            <li><strong>Dépendances</strong>: Redis, MariaDB, application</li>
+            <li><strong>Réseaux</strong>: <code>network</code></li>
+            <li><strong>Volumes Montés</strong>:<ul>
+                <li><code>${BASE_PATH}/backend:/var/www/html</code></li>
+                <li><code>${BASE_PATH}/apache/vhost.conf:/etc/apache2/sites-available/000-default.conf</code></li>
+            </ul>
+            </li>
+            <li><strong>Variables d&#39;Environnement</strong>:<ul>
+                <li><code>APP_ENV: local</code></li>
+                <li><code>CONTAINER_ROLE: echo-server</code></li>
+                <li><code>CACHE_DRIVER: redis</code></li>
+                <li><code>SESSION_DRIVER: redis</code></li>
+                <li><code>QUEUE_NAME: collect</code></li>
+                <li><code>QUEUE_DRIVER: redis</code></li>
+                <li><code>REDIS_HOST: redis</code></li>
+            </ul>
+            </li>
+            <li><strong>Ports Exposés</strong>: <code>${WS_HTTP_PORT}:6001</code></li>
+            <li><strong>Redémarrage</strong>: Toujours</li>
+            <li><strong>Sysctl</strong>: <code>net.ipv4.ip_unprivileged_port_start: 0</code></li>
+        </ul>
+    </li>
+    <li><p><strong>sheduler</strong></p>
+        <ul>
+            <li><strong>Rôle</strong>: Gère les tâches planifiées pour Laravel.</li>
+            <li><strong>Image</strong>: <code>laravel_www:latest</code></li>
+            <li><strong>Dépendances</strong>: Redis, MariaDB, application</li>
+            <li><strong>Réseaux</strong>: <code>network</code></li>
+            <li><strong>Volumes Montés</strong>:<ul>
+                <li><code>${BASE_PATH}/backend:/var/www/html</code></li>
+                <li><code>${BASE_PATH}/apache/vhost.conf:/etc/apache2/sites-available/000-default.conf</code></li>
+            </ul>
+            </li>
+            <li><strong>Variables d&#39;Environnement</strong>:<ul>
+                <li><code>APP_ENV: local</code></li>
+                <li><code>CONTAINER_ROLE: scheduler</code></li>
+                <li><code>CACHE_DRIVER: redis</code></li>
+                <li><code>SESSION_DRIVER: redis</code></li>
+                <li><code>QUEUE_DRIVER: redis</code></li>
+                <li><code>REDIS_HOST: redis</code></li>
+            </ul>
+            </li>
+            <li><strong>Redémarrage</strong>: Toujours</li>
+            <li><strong>Sysctl</strong>: <code>net.ipv4.ip_unprivileged_port_start: 0</code></li>
+        </ul>
+    </li>
+    <li><p><strong>queue_default</strong></p>
+        <ul>
+            <li><strong>Rôle</strong>: Gère les files d&#39;attente par défaut de Laravel.</li>
+            <li><strong>Image</strong>: <code>laravel_www:latest</code></li>
+            <li><strong>Dépendances</strong>: Redis, MariaDB, application</li>
+            <li><strong>Réseaux</strong>: <code>network</code></li>
+            <li><strong>Volumes Montés</strong>:<ul>
+                <li><code>${BASE_PATH}/backend:/var/www/html</code></li>
+                <li><code>${BASE_PATH}/apache/vhost.conf:/etc/apache2/sites-available/000-default.conf</code></li>
+            </ul>
+            </li>
+            <li><strong>Variables d&#39;Environnement</strong>:<ul>
+                <li><code>APP_ENV: local</code></li>
+                <li><code>CONTAINER_ROLE: queue-default</code></li>
+                <li><code>CACHE_DRIVER: redis</code></li>
+                <li><code>SESSION_DRIVER: redis</code></li>
+                <li><code>QUEUE_NAME: default</code></li>
+                <li><code>QUEUE_DRIVER: redis</code></li>
+                <li><code>REDIS_HOST: redis</code></li>
+            </ul>
+            </li>
+            <li><strong>Redémarrage</strong>: Toujours</li>
+            <li><strong>Sysctl</strong>: <code>net.ipv4.ip_unprivileged_port_start: 0</code></li>
+        </ul>
+    </li>
+    <li><p><strong>queue_analyse</strong></p>
+        <ul>
+            <li><strong>Rôle</strong>: Gère les files d&#39;attente d&#39;analyse de Laravel.</li>
+            <li><strong>Image</strong>: <code>laravel_www:latest</code></li>
+            <li><strong>Dépendances</strong>: Redis, MariaDB, application</li>
+            <li><strong>Réseaux</strong>: <code>network</code></li>
+            <li><strong>Volumes Montés</strong>:<ul>
+                <li><code>${BASE_PATH}/backend:/var/www/html</code></li>
+                <li><code>${BASE_PATH}/apache/vhost.conf:/etc/apache2/sites-available/000-default.conf</code></li>
+            </ul>
+            </li>
+            <li><strong>Variables d&#39;Environnement</strong>:<ul>
+                <li><code>APP_ENV: local</code></li>
+                <li><code>CONTAINER_ROLE: queue</code></li>
+                <li><code>CACHE_DRIVER: redis</code></li>
+                <li><code>SESSION_DRIVER: redis</code></li>
+                <li><code>QUEUE_NAME: analyse</code></li>
+                <li><code>QUEUE_DRIVER: redis</code></li>
+                <li><code>REDIS_HOST: redis</code></li>
+            </ul>
+            </li>
+            <li><strong>Redémarrage</strong>: Toujours</li>
+            <li><strong>Sysctl</strong>: <code>net.ipv4.ip_unprivileged_port_start: 0</code></li>
+        </ul>
+    </li>
+    <li><p><strong>phpmyadmin</strong></p>
+        <ul>
+            <li><strong>Rôle</strong>: Fournit une interface web pour gérer MariaDB.</li>
+            <li><strong>Image</strong>: <code>phpmyadmin/phpmyadmin</code></li>
+            <li><strong>Réseaux</strong>: <code>network</code></li>
+            <li><strong>Liens</strong>: <code>mariadb</code></li>
+            <li><strong>Variables d&#39;Environnement</strong>:<ul>
+                <li><code>PMA_ARBITRARY: 1</code></li>
+            </ul>
+            </li>
+            <li><strong>Ports Exposés</strong>: <code>${PMA_HTTP_PORT}:80</code></li>
+            <li><strong>Redémarrage</strong>: Toujours</li>
+        </ul>
+    </li>
+    <li><p><strong>mariadb</strong></p>
+        <ul>
+            <li><strong>Rôle</strong>: Fournit le service de base de données MariaDB.</li>
+            <li><strong>Image</strong>: <code>mariadb</code></li>
+            <li><strong>Réseaux</strong>: <code>network</code></li>
+            <li><strong>Variables d&#39;Environnement</strong>:<ul>
+                <li><code>MYSQL_DATABASE: ${MYSQL_DATABASE_NAME}</code></li>
+                <li><code>MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}</code></li>
+            </ul>
+            </li>
+            <li><strong>Volumes Montés</strong>:<ul>
+                <li><code>${BASE_PATH}/bdd/mariadb/databases:/var/lib/mysql</code></li>
+                <li><code>${BASE_PATH}/bdd/mariadb/my.cnf:/etc/mysql/conf.d/custom.cnf</code></li>
+            </ul>
+            </li>
+            <li><strong>Labels</strong>:<ul>
+                <li><code>&quot;traefik.enable=false&quot;</code></li>
+            </ul>
+            </li>
+            <li><strong>Redémarrage</strong>: Toujours</li>
+        </ul>
+    </li>
+    <li><p><strong>redis</strong></p>
+        <ul>
+            <li><strong>Rôle</strong>: Fournit le service de cache Redis.</li>
+            <li><strong>Image</strong>: <code>redis:latest</code></li>
+            <li><strong>Réseaux</strong>: <code>network</code></li>
+            <li><strong>Labels</strong>:<ul>
+                <li><code>&quot;traefik.enable=false&quot;</code></li>
+            </ul>
+            </li>
+            <li><strong>Redémarrage</strong>: Toujours</li>
+        </ul>
+    </li>
+    <li><p><strong>redis-gui</strong></p>
+        <ul>
+            <li><strong>Rôle</strong>: Fournit une interface graphique pour gérer Redis.</li>
+            <li><strong>Image</strong>: <code>redislabs/redisinsight:latest</code></li>
+            <li><strong>Réseaux</strong>: <code>network</code></li>
+            <li><strong>Ports Exposés</strong>: <code>${REDIS_GUI_PORT}:8001</code></li>
+            <li><strong>Redémarrage</strong>: Toujours</li>
+        </ul>
+    </li>
+    <li><p><strong>sftp_admin</strong></p>
+        <ul>
+            <li><strong>Rôle</strong>: Fournit un service SFTP pour l&#39;administration des fichiers.</li>
+            <li><strong>Image</strong>: <code>atmoz/sftp</code></li>
+            <li><strong>Volumes Montés</strong>:<ul>
+                <li><code>${BASE_PATH}/backend:/home/admin</code></li>
+            </ul>
+            </li>
+            <li><strong>Ports Exposés</strong>: <code>${SFTP_ADMIN_PORT}:22</code></li>
+            <li><strong>Commande</strong>: <code>admin:${SFTP_ADMIN_PASSWORD}:1001</code></li>
+        </ul>
+    </li>
+    <li><p><strong>sftp_superadmin</strong></p>
+        <ul>
+            <li><strong>Rôle</strong>: Fournit un service SFTP pour l&#39;administration des fichiers au niveau super admin.</li>
+            <li><strong>Image</strong>: <code>atmoz/sftp</code></li>
+            <li><strong>Volumes Montés</strong>:<ul>
+                <li><code>${BASE_PATH}:/home/superadmin</code></li>
+            </ul>
+            </li>
+            <li><strong>Ports Exposés</strong>: <code>${SFTP_SUPER_ADMIN_PORT}:22</code></li>
+            <li><strong>Commande</strong>: <code>superadmin:${SFTP_SUPER_ADMIN_PASSWORD}:1001</code></li>
+        </ul>
+    </li>
+    <li><p><strong>robot</strong></p>
+        <ul>
+            <li><strong>Rôle</strong>: Utilise Puppeteer pour l&#39;automatisation des tâches de navigation web.</li>
+            <li><strong>Image</strong>: <code>puppeter-images:latest</code></li>
+            <li><strong>Volumes Montés</strong>:<ul>
+                <li><code>${BASE_PATH}/backend/Params:/puppeteer/Params</code></li>
+                <li><code>${BASE_PATH}/backend/auto/index.js:/puppeteer/index.js</code></li>
+                <li><code>${BASE_PATH}/backend/auto/start.sh:/puppeteer/start.sh</code></li>
+            </ul>
+            </li>
+            <li><strong>Entrypoint</strong>: <code>[ &#39;sh&#39;,&#39;start.sh&#39; ]</code></li>
+            <li><strong>Réseaux</strong>: <code>network</code></li>
+        </ul>
+    </li>
+    <li><p><strong>python_find_all_preuve</strong></p>
+        <ul>
+            <li><strong>Rôle</strong>: Exécute des scripts Python pour trouver toutes les preuves.</li>
+            <li><strong>Image</strong>: <code>laravel_www:latest</code></li>
+            <li><strong>Dépendances</strong>: Redis, MariaDB, application</li>
+            <li><strong>Réseaux</strong>: <code>network</code></li>
+            <li><strong>Volumes Montés</strong>:<ul>
+                <li><code>${BASE_PATH}/backend/autospark:/var/www/html/autospark</code></li>
+                <li><code>${BASE_PATH}/backend/Params:/var/www/html/Params</code></li>
+                <li><code>${BASE_PATH}/backend/storage:/var/www/html/storage</code></li>
+            </ul>
+            </li>
+            <li><strong>Entrypoint</strong>: <code>[ &#39;python3&#39;,&#39;/var/www/html/autospark/analyseProgrammations.py&#39; ]</code></li>
+            <li><strong>Redémarrage</strong>: Toujours</li>
+        </ul>
+        <hr>
+    </li>
+</ol>
+<p>Sysctl**: <code>net.ipv4.ip_unprivileged_port_start: 0</code></p>
+<ol>
+    <li><p><strong>python_collect_teleric</strong></p>
+        <ul>
+            <li><strong>Rôle</strong>: Exécute des scripts Python pour collecter des données Teleric.</li>
+            <li><strong>Image</strong>: <code>laravel_www:latest</code></li>
+            <li><strong>Dépendances</strong>: Redis, MariaDB, application</li>
+            <li><strong>Réseaux</strong>: <code>network</code></li>
+            <li><strong>Volumes Montés</strong>:<ul>
+                <li><code>${BASE_PATH}/backend/autospark:/var/www/html/autospark</code></li>
+                <li><code>${BASE_PATH}/backend/Params:/var/www/html/Params</code></li>
+                <li><code>${BASE_PATH}/backend/storage:/var/www/html/storage</code></li>
+            </ul>
+            </li>
+            <li><strong>Entrypoint</strong>: <code>[ &#39;python3&#39;,&#39;/var/www/html/autospark/collect.py&#39; ]</code></li>
+            <li><strong>Redémarrage</strong>: Toujours</li>
+            <li><strong>Sysctl</strong>: <code>net.ipv4.ip_unprivileged_port_start: 0</code></li>
+        </ul>
+    </li>
+    <li><p><strong>python_collect_inbio</strong></p>
+        <ul>
+            <li><strong>Rôle</strong>: Exécute des scripts Python pour collecter des données Inbio.</li>
+            <li><strong>Image</strong>: <code>laravel_www:latest</code></li>
+            <li><strong>Dépendances</strong>: Redis, MariaDB, application</li>
+            <li><strong>Réseaux</strong>: <code>network</code></li>
+            <li><strong>Volumes Montés</strong>:<ul>
+                <li><code>${BASE_PATH}/backend/autospark:/var/www/html/autospark</code></li>
+                <li><code>${BASE_PATH}/backend/Params:/var/www/html/Params</code></li>
+                <li><code>${BASE_PATH}/backend/storage:/var/www/html/storage</code></li>
+            </ul>
+            </li>
+            <li><strong>Entrypoint</strong>: <code>[ &#39;python3&#39;,&#39;/var/www/html/autospark/collect2.py&#39; ]</code></li>
+            <li><strong>Redémarrage</strong>: Toujours</li>
+            <li><strong>Sysctl</strong>: <code>net.ipv4.ip_unprivileged_port_start: 0</code></li>
+        </ul>
+    </li>
+</ol>
+<h4 id="r-seau-d-fini">Réseau Défini</h4>
+<ul>
+    <li><strong>network</strong>:<ul>
+        <li>Driver: <code>bridge</code></li>
+    </ul>
+    </li>
+</ul>
+<h3 id="mesures-de-s-curit-mise-en-place">Mesures de Sécurité Mise en Place</h3>
+<ol>
+    <li><p><strong>Isolation des Services</strong>:</p>
+        <ul>
+            <li>Chaque service est isolé dans son propre conteneur, ce qui limite les interactions directes entre les services non nécessaires.</li>
+        </ul>
+    </li>
+    <li><p><strong>Volumes</strong>:</p>
+        <ul>
+            <li>Les volumes montés sont spécifiquement définis pour chaque service, minimisant l&#39;accès aux fichiers système sensibles.</li>
+        </ul>
+    </li>
+    <li><p><strong>Variables d&#39;Environnement</strong>:</p>
+        <ul>
+            <li>Les secrets comme les mots de passe de base de données sont externalisés en utilisant des variables d&#39;environnement (cependant, il serait préférable d&#39;utiliser des outils de gestion de secrets pour une sécurité accrue).</li>
+        </ul>
+    </li>
+    <li><p><strong>Redémarrage Automatique</strong>:</p>
+        <ul>
+            <li>Les services sont configurés pour redémarrer automatiquement en cas de défaillance, assurant une disponibilité continue.</li>
+        </ul>
+    </li>
+    <li><p><strong>Configuration Sysctl</strong>:</p>
+        <ul>
+            <li>La configuration <code>net.ipv4.ip_unprivileged_port_start: 0</code> permet aux services de s&#39;exécuter sur des ports inférieurs à 1024 sans avoir besoin de privilèges root, améliorant ainsi la sécurité.</li>
+        </ul>
+    </li>
+    <li><p><strong>Dépendances de Service</strong>:</p>
+        <ul>
+            <li>Les dépendances entre services assurent que les services critiques comme la base de données et Redis sont opérationnels avant le démarrage des services dépendants.</li>
+        </ul>
+    </li>
+    <li><p><strong>Utilisation de Labels</strong>:</p>
+        <ul>
+            <li>Des labels comme <code>&quot;traefik.enable=false&quot;</code> sont utilisés pour contrôler l&#39;exposition des services via le proxy inverse Traefik.</li>
+        </ul>
+    </li>
+</ol>
+<h3 id="recommandations-pour-optimisation-et-s-curit-">Recommandations pour Optimisation et Sécurité</h3>
+<ol>
+    <li><p><strong>Gestion des Secrets</strong>:</p>
+        <ul>
+            <li>Utiliser des outils de gestion des secrets comme AWS Secrets Manager, HashiCorp Vault, ou Docker Secrets pour gérer les mots de passe et autres secrets.</li>
+        </ul>
+    </li>
+    <li><p><strong>Scan de Sécurité</strong>:</p>
+        <ul>
+            <li>Effectuer des scans de sécurité réguliers des images Docker pour détecter les vulnérabilités.</li>
+        </ul>
+    </li>
+    <li><p><strong>Mise à Jour des Images</strong>:</p>
+        <ul>
+            <li>S&#39;assurer que les images utilisées sont à jour avec les dernières corrections de sécurité.</li>
+        </ul>
+    </li>
+    <li><p><strong>Ressources Limitées</strong>:</p>
+        <ul>
+            <li>Limiter les ressources (CPU, mémoire) allouées à chaque conteneur pour éviter qu&#39;un service monopolise les ressources système.</li>
+        </ul>
+    </li>
+    <li><p><strong>Réseaux Séparés</strong>:</p>
+        <ul>
+            <li>Envisager l&#39;utilisation de réseaux séparés pour isoler davantage les services critiques.</li>
+        </ul>
+    </li>
+    <li><p><strong>Monitoring et Logging</strong>:</p>
+        <ul>
+            <li>Implémenter des solutions de monitoring et de logging pour surveiller l&#39;activité des conteneurs et détecter les anomalies ou les tentatives d&#39;intrusion.</li>
+        </ul>
+    </li>
+</ol>
+<p>Cette analyse vous fournit une vue détaillée des services définis dans votre Docker Compose ainsi que des recommandations pour améliorer la sécurité et l&#39;optimisation de votre environnement de production.</p>

@@ -1,4 +1,4 @@
-<?php
+<?php 
 namespace App\Http\Controllers\WEB;
 
 use Illuminate\Database\Schema\Blueprint;
@@ -166,87 +166,81 @@ $roles_disposition->disposition=$request->get('disposition');
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -266,9 +260,6 @@ $pageConfig = [
 
 
 $vue = view('/content/Roles.roles_component', ['pageConfigs' => $pageConfig, 'menu' => $this->menu,'roles_disposition'=>$roles_disposition,'preselect'=>$new,'options'=>$donnees??[],'options'=>$donnees??[],
-
-    'model_has_roles_disposition'=>$model_has_roles_disposition,
-
 
     'role_has_permissions_disposition'=>$role_has_permissions_disposition,
 
@@ -323,12 +314,6 @@ $roles_disposition->disposition=$request->get('disposition');
 
 
 
-
-
-
-
-
-
 $pageConfig = [
  'mainLayoutType' => 'vertical',
 'type' => 'admin',
@@ -342,89 +327,86 @@ $pageConfig = [
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
 
 $vue = view('/content/Roles.Roles', ['pageConfigs' => $pageConfig, 'menu' => $this->menu,'roles_disposition'=>$roles_disposition,'preselect'=>$new,'options'=>$donnees??[],
-
-    'model_has_roles_disposition'=>$model_has_roles_disposition,
-
 
     'role_has_permissions_disposition'=>$role_has_permissions_disposition,
 
@@ -459,6 +441,7 @@ $roles_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -466,16 +449,7 @@ $roles_disposition->disposition=$request->get('disposition');
 
 
 
-
-
-
-
-
-
-
-
-
-
+    
 $params=collect($request->all());
 $params=$params->filter(function ($value, $key) {
 //            dd($key);
@@ -507,81 +481,81 @@ abort(401);
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -594,9 +568,6 @@ $vue = view('/content/Roles.roles_one', [
 'Roles' => $Roles,
 'roles_disposition'=>$roles_disposition
 ,'preselect'=>$new,'options'=>$donnees??[],
-
-    'model_has_roles_disposition'=>$model_has_roles_disposition,
-
 
     'role_has_permissions_disposition'=>$role_has_permissions_disposition,
 
@@ -627,6 +598,7 @@ $roles_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -634,16 +606,7 @@ $roles_disposition->disposition=$request->get('disposition');
 
 
 
-
-
-
-
-
-
-
-
-
-
+    
 $params=collect($request->all());
 $params=$params->filter(function ($value, $key) {
 //            dd($key);
@@ -675,81 +638,81 @@ abort(401);
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -762,9 +725,6 @@ $vue = view('/content/Roles.roles_one_component', [
 'Roles' => $Roles,
 'roles_disposition'=>$roles_disposition
 ,'preselect'=>$new,'options'=>$donnees??[],
-
-    'model_has_roles_disposition'=>$model_has_roles_disposition,
-
 
     'role_has_permissions_disposition'=>$role_has_permissions_disposition,
 
@@ -806,6 +766,7 @@ $roles_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -813,16 +774,7 @@ $roles_disposition->disposition=$request->get('disposition');
 
 
 
-
-
-
-
-
-
-
-
-
-
+    
 $params=collect($request->all());
 $params=$params->filter(function ($value, $key) {
 //            dd($key);
@@ -857,9 +809,6 @@ $vue = view('/content/Roles.impression', [
 'Roles' => $Roles,
 'roles_disposition'=>$roles_disposition
 ,'preselect'=>$new,'options'=>$donnees??[],
-
-    'model_has_roles_disposition'=>$model_has_roles_disposition,
-
 
     'role_has_permissions_disposition'=>$role_has_permissions_disposition,
 

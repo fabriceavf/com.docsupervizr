@@ -302,12 +302,6 @@ return $query;
                 'contratsclients',
         
 
-                'interventions',
-        
-
-                'listings',
-        
-
                 'oauth_access_tokens',
         
 
@@ -598,12 +592,6 @@ return $query;
         
 
                 'contratsclients',
-        
-
-                'interventions',
-        
-
-                'listings',
         
 
                 'oauth_access_tokens',

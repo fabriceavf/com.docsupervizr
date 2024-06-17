@@ -1,4 +1,4 @@
-<?php
+<?php 
 namespace App\Http\Controllers\WEB;
 
 use Illuminate\Database\Schema\Blueprint;
@@ -37,8 +37,7 @@ ini_set('memory_limit', '8192M');
 ini_set('max_execution_time', '300');
 
             use App\Models\prod\Site;
-                use App\Models\prod\Supervirzclient;
-
+    
 class PointeusesControllerWeb extends Controller
 {
 
@@ -186,183 +185,177 @@ $pointeuses_disposition->disposition=$request->get('disposition');
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -396,9 +389,6 @@ $vue = view('/content/Pointeuses.pointeuses_component', ['pageConfigs' => $pageC
 
 
     'sitespointeuses_disposition'=>$sitespointeuses_disposition,
-
-
-    'tachespointeuses_disposition'=>$tachespointeuses_disposition,
 
 ]);
 return response($vue, 200);
@@ -466,12 +456,6 @@ $pointeuses_disposition->disposition=$request->get('disposition');
 
 
 
-
-
-
-
-
-
 $pageConfig = [
  'mainLayoutType' => 'vertical',
 'type' => 'admin',
@@ -485,177 +469,177 @@ $pageConfig = [
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -675,9 +659,6 @@ $vue = view('/content/Pointeuses.Pointeuses', ['pageConfigs' => $pageConfig, 'me
 
 
     'sitespointeuses_disposition'=>$sitespointeuses_disposition,
-
-
-    'tachespointeuses_disposition'=>$tachespointeuses_disposition,
 
 ]);
 return response($vue, 200);
@@ -707,6 +688,7 @@ $pointeuses_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -714,6 +696,7 @@ $pointeuses_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -721,6 +704,7 @@ $pointeuses_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -728,6 +712,7 @@ $pointeuses_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -735,19 +720,7 @@ $pointeuses_disposition->disposition=$request->get('disposition');
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 $params=collect($request->all());
 $params=$params->filter(function ($value, $key) {
 //            dd($key);
@@ -779,177 +752,177 @@ abort(401);
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -977,9 +950,6 @@ $vue = view('/content/Pointeuses.pointeuses_one', [
 
     'sitespointeuses_disposition'=>$sitespointeuses_disposition,
 
-
-    'tachespointeuses_disposition'=>$tachespointeuses_disposition,
-
 ]);
 
 
@@ -1004,6 +974,7 @@ $pointeuses_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1011,6 +982,7 @@ $pointeuses_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1018,6 +990,7 @@ $pointeuses_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1025,6 +998,7 @@ $pointeuses_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1032,19 +1006,7 @@ $pointeuses_disposition->disposition=$request->get('disposition');
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 $params=collect($request->all());
 $params=$params->filter(function ($value, $key) {
 //            dd($key);
@@ -1076,177 +1038,177 @@ abort(401);
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -1273,9 +1235,6 @@ $vue = view('/content/Pointeuses.pointeuses_one_component', [
 
 
     'sitespointeuses_disposition'=>$sitespointeuses_disposition,
-
-
-    'tachespointeuses_disposition'=>$tachespointeuses_disposition,
 
 ]);
 
@@ -1312,6 +1271,7 @@ $pointeuses_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1319,6 +1279,7 @@ $pointeuses_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1326,6 +1287,7 @@ $pointeuses_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1333,6 +1295,7 @@ $pointeuses_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1340,19 +1303,7 @@ $pointeuses_disposition->disposition=$request->get('disposition');
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 $params=collect($request->all());
 $params=$params->filter(function ($value, $key) {
 //            dd($key);
@@ -1401,9 +1352,6 @@ $vue = view('/content/Pointeuses.impression', [
 
 
     'sitespointeuses_disposition'=>$sitespointeuses_disposition,
-
-
-    'tachespointeuses_disposition'=>$tachespointeuses_disposition,
 
 ]);
 return response($vue, 200);

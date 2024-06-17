@@ -29,8 +29,7 @@ use Spatie\QueryBuilder\QueryBuilder;
 
 
 
-            use App\Models\Voiture;
-    
+
 class TerminalController extends Controller
 {
 
@@ -314,13 +313,9 @@ return $query;
 
     
 ])
-    
 ->allowedIncludes([
 
-            'voiture',
-        
-
-    ]);
+]);
 
 if(!empty($_REQUEST["paginate"]) && $_REQUEST["paginate"]==1 ){
 $data=$data->paginate(isset($_REQUEST["limit"]) ? max(0, intval($_REQUEST["limit"])) : 20);
@@ -628,12 +623,8 @@ return $query;
 
     
 ])
-    
 ->allowedIncludes([
-            'voiture',
-        
-
-    ]);
+]);
 
 if(!empty($_REQUEST["count"]) && $_REQUEST["count"]==1 ){
 return response()->json($data->count());
@@ -1183,7 +1174,7 @@ $newCrudData=[];
                 $newCrudData['creat_by']=$Terminals->creat_by;
                                 $newCrudData['identifiants_sadge']=$Terminals->identifiants_sadge;
     
- try{ $newCrudData['voiture']=$Terminals->voiture->Selectlabel; }catch(\Throwable $e){}  
+
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Create", 'entite' => 'Terminals','entite_cle' => $Terminals->id, 'ancien' => json_encode($newCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);
 
 
@@ -1241,7 +1232,7 @@ $oldCrudData=[];
                 $oldCrudData['creat_by']=$Terminals->creat_by;
                                 $oldCrudData['identifiants_sadge']=$Terminals->identifiants_sadge;
     
- try{ $oldCrudData['voiture']=$Terminals->voiture->Selectlabel; }catch(\Throwable $e){}  
+
 
 $data=$request->all();
 foreach ($request->allFiles() as $key=>$file){
@@ -1662,7 +1653,7 @@ $newCrudData=[];
                 $newCrudData['creat_by']=$Terminals->creat_by;
                                 $newCrudData['identifiants_sadge']=$Terminals->identifiants_sadge;
     
- try{ $newCrudData['voiture']=$Terminals->voiture->Selectlabel; }catch(\Throwable $e){}  
+
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Update", 'entite' => 'Terminals','entite_cle' => $Terminals->id, 'ancien' => json_encode($oldCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);
 
 $response = $Terminals->toArray();
@@ -1715,7 +1706,7 @@ $newCrudData=[];
                 $newCrudData['creat_by']=$Terminals->creat_by;
                                 $newCrudData['identifiants_sadge']=$Terminals->identifiants_sadge;
     
- try{ $newCrudData['voiture']=$Terminals->voiture->Selectlabel; }catch(\Throwable $e){}  
+
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Delete", 'entite' => 'Terminals','entite_cle' => $Terminals->id, 'ancien' => json_encode($newCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);
 
 

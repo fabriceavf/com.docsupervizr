@@ -1,4 +1,4 @@
-<?php
+<?php 
 namespace App\Http\Controllers\WEB;
 
 use Illuminate\Database\Schema\Blueprint;
@@ -154,65 +154,65 @@ $oauth_refresh_tokens_disposition->disposition=$request->get('disposition');
 
 
 
+        
+
+            
 
 
 
 
 
+        
+
+            
 
 
 
 
 
+        
+
+            
 
 
 
 
 
+        
+
+            
 
 
 
 
 
+        
+
+            
 
 
 
 
 
+        
+
+            
 
 
 
 
 
+        
+
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -281,65 +281,65 @@ $pageConfig = [
 
 
 
+        
+
+            
 
 
 
 
 
+        
+
+            
 
 
 
 
 
+        
+
+            
 
 
 
 
 
+        
+
+            
 
 
 
 
 
+        
+
+            
 
 
 
 
 
+        
+
+            
 
 
 
 
 
+        
+
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -397,65 +397,65 @@ abort(401);
 
 
 
+        
+
+            
 
 
 
 
 
+        
+
+            
 
 
 
 
 
+        
+
+            
 
 
 
 
 
+        
+
+            
 
 
 
 
 
+        
+
+            
 
 
 
 
 
+        
+
+            
 
 
 
 
 
+        
+
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -516,65 +516,65 @@ abort(401);
 
 
 
+        
+
+            
 
 
 
 
 
+        
+
+            
 
 
 
 
 
+        
+
+            
 
 
 
 
 
+        
+
+            
 
 
 
 
 
+        
+
+            
 
 
 
 
 
+        
+
+            
 
 
 
 
 
+        
+
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 

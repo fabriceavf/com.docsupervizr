@@ -186,9 +186,6 @@ $data = QueryBuilder::for(Import::class)
             AllowedFilter::exact('file'),
 
     
-            AllowedFilter::exact('newtables'),
-
-    
             AllowedFilter::exact('create'),
 
     
@@ -199,9 +196,6 @@ $data = QueryBuilder::for(Import::class)
 
     
             AllowedFilter::exact('valider'),
-
-    
-            AllowedFilter::exact('identifiants_sadge'),
 
     
             AllowedFilter::exact('description'),
@@ -217,6 +211,9 @@ $data = QueryBuilder::for(Import::class)
 
     
             AllowedFilter::exact('typespointages'),
+
+    
+            AllowedFilter::exact('identifiants_sadge'),
 
     
 AllowedFilter::callback('not_null', function (Builder $query, $value) {
@@ -336,9 +333,6 @@ return $query;
             AllowedSort::field('file'),
 
     
-            AllowedSort::field('newtables'),
-
-    
             AllowedSort::field('create'),
 
     
@@ -349,9 +343,6 @@ return $query;
 
     
             AllowedSort::field('valider'),
-
-    
-            AllowedSort::field('identifiants_sadge'),
 
     
             AllowedSort::field('description'),
@@ -367,6 +358,9 @@ return $query;
 
     
             AllowedSort::field('typespointages'),
+
+    
+            AllowedSort::field('identifiants_sadge'),
 
     
 ])
@@ -392,13 +386,6 @@ $data=$data->paginate(isset($_REQUEST["limit"]) ? max(0, intval($_REQUEST["limit
 $data=$data->get();
 }
 $donnees=$data->toArray();
-
-
-    
-
-
-
-
 
 
     
@@ -625,9 +612,6 @@ $data = QueryBuilder::for(Import::class)
             AllowedFilter::exact('file'),
 
     
-            AllowedFilter::exact('newtables'),
-
-    
             AllowedFilter::exact('create'),
 
     
@@ -638,9 +622,6 @@ $data = QueryBuilder::for(Import::class)
 
     
             AllowedFilter::exact('valider'),
-
-    
-            AllowedFilter::exact('identifiants_sadge'),
 
     
             AllowedFilter::exact('description'),
@@ -656,6 +637,9 @@ $data = QueryBuilder::for(Import::class)
 
     
             AllowedFilter::exact('typespointages'),
+
+    
+            AllowedFilter::exact('identifiants_sadge'),
 
     
 AllowedFilter::callback('not_null', function (Builder $query, $value) {
@@ -775,9 +759,6 @@ return $query;
             AllowedSort::field('file'),
 
     
-            AllowedSort::field('newtables'),
-
-    
             AllowedSort::field('create'),
 
     
@@ -788,9 +769,6 @@ return $query;
 
     
             AllowedSort::field('valider'),
-
-    
-            AllowedSort::field('identifiants_sadge'),
 
     
             AllowedSort::field('description'),
@@ -806,6 +784,9 @@ return $query;
 
     
             AllowedSort::field('typespointages'),
+
+    
+            AllowedSort::field('identifiants_sadge'),
 
     
 ])
@@ -834,13 +815,6 @@ $data=$data->paginate(isset($_REQUEST["limit"]) ? max(0, intval($_REQUEST["limit
 $data=$data->get();
 }
 $donnees=$data->toArray();
-
-
-
-
-
-    
-
 
 
 
@@ -1066,17 +1040,16 @@ $champsRechercher=[
     'extra_attributes',
     'deleted_at',
     'file',
-    'newtables',
     'create',
     'update',
     'delete',
     'valider',
-    'identifiants_sadge',
     'description',
     'typesposte_id',
     'typeseffectif_id',
     'typespointage_id',
     'typespointages',
+    'identifiants_sadge',
 ];
 $envoyer=[];
 foreach($data as $key=>$d){
@@ -1129,12 +1102,6 @@ Validator::make($data, [
         
     
     
-                    'newtables' => [
-            //'required'
-            ],
-        
-    
-    
                     'create' => [
             //'required'
             ],
@@ -1154,12 +1121,6 @@ Validator::make($data, [
     
     
                     'valider' => [
-            //'required'
-            ],
-        
-    
-    
-                    'identifiants_sadge' => [
             //'required'
             ],
         
@@ -1190,6 +1151,12 @@ Validator::make($data, [
     
     
                     'typespointages' => [
+            //'required'
+            ],
+        
+    
+    
+                    'identifiants_sadge' => [
             //'required'
             ],
         
@@ -1228,10 +1195,6 @@ Validator::make($data, [
 
     
     
-        'newtables' => ['cette donnee est obligatoire'],
-
-    
-    
         'create' => ['cette donnee est obligatoire'],
 
     
@@ -1245,10 +1208,6 @@ Validator::make($data, [
     
     
         'valider' => ['cette donnee est obligatoire'],
-
-    
-    
-        'identifiants_sadge' => ['cette donnee est obligatoire'],
 
     
     
@@ -1269,6 +1228,10 @@ Validator::make($data, [
     
     
         'typespointages' => ['cette donnee est obligatoire'],
+
+    
+    
+        'identifiants_sadge' => ['cette donnee est obligatoire'],
 
     
 ])->validate();
@@ -1443,24 +1406,6 @@ $data['creat_by']=Auth::id();
 
     
 
-        if(!empty($data['newtables'])){
-        
-            $Imports->newtables = $data['newtables'];
-        
-        }
-
-
-
-    
-
-
-
-
-
-
-
-    
-
         if(!empty($data['create'])){
         
             $Imports->create = $data['create'];
@@ -1518,24 +1463,6 @@ $data['creat_by']=Auth::id();
         if(!empty($data['valider'])){
         
             $Imports->valider = $data['valider'];
-        
-        }
-
-
-
-    
-
-
-
-
-
-
-
-    
-
-        if(!empty($data['identifiants_sadge'])){
-        
-            $Imports->identifiants_sadge = $data['identifiants_sadge'];
         
         }
 
@@ -1639,6 +1566,24 @@ $data['creat_by']=Auth::id();
 
 
 
+    
+
+        if(!empty($data['identifiants_sadge'])){
+        
+            $Imports->identifiants_sadge = $data['identifiants_sadge'];
+        
+        }
+
+
+
+    
+
+
+
+
+
+
+
 
 
 
@@ -1693,17 +1638,16 @@ $newCrudData=[];
                 $newCrudData['etats']=$Imports->etats;
                 $newCrudData['creat_by']=$Imports->creat_by;
                                 $newCrudData['file']=$Imports->file;
-                $newCrudData['newtables']=$Imports->newtables;
                 $newCrudData['create']=$Imports->create;
                 $newCrudData['update']=$Imports->update;
                 $newCrudData['delete']=$Imports->delete;
                 $newCrudData['valider']=$Imports->valider;
-                $newCrudData['identifiants_sadge']=$Imports->identifiants_sadge;
                 $newCrudData['description']=$Imports->description;
                 $newCrudData['typesposte_id']=$Imports->typesposte_id;
                 $newCrudData['typeseffectif_id']=$Imports->typeseffectif_id;
                 $newCrudData['typespointage_id']=$Imports->typespointage_id;
                 $newCrudData['typespointages']=$Imports->typespointages;
+                $newCrudData['identifiants_sadge']=$Imports->identifiants_sadge;
     
  try{ $newCrudData['typeseffectif']=$Imports->typeseffectif->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['typespointage']=$Imports->typespointage->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['typesposte']=$Imports->typesposte->Selectlabel; }catch(\Throwable $e){}  
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Create", 'entite' => 'Imports','entite_cle' => $Imports->id, 'ancien' => json_encode($newCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);
@@ -1760,17 +1704,16 @@ $oldCrudData=[];
                 $oldCrudData['etats']=$Imports->etats;
                 $oldCrudData['creat_by']=$Imports->creat_by;
                                 $oldCrudData['file']=$Imports->file;
-                $oldCrudData['newtables']=$Imports->newtables;
                 $oldCrudData['create']=$Imports->create;
                 $oldCrudData['update']=$Imports->update;
                 $oldCrudData['delete']=$Imports->delete;
                 $oldCrudData['valider']=$Imports->valider;
-                $oldCrudData['identifiants_sadge']=$Imports->identifiants_sadge;
                 $oldCrudData['description']=$Imports->description;
                 $oldCrudData['typesposte_id']=$Imports->typesposte_id;
                 $oldCrudData['typeseffectif_id']=$Imports->typeseffectif_id;
                 $oldCrudData['typespointage_id']=$Imports->typespointage_id;
                 $oldCrudData['typespointages']=$Imports->typespointages;
+                $oldCrudData['identifiants_sadge']=$Imports->identifiants_sadge;
     
  try{ $oldCrudData['typeseffectif']=$Imports->typeseffectif->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['typespointage']=$Imports->typespointage->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['typesposte']=$Imports->typesposte->Selectlabel; }catch(\Throwable $e){}  
 
@@ -1795,17 +1738,16 @@ $champsRechercher=[
     'extra_attributes',
     'deleted_at',
     'file',
-    'newtables',
     'create',
     'update',
     'delete',
     'valider',
-    'identifiants_sadge',
     'description',
     'typesposte_id',
     'typeseffectif_id',
     'typespointage_id',
     'typespointages',
+    'identifiants_sadge',
 ];
 $envoyer=[];
 foreach($data as $key=>$d){
@@ -1858,12 +1800,6 @@ Validator::make($data, [
         
     
     
-                    'newtables' => [
-            //'required'
-            ],
-        
-    
-    
                     'create' => [
             //'required'
             ],
@@ -1883,12 +1819,6 @@ Validator::make($data, [
     
     
                     'valider' => [
-            //'required'
-            ],
-        
-    
-    
-                    'identifiants_sadge' => [
             //'required'
             ],
         
@@ -1919,6 +1849,12 @@ Validator::make($data, [
     
     
                     'typespointages' => [
+            //'required'
+            ],
+        
+    
+    
+                    'identifiants_sadge' => [
             //'required'
             ],
         
@@ -1957,10 +1893,6 @@ Validator::make($data, [
 
     
     
-        'newtables' => ['cette donnee est obligatoire'],
-
-    
-    
         'create' => ['cette donnee est obligatoire'],
 
     
@@ -1974,10 +1906,6 @@ Validator::make($data, [
     
     
         'valider' => ['cette donnee est obligatoire'],
-
-    
-    
-        'identifiants_sadge' => ['cette donnee est obligatoire'],
 
     
     
@@ -1998,6 +1926,10 @@ Validator::make($data, [
     
     
         'typespointages' => ['cette donnee est obligatoire'],
+
+    
+    
+        'identifiants_sadge' => ['cette donnee est obligatoire'],
 
     
 ])->validate();
@@ -2188,27 +2120,6 @@ $extra_data=array_diff($envoyer,$champsRechercher);
 
     
 
-        if(array_key_exists("newtables",$data)){
-
-
-        if(!empty($data['newtables'])){
-        
-            $Imports->newtables = $data['newtables'];
-        
-        }
-
-        }
-
-    
-
-
-
-
-
-
-
-    
-
         if(array_key_exists("create",$data)){
 
 
@@ -2278,27 +2189,6 @@ $extra_data=array_diff($envoyer,$champsRechercher);
         if(!empty($data['valider'])){
         
             $Imports->valider = $data['valider'];
-        
-        }
-
-        }
-
-    
-
-
-
-
-
-
-
-    
-
-        if(array_key_exists("identifiants_sadge",$data)){
-
-
-        if(!empty($data['identifiants_sadge'])){
-        
-            $Imports->identifiants_sadge = $data['identifiants_sadge'];
         
         }
 
@@ -2417,6 +2307,27 @@ $extra_data=array_diff($envoyer,$champsRechercher);
 
 
 
+    
+
+        if(array_key_exists("identifiants_sadge",$data)){
+
+
+        if(!empty($data['identifiants_sadge'])){
+        
+            $Imports->identifiants_sadge = $data['identifiants_sadge'];
+        
+        }
+
+        }
+
+    
+
+
+
+
+
+
+
 
 
 
@@ -2478,17 +2389,16 @@ $newCrudData=[];
                 $newCrudData['etats']=$Imports->etats;
                 $newCrudData['creat_by']=$Imports->creat_by;
                                 $newCrudData['file']=$Imports->file;
-                $newCrudData['newtables']=$Imports->newtables;
                 $newCrudData['create']=$Imports->create;
                 $newCrudData['update']=$Imports->update;
                 $newCrudData['delete']=$Imports->delete;
                 $newCrudData['valider']=$Imports->valider;
-                $newCrudData['identifiants_sadge']=$Imports->identifiants_sadge;
                 $newCrudData['description']=$Imports->description;
                 $newCrudData['typesposte_id']=$Imports->typesposte_id;
                 $newCrudData['typeseffectif_id']=$Imports->typeseffectif_id;
                 $newCrudData['typespointage_id']=$Imports->typespointage_id;
                 $newCrudData['typespointages']=$Imports->typespointages;
+                $newCrudData['identifiants_sadge']=$Imports->identifiants_sadge;
     
  try{ $newCrudData['typeseffectif']=$Imports->typeseffectif->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['typespointage']=$Imports->typespointage->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['typesposte']=$Imports->typesposte->Selectlabel; }catch(\Throwable $e){}  
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Update", 'entite' => 'Imports','entite_cle' => $Imports->id, 'ancien' => json_encode($oldCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);
@@ -2540,17 +2450,16 @@ $newCrudData=[];
                 $newCrudData['etats']=$Imports->etats;
                 $newCrudData['creat_by']=$Imports->creat_by;
                                 $newCrudData['file']=$Imports->file;
-                $newCrudData['newtables']=$Imports->newtables;
                 $newCrudData['create']=$Imports->create;
                 $newCrudData['update']=$Imports->update;
                 $newCrudData['delete']=$Imports->delete;
                 $newCrudData['valider']=$Imports->valider;
-                $newCrudData['identifiants_sadge']=$Imports->identifiants_sadge;
                 $newCrudData['description']=$Imports->description;
                 $newCrudData['typesposte_id']=$Imports->typesposte_id;
                 $newCrudData['typeseffectif_id']=$Imports->typeseffectif_id;
                 $newCrudData['typespointage_id']=$Imports->typespointage_id;
                 $newCrudData['typespointages']=$Imports->typespointages;
+                $newCrudData['identifiants_sadge']=$Imports->identifiants_sadge;
     
  try{ $newCrudData['typeseffectif']=$Imports->typeseffectif->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['typespointage']=$Imports->typespointage->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['typesposte']=$Imports->typesposte->Selectlabel; }catch(\Throwable $e){}  
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Delete", 'entite' => 'Imports','entite_cle' => $Imports->id, 'ancien' => json_encode($newCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);

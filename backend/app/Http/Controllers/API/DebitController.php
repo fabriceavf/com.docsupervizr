@@ -175,6 +175,9 @@ $data = QueryBuilder::for(Debit::class)
     
     
     
+            AllowedFilter::exact('identifiants_sadge'),
+
+    
 AllowedFilter::callback('not_null', function (Builder $query, $value) {
 //                    dump($value);
 
@@ -283,6 +286,9 @@ return $query;
     
     
     
+            AllowedSort::field('identifiants_sadge'),
+
+    
 ])
     
 ->allowedIncludes([
@@ -298,6 +304,13 @@ $data=$data->paginate(isset($_REQUEST["limit"]) ? max(0, intval($_REQUEST["limit
 $data=$data->get();
 }
 $donnees=$data->toArray();
+
+
+    
+
+
+
+
 
 
     
@@ -424,6 +437,9 @@ $data = QueryBuilder::for(Debit::class)
     
     
     
+            AllowedFilter::exact('identifiants_sadge'),
+
+    
 AllowedFilter::callback('not_null', function (Builder $query, $value) {
 //                    dump($value);
 
@@ -532,6 +548,9 @@ return $query;
     
     
     
+            AllowedSort::field('identifiants_sadge'),
+
+    
 ])
     
 ->allowedIncludes([
@@ -550,6 +569,13 @@ $data=$data->paginate(isset($_REQUEST["limit"]) ? max(0, intval($_REQUEST["limit
 $data=$data->get();
 }
 $donnees=$data->toArray();
+
+
+
+
+
+    
+
 
 
 
@@ -681,6 +707,7 @@ $champsRechercher=[
     'created_at',
     'updated_at',
     'deleted_at',
+    'identifiants_sadge',
 ];
 $envoyer=[];
 foreach($data as $key=>$d){
@@ -714,6 +741,12 @@ Validator::make($data, [
     
     
     
+    
+                    'identifiants_sadge' => [
+            //'required'
+            ],
+        
+    
 
 
 ], $messages = [
@@ -734,6 +767,10 @@ Validator::make($data, [
     
     
     
+    
+    
+        'identifiants_sadge' => ['cette donnee est obligatoire'],
+
     
 ])->validate();
 
@@ -851,6 +888,24 @@ $data['creat_by']=Auth::id();
 
 
 
+    
+
+        if(!empty($data['identifiants_sadge'])){
+        
+            $Debits->identifiants_sadge = $data['identifiants_sadge'];
+        
+        }
+
+
+
+    
+
+
+
+
+
+
+
 
 
 
@@ -902,7 +957,8 @@ $newCrudData=[];
                 $newCrudData['identification_id']=$Debits->identification_id;
                 $newCrudData['montant']=$Debits->montant;
                 $newCrudData['creat_by']=$Debits->creat_by;
-                    
+                                $newCrudData['identifiants_sadge']=$Debits->identifiants_sadge;
+    
  try{ $newCrudData['identification']=$Debits->identification->Selectlabel; }catch(\Throwable $e){}  
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Create", 'entite' => 'Debits','entite_cle' => $Debits->id, 'ancien' => json_encode($newCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);
 
@@ -955,7 +1011,8 @@ $oldCrudData=[];
                 $oldCrudData['identification_id']=$Debits->identification_id;
                 $oldCrudData['montant']=$Debits->montant;
                 $oldCrudData['creat_by']=$Debits->creat_by;
-                    
+                                $oldCrudData['identifiants_sadge']=$Debits->identifiants_sadge;
+    
  try{ $oldCrudData['identification']=$Debits->identification->Selectlabel; }catch(\Throwable $e){}  
 
 $data=$request->all();
@@ -976,6 +1033,7 @@ $champsRechercher=[
     'created_at',
     'updated_at',
     'deleted_at',
+    'identifiants_sadge',
 ];
 $envoyer=[];
 foreach($data as $key=>$d){
@@ -1009,6 +1067,12 @@ Validator::make($data, [
     
     
     
+    
+                    'identifiants_sadge' => [
+            //'required'
+            ],
+        
+    
 
 
 ], $messages = [
@@ -1029,6 +1093,10 @@ Validator::make($data, [
     
     
     
+    
+    
+        'identifiants_sadge' => ['cette donnee est obligatoire'],
+
     
 ])->validate();
 
@@ -1153,6 +1221,27 @@ $extra_data=array_diff($envoyer,$champsRechercher);
 
 
 
+    
+
+        if(array_key_exists("identifiants_sadge",$data)){
+
+
+        if(!empty($data['identifiants_sadge'])){
+        
+            $Debits->identifiants_sadge = $data['identifiants_sadge'];
+        
+        }
+
+        }
+
+    
+
+
+
+
+
+
+
 
 
 
@@ -1211,7 +1300,8 @@ $newCrudData=[];
                 $newCrudData['identification_id']=$Debits->identification_id;
                 $newCrudData['montant']=$Debits->montant;
                 $newCrudData['creat_by']=$Debits->creat_by;
-                    
+                                $newCrudData['identifiants_sadge']=$Debits->identifiants_sadge;
+    
  try{ $newCrudData['identification']=$Debits->identification->Selectlabel; }catch(\Throwable $e){}  
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Update", 'entite' => 'Debits','entite_cle' => $Debits->id, 'ancien' => json_encode($oldCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);
 
@@ -1259,7 +1349,8 @@ $newCrudData=[];
                 $newCrudData['identification_id']=$Debits->identification_id;
                 $newCrudData['montant']=$Debits->montant;
                 $newCrudData['creat_by']=$Debits->creat_by;
-                    
+                                $newCrudData['identifiants_sadge']=$Debits->identifiants_sadge;
+    
  try{ $newCrudData['identification']=$Debits->identification->Selectlabel; }catch(\Throwable $e){}  
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Delete", 'entite' => 'Debits','entite_cle' => $Debits->id, 'ancien' => json_encode($newCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);
 

@@ -180,6 +180,9 @@ $data = QueryBuilder::for(Typesheure::class)
             AllowedFilter::exact('type'),
 
     
+            AllowedFilter::exact('identifiants_sadge'),
+
+    
 AllowedFilter::callback('not_null', function (Builder $query, $value) {
 //                    dump($value);
 
@@ -294,6 +297,9 @@ return $query;
             AllowedSort::field('type'),
 
     
+            AllowedSort::field('identifiants_sadge'),
+
+    
 ])
 ->allowedIncludes([
             'programmes',
@@ -308,6 +314,13 @@ $data=$data->paginate(isset($_REQUEST["limit"]) ? max(0, intval($_REQUEST["limit
 $data=$data->get();
 }
 $donnees=$data->toArray();
+
+
+    
+
+
+
+
 
 
     
@@ -454,6 +467,9 @@ $data = QueryBuilder::for(Typesheure::class)
             AllowedFilter::exact('type'),
 
     
+            AllowedFilter::exact('identifiants_sadge'),
+
+    
 AllowedFilter::callback('not_null', function (Builder $query, $value) {
 //                    dump($value);
 
@@ -568,6 +584,9 @@ return $query;
             AllowedSort::field('type'),
 
     
+            AllowedSort::field('identifiants_sadge'),
+
+    
 ])
 ->allowedIncludes([
             'programmes',
@@ -585,6 +604,13 @@ $data=$data->paginate(isset($_REQUEST["limit"]) ? max(0, intval($_REQUEST["limit
 $data=$data->get();
 }
 $donnees=$data->toArray();
+
+
+
+
+
+    
+
 
 
 
@@ -732,6 +758,7 @@ $champsRechercher=[
     'updated_at',
     'deleted_at',
     'type',
+    'identifiants_sadge',
 ];
 $envoyer=[];
 foreach($data as $key=>$d){
@@ -777,6 +804,12 @@ Validator::make($data, [
             ],
         
     
+    
+                    'identifiants_sadge' => [
+            //'required'
+            ],
+        
+    
 
 
 ], $messages = [
@@ -804,6 +837,10 @@ Validator::make($data, [
     
     
         'type' => ['cette donnee est obligatoire'],
+
+    
+    
+        'identifiants_sadge' => ['cette donnee est obligatoire'],
 
     
 ])->validate();
@@ -958,6 +995,24 @@ $data['creat_by']=Auth::id();
 
 
 
+    
+
+        if(!empty($data['identifiants_sadge'])){
+        
+            $Typesheures->identifiants_sadge = $data['identifiants_sadge'];
+        
+        }
+
+
+
+    
+
+
+
+
+
+
+
 
 
 
@@ -1011,6 +1066,7 @@ $newCrudData=[];
                 $newCrudData['description']=$Typesheures->description;
                 $newCrudData['creat_by']=$Typesheures->creat_by;
                                 $newCrudData['type']=$Typesheures->type;
+                $newCrudData['identifiants_sadge']=$Typesheures->identifiants_sadge;
     
 
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Create", 'entite' => 'Typesheures','entite_cle' => $Typesheures->id, 'ancien' => json_encode($newCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);
@@ -1066,6 +1122,7 @@ $oldCrudData=[];
                 $oldCrudData['description']=$Typesheures->description;
                 $oldCrudData['creat_by']=$Typesheures->creat_by;
                                 $oldCrudData['type']=$Typesheures->type;
+                $oldCrudData['identifiants_sadge']=$Typesheures->identifiants_sadge;
     
 
 
@@ -1089,6 +1146,7 @@ $champsRechercher=[
     'updated_at',
     'deleted_at',
     'type',
+    'identifiants_sadge',
 ];
 $envoyer=[];
 foreach($data as $key=>$d){
@@ -1134,6 +1192,12 @@ Validator::make($data, [
             ],
         
     
+    
+                    'identifiants_sadge' => [
+            //'required'
+            ],
+        
+    
 
 
 ], $messages = [
@@ -1161,6 +1225,10 @@ Validator::make($data, [
     
     
         'type' => ['cette donnee est obligatoire'],
+
+    
+    
+        'identifiants_sadge' => ['cette donnee est obligatoire'],
 
     
 ])->validate();
@@ -1328,6 +1396,27 @@ $extra_data=array_diff($envoyer,$champsRechercher);
 
 
 
+    
+
+        if(array_key_exists("identifiants_sadge",$data)){
+
+
+        if(!empty($data['identifiants_sadge'])){
+        
+            $Typesheures->identifiants_sadge = $data['identifiants_sadge'];
+        
+        }
+
+        }
+
+    
+
+
+
+
+
+
+
 
 
 
@@ -1388,6 +1477,7 @@ $newCrudData=[];
                 $newCrudData['description']=$Typesheures->description;
                 $newCrudData['creat_by']=$Typesheures->creat_by;
                                 $newCrudData['type']=$Typesheures->type;
+                $newCrudData['identifiants_sadge']=$Typesheures->identifiants_sadge;
     
 
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Update", 'entite' => 'Typesheures','entite_cle' => $Typesheures->id, 'ancien' => json_encode($oldCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);
@@ -1438,6 +1528,7 @@ $newCrudData=[];
                 $newCrudData['description']=$Typesheures->description;
                 $newCrudData['creat_by']=$Typesheures->creat_by;
                                 $newCrudData['type']=$Typesheures->type;
+                $newCrudData['identifiants_sadge']=$Typesheures->identifiants_sadge;
     
 
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Delete", 'entite' => 'Typesheures','entite_cle' => $Typesheures->id, 'ancien' => json_encode($newCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);

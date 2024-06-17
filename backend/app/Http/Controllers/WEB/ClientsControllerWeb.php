@@ -1,4 +1,4 @@
-<?php
+<?php 
 namespace App\Http\Controllers\WEB;
 
 use Illuminate\Database\Schema\Blueprint;
@@ -196,93 +196,81 @@ $clients_disposition->disposition=$request->get('disposition');
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -307,12 +295,6 @@ $vue = view('/content/Clients.clients_component', ['pageConfigs' => $pageConfig,
 
 
     'contratsclients_disposition'=>$contratsclients_disposition,
-
-
-    'interventions_disposition'=>$interventions_disposition,
-
-
-    'listings_disposition'=>$listings_disposition,
 
 
     'oauth_access_tokens_disposition'=>$oauth_access_tokens_disposition,
@@ -407,18 +389,6 @@ $clients_disposition->disposition=$request->get('disposition');
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 $pageConfig = [
  'mainLayoutType' => 'vertical',
 'type' => 'admin',
@@ -432,81 +402,81 @@ $pageConfig = [
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -517,12 +487,6 @@ $vue = view('/content/Clients.Clients', ['pageConfigs' => $pageConfig, 'menu' =>
 
 
     'contratsclients_disposition'=>$contratsclients_disposition,
-
-
-    'interventions_disposition'=>$interventions_disposition,
-
-
-    'listings_disposition'=>$listings_disposition,
 
 
     'oauth_access_tokens_disposition'=>$oauth_access_tokens_disposition,
@@ -567,6 +531,7 @@ $clients_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -574,6 +539,7 @@ $clients_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -581,6 +547,7 @@ $clients_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -588,6 +555,7 @@ $clients_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -595,6 +563,7 @@ $clients_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -602,6 +571,7 @@ $clients_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -609,29 +579,7 @@ $clients_disposition->disposition=$request->get('disposition');
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 $params=collect($request->all());
 $params=$params->filter(function ($value, $key) {
 //            dd($key);
@@ -663,81 +611,81 @@ abort(401);
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -755,12 +703,6 @@ $vue = view('/content/Clients.clients_one', [
 
 
     'contratsclients_disposition'=>$contratsclients_disposition,
-
-
-    'interventions_disposition'=>$interventions_disposition,
-
-
-    'listings_disposition'=>$listings_disposition,
 
 
     'oauth_access_tokens_disposition'=>$oauth_access_tokens_disposition,
@@ -801,6 +743,7 @@ $clients_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -808,6 +751,7 @@ $clients_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -815,6 +759,7 @@ $clients_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -822,6 +767,7 @@ $clients_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -829,6 +775,7 @@ $clients_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -836,6 +783,7 @@ $clients_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -843,29 +791,7 @@ $clients_disposition->disposition=$request->get('disposition');
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 $params=collect($request->all());
 $params=$params->filter(function ($value, $key) {
 //            dd($key);
@@ -897,81 +823,81 @@ abort(401);
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -989,12 +915,6 @@ $vue = view('/content/Clients.clients_one_component', [
 
 
     'contratsclients_disposition'=>$contratsclients_disposition,
-
-
-    'interventions_disposition'=>$interventions_disposition,
-
-
-    'listings_disposition'=>$listings_disposition,
 
 
     'oauth_access_tokens_disposition'=>$oauth_access_tokens_disposition,
@@ -1046,6 +966,7 @@ $clients_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1053,6 +974,7 @@ $clients_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1060,6 +982,7 @@ $clients_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1067,6 +990,7 @@ $clients_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1074,6 +998,7 @@ $clients_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1081,6 +1006,7 @@ $clients_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1088,29 +1014,7 @@ $clients_disposition->disposition=$request->get('disposition');
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 $params=collect($request->all());
 $params=$params->filter(function ($value, $key) {
 //            dd($key);
@@ -1150,12 +1054,6 @@ $vue = view('/content/Clients.impression', [
 
 
     'contratsclients_disposition'=>$contratsclients_disposition,
-
-
-    'interventions_disposition'=>$interventions_disposition,
-
-
-    'listings_disposition'=>$listings_disposition,
 
 
     'oauth_access_tokens_disposition'=>$oauth_access_tokens_disposition,

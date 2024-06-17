@@ -197,6 +197,9 @@ $data = QueryBuilder::for(Transaction::class)
     
     
     
+            AllowedFilter::exact('etats'),
+
+    
             AllowedFilter::exact('annuler'),
 
     
@@ -215,16 +218,6 @@ $data = QueryBuilder::for(Transaction::class)
             AllowedFilter::exact('heure'),
 
     
-    
-            AllowedFilter::exact('identifiants_sadge'),
-
-    
-            AllowedFilter::exact('creat_by'),
-
-    
-            AllowedFilter::exact('etats'),
-
-    
             AllowedFilter::exact('identification_id'),
 
     
@@ -238,6 +231,13 @@ $data = QueryBuilder::for(Transaction::class)
 
     
             AllowedFilter::exact('ligne_id'),
+
+    
+    
+            AllowedFilter::exact('identifiants_sadge'),
+
+    
+            AllowedFilter::exact('creat_by'),
 
     
 AllowedFilter::callback('not_null', function (Builder $query, $value) {
@@ -365,6 +365,9 @@ return $query;
     
     
     
+            AllowedSort::field('etats'),
+
+    
             AllowedSort::field('annuler'),
 
     
@@ -383,16 +386,6 @@ return $query;
             AllowedSort::field('heure'),
 
     
-    
-            AllowedSort::field('identifiants_sadge'),
-
-    
-            AllowedSort::field('creat_by'),
-
-    
-            AllowedSort::field('etats'),
-
-    
             AllowedSort::field('identification_id'),
 
     
@@ -408,6 +401,13 @@ return $query;
             AllowedSort::field('ligne_id'),
 
     
+    
+            AllowedSort::field('identifiants_sadge'),
+
+    
+            AllowedSort::field('creat_by'),
+
+    
 ])
     
     
@@ -420,15 +420,6 @@ return $query;
         
 
                 'traitements',
-        
-
-                'transactionhistoriques',
-        
-
-                'transactionsdetails',
-        
-
-                'transactionsulterieurs',
         
 
     
@@ -741,6 +732,9 @@ $data = QueryBuilder::for(Transaction::class)
     
     
     
+            AllowedFilter::exact('etats'),
+
+    
             AllowedFilter::exact('annuler'),
 
     
@@ -759,16 +753,6 @@ $data = QueryBuilder::for(Transaction::class)
             AllowedFilter::exact('heure'),
 
     
-    
-            AllowedFilter::exact('identifiants_sadge'),
-
-    
-            AllowedFilter::exact('creat_by'),
-
-    
-            AllowedFilter::exact('etats'),
-
-    
             AllowedFilter::exact('identification_id'),
 
     
@@ -782,6 +766,13 @@ $data = QueryBuilder::for(Transaction::class)
 
     
             AllowedFilter::exact('ligne_id'),
+
+    
+    
+            AllowedFilter::exact('identifiants_sadge'),
+
+    
+            AllowedFilter::exact('creat_by'),
 
     
 AllowedFilter::callback('not_null', function (Builder $query, $value) {
@@ -909,6 +900,9 @@ return $query;
     
     
     
+            AllowedSort::field('etats'),
+
+    
             AllowedSort::field('annuler'),
 
     
@@ -927,16 +921,6 @@ return $query;
             AllowedSort::field('heure'),
 
     
-    
-            AllowedSort::field('identifiants_sadge'),
-
-    
-            AllowedSort::field('creat_by'),
-
-    
-            AllowedSort::field('etats'),
-
-    
             AllowedSort::field('identification_id'),
 
     
@@ -952,6 +936,13 @@ return $query;
             AllowedSort::field('ligne_id'),
 
     
+    
+            AllowedSort::field('identifiants_sadge'),
+
+    
+            AllowedSort::field('creat_by'),
+
+    
 ])
     
     
@@ -964,15 +955,6 @@ return $query;
         
 
                 'traitements',
-        
-
-                'transactionhistoriques',
-        
-
-                'transactionsdetails',
-        
-
-                'transactionsulterieurs',
         
 
                 'carte',
@@ -1281,21 +1263,21 @@ $champsRechercher=[
     'extra_attributes',
     'created_at',
     'updated_at',
+    'etats',
     'annuler',
     'type',
     'traiter',
     'verification',
     'rechercheetape',
     'heure',
-    'deleted_at',
-    'identifiants_sadge',
-    'creat_by',
-    'etats',
     'identification_id',
     'controlleursacce_id',
     'carte_id',
     'cout',
     'ligne_id',
+    'deleted_at',
+    'identifiants_sadge',
+    'creat_by',
 ];
 $envoyer=[];
 foreach($data as $key=>$d){
@@ -1365,6 +1347,12 @@ Validator::make($data, [
     
     
     
+                    'etats' => [
+            //'required'
+            ],
+        
+    
+    
                     'annuler' => [
             //'required'
             ],
@@ -1401,25 +1389,6 @@ Validator::make($data, [
         
     
     
-    
-                    'identifiants_sadge' => [
-            //'required'
-            ],
-        
-    
-    
-                    'creat_by' => [
-            //'required'
-            ],
-        
-    
-    
-                    'etats' => [
-            //'required'
-            ],
-        
-    
-    
                     'identification_id' => [
             //'required'
             ],
@@ -1445,6 +1414,19 @@ Validator::make($data, [
     
     
                     'ligne_id' => [
+            //'required'
+            ],
+        
+    
+    
+    
+                    'identifiants_sadge' => [
+            //'required'
+            ],
+        
+    
+    
+                    'creat_by' => [
             //'required'
             ],
         
@@ -1494,6 +1476,10 @@ Validator::make($data, [
     
     
     
+        'etats' => ['cette donnee est obligatoire'],
+
+    
+    
         'annuler' => ['cette donnee est obligatoire'],
 
     
@@ -1518,19 +1504,6 @@ Validator::make($data, [
 
     
     
-    
-        'identifiants_sadge' => ['cette donnee est obligatoire'],
-
-    
-    
-        'creat_by' => ['cette donnee est obligatoire'],
-
-    
-    
-        'etats' => ['cette donnee est obligatoire'],
-
-    
-    
         'identification_id' => ['cette donnee est obligatoire'],
 
     
@@ -1548,6 +1521,15 @@ Validator::make($data, [
     
     
         'ligne_id' => ['cette donnee est obligatoire'],
+
+    
+    
+    
+        'identifiants_sadge' => ['cette donnee est obligatoire'],
+
+    
+    
+        'creat_by' => ['cette donnee est obligatoire'],
 
     
 ])->validate();
@@ -1768,6 +1750,24 @@ $data['creat_by']=Auth::id();
 
     
 
+        if(!empty($data['etats'])){
+        
+            $Transactions->etats = $data['etats'];
+        
+        }
+
+
+
+    
+
+
+
+
+
+
+
+    
+
         if(!empty($data['annuler'])){
         
             $Transactions->annuler = $data['annuler'];
@@ -1876,68 +1876,6 @@ $data['creat_by']=Auth::id();
 
     
 
-
-
-
-
-
-
-    
-
-        if(!empty($data['identifiants_sadge'])){
-        
-            $Transactions->identifiants_sadge = $data['identifiants_sadge'];
-        
-        }
-
-
-
-    
-
-
-
-
-
-
-
-    
-
-        if(!empty($data['creat_by'])){
-        
-            $Transactions->creat_by = $data['creat_by'];
-        
-        }
-
-
-
-    
-
-
-
-
-
-
-
-    
-
-        if(!empty($data['etats'])){
-        
-            $Transactions->etats = $data['etats'];
-        
-        }
-
-
-
-    
-
-
-
-
-
-
-
-    
-
         if(!empty($data['identification_id'])){
         
             $Transactions->identification_id = $data['identification_id'];
@@ -2026,6 +1964,50 @@ $data['creat_by']=Auth::id();
 
 
 
+    
+
+
+
+
+
+
+
+    
+
+        if(!empty($data['identifiants_sadge'])){
+        
+            $Transactions->identifiants_sadge = $data['identifiants_sadge'];
+        
+        }
+
+
+
+    
+
+
+
+
+
+
+
+    
+
+        if(!empty($data['creat_by'])){
+        
+            $Transactions->creat_by = $data['creat_by'];
+        
+        }
+
+
+
+    
+
+
+
+
+
+
+
 
 
 
@@ -2083,20 +2065,20 @@ $newCrudData=[];
                 $newCrudData['punch_time']=$Transactions->punch_time;
                 $newCrudData['poste_id']=$Transactions->poste_id;
                 $newCrudData['ville_id']=$Transactions->ville_id;
-                            $newCrudData['annuler']=$Transactions->annuler;
+                            $newCrudData['etats']=$Transactions->etats;
+                $newCrudData['annuler']=$Transactions->annuler;
                 $newCrudData['type']=$Transactions->type;
                 $newCrudData['traiter']=$Transactions->traiter;
                 $newCrudData['verification']=$Transactions->verification;
                 $newCrudData['rechercheetape']=$Transactions->rechercheetape;
                 $newCrudData['heure']=$Transactions->heure;
-                    $newCrudData['identifiants_sadge']=$Transactions->identifiants_sadge;
-                $newCrudData['creat_by']=$Transactions->creat_by;
-                $newCrudData['etats']=$Transactions->etats;
                 $newCrudData['identification_id']=$Transactions->identification_id;
                 $newCrudData['controlleursacce_id']=$Transactions->controlleursacce_id;
                 $newCrudData['carte_id']=$Transactions->carte_id;
                 $newCrudData['cout']=$Transactions->cout;
                 $newCrudData['ligne_id']=$Transactions->ligne_id;
+                    $newCrudData['identifiants_sadge']=$Transactions->identifiants_sadge;
+                $newCrudData['creat_by']=$Transactions->creat_by;
     
  try{ $newCrudData['carte']=$Transactions->carte->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['controlleursacce']=$Transactions->controlleursacce->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['identification']=$Transactions->identification->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['ligne']=$Transactions->ligne->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['poste']=$Transactions->poste->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['ville']=$Transactions->ville->Selectlabel; }catch(\Throwable $e){}  
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Create", 'entite' => 'Transactions','entite_cle' => $Transactions->id, 'ancien' => json_encode($newCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);
@@ -2156,20 +2138,20 @@ $oldCrudData=[];
                 $oldCrudData['punch_time']=$Transactions->punch_time;
                 $oldCrudData['poste_id']=$Transactions->poste_id;
                 $oldCrudData['ville_id']=$Transactions->ville_id;
-                            $oldCrudData['annuler']=$Transactions->annuler;
+                            $oldCrudData['etats']=$Transactions->etats;
+                $oldCrudData['annuler']=$Transactions->annuler;
                 $oldCrudData['type']=$Transactions->type;
                 $oldCrudData['traiter']=$Transactions->traiter;
                 $oldCrudData['verification']=$Transactions->verification;
                 $oldCrudData['rechercheetape']=$Transactions->rechercheetape;
                 $oldCrudData['heure']=$Transactions->heure;
-                    $oldCrudData['identifiants_sadge']=$Transactions->identifiants_sadge;
-                $oldCrudData['creat_by']=$Transactions->creat_by;
-                $oldCrudData['etats']=$Transactions->etats;
                 $oldCrudData['identification_id']=$Transactions->identification_id;
                 $oldCrudData['controlleursacce_id']=$Transactions->controlleursacce_id;
                 $oldCrudData['carte_id']=$Transactions->carte_id;
                 $oldCrudData['cout']=$Transactions->cout;
                 $oldCrudData['ligne_id']=$Transactions->ligne_id;
+                    $oldCrudData['identifiants_sadge']=$Transactions->identifiants_sadge;
+                $oldCrudData['creat_by']=$Transactions->creat_by;
     
  try{ $oldCrudData['carte']=$Transactions->carte->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['controlleursacce']=$Transactions->controlleursacce->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['identification']=$Transactions->identification->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['ligne']=$Transactions->ligne->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['poste']=$Transactions->poste->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['ville']=$Transactions->ville->Selectlabel; }catch(\Throwable $e){}  
 
@@ -2196,21 +2178,21 @@ $champsRechercher=[
     'extra_attributes',
     'created_at',
     'updated_at',
+    'etats',
     'annuler',
     'type',
     'traiter',
     'verification',
     'rechercheetape',
     'heure',
-    'deleted_at',
-    'identifiants_sadge',
-    'creat_by',
-    'etats',
     'identification_id',
     'controlleursacce_id',
     'carte_id',
     'cout',
     'ligne_id',
+    'deleted_at',
+    'identifiants_sadge',
+    'creat_by',
 ];
 $envoyer=[];
 foreach($data as $key=>$d){
@@ -2280,6 +2262,12 @@ Validator::make($data, [
     
     
     
+                    'etats' => [
+            //'required'
+            ],
+        
+    
+    
                     'annuler' => [
             //'required'
             ],
@@ -2316,25 +2304,6 @@ Validator::make($data, [
         
     
     
-    
-                    'identifiants_sadge' => [
-            //'required'
-            ],
-        
-    
-    
-                    'creat_by' => [
-            //'required'
-            ],
-        
-    
-    
-                    'etats' => [
-            //'required'
-            ],
-        
-    
-    
                     'identification_id' => [
             //'required'
             ],
@@ -2360,6 +2329,19 @@ Validator::make($data, [
     
     
                     'ligne_id' => [
+            //'required'
+            ],
+        
+    
+    
+    
+                    'identifiants_sadge' => [
+            //'required'
+            ],
+        
+    
+    
+                    'creat_by' => [
             //'required'
             ],
         
@@ -2409,6 +2391,10 @@ Validator::make($data, [
     
     
     
+        'etats' => ['cette donnee est obligatoire'],
+
+    
+    
         'annuler' => ['cette donnee est obligatoire'],
 
     
@@ -2433,19 +2419,6 @@ Validator::make($data, [
 
     
     
-    
-        'identifiants_sadge' => ['cette donnee est obligatoire'],
-
-    
-    
-        'creat_by' => ['cette donnee est obligatoire'],
-
-    
-    
-        'etats' => ['cette donnee est obligatoire'],
-
-    
-    
         'identification_id' => ['cette donnee est obligatoire'],
 
     
@@ -2463,6 +2436,15 @@ Validator::make($data, [
     
     
         'ligne_id' => ['cette donnee est obligatoire'],
+
+    
+    
+    
+        'identifiants_sadge' => ['cette donnee est obligatoire'],
+
+    
+    
+        'creat_by' => ['cette donnee est obligatoire'],
 
     
 ])->validate();
@@ -2708,6 +2690,27 @@ $extra_data=array_diff($envoyer,$champsRechercher);
 
     
 
+        if(array_key_exists("etats",$data)){
+
+
+        if(!empty($data['etats'])){
+        
+            $Transactions->etats = $data['etats'];
+        
+        }
+
+        }
+
+    
+
+
+
+
+
+
+
+    
+
         if(array_key_exists("annuler",$data)){
 
 
@@ -2834,77 +2837,6 @@ $extra_data=array_diff($envoyer,$champsRechercher);
 
     
 
-
-
-
-
-
-
-    
-
-        if(array_key_exists("identifiants_sadge",$data)){
-
-
-        if(!empty($data['identifiants_sadge'])){
-        
-            $Transactions->identifiants_sadge = $data['identifiants_sadge'];
-        
-        }
-
-        }
-
-    
-
-
-
-
-
-
-
-    
-
-        if(array_key_exists("creat_by",$data)){
-
-
-        if(!empty($data['creat_by'])){
-        
-            $Transactions->creat_by = $data['creat_by'];
-        
-        }
-
-        }
-
-    
-
-
-
-
-
-
-
-    
-
-        if(array_key_exists("etats",$data)){
-
-
-        if(!empty($data['etats'])){
-        
-            $Transactions->etats = $data['etats'];
-        
-        }
-
-        }
-
-    
-
-
-
-
-
-
-
-    
-
         if(array_key_exists("identification_id",$data)){
 
 
@@ -3008,6 +2940,56 @@ $extra_data=array_diff($envoyer,$champsRechercher);
 
 
 
+    
+
+
+
+
+
+
+
+    
+
+        if(array_key_exists("identifiants_sadge",$data)){
+
+
+        if(!empty($data['identifiants_sadge'])){
+        
+            $Transactions->identifiants_sadge = $data['identifiants_sadge'];
+        
+        }
+
+        }
+
+    
+
+
+
+
+
+
+
+    
+
+        if(array_key_exists("creat_by",$data)){
+
+
+        if(!empty($data['creat_by'])){
+        
+            $Transactions->creat_by = $data['creat_by'];
+        
+        }
+
+        }
+
+    
+
+
+
+
+
+
+
 
 
 
@@ -3072,20 +3054,20 @@ $newCrudData=[];
                 $newCrudData['punch_time']=$Transactions->punch_time;
                 $newCrudData['poste_id']=$Transactions->poste_id;
                 $newCrudData['ville_id']=$Transactions->ville_id;
-                            $newCrudData['annuler']=$Transactions->annuler;
+                            $newCrudData['etats']=$Transactions->etats;
+                $newCrudData['annuler']=$Transactions->annuler;
                 $newCrudData['type']=$Transactions->type;
                 $newCrudData['traiter']=$Transactions->traiter;
                 $newCrudData['verification']=$Transactions->verification;
                 $newCrudData['rechercheetape']=$Transactions->rechercheetape;
                 $newCrudData['heure']=$Transactions->heure;
-                    $newCrudData['identifiants_sadge']=$Transactions->identifiants_sadge;
-                $newCrudData['creat_by']=$Transactions->creat_by;
-                $newCrudData['etats']=$Transactions->etats;
                 $newCrudData['identification_id']=$Transactions->identification_id;
                 $newCrudData['controlleursacce_id']=$Transactions->controlleursacce_id;
                 $newCrudData['carte_id']=$Transactions->carte_id;
                 $newCrudData['cout']=$Transactions->cout;
                 $newCrudData['ligne_id']=$Transactions->ligne_id;
+                    $newCrudData['identifiants_sadge']=$Transactions->identifiants_sadge;
+                $newCrudData['creat_by']=$Transactions->creat_by;
     
  try{ $newCrudData['carte']=$Transactions->carte->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['controlleursacce']=$Transactions->controlleursacce->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['identification']=$Transactions->identification->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['ligne']=$Transactions->ligne->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['poste']=$Transactions->poste->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['ville']=$Transactions->ville->Selectlabel; }catch(\Throwable $e){}  
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Update", 'entite' => 'Transactions','entite_cle' => $Transactions->id, 'ancien' => json_encode($oldCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);
@@ -3140,20 +3122,20 @@ $newCrudData=[];
                 $newCrudData['punch_time']=$Transactions->punch_time;
                 $newCrudData['poste_id']=$Transactions->poste_id;
                 $newCrudData['ville_id']=$Transactions->ville_id;
-                            $newCrudData['annuler']=$Transactions->annuler;
+                            $newCrudData['etats']=$Transactions->etats;
+                $newCrudData['annuler']=$Transactions->annuler;
                 $newCrudData['type']=$Transactions->type;
                 $newCrudData['traiter']=$Transactions->traiter;
                 $newCrudData['verification']=$Transactions->verification;
                 $newCrudData['rechercheetape']=$Transactions->rechercheetape;
                 $newCrudData['heure']=$Transactions->heure;
-                    $newCrudData['identifiants_sadge']=$Transactions->identifiants_sadge;
-                $newCrudData['creat_by']=$Transactions->creat_by;
-                $newCrudData['etats']=$Transactions->etats;
                 $newCrudData['identification_id']=$Transactions->identification_id;
                 $newCrudData['controlleursacce_id']=$Transactions->controlleursacce_id;
                 $newCrudData['carte_id']=$Transactions->carte_id;
                 $newCrudData['cout']=$Transactions->cout;
                 $newCrudData['ligne_id']=$Transactions->ligne_id;
+                    $newCrudData['identifiants_sadge']=$Transactions->identifiants_sadge;
+                $newCrudData['creat_by']=$Transactions->creat_by;
     
  try{ $newCrudData['carte']=$Transactions->carte->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['controlleursacce']=$Transactions->controlleursacce->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['identification']=$Transactions->identification->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['ligne']=$Transactions->ligne->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['poste']=$Transactions->poste->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['ville']=$Transactions->ville->Selectlabel; }catch(\Throwable $e){}  
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Delete", 'entite' => 'Transactions','entite_cle' => $Transactions->id, 'ancien' => json_encode($newCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);

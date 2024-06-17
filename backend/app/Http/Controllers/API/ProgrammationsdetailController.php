@@ -29,8 +29,7 @@ use Spatie\QueryBuilder\QueryBuilder;
 
 
 
-            use App\Models\Programmation;
-    
+
 class ProgrammationsdetailController extends Controller
 {
 
@@ -159,18 +158,6 @@ return response()->json(Programmationsdetail::count());
 }
 $data = QueryBuilder::for(Programmationsdetail::class)
 ->allowedFilters([
-            AllowedFilter::exact('debut'),
-
-    
-            AllowedFilter::exact('fin'),
-
-    
-            AllowedFilter::exact('users'),
-
-    
-            AllowedFilter::exact('programmation_id'),
-
-    
 AllowedFilter::callback('not_null', function (Builder $query, $value) {
 //                    dump($value);
 
@@ -263,26 +250,10 @@ return $query;
 }),
 ])
 ->allowedSorts([
-            AllowedSort::field('debut'),
-
-    
-            AllowedSort::field('fin'),
-
-    
-            AllowedSort::field('users'),
-
-    
-            AllowedSort::field('programmation_id'),
-
-    
 ])
-    
 ->allowedIncludes([
 
-            'programmation',
-        
-
-    ]);
+]);
 
 if(!empty($_REQUEST["paginate"]) && $_REQUEST["paginate"]==1 ){
 $data=$data->paginate(isset($_REQUEST["limit"]) ? max(0, intval($_REQUEST["limit"])) : 20);
@@ -290,34 +261,6 @@ $data=$data->paginate(isset($_REQUEST["limit"]) ? max(0, intval($_REQUEST["limit
 $data=$data->get();
 }
 $donnees=$data->toArray();
-
-
-    
-
-
-
-
-
-
-    
-
-
-
-
-
-
-    
-
-
-
-
-
-
-    
-
-
-
-
 
 
 
@@ -372,18 +315,6 @@ public function data1(Request $request)
 
 $data = QueryBuilder::for(Programmationsdetail::class)
 ->allowedFilters([
-            AllowedFilter::exact('debut'),
-
-    
-            AllowedFilter::exact('fin'),
-
-    
-            AllowedFilter::exact('users'),
-
-    
-            AllowedFilter::exact('programmation_id'),
-
-    
 AllowedFilter::callback('not_null', function (Builder $query, $value) {
 //                    dump($value);
 
@@ -476,25 +407,9 @@ return $query;
 }),
 ])
 ->allowedSorts([
-            AllowedSort::field('debut'),
-
-    
-            AllowedSort::field('fin'),
-
-    
-            AllowedSort::field('users'),
-
-    
-            AllowedSort::field('programmation_id'),
-
-    
 ])
-    
 ->allowedIncludes([
-            'programmation',
-        
-
-    ]);
+]);
 
 if(!empty($_REQUEST["count"]) && $_REQUEST["count"]==1 ){
 return response()->json($data->count());
@@ -506,34 +421,6 @@ $data=$data->paginate(isset($_REQUEST["limit"]) ? max(0, intval($_REQUEST["limit
 $data=$data->get();
 }
 $donnees=$data->toArray();
-
-
-
-
-
-    
-
-
-
-
-
-
-    
-
-
-
-
-
-
-    
-
-
-
-
-
-
-    
-
 
 
 
@@ -601,10 +488,6 @@ $data[$key]= $path;
 
 
 $champsRechercher=[
-    'debut',
-    'fin',
-    'users',
-    'programmation_id',
 ];
 $envoyer=[];
 foreach($data as $key=>$d){
@@ -615,50 +498,10 @@ $envoyer[]=$key;
 $envoyer=array_unique($envoyer);
 
 Validator::make($data, [
-    
-                    'debut' => [
-            //'required'
-            ],
-        
-    
-    
-                    'fin' => [
-            //'required'
-            ],
-        
-    
-    
-                    'users' => [
-            //'required'
-            ],
-        
-    
-    
-                    'programmation_id' => [
-            //'required'
-            ],
-        
-    
 
 
 ], $messages = [
 
-    
-        'debut' => ['cette donnee est obligatoire'],
-
-    
-    
-        'fin' => ['cette donnee est obligatoire'],
-
-    
-    
-        'users' => ['cette donnee est obligatoire'],
-
-    
-    
-        'programmation_id' => ['cette donnee est obligatoire'],
-
-    
 ])->validate();
 
 
@@ -674,78 +517,6 @@ $data['__authId__'] = Auth::id();
 $data['__ip__'] = $request->ip();
 $data['creat_by']=Auth::id();
 
-
-
-
-
-
-
-
-    
-
-        if(!empty($data['debut'])){
-        
-            $Programmationsdetails->debut = $data['debut'];
-        
-        }
-
-
-
-    
-
-
-
-
-
-
-
-    
-
-        if(!empty($data['fin'])){
-        
-            $Programmationsdetails->fin = $data['fin'];
-        
-        }
-
-
-
-    
-
-
-
-
-
-
-
-    
-
-        if(!empty($data['users'])){
-        
-            $Programmationsdetails->users = $data['users'];
-        
-        }
-
-
-
-    
-
-
-
-
-
-
-
-    
-
-        if(!empty($data['programmation_id'])){
-        
-            $Programmationsdetails->programmation_id = $data['programmation_id'];
-        
-        }
-
-
-
-    
 
 
 
@@ -801,12 +572,8 @@ return response()->json($Programmationsdetails, 200);
 $Programmationsdetails=Programmationsdetail::find($Programmationsdetails->id);
 $newCrudData=[];
 
-            $newCrudData['debut']=$Programmationsdetails->debut;
-                $newCrudData['fin']=$Programmationsdetails->fin;
-                $newCrudData['users']=$Programmationsdetails->users;
-                $newCrudData['programmation_id']=$Programmationsdetails->programmation_id;
-    
- try{ $newCrudData['programmation']=$Programmationsdetails->programmation->Selectlabel; }catch(\Throwable $e){}  
+
+
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Create", 'entite' => 'Programmationsdetails','entite_cle' => $Programmationsdetails->id, 'ancien' => json_encode($newCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);
 
 
@@ -855,12 +622,8 @@ return response()->json([], 200);
 
 $oldCrudData=[];
 
-            $oldCrudData['debut']=$Programmationsdetails->debut;
-                $oldCrudData['fin']=$Programmationsdetails->fin;
-                $oldCrudData['users']=$Programmationsdetails->users;
-                $oldCrudData['programmation_id']=$Programmationsdetails->programmation_id;
-    
- try{ $oldCrudData['programmation']=$Programmationsdetails->programmation->Selectlabel; }catch(\Throwable $e){}  
+
+
 
 $data=$request->all();
 foreach ($request->allFiles() as $key=>$file){
@@ -872,10 +635,6 @@ $data[$key]= $path;
 
 
 $champsRechercher=[
-    'debut',
-    'fin',
-    'users',
-    'programmation_id',
 ];
 $envoyer=[];
 foreach($data as $key=>$d){
@@ -886,50 +645,10 @@ $envoyer[]=$key;
 $envoyer=array_unique($envoyer);
 
 Validator::make($data, [
-    
-                    'debut' => [
-            //'required'
-            ],
-        
-    
-    
-                    'fin' => [
-            //'required'
-            ],
-        
-    
-    
-                    'users' => [
-            //'required'
-            ],
-        
-    
-    
-                    'programmation_id' => [
-            //'required'
-            ],
-        
-    
 
 
 ], $messages = [
 
-    
-        'debut' => ['cette donnee est obligatoire'],
-
-    
-    
-        'fin' => ['cette donnee est obligatoire'],
-
-    
-    
-        'users' => ['cette donnee est obligatoire'],
-
-    
-    
-        'programmation_id' => ['cette donnee est obligatoire'],
-
-    
 ])->validate();
 
 
@@ -943,90 +662,6 @@ $extra_data=array_diff($envoyer,$champsRechercher);
 
 
 
-
-
-
-
-
-
-
-    
-
-        if(array_key_exists("debut",$data)){
-
-
-        if(!empty($data['debut'])){
-        
-            $Programmationsdetails->debut = $data['debut'];
-        
-        }
-
-        }
-
-    
-
-
-
-
-
-
-
-    
-
-        if(array_key_exists("fin",$data)){
-
-
-        if(!empty($data['fin'])){
-        
-            $Programmationsdetails->fin = $data['fin'];
-        
-        }
-
-        }
-
-    
-
-
-
-
-
-
-
-    
-
-        if(array_key_exists("users",$data)){
-
-
-        if(!empty($data['users'])){
-        
-            $Programmationsdetails->users = $data['users'];
-        
-        }
-
-        }
-
-    
-
-
-
-
-
-
-
-    
-
-        if(array_key_exists("programmation_id",$data)){
-
-
-        if(!empty($data['programmation_id'])){
-        
-            $Programmationsdetails->programmation_id = $data['programmation_id'];
-        
-        }
-
-        }
-
-    
 
 
 
@@ -1089,12 +724,8 @@ $Programmationsdetails=Programmationsdetail::find($Programmationsdetails->id);
 
 $newCrudData=[];
 
-            $newCrudData['debut']=$Programmationsdetails->debut;
-                $newCrudData['fin']=$Programmationsdetails->fin;
-                $newCrudData['users']=$Programmationsdetails->users;
-                $newCrudData['programmation_id']=$Programmationsdetails->programmation_id;
-    
- try{ $newCrudData['programmation']=$Programmationsdetails->programmation->Selectlabel; }catch(\Throwable $e){}  
+
+
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Update", 'entite' => 'Programmationsdetails','entite_cle' => $Programmationsdetails->id, 'ancien' => json_encode($oldCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);
 
 $response = $Programmationsdetails->toArray();
@@ -1138,12 +769,8 @@ return response()->json([], 200);
 
 $newCrudData=[];
 
-            $newCrudData['debut']=$Programmationsdetails->debut;
-                $newCrudData['fin']=$Programmationsdetails->fin;
-                $newCrudData['users']=$Programmationsdetails->users;
-                $newCrudData['programmation_id']=$Programmationsdetails->programmation_id;
-    
- try{ $newCrudData['programmation']=$Programmationsdetails->programmation->Selectlabel; }catch(\Throwable $e){}  
+
+
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Delete", 'entite' => 'Programmationsdetails','entite_cle' => $Programmationsdetails->id, 'ancien' => json_encode($newCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);
 
 

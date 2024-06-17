@@ -1,4 +1,4 @@
-<?php
+<?php 
 namespace App\Http\Controllers\WEB;
 
 use Illuminate\Database\Schema\Blueprint;
@@ -38,7 +38,7 @@ ini_set('max_execution_time', '300');
 
             use App\Models\prod\Ville;
                 use App\Models\prod\Zone;
-
+    
 class VilleszonesControllerWeb extends Controller
 {
 
@@ -156,65 +156,73 @@ $villeszones_disposition->disposition=$request->get('disposition');
 
 
 
+        
+
+            
 
 
 
 
 
+        
+
+            
 
 
 
 
 
+        
+
+            
 
 
 
 
 
+        
+
+            
 
 
 
 
 
+        
+
+            
 
 
 
 
 
+        
+
+            
 
 
 
 
 
+        
+
+            
 
 
 
 
 
+        
+
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -283,65 +291,73 @@ $pageConfig = [
 
 
 
+        
+
+            
 
 
 
 
 
+        
+
+            
 
 
 
 
 
+        
+
+            
 
 
 
 
 
+        
+
+            
 
 
 
 
 
+        
+
+            
 
 
 
 
 
+        
+
+            
 
 
 
 
 
+        
+
+            
 
 
 
 
 
+        
+
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -399,65 +415,73 @@ abort(401);
 
 
 
+        
+
+            
 
 
 
 
 
+        
+
+            
 
 
 
 
 
+        
+
+            
 
 
 
 
 
+        
+
+            
 
 
 
 
 
+        
+
+            
 
 
 
 
 
+        
+
+            
 
 
 
 
 
+        
+
+            
 
 
 
 
 
+        
+
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -518,65 +542,73 @@ abort(401);
 
 
 
+        
+
+            
 
 
 
 
 
+        
+
+            
 
 
 
 
 
+        
+
+            
 
 
 
 
 
+        
+
+            
 
 
 
 
 
+        
+
+            
 
 
 
 
 
+        
+
+            
 
 
 
 
 
+        
+
+            
 
 
 
 
 
+        
+
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 

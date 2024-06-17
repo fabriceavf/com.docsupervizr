@@ -29,7 +29,7 @@
             </div>
             <div class="{{ $configData['contentsidebarClass'] }}">
                 <div class="content-wrapper">
-                    <div class="content-body">
+                    <div class="content-body" style="padding-top:10px">
                         {{-- Include Page Content --}}
                         @yield('content')
                     </div>
@@ -46,7 +46,7 @@
             @endif
 
 
-            <div class="content-body">
+            <div class="content-body"  style="padding-top:100px">
                 {{-- Include Page Content --}}
                 @yield('content')
             </div>

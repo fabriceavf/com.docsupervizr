@@ -304,10 +304,7 @@ return $query;
 ])
     
 ->allowedIncludes([
-            'contratssites',
-        
-
-                'postes',
+            'postes',
         
 
     
@@ -598,10 +595,7 @@ return $query;
 ])
     
 ->allowedIncludes([
-            'contratssites',
-        
-
-                'postes',
+            'postes',
         
 
                 'client',

@@ -293,16 +293,10 @@ return $query;
             'lignes',
         
 
-                'listings',
-        
-
                 'points',
         
 
                 'rapports',
-        
-
-                'taches',
         
 
                 'transactions',
@@ -578,16 +572,10 @@ return $query;
             'lignes',
         
 
-                'listings',
-        
-
                 'points',
         
 
                 'rapports',
-        
-
-                'taches',
         
 
                 'transactions',

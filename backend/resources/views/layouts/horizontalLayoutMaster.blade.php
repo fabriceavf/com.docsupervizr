@@ -42,7 +42,7 @@
                 @include('panels.breadcrumb')
             @endif
 
-            <div class="content-body">
+            <div class="content-body" style="padding-top:25px">
 
                 {{-- Include Page Content --}}
                 @yield('content')

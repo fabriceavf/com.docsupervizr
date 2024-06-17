@@ -290,10 +290,7 @@ return $query;
     
 ])
 ->allowedIncludes([
-            'usersgraphiques',
-        
 
-    
 ]);
 
 if(!empty($_REQUEST["paginate"]) && $_REQUEST["paginate"]==1 ){
@@ -551,10 +548,7 @@ return $query;
     
 ])
 ->allowedIncludes([
-            'usersgraphiques',
-        
-
-    ]);
+]);
 
 if(!empty($_REQUEST["count"]) && $_REQUEST["count"]==1 ){
 return response()->json($data->count());

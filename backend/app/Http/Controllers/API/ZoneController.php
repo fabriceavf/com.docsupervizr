@@ -192,15 +192,15 @@ $data = QueryBuilder::for(Zone::class)
             AllowedFilter::exact('ordre'),
 
     
+            AllowedFilter::exact('ville_id'),
+
+    
     
     
             AllowedFilter::exact('identifiants_sadge'),
 
     
             AllowedFilter::exact('creat_by'),
-
-    
-            AllowedFilter::exact('ville_id'),
 
     
 AllowedFilter::callback('not_null', function (Builder $query, $value) {
@@ -327,15 +327,15 @@ return $query;
             AllowedSort::field('ordre'),
 
     
+            AllowedSort::field('ville_id'),
+
+    
     
     
             AllowedSort::field('identifiants_sadge'),
 
     
             AllowedSort::field('creat_by'),
-
-    
-            AllowedSort::field('ville_id'),
 
     
 ])
@@ -345,16 +345,10 @@ return $query;
             'homezones',
         
 
-                'listings',
-        
-
                 'modelslistings',
         
 
                 'programmations',
-        
-
-                'programmationsrondes',
         
 
                 'rapports',
@@ -592,15 +586,15 @@ $data = QueryBuilder::for(Zone::class)
             AllowedFilter::exact('ordre'),
 
     
+            AllowedFilter::exact('ville_id'),
+
+    
     
     
             AllowedFilter::exact('identifiants_sadge'),
 
     
             AllowedFilter::exact('creat_by'),
-
-    
-            AllowedFilter::exact('ville_id'),
 
     
 AllowedFilter::callback('not_null', function (Builder $query, $value) {
@@ -727,15 +721,15 @@ return $query;
             AllowedSort::field('ordre'),
 
     
+            AllowedSort::field('ville_id'),
+
+    
     
     
             AllowedSort::field('identifiants_sadge'),
 
     
             AllowedSort::field('creat_by'),
-
-    
-            AllowedSort::field('ville_id'),
 
     
 ])
@@ -745,16 +739,10 @@ return $query;
             'homezones',
         
 
-                'listings',
-        
-
                 'modelslistings',
         
 
                 'programmations',
-        
-
-                'programmationsrondes',
         
 
                 'rapports',
@@ -988,11 +976,11 @@ $champsRechercher=[
     'total_present_jour',
     'total_present_nuit',
     'ordre',
+    'ville_id',
     'extra_attributes',
     'deleted_at',
     'identifiants_sadge',
     'creat_by',
-    'ville_id',
 ];
 $envoyer=[];
 foreach($data as $key=>$d){
@@ -1061,6 +1049,12 @@ Validator::make($data, [
         
     
     
+                    'ville_id' => [
+            //'required'
+            ],
+        
+    
+    
     
     
                     'identifiants_sadge' => [
@@ -1070,12 +1064,6 @@ Validator::make($data, [
     
     
                     'creat_by' => [
-            //'required'
-            ],
-        
-    
-    
-                    'ville_id' => [
             //'required'
             ],
         
@@ -1124,6 +1112,10 @@ Validator::make($data, [
 
     
     
+        'ville_id' => ['cette donnee est obligatoire'],
+
+    
+    
     
     
         'identifiants_sadge' => ['cette donnee est obligatoire'],
@@ -1131,10 +1123,6 @@ Validator::make($data, [
     
     
         'creat_by' => ['cette donnee est obligatoire'],
-
-    
-    
-        'ville_id' => ['cette donnee est obligatoire'],
 
     
 ])->validate();
@@ -1347,6 +1335,24 @@ $data['creat_by']=Auth::id();
 
     
 
+        if(!empty($data['ville_id'])){
+        
+            $Zones->ville_id = $data['ville_id'];
+        
+        }
+
+
+
+    
+
+
+
+
+
+
+
+    
+
 
 
 
@@ -1384,24 +1390,6 @@ $data['creat_by']=Auth::id();
         if(!empty($data['creat_by'])){
         
             $Zones->creat_by = $data['creat_by'];
-        
-        }
-
-
-
-    
-
-
-
-
-
-
-
-    
-
-        if(!empty($data['ville_id'])){
-        
-            $Zones->ville_id = $data['ville_id'];
         
         }
 
@@ -1472,9 +1460,9 @@ $newCrudData=[];
                 $newCrudData['total_present_jour']=$Zones->total_present_jour;
                 $newCrudData['total_present_nuit']=$Zones->total_present_nuit;
                 $newCrudData['ordre']=$Zones->ordre;
+                $newCrudData['ville_id']=$Zones->ville_id;
                         $newCrudData['identifiants_sadge']=$Zones->identifiants_sadge;
                 $newCrudData['creat_by']=$Zones->creat_by;
-                $newCrudData['ville_id']=$Zones->ville_id;
     
  try{ $newCrudData['province']=$Zones->province->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['ville']=$Zones->ville->Selectlabel; }catch(\Throwable $e){}  
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Create", 'entite' => 'Zones','entite_cle' => $Zones->id, 'ancien' => json_encode($newCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);
@@ -1534,9 +1522,9 @@ $oldCrudData=[];
                 $oldCrudData['total_present_jour']=$Zones->total_present_jour;
                 $oldCrudData['total_present_nuit']=$Zones->total_present_nuit;
                 $oldCrudData['ordre']=$Zones->ordre;
+                $oldCrudData['ville_id']=$Zones->ville_id;
                         $oldCrudData['identifiants_sadge']=$Zones->identifiants_sadge;
                 $oldCrudData['creat_by']=$Zones->creat_by;
-                $oldCrudData['ville_id']=$Zones->ville_id;
     
  try{ $oldCrudData['province']=$Zones->province->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['ville']=$Zones->ville->Selectlabel; }catch(\Throwable $e){}  
 
@@ -1562,11 +1550,11 @@ $champsRechercher=[
     'total_present_jour',
     'total_present_nuit',
     'ordre',
+    'ville_id',
     'extra_attributes',
     'deleted_at',
     'identifiants_sadge',
     'creat_by',
-    'ville_id',
 ];
 $envoyer=[];
 foreach($data as $key=>$d){
@@ -1635,6 +1623,12 @@ Validator::make($data, [
         
     
     
+                    'ville_id' => [
+            //'required'
+            ],
+        
+    
+    
     
     
                     'identifiants_sadge' => [
@@ -1644,12 +1638,6 @@ Validator::make($data, [
     
     
                     'creat_by' => [
-            //'required'
-            ],
-        
-    
-    
-                    'ville_id' => [
             //'required'
             ],
         
@@ -1698,6 +1686,10 @@ Validator::make($data, [
 
     
     
+        'ville_id' => ['cette donnee est obligatoire'],
+
+    
+    
     
     
         'identifiants_sadge' => ['cette donnee est obligatoire'],
@@ -1705,10 +1697,6 @@ Validator::make($data, [
     
     
         'creat_by' => ['cette donnee est obligatoire'],
-
-    
-    
-        'ville_id' => ['cette donnee est obligatoire'],
 
     
 ])->validate();
@@ -1946,6 +1934,27 @@ $extra_data=array_diff($envoyer,$champsRechercher);
 
     
 
+        if(array_key_exists("ville_id",$data)){
+
+
+        if(!empty($data['ville_id'])){
+        
+            $Zones->ville_id = $data['ville_id'];
+        
+        }
+
+        }
+
+    
+
+
+
+
+
+
+
+    
+
 
 
 
@@ -1989,27 +1998,6 @@ $extra_data=array_diff($envoyer,$champsRechercher);
         if(!empty($data['creat_by'])){
         
             $Zones->creat_by = $data['creat_by'];
-        
-        }
-
-        }
-
-    
-
-
-
-
-
-
-
-    
-
-        if(array_key_exists("ville_id",$data)){
-
-
-        if(!empty($data['ville_id'])){
-        
-            $Zones->ville_id = $data['ville_id'];
         
         }
 
@@ -2087,9 +2075,9 @@ $newCrudData=[];
                 $newCrudData['total_present_jour']=$Zones->total_present_jour;
                 $newCrudData['total_present_nuit']=$Zones->total_present_nuit;
                 $newCrudData['ordre']=$Zones->ordre;
+                $newCrudData['ville_id']=$Zones->ville_id;
                         $newCrudData['identifiants_sadge']=$Zones->identifiants_sadge;
                 $newCrudData['creat_by']=$Zones->creat_by;
-                $newCrudData['ville_id']=$Zones->ville_id;
     
  try{ $newCrudData['province']=$Zones->province->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['ville']=$Zones->ville->Selectlabel; }catch(\Throwable $e){}  
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Update", 'entite' => 'Zones','entite_cle' => $Zones->id, 'ancien' => json_encode($oldCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);
@@ -2144,9 +2132,9 @@ $newCrudData=[];
                 $newCrudData['total_present_jour']=$Zones->total_present_jour;
                 $newCrudData['total_present_nuit']=$Zones->total_present_nuit;
                 $newCrudData['ordre']=$Zones->ordre;
+                $newCrudData['ville_id']=$Zones->ville_id;
                         $newCrudData['identifiants_sadge']=$Zones->identifiants_sadge;
                 $newCrudData['creat_by']=$Zones->creat_by;
-                $newCrudData['ville_id']=$Zones->ville_id;
     
  try{ $newCrudData['province']=$Zones->province->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['ville']=$Zones->ville->Selectlabel; }catch(\Throwable $e){}  
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Delete", 'entite' => 'Zones','entite_cle' => $Zones->id, 'ancien' => json_encode($newCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);

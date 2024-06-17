@@ -177,6 +177,9 @@ $data = QueryBuilder::for(Switchsuser::class)
     
     
     
+            AllowedFilter::exact('identifiants_sadge'),
+
+    
 AllowedFilter::callback('not_null', function (Builder $query, $value) {
 //                    dump($value);
 
@@ -288,6 +291,9 @@ return $query;
     
     
     
+            AllowedSort::field('identifiants_sadge'),
+
+    
 ])
 ->allowedIncludes([
 
@@ -299,6 +305,13 @@ $data=$data->paginate(isset($_REQUEST["limit"]) ? max(0, intval($_REQUEST["limit
 $data=$data->get();
 }
 $donnees=$data->toArray();
+
+
+    
+
+
+
+
 
 
     
@@ -435,6 +448,9 @@ $data = QueryBuilder::for(Switchsuser::class)
     
     
     
+            AllowedFilter::exact('identifiants_sadge'),
+
+    
 AllowedFilter::callback('not_null', function (Builder $query, $value) {
 //                    dump($value);
 
@@ -546,6 +562,9 @@ return $query;
     
     
     
+            AllowedSort::field('identifiants_sadge'),
+
+    
 ])
 ->allowedIncludes([
 ]);
@@ -560,6 +579,13 @@ $data=$data->paginate(isset($_REQUEST["limit"]) ? max(0, intval($_REQUEST["limit
 $data=$data->get();
 }
 $donnees=$data->toArray();
+
+
+
+
+
+    
+
 
 
 
@@ -699,6 +725,7 @@ $champsRechercher=[
     'created_at',
     'updated_at',
     'deleted_at',
+    'identifiants_sadge',
 ];
 $envoyer=[];
 foreach($data as $key=>$d){
@@ -738,6 +765,12 @@ Validator::make($data, [
     
     
     
+    
+                    'identifiants_sadge' => [
+            //'required'
+            ],
+        
+    
 
 
 ], $messages = [
@@ -762,6 +795,10 @@ Validator::make($data, [
     
     
     
+    
+    
+        'identifiants_sadge' => ['cette donnee est obligatoire'],
+
     
 ])->validate();
 
@@ -897,6 +934,24 @@ $data['creat_by']=Auth::id();
 
 
 
+    
+
+        if(!empty($data['identifiants_sadge'])){
+        
+            $Switchsusers->identifiants_sadge = $data['identifiants_sadge'];
+        
+        }
+
+
+
+    
+
+
+
+
+
+
+
 
 
 
@@ -949,7 +1004,8 @@ $newCrudData=[];
                 $newCrudData['new_type']=$Switchsusers->new_type;
                 $newCrudData['action']=$Switchsusers->action;
                 $newCrudData['creat_by']=$Switchsusers->creat_by;
-                    
+                                $newCrudData['identifiants_sadge']=$Switchsusers->identifiants_sadge;
+    
 
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Create", 'entite' => 'Switchsusers','entite_cle' => $Switchsusers->id, 'ancien' => json_encode($newCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);
 
@@ -1003,7 +1059,8 @@ $oldCrudData=[];
                 $oldCrudData['new_type']=$Switchsusers->new_type;
                 $oldCrudData['action']=$Switchsusers->action;
                 $oldCrudData['creat_by']=$Switchsusers->creat_by;
-                    
+                                $oldCrudData['identifiants_sadge']=$Switchsusers->identifiants_sadge;
+    
 
 
 $data=$request->all();
@@ -1025,6 +1082,7 @@ $champsRechercher=[
     'created_at',
     'updated_at',
     'deleted_at',
+    'identifiants_sadge',
 ];
 $envoyer=[];
 foreach($data as $key=>$d){
@@ -1064,6 +1122,12 @@ Validator::make($data, [
     
     
     
+    
+                    'identifiants_sadge' => [
+            //'required'
+            ],
+        
+    
 
 
 ], $messages = [
@@ -1088,6 +1152,10 @@ Validator::make($data, [
     
     
     
+    
+    
+        'identifiants_sadge' => ['cette donnee est obligatoire'],
+
     
 ])->validate();
 
@@ -1233,6 +1301,27 @@ $extra_data=array_diff($envoyer,$champsRechercher);
 
 
 
+    
+
+        if(array_key_exists("identifiants_sadge",$data)){
+
+
+        if(!empty($data['identifiants_sadge'])){
+        
+            $Switchsusers->identifiants_sadge = $data['identifiants_sadge'];
+        
+        }
+
+        }
+
+    
+
+
+
+
+
+
+
 
 
 
@@ -1292,7 +1381,8 @@ $newCrudData=[];
                 $newCrudData['new_type']=$Switchsusers->new_type;
                 $newCrudData['action']=$Switchsusers->action;
                 $newCrudData['creat_by']=$Switchsusers->creat_by;
-                    
+                                $newCrudData['identifiants_sadge']=$Switchsusers->identifiants_sadge;
+    
 
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Update", 'entite' => 'Switchsusers','entite_cle' => $Switchsusers->id, 'ancien' => json_encode($oldCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);
 
@@ -1341,7 +1431,8 @@ $newCrudData=[];
                 $newCrudData['new_type']=$Switchsusers->new_type;
                 $newCrudData['action']=$Switchsusers->action;
                 $newCrudData['creat_by']=$Switchsusers->creat_by;
-                    
+                                $newCrudData['identifiants_sadge']=$Switchsusers->identifiants_sadge;
+    
 
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Delete", 'entite' => 'Switchsusers','entite_cle' => $Switchsusers->id, 'ancien' => json_encode($newCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);
 

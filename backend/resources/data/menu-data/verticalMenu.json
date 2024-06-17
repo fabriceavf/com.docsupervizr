@@ -1,46 +1,60 @@
 {
     "menu": [
         {
-            "name": "Introduction",
+            "name": "Presentations",
             "icon": "fa-regular fa-circle",
-            "slug": "HOMES_web_index",
+            "slug": "Introductions_web_index",
             "permission": "Voir la page d'acceuil"
         },
         {
-            "name": "Architecture du Système",
-            "icon": "fa-regular fa-circle",
-            "slug": "Actifs_web_index",
-            "permission": "Voir la page d'acceuil"
+            "name": "Besoins fonctionels",
+            "slug": "Besoinsfonctionels_web_index",
+            "icon": "fa-regular fa-circle"
         },
         {
-            "name": "Description Fonctionnelle",
-            "icon": "fa-regular fa-circle",
-            "slug": "Actions_web_index",
-            "permission": "Voir la page d'acceuil"
+            "name": "Besoins techniques",
+            "slug": "Besoinstechniques_web_index",
+            "icon": "fa-regular fa-circle"
         },
         {
-            "name": "Conception Technique",
-            "icon": "fa-regular fa-circle",
-            "slug": "Activites_web_index",
-            "permission": "Voir la page d'acceuil"
+            "name": "Base de donnees",
+            "slug": "Basededonnees_web_index",
+            "icon": "fa-regular fa-circle"
         },
         {
-            "name": "Sécurité",
-            "icon": "fa-regular fa-circle",
-            "slug": "HOMES_web_index",
-            "permission": "Voir la page d'acceuil"
+            "name": "Endpoints",
+            "slug": "Endpoints_web_index",
+            "icon": "fa-regular fa-circle"
         },
         {
-            "name": "Maintenance et Support",
-            "icon": "fa-regular fa-circle",
-            "slug": "HOMES_web_index",
-            "permission": "Voir la page d'acceuil"
+            "name": "Architectures",
+            "slug": "Architectures_web_index",
+            "icon": "fa-regular fa-circle"
         },
         {
-            "name": "Conclusion et Annexes",
-            "icon": "fa-regular fa-circle",
-            "slug": "HOMES_web_index",
-            "permission": "Voir la page d'acceuil"
+            "name": "Initialisations du projet",
+            "slug": "Initialisations_web_index",
+            "icon": "fa-regular fa-circle"
+        },
+        {
+            "name": "Structures du projet",
+            "slug": "Structures_web_index",
+            "icon": "fa-regular fa-circle"
+        },
+        {
+            "name": "Technologies du projet",
+            "slug": "Technologies_web_index",
+            "icon": "fa-regular fa-circle"
+        },
+        {
+            "name": "Contributions du projet",
+            "slug": "Contributions_web_index",
+            "icon": "fa-regular fa-circle"
+        },
+        {
+            "name": "Deploiments du projet",
+            "slug": "Deploiments_web_index",
+            "icon": "fa-regular fa-circle"
         }
     ]
 }

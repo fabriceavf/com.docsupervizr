@@ -202,12 +202,6 @@ $data = QueryBuilder::for(Modelslisting::class)
             AllowedFilter::exact('user_id_4'),
 
     
-            AllowedFilter::exact('identifiants_sadge'),
-
-    
-            AllowedFilter::exact('creat_by'),
-
-    
             AllowedFilter::exact('typelistings'),
 
     
@@ -215,6 +209,12 @@ $data = QueryBuilder::for(Modelslisting::class)
 
     
             AllowedFilter::exact('directions'),
+
+    
+            AllowedFilter::exact('identifiants_sadge'),
+
+    
+            AllowedFilter::exact('creat_by'),
 
     
 AllowedFilter::callback('not_null', function (Builder $query, $value) {
@@ -352,12 +352,6 @@ return $query;
             AllowedSort::field('user_id_4'),
 
     
-            AllowedSort::field('identifiants_sadge'),
-
-    
-            AllowedSort::field('creat_by'),
-
-    
             AllowedSort::field('typelistings'),
 
     
@@ -365,6 +359,12 @@ return $query;
 
     
             AllowedSort::field('directions'),
+
+    
+            AllowedSort::field('identifiants_sadge'),
+
+    
+            AllowedSort::field('creat_by'),
 
     
 ])
@@ -643,12 +643,6 @@ $data = QueryBuilder::for(Modelslisting::class)
             AllowedFilter::exact('user_id_4'),
 
     
-            AllowedFilter::exact('identifiants_sadge'),
-
-    
-            AllowedFilter::exact('creat_by'),
-
-    
             AllowedFilter::exact('typelistings'),
 
     
@@ -656,6 +650,12 @@ $data = QueryBuilder::for(Modelslisting::class)
 
     
             AllowedFilter::exact('directions'),
+
+    
+            AllowedFilter::exact('identifiants_sadge'),
+
+    
+            AllowedFilter::exact('creat_by'),
 
     
 AllowedFilter::callback('not_null', function (Builder $query, $value) {
@@ -793,12 +793,6 @@ return $query;
             AllowedSort::field('user_id_4'),
 
     
-            AllowedSort::field('identifiants_sadge'),
-
-    
-            AllowedSort::field('creat_by'),
-
-    
             AllowedSort::field('typelistings'),
 
     
@@ -806,6 +800,12 @@ return $query;
 
     
             AllowedSort::field('directions'),
+
+    
+            AllowedSort::field('identifiants_sadge'),
+
+    
+            AllowedSort::field('creat_by'),
 
     
 ])
@@ -1074,11 +1074,11 @@ $champsRechercher=[
     'user_id_2',
     'user_id_3',
     'user_id_4',
-    'identifiants_sadge',
-    'creat_by',
     'typelistings',
     'horaires',
     'directions',
+    'identifiants_sadge',
+    'creat_by',
 ];
 $envoyer=[];
 foreach($data as $key=>$d){
@@ -1162,18 +1162,6 @@ Validator::make($data, [
         
     
     
-                    'identifiants_sadge' => [
-            //'required'
-            ],
-        
-    
-    
-                    'creat_by' => [
-            //'required'
-            ],
-        
-    
-    
                     'typelistings' => [
             //'required'
             ],
@@ -1187,6 +1175,18 @@ Validator::make($data, [
     
     
                     'directions' => [
+            //'required'
+            ],
+        
+    
+    
+                    'identifiants_sadge' => [
+            //'required'
+            ],
+        
+    
+    
+                    'creat_by' => [
             //'required'
             ],
         
@@ -1246,14 +1246,6 @@ Validator::make($data, [
 
     
     
-        'identifiants_sadge' => ['cette donnee est obligatoire'],
-
-    
-    
-        'creat_by' => ['cette donnee est obligatoire'],
-
-    
-    
         'typelistings' => ['cette donnee est obligatoire'],
 
     
@@ -1263,6 +1255,14 @@ Validator::make($data, [
     
     
         'directions' => ['cette donnee est obligatoire'],
+
+    
+    
+        'identifiants_sadge' => ['cette donnee est obligatoire'],
+
+    
+    
+        'creat_by' => ['cette donnee est obligatoire'],
 
     
 ])->validate();
@@ -1545,42 +1545,6 @@ $data['creat_by']=Auth::id();
 
     
 
-        if(!empty($data['identifiants_sadge'])){
-        
-            $Modelslistings->identifiants_sadge = $data['identifiants_sadge'];
-        
-        }
-
-
-
-    
-
-
-
-
-
-
-
-    
-
-        if(!empty($data['creat_by'])){
-        
-            $Modelslistings->creat_by = $data['creat_by'];
-        
-        }
-
-
-
-    
-
-
-
-
-
-
-
-    
-
         if(!empty($data['typelistings'])){
         
             $Modelslistings->typelistings = $data['typelistings'];
@@ -1620,6 +1584,42 @@ $data['creat_by']=Auth::id();
         if(!empty($data['directions'])){
         
             $Modelslistings->directions = $data['directions'];
+        
+        }
+
+
+
+    
+
+
+
+
+
+
+
+    
+
+        if(!empty($data['identifiants_sadge'])){
+        
+            $Modelslistings->identifiants_sadge = $data['identifiants_sadge'];
+        
+        }
+
+
+
+    
+
+
+
+
+
+
+
+    
+
+        if(!empty($data['creat_by'])){
+        
+            $Modelslistings->creat_by = $data['creat_by'];
         
         }
 
@@ -1693,11 +1693,11 @@ $newCrudData=[];
                 $newCrudData['user_id_2']=$Modelslistings->user_id_2;
                 $newCrudData['user_id_3']=$Modelslistings->user_id_3;
                 $newCrudData['user_id_4']=$Modelslistings->user_id_4;
-                $newCrudData['identifiants_sadge']=$Modelslistings->identifiants_sadge;
-                $newCrudData['creat_by']=$Modelslistings->creat_by;
                 $newCrudData['typelistings']=$Modelslistings->typelistings;
                 $newCrudData['horaires']=$Modelslistings->horaires;
                 $newCrudData['directions']=$Modelslistings->directions;
+                $newCrudData['identifiants_sadge']=$Modelslistings->identifiants_sadge;
+                $newCrudData['creat_by']=$Modelslistings->creat_by;
     
  try{ $newCrudData['user']=$Modelslistings->user->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['zone']=$Modelslistings->zone->Selectlabel; }catch(\Throwable $e){}  
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Create", 'entite' => 'Modelslistings','entite_cle' => $Modelslistings->id, 'ancien' => json_encode($newCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);
@@ -1760,11 +1760,11 @@ $oldCrudData=[];
                 $oldCrudData['user_id_2']=$Modelslistings->user_id_2;
                 $oldCrudData['user_id_3']=$Modelslistings->user_id_3;
                 $oldCrudData['user_id_4']=$Modelslistings->user_id_4;
-                $oldCrudData['identifiants_sadge']=$Modelslistings->identifiants_sadge;
-                $oldCrudData['creat_by']=$Modelslistings->creat_by;
                 $oldCrudData['typelistings']=$Modelslistings->typelistings;
                 $oldCrudData['horaires']=$Modelslistings->horaires;
                 $oldCrudData['directions']=$Modelslistings->directions;
+                $oldCrudData['identifiants_sadge']=$Modelslistings->identifiants_sadge;
+                $oldCrudData['creat_by']=$Modelslistings->creat_by;
     
  try{ $oldCrudData['user']=$Modelslistings->user->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['zone']=$Modelslistings->zone->Selectlabel; }catch(\Throwable $e){}  
 
@@ -1795,11 +1795,11 @@ $champsRechercher=[
     'user_id_2',
     'user_id_3',
     'user_id_4',
-    'identifiants_sadge',
-    'creat_by',
     'typelistings',
     'horaires',
     'directions',
+    'identifiants_sadge',
+    'creat_by',
 ];
 $envoyer=[];
 foreach($data as $key=>$d){
@@ -1883,18 +1883,6 @@ Validator::make($data, [
         
     
     
-                    'identifiants_sadge' => [
-            //'required'
-            ],
-        
-    
-    
-                    'creat_by' => [
-            //'required'
-            ],
-        
-    
-    
                     'typelistings' => [
             //'required'
             ],
@@ -1908,6 +1896,18 @@ Validator::make($data, [
     
     
                     'directions' => [
+            //'required'
+            ],
+        
+    
+    
+                    'identifiants_sadge' => [
+            //'required'
+            ],
+        
+    
+    
+                    'creat_by' => [
             //'required'
             ],
         
@@ -1967,14 +1967,6 @@ Validator::make($data, [
 
     
     
-        'identifiants_sadge' => ['cette donnee est obligatoire'],
-
-    
-    
-        'creat_by' => ['cette donnee est obligatoire'],
-
-    
-    
         'typelistings' => ['cette donnee est obligatoire'],
 
     
@@ -1984,6 +1976,14 @@ Validator::make($data, [
     
     
         'directions' => ['cette donnee est obligatoire'],
+
+    
+    
+        'identifiants_sadge' => ['cette donnee est obligatoire'],
+
+    
+    
+        'creat_by' => ['cette donnee est obligatoire'],
 
     
 ])->validate();
@@ -2300,48 +2300,6 @@ $extra_data=array_diff($envoyer,$champsRechercher);
 
     
 
-        if(array_key_exists("identifiants_sadge",$data)){
-
-
-        if(!empty($data['identifiants_sadge'])){
-        
-            $Modelslistings->identifiants_sadge = $data['identifiants_sadge'];
-        
-        }
-
-        }
-
-    
-
-
-
-
-
-
-
-    
-
-        if(array_key_exists("creat_by",$data)){
-
-
-        if(!empty($data['creat_by'])){
-        
-            $Modelslistings->creat_by = $data['creat_by'];
-        
-        }
-
-        }
-
-    
-
-
-
-
-
-
-
-    
-
         if(array_key_exists("typelistings",$data)){
 
 
@@ -2390,6 +2348,48 @@ $extra_data=array_diff($envoyer,$champsRechercher);
         if(!empty($data['directions'])){
         
             $Modelslistings->directions = $data['directions'];
+        
+        }
+
+        }
+
+    
+
+
+
+
+
+
+
+    
+
+        if(array_key_exists("identifiants_sadge",$data)){
+
+
+        if(!empty($data['identifiants_sadge'])){
+        
+            $Modelslistings->identifiants_sadge = $data['identifiants_sadge'];
+        
+        }
+
+        }
+
+    
+
+
+
+
+
+
+
+    
+
+        if(array_key_exists("creat_by",$data)){
+
+
+        if(!empty($data['creat_by'])){
+        
+            $Modelslistings->creat_by = $data['creat_by'];
         
         }
 
@@ -2470,11 +2470,11 @@ $newCrudData=[];
                 $newCrudData['user_id_2']=$Modelslistings->user_id_2;
                 $newCrudData['user_id_3']=$Modelslistings->user_id_3;
                 $newCrudData['user_id_4']=$Modelslistings->user_id_4;
-                $newCrudData['identifiants_sadge']=$Modelslistings->identifiants_sadge;
-                $newCrudData['creat_by']=$Modelslistings->creat_by;
                 $newCrudData['typelistings']=$Modelslistings->typelistings;
                 $newCrudData['horaires']=$Modelslistings->horaires;
                 $newCrudData['directions']=$Modelslistings->directions;
+                $newCrudData['identifiants_sadge']=$Modelslistings->identifiants_sadge;
+                $newCrudData['creat_by']=$Modelslistings->creat_by;
     
  try{ $newCrudData['user']=$Modelslistings->user->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['zone']=$Modelslistings->zone->Selectlabel; }catch(\Throwable $e){}  
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Update", 'entite' => 'Modelslistings','entite_cle' => $Modelslistings->id, 'ancien' => json_encode($oldCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);
@@ -2532,11 +2532,11 @@ $newCrudData=[];
                 $newCrudData['user_id_2']=$Modelslistings->user_id_2;
                 $newCrudData['user_id_3']=$Modelslistings->user_id_3;
                 $newCrudData['user_id_4']=$Modelslistings->user_id_4;
-                $newCrudData['identifiants_sadge']=$Modelslistings->identifiants_sadge;
-                $newCrudData['creat_by']=$Modelslistings->creat_by;
                 $newCrudData['typelistings']=$Modelslistings->typelistings;
                 $newCrudData['horaires']=$Modelslistings->horaires;
                 $newCrudData['directions']=$Modelslistings->directions;
+                $newCrudData['identifiants_sadge']=$Modelslistings->identifiants_sadge;
+                $newCrudData['creat_by']=$Modelslistings->creat_by;
     
  try{ $newCrudData['user']=$Modelslistings->user->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['zone']=$Modelslistings->zone->Selectlabel; }catch(\Throwable $e){}  
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Delete", 'entite' => 'Modelslistings','entite_cle' => $Modelslistings->id, 'ancien' => json_encode($newCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);

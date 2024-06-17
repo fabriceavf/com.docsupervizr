@@ -1,4 +1,4 @@
-<?php
+<?php 
 namespace App\Http\Controllers\WEB;
 
 use Illuminate\Database\Schema\Blueprint;
@@ -172,87 +172,81 @@ $balises_disposition->disposition=$request->get('disposition');
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -272,9 +266,6 @@ $pageConfig = [
 
 
 $vue = view('/content/Balises.balises_component', ['pageConfigs' => $pageConfig, 'menu' => $this->menu,'balises_disposition'=>$balises_disposition,'preselect'=>$new,'options'=>$donnees??[],'options'=>$donnees??[],
-
-    'listings_disposition'=>$listings_disposition,
-
 
     'positions_disposition'=>$positions_disposition,
 
@@ -338,12 +329,6 @@ $balises_disposition->disposition=$request->get('disposition');
 
 
 
-
-
-
-
-
-
 $pageConfig = [
  'mainLayoutType' => 'vertical',
 'type' => 'admin',
@@ -357,89 +342,86 @@ $pageConfig = [
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
 
 $vue = view('/content/Balises.Balises', ['pageConfigs' => $pageConfig, 'menu' => $this->menu,'balises_disposition'=>$balises_disposition,'preselect'=>$new,'options'=>$donnees??[],
-
-    'listings_disposition'=>$listings_disposition,
-
 
     'positions_disposition'=>$positions_disposition,
 
@@ -477,6 +459,7 @@ $balises_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -484,6 +467,7 @@ $balises_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -491,17 +475,7 @@ $balises_disposition->disposition=$request->get('disposition');
 
 
 
-
-
-
-
-
-
-
-
-
-
-
+    
 $params=collect($request->all());
 $params=$params->filter(function ($value, $key) {
 //            dd($key);
@@ -533,81 +507,81 @@ abort(401);
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -620,9 +594,6 @@ $vue = view('/content/Balises.balises_one', [
 'Balises' => $Balises,
 'balises_disposition'=>$balises_disposition
 ,'preselect'=>$new,'options'=>$donnees??[],
-
-    'listings_disposition'=>$listings_disposition,
-
 
     'positions_disposition'=>$positions_disposition,
 
@@ -656,6 +627,7 @@ $balises_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -663,6 +635,7 @@ $balises_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -670,17 +643,7 @@ $balises_disposition->disposition=$request->get('disposition');
 
 
 
-
-
-
-
-
-
-
-
-
-
-
+    
 $params=collect($request->all());
 $params=$params->filter(function ($value, $key) {
 //            dd($key);
@@ -712,81 +675,81 @@ abort(401);
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -799,9 +762,6 @@ $vue = view('/content/Balises.balises_one_component', [
 'Balises' => $Balises,
 'balises_disposition'=>$balises_disposition
 ,'preselect'=>$new,'options'=>$donnees??[],
-
-    'listings_disposition'=>$listings_disposition,
-
 
     'positions_disposition'=>$positions_disposition,
 
@@ -846,6 +806,7 @@ $balises_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -853,6 +814,7 @@ $balises_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -860,17 +822,7 @@ $balises_disposition->disposition=$request->get('disposition');
 
 
 
-
-
-
-
-
-
-
-
-
-
-
+    
 $params=collect($request->all());
 $params=$params->filter(function ($value, $key) {
 //            dd($key);
@@ -905,9 +857,6 @@ $vue = view('/content/Balises.impression', [
 'Balises' => $Balises,
 'balises_disposition'=>$balises_disposition
 ,'preselect'=>$new,'options'=>$donnees??[],
-
-    'listings_disposition'=>$listings_disposition,
-
 
     'positions_disposition'=>$positions_disposition,
 

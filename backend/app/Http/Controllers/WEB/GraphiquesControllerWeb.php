@@ -1,4 +1,4 @@
-<?php
+<?php 
 namespace App\Http\Controllers\WEB;
 
 use Illuminate\Database\Schema\Blueprint;
@@ -154,79 +154,73 @@ $graphiques_disposition->disposition=$request->get('disposition');
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -246,9 +240,6 @@ $pageConfig = [
 
 
 $vue = view('/content/Graphiques.graphiques_component', ['pageConfigs' => $pageConfig, 'menu' => $this->menu,'graphiques_disposition'=>$graphiques_disposition,'preselect'=>$new,'options'=>$donnees??[],'options'=>$donnees??[],
-
-    'usersgraphiques_disposition'=>$usersgraphiques_disposition,
-
 ]);
 return response($vue, 200);
 }
@@ -285,12 +276,6 @@ $graphiques_disposition->disposition=$request->get('disposition');
 
 
 
-
-
-
-
-
-
 $pageConfig = [
  'mainLayoutType' => 'vertical',
 'type' => 'admin',
@@ -304,81 +289,78 @@ $pageConfig = [
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
 
 $vue = view('/content/Graphiques.Graphiques', ['pageConfigs' => $pageConfig, 'menu' => $this->menu,'graphiques_disposition'=>$graphiques_disposition,'preselect'=>$new,'options'=>$donnees??[],
-
-    'usersgraphiques_disposition'=>$usersgraphiques_disposition,
-
 ]);
 return response($vue, 200);
 }
@@ -400,14 +382,6 @@ $graphiques_disposition->disposition=$request->get('disposition');
 }
 
 
-
-
-
-
-
-
-
-
 $params=collect($request->all());
 $params=$params->filter(function ($value, $key) {
 //            dd($key);
@@ -439,73 +413,73 @@ abort(401);
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -518,9 +492,6 @@ $vue = view('/content/Graphiques.graphiques_one', [
 'Graphiques' => $Graphiques,
 'graphiques_disposition'=>$graphiques_disposition
 ,'preselect'=>$new,'options'=>$donnees??[],
-
-    'usersgraphiques_disposition'=>$usersgraphiques_disposition,
-
 ]);
 
 
@@ -538,14 +509,6 @@ $graphiques_disposition->disposition=$request->get('disposition');
 }
 
 
-
-
-
-
-
-
-
-
 $params=collect($request->all());
 $params=$params->filter(function ($value, $key) {
 //            dd($key);
@@ -577,73 +540,73 @@ abort(401);
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -656,9 +619,6 @@ $vue = view('/content/Graphiques.graphiques_one_component', [
 'Graphiques' => $Graphiques,
 'graphiques_disposition'=>$graphiques_disposition
 ,'preselect'=>$new,'options'=>$donnees??[],
-
-    'usersgraphiques_disposition'=>$usersgraphiques_disposition,
-
 ]);
 
 
@@ -685,14 +645,6 @@ abort(401);
 if($request->has('disposition')){
 $graphiques_disposition->disposition=$request->get('disposition');
 }
-
-
-
-
-
-
-
-
 
 
 $params=collect($request->all());
@@ -729,9 +681,6 @@ $vue = view('/content/Graphiques.impression', [
 'Graphiques' => $Graphiques,
 'graphiques_disposition'=>$graphiques_disposition
 ,'preselect'=>$new,'options'=>$donnees??[],
-
-    'usersgraphiques_disposition'=>$usersgraphiques_disposition,
-
 ]);
 return response($vue, 200);
 

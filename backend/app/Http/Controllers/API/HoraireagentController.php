@@ -193,13 +193,13 @@ $data = QueryBuilder::for(Horaireagent::class)
     
     
     
+            AllowedFilter::exact('typesagents'),
+
+    
             AllowedFilter::exact('identifiants_sadge'),
 
     
             AllowedFilter::exact('creat_by'),
-
-    
-            AllowedFilter::exact('typesagents'),
 
     
 AllowedFilter::callback('not_null', function (Builder $query, $value) {
@@ -328,13 +328,13 @@ return $query;
     
     
     
+            AllowedSort::field('typesagents'),
+
+    
             AllowedSort::field('identifiants_sadge'),
 
     
             AllowedSort::field('creat_by'),
-
-    
-            AllowedSort::field('typesagents'),
 
     
 ])
@@ -563,13 +563,13 @@ $data = QueryBuilder::for(Horaireagent::class)
     
     
     
+            AllowedFilter::exact('typesagents'),
+
+    
             AllowedFilter::exact('identifiants_sadge'),
 
     
             AllowedFilter::exact('creat_by'),
-
-    
-            AllowedFilter::exact('typesagents'),
 
     
 AllowedFilter::callback('not_null', function (Builder $query, $value) {
@@ -698,13 +698,13 @@ return $query;
     
     
     
+            AllowedSort::field('typesagents'),
+
+    
             AllowedSort::field('identifiants_sadge'),
 
     
             AllowedSort::field('creat_by'),
-
-    
-            AllowedSort::field('typesagents'),
 
     
 ])
@@ -929,9 +929,9 @@ $champsRechercher=[
     'updated_at',
     'extra_attributes',
     'deleted_at',
+    'typesagents',
     'identifiants_sadge',
     'creat_by',
-    'typesagents',
 ];
 $envoyer=[];
 foreach($data as $key=>$d){
@@ -997,6 +997,12 @@ Validator::make($data, [
     
     
     
+                    'typesagents' => [
+            //'required'
+            ],
+        
+    
+    
                     'identifiants_sadge' => [
             //'required'
             ],
@@ -1004,12 +1010,6 @@ Validator::make($data, [
     
     
                     'creat_by' => [
-            //'required'
-            ],
-        
-    
-    
-                    'typesagents' => [
             //'required'
             ],
         
@@ -1057,15 +1057,15 @@ Validator::make($data, [
     
     
     
+        'typesagents' => ['cette donnee est obligatoire'],
+
+    
+    
         'identifiants_sadge' => ['cette donnee est obligatoire'],
 
     
     
         'creat_by' => ['cette donnee est obligatoire'],
-
-    
-    
-        'typesagents' => ['cette donnee est obligatoire'],
 
     
 ])->validate();
@@ -1294,6 +1294,24 @@ $data['creat_by']=Auth::id();
 
     
 
+        if(!empty($data['typesagents'])){
+        
+            $Horaireagents->typesagents = $data['typesagents'];
+        
+        }
+
+
+
+    
+
+
+
+
+
+
+
+    
+
         if(!empty($data['identifiants_sadge'])){
         
             $Horaireagents->identifiants_sadge = $data['identifiants_sadge'];
@@ -1315,24 +1333,6 @@ $data['creat_by']=Auth::id();
         if(!empty($data['creat_by'])){
         
             $Horaireagents->creat_by = $data['creat_by'];
-        
-        }
-
-
-
-    
-
-
-
-
-
-
-
-    
-
-        if(!empty($data['typesagents'])){
-        
-            $Horaireagents->typesagents = $data['typesagents'];
         
         }
 
@@ -1403,9 +1403,9 @@ $newCrudData=[];
                 $newCrudData['ven']=$Horaireagents->ven;
                 $newCrudData['sam']=$Horaireagents->sam;
                 $newCrudData['dim']=$Horaireagents->dim;
-                                $newCrudData['identifiants_sadge']=$Horaireagents->identifiants_sadge;
+                                $newCrudData['typesagents']=$Horaireagents->typesagents;
+                $newCrudData['identifiants_sadge']=$Horaireagents->identifiants_sadge;
                 $newCrudData['creat_by']=$Horaireagents->creat_by;
-                $newCrudData['typesagents']=$Horaireagents->typesagents;
     
  try{ $newCrudData['horaire']=$Horaireagents->horaire->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['user']=$Horaireagents->user->Selectlabel; }catch(\Throwable $e){}  
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Create", 'entite' => 'Horaireagents','entite_cle' => $Horaireagents->id, 'ancien' => json_encode($newCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);
@@ -1465,9 +1465,9 @@ $oldCrudData=[];
                 $oldCrudData['ven']=$Horaireagents->ven;
                 $oldCrudData['sam']=$Horaireagents->sam;
                 $oldCrudData['dim']=$Horaireagents->dim;
-                                $oldCrudData['identifiants_sadge']=$Horaireagents->identifiants_sadge;
+                                $oldCrudData['typesagents']=$Horaireagents->typesagents;
+                $oldCrudData['identifiants_sadge']=$Horaireagents->identifiants_sadge;
                 $oldCrudData['creat_by']=$Horaireagents->creat_by;
-                $oldCrudData['typesagents']=$Horaireagents->typesagents;
     
  try{ $oldCrudData['horaire']=$Horaireagents->horaire->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['user']=$Horaireagents->user->Selectlabel; }catch(\Throwable $e){}  
 
@@ -1495,9 +1495,9 @@ $champsRechercher=[
     'updated_at',
     'extra_attributes',
     'deleted_at',
+    'typesagents',
     'identifiants_sadge',
     'creat_by',
-    'typesagents',
 ];
 $envoyer=[];
 foreach($data as $key=>$d){
@@ -1563,6 +1563,12 @@ Validator::make($data, [
     
     
     
+                    'typesagents' => [
+            //'required'
+            ],
+        
+    
+    
                     'identifiants_sadge' => [
             //'required'
             ],
@@ -1570,12 +1576,6 @@ Validator::make($data, [
     
     
                     'creat_by' => [
-            //'required'
-            ],
-        
-    
-    
-                    'typesagents' => [
             //'required'
             ],
         
@@ -1623,15 +1623,15 @@ Validator::make($data, [
     
     
     
+        'typesagents' => ['cette donnee est obligatoire'],
+
+    
+    
         'identifiants_sadge' => ['cette donnee est obligatoire'],
 
     
     
         'creat_by' => ['cette donnee est obligatoire'],
-
-    
-    
-        'typesagents' => ['cette donnee est obligatoire'],
 
     
 ])->validate();
@@ -1885,6 +1885,27 @@ $extra_data=array_diff($envoyer,$champsRechercher);
 
     
 
+        if(array_key_exists("typesagents",$data)){
+
+
+        if(!empty($data['typesagents'])){
+        
+            $Horaireagents->typesagents = $data['typesagents'];
+        
+        }
+
+        }
+
+    
+
+
+
+
+
+
+
+    
+
         if(array_key_exists("identifiants_sadge",$data)){
 
 
@@ -1912,27 +1933,6 @@ $extra_data=array_diff($envoyer,$champsRechercher);
         if(!empty($data['creat_by'])){
         
             $Horaireagents->creat_by = $data['creat_by'];
-        
-        }
-
-        }
-
-    
-
-
-
-
-
-
-
-    
-
-        if(array_key_exists("typesagents",$data)){
-
-
-        if(!empty($data['typesagents'])){
-        
-            $Horaireagents->typesagents = $data['typesagents'];
         
         }
 
@@ -2010,9 +2010,9 @@ $newCrudData=[];
                 $newCrudData['ven']=$Horaireagents->ven;
                 $newCrudData['sam']=$Horaireagents->sam;
                 $newCrudData['dim']=$Horaireagents->dim;
-                                $newCrudData['identifiants_sadge']=$Horaireagents->identifiants_sadge;
+                                $newCrudData['typesagents']=$Horaireagents->typesagents;
+                $newCrudData['identifiants_sadge']=$Horaireagents->identifiants_sadge;
                 $newCrudData['creat_by']=$Horaireagents->creat_by;
-                $newCrudData['typesagents']=$Horaireagents->typesagents;
     
  try{ $newCrudData['horaire']=$Horaireagents->horaire->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['user']=$Horaireagents->user->Selectlabel; }catch(\Throwable $e){}  
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Update", 'entite' => 'Horaireagents','entite_cle' => $Horaireagents->id, 'ancien' => json_encode($oldCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);
@@ -2067,9 +2067,9 @@ $newCrudData=[];
                 $newCrudData['ven']=$Horaireagents->ven;
                 $newCrudData['sam']=$Horaireagents->sam;
                 $newCrudData['dim']=$Horaireagents->dim;
-                                $newCrudData['identifiants_sadge']=$Horaireagents->identifiants_sadge;
+                                $newCrudData['typesagents']=$Horaireagents->typesagents;
+                $newCrudData['identifiants_sadge']=$Horaireagents->identifiants_sadge;
                 $newCrudData['creat_by']=$Horaireagents->creat_by;
-                $newCrudData['typesagents']=$Horaireagents->typesagents;
     
  try{ $newCrudData['horaire']=$Horaireagents->horaire->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['user']=$Horaireagents->user->Selectlabel; }catch(\Throwable $e){}  
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Delete", 'entite' => 'Horaireagents','entite_cle' => $Horaireagents->id, 'ancien' => json_encode($newCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);

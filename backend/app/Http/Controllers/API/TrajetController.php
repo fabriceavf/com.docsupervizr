@@ -312,10 +312,7 @@ return $query;
     
     
 ->allowedIncludes([
-            'transporteurstrajets',
-        
 
-    
             'ligne',
         
 
@@ -620,10 +617,7 @@ return $query;
     
     
 ->allowedIncludes([
-            'transporteurstrajets',
-        
-
-                'ligne',
+            'ligne',
         
 
                 'site',

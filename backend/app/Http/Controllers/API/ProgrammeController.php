@@ -32,7 +32,6 @@ use Spatie\QueryBuilder\QueryBuilder;
             use App\Models\Horaire;
                 use App\Models\Poste;
                 use App\Models\Programmation;
-                use App\Models\Programmationsuser;
                 use App\Models\Typesheure;
         
 class ProgrammeController extends Controller
@@ -367,13 +366,6 @@ $data = QueryBuilder::for(Programme::class)
             AllowedFilter::exact('presence_declarer_manuel'),
 
     
-    
-            AllowedFilter::exact('identifiants_sadge'),
-
-    
-            AllowedFilter::exact('creat_by'),
-
-    
             AllowedFilter::exact('programmation_id'),
 
     
@@ -387,6 +379,13 @@ $data = QueryBuilder::for(Programme::class)
 
     
             AllowedFilter::exact('typesheure_id'),
+
+    
+    
+            AllowedFilter::exact('identifiants_sadge'),
+
+    
+            AllowedFilter::exact('creat_by'),
 
     
 AllowedFilter::callback('not_null', function (Builder $query, $value) {
@@ -685,13 +684,6 @@ return $query;
             AllowedSort::field('presence_declarer_manuel'),
 
     
-    
-            AllowedSort::field('identifiants_sadge'),
-
-    
-            AllowedSort::field('creat_by'),
-
-    
             AllowedSort::field('programmation_id'),
 
     
@@ -707,8 +699,14 @@ return $query;
             AllowedSort::field('typesheure_id'),
 
     
-])
     
+            AllowedSort::field('identifiants_sadge'),
+
+    
+            AllowedSort::field('creat_by'),
+
+    
+])
     
     
     
@@ -729,9 +727,6 @@ return $query;
         
 
                 'programmation',
-        
-
-                'programmationsuser',
         
 
                 'typesheure',
@@ -1552,13 +1547,6 @@ $data = QueryBuilder::for(Programme::class)
             AllowedFilter::exact('presence_declarer_manuel'),
 
     
-    
-            AllowedFilter::exact('identifiants_sadge'),
-
-    
-            AllowedFilter::exact('creat_by'),
-
-    
             AllowedFilter::exact('programmation_id'),
 
     
@@ -1572,6 +1560,13 @@ $data = QueryBuilder::for(Programme::class)
 
     
             AllowedFilter::exact('typesheure_id'),
+
+    
+    
+            AllowedFilter::exact('identifiants_sadge'),
+
+    
+            AllowedFilter::exact('creat_by'),
 
     
 AllowedFilter::callback('not_null', function (Builder $query, $value) {
@@ -1870,13 +1865,6 @@ return $query;
             AllowedSort::field('presence_declarer_manuel'),
 
     
-    
-            AllowedSort::field('identifiants_sadge'),
-
-    
-            AllowedSort::field('creat_by'),
-
-    
             AllowedSort::field('programmation_id'),
 
     
@@ -1892,8 +1880,14 @@ return $query;
             AllowedSort::field('typesheure_id'),
 
     
-])
     
+            AllowedSort::field('identifiants_sadge'),
+
+    
+            AllowedSort::field('creat_by'),
+
+    
+])
     
     
     
@@ -1913,9 +1907,6 @@ return $query;
         
 
                 'programmation',
-        
-
-                'programmationsuser',
         
 
                 'typesheure',
@@ -2619,14 +2610,14 @@ $champsRechercher=[
     'pointages_fin_manuel',
     'presence_declarer_auto',
     'presence_declarer_manuel',
-    'deleted_at',
-    'identifiants_sadge',
-    'creat_by',
     'programmation_id',
     'user_id',
     'qualification_horaire',
     'fin_reel',
     'typesheure_id',
+    'deleted_at',
+    'identifiants_sadge',
+    'creat_by',
 ];
 $envoyer=[];
 foreach($data as $key=>$d){
@@ -3038,19 +3029,6 @@ Validator::make($data, [
         
     
     
-    
-                    'identifiants_sadge' => [
-            //'required'
-            ],
-        
-    
-    
-                    'creat_by' => [
-            //'required'
-            ],
-        
-    
-    
                     'programmation_id' => [
             //'required'
             ],
@@ -3071,6 +3049,19 @@ Validator::make($data, [
     
     
                     'typesheure_id' => [
+            //'required'
+            ],
+        
+    
+    
+    
+                    'identifiants_sadge' => [
+            //'required'
+            ],
+        
+    
+    
+                    'creat_by' => [
             //'required'
             ],
         
@@ -3348,15 +3339,6 @@ Validator::make($data, [
 
     
     
-    
-        'identifiants_sadge' => ['cette donnee est obligatoire'],
-
-    
-    
-        'creat_by' => ['cette donnee est obligatoire'],
-
-    
-    
         'programmation_id' => ['cette donnee est obligatoire'],
 
     
@@ -3371,6 +3353,15 @@ Validator::make($data, [
     
     
         'typesheure_id' => ['cette donnee est obligatoire'],
+
+    
+    
+    
+        'identifiants_sadge' => ['cette donnee est obligatoire'],
+
+    
+    
+        'creat_by' => ['cette donnee est obligatoire'],
 
     
 ])->validate();
@@ -4617,50 +4608,6 @@ $data['creat_by']=Auth::id();
 
     
 
-
-
-
-
-
-
-    
-
-        if(!empty($data['identifiants_sadge'])){
-        
-            $Programmes->identifiants_sadge = $data['identifiants_sadge'];
-        
-        }
-
-
-
-    
-
-
-
-
-
-
-
-    
-
-        if(!empty($data['creat_by'])){
-        
-            $Programmes->creat_by = $data['creat_by'];
-        
-        }
-
-
-
-    
-
-
-
-
-
-
-
-    
-
         if(!empty($data['programmation_id'])){
         
             $Programmes->programmation_id = $data['programmation_id'];
@@ -4736,6 +4683,50 @@ $data['creat_by']=Auth::id();
         if(!empty($data['typesheure_id'])){
         
             $Programmes->typesheure_id = $data['typesheure_id'];
+        
+        }
+
+
+
+    
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+    
+
+        if(!empty($data['identifiants_sadge'])){
+        
+            $Programmes->identifiants_sadge = $data['identifiants_sadge'];
+        
+        }
+
+
+
+    
+
+
+
+
+
+
+
+    
+
+        if(!empty($data['creat_by'])){
+        
+            $Programmes->creat_by = $data['creat_by'];
         
         }
 
@@ -4863,15 +4854,15 @@ $newCrudData=[];
                 $newCrudData['pointages_fin_manuel']=$Programmes->pointages_fin_manuel;
                 $newCrudData['presence_declarer_auto']=$Programmes->presence_declarer_auto;
                 $newCrudData['presence_declarer_manuel']=$Programmes->presence_declarer_manuel;
-                    $newCrudData['identifiants_sadge']=$Programmes->identifiants_sadge;
-                $newCrudData['creat_by']=$Programmes->creat_by;
                 $newCrudData['programmation_id']=$Programmes->programmation_id;
                 $newCrudData['user_id']=$Programmes->user_id;
                 $newCrudData['qualification_horaire']=$Programmes->qualification_horaire;
                 $newCrudData['fin_reel']=$Programmes->fin_reel;
                 $newCrudData['typesheure_id']=$Programmes->typesheure_id;
+                    $newCrudData['identifiants_sadge']=$Programmes->identifiants_sadge;
+                $newCrudData['creat_by']=$Programmes->creat_by;
     
- try{ $newCrudData['horaire']=$Programmes->horaire->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['poste']=$Programmes->poste->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['programmation']=$Programmes->programmation->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['programmationsuser']=$Programmes->programmationsuser->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['typesheure']=$Programmes->typesheure->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['user']=$Programmes->user->Selectlabel; }catch(\Throwable $e){}  
+ try{ $newCrudData['horaire']=$Programmes->horaire->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['poste']=$Programmes->poste->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['programmation']=$Programmes->programmation->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['typesheure']=$Programmes->typesheure->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['user']=$Programmes->user->Selectlabel; }catch(\Throwable $e){}  
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Create", 'entite' => 'Programmes','entite_cle' => $Programmes->id, 'ancien' => json_encode($newCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);
 
 
@@ -4986,15 +4977,15 @@ $oldCrudData=[];
                 $oldCrudData['pointages_fin_manuel']=$Programmes->pointages_fin_manuel;
                 $oldCrudData['presence_declarer_auto']=$Programmes->presence_declarer_auto;
                 $oldCrudData['presence_declarer_manuel']=$Programmes->presence_declarer_manuel;
-                    $oldCrudData['identifiants_sadge']=$Programmes->identifiants_sadge;
-                $oldCrudData['creat_by']=$Programmes->creat_by;
                 $oldCrudData['programmation_id']=$Programmes->programmation_id;
                 $oldCrudData['user_id']=$Programmes->user_id;
                 $oldCrudData['qualification_horaire']=$Programmes->qualification_horaire;
                 $oldCrudData['fin_reel']=$Programmes->fin_reel;
                 $oldCrudData['typesheure_id']=$Programmes->typesheure_id;
+                    $oldCrudData['identifiants_sadge']=$Programmes->identifiants_sadge;
+                $oldCrudData['creat_by']=$Programmes->creat_by;
     
- try{ $oldCrudData['horaire']=$Programmes->horaire->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['poste']=$Programmes->poste->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['programmation']=$Programmes->programmation->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['programmationsuser']=$Programmes->programmationsuser->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['typesheure']=$Programmes->typesheure->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['user']=$Programmes->user->Selectlabel; }catch(\Throwable $e){}  
+ try{ $oldCrudData['horaire']=$Programmes->horaire->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['poste']=$Programmes->poste->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['programmation']=$Programmes->programmation->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['typesheure']=$Programmes->typesheure->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['user']=$Programmes->user->Selectlabel; }catch(\Throwable $e){}  
 
 $data=$request->all();
 foreach ($request->allFiles() as $key=>$file){
@@ -5076,14 +5067,14 @@ $champsRechercher=[
     'pointages_fin_manuel',
     'presence_declarer_auto',
     'presence_declarer_manuel',
-    'deleted_at',
-    'identifiants_sadge',
-    'creat_by',
     'programmation_id',
     'user_id',
     'qualification_horaire',
     'fin_reel',
     'typesheure_id',
+    'deleted_at',
+    'identifiants_sadge',
+    'creat_by',
 ];
 $envoyer=[];
 foreach($data as $key=>$d){
@@ -5495,19 +5486,6 @@ Validator::make($data, [
         
     
     
-    
-                    'identifiants_sadge' => [
-            //'required'
-            ],
-        
-    
-    
-                    'creat_by' => [
-            //'required'
-            ],
-        
-    
-    
                     'programmation_id' => [
             //'required'
             ],
@@ -5528,6 +5506,19 @@ Validator::make($data, [
     
     
                     'typesheure_id' => [
+            //'required'
+            ],
+        
+    
+    
+    
+                    'identifiants_sadge' => [
+            //'required'
+            ],
+        
+    
+    
+                    'creat_by' => [
             //'required'
             ],
         
@@ -5805,15 +5796,6 @@ Validator::make($data, [
 
     
     
-    
-        'identifiants_sadge' => ['cette donnee est obligatoire'],
-
-    
-    
-        'creat_by' => ['cette donnee est obligatoire'],
-
-    
-    
         'programmation_id' => ['cette donnee est obligatoire'],
 
     
@@ -5828,6 +5810,15 @@ Validator::make($data, [
     
     
         'typesheure_id' => ['cette donnee est obligatoire'],
+
+    
+    
+    
+        'identifiants_sadge' => ['cette donnee est obligatoire'],
+
+    
+    
+        'creat_by' => ['cette donnee est obligatoire'],
 
     
 ])->validate();
@@ -7270,56 +7261,6 @@ $extra_data=array_diff($envoyer,$champsRechercher);
 
     
 
-
-
-
-
-
-
-    
-
-        if(array_key_exists("identifiants_sadge",$data)){
-
-
-        if(!empty($data['identifiants_sadge'])){
-        
-            $Programmes->identifiants_sadge = $data['identifiants_sadge'];
-        
-        }
-
-        }
-
-    
-
-
-
-
-
-
-
-    
-
-        if(array_key_exists("creat_by",$data)){
-
-
-        if(!empty($data['creat_by'])){
-        
-            $Programmes->creat_by = $data['creat_by'];
-        
-        }
-
-        }
-
-    
-
-
-
-
-
-
-
-    
-
         if(array_key_exists("programmation_id",$data)){
 
 
@@ -7410,6 +7351,56 @@ $extra_data=array_diff($envoyer,$champsRechercher);
         if(!empty($data['typesheure_id'])){
         
             $Programmes->typesheure_id = $data['typesheure_id'];
+        
+        }
+
+        }
+
+    
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+    
+
+        if(array_key_exists("identifiants_sadge",$data)){
+
+
+        if(!empty($data['identifiants_sadge'])){
+        
+            $Programmes->identifiants_sadge = $data['identifiants_sadge'];
+        
+        }
+
+        }
+
+    
+
+
+
+
+
+
+
+    
+
+        if(array_key_exists("creat_by",$data)){
+
+
+        if(!empty($data['creat_by'])){
+        
+            $Programmes->creat_by = $data['creat_by'];
         
         }
 
@@ -7544,15 +7535,15 @@ $newCrudData=[];
                 $newCrudData['pointages_fin_manuel']=$Programmes->pointages_fin_manuel;
                 $newCrudData['presence_declarer_auto']=$Programmes->presence_declarer_auto;
                 $newCrudData['presence_declarer_manuel']=$Programmes->presence_declarer_manuel;
-                    $newCrudData['identifiants_sadge']=$Programmes->identifiants_sadge;
-                $newCrudData['creat_by']=$Programmes->creat_by;
                 $newCrudData['programmation_id']=$Programmes->programmation_id;
                 $newCrudData['user_id']=$Programmes->user_id;
                 $newCrudData['qualification_horaire']=$Programmes->qualification_horaire;
                 $newCrudData['fin_reel']=$Programmes->fin_reel;
                 $newCrudData['typesheure_id']=$Programmes->typesheure_id;
+                    $newCrudData['identifiants_sadge']=$Programmes->identifiants_sadge;
+                $newCrudData['creat_by']=$Programmes->creat_by;
     
- try{ $newCrudData['horaire']=$Programmes->horaire->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['poste']=$Programmes->poste->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['programmation']=$Programmes->programmation->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['programmationsuser']=$Programmes->programmationsuser->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['typesheure']=$Programmes->typesheure->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['user']=$Programmes->user->Selectlabel; }catch(\Throwable $e){}  
+ try{ $newCrudData['horaire']=$Programmes->horaire->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['poste']=$Programmes->poste->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['programmation']=$Programmes->programmation->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['typesheure']=$Programmes->typesheure->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['user']=$Programmes->user->Selectlabel; }catch(\Throwable $e){}  
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Update", 'entite' => 'Programmes','entite_cle' => $Programmes->id, 'ancien' => json_encode($oldCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);
 
 $response = $Programmes->toArray();
@@ -7662,15 +7653,15 @@ $newCrudData=[];
                 $newCrudData['pointages_fin_manuel']=$Programmes->pointages_fin_manuel;
                 $newCrudData['presence_declarer_auto']=$Programmes->presence_declarer_auto;
                 $newCrudData['presence_declarer_manuel']=$Programmes->presence_declarer_manuel;
-                    $newCrudData['identifiants_sadge']=$Programmes->identifiants_sadge;
-                $newCrudData['creat_by']=$Programmes->creat_by;
                 $newCrudData['programmation_id']=$Programmes->programmation_id;
                 $newCrudData['user_id']=$Programmes->user_id;
                 $newCrudData['qualification_horaire']=$Programmes->qualification_horaire;
                 $newCrudData['fin_reel']=$Programmes->fin_reel;
                 $newCrudData['typesheure_id']=$Programmes->typesheure_id;
+                    $newCrudData['identifiants_sadge']=$Programmes->identifiants_sadge;
+                $newCrudData['creat_by']=$Programmes->creat_by;
     
- try{ $newCrudData['horaire']=$Programmes->horaire->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['poste']=$Programmes->poste->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['programmation']=$Programmes->programmation->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['programmationsuser']=$Programmes->programmationsuser->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['typesheure']=$Programmes->typesheure->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['user']=$Programmes->user->Selectlabel; }catch(\Throwable $e){}  
+ try{ $newCrudData['horaire']=$Programmes->horaire->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['poste']=$Programmes->poste->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['programmation']=$Programmes->programmation->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['typesheure']=$Programmes->typesheure->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['user']=$Programmes->user->Selectlabel; }catch(\Throwable $e){}  
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Delete", 'entite' => 'Programmes','entite_cle' => $Programmes->id, 'ancien' => json_encode($newCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);
 
 

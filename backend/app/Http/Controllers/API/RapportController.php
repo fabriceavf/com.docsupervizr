@@ -30,7 +30,6 @@ use Spatie\QueryBuilder\QueryBuilder;
 
 
             use App\Models\Client;
-                use App\Models\Faction;
                 use App\Models\Fonction;
                 use App\Models\Poste;
                 use App\Models\Site;
@@ -532,13 +531,9 @@ return $query;
     
     
     
-    
 ->allowedIncludes([
 
             'client',
-        
-
-                'faction',
         
 
                 'fonction',
@@ -1316,12 +1311,8 @@ return $query;
     
     
     
-    
 ->allowedIncludes([
             'client',
-        
-
-                'faction',
         
 
                 'fonction',
@@ -3150,7 +3141,7 @@ $newCrudData=[];
                                 $newCrudData['identifiants_sadge']=$Rapports->identifiants_sadge;
                 $newCrudData['creat_by']=$Rapports->creat_by;
     
- try{ $newCrudData['client']=$Rapports->client->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['faction']=$Rapports->faction->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['fonction']=$Rapports->fonction->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['poste']=$Rapports->poste->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['site']=$Rapports->site->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['type']=$Rapports->type->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['ville']=$Rapports->ville->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['zone']=$Rapports->zone->Selectlabel; }catch(\Throwable $e){}  
+ try{ $newCrudData['client']=$Rapports->client->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['fonction']=$Rapports->fonction->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['poste']=$Rapports->poste->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['site']=$Rapports->site->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['type']=$Rapports->type->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['ville']=$Rapports->ville->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['zone']=$Rapports->zone->Selectlabel; }catch(\Throwable $e){}  
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Create", 'entite' => 'Rapports','entite_cle' => $Rapports->id, 'ancien' => json_encode($newCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);
 
 
@@ -3242,7 +3233,7 @@ $oldCrudData=[];
                                 $oldCrudData['identifiants_sadge']=$Rapports->identifiants_sadge;
                 $oldCrudData['creat_by']=$Rapports->creat_by;
     
- try{ $oldCrudData['client']=$Rapports->client->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['faction']=$Rapports->faction->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['fonction']=$Rapports->fonction->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['poste']=$Rapports->poste->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['site']=$Rapports->site->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['type']=$Rapports->type->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['ville']=$Rapports->ville->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['zone']=$Rapports->zone->Selectlabel; }catch(\Throwable $e){}  
+ try{ $oldCrudData['client']=$Rapports->client->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['fonction']=$Rapports->fonction->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['poste']=$Rapports->poste->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['site']=$Rapports->site->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['type']=$Rapports->type->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['ville']=$Rapports->ville->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['zone']=$Rapports->zone->Selectlabel; }catch(\Throwable $e){}  
 
 $data=$request->all();
 foreach ($request->allFiles() as $key=>$file){
@@ -4785,7 +4776,7 @@ $newCrudData=[];
                                 $newCrudData['identifiants_sadge']=$Rapports->identifiants_sadge;
                 $newCrudData['creat_by']=$Rapports->creat_by;
     
- try{ $newCrudData['client']=$Rapports->client->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['faction']=$Rapports->faction->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['fonction']=$Rapports->fonction->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['poste']=$Rapports->poste->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['site']=$Rapports->site->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['type']=$Rapports->type->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['ville']=$Rapports->ville->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['zone']=$Rapports->zone->Selectlabel; }catch(\Throwable $e){}  
+ try{ $newCrudData['client']=$Rapports->client->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['fonction']=$Rapports->fonction->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['poste']=$Rapports->poste->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['site']=$Rapports->site->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['type']=$Rapports->type->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['ville']=$Rapports->ville->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['zone']=$Rapports->zone->Selectlabel; }catch(\Throwable $e){}  
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Update", 'entite' => 'Rapports','entite_cle' => $Rapports->id, 'ancien' => json_encode($oldCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);
 
 $response = $Rapports->toArray();
@@ -4872,7 +4863,7 @@ $newCrudData=[];
                                 $newCrudData['identifiants_sadge']=$Rapports->identifiants_sadge;
                 $newCrudData['creat_by']=$Rapports->creat_by;
     
- try{ $newCrudData['client']=$Rapports->client->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['faction']=$Rapports->faction->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['fonction']=$Rapports->fonction->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['poste']=$Rapports->poste->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['site']=$Rapports->site->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['type']=$Rapports->type->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['ville']=$Rapports->ville->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['zone']=$Rapports->zone->Selectlabel; }catch(\Throwable $e){}  
+ try{ $newCrudData['client']=$Rapports->client->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['fonction']=$Rapports->fonction->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['poste']=$Rapports->poste->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['site']=$Rapports->site->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['type']=$Rapports->type->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['ville']=$Rapports->ville->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['zone']=$Rapports->zone->Selectlabel; }catch(\Throwable $e){}  
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Delete", 'entite' => 'Rapports','entite_cle' => $Rapports->id, 'ancien' => json_encode($newCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);
 
 

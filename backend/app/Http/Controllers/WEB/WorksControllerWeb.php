@@ -1,4 +1,4 @@
-<?php
+<?php 
 namespace App\Http\Controllers\WEB;
 
 use Illuminate\Database\Schema\Blueprint;
@@ -36,8 +36,7 @@ use Illuminate\Support\Facades\Session;
 ini_set('memory_limit', '8192M');
 ini_set('max_execution_time', '300');
 
-            use App\Models\prod\Activite;
-
+    
 class WorksControllerWeb extends Controller
 {
 
@@ -161,111 +160,105 @@ $works_disposition->disposition=$request->get('disposition');
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -287,9 +280,6 @@ $pageConfig = [
 $vue = view('/content/Works.works_component', ['pageConfigs' => $pageConfig, 'menu' => $this->menu,'works_disposition'=>$works_disposition,'preselect'=>$new,'options'=>$donnees??[],'options'=>$donnees??[],
 
     'actions_disposition'=>$actions_disposition,
-
-
-    'processus_disposition'=>$processus_disposition,
 
 ]);
 return response($vue, 200);
@@ -333,12 +323,6 @@ $works_disposition->disposition=$request->get('disposition');
 
 
 
-
-
-
-
-
-
 $pageConfig = [
  'mainLayoutType' => 'vertical',
 'type' => 'admin',
@@ -352,105 +336,105 @@ $pageConfig = [
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -458,9 +442,6 @@ $pageConfig = [
 $vue = view('/content/Works.Works', ['pageConfigs' => $pageConfig, 'menu' => $this->menu,'works_disposition'=>$works_disposition,'preselect'=>$new,'options'=>$donnees??[],
 
     'actions_disposition'=>$actions_disposition,
-
-
-    'processus_disposition'=>$processus_disposition,
 
 ]);
 return response($vue, 200);
@@ -490,15 +471,7 @@ $works_disposition->disposition=$request->get('disposition');
 
 
 
-
-
-
-
-
-
-
-
-
+    
 $params=collect($request->all());
 $params=$params->filter(function ($value, $key) {
 //            dd($key);
@@ -530,105 +503,105 @@ abort(401);
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -643,9 +616,6 @@ $vue = view('/content/Works.works_one', [
 ,'preselect'=>$new,'options'=>$donnees??[],
 
     'actions_disposition'=>$actions_disposition,
-
-
-    'processus_disposition'=>$processus_disposition,
 
 ]);
 
@@ -671,15 +641,7 @@ $works_disposition->disposition=$request->get('disposition');
 
 
 
-
-
-
-
-
-
-
-
-
+    
 $params=collect($request->all());
 $params=$params->filter(function ($value, $key) {
 //            dd($key);
@@ -711,105 +673,105 @@ abort(401);
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -824,9 +786,6 @@ $vue = view('/content/Works.works_one_component', [
 ,'preselect'=>$new,'options'=>$donnees??[],
 
     'actions_disposition'=>$actions_disposition,
-
-
-    'processus_disposition'=>$processus_disposition,
 
 ]);
 
@@ -863,15 +822,7 @@ $works_disposition->disposition=$request->get('disposition');
 
 
 
-
-
-
-
-
-
-
-
-
+    
 $params=collect($request->all());
 $params=$params->filter(function ($value, $key) {
 //            dd($key);
@@ -908,9 +859,6 @@ $vue = view('/content/Works.impression', [
 ,'preselect'=>$new,'options'=>$donnees??[],
 
     'actions_disposition'=>$actions_disposition,
-
-
-    'processus_disposition'=>$processus_disposition,
 
 ]);
 return response($vue, 200);

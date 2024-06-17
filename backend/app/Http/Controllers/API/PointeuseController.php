@@ -30,7 +30,6 @@ use Spatie\QueryBuilder\QueryBuilder;
 
 
             use App\Models\Site;
-                use App\Models\Supervirzclient;
     
 class PointeuseController extends Controller
 {
@@ -370,7 +369,6 @@ return $query;
     
 ])
     
-    
 ->allowedIncludes([
             'controlleursacces',
         
@@ -387,14 +385,8 @@ return $query;
                 'sitespointeuses',
         
 
-                'tachespointeuses',
-        
-
     
             'site',
-        
-
-                'supervirzclient',
         
 
     ]);
@@ -823,7 +815,6 @@ return $query;
     
 ])
     
-    
 ->allowedIncludes([
             'controlleursacces',
         
@@ -840,13 +831,7 @@ return $query;
                 'sitespointeuses',
         
 
-                'tachespointeuses',
-        
-
                 'site',
-        
-
-                'supervirzclient',
         
 
     ]);
@@ -1732,7 +1717,7 @@ $newCrudData=[];
                         $newCrudData['identifiants_sadge']=$Pointeuses->identifiants_sadge;
                 $newCrudData['creat_by']=$Pointeuses->creat_by;
     
- try{ $newCrudData['site']=$Pointeuses->site->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['supervirzclient']=$Pointeuses->supervirzclient->Selectlabel; }catch(\Throwable $e){}  
+ try{ $newCrudData['site']=$Pointeuses->site->Selectlabel; }catch(\Throwable $e){}  
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Create", 'entite' => 'Pointeuses','entite_cle' => $Pointeuses->id, 'ancien' => json_encode($newCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);
 
 
@@ -1799,7 +1784,7 @@ $oldCrudData=[];
                         $oldCrudData['identifiants_sadge']=$Pointeuses->identifiants_sadge;
                 $oldCrudData['creat_by']=$Pointeuses->creat_by;
     
- try{ $oldCrudData['site']=$Pointeuses->site->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['supervirzclient']=$Pointeuses->supervirzclient->Selectlabel; }catch(\Throwable $e){}  
+ try{ $oldCrudData['site']=$Pointeuses->site->Selectlabel; }catch(\Throwable $e){}  
 
 $data=$request->all();
 foreach ($request->allFiles() as $key=>$file){
@@ -2517,7 +2502,7 @@ $newCrudData=[];
                         $newCrudData['identifiants_sadge']=$Pointeuses->identifiants_sadge;
                 $newCrudData['creat_by']=$Pointeuses->creat_by;
     
- try{ $newCrudData['site']=$Pointeuses->site->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['supervirzclient']=$Pointeuses->supervirzclient->Selectlabel; }catch(\Throwable $e){}  
+ try{ $newCrudData['site']=$Pointeuses->site->Selectlabel; }catch(\Throwable $e){}  
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Update", 'entite' => 'Pointeuses','entite_cle' => $Pointeuses->id, 'ancien' => json_encode($oldCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);
 
 $response = $Pointeuses->toArray();
@@ -2579,7 +2564,7 @@ $newCrudData=[];
                         $newCrudData['identifiants_sadge']=$Pointeuses->identifiants_sadge;
                 $newCrudData['creat_by']=$Pointeuses->creat_by;
     
- try{ $newCrudData['site']=$Pointeuses->site->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['supervirzclient']=$Pointeuses->supervirzclient->Selectlabel; }catch(\Throwable $e){}  
+ try{ $newCrudData['site']=$Pointeuses->site->Selectlabel; }catch(\Throwable $e){}  
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Delete", 'entite' => 'Pointeuses','entite_cle' => $Pointeuses->id, 'ancien' => json_encode($newCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);
 
 

@@ -1,4 +1,4 @@
-<?php
+<?php 
 namespace App\Http\Controllers\WEB;
 
 use Illuminate\Database\Schema\Blueprint;
@@ -36,7 +36,6 @@ use Illuminate\Support\Facades\Session;
 ini_set('memory_limit', '8192M');
 ini_set('max_execution_time', '300');
 
-            use App\Models\prod\Programmation;
 
 class ProgrammationsdetailsControllerWeb extends Controller
 {
@@ -155,38 +154,6 @@ $programmationsdetails_disposition->disposition=$request->get('disposition');
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 $pageConfig = [
  'mainLayoutType' => 'vertical',
 'type' => 'admin',
@@ -249,38 +216,6 @@ $pageConfig = [
 ];
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 $vue = view('/content/Programmationsdetails.Programmationsdetails', ['pageConfigs' => $pageConfig, 'menu' => $this->menu,'programmationsdetails_disposition'=>$programmationsdetails_disposition,'preselect'=>$new,'options'=>$donnees??[],
 ]);
 return response($vue, 200);
@@ -327,38 +262,6 @@ $pageConfig = [
 if (! $request->hasValidSignature()) {
 abort(401);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -414,38 +317,6 @@ $pageConfig = [
 if (! $request->hasValidSignature()) {
 abort(401);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

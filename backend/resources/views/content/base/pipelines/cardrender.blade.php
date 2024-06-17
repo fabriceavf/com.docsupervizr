@@ -1,3 +1,0 @@
-<livewire:pipelines :data="$data"/>
-
-

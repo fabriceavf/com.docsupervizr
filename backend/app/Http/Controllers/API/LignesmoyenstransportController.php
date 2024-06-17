@@ -203,6 +203,9 @@ $data = QueryBuilder::for(Lignesmoyenstransport::class)
     
     
     
+            AllowedFilter::exact('identifiants_sadge'),
+
+    
 AllowedFilter::callback('not_null', function (Builder $query, $value) {
 //                    dump($value);
 
@@ -338,6 +341,9 @@ return $query;
     
     
     
+            AllowedSort::field('identifiants_sadge'),
+
+    
 ])
     
     
@@ -360,6 +366,13 @@ $data=$data->paginate(isset($_REQUEST["limit"]) ? max(0, intval($_REQUEST["limit
 $data=$data->get();
 }
 $donnees=$data->toArray();
+
+
+    
+
+
+
+
 
 
     
@@ -576,6 +589,9 @@ $data = QueryBuilder::for(Lignesmoyenstransport::class)
     
     
     
+            AllowedFilter::exact('identifiants_sadge'),
+
+    
 AllowedFilter::callback('not_null', function (Builder $query, $value) {
 //                    dump($value);
 
@@ -711,6 +727,9 @@ return $query;
     
     
     
+            AllowedSort::field('identifiants_sadge'),
+
+    
 ])
     
     
@@ -736,6 +755,13 @@ $data=$data->paginate(isset($_REQUEST["limit"]) ? max(0, intval($_REQUEST["limit
 $data=$data->get();
 }
 $donnees=$data->toArray();
+
+
+
+
+
+    
+
 
 
 
@@ -939,6 +965,7 @@ $champsRechercher=[
     'created_at',
     'updated_at',
     'deleted_at',
+    'identifiants_sadge',
 ];
 $envoyer=[];
 foreach($data as $key=>$d){
@@ -1026,6 +1053,12 @@ Validator::make($data, [
     
     
     
+    
+                    'identifiants_sadge' => [
+            //'required'
+            ],
+        
+    
 
 
 ], $messages = [
@@ -1082,6 +1115,10 @@ Validator::make($data, [
     
     
     
+    
+    
+        'identifiants_sadge' => ['cette donnee est obligatoire'],
+
     
 ])->validate();
 
@@ -1361,6 +1398,24 @@ $data['creat_by']=Auth::id();
 
 
 
+    
+
+        if(!empty($data['identifiants_sadge'])){
+        
+            $Lignesmoyenstransports->identifiants_sadge = $data['identifiants_sadge'];
+        
+        }
+
+
+
+    
+
+
+
+
+
+
+
 
 
 
@@ -1421,7 +1476,8 @@ $newCrudData=[];
                 $newCrudData['sam']=$Lignesmoyenstransports->sam;
                 $newCrudData['dim']=$Lignesmoyenstransports->dim;
                 $newCrudData['creat_by']=$Lignesmoyenstransports->creat_by;
-                    
+                                $newCrudData['identifiants_sadge']=$Lignesmoyenstransports->identifiants_sadge;
+    
  try{ $newCrudData['ligne']=$Lignesmoyenstransports->ligne->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['moyenstransport']=$Lignesmoyenstransports->moyenstransport->Selectlabel; }catch(\Throwable $e){}  
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Create", 'entite' => 'Lignesmoyenstransports','entite_cle' => $Lignesmoyenstransports->id, 'ancien' => json_encode($newCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);
 
@@ -1483,7 +1539,8 @@ $oldCrudData=[];
                 $oldCrudData['sam']=$Lignesmoyenstransports->sam;
                 $oldCrudData['dim']=$Lignesmoyenstransports->dim;
                 $oldCrudData['creat_by']=$Lignesmoyenstransports->creat_by;
-                    
+                                $oldCrudData['identifiants_sadge']=$Lignesmoyenstransports->identifiants_sadge;
+    
  try{ $oldCrudData['ligne']=$Lignesmoyenstransports->ligne->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['moyenstransport']=$Lignesmoyenstransports->moyenstransport->Selectlabel; }catch(\Throwable $e){}  
 
 $data=$request->all();
@@ -1513,6 +1570,7 @@ $champsRechercher=[
     'created_at',
     'updated_at',
     'deleted_at',
+    'identifiants_sadge',
 ];
 $envoyer=[];
 foreach($data as $key=>$d){
@@ -1600,6 +1658,12 @@ Validator::make($data, [
     
     
     
+    
+                    'identifiants_sadge' => [
+            //'required'
+            ],
+        
+    
 
 
 ], $messages = [
@@ -1656,6 +1720,10 @@ Validator::make($data, [
     
     
     
+    
+    
+        'identifiants_sadge' => ['cette donnee est obligatoire'],
+
     
 ])->validate();
 
@@ -1969,6 +2037,27 @@ $extra_data=array_diff($envoyer,$champsRechercher);
 
 
 
+    
+
+        if(array_key_exists("identifiants_sadge",$data)){
+
+
+        if(!empty($data['identifiants_sadge'])){
+        
+            $Lignesmoyenstransports->identifiants_sadge = $data['identifiants_sadge'];
+        
+        }
+
+        }
+
+    
+
+
+
+
+
+
+
 
 
 
@@ -2036,7 +2125,8 @@ $newCrudData=[];
                 $newCrudData['sam']=$Lignesmoyenstransports->sam;
                 $newCrudData['dim']=$Lignesmoyenstransports->dim;
                 $newCrudData['creat_by']=$Lignesmoyenstransports->creat_by;
-                    
+                                $newCrudData['identifiants_sadge']=$Lignesmoyenstransports->identifiants_sadge;
+    
  try{ $newCrudData['ligne']=$Lignesmoyenstransports->ligne->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['moyenstransport']=$Lignesmoyenstransports->moyenstransport->Selectlabel; }catch(\Throwable $e){}  
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Update", 'entite' => 'Lignesmoyenstransports','entite_cle' => $Lignesmoyenstransports->id, 'ancien' => json_encode($oldCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);
 
@@ -2093,7 +2183,8 @@ $newCrudData=[];
                 $newCrudData['sam']=$Lignesmoyenstransports->sam;
                 $newCrudData['dim']=$Lignesmoyenstransports->dim;
                 $newCrudData['creat_by']=$Lignesmoyenstransports->creat_by;
-                    
+                                $newCrudData['identifiants_sadge']=$Lignesmoyenstransports->identifiants_sadge;
+    
  try{ $newCrudData['ligne']=$Lignesmoyenstransports->ligne->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['moyenstransport']=$Lignesmoyenstransports->moyenstransport->Selectlabel; }catch(\Throwable $e){}  
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Delete", 'entite' => 'Lignesmoyenstransports','entite_cle' => $Lignesmoyenstransports->id, 'ancien' => json_encode($newCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);
 

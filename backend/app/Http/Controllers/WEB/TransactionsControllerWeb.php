@@ -1,4 +1,4 @@
-<?php
+<?php 
 namespace App\Http\Controllers\WEB;
 
 use Illuminate\Database\Schema\Blueprint;
@@ -42,7 +42,7 @@ ini_set('max_execution_time', '300');
                 use App\Models\prod\Ligne;
                 use App\Models\prod\Poste;
                 use App\Models\prod\Ville;
-
+    
 class TransactionsControllerWeb extends Controller
 {
 
@@ -172,243 +172,225 @@ $transactions_disposition->disposition=$request->get('disposition');
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -433,15 +415,6 @@ $vue = view('/content/Transactions.transactions_component', ['pageConfigs' => $p
 
 
     'traitements_disposition'=>$traitements_disposition,
-
-
-    'transactionhistoriques_disposition'=>$transactionhistoriques_disposition,
-
-
-    'transactionsdetails_disposition'=>$transactionsdetails_disposition,
-
-
-    'transactionsulterieurs_disposition'=>$transactionsulterieurs_disposition,
 
 ]);
 return response($vue, 200);
@@ -491,24 +464,6 @@ $transactions_disposition->disposition=$request->get('disposition');
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 $pageConfig = [
  'mainLayoutType' => 'vertical',
 'type' => 'admin',
@@ -522,225 +477,225 @@ $pageConfig = [
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -751,15 +706,6 @@ $vue = view('/content/Transactions.Transactions', ['pageConfigs' => $pageConfig,
 
 
     'traitements_disposition'=>$traitements_disposition,
-
-
-    'transactionhistoriques_disposition'=>$transactionhistoriques_disposition,
-
-
-    'transactionsdetails_disposition'=>$transactionsdetails_disposition,
-
-
-    'transactionsulterieurs_disposition'=>$transactionsulterieurs_disposition,
 
 ]);
 return response($vue, 200);
@@ -789,6 +735,7 @@ $transactions_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -796,32 +743,7 @@ $transactions_disposition->disposition=$request->get('disposition');
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 $params=collect($request->all());
 $params=$params->filter(function ($value, $key) {
 //            dd($key);
@@ -853,225 +775,225 @@ abort(401);
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -1089,15 +1011,6 @@ $vue = view('/content/Transactions.transactions_one', [
 
 
     'traitements_disposition'=>$traitements_disposition,
-
-
-    'transactionhistoriques_disposition'=>$transactionhistoriques_disposition,
-
-
-    'transactionsdetails_disposition'=>$transactionsdetails_disposition,
-
-
-    'transactionsulterieurs_disposition'=>$transactionsulterieurs_disposition,
 
 ]);
 
@@ -1123,6 +1036,7 @@ $transactions_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1130,32 +1044,7 @@ $transactions_disposition->disposition=$request->get('disposition');
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 $params=collect($request->all());
 $params=$params->filter(function ($value, $key) {
 //            dd($key);
@@ -1187,225 +1076,225 @@ abort(401);
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -1423,15 +1312,6 @@ $vue = view('/content/Transactions.transactions_one_component', [
 
 
     'traitements_disposition'=>$traitements_disposition,
-
-
-    'transactionhistoriques_disposition'=>$transactionhistoriques_disposition,
-
-
-    'transactionsdetails_disposition'=>$transactionsdetails_disposition,
-
-
-    'transactionsulterieurs_disposition'=>$transactionsulterieurs_disposition,
 
 ]);
 
@@ -1468,6 +1348,7 @@ $transactions_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1475,32 +1356,7 @@ $transactions_disposition->disposition=$request->get('disposition');
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 $params=collect($request->all());
 $params=$params->filter(function ($value, $key) {
 //            dd($key);
@@ -1540,15 +1396,6 @@ $vue = view('/content/Transactions.impression', [
 
 
     'traitements_disposition'=>$traitements_disposition,
-
-
-    'transactionhistoriques_disposition'=>$transactionhistoriques_disposition,
-
-
-    'transactionsdetails_disposition'=>$transactionsdetails_disposition,
-
-
-    'transactionsulterieurs_disposition'=>$transactionsulterieurs_disposition,
 
 ]);
 return response($vue, 200);

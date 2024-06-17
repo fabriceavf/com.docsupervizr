@@ -1,4 +1,4 @@
-<?php
+<?php 
 namespace App\Http\Controllers\WEB;
 
 use Illuminate\Database\Schema\Blueprint;
@@ -38,7 +38,7 @@ ini_set('max_execution_time', '300');
 
             use App\Models\prod\Province;
                 use App\Models\prod\Ville;
-
+    
 class ZonesControllerWeb extends Controller
 {
 
@@ -204,149 +204,137 @@ $zones_disposition->disposition=$request->get('disposition');
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -370,16 +358,10 @@ $vue = view('/content/Zones.zones_component', ['pageConfigs' => $pageConfig, 'me
     'homezones_disposition'=>$homezones_disposition,
 
 
-    'listings_disposition'=>$listings_disposition,
-
-
     'modelslistings_disposition'=>$modelslistings_disposition,
 
 
     'programmations_disposition'=>$programmations_disposition,
-
-
-    'programmationsrondes_disposition'=>$programmationsrondes_disposition,
 
 
     'rapports_disposition'=>$rapports_disposition,
@@ -480,18 +462,6 @@ $zones_disposition->disposition=$request->get('disposition');
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 $pageConfig = [
  'mainLayoutType' => 'vertical',
 'type' => 'admin',
@@ -505,137 +475,137 @@ $pageConfig = [
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -645,16 +615,10 @@ $vue = view('/content/Zones.Zones', ['pageConfigs' => $pageConfig, 'menu' => $th
     'homezones_disposition'=>$homezones_disposition,
 
 
-    'listings_disposition'=>$listings_disposition,
-
-
     'modelslistings_disposition'=>$modelslistings_disposition,
 
 
     'programmations_disposition'=>$programmations_disposition,
-
-
-    'programmationsrondes_disposition'=>$programmationsrondes_disposition,
 
 
     'rapports_disposition'=>$rapports_disposition,
@@ -699,6 +663,7 @@ $zones_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -706,6 +671,7 @@ $zones_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -713,6 +679,7 @@ $zones_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -720,6 +687,7 @@ $zones_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -727,6 +695,7 @@ $zones_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -734,6 +703,7 @@ $zones_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -741,6 +711,7 @@ $zones_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -748,30 +719,7 @@ $zones_disposition->disposition=$request->get('disposition');
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 $params=collect($request->all());
 $params=$params->filter(function ($value, $key) {
 //            dd($key);
@@ -803,137 +751,137 @@ abort(401);
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -950,16 +898,10 @@ $vue = view('/content/Zones.zones_one', [
     'homezones_disposition'=>$homezones_disposition,
 
 
-    'listings_disposition'=>$listings_disposition,
-
-
     'modelslistings_disposition'=>$modelslistings_disposition,
 
 
     'programmations_disposition'=>$programmations_disposition,
-
-
-    'programmationsrondes_disposition'=>$programmationsrondes_disposition,
 
 
     'rapports_disposition'=>$rapports_disposition,
@@ -1000,6 +942,7 @@ $zones_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1007,6 +950,7 @@ $zones_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1014,6 +958,7 @@ $zones_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1021,6 +966,7 @@ $zones_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1028,6 +974,7 @@ $zones_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1035,6 +982,7 @@ $zones_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1042,6 +990,7 @@ $zones_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1049,30 +998,7 @@ $zones_disposition->disposition=$request->get('disposition');
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 $params=collect($request->all());
 $params=$params->filter(function ($value, $key) {
 //            dd($key);
@@ -1104,137 +1030,137 @@ abort(401);
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -1251,16 +1177,10 @@ $vue = view('/content/Zones.zones_one_component', [
     'homezones_disposition'=>$homezones_disposition,
 
 
-    'listings_disposition'=>$listings_disposition,
-
-
     'modelslistings_disposition'=>$modelslistings_disposition,
 
 
     'programmations_disposition'=>$programmations_disposition,
-
-
-    'programmationsrondes_disposition'=>$programmationsrondes_disposition,
 
 
     'rapports_disposition'=>$rapports_disposition,
@@ -1312,6 +1232,7 @@ $zones_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1319,6 +1240,7 @@ $zones_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1326,6 +1248,7 @@ $zones_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1333,6 +1256,7 @@ $zones_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1340,6 +1264,7 @@ $zones_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1347,6 +1272,7 @@ $zones_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1354,6 +1280,7 @@ $zones_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1361,30 +1288,7 @@ $zones_disposition->disposition=$request->get('disposition');
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 $params=collect($request->all());
 $params=$params->filter(function ($value, $key) {
 //            dd($key);
@@ -1423,16 +1327,10 @@ $vue = view('/content/Zones.impression', [
     'homezones_disposition'=>$homezones_disposition,
 
 
-    'listings_disposition'=>$listings_disposition,
-
-
     'modelslistings_disposition'=>$modelslistings_disposition,
 
 
     'programmations_disposition'=>$programmations_disposition,
-
-
-    'programmationsrondes_disposition'=>$programmationsrondes_disposition,
 
 
     'rapports_disposition'=>$rapports_disposition,

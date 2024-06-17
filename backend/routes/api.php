@@ -3778,3 +3778,7693 @@ Route::post('transactionsdetails/action', [App\Http\Controllers\API\Transactions
 
 });
 
+
+// les routes prod
+ Route::group(['prefix'=>'','middleware'=>['auth:api']],function(){
+Route::get('/')->name('base_api');
+//Route::resource('Abscences',App\Http\Controllers\API\AbscenceController::class);
+// les routes d'affichage
+Route::get('abscences/{key}/{val}',[App\Http\Controllers\API\AbscenceController::class,'data'])->withoutMiddleware("throttle:api")->name('Abscences_api_index2');
+Route::get('abscences',[App\Http\Controllers\API\AbscenceController::class,'data1'])->withoutMiddleware("throttle:api")->name('Abscences_api_index');
+Route::post('abscences-Aggrid', [App\Http\Controllers\API\AbscenceController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Abscences_api_aggrid');
+
+// la route de creation
+Route::post('abscences',[App\Http\Controllers\API\AbscenceController::class,'create'])->withoutMiddleware("throttle:api")->name('Abscences_api_create');
+// la route d'edition
+Route::post('abscences/{Abscences}/update',[App\Http\Controllers\API\AbscenceController::class,'update'])->withoutMiddleware("throttle:api")->name('Abscences_api_update');
+// la route de suppression
+Route::post('abscences/{Abscences}/delete',[App\Http\Controllers\API\AbscenceController::class,'delete'])->withoutMiddleware("throttle:api")->name('Abscences_api_delete');
+// la route des actions
+Route::get('abscences/action',[App\Http\Controllers\API\AbscenceController::class,'action'])->withoutMiddleware("throttle:api")->name('Abscences_api_delete');
+// la route des actions
+Route::post('abscences/action',[App\Http\Controllers\API\AbscenceController::class,'action'])->withoutMiddleware("throttle:api")->name('Abscences_api_delete');
+
+
+
+//Route::resource('Actions',App\Http\Controllers\API\ActionController::class);
+// les routes d'affichage
+Route::get('actions/{key}/{val}',[App\Http\Controllers\API\ActionController::class,'data'])->withoutMiddleware("throttle:api")->name('Actions_api_index2');
+Route::get('actions',[App\Http\Controllers\API\ActionController::class,'data1'])->withoutMiddleware("throttle:api")->name('Actions_api_index');
+Route::post('actions-Aggrid', [App\Http\Controllers\API\ActionController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Actions_api_aggrid');
+
+// la route de creation
+Route::post('actions',[App\Http\Controllers\API\ActionController::class,'create'])->withoutMiddleware("throttle:api")->name('Actions_api_create');
+// la route d'edition
+Route::post('actions/{Actions}/update',[App\Http\Controllers\API\ActionController::class,'update'])->withoutMiddleware("throttle:api")->name('Actions_api_update');
+// la route de suppression
+Route::post('actions/{Actions}/delete',[App\Http\Controllers\API\ActionController::class,'delete'])->withoutMiddleware("throttle:api")->name('Actions_api_delete');
+// la route des actions
+Route::get('actions/action',[App\Http\Controllers\API\ActionController::class,'action'])->withoutMiddleware("throttle:api")->name('Actions_api_delete');
+// la route des actions
+Route::post('actions/action',[App\Http\Controllers\API\ActionController::class,'action'])->withoutMiddleware("throttle:api")->name('Actions_api_delete');
+
+
+
+//Route::resource('Agentsrapports',App\Http\Controllers\API\AgentsrapportController::class);
+// les routes d'affichage
+Route::get('agentsrapports/{key}/{val}',[App\Http\Controllers\API\AgentsrapportController::class,'data'])->withoutMiddleware("throttle:api")->name('Agentsrapports_api_index2');
+Route::get('agentsrapports',[App\Http\Controllers\API\AgentsrapportController::class,'data1'])->withoutMiddleware("throttle:api")->name('Agentsrapports_api_index');
+Route::post('agentsrapports-Aggrid', [App\Http\Controllers\API\AgentsrapportController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Agentsrapports_api_aggrid');
+
+// la route de creation
+Route::post('agentsrapports',[App\Http\Controllers\API\AgentsrapportController::class,'create'])->withoutMiddleware("throttle:api")->name('Agentsrapports_api_create');
+// la route d'edition
+Route::post('agentsrapports/{Agentsrapports}/update',[App\Http\Controllers\API\AgentsrapportController::class,'update'])->withoutMiddleware("throttle:api")->name('Agentsrapports_api_update');
+// la route de suppression
+Route::post('agentsrapports/{Agentsrapports}/delete',[App\Http\Controllers\API\AgentsrapportController::class,'delete'])->withoutMiddleware("throttle:api")->name('Agentsrapports_api_delete');
+// la route des actions
+Route::get('agentsrapports/action',[App\Http\Controllers\API\AgentsrapportController::class,'action'])->withoutMiddleware("throttle:api")->name('Agentsrapports_api_delete');
+// la route des actions
+Route::post('agentsrapports/action',[App\Http\Controllers\API\AgentsrapportController::class,'action'])->withoutMiddleware("throttle:api")->name('Agentsrapports_api_delete');
+
+
+
+//Route::resource('Alarms',App\Http\Controllers\API\AlarmController::class);
+// les routes d'affichage
+Route::get('alarms/{key}/{val}',[App\Http\Controllers\API\AlarmController::class,'data'])->withoutMiddleware("throttle:api")->name('Alarms_api_index2');
+Route::get('alarms',[App\Http\Controllers\API\AlarmController::class,'data1'])->withoutMiddleware("throttle:api")->name('Alarms_api_index');
+Route::post('alarms-Aggrid', [App\Http\Controllers\API\AlarmController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Alarms_api_aggrid');
+
+// la route de creation
+Route::post('alarms',[App\Http\Controllers\API\AlarmController::class,'create'])->withoutMiddleware("throttle:api")->name('Alarms_api_create');
+// la route d'edition
+Route::post('alarms/{Alarms}/update',[App\Http\Controllers\API\AlarmController::class,'update'])->withoutMiddleware("throttle:api")->name('Alarms_api_update');
+// la route de suppression
+Route::post('alarms/{Alarms}/delete',[App\Http\Controllers\API\AlarmController::class,'delete'])->withoutMiddleware("throttle:api")->name('Alarms_api_delete');
+// la route des actions
+Route::get('alarms/action',[App\Http\Controllers\API\AlarmController::class,'action'])->withoutMiddleware("throttle:api")->name('Alarms_api_delete');
+// la route des actions
+Route::post('alarms/action',[App\Http\Controllers\API\AlarmController::class,'action'])->withoutMiddleware("throttle:api")->name('Alarms_api_delete');
+
+
+
+//Route::resource('Alldatas',App\Http\Controllers\API\AlldataController::class);
+// les routes d'affichage
+Route::get('alldatas/{key}/{val}',[App\Http\Controllers\API\AlldataController::class,'data'])->withoutMiddleware("throttle:api")->name('Alldatas_api_index2');
+Route::get('alldatas',[App\Http\Controllers\API\AlldataController::class,'data1'])->withoutMiddleware("throttle:api")->name('Alldatas_api_index');
+Route::post('alldatas-Aggrid', [App\Http\Controllers\API\AlldataController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Alldatas_api_aggrid');
+
+// la route de creation
+Route::post('alldatas',[App\Http\Controllers\API\AlldataController::class,'create'])->withoutMiddleware("throttle:api")->name('Alldatas_api_create');
+// la route d'edition
+Route::post('alldatas/{Alldatas}/update',[App\Http\Controllers\API\AlldataController::class,'update'])->withoutMiddleware("throttle:api")->name('Alldatas_api_update');
+// la route de suppression
+Route::post('alldatas/{Alldatas}/delete',[App\Http\Controllers\API\AlldataController::class,'delete'])->withoutMiddleware("throttle:api")->name('Alldatas_api_delete');
+// la route des actions
+Route::get('alldatas/action',[App\Http\Controllers\API\AlldataController::class,'action'])->withoutMiddleware("throttle:api")->name('Alldatas_api_delete');
+// la route des actions
+Route::post('alldatas/action',[App\Http\Controllers\API\AlldataController::class,'action'])->withoutMiddleware("throttle:api")->name('Alldatas_api_delete');
+
+
+
+//Route::resource('Analysespointeuses',App\Http\Controllers\API\AnalysespointeuseController::class);
+// les routes d'affichage
+Route::get('analysespointeuses/{key}/{val}',[App\Http\Controllers\API\AnalysespointeuseController::class,'data'])->withoutMiddleware("throttle:api")->name('Analysespointeuses_api_index2');
+Route::get('analysespointeuses',[App\Http\Controllers\API\AnalysespointeuseController::class,'data1'])->withoutMiddleware("throttle:api")->name('Analysespointeuses_api_index');
+Route::post('analysespointeuses-Aggrid', [App\Http\Controllers\API\AnalysespointeuseController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Analysespointeuses_api_aggrid');
+
+// la route de creation
+Route::post('analysespointeuses',[App\Http\Controllers\API\AnalysespointeuseController::class,'create'])->withoutMiddleware("throttle:api")->name('Analysespointeuses_api_create');
+// la route d'edition
+Route::post('analysespointeuses/{Analysespointeuses}/update',[App\Http\Controllers\API\AnalysespointeuseController::class,'update'])->withoutMiddleware("throttle:api")->name('Analysespointeuses_api_update');
+// la route de suppression
+Route::post('analysespointeuses/{Analysespointeuses}/delete',[App\Http\Controllers\API\AnalysespointeuseController::class,'delete'])->withoutMiddleware("throttle:api")->name('Analysespointeuses_api_delete');
+// la route des actions
+Route::get('analysespointeuses/action',[App\Http\Controllers\API\AnalysespointeuseController::class,'action'])->withoutMiddleware("throttle:api")->name('Analysespointeuses_api_delete');
+// la route des actions
+Route::post('analysespointeuses/action',[App\Http\Controllers\API\AnalysespointeuseController::class,'action'])->withoutMiddleware("throttle:api")->name('Analysespointeuses_api_delete');
+
+
+
+//Route::resource('Approvisionementdetails',App\Http\Controllers\API\ApprovisionementdetailController::class);
+// les routes d'affichage
+Route::get('approvisionementdetails/{key}/{val}',[App\Http\Controllers\API\ApprovisionementdetailController::class,'data'])->withoutMiddleware("throttle:api")->name('Approvisionementdetails_api_index2');
+Route::get('approvisionementdetails',[App\Http\Controllers\API\ApprovisionementdetailController::class,'data1'])->withoutMiddleware("throttle:api")->name('Approvisionementdetails_api_index');
+Route::post('approvisionementdetails-Aggrid', [App\Http\Controllers\API\ApprovisionementdetailController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Approvisionementdetails_api_aggrid');
+
+// la route de creation
+Route::post('approvisionementdetails',[App\Http\Controllers\API\ApprovisionementdetailController::class,'create'])->withoutMiddleware("throttle:api")->name('Approvisionementdetails_api_create');
+// la route d'edition
+Route::post('approvisionementdetails/{Approvisionementdetails}/update',[App\Http\Controllers\API\ApprovisionementdetailController::class,'update'])->withoutMiddleware("throttle:api")->name('Approvisionementdetails_api_update');
+// la route de suppression
+Route::post('approvisionementdetails/{Approvisionementdetails}/delete',[App\Http\Controllers\API\ApprovisionementdetailController::class,'delete'])->withoutMiddleware("throttle:api")->name('Approvisionementdetails_api_delete');
+// la route des actions
+Route::get('approvisionementdetails/action',[App\Http\Controllers\API\ApprovisionementdetailController::class,'action'])->withoutMiddleware("throttle:api")->name('Approvisionementdetails_api_delete');
+// la route des actions
+Route::post('approvisionementdetails/action',[App\Http\Controllers\API\ApprovisionementdetailController::class,'action'])->withoutMiddleware("throttle:api")->name('Approvisionementdetails_api_delete');
+
+
+
+//Route::resource('Architectures',App\Http\Controllers\API\ArchitectureController::class);
+// les routes d'affichage
+Route::get('architectures/{key}/{val}',[App\Http\Controllers\API\ArchitectureController::class,'data'])->withoutMiddleware("throttle:api")->name('Architectures_api_index2');
+Route::get('architectures',[App\Http\Controllers\API\ArchitectureController::class,'data1'])->withoutMiddleware("throttle:api")->name('Architectures_api_index');
+Route::post('architectures-Aggrid', [App\Http\Controllers\API\ArchitectureController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Architectures_api_aggrid');
+
+// la route de creation
+Route::post('architectures',[App\Http\Controllers\API\ArchitectureController::class,'create'])->withoutMiddleware("throttle:api")->name('Architectures_api_create');
+// la route d'edition
+Route::post('architectures/{Architectures}/update',[App\Http\Controllers\API\ArchitectureController::class,'update'])->withoutMiddleware("throttle:api")->name('Architectures_api_update');
+// la route de suppression
+Route::post('architectures/{Architectures}/delete',[App\Http\Controllers\API\ArchitectureController::class,'delete'])->withoutMiddleware("throttle:api")->name('Architectures_api_delete');
+// la route des actions
+Route::get('architectures/action',[App\Http\Controllers\API\ArchitectureController::class,'action'])->withoutMiddleware("throttle:api")->name('Architectures_api_delete');
+// la route des actions
+Route::post('architectures/action',[App\Http\Controllers\API\ArchitectureController::class,'action'])->withoutMiddleware("throttle:api")->name('Architectures_api_delete');
+
+
+
+//Route::resource('Assignations',App\Http\Controllers\API\AssignationController::class);
+// les routes d'affichage
+Route::get('assignations/{key}/{val}',[App\Http\Controllers\API\AssignationController::class,'data'])->withoutMiddleware("throttle:api")->name('Assignations_api_index2');
+Route::get('assignations',[App\Http\Controllers\API\AssignationController::class,'data1'])->withoutMiddleware("throttle:api")->name('Assignations_api_index');
+Route::post('assignations-Aggrid', [App\Http\Controllers\API\AssignationController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Assignations_api_aggrid');
+
+// la route de creation
+Route::post('assignations',[App\Http\Controllers\API\AssignationController::class,'create'])->withoutMiddleware("throttle:api")->name('Assignations_api_create');
+// la route d'edition
+Route::post('assignations/{Assignations}/update',[App\Http\Controllers\API\AssignationController::class,'update'])->withoutMiddleware("throttle:api")->name('Assignations_api_update');
+// la route de suppression
+Route::post('assignations/{Assignations}/delete',[App\Http\Controllers\API\AssignationController::class,'delete'])->withoutMiddleware("throttle:api")->name('Assignations_api_delete');
+// la route des actions
+Route::get('assignations/action',[App\Http\Controllers\API\AssignationController::class,'action'])->withoutMiddleware("throttle:api")->name('Assignations_api_delete');
+// la route des actions
+Route::post('assignations/action',[App\Http\Controllers\API\AssignationController::class,'action'])->withoutMiddleware("throttle:api")->name('Assignations_api_delete');
+
+
+
+//Route::resource('Backends',App\Http\Controllers\API\BackendController::class);
+// les routes d'affichage
+Route::get('backends/{key}/{val}',[App\Http\Controllers\API\BackendController::class,'data'])->withoutMiddleware("throttle:api")->name('Backends_api_index2');
+Route::get('backends',[App\Http\Controllers\API\BackendController::class,'data1'])->withoutMiddleware("throttle:api")->name('Backends_api_index');
+Route::post('backends-Aggrid', [App\Http\Controllers\API\BackendController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Backends_api_aggrid');
+
+// la route de creation
+Route::post('backends',[App\Http\Controllers\API\BackendController::class,'create'])->withoutMiddleware("throttle:api")->name('Backends_api_create');
+// la route d'edition
+Route::post('backends/{Backends}/update',[App\Http\Controllers\API\BackendController::class,'update'])->withoutMiddleware("throttle:api")->name('Backends_api_update');
+// la route de suppression
+Route::post('backends/{Backends}/delete',[App\Http\Controllers\API\BackendController::class,'delete'])->withoutMiddleware("throttle:api")->name('Backends_api_delete');
+// la route des actions
+Route::get('backends/action',[App\Http\Controllers\API\BackendController::class,'action'])->withoutMiddleware("throttle:api")->name('Backends_api_delete');
+// la route des actions
+Route::post('backends/action',[App\Http\Controllers\API\BackendController::class,'action'])->withoutMiddleware("throttle:api")->name('Backends_api_delete');
+
+
+
+//Route::resource('Badges',App\Http\Controllers\API\BadgeController::class);
+// les routes d'affichage
+Route::get('badges/{key}/{val}',[App\Http\Controllers\API\BadgeController::class,'data'])->withoutMiddleware("throttle:api")->name('Badges_api_index2');
+Route::get('badges',[App\Http\Controllers\API\BadgeController::class,'data1'])->withoutMiddleware("throttle:api")->name('Badges_api_index');
+Route::post('badges-Aggrid', [App\Http\Controllers\API\BadgeController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Badges_api_aggrid');
+
+// la route de creation
+Route::post('badges',[App\Http\Controllers\API\BadgeController::class,'create'])->withoutMiddleware("throttle:api")->name('Badges_api_create');
+// la route d'edition
+Route::post('badges/{Badges}/update',[App\Http\Controllers\API\BadgeController::class,'update'])->withoutMiddleware("throttle:api")->name('Badges_api_update');
+// la route de suppression
+Route::post('badges/{Badges}/delete',[App\Http\Controllers\API\BadgeController::class,'delete'])->withoutMiddleware("throttle:api")->name('Badges_api_delete');
+// la route des actions
+Route::get('badges/action',[App\Http\Controllers\API\BadgeController::class,'action'])->withoutMiddleware("throttle:api")->name('Badges_api_delete');
+// la route des actions
+Route::post('badges/action',[App\Http\Controllers\API\BadgeController::class,'action'])->withoutMiddleware("throttle:api")->name('Badges_api_delete');
+
+
+
+//Route::resource('Balises',App\Http\Controllers\API\BaliseController::class);
+// les routes d'affichage
+Route::get('balises/{key}/{val}',[App\Http\Controllers\API\BaliseController::class,'data'])->withoutMiddleware("throttle:api")->name('Balises_api_index2');
+Route::get('balises',[App\Http\Controllers\API\BaliseController::class,'data1'])->withoutMiddleware("throttle:api")->name('Balises_api_index');
+Route::post('balises-Aggrid', [App\Http\Controllers\API\BaliseController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Balises_api_aggrid');
+
+// la route de creation
+Route::post('balises',[App\Http\Controllers\API\BaliseController::class,'create'])->withoutMiddleware("throttle:api")->name('Balises_api_create');
+// la route d'edition
+Route::post('balises/{Balises}/update',[App\Http\Controllers\API\BaliseController::class,'update'])->withoutMiddleware("throttle:api")->name('Balises_api_update');
+// la route de suppression
+Route::post('balises/{Balises}/delete',[App\Http\Controllers\API\BaliseController::class,'delete'])->withoutMiddleware("throttle:api")->name('Balises_api_delete');
+// la route des actions
+Route::get('balises/action',[App\Http\Controllers\API\BaliseController::class,'action'])->withoutMiddleware("throttle:api")->name('Balises_api_delete');
+// la route des actions
+Route::post('balises/action',[App\Http\Controllers\API\BaliseController::class,'action'])->withoutMiddleware("throttle:api")->name('Balises_api_delete');
+
+
+
+//Route::resource('Basesdedonnees',App\Http\Controllers\API\BasesdedonneeController::class);
+// les routes d'affichage
+Route::get('basesdedonnees/{key}/{val}',[App\Http\Controllers\API\BasesdedonneeController::class,'data'])->withoutMiddleware("throttle:api")->name('Basesdedonnees_api_index2');
+Route::get('basesdedonnees',[App\Http\Controllers\API\BasesdedonneeController::class,'data1'])->withoutMiddleware("throttle:api")->name('Basesdedonnees_api_index');
+Route::post('basesdedonnees-Aggrid', [App\Http\Controllers\API\BasesdedonneeController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Basesdedonnees_api_aggrid');
+
+// la route de creation
+Route::post('basesdedonnees',[App\Http\Controllers\API\BasesdedonneeController::class,'create'])->withoutMiddleware("throttle:api")->name('Basesdedonnees_api_create');
+// la route d'edition
+Route::post('basesdedonnees/{Basesdedonnees}/update',[App\Http\Controllers\API\BasesdedonneeController::class,'update'])->withoutMiddleware("throttle:api")->name('Basesdedonnees_api_update');
+// la route de suppression
+Route::post('basesdedonnees/{Basesdedonnees}/delete',[App\Http\Controllers\API\BasesdedonneeController::class,'delete'])->withoutMiddleware("throttle:api")->name('Basesdedonnees_api_delete');
+// la route des actions
+Route::get('basesdedonnees/action',[App\Http\Controllers\API\BasesdedonneeController::class,'action'])->withoutMiddleware("throttle:api")->name('Basesdedonnees_api_delete');
+// la route des actions
+Route::post('basesdedonnees/action',[App\Http\Controllers\API\BasesdedonneeController::class,'action'])->withoutMiddleware("throttle:api")->name('Basesdedonnees_api_delete');
+
+
+
+//Route::resource('Besoinsfonctionels',App\Http\Controllers\API\BesoinsfonctionelController::class);
+// les routes d'affichage
+Route::get('besoinsfonctionels/{key}/{val}',[App\Http\Controllers\API\BesoinsfonctionelController::class,'data'])->withoutMiddleware("throttle:api")->name('Besoinsfonctionels_api_index2');
+Route::get('besoinsfonctionels',[App\Http\Controllers\API\BesoinsfonctionelController::class,'data1'])->withoutMiddleware("throttle:api")->name('Besoinsfonctionels_api_index');
+Route::post('besoinsfonctionels-Aggrid', [App\Http\Controllers\API\BesoinsfonctionelController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Besoinsfonctionels_api_aggrid');
+
+// la route de creation
+Route::post('besoinsfonctionels',[App\Http\Controllers\API\BesoinsfonctionelController::class,'create'])->withoutMiddleware("throttle:api")->name('Besoinsfonctionels_api_create');
+// la route d'edition
+Route::post('besoinsfonctionels/{Besoinsfonctionels}/update',[App\Http\Controllers\API\BesoinsfonctionelController::class,'update'])->withoutMiddleware("throttle:api")->name('Besoinsfonctionels_api_update');
+// la route de suppression
+Route::post('besoinsfonctionels/{Besoinsfonctionels}/delete',[App\Http\Controllers\API\BesoinsfonctionelController::class,'delete'])->withoutMiddleware("throttle:api")->name('Besoinsfonctionels_api_delete');
+// la route des actions
+Route::get('besoinsfonctionels/action',[App\Http\Controllers\API\BesoinsfonctionelController::class,'action'])->withoutMiddleware("throttle:api")->name('Besoinsfonctionels_api_delete');
+// la route des actions
+Route::post('besoinsfonctionels/action',[App\Http\Controllers\API\BesoinsfonctionelController::class,'action'])->withoutMiddleware("throttle:api")->name('Besoinsfonctionels_api_delete');
+
+
+
+//Route::resource('Besoinstechniques',App\Http\Controllers\API\BesoinstechniqueController::class);
+// les routes d'affichage
+Route::get('besoinstechniques/{key}/{val}',[App\Http\Controllers\API\BesoinstechniqueController::class,'data'])->withoutMiddleware("throttle:api")->name('Besoinstechniques_api_index2');
+Route::get('besoinstechniques',[App\Http\Controllers\API\BesoinstechniqueController::class,'data1'])->withoutMiddleware("throttle:api")->name('Besoinstechniques_api_index');
+Route::post('besoinstechniques-Aggrid', [App\Http\Controllers\API\BesoinstechniqueController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Besoinstechniques_api_aggrid');
+
+// la route de creation
+Route::post('besoinstechniques',[App\Http\Controllers\API\BesoinstechniqueController::class,'create'])->withoutMiddleware("throttle:api")->name('Besoinstechniques_api_create');
+// la route d'edition
+Route::post('besoinstechniques/{Besoinstechniques}/update',[App\Http\Controllers\API\BesoinstechniqueController::class,'update'])->withoutMiddleware("throttle:api")->name('Besoinstechniques_api_update');
+// la route de suppression
+Route::post('besoinstechniques/{Besoinstechniques}/delete',[App\Http\Controllers\API\BesoinstechniqueController::class,'delete'])->withoutMiddleware("throttle:api")->name('Besoinstechniques_api_delete');
+// la route des actions
+Route::get('besoinstechniques/action',[App\Http\Controllers\API\BesoinstechniqueController::class,'action'])->withoutMiddleware("throttle:api")->name('Besoinstechniques_api_delete');
+// la route des actions
+Route::post('besoinstechniques/action',[App\Http\Controllers\API\BesoinstechniqueController::class,'action'])->withoutMiddleware("throttle:api")->name('Besoinstechniques_api_delete');
+
+
+
+//Route::resource('Cartes',App\Http\Controllers\API\CarteController::class);
+// les routes d'affichage
+Route::get('cartes/{key}/{val}',[App\Http\Controllers\API\CarteController::class,'data'])->withoutMiddleware("throttle:api")->name('Cartes_api_index2');
+Route::get('cartes',[App\Http\Controllers\API\CarteController::class,'data1'])->withoutMiddleware("throttle:api")->name('Cartes_api_index');
+Route::post('cartes-Aggrid', [App\Http\Controllers\API\CarteController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Cartes_api_aggrid');
+
+// la route de creation
+Route::post('cartes',[App\Http\Controllers\API\CarteController::class,'create'])->withoutMiddleware("throttle:api")->name('Cartes_api_create');
+// la route d'edition
+Route::post('cartes/{Cartes}/update',[App\Http\Controllers\API\CarteController::class,'update'])->withoutMiddleware("throttle:api")->name('Cartes_api_update');
+// la route de suppression
+Route::post('cartes/{Cartes}/delete',[App\Http\Controllers\API\CarteController::class,'delete'])->withoutMiddleware("throttle:api")->name('Cartes_api_delete');
+// la route des actions
+Route::get('cartes/action',[App\Http\Controllers\API\CarteController::class,'action'])->withoutMiddleware("throttle:api")->name('Cartes_api_delete');
+// la route des actions
+Route::post('cartes/action',[App\Http\Controllers\API\CarteController::class,'action'])->withoutMiddleware("throttle:api")->name('Cartes_api_delete');
+
+
+
+//Route::resource('Categories',App\Http\Controllers\API\CategorieController::class);
+// les routes d'affichage
+Route::get('categories/{key}/{val}',[App\Http\Controllers\API\CategorieController::class,'data'])->withoutMiddleware("throttle:api")->name('Categories_api_index2');
+Route::get('categories',[App\Http\Controllers\API\CategorieController::class,'data1'])->withoutMiddleware("throttle:api")->name('Categories_api_index');
+Route::post('categories-Aggrid', [App\Http\Controllers\API\CategorieController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Categories_api_aggrid');
+
+// la route de creation
+Route::post('categories',[App\Http\Controllers\API\CategorieController::class,'create'])->withoutMiddleware("throttle:api")->name('Categories_api_create');
+// la route d'edition
+Route::post('categories/{Categories}/update',[App\Http\Controllers\API\CategorieController::class,'update'])->withoutMiddleware("throttle:api")->name('Categories_api_update');
+// la route de suppression
+Route::post('categories/{Categories}/delete',[App\Http\Controllers\API\CategorieController::class,'delete'])->withoutMiddleware("throttle:api")->name('Categories_api_delete');
+// la route des actions
+Route::get('categories/action',[App\Http\Controllers\API\CategorieController::class,'action'])->withoutMiddleware("throttle:api")->name('Categories_api_delete');
+// la route des actions
+Route::post('categories/action',[App\Http\Controllers\API\CategorieController::class,'action'])->withoutMiddleware("throttle:api")->name('Categories_api_delete');
+
+
+
+//Route::resource('Clients',App\Http\Controllers\API\ClientController::class);
+// les routes d'affichage
+Route::get('clients/{key}/{val}',[App\Http\Controllers\API\ClientController::class,'data'])->withoutMiddleware("throttle:api")->name('Clients_api_index2');
+Route::get('clients',[App\Http\Controllers\API\ClientController::class,'data1'])->withoutMiddleware("throttle:api")->name('Clients_api_index');
+Route::post('clients-Aggrid', [App\Http\Controllers\API\ClientController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Clients_api_aggrid');
+
+// la route de creation
+Route::post('clients',[App\Http\Controllers\API\ClientController::class,'create'])->withoutMiddleware("throttle:api")->name('Clients_api_create');
+// la route d'edition
+Route::post('clients/{Clients}/update',[App\Http\Controllers\API\ClientController::class,'update'])->withoutMiddleware("throttle:api")->name('Clients_api_update');
+// la route de suppression
+Route::post('clients/{Clients}/delete',[App\Http\Controllers\API\ClientController::class,'delete'])->withoutMiddleware("throttle:api")->name('Clients_api_delete');
+// la route des actions
+Route::get('clients/action',[App\Http\Controllers\API\ClientController::class,'action'])->withoutMiddleware("throttle:api")->name('Clients_api_delete');
+// la route des actions
+Route::post('clients/action',[App\Http\Controllers\API\ClientController::class,'action'])->withoutMiddleware("throttle:api")->name('Clients_api_delete');
+
+
+
+//Route::resource('Configurations',App\Http\Controllers\API\ConfigurationController::class);
+// les routes d'affichage
+Route::get('configurations/{key}/{val}',[App\Http\Controllers\API\ConfigurationController::class,'data'])->withoutMiddleware("throttle:api")->name('Configurations_api_index2');
+Route::get('configurations',[App\Http\Controllers\API\ConfigurationController::class,'data1'])->withoutMiddleware("throttle:api")->name('Configurations_api_index');
+Route::post('configurations-Aggrid', [App\Http\Controllers\API\ConfigurationController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Configurations_api_aggrid');
+
+// la route de creation
+Route::post('configurations',[App\Http\Controllers\API\ConfigurationController::class,'create'])->withoutMiddleware("throttle:api")->name('Configurations_api_create');
+// la route d'edition
+Route::post('configurations/{Configurations}/update',[App\Http\Controllers\API\ConfigurationController::class,'update'])->withoutMiddleware("throttle:api")->name('Configurations_api_update');
+// la route de suppression
+Route::post('configurations/{Configurations}/delete',[App\Http\Controllers\API\ConfigurationController::class,'delete'])->withoutMiddleware("throttle:api")->name('Configurations_api_delete');
+// la route des actions
+Route::get('configurations/action',[App\Http\Controllers\API\ConfigurationController::class,'action'])->withoutMiddleware("throttle:api")->name('Configurations_api_delete');
+// la route des actions
+Route::post('configurations/action',[App\Http\Controllers\API\ConfigurationController::class,'action'])->withoutMiddleware("throttle:api")->name('Configurations_api_delete');
+
+
+
+//Route::resource('Conges',App\Http\Controllers\API\CongeController::class);
+// les routes d'affichage
+Route::get('conges/{key}/{val}',[App\Http\Controllers\API\CongeController::class,'data'])->withoutMiddleware("throttle:api")->name('Conges_api_index2');
+Route::get('conges',[App\Http\Controllers\API\CongeController::class,'data1'])->withoutMiddleware("throttle:api")->name('Conges_api_index');
+Route::post('conges-Aggrid', [App\Http\Controllers\API\CongeController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Conges_api_aggrid');
+
+// la route de creation
+Route::post('conges',[App\Http\Controllers\API\CongeController::class,'create'])->withoutMiddleware("throttle:api")->name('Conges_api_create');
+// la route d'edition
+Route::post('conges/{Conges}/update',[App\Http\Controllers\API\CongeController::class,'update'])->withoutMiddleware("throttle:api")->name('Conges_api_update');
+// la route de suppression
+Route::post('conges/{Conges}/delete',[App\Http\Controllers\API\CongeController::class,'delete'])->withoutMiddleware("throttle:api")->name('Conges_api_delete');
+// la route des actions
+Route::get('conges/action',[App\Http\Controllers\API\CongeController::class,'action'])->withoutMiddleware("throttle:api")->name('Conges_api_delete');
+// la route des actions
+Route::post('conges/action',[App\Http\Controllers\API\CongeController::class,'action'])->withoutMiddleware("throttle:api")->name('Conges_api_delete');
+
+
+
+//Route::resource('Contrats',App\Http\Controllers\API\ContratController::class);
+// les routes d'affichage
+Route::get('contrats/{key}/{val}',[App\Http\Controllers\API\ContratController::class,'data'])->withoutMiddleware("throttle:api")->name('Contrats_api_index2');
+Route::get('contrats',[App\Http\Controllers\API\ContratController::class,'data1'])->withoutMiddleware("throttle:api")->name('Contrats_api_index');
+Route::post('contrats-Aggrid', [App\Http\Controllers\API\ContratController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Contrats_api_aggrid');
+
+// la route de creation
+Route::post('contrats',[App\Http\Controllers\API\ContratController::class,'create'])->withoutMiddleware("throttle:api")->name('Contrats_api_create');
+// la route d'edition
+Route::post('contrats/{Contrats}/update',[App\Http\Controllers\API\ContratController::class,'update'])->withoutMiddleware("throttle:api")->name('Contrats_api_update');
+// la route de suppression
+Route::post('contrats/{Contrats}/delete',[App\Http\Controllers\API\ContratController::class,'delete'])->withoutMiddleware("throttle:api")->name('Contrats_api_delete');
+// la route des actions
+Route::get('contrats/action',[App\Http\Controllers\API\ContratController::class,'action'])->withoutMiddleware("throttle:api")->name('Contrats_api_delete');
+// la route des actions
+Route::post('contrats/action',[App\Http\Controllers\API\ContratController::class,'action'])->withoutMiddleware("throttle:api")->name('Contrats_api_delete');
+
+
+
+//Route::resource('Contratsclients',App\Http\Controllers\API\ContratsclientController::class);
+// les routes d'affichage
+Route::get('contratsclients/{key}/{val}',[App\Http\Controllers\API\ContratsclientController::class,'data'])->withoutMiddleware("throttle:api")->name('Contratsclients_api_index2');
+Route::get('contratsclients',[App\Http\Controllers\API\ContratsclientController::class,'data1'])->withoutMiddleware("throttle:api")->name('Contratsclients_api_index');
+Route::post('contratsclients-Aggrid', [App\Http\Controllers\API\ContratsclientController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Contratsclients_api_aggrid');
+
+// la route de creation
+Route::post('contratsclients',[App\Http\Controllers\API\ContratsclientController::class,'create'])->withoutMiddleware("throttle:api")->name('Contratsclients_api_create');
+// la route d'edition
+Route::post('contratsclients/{Contratsclients}/update',[App\Http\Controllers\API\ContratsclientController::class,'update'])->withoutMiddleware("throttle:api")->name('Contratsclients_api_update');
+// la route de suppression
+Route::post('contratsclients/{Contratsclients}/delete',[App\Http\Controllers\API\ContratsclientController::class,'delete'])->withoutMiddleware("throttle:api")->name('Contratsclients_api_delete');
+// la route des actions
+Route::get('contratsclients/action',[App\Http\Controllers\API\ContratsclientController::class,'action'])->withoutMiddleware("throttle:api")->name('Contratsclients_api_delete');
+// la route des actions
+Route::post('contratsclients/action',[App\Http\Controllers\API\ContratsclientController::class,'action'])->withoutMiddleware("throttle:api")->name('Contratsclients_api_delete');
+
+
+
+//Route::resource('Controlleursacces',App\Http\Controllers\API\ControlleursacceController::class);
+// les routes d'affichage
+Route::get('controlleursacces/{key}/{val}',[App\Http\Controllers\API\ControlleursacceController::class,'data'])->withoutMiddleware("throttle:api")->name('Controlleursacces_api_index2');
+Route::get('controlleursacces',[App\Http\Controllers\API\ControlleursacceController::class,'data1'])->withoutMiddleware("throttle:api")->name('Controlleursacces_api_index');
+Route::post('controlleursacces-Aggrid', [App\Http\Controllers\API\ControlleursacceController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Controlleursacces_api_aggrid');
+
+// la route de creation
+Route::post('controlleursacces',[App\Http\Controllers\API\ControlleursacceController::class,'create'])->withoutMiddleware("throttle:api")->name('Controlleursacces_api_create');
+// la route d'edition
+Route::post('controlleursacces/{Controlleursacces}/update',[App\Http\Controllers\API\ControlleursacceController::class,'update'])->withoutMiddleware("throttle:api")->name('Controlleursacces_api_update');
+// la route de suppression
+Route::post('controlleursacces/{Controlleursacces}/delete',[App\Http\Controllers\API\ControlleursacceController::class,'delete'])->withoutMiddleware("throttle:api")->name('Controlleursacces_api_delete');
+// la route des actions
+Route::get('controlleursacces/action',[App\Http\Controllers\API\ControlleursacceController::class,'action'])->withoutMiddleware("throttle:api")->name('Controlleursacces_api_delete');
+// la route des actions
+Route::post('controlleursacces/action',[App\Http\Controllers\API\ControlleursacceController::class,'action'])->withoutMiddleware("throttle:api")->name('Controlleursacces_api_delete');
+
+
+
+//Route::resource('Credits',App\Http\Controllers\API\CreditController::class);
+// les routes d'affichage
+Route::get('credits/{key}/{val}',[App\Http\Controllers\API\CreditController::class,'data'])->withoutMiddleware("throttle:api")->name('Credits_api_index2');
+Route::get('credits',[App\Http\Controllers\API\CreditController::class,'data1'])->withoutMiddleware("throttle:api")->name('Credits_api_index');
+Route::post('credits-Aggrid', [App\Http\Controllers\API\CreditController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Credits_api_aggrid');
+
+// la route de creation
+Route::post('credits',[App\Http\Controllers\API\CreditController::class,'create'])->withoutMiddleware("throttle:api")->name('Credits_api_create');
+// la route d'edition
+Route::post('credits/{Credits}/update',[App\Http\Controllers\API\CreditController::class,'update'])->withoutMiddleware("throttle:api")->name('Credits_api_update');
+// la route de suppression
+Route::post('credits/{Credits}/delete',[App\Http\Controllers\API\CreditController::class,'delete'])->withoutMiddleware("throttle:api")->name('Credits_api_delete');
+// la route des actions
+Route::get('credits/action',[App\Http\Controllers\API\CreditController::class,'action'])->withoutMiddleware("throttle:api")->name('Credits_api_delete');
+// la route des actions
+Route::post('credits/action',[App\Http\Controllers\API\CreditController::class,'action'])->withoutMiddleware("throttle:api")->name('Credits_api_delete');
+
+
+
+//Route::resource('Cruds',App\Http\Controllers\API\CrudController::class);
+// les routes d'affichage
+Route::get('cruds/{key}/{val}',[App\Http\Controllers\API\CrudController::class,'data'])->withoutMiddleware("throttle:api")->name('Cruds_api_index2');
+Route::get('cruds',[App\Http\Controllers\API\CrudController::class,'data1'])->withoutMiddleware("throttle:api")->name('Cruds_api_index');
+Route::post('cruds-Aggrid', [App\Http\Controllers\API\CrudController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Cruds_api_aggrid');
+
+// la route de creation
+Route::post('cruds',[App\Http\Controllers\API\CrudController::class,'create'])->withoutMiddleware("throttle:api")->name('Cruds_api_create');
+// la route d'edition
+Route::post('cruds/{Cruds}/update',[App\Http\Controllers\API\CrudController::class,'update'])->withoutMiddleware("throttle:api")->name('Cruds_api_update');
+// la route de suppression
+Route::post('cruds/{Cruds}/delete',[App\Http\Controllers\API\CrudController::class,'delete'])->withoutMiddleware("throttle:api")->name('Cruds_api_delete');
+// la route des actions
+Route::get('cruds/action',[App\Http\Controllers\API\CrudController::class,'action'])->withoutMiddleware("throttle:api")->name('Cruds_api_delete');
+// la route des actions
+Route::post('cruds/action',[App\Http\Controllers\API\CrudController::class,'action'])->withoutMiddleware("throttle:api")->name('Cruds_api_delete');
+
+
+
+//Route::resource('Debits',App\Http\Controllers\API\DebitController::class);
+// les routes d'affichage
+Route::get('debits/{key}/{val}',[App\Http\Controllers\API\DebitController::class,'data'])->withoutMiddleware("throttle:api")->name('Debits_api_index2');
+Route::get('debits',[App\Http\Controllers\API\DebitController::class,'data1'])->withoutMiddleware("throttle:api")->name('Debits_api_index');
+Route::post('debits-Aggrid', [App\Http\Controllers\API\DebitController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Debits_api_aggrid');
+
+// la route de creation
+Route::post('debits',[App\Http\Controllers\API\DebitController::class,'create'])->withoutMiddleware("throttle:api")->name('Debits_api_create');
+// la route d'edition
+Route::post('debits/{Debits}/update',[App\Http\Controllers\API\DebitController::class,'update'])->withoutMiddleware("throttle:api")->name('Debits_api_update');
+// la route de suppression
+Route::post('debits/{Debits}/delete',[App\Http\Controllers\API\DebitController::class,'delete'])->withoutMiddleware("throttle:api")->name('Debits_api_delete');
+// la route des actions
+Route::get('debits/action',[App\Http\Controllers\API\DebitController::class,'action'])->withoutMiddleware("throttle:api")->name('Debits_api_delete');
+// la route des actions
+Route::post('debits/action',[App\Http\Controllers\API\DebitController::class,'action'])->withoutMiddleware("throttle:api")->name('Debits_api_delete');
+
+
+
+//Route::resource('Dependances',App\Http\Controllers\API\DependanceController::class);
+// les routes d'affichage
+Route::get('dependances/{key}/{val}',[App\Http\Controllers\API\DependanceController::class,'data'])->withoutMiddleware("throttle:api")->name('Dependances_api_index2');
+Route::get('dependances',[App\Http\Controllers\API\DependanceController::class,'data1'])->withoutMiddleware("throttle:api")->name('Dependances_api_index');
+Route::post('dependances-Aggrid', [App\Http\Controllers\API\DependanceController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Dependances_api_aggrid');
+
+// la route de creation
+Route::post('dependances',[App\Http\Controllers\API\DependanceController::class,'create'])->withoutMiddleware("throttle:api")->name('Dependances_api_create');
+// la route d'edition
+Route::post('dependances/{Dependances}/update',[App\Http\Controllers\API\DependanceController::class,'update'])->withoutMiddleware("throttle:api")->name('Dependances_api_update');
+// la route de suppression
+Route::post('dependances/{Dependances}/delete',[App\Http\Controllers\API\DependanceController::class,'delete'])->withoutMiddleware("throttle:api")->name('Dependances_api_delete');
+// la route des actions
+Route::get('dependances/action',[App\Http\Controllers\API\DependanceController::class,'action'])->withoutMiddleware("throttle:api")->name('Dependances_api_delete');
+// la route des actions
+Route::post('dependances/action',[App\Http\Controllers\API\DependanceController::class,'action'])->withoutMiddleware("throttle:api")->name('Dependances_api_delete');
+
+
+
+//Route::resource('Deplacements',App\Http\Controllers\API\DeplacementController::class);
+// les routes d'affichage
+Route::get('deplacements/{key}/{val}',[App\Http\Controllers\API\DeplacementController::class,'data'])->withoutMiddleware("throttle:api")->name('Deplacements_api_index2');
+Route::get('deplacements',[App\Http\Controllers\API\DeplacementController::class,'data1'])->withoutMiddleware("throttle:api")->name('Deplacements_api_index');
+Route::post('deplacements-Aggrid', [App\Http\Controllers\API\DeplacementController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Deplacements_api_aggrid');
+
+// la route de creation
+Route::post('deplacements',[App\Http\Controllers\API\DeplacementController::class,'create'])->withoutMiddleware("throttle:api")->name('Deplacements_api_create');
+// la route d'edition
+Route::post('deplacements/{Deplacements}/update',[App\Http\Controllers\API\DeplacementController::class,'update'])->withoutMiddleware("throttle:api")->name('Deplacements_api_update');
+// la route de suppression
+Route::post('deplacements/{Deplacements}/delete',[App\Http\Controllers\API\DeplacementController::class,'delete'])->withoutMiddleware("throttle:api")->name('Deplacements_api_delete');
+// la route des actions
+Route::get('deplacements/action',[App\Http\Controllers\API\DeplacementController::class,'action'])->withoutMiddleware("throttle:api")->name('Deplacements_api_delete');
+// la route des actions
+Route::post('deplacements/action',[App\Http\Controllers\API\DeplacementController::class,'action'])->withoutMiddleware("throttle:api")->name('Deplacements_api_delete');
+
+
+
+//Route::resource('Directions',App\Http\Controllers\API\DirectionController::class);
+// les routes d'affichage
+Route::get('directions/{key}/{val}',[App\Http\Controllers\API\DirectionController::class,'data'])->withoutMiddleware("throttle:api")->name('Directions_api_index2');
+Route::get('directions',[App\Http\Controllers\API\DirectionController::class,'data1'])->withoutMiddleware("throttle:api")->name('Directions_api_index');
+Route::post('directions-Aggrid', [App\Http\Controllers\API\DirectionController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Directions_api_aggrid');
+
+// la route de creation
+Route::post('directions',[App\Http\Controllers\API\DirectionController::class,'create'])->withoutMiddleware("throttle:api")->name('Directions_api_create');
+// la route d'edition
+Route::post('directions/{Directions}/update',[App\Http\Controllers\API\DirectionController::class,'update'])->withoutMiddleware("throttle:api")->name('Directions_api_update');
+// la route de suppression
+Route::post('directions/{Directions}/delete',[App\Http\Controllers\API\DirectionController::class,'delete'])->withoutMiddleware("throttle:api")->name('Directions_api_delete');
+// la route des actions
+Route::get('directions/action',[App\Http\Controllers\API\DirectionController::class,'action'])->withoutMiddleware("throttle:api")->name('Directions_api_delete');
+// la route des actions
+Route::post('directions/action',[App\Http\Controllers\API\DirectionController::class,'action'])->withoutMiddleware("throttle:api")->name('Directions_api_delete');
+
+
+
+//Route::resource('Echelons',App\Http\Controllers\API\EchelonController::class);
+// les routes d'affichage
+Route::get('echelons/{key}/{val}',[App\Http\Controllers\API\EchelonController::class,'data'])->withoutMiddleware("throttle:api")->name('Echelons_api_index2');
+Route::get('echelons',[App\Http\Controllers\API\EchelonController::class,'data1'])->withoutMiddleware("throttle:api")->name('Echelons_api_index');
+Route::post('echelons-Aggrid', [App\Http\Controllers\API\EchelonController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Echelons_api_aggrid');
+
+// la route de creation
+Route::post('echelons',[App\Http\Controllers\API\EchelonController::class,'create'])->withoutMiddleware("throttle:api")->name('Echelons_api_create');
+// la route d'edition
+Route::post('echelons/{Echelons}/update',[App\Http\Controllers\API\EchelonController::class,'update'])->withoutMiddleware("throttle:api")->name('Echelons_api_update');
+// la route de suppression
+Route::post('echelons/{Echelons}/delete',[App\Http\Controllers\API\EchelonController::class,'delete'])->withoutMiddleware("throttle:api")->name('Echelons_api_delete');
+// la route des actions
+Route::get('echelons/action',[App\Http\Controllers\API\EchelonController::class,'action'])->withoutMiddleware("throttle:api")->name('Echelons_api_delete');
+// la route des actions
+Route::post('echelons/action',[App\Http\Controllers\API\EchelonController::class,'action'])->withoutMiddleware("throttle:api")->name('Echelons_api_delete');
+
+
+
+//Route::resource('Entreprises',App\Http\Controllers\API\EntrepriseController::class);
+// les routes d'affichage
+Route::get('entreprises/{key}/{val}',[App\Http\Controllers\API\EntrepriseController::class,'data'])->withoutMiddleware("throttle:api")->name('Entreprises_api_index2');
+Route::get('entreprises',[App\Http\Controllers\API\EntrepriseController::class,'data1'])->withoutMiddleware("throttle:api")->name('Entreprises_api_index');
+Route::post('entreprises-Aggrid', [App\Http\Controllers\API\EntrepriseController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Entreprises_api_aggrid');
+
+// la route de creation
+Route::post('entreprises',[App\Http\Controllers\API\EntrepriseController::class,'create'])->withoutMiddleware("throttle:api")->name('Entreprises_api_create');
+// la route d'edition
+Route::post('entreprises/{Entreprises}/update',[App\Http\Controllers\API\EntrepriseController::class,'update'])->withoutMiddleware("throttle:api")->name('Entreprises_api_update');
+// la route de suppression
+Route::post('entreprises/{Entreprises}/delete',[App\Http\Controllers\API\EntrepriseController::class,'delete'])->withoutMiddleware("throttle:api")->name('Entreprises_api_delete');
+// la route des actions
+Route::get('entreprises/action',[App\Http\Controllers\API\EntrepriseController::class,'action'])->withoutMiddleware("throttle:api")->name('Entreprises_api_delete');
+// la route des actions
+Route::post('entreprises/action',[App\Http\Controllers\API\EntrepriseController::class,'action'])->withoutMiddleware("throttle:api")->name('Entreprises_api_delete');
+
+
+
+//Route::resource('Etapes',App\Http\Controllers\API\EtapeController::class);
+// les routes d'affichage
+Route::get('etapes/{key}/{val}',[App\Http\Controllers\API\EtapeController::class,'data'])->withoutMiddleware("throttle:api")->name('Etapes_api_index2');
+Route::get('etapes',[App\Http\Controllers\API\EtapeController::class,'data1'])->withoutMiddleware("throttle:api")->name('Etapes_api_index');
+Route::post('etapes-Aggrid', [App\Http\Controllers\API\EtapeController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Etapes_api_aggrid');
+
+// la route de creation
+Route::post('etapes',[App\Http\Controllers\API\EtapeController::class,'create'])->withoutMiddleware("throttle:api")->name('Etapes_api_create');
+// la route d'edition
+Route::post('etapes/{Etapes}/update',[App\Http\Controllers\API\EtapeController::class,'update'])->withoutMiddleware("throttle:api")->name('Etapes_api_update');
+// la route de suppression
+Route::post('etapes/{Etapes}/delete',[App\Http\Controllers\API\EtapeController::class,'delete'])->withoutMiddleware("throttle:api")->name('Etapes_api_delete');
+// la route des actions
+Route::get('etapes/action',[App\Http\Controllers\API\EtapeController::class,'action'])->withoutMiddleware("throttle:api")->name('Etapes_api_delete');
+// la route des actions
+Route::post('etapes/action',[App\Http\Controllers\API\EtapeController::class,'action'])->withoutMiddleware("throttle:api")->name('Etapes_api_delete');
+
+
+
+//Route::resource('Exports',App\Http\Controllers\API\ExportController::class);
+// les routes d'affichage
+Route::get('exports/{key}/{val}',[App\Http\Controllers\API\ExportController::class,'data'])->withoutMiddleware("throttle:api")->name('Exports_api_index2');
+Route::get('exports',[App\Http\Controllers\API\ExportController::class,'data1'])->withoutMiddleware("throttle:api")->name('Exports_api_index');
+Route::post('exports-Aggrid', [App\Http\Controllers\API\ExportController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Exports_api_aggrid');
+
+// la route de creation
+Route::post('exports',[App\Http\Controllers\API\ExportController::class,'create'])->withoutMiddleware("throttle:api")->name('Exports_api_create');
+// la route d'edition
+Route::post('exports/{Exports}/update',[App\Http\Controllers\API\ExportController::class,'update'])->withoutMiddleware("throttle:api")->name('Exports_api_update');
+// la route de suppression
+Route::post('exports/{Exports}/delete',[App\Http\Controllers\API\ExportController::class,'delete'])->withoutMiddleware("throttle:api")->name('Exports_api_delete');
+// la route des actions
+Route::get('exports/action',[App\Http\Controllers\API\ExportController::class,'action'])->withoutMiddleware("throttle:api")->name('Exports_api_delete');
+// la route des actions
+Route::post('exports/action',[App\Http\Controllers\API\ExportController::class,'action'])->withoutMiddleware("throttle:api")->name('Exports_api_delete');
+
+
+
+//Route::resource('Exportsdetails',App\Http\Controllers\API\ExportsdetailController::class);
+// les routes d'affichage
+Route::get('exportsdetails/{key}/{val}',[App\Http\Controllers\API\ExportsdetailController::class,'data'])->withoutMiddleware("throttle:api")->name('Exportsdetails_api_index2');
+Route::get('exportsdetails',[App\Http\Controllers\API\ExportsdetailController::class,'data1'])->withoutMiddleware("throttle:api")->name('Exportsdetails_api_index');
+Route::post('exportsdetails-Aggrid', [App\Http\Controllers\API\ExportsdetailController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Exportsdetails_api_aggrid');
+
+// la route de creation
+Route::post('exportsdetails',[App\Http\Controllers\API\ExportsdetailController::class,'create'])->withoutMiddleware("throttle:api")->name('Exportsdetails_api_create');
+// la route d'edition
+Route::post('exportsdetails/{Exportsdetails}/update',[App\Http\Controllers\API\ExportsdetailController::class,'update'])->withoutMiddleware("throttle:api")->name('Exportsdetails_api_update');
+// la route de suppression
+Route::post('exportsdetails/{Exportsdetails}/delete',[App\Http\Controllers\API\ExportsdetailController::class,'delete'])->withoutMiddleware("throttle:api")->name('Exportsdetails_api_delete');
+// la route des actions
+Route::get('exportsdetails/action',[App\Http\Controllers\API\ExportsdetailController::class,'action'])->withoutMiddleware("throttle:api")->name('Exportsdetails_api_delete');
+// la route des actions
+Route::post('exportsdetails/action',[App\Http\Controllers\API\ExportsdetailController::class,'action'])->withoutMiddleware("throttle:api")->name('Exportsdetails_api_delete');
+
+
+
+//Route::resource('Extrasdatas',App\Http\Controllers\API\ExtrasdataController::class);
+// les routes d'affichage
+Route::get('extrasdatas/{key}/{val}',[App\Http\Controllers\API\ExtrasdataController::class,'data'])->withoutMiddleware("throttle:api")->name('Extrasdatas_api_index2');
+Route::get('extrasdatas',[App\Http\Controllers\API\ExtrasdataController::class,'data1'])->withoutMiddleware("throttle:api")->name('Extrasdatas_api_index');
+Route::post('extrasdatas-Aggrid', [App\Http\Controllers\API\ExtrasdataController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Extrasdatas_api_aggrid');
+
+// la route de creation
+Route::post('extrasdatas',[App\Http\Controllers\API\ExtrasdataController::class,'create'])->withoutMiddleware("throttle:api")->name('Extrasdatas_api_create');
+// la route d'edition
+Route::post('extrasdatas/{Extrasdatas}/update',[App\Http\Controllers\API\ExtrasdataController::class,'update'])->withoutMiddleware("throttle:api")->name('Extrasdatas_api_update');
+// la route de suppression
+Route::post('extrasdatas/{Extrasdatas}/delete',[App\Http\Controllers\API\ExtrasdataController::class,'delete'])->withoutMiddleware("throttle:api")->name('Extrasdatas_api_delete');
+// la route des actions
+Route::get('extrasdatas/action',[App\Http\Controllers\API\ExtrasdataController::class,'action'])->withoutMiddleware("throttle:api")->name('Extrasdatas_api_delete');
+// la route des actions
+Route::post('extrasdatas/action',[App\Http\Controllers\API\ExtrasdataController::class,'action'])->withoutMiddleware("throttle:api")->name('Extrasdatas_api_delete');
+
+
+
+//Route::resource('Files',App\Http\Controllers\API\FileController::class);
+// les routes d'affichage
+Route::get('files/{key}/{val}',[App\Http\Controllers\API\FileController::class,'data'])->withoutMiddleware("throttle:api")->name('Files_api_index2');
+Route::get('files',[App\Http\Controllers\API\FileController::class,'data1'])->withoutMiddleware("throttle:api")->name('Files_api_index');
+Route::post('files-Aggrid', [App\Http\Controllers\API\FileController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Files_api_aggrid');
+
+// la route de creation
+Route::post('files',[App\Http\Controllers\API\FileController::class,'create'])->withoutMiddleware("throttle:api")->name('Files_api_create');
+// la route d'edition
+Route::post('files/{Files}/update',[App\Http\Controllers\API\FileController::class,'update'])->withoutMiddleware("throttle:api")->name('Files_api_update');
+// la route de suppression
+Route::post('files/{Files}/delete',[App\Http\Controllers\API\FileController::class,'delete'])->withoutMiddleware("throttle:api")->name('Files_api_delete');
+// la route des actions
+Route::get('files/action',[App\Http\Controllers\API\FileController::class,'action'])->withoutMiddleware("throttle:api")->name('Files_api_delete');
+// la route des actions
+Route::post('files/action',[App\Http\Controllers\API\FileController::class,'action'])->withoutMiddleware("throttle:api")->name('Files_api_delete');
+
+
+
+//Route::resource('Fonctions',App\Http\Controllers\API\FonctionController::class);
+// les routes d'affichage
+Route::get('fonctions/{key}/{val}',[App\Http\Controllers\API\FonctionController::class,'data'])->withoutMiddleware("throttle:api")->name('Fonctions_api_index2');
+Route::get('fonctions',[App\Http\Controllers\API\FonctionController::class,'data1'])->withoutMiddleware("throttle:api")->name('Fonctions_api_index');
+Route::post('fonctions-Aggrid', [App\Http\Controllers\API\FonctionController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Fonctions_api_aggrid');
+
+// la route de creation
+Route::post('fonctions',[App\Http\Controllers\API\FonctionController::class,'create'])->withoutMiddleware("throttle:api")->name('Fonctions_api_create');
+// la route d'edition
+Route::post('fonctions/{Fonctions}/update',[App\Http\Controllers\API\FonctionController::class,'update'])->withoutMiddleware("throttle:api")->name('Fonctions_api_update');
+// la route de suppression
+Route::post('fonctions/{Fonctions}/delete',[App\Http\Controllers\API\FonctionController::class,'delete'])->withoutMiddleware("throttle:api")->name('Fonctions_api_delete');
+// la route des actions
+Route::get('fonctions/action',[App\Http\Controllers\API\FonctionController::class,'action'])->withoutMiddleware("throttle:api")->name('Fonctions_api_delete');
+// la route des actions
+Route::post('fonctions/action',[App\Http\Controllers\API\FonctionController::class,'action'])->withoutMiddleware("throttle:api")->name('Fonctions_api_delete');
+
+
+
+//Route::resource('Graphiques',App\Http\Controllers\API\GraphiqueController::class);
+// les routes d'affichage
+Route::get('graphiques/{key}/{val}',[App\Http\Controllers\API\GraphiqueController::class,'data'])->withoutMiddleware("throttle:api")->name('Graphiques_api_index2');
+Route::get('graphiques',[App\Http\Controllers\API\GraphiqueController::class,'data1'])->withoutMiddleware("throttle:api")->name('Graphiques_api_index');
+Route::post('graphiques-Aggrid', [App\Http\Controllers\API\GraphiqueController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Graphiques_api_aggrid');
+
+// la route de creation
+Route::post('graphiques',[App\Http\Controllers\API\GraphiqueController::class,'create'])->withoutMiddleware("throttle:api")->name('Graphiques_api_create');
+// la route d'edition
+Route::post('graphiques/{Graphiques}/update',[App\Http\Controllers\API\GraphiqueController::class,'update'])->withoutMiddleware("throttle:api")->name('Graphiques_api_update');
+// la route de suppression
+Route::post('graphiques/{Graphiques}/delete',[App\Http\Controllers\API\GraphiqueController::class,'delete'])->withoutMiddleware("throttle:api")->name('Graphiques_api_delete');
+// la route des actions
+Route::get('graphiques/action',[App\Http\Controllers\API\GraphiqueController::class,'action'])->withoutMiddleware("throttle:api")->name('Graphiques_api_delete');
+// la route des actions
+Route::post('graphiques/action',[App\Http\Controllers\API\GraphiqueController::class,'action'])->withoutMiddleware("throttle:api")->name('Graphiques_api_delete');
+
+
+
+//Route::resource('Groupedirections',App\Http\Controllers\API\GroupedirectionController::class);
+// les routes d'affichage
+Route::get('groupedirections/{key}/{val}',[App\Http\Controllers\API\GroupedirectionController::class,'data'])->withoutMiddleware("throttle:api")->name('Groupedirections_api_index2');
+Route::get('groupedirections',[App\Http\Controllers\API\GroupedirectionController::class,'data1'])->withoutMiddleware("throttle:api")->name('Groupedirections_api_index');
+Route::post('groupedirections-Aggrid', [App\Http\Controllers\API\GroupedirectionController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Groupedirections_api_aggrid');
+
+// la route de creation
+Route::post('groupedirections',[App\Http\Controllers\API\GroupedirectionController::class,'create'])->withoutMiddleware("throttle:api")->name('Groupedirections_api_create');
+// la route d'edition
+Route::post('groupedirections/{Groupedirections}/update',[App\Http\Controllers\API\GroupedirectionController::class,'update'])->withoutMiddleware("throttle:api")->name('Groupedirections_api_update');
+// la route de suppression
+Route::post('groupedirections/{Groupedirections}/delete',[App\Http\Controllers\API\GroupedirectionController::class,'delete'])->withoutMiddleware("throttle:api")->name('Groupedirections_api_delete');
+// la route des actions
+Route::get('groupedirections/action',[App\Http\Controllers\API\GroupedirectionController::class,'action'])->withoutMiddleware("throttle:api")->name('Groupedirections_api_delete');
+// la route des actions
+Route::post('groupedirections/action',[App\Http\Controllers\API\GroupedirectionController::class,'action'])->withoutMiddleware("throttle:api")->name('Groupedirections_api_delete');
+
+
+
+//Route::resource('Groupepermissions',App\Http\Controllers\API\GroupepermissionController::class);
+// les routes d'affichage
+Route::get('groupepermissions/{key}/{val}',[App\Http\Controllers\API\GroupepermissionController::class,'data'])->withoutMiddleware("throttle:api")->name('Groupepermissions_api_index2');
+Route::get('groupepermissions',[App\Http\Controllers\API\GroupepermissionController::class,'data1'])->withoutMiddleware("throttle:api")->name('Groupepermissions_api_index');
+Route::post('groupepermissions-Aggrid', [App\Http\Controllers\API\GroupepermissionController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Groupepermissions_api_aggrid');
+
+// la route de creation
+Route::post('groupepermissions',[App\Http\Controllers\API\GroupepermissionController::class,'create'])->withoutMiddleware("throttle:api")->name('Groupepermissions_api_create');
+// la route d'edition
+Route::post('groupepermissions/{Groupepermissions}/update',[App\Http\Controllers\API\GroupepermissionController::class,'update'])->withoutMiddleware("throttle:api")->name('Groupepermissions_api_update');
+// la route de suppression
+Route::post('groupepermissions/{Groupepermissions}/delete',[App\Http\Controllers\API\GroupepermissionController::class,'delete'])->withoutMiddleware("throttle:api")->name('Groupepermissions_api_delete');
+// la route des actions
+Route::get('groupepermissions/action',[App\Http\Controllers\API\GroupepermissionController::class,'action'])->withoutMiddleware("throttle:api")->name('Groupepermissions_api_delete');
+// la route des actions
+Route::post('groupepermissions/action',[App\Http\Controllers\API\GroupepermissionController::class,'action'])->withoutMiddleware("throttle:api")->name('Groupepermissions_api_delete');
+
+
+
+//Route::resource('Headselements',App\Http\Controllers\API\HeadselementController::class);
+// les routes d'affichage
+Route::get('headselements/{key}/{val}',[App\Http\Controllers\API\HeadselementController::class,'data'])->withoutMiddleware("throttle:api")->name('Headselements_api_index2');
+Route::get('headselements',[App\Http\Controllers\API\HeadselementController::class,'data1'])->withoutMiddleware("throttle:api")->name('Headselements_api_index');
+Route::post('headselements-Aggrid', [App\Http\Controllers\API\HeadselementController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Headselements_api_aggrid');
+
+// la route de creation
+Route::post('headselements',[App\Http\Controllers\API\HeadselementController::class,'create'])->withoutMiddleware("throttle:api")->name('Headselements_api_create');
+// la route d'edition
+Route::post('headselements/{Headselements}/update',[App\Http\Controllers\API\HeadselementController::class,'update'])->withoutMiddleware("throttle:api")->name('Headselements_api_update');
+// la route de suppression
+Route::post('headselements/{Headselements}/delete',[App\Http\Controllers\API\HeadselementController::class,'delete'])->withoutMiddleware("throttle:api")->name('Headselements_api_delete');
+// la route des actions
+Route::get('headselements/action',[App\Http\Controllers\API\HeadselementController::class,'action'])->withoutMiddleware("throttle:api")->name('Headselements_api_delete');
+// la route des actions
+Route::post('headselements/action',[App\Http\Controllers\API\HeadselementController::class,'action'])->withoutMiddleware("throttle:api")->name('Headselements_api_delete');
+
+
+
+//Route::resource('Historiquemodelslistings',App\Http\Controllers\API\HistoriquemodelslistingController::class);
+// les routes d'affichage
+Route::get('historiquemodelslistings/{key}/{val}',[App\Http\Controllers\API\HistoriquemodelslistingController::class,'data'])->withoutMiddleware("throttle:api")->name('Historiquemodelslistings_api_index2');
+Route::get('historiquemodelslistings',[App\Http\Controllers\API\HistoriquemodelslistingController::class,'data1'])->withoutMiddleware("throttle:api")->name('Historiquemodelslistings_api_index');
+Route::post('historiquemodelslistings-Aggrid', [App\Http\Controllers\API\HistoriquemodelslistingController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Historiquemodelslistings_api_aggrid');
+
+// la route de creation
+Route::post('historiquemodelslistings',[App\Http\Controllers\API\HistoriquemodelslistingController::class,'create'])->withoutMiddleware("throttle:api")->name('Historiquemodelslistings_api_create');
+// la route d'edition
+Route::post('historiquemodelslistings/{Historiquemodelslistings}/update',[App\Http\Controllers\API\HistoriquemodelslistingController::class,'update'])->withoutMiddleware("throttle:api")->name('Historiquemodelslistings_api_update');
+// la route de suppression
+Route::post('historiquemodelslistings/{Historiquemodelslistings}/delete',[App\Http\Controllers\API\HistoriquemodelslistingController::class,'delete'])->withoutMiddleware("throttle:api")->name('Historiquemodelslistings_api_delete');
+// la route des actions
+Route::get('historiquemodelslistings/action',[App\Http\Controllers\API\HistoriquemodelslistingController::class,'action'])->withoutMiddleware("throttle:api")->name('Historiquemodelslistings_api_delete');
+// la route des actions
+Route::post('historiquemodelslistings/action',[App\Http\Controllers\API\HistoriquemodelslistingController::class,'action'])->withoutMiddleware("throttle:api")->name('Historiquemodelslistings_api_delete');
+
+
+
+//Route::resource('Historiques',App\Http\Controllers\API\HistoriqueController::class);
+// les routes d'affichage
+Route::get('historiques/{key}/{val}',[App\Http\Controllers\API\HistoriqueController::class,'data'])->withoutMiddleware("throttle:api")->name('Historiques_api_index2');
+Route::get('historiques',[App\Http\Controllers\API\HistoriqueController::class,'data1'])->withoutMiddleware("throttle:api")->name('Historiques_api_index');
+Route::post('historiques-Aggrid', [App\Http\Controllers\API\HistoriqueController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Historiques_api_aggrid');
+
+// la route de creation
+Route::post('historiques',[App\Http\Controllers\API\HistoriqueController::class,'create'])->withoutMiddleware("throttle:api")->name('Historiques_api_create');
+// la route d'edition
+Route::post('historiques/{Historiques}/update',[App\Http\Controllers\API\HistoriqueController::class,'update'])->withoutMiddleware("throttle:api")->name('Historiques_api_update');
+// la route de suppression
+Route::post('historiques/{Historiques}/delete',[App\Http\Controllers\API\HistoriqueController::class,'delete'])->withoutMiddleware("throttle:api")->name('Historiques_api_delete');
+// la route des actions
+Route::get('historiques/action',[App\Http\Controllers\API\HistoriqueController::class,'action'])->withoutMiddleware("throttle:api")->name('Historiques_api_delete');
+// la route des actions
+Route::post('historiques/action',[App\Http\Controllers\API\HistoriqueController::class,'action'])->withoutMiddleware("throttle:api")->name('Historiques_api_delete');
+
+
+
+//Route::resource('Homes',App\Http\Controllers\API\HomeController::class);
+// les routes d'affichage
+Route::get('homes/{key}/{val}',[App\Http\Controllers\API\HomeController::class,'data'])->withoutMiddleware("throttle:api")->name('Homes_api_index2');
+Route::get('homes',[App\Http\Controllers\API\HomeController::class,'data1'])->withoutMiddleware("throttle:api")->name('Homes_api_index');
+Route::post('homes-Aggrid', [App\Http\Controllers\API\HomeController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Homes_api_aggrid');
+
+// la route de creation
+Route::post('homes',[App\Http\Controllers\API\HomeController::class,'create'])->withoutMiddleware("throttle:api")->name('Homes_api_create');
+// la route d'edition
+Route::post('homes/{Homes}/update',[App\Http\Controllers\API\HomeController::class,'update'])->withoutMiddleware("throttle:api")->name('Homes_api_update');
+// la route de suppression
+Route::post('homes/{Homes}/delete',[App\Http\Controllers\API\HomeController::class,'delete'])->withoutMiddleware("throttle:api")->name('Homes_api_delete');
+// la route des actions
+Route::get('homes/action',[App\Http\Controllers\API\HomeController::class,'action'])->withoutMiddleware("throttle:api")->name('Homes_api_delete');
+// la route des actions
+Route::post('homes/action',[App\Http\Controllers\API\HomeController::class,'action'])->withoutMiddleware("throttle:api")->name('Homes_api_delete');
+
+
+
+//Route::resource('Homezones',App\Http\Controllers\API\HomezoneController::class);
+// les routes d'affichage
+Route::get('homezones/{key}/{val}',[App\Http\Controllers\API\HomezoneController::class,'data'])->withoutMiddleware("throttle:api")->name('Homezones_api_index2');
+Route::get('homezones',[App\Http\Controllers\API\HomezoneController::class,'data1'])->withoutMiddleware("throttle:api")->name('Homezones_api_index');
+Route::post('homezones-Aggrid', [App\Http\Controllers\API\HomezoneController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Homezones_api_aggrid');
+
+// la route de creation
+Route::post('homezones',[App\Http\Controllers\API\HomezoneController::class,'create'])->withoutMiddleware("throttle:api")->name('Homezones_api_create');
+// la route d'edition
+Route::post('homezones/{Homezones}/update',[App\Http\Controllers\API\HomezoneController::class,'update'])->withoutMiddleware("throttle:api")->name('Homezones_api_update');
+// la route de suppression
+Route::post('homezones/{Homezones}/delete',[App\Http\Controllers\API\HomezoneController::class,'delete'])->withoutMiddleware("throttle:api")->name('Homezones_api_delete');
+// la route des actions
+Route::get('homezones/action',[App\Http\Controllers\API\HomezoneController::class,'action'])->withoutMiddleware("throttle:api")->name('Homezones_api_delete');
+// la route des actions
+Route::post('homezones/action',[App\Http\Controllers\API\HomezoneController::class,'action'])->withoutMiddleware("throttle:api")->name('Homezones_api_delete');
+
+
+
+//Route::resource('Horaireagents',App\Http\Controllers\API\HoraireagentController::class);
+// les routes d'affichage
+Route::get('horaireagents/{key}/{val}',[App\Http\Controllers\API\HoraireagentController::class,'data'])->withoutMiddleware("throttle:api")->name('Horaireagents_api_index2');
+Route::get('horaireagents',[App\Http\Controllers\API\HoraireagentController::class,'data1'])->withoutMiddleware("throttle:api")->name('Horaireagents_api_index');
+Route::post('horaireagents-Aggrid', [App\Http\Controllers\API\HoraireagentController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Horaireagents_api_aggrid');
+
+// la route de creation
+Route::post('horaireagents',[App\Http\Controllers\API\HoraireagentController::class,'create'])->withoutMiddleware("throttle:api")->name('Horaireagents_api_create');
+// la route d'edition
+Route::post('horaireagents/{Horaireagents}/update',[App\Http\Controllers\API\HoraireagentController::class,'update'])->withoutMiddleware("throttle:api")->name('Horaireagents_api_update');
+// la route de suppression
+Route::post('horaireagents/{Horaireagents}/delete',[App\Http\Controllers\API\HoraireagentController::class,'delete'])->withoutMiddleware("throttle:api")->name('Horaireagents_api_delete');
+// la route des actions
+Route::get('horaireagents/action',[App\Http\Controllers\API\HoraireagentController::class,'action'])->withoutMiddleware("throttle:api")->name('Horaireagents_api_delete');
+// la route des actions
+Route::post('horaireagents/action',[App\Http\Controllers\API\HoraireagentController::class,'action'])->withoutMiddleware("throttle:api")->name('Horaireagents_api_delete');
+
+
+
+//Route::resource('Horaires',App\Http\Controllers\API\HoraireController::class);
+// les routes d'affichage
+Route::get('horaires/{key}/{val}',[App\Http\Controllers\API\HoraireController::class,'data'])->withoutMiddleware("throttle:api")->name('Horaires_api_index2');
+Route::get('horaires',[App\Http\Controllers\API\HoraireController::class,'data1'])->withoutMiddleware("throttle:api")->name('Horaires_api_index');
+Route::post('horaires-Aggrid', [App\Http\Controllers\API\HoraireController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Horaires_api_aggrid');
+
+// la route de creation
+Route::post('horaires',[App\Http\Controllers\API\HoraireController::class,'create'])->withoutMiddleware("throttle:api")->name('Horaires_api_create');
+// la route d'edition
+Route::post('horaires/{Horaires}/update',[App\Http\Controllers\API\HoraireController::class,'update'])->withoutMiddleware("throttle:api")->name('Horaires_api_update');
+// la route de suppression
+Route::post('horaires/{Horaires}/delete',[App\Http\Controllers\API\HoraireController::class,'delete'])->withoutMiddleware("throttle:api")->name('Horaires_api_delete');
+// la route des actions
+Route::get('horaires/action',[App\Http\Controllers\API\HoraireController::class,'action'])->withoutMiddleware("throttle:api")->name('Horaires_api_delete');
+// la route des actions
+Route::post('horaires/action',[App\Http\Controllers\API\HoraireController::class,'action'])->withoutMiddleware("throttle:api")->name('Horaires_api_delete');
+
+
+
+//Route::resource('Horairesglobalspostes',App\Http\Controllers\API\HorairesglobalsposteController::class);
+// les routes d'affichage
+Route::get('horairesglobalspostes/{key}/{val}',[App\Http\Controllers\API\HorairesglobalsposteController::class,'data'])->withoutMiddleware("throttle:api")->name('Horairesglobalspostes_api_index2');
+Route::get('horairesglobalspostes',[App\Http\Controllers\API\HorairesglobalsposteController::class,'data1'])->withoutMiddleware("throttle:api")->name('Horairesglobalspostes_api_index');
+Route::post('horairesglobalspostes-Aggrid', [App\Http\Controllers\API\HorairesglobalsposteController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Horairesglobalspostes_api_aggrid');
+
+// la route de creation
+Route::post('horairesglobalspostes',[App\Http\Controllers\API\HorairesglobalsposteController::class,'create'])->withoutMiddleware("throttle:api")->name('Horairesglobalspostes_api_create');
+// la route d'edition
+Route::post('horairesglobalspostes/{Horairesglobalspostes}/update',[App\Http\Controllers\API\HorairesglobalsposteController::class,'update'])->withoutMiddleware("throttle:api")->name('Horairesglobalspostes_api_update');
+// la route de suppression
+Route::post('horairesglobalspostes/{Horairesglobalspostes}/delete',[App\Http\Controllers\API\HorairesglobalsposteController::class,'delete'])->withoutMiddleware("throttle:api")->name('Horairesglobalspostes_api_delete');
+// la route des actions
+Route::get('horairesglobalspostes/action',[App\Http\Controllers\API\HorairesglobalsposteController::class,'action'])->withoutMiddleware("throttle:api")->name('Horairesglobalspostes_api_delete');
+// la route des actions
+Route::post('horairesglobalspostes/action',[App\Http\Controllers\API\HorairesglobalsposteController::class,'action'])->withoutMiddleware("throttle:api")->name('Horairesglobalspostes_api_delete');
+
+
+
+//Route::resource('Horairestypespostes',App\Http\Controllers\API\HorairestypesposteController::class);
+// les routes d'affichage
+Route::get('horairestypespostes/{key}/{val}',[App\Http\Controllers\API\HorairestypesposteController::class,'data'])->withoutMiddleware("throttle:api")->name('Horairestypespostes_api_index2');
+Route::get('horairestypespostes',[App\Http\Controllers\API\HorairestypesposteController::class,'data1'])->withoutMiddleware("throttle:api")->name('Horairestypespostes_api_index');
+Route::post('horairestypespostes-Aggrid', [App\Http\Controllers\API\HorairestypesposteController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Horairestypespostes_api_aggrid');
+
+// la route de creation
+Route::post('horairestypespostes',[App\Http\Controllers\API\HorairestypesposteController::class,'create'])->withoutMiddleware("throttle:api")->name('Horairestypespostes_api_create');
+// la route d'edition
+Route::post('horairestypespostes/{Horairestypespostes}/update',[App\Http\Controllers\API\HorairestypesposteController::class,'update'])->withoutMiddleware("throttle:api")->name('Horairestypespostes_api_update');
+// la route de suppression
+Route::post('horairestypespostes/{Horairestypespostes}/delete',[App\Http\Controllers\API\HorairestypesposteController::class,'delete'])->withoutMiddleware("throttle:api")->name('Horairestypespostes_api_delete');
+// la route des actions
+Route::get('horairestypespostes/action',[App\Http\Controllers\API\HorairestypesposteController::class,'action'])->withoutMiddleware("throttle:api")->name('Horairestypespostes_api_delete');
+// la route des actions
+Route::post('horairestypespostes/action',[App\Http\Controllers\API\HorairestypesposteController::class,'action'])->withoutMiddleware("throttle:api")->name('Horairestypespostes_api_delete');
+
+
+
+//Route::resource('Horairestypessites',App\Http\Controllers\API\HorairestypessiteController::class);
+// les routes d'affichage
+Route::get('horairestypessites/{key}/{val}',[App\Http\Controllers\API\HorairestypessiteController::class,'data'])->withoutMiddleware("throttle:api")->name('Horairestypessites_api_index2');
+Route::get('horairestypessites',[App\Http\Controllers\API\HorairestypessiteController::class,'data1'])->withoutMiddleware("throttle:api")->name('Horairestypessites_api_index');
+Route::post('horairestypessites-Aggrid', [App\Http\Controllers\API\HorairestypessiteController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Horairestypessites_api_aggrid');
+
+// la route de creation
+Route::post('horairestypessites',[App\Http\Controllers\API\HorairestypessiteController::class,'create'])->withoutMiddleware("throttle:api")->name('Horairestypessites_api_create');
+// la route d'edition
+Route::post('horairestypessites/{Horairestypessites}/update',[App\Http\Controllers\API\HorairestypessiteController::class,'update'])->withoutMiddleware("throttle:api")->name('Horairestypessites_api_update');
+// la route de suppression
+Route::post('horairestypessites/{Horairestypessites}/delete',[App\Http\Controllers\API\HorairestypessiteController::class,'delete'])->withoutMiddleware("throttle:api")->name('Horairestypessites_api_delete');
+// la route des actions
+Route::get('horairestypessites/action',[App\Http\Controllers\API\HorairestypessiteController::class,'action'])->withoutMiddleware("throttle:api")->name('Horairestypessites_api_delete');
+// la route des actions
+Route::post('horairestypessites/action',[App\Http\Controllers\API\HorairestypessiteController::class,'action'])->withoutMiddleware("throttle:api")->name('Horairestypessites_api_delete');
+
+
+
+//Route::resource('Identifications',App\Http\Controllers\API\IdentificationController::class);
+// les routes d'affichage
+Route::get('identifications/{key}/{val}',[App\Http\Controllers\API\IdentificationController::class,'data'])->withoutMiddleware("throttle:api")->name('Identifications_api_index2');
+Route::get('identifications',[App\Http\Controllers\API\IdentificationController::class,'data1'])->withoutMiddleware("throttle:api")->name('Identifications_api_index');
+Route::post('identifications-Aggrid', [App\Http\Controllers\API\IdentificationController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Identifications_api_aggrid');
+
+// la route de creation
+Route::post('identifications',[App\Http\Controllers\API\IdentificationController::class,'create'])->withoutMiddleware("throttle:api")->name('Identifications_api_create');
+// la route d'edition
+Route::post('identifications/{Identifications}/update',[App\Http\Controllers\API\IdentificationController::class,'update'])->withoutMiddleware("throttle:api")->name('Identifications_api_update');
+// la route de suppression
+Route::post('identifications/{Identifications}/delete',[App\Http\Controllers\API\IdentificationController::class,'delete'])->withoutMiddleware("throttle:api")->name('Identifications_api_delete');
+// la route des actions
+Route::get('identifications/action',[App\Http\Controllers\API\IdentificationController::class,'action'])->withoutMiddleware("throttle:api")->name('Identifications_api_delete');
+// la route des actions
+Route::post('identifications/action',[App\Http\Controllers\API\IdentificationController::class,'action'])->withoutMiddleware("throttle:api")->name('Identifications_api_delete');
+
+
+
+//Route::resource('Imports',App\Http\Controllers\API\ImportController::class);
+// les routes d'affichage
+Route::get('imports/{key}/{val}',[App\Http\Controllers\API\ImportController::class,'data'])->withoutMiddleware("throttle:api")->name('Imports_api_index2');
+Route::get('imports',[App\Http\Controllers\API\ImportController::class,'data1'])->withoutMiddleware("throttle:api")->name('Imports_api_index');
+Route::post('imports-Aggrid', [App\Http\Controllers\API\ImportController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Imports_api_aggrid');
+
+// la route de creation
+Route::post('imports',[App\Http\Controllers\API\ImportController::class,'create'])->withoutMiddleware("throttle:api")->name('Imports_api_create');
+// la route d'edition
+Route::post('imports/{Imports}/update',[App\Http\Controllers\API\ImportController::class,'update'])->withoutMiddleware("throttle:api")->name('Imports_api_update');
+// la route de suppression
+Route::post('imports/{Imports}/delete',[App\Http\Controllers\API\ImportController::class,'delete'])->withoutMiddleware("throttle:api")->name('Imports_api_delete');
+// la route des actions
+Route::get('imports/action',[App\Http\Controllers\API\ImportController::class,'action'])->withoutMiddleware("throttle:api")->name('Imports_api_delete');
+// la route des actions
+Route::post('imports/action',[App\Http\Controllers\API\ImportController::class,'action'])->withoutMiddleware("throttle:api")->name('Imports_api_delete');
+
+
+
+//Route::resource('Introductions',App\Http\Controllers\API\IntroductionController::class);
+// les routes d'affichage
+Route::get('introductions/{key}/{val}',[App\Http\Controllers\API\IntroductionController::class,'data'])->withoutMiddleware("throttle:api")->name('Introductions_api_index2');
+Route::get('introductions',[App\Http\Controllers\API\IntroductionController::class,'data1'])->withoutMiddleware("throttle:api")->name('Introductions_api_index');
+Route::post('introductions-Aggrid', [App\Http\Controllers\API\IntroductionController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Introductions_api_aggrid');
+
+// la route de creation
+Route::post('introductions',[App\Http\Controllers\API\IntroductionController::class,'create'])->withoutMiddleware("throttle:api")->name('Introductions_api_create');
+// la route d'edition
+Route::post('introductions/{Introductions}/update',[App\Http\Controllers\API\IntroductionController::class,'update'])->withoutMiddleware("throttle:api")->name('Introductions_api_update');
+// la route de suppression
+Route::post('introductions/{Introductions}/delete',[App\Http\Controllers\API\IntroductionController::class,'delete'])->withoutMiddleware("throttle:api")->name('Introductions_api_delete');
+// la route des actions
+Route::get('introductions/action',[App\Http\Controllers\API\IntroductionController::class,'action'])->withoutMiddleware("throttle:api")->name('Introductions_api_delete');
+// la route des actions
+Route::post('introductions/action',[App\Http\Controllers\API\IntroductionController::class,'action'])->withoutMiddleware("throttle:api")->name('Introductions_api_delete');
+
+
+
+//Route::resource('Jobs',App\Http\Controllers\API\JobController::class);
+// les routes d'affichage
+Route::get('jobs/{key}/{val}',[App\Http\Controllers\API\JobController::class,'data'])->withoutMiddleware("throttle:api")->name('Jobs_api_index2');
+Route::get('jobs',[App\Http\Controllers\API\JobController::class,'data1'])->withoutMiddleware("throttle:api")->name('Jobs_api_index');
+Route::post('jobs-Aggrid', [App\Http\Controllers\API\JobController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Jobs_api_aggrid');
+
+// la route de creation
+Route::post('jobs',[App\Http\Controllers\API\JobController::class,'create'])->withoutMiddleware("throttle:api")->name('Jobs_api_create');
+// la route d'edition
+Route::post('jobs/{Jobs}/update',[App\Http\Controllers\API\JobController::class,'update'])->withoutMiddleware("throttle:api")->name('Jobs_api_update');
+// la route de suppression
+Route::post('jobs/{Jobs}/delete',[App\Http\Controllers\API\JobController::class,'delete'])->withoutMiddleware("throttle:api")->name('Jobs_api_delete');
+// la route des actions
+Route::get('jobs/action',[App\Http\Controllers\API\JobController::class,'action'])->withoutMiddleware("throttle:api")->name('Jobs_api_delete');
+// la route des actions
+Route::post('jobs/action',[App\Http\Controllers\API\JobController::class,'action'])->withoutMiddleware("throttle:api")->name('Jobs_api_delete');
+
+
+
+//Route::resource('Joursferies',App\Http\Controllers\API\JoursferieController::class);
+// les routes d'affichage
+Route::get('joursferies/{key}/{val}',[App\Http\Controllers\API\JoursferieController::class,'data'])->withoutMiddleware("throttle:api")->name('Joursferies_api_index2');
+Route::get('joursferies',[App\Http\Controllers\API\JoursferieController::class,'data1'])->withoutMiddleware("throttle:api")->name('Joursferies_api_index');
+Route::post('joursferies-Aggrid', [App\Http\Controllers\API\JoursferieController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Joursferies_api_aggrid');
+
+// la route de creation
+Route::post('joursferies',[App\Http\Controllers\API\JoursferieController::class,'create'])->withoutMiddleware("throttle:api")->name('Joursferies_api_create');
+// la route d'edition
+Route::post('joursferies/{Joursferies}/update',[App\Http\Controllers\API\JoursferieController::class,'update'])->withoutMiddleware("throttle:api")->name('Joursferies_api_update');
+// la route de suppression
+Route::post('joursferies/{Joursferies}/delete',[App\Http\Controllers\API\JoursferieController::class,'delete'])->withoutMiddleware("throttle:api")->name('Joursferies_api_delete');
+// la route des actions
+Route::get('joursferies/action',[App\Http\Controllers\API\JoursferieController::class,'action'])->withoutMiddleware("throttle:api")->name('Joursferies_api_delete');
+// la route des actions
+Route::post('joursferies/action',[App\Http\Controllers\API\JoursferieController::class,'action'])->withoutMiddleware("throttle:api")->name('Joursferies_api_delete');
+
+
+
+//Route::resource('Lignes',App\Http\Controllers\API\LigneController::class);
+// les routes d'affichage
+Route::get('lignes/{key}/{val}',[App\Http\Controllers\API\LigneController::class,'data'])->withoutMiddleware("throttle:api")->name('Lignes_api_index2');
+Route::get('lignes',[App\Http\Controllers\API\LigneController::class,'data1'])->withoutMiddleware("throttle:api")->name('Lignes_api_index');
+Route::post('lignes-Aggrid', [App\Http\Controllers\API\LigneController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Lignes_api_aggrid');
+
+// la route de creation
+Route::post('lignes',[App\Http\Controllers\API\LigneController::class,'create'])->withoutMiddleware("throttle:api")->name('Lignes_api_create');
+// la route d'edition
+Route::post('lignes/{Lignes}/update',[App\Http\Controllers\API\LigneController::class,'update'])->withoutMiddleware("throttle:api")->name('Lignes_api_update');
+// la route de suppression
+Route::post('lignes/{Lignes}/delete',[App\Http\Controllers\API\LigneController::class,'delete'])->withoutMiddleware("throttle:api")->name('Lignes_api_delete');
+// la route des actions
+Route::get('lignes/action',[App\Http\Controllers\API\LigneController::class,'action'])->withoutMiddleware("throttle:api")->name('Lignes_api_delete');
+// la route des actions
+Route::post('lignes/action',[App\Http\Controllers\API\LigneController::class,'action'])->withoutMiddleware("throttle:api")->name('Lignes_api_delete');
+
+
+
+//Route::resource('Lignesmoyenstransports',App\Http\Controllers\API\LignesmoyenstransportController::class);
+// les routes d'affichage
+Route::get('lignesmoyenstransports/{key}/{val}',[App\Http\Controllers\API\LignesmoyenstransportController::class,'data'])->withoutMiddleware("throttle:api")->name('Lignesmoyenstransports_api_index2');
+Route::get('lignesmoyenstransports',[App\Http\Controllers\API\LignesmoyenstransportController::class,'data1'])->withoutMiddleware("throttle:api")->name('Lignesmoyenstransports_api_index');
+Route::post('lignesmoyenstransports-Aggrid', [App\Http\Controllers\API\LignesmoyenstransportController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Lignesmoyenstransports_api_aggrid');
+
+// la route de creation
+Route::post('lignesmoyenstransports',[App\Http\Controllers\API\LignesmoyenstransportController::class,'create'])->withoutMiddleware("throttle:api")->name('Lignesmoyenstransports_api_create');
+// la route d'edition
+Route::post('lignesmoyenstransports/{Lignesmoyenstransports}/update',[App\Http\Controllers\API\LignesmoyenstransportController::class,'update'])->withoutMiddleware("throttle:api")->name('Lignesmoyenstransports_api_update');
+// la route de suppression
+Route::post('lignesmoyenstransports/{Lignesmoyenstransports}/delete',[App\Http\Controllers\API\LignesmoyenstransportController::class,'delete'])->withoutMiddleware("throttle:api")->name('Lignesmoyenstransports_api_delete');
+// la route des actions
+Route::get('lignesmoyenstransports/action',[App\Http\Controllers\API\LignesmoyenstransportController::class,'action'])->withoutMiddleware("throttle:api")->name('Lignesmoyenstransports_api_delete');
+// la route des actions
+Route::post('lignesmoyenstransports/action',[App\Http\Controllers\API\LignesmoyenstransportController::class,'action'])->withoutMiddleware("throttle:api")->name('Lignesmoyenstransports_api_delete');
+
+
+
+//Route::resource('Listesjours',App\Http\Controllers\API\ListesjourController::class);
+// les routes d'affichage
+Route::get('listesjours/{key}/{val}',[App\Http\Controllers\API\ListesjourController::class,'data'])->withoutMiddleware("throttle:api")->name('Listesjours_api_index2');
+Route::get('listesjours',[App\Http\Controllers\API\ListesjourController::class,'data1'])->withoutMiddleware("throttle:api")->name('Listesjours_api_index');
+Route::post('listesjours-Aggrid', [App\Http\Controllers\API\ListesjourController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Listesjours_api_aggrid');
+
+// la route de creation
+Route::post('listesjours',[App\Http\Controllers\API\ListesjourController::class,'create'])->withoutMiddleware("throttle:api")->name('Listesjours_api_create');
+// la route d'edition
+Route::post('listesjours/{Listesjours}/update',[App\Http\Controllers\API\ListesjourController::class,'update'])->withoutMiddleware("throttle:api")->name('Listesjours_api_update');
+// la route de suppression
+Route::post('listesjours/{Listesjours}/delete',[App\Http\Controllers\API\ListesjourController::class,'delete'])->withoutMiddleware("throttle:api")->name('Listesjours_api_delete');
+// la route des actions
+Route::get('listesjours/action',[App\Http\Controllers\API\ListesjourController::class,'action'])->withoutMiddleware("throttle:api")->name('Listesjours_api_delete');
+// la route des actions
+Route::post('listesjours/action',[App\Http\Controllers\API\ListesjourController::class,'action'])->withoutMiddleware("throttle:api")->name('Listesjours_api_delete');
+
+
+
+//Route::resource('Listingsetats',App\Http\Controllers\API\ListingsetatController::class);
+// les routes d'affichage
+Route::get('listingsetats/{key}/{val}',[App\Http\Controllers\API\ListingsetatController::class,'data'])->withoutMiddleware("throttle:api")->name('Listingsetats_api_index2');
+Route::get('listingsetats',[App\Http\Controllers\API\ListingsetatController::class,'data1'])->withoutMiddleware("throttle:api")->name('Listingsetats_api_index');
+Route::post('listingsetats-Aggrid', [App\Http\Controllers\API\ListingsetatController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Listingsetats_api_aggrid');
+
+// la route de creation
+Route::post('listingsetats',[App\Http\Controllers\API\ListingsetatController::class,'create'])->withoutMiddleware("throttle:api")->name('Listingsetats_api_create');
+// la route d'edition
+Route::post('listingsetats/{Listingsetats}/update',[App\Http\Controllers\API\ListingsetatController::class,'update'])->withoutMiddleware("throttle:api")->name('Listingsetats_api_update');
+// la route de suppression
+Route::post('listingsetats/{Listingsetats}/delete',[App\Http\Controllers\API\ListingsetatController::class,'delete'])->withoutMiddleware("throttle:api")->name('Listingsetats_api_delete');
+// la route des actions
+Route::get('listingsetats/action',[App\Http\Controllers\API\ListingsetatController::class,'action'])->withoutMiddleware("throttle:api")->name('Listingsetats_api_delete');
+// la route des actions
+Route::post('listingsetats/action',[App\Http\Controllers\API\ListingsetatController::class,'action'])->withoutMiddleware("throttle:api")->name('Listingsetats_api_delete');
+
+
+
+//Route::resource('Logins',App\Http\Controllers\API\LoginController::class);
+// les routes d'affichage
+Route::get('logins/{key}/{val}',[App\Http\Controllers\API\LoginController::class,'data'])->withoutMiddleware("throttle:api")->name('Logins_api_index2');
+Route::get('logins',[App\Http\Controllers\API\LoginController::class,'data1'])->withoutMiddleware("throttle:api")->name('Logins_api_index');
+Route::post('logins-Aggrid', [App\Http\Controllers\API\LoginController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Logins_api_aggrid');
+
+// la route de creation
+Route::post('logins',[App\Http\Controllers\API\LoginController::class,'create'])->withoutMiddleware("throttle:api")->name('Logins_api_create');
+// la route d'edition
+Route::post('logins/{Logins}/update',[App\Http\Controllers\API\LoginController::class,'update'])->withoutMiddleware("throttle:api")->name('Logins_api_update');
+// la route de suppression
+Route::post('logins/{Logins}/delete',[App\Http\Controllers\API\LoginController::class,'delete'])->withoutMiddleware("throttle:api")->name('Logins_api_delete');
+// la route des actions
+Route::get('logins/action',[App\Http\Controllers\API\LoginController::class,'action'])->withoutMiddleware("throttle:api")->name('Logins_api_delete');
+// la route des actions
+Route::post('logins/action',[App\Http\Controllers\API\LoginController::class,'action'])->withoutMiddleware("throttle:api")->name('Logins_api_delete');
+
+
+
+//Route::resource('Logs',App\Http\Controllers\API\LogController::class);
+// les routes d'affichage
+Route::get('logs/{key}/{val}',[App\Http\Controllers\API\LogController::class,'data'])->withoutMiddleware("throttle:api")->name('Logs_api_index2');
+Route::get('logs',[App\Http\Controllers\API\LogController::class,'data1'])->withoutMiddleware("throttle:api")->name('Logs_api_index');
+Route::post('logs-Aggrid', [App\Http\Controllers\API\LogController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Logs_api_aggrid');
+
+// la route de creation
+Route::post('logs',[App\Http\Controllers\API\LogController::class,'create'])->withoutMiddleware("throttle:api")->name('Logs_api_create');
+// la route d'edition
+Route::post('logs/{Logs}/update',[App\Http\Controllers\API\LogController::class,'update'])->withoutMiddleware("throttle:api")->name('Logs_api_update');
+// la route de suppression
+Route::post('logs/{Logs}/delete',[App\Http\Controllers\API\LogController::class,'delete'])->withoutMiddleware("throttle:api")->name('Logs_api_delete');
+// la route des actions
+Route::get('logs/action',[App\Http\Controllers\API\LogController::class,'action'])->withoutMiddleware("throttle:api")->name('Logs_api_delete');
+// la route des actions
+Route::post('logs/action',[App\Http\Controllers\API\LogController::class,'action'])->withoutMiddleware("throttle:api")->name('Logs_api_delete');
+
+
+
+//Route::resource('Matrimoniales',App\Http\Controllers\API\MatrimonialeController::class);
+// les routes d'affichage
+Route::get('matrimoniales/{key}/{val}',[App\Http\Controllers\API\MatrimonialeController::class,'data'])->withoutMiddleware("throttle:api")->name('Matrimoniales_api_index2');
+Route::get('matrimoniales',[App\Http\Controllers\API\MatrimonialeController::class,'data1'])->withoutMiddleware("throttle:api")->name('Matrimoniales_api_index');
+Route::post('matrimoniales-Aggrid', [App\Http\Controllers\API\MatrimonialeController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Matrimoniales_api_aggrid');
+
+// la route de creation
+Route::post('matrimoniales',[App\Http\Controllers\API\MatrimonialeController::class,'create'])->withoutMiddleware("throttle:api")->name('Matrimoniales_api_create');
+// la route d'edition
+Route::post('matrimoniales/{Matrimoniales}/update',[App\Http\Controllers\API\MatrimonialeController::class,'update'])->withoutMiddleware("throttle:api")->name('Matrimoniales_api_update');
+// la route de suppression
+Route::post('matrimoniales/{Matrimoniales}/delete',[App\Http\Controllers\API\MatrimonialeController::class,'delete'])->withoutMiddleware("throttle:api")->name('Matrimoniales_api_delete');
+// la route des actions
+Route::get('matrimoniales/action',[App\Http\Controllers\API\MatrimonialeController::class,'action'])->withoutMiddleware("throttle:api")->name('Matrimoniales_api_delete');
+// la route des actions
+Route::post('matrimoniales/action',[App\Http\Controllers\API\MatrimonialeController::class,'action'])->withoutMiddleware("throttle:api")->name('Matrimoniales_api_delete');
+
+
+
+//Route::resource('Menus',App\Http\Controllers\API\MenuController::class);
+// les routes d'affichage
+Route::get('menus/{key}/{val}',[App\Http\Controllers\API\MenuController::class,'data'])->withoutMiddleware("throttle:api")->name('Menus_api_index2');
+Route::get('menus',[App\Http\Controllers\API\MenuController::class,'data1'])->withoutMiddleware("throttle:api")->name('Menus_api_index');
+Route::post('menus-Aggrid', [App\Http\Controllers\API\MenuController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Menus_api_aggrid');
+
+// la route de creation
+Route::post('menus',[App\Http\Controllers\API\MenuController::class,'create'])->withoutMiddleware("throttle:api")->name('Menus_api_create');
+// la route d'edition
+Route::post('menus/{Menus}/update',[App\Http\Controllers\API\MenuController::class,'update'])->withoutMiddleware("throttle:api")->name('Menus_api_update');
+// la route de suppression
+Route::post('menus/{Menus}/delete',[App\Http\Controllers\API\MenuController::class,'delete'])->withoutMiddleware("throttle:api")->name('Menus_api_delete');
+// la route des actions
+Route::get('menus/action',[App\Http\Controllers\API\MenuController::class,'action'])->withoutMiddleware("throttle:api")->name('Menus_api_delete');
+// la route des actions
+Route::post('menus/action',[App\Http\Controllers\API\MenuController::class,'action'])->withoutMiddleware("throttle:api")->name('Menus_api_delete');
+
+
+
+//Route::resource('Model_has_permissions',App\Http\Controllers\API\ModelHasPermissionController::class);
+// les routes d'affichage
+Route::get('model_has_permissions/{key}/{val}',[App\Http\Controllers\API\ModelHasPermissionController::class,'data'])->withoutMiddleware("throttle:api")->name('Model_has_permissions_api_index2');
+Route::get('model_has_permissions',[App\Http\Controllers\API\ModelHasPermissionController::class,'data1'])->withoutMiddleware("throttle:api")->name('Model_has_permissions_api_index');
+Route::post('model_has_permissions-Aggrid', [App\Http\Controllers\API\ModelHasPermissionController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Model_has_permissions_api_aggrid');
+
+// la route de creation
+Route::post('model_has_permissions',[App\Http\Controllers\API\ModelHasPermissionController::class,'create'])->withoutMiddleware("throttle:api")->name('Model_has_permissions_api_create');
+// la route d'edition
+Route::post('model_has_permissions/{Model_has_permissions}/update',[App\Http\Controllers\API\ModelHasPermissionController::class,'update'])->withoutMiddleware("throttle:api")->name('Model_has_permissions_api_update');
+// la route de suppression
+Route::post('model_has_permissions/{Model_has_permissions}/delete',[App\Http\Controllers\API\ModelHasPermissionController::class,'delete'])->withoutMiddleware("throttle:api")->name('Model_has_permissions_api_delete');
+// la route des actions
+Route::get('model_has_permissions/action',[App\Http\Controllers\API\ModelHasPermissionController::class,'action'])->withoutMiddleware("throttle:api")->name('Model_has_permissions_api_delete');
+// la route des actions
+Route::post('model_has_permissions/action',[App\Http\Controllers\API\ModelHasPermissionController::class,'action'])->withoutMiddleware("throttle:api")->name('Model_has_permissions_api_delete');
+
+
+
+//Route::resource('Modelslistings',App\Http\Controllers\API\ModelslistingController::class);
+// les routes d'affichage
+Route::get('modelslistings/{key}/{val}',[App\Http\Controllers\API\ModelslistingController::class,'data'])->withoutMiddleware("throttle:api")->name('Modelslistings_api_index2');
+Route::get('modelslistings',[App\Http\Controllers\API\ModelslistingController::class,'data1'])->withoutMiddleware("throttle:api")->name('Modelslistings_api_index');
+Route::post('modelslistings-Aggrid', [App\Http\Controllers\API\ModelslistingController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Modelslistings_api_aggrid');
+
+// la route de creation
+Route::post('modelslistings',[App\Http\Controllers\API\ModelslistingController::class,'create'])->withoutMiddleware("throttle:api")->name('Modelslistings_api_create');
+// la route d'edition
+Route::post('modelslistings/{Modelslistings}/update',[App\Http\Controllers\API\ModelslistingController::class,'update'])->withoutMiddleware("throttle:api")->name('Modelslistings_api_update');
+// la route de suppression
+Route::post('modelslistings/{Modelslistings}/delete',[App\Http\Controllers\API\ModelslistingController::class,'delete'])->withoutMiddleware("throttle:api")->name('Modelslistings_api_delete');
+// la route des actions
+Route::get('modelslistings/action',[App\Http\Controllers\API\ModelslistingController::class,'action'])->withoutMiddleware("throttle:api")->name('Modelslistings_api_delete');
+// la route des actions
+Route::post('modelslistings/action',[App\Http\Controllers\API\ModelslistingController::class,'action'])->withoutMiddleware("throttle:api")->name('Modelslistings_api_delete');
+
+
+
+//Route::resource('Moyenstransports',App\Http\Controllers\API\MoyenstransportController::class);
+// les routes d'affichage
+Route::get('moyenstransports/{key}/{val}',[App\Http\Controllers\API\MoyenstransportController::class,'data'])->withoutMiddleware("throttle:api")->name('Moyenstransports_api_index2');
+Route::get('moyenstransports',[App\Http\Controllers\API\MoyenstransportController::class,'data1'])->withoutMiddleware("throttle:api")->name('Moyenstransports_api_index');
+Route::post('moyenstransports-Aggrid', [App\Http\Controllers\API\MoyenstransportController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Moyenstransports_api_aggrid');
+
+// la route de creation
+Route::post('moyenstransports',[App\Http\Controllers\API\MoyenstransportController::class,'create'])->withoutMiddleware("throttle:api")->name('Moyenstransports_api_create');
+// la route d'edition
+Route::post('moyenstransports/{Moyenstransports}/update',[App\Http\Controllers\API\MoyenstransportController::class,'update'])->withoutMiddleware("throttle:api")->name('Moyenstransports_api_update');
+// la route de suppression
+Route::post('moyenstransports/{Moyenstransports}/delete',[App\Http\Controllers\API\MoyenstransportController::class,'delete'])->withoutMiddleware("throttle:api")->name('Moyenstransports_api_delete');
+// la route des actions
+Route::get('moyenstransports/action',[App\Http\Controllers\API\MoyenstransportController::class,'action'])->withoutMiddleware("throttle:api")->name('Moyenstransports_api_delete');
+// la route des actions
+Route::post('moyenstransports/action',[App\Http\Controllers\API\MoyenstransportController::class,'action'])->withoutMiddleware("throttle:api")->name('Moyenstransports_api_delete');
+
+
+
+//Route::resource('Nationalites',App\Http\Controllers\API\NationaliteController::class);
+// les routes d'affichage
+Route::get('nationalites/{key}/{val}',[App\Http\Controllers\API\NationaliteController::class,'data'])->withoutMiddleware("throttle:api")->name('Nationalites_api_index2');
+Route::get('nationalites',[App\Http\Controllers\API\NationaliteController::class,'data1'])->withoutMiddleware("throttle:api")->name('Nationalites_api_index');
+Route::post('nationalites-Aggrid', [App\Http\Controllers\API\NationaliteController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Nationalites_api_aggrid');
+
+// la route de creation
+Route::post('nationalites',[App\Http\Controllers\API\NationaliteController::class,'create'])->withoutMiddleware("throttle:api")->name('Nationalites_api_create');
+// la route d'edition
+Route::post('nationalites/{Nationalites}/update',[App\Http\Controllers\API\NationaliteController::class,'update'])->withoutMiddleware("throttle:api")->name('Nationalites_api_update');
+// la route de suppression
+Route::post('nationalites/{Nationalites}/delete',[App\Http\Controllers\API\NationaliteController::class,'delete'])->withoutMiddleware("throttle:api")->name('Nationalites_api_delete');
+// la route des actions
+Route::get('nationalites/action',[App\Http\Controllers\API\NationaliteController::class,'action'])->withoutMiddleware("throttle:api")->name('Nationalites_api_delete');
+// la route des actions
+Route::post('nationalites/action',[App\Http\Controllers\API\NationaliteController::class,'action'])->withoutMiddleware("throttle:api")->name('Nationalites_api_delete');
+
+
+
+//Route::resource('Oauth_access_tokens',App\Http\Controllers\API\OauthAccessTokenController::class);
+// les routes d'affichage
+Route::get('oauth_access_tokens/{key}/{val}',[App\Http\Controllers\API\OauthAccessTokenController::class,'data'])->withoutMiddleware("throttle:api")->name('Oauth_access_tokens_api_index2');
+Route::get('oauth_access_tokens',[App\Http\Controllers\API\OauthAccessTokenController::class,'data1'])->withoutMiddleware("throttle:api")->name('Oauth_access_tokens_api_index');
+Route::post('oauth_access_tokens-Aggrid', [App\Http\Controllers\API\OauthAccessTokenController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Oauth_access_tokens_api_aggrid');
+
+// la route de creation
+Route::post('oauth_access_tokens',[App\Http\Controllers\API\OauthAccessTokenController::class,'create'])->withoutMiddleware("throttle:api")->name('Oauth_access_tokens_api_create');
+// la route d'edition
+Route::post('oauth_access_tokens/{Oauth_access_tokens}/update',[App\Http\Controllers\API\OauthAccessTokenController::class,'update'])->withoutMiddleware("throttle:api")->name('Oauth_access_tokens_api_update');
+// la route de suppression
+Route::post('oauth_access_tokens/{Oauth_access_tokens}/delete',[App\Http\Controllers\API\OauthAccessTokenController::class,'delete'])->withoutMiddleware("throttle:api")->name('Oauth_access_tokens_api_delete');
+// la route des actions
+Route::get('oauth_access_tokens/action',[App\Http\Controllers\API\OauthAccessTokenController::class,'action'])->withoutMiddleware("throttle:api")->name('Oauth_access_tokens_api_delete');
+// la route des actions
+Route::post('oauth_access_tokens/action',[App\Http\Controllers\API\OauthAccessTokenController::class,'action'])->withoutMiddleware("throttle:api")->name('Oauth_access_tokens_api_delete');
+
+
+
+//Route::resource('Oauth_auth_codes',App\Http\Controllers\API\OauthAuthCodeController::class);
+// les routes d'affichage
+Route::get('oauth_auth_codes/{key}/{val}',[App\Http\Controllers\API\OauthAuthCodeController::class,'data'])->withoutMiddleware("throttle:api")->name('Oauth_auth_codes_api_index2');
+Route::get('oauth_auth_codes',[App\Http\Controllers\API\OauthAuthCodeController::class,'data1'])->withoutMiddleware("throttle:api")->name('Oauth_auth_codes_api_index');
+Route::post('oauth_auth_codes-Aggrid', [App\Http\Controllers\API\OauthAuthCodeController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Oauth_auth_codes_api_aggrid');
+
+// la route de creation
+Route::post('oauth_auth_codes',[App\Http\Controllers\API\OauthAuthCodeController::class,'create'])->withoutMiddleware("throttle:api")->name('Oauth_auth_codes_api_create');
+// la route d'edition
+Route::post('oauth_auth_codes/{Oauth_auth_codes}/update',[App\Http\Controllers\API\OauthAuthCodeController::class,'update'])->withoutMiddleware("throttle:api")->name('Oauth_auth_codes_api_update');
+// la route de suppression
+Route::post('oauth_auth_codes/{Oauth_auth_codes}/delete',[App\Http\Controllers\API\OauthAuthCodeController::class,'delete'])->withoutMiddleware("throttle:api")->name('Oauth_auth_codes_api_delete');
+// la route des actions
+Route::get('oauth_auth_codes/action',[App\Http\Controllers\API\OauthAuthCodeController::class,'action'])->withoutMiddleware("throttle:api")->name('Oauth_auth_codes_api_delete');
+// la route des actions
+Route::post('oauth_auth_codes/action',[App\Http\Controllers\API\OauthAuthCodeController::class,'action'])->withoutMiddleware("throttle:api")->name('Oauth_auth_codes_api_delete');
+
+
+
+//Route::resource('Oauth_clients',App\Http\Controllers\API\OauthClientController::class);
+// les routes d'affichage
+Route::get('oauth_clients/{key}/{val}',[App\Http\Controllers\API\OauthClientController::class,'data'])->withoutMiddleware("throttle:api")->name('Oauth_clients_api_index2');
+Route::get('oauth_clients',[App\Http\Controllers\API\OauthClientController::class,'data1'])->withoutMiddleware("throttle:api")->name('Oauth_clients_api_index');
+Route::post('oauth_clients-Aggrid', [App\Http\Controllers\API\OauthClientController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Oauth_clients_api_aggrid');
+
+// la route de creation
+Route::post('oauth_clients',[App\Http\Controllers\API\OauthClientController::class,'create'])->withoutMiddleware("throttle:api")->name('Oauth_clients_api_create');
+// la route d'edition
+Route::post('oauth_clients/{Oauth_clients}/update',[App\Http\Controllers\API\OauthClientController::class,'update'])->withoutMiddleware("throttle:api")->name('Oauth_clients_api_update');
+// la route de suppression
+Route::post('oauth_clients/{Oauth_clients}/delete',[App\Http\Controllers\API\OauthClientController::class,'delete'])->withoutMiddleware("throttle:api")->name('Oauth_clients_api_delete');
+// la route des actions
+Route::get('oauth_clients/action',[App\Http\Controllers\API\OauthClientController::class,'action'])->withoutMiddleware("throttle:api")->name('Oauth_clients_api_delete');
+// la route des actions
+Route::post('oauth_clients/action',[App\Http\Controllers\API\OauthClientController::class,'action'])->withoutMiddleware("throttle:api")->name('Oauth_clients_api_delete');
+
+
+
+//Route::resource('Oauth_personal_access_clients',App\Http\Controllers\API\OauthPersonalAccessClientController::class);
+// les routes d'affichage
+Route::get('oauth_personal_access_clients/{key}/{val}',[App\Http\Controllers\API\OauthPersonalAccessClientController::class,'data'])->withoutMiddleware("throttle:api")->name('Oauth_personal_access_clients_api_index2');
+Route::get('oauth_personal_access_clients',[App\Http\Controllers\API\OauthPersonalAccessClientController::class,'data1'])->withoutMiddleware("throttle:api")->name('Oauth_personal_access_clients_api_index');
+Route::post('oauth_personal_access_clients-Aggrid', [App\Http\Controllers\API\OauthPersonalAccessClientController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Oauth_personal_access_clients_api_aggrid');
+
+// la route de creation
+Route::post('oauth_personal_access_clients',[App\Http\Controllers\API\OauthPersonalAccessClientController::class,'create'])->withoutMiddleware("throttle:api")->name('Oauth_personal_access_clients_api_create');
+// la route d'edition
+Route::post('oauth_personal_access_clients/{Oauth_personal_access_clients}/update',[App\Http\Controllers\API\OauthPersonalAccessClientController::class,'update'])->withoutMiddleware("throttle:api")->name('Oauth_personal_access_clients_api_update');
+// la route de suppression
+Route::post('oauth_personal_access_clients/{Oauth_personal_access_clients}/delete',[App\Http\Controllers\API\OauthPersonalAccessClientController::class,'delete'])->withoutMiddleware("throttle:api")->name('Oauth_personal_access_clients_api_delete');
+// la route des actions
+Route::get('oauth_personal_access_clients/action',[App\Http\Controllers\API\OauthPersonalAccessClientController::class,'action'])->withoutMiddleware("throttle:api")->name('Oauth_personal_access_clients_api_delete');
+// la route des actions
+Route::post('oauth_personal_access_clients/action',[App\Http\Controllers\API\OauthPersonalAccessClientController::class,'action'])->withoutMiddleware("throttle:api")->name('Oauth_personal_access_clients_api_delete');
+
+
+
+//Route::resource('Oauth_refresh_tokens',App\Http\Controllers\API\OauthRefreshTokenController::class);
+// les routes d'affichage
+Route::get('oauth_refresh_tokens/{key}/{val}',[App\Http\Controllers\API\OauthRefreshTokenController::class,'data'])->withoutMiddleware("throttle:api")->name('Oauth_refresh_tokens_api_index2');
+Route::get('oauth_refresh_tokens',[App\Http\Controllers\API\OauthRefreshTokenController::class,'data1'])->withoutMiddleware("throttle:api")->name('Oauth_refresh_tokens_api_index');
+Route::post('oauth_refresh_tokens-Aggrid', [App\Http\Controllers\API\OauthRefreshTokenController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Oauth_refresh_tokens_api_aggrid');
+
+// la route de creation
+Route::post('oauth_refresh_tokens',[App\Http\Controllers\API\OauthRefreshTokenController::class,'create'])->withoutMiddleware("throttle:api")->name('Oauth_refresh_tokens_api_create');
+// la route d'edition
+Route::post('oauth_refresh_tokens/{Oauth_refresh_tokens}/update',[App\Http\Controllers\API\OauthRefreshTokenController::class,'update'])->withoutMiddleware("throttle:api")->name('Oauth_refresh_tokens_api_update');
+// la route de suppression
+Route::post('oauth_refresh_tokens/{Oauth_refresh_tokens}/delete',[App\Http\Controllers\API\OauthRefreshTokenController::class,'delete'])->withoutMiddleware("throttle:api")->name('Oauth_refresh_tokens_api_delete');
+// la route des actions
+Route::get('oauth_refresh_tokens/action',[App\Http\Controllers\API\OauthRefreshTokenController::class,'action'])->withoutMiddleware("throttle:api")->name('Oauth_refresh_tokens_api_delete');
+// la route des actions
+Route::post('oauth_refresh_tokens/action',[App\Http\Controllers\API\OauthRefreshTokenController::class,'action'])->withoutMiddleware("throttle:api")->name('Oauth_refresh_tokens_api_delete');
+
+
+
+//Route::resource('Passagesrondes',App\Http\Controllers\API\PassagesrondeController::class);
+// les routes d'affichage
+Route::get('passagesrondes/{key}/{val}',[App\Http\Controllers\API\PassagesrondeController::class,'data'])->withoutMiddleware("throttle:api")->name('Passagesrondes_api_index2');
+Route::get('passagesrondes',[App\Http\Controllers\API\PassagesrondeController::class,'data1'])->withoutMiddleware("throttle:api")->name('Passagesrondes_api_index');
+Route::post('passagesrondes-Aggrid', [App\Http\Controllers\API\PassagesrondeController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Passagesrondes_api_aggrid');
+
+// la route de creation
+Route::post('passagesrondes',[App\Http\Controllers\API\PassagesrondeController::class,'create'])->withoutMiddleware("throttle:api")->name('Passagesrondes_api_create');
+// la route d'edition
+Route::post('passagesrondes/{Passagesrondes}/update',[App\Http\Controllers\API\PassagesrondeController::class,'update'])->withoutMiddleware("throttle:api")->name('Passagesrondes_api_update');
+// la route de suppression
+Route::post('passagesrondes/{Passagesrondes}/delete',[App\Http\Controllers\API\PassagesrondeController::class,'delete'])->withoutMiddleware("throttle:api")->name('Passagesrondes_api_delete');
+// la route des actions
+Route::get('passagesrondes/action',[App\Http\Controllers\API\PassagesrondeController::class,'action'])->withoutMiddleware("throttle:api")->name('Passagesrondes_api_delete');
+// la route des actions
+Route::post('passagesrondes/action',[App\Http\Controllers\API\PassagesrondeController::class,'action'])->withoutMiddleware("throttle:api")->name('Passagesrondes_api_delete');
+
+
+
+//Route::resource('Pastilles',App\Http\Controllers\API\PastilleController::class);
+// les routes d'affichage
+Route::get('pastilles/{key}/{val}',[App\Http\Controllers\API\PastilleController::class,'data'])->withoutMiddleware("throttle:api")->name('Pastilles_api_index2');
+Route::get('pastilles',[App\Http\Controllers\API\PastilleController::class,'data1'])->withoutMiddleware("throttle:api")->name('Pastilles_api_index');
+Route::post('pastilles-Aggrid', [App\Http\Controllers\API\PastilleController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Pastilles_api_aggrid');
+
+// la route de creation
+Route::post('pastilles',[App\Http\Controllers\API\PastilleController::class,'create'])->withoutMiddleware("throttle:api")->name('Pastilles_api_create');
+// la route d'edition
+Route::post('pastilles/{Pastilles}/update',[App\Http\Controllers\API\PastilleController::class,'update'])->withoutMiddleware("throttle:api")->name('Pastilles_api_update');
+// la route de suppression
+Route::post('pastilles/{Pastilles}/delete',[App\Http\Controllers\API\PastilleController::class,'delete'])->withoutMiddleware("throttle:api")->name('Pastilles_api_delete');
+// la route des actions
+Route::get('pastilles/action',[App\Http\Controllers\API\PastilleController::class,'action'])->withoutMiddleware("throttle:api")->name('Pastilles_api_delete');
+// la route des actions
+Route::post('pastilles/action',[App\Http\Controllers\API\PastilleController::class,'action'])->withoutMiddleware("throttle:api")->name('Pastilles_api_delete');
+
+
+
+//Route::resource('Permissions',App\Http\Controllers\API\PermissionController::class);
+// les routes d'affichage
+Route::get('permissions/{key}/{val}',[App\Http\Controllers\API\PermissionController::class,'data'])->withoutMiddleware("throttle:api")->name('Permissions_api_index2');
+Route::get('permissions',[App\Http\Controllers\API\PermissionController::class,'data1'])->withoutMiddleware("throttle:api")->name('Permissions_api_index');
+Route::post('permissions-Aggrid', [App\Http\Controllers\API\PermissionController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Permissions_api_aggrid');
+
+// la route de creation
+Route::post('permissions',[App\Http\Controllers\API\PermissionController::class,'create'])->withoutMiddleware("throttle:api")->name('Permissions_api_create');
+// la route d'edition
+Route::post('permissions/{Permissions}/update',[App\Http\Controllers\API\PermissionController::class,'update'])->withoutMiddleware("throttle:api")->name('Permissions_api_update');
+// la route de suppression
+Route::post('permissions/{Permissions}/delete',[App\Http\Controllers\API\PermissionController::class,'delete'])->withoutMiddleware("throttle:api")->name('Permissions_api_delete');
+// la route des actions
+Route::get('permissions/action',[App\Http\Controllers\API\PermissionController::class,'action'])->withoutMiddleware("throttle:api")->name('Permissions_api_delete');
+// la route des actions
+Route::post('permissions/action',[App\Http\Controllers\API\PermissionController::class,'action'])->withoutMiddleware("throttle:api")->name('Permissions_api_delete');
+
+
+
+//Route::resource('Perms',App\Http\Controllers\API\PermController::class);
+// les routes d'affichage
+Route::get('perms/{key}/{val}',[App\Http\Controllers\API\PermController::class,'data'])->withoutMiddleware("throttle:api")->name('Perms_api_index2');
+Route::get('perms',[App\Http\Controllers\API\PermController::class,'data1'])->withoutMiddleware("throttle:api")->name('Perms_api_index');
+Route::post('perms-Aggrid', [App\Http\Controllers\API\PermController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Perms_api_aggrid');
+
+// la route de creation
+Route::post('perms',[App\Http\Controllers\API\PermController::class,'create'])->withoutMiddleware("throttle:api")->name('Perms_api_create');
+// la route d'edition
+Route::post('perms/{Perms}/update',[App\Http\Controllers\API\PermController::class,'update'])->withoutMiddleware("throttle:api")->name('Perms_api_update');
+// la route de suppression
+Route::post('perms/{Perms}/delete',[App\Http\Controllers\API\PermController::class,'delete'])->withoutMiddleware("throttle:api")->name('Perms_api_delete');
+// la route des actions
+Route::get('perms/action',[App\Http\Controllers\API\PermController::class,'action'])->withoutMiddleware("throttle:api")->name('Perms_api_delete');
+// la route des actions
+Route::post('perms/action',[App\Http\Controllers\API\PermController::class,'action'])->withoutMiddleware("throttle:api")->name('Perms_api_delete');
+
+
+
+//Route::resource('Pointages',App\Http\Controllers\API\PointageController::class);
+// les routes d'affichage
+Route::get('pointages/{key}/{val}',[App\Http\Controllers\API\PointageController::class,'data'])->withoutMiddleware("throttle:api")->name('Pointages_api_index2');
+Route::get('pointages',[App\Http\Controllers\API\PointageController::class,'data1'])->withoutMiddleware("throttle:api")->name('Pointages_api_index');
+Route::post('pointages-Aggrid', [App\Http\Controllers\API\PointageController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Pointages_api_aggrid');
+
+// la route de creation
+Route::post('pointages',[App\Http\Controllers\API\PointageController::class,'create'])->withoutMiddleware("throttle:api")->name('Pointages_api_create');
+// la route d'edition
+Route::post('pointages/{Pointages}/update',[App\Http\Controllers\API\PointageController::class,'update'])->withoutMiddleware("throttle:api")->name('Pointages_api_update');
+// la route de suppression
+Route::post('pointages/{Pointages}/delete',[App\Http\Controllers\API\PointageController::class,'delete'])->withoutMiddleware("throttle:api")->name('Pointages_api_delete');
+// la route des actions
+Route::get('pointages/action',[App\Http\Controllers\API\PointageController::class,'action'])->withoutMiddleware("throttle:api")->name('Pointages_api_delete');
+// la route des actions
+Route::post('pointages/action',[App\Http\Controllers\API\PointageController::class,'action'])->withoutMiddleware("throttle:api")->name('Pointages_api_delete');
+
+
+
+//Route::resource('Pointeuses',App\Http\Controllers\API\PointeuseController::class);
+// les routes d'affichage
+Route::get('pointeuses/{key}/{val}',[App\Http\Controllers\API\PointeuseController::class,'data'])->withoutMiddleware("throttle:api")->name('Pointeuses_api_index2');
+Route::get('pointeuses',[App\Http\Controllers\API\PointeuseController::class,'data1'])->withoutMiddleware("throttle:api")->name('Pointeuses_api_index');
+Route::post('pointeuses-Aggrid', [App\Http\Controllers\API\PointeuseController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Pointeuses_api_aggrid');
+
+// la route de creation
+Route::post('pointeuses',[App\Http\Controllers\API\PointeuseController::class,'create'])->withoutMiddleware("throttle:api")->name('Pointeuses_api_create');
+// la route d'edition
+Route::post('pointeuses/{Pointeuses}/update',[App\Http\Controllers\API\PointeuseController::class,'update'])->withoutMiddleware("throttle:api")->name('Pointeuses_api_update');
+// la route de suppression
+Route::post('pointeuses/{Pointeuses}/delete',[App\Http\Controllers\API\PointeuseController::class,'delete'])->withoutMiddleware("throttle:api")->name('Pointeuses_api_delete');
+// la route des actions
+Route::get('pointeuses/action',[App\Http\Controllers\API\PointeuseController::class,'action'])->withoutMiddleware("throttle:api")->name('Pointeuses_api_delete');
+// la route des actions
+Route::post('pointeuses/action',[App\Http\Controllers\API\PointeuseController::class,'action'])->withoutMiddleware("throttle:api")->name('Pointeuses_api_delete');
+
+
+
+//Route::resource('Pointeusestransactions',App\Http\Controllers\API\PointeusestransactionController::class);
+// les routes d'affichage
+Route::get('pointeusestransactions/{key}/{val}',[App\Http\Controllers\API\PointeusestransactionController::class,'data'])->withoutMiddleware("throttle:api")->name('Pointeusestransactions_api_index2');
+Route::get('pointeusestransactions',[App\Http\Controllers\API\PointeusestransactionController::class,'data1'])->withoutMiddleware("throttle:api")->name('Pointeusestransactions_api_index');
+Route::post('pointeusestransactions-Aggrid', [App\Http\Controllers\API\PointeusestransactionController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Pointeusestransactions_api_aggrid');
+
+// la route de creation
+Route::post('pointeusestransactions',[App\Http\Controllers\API\PointeusestransactionController::class,'create'])->withoutMiddleware("throttle:api")->name('Pointeusestransactions_api_create');
+// la route d'edition
+Route::post('pointeusestransactions/{Pointeusestransactions}/update',[App\Http\Controllers\API\PointeusestransactionController::class,'update'])->withoutMiddleware("throttle:api")->name('Pointeusestransactions_api_update');
+// la route de suppression
+Route::post('pointeusestransactions/{Pointeusestransactions}/delete',[App\Http\Controllers\API\PointeusestransactionController::class,'delete'])->withoutMiddleware("throttle:api")->name('Pointeusestransactions_api_delete');
+// la route des actions
+Route::get('pointeusestransactions/action',[App\Http\Controllers\API\PointeusestransactionController::class,'action'])->withoutMiddleware("throttle:api")->name('Pointeusestransactions_api_delete');
+// la route des actions
+Route::post('pointeusestransactions/action',[App\Http\Controllers\API\PointeusestransactionController::class,'action'])->withoutMiddleware("throttle:api")->name('Pointeusestransactions_api_delete');
+
+
+
+//Route::resource('Points',App\Http\Controllers\API\PointController::class);
+// les routes d'affichage
+Route::get('points/{key}/{val}',[App\Http\Controllers\API\PointController::class,'data'])->withoutMiddleware("throttle:api")->name('Points_api_index2');
+Route::get('points',[App\Http\Controllers\API\PointController::class,'data1'])->withoutMiddleware("throttle:api")->name('Points_api_index');
+Route::post('points-Aggrid', [App\Http\Controllers\API\PointController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Points_api_aggrid');
+
+// la route de creation
+Route::post('points',[App\Http\Controllers\API\PointController::class,'create'])->withoutMiddleware("throttle:api")->name('Points_api_create');
+// la route d'edition
+Route::post('points/{Points}/update',[App\Http\Controllers\API\PointController::class,'update'])->withoutMiddleware("throttle:api")->name('Points_api_update');
+// la route de suppression
+Route::post('points/{Points}/delete',[App\Http\Controllers\API\PointController::class,'delete'])->withoutMiddleware("throttle:api")->name('Points_api_delete');
+// la route des actions
+Route::get('points/action',[App\Http\Controllers\API\PointController::class,'action'])->withoutMiddleware("throttle:api")->name('Points_api_delete');
+// la route des actions
+Route::post('points/action',[App\Http\Controllers\API\PointController::class,'action'])->withoutMiddleware("throttle:api")->name('Points_api_delete');
+
+
+
+//Route::resource('Positions',App\Http\Controllers\API\PositionController::class);
+// les routes d'affichage
+Route::get('positions/{key}/{val}',[App\Http\Controllers\API\PositionController::class,'data'])->withoutMiddleware("throttle:api")->name('Positions_api_index2');
+Route::get('positions',[App\Http\Controllers\API\PositionController::class,'data1'])->withoutMiddleware("throttle:api")->name('Positions_api_index');
+Route::post('positions-Aggrid', [App\Http\Controllers\API\PositionController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Positions_api_aggrid');
+
+// la route de creation
+Route::post('positions',[App\Http\Controllers\API\PositionController::class,'create'])->withoutMiddleware("throttle:api")->name('Positions_api_create');
+// la route d'edition
+Route::post('positions/{Positions}/update',[App\Http\Controllers\API\PositionController::class,'update'])->withoutMiddleware("throttle:api")->name('Positions_api_update');
+// la route de suppression
+Route::post('positions/{Positions}/delete',[App\Http\Controllers\API\PositionController::class,'delete'])->withoutMiddleware("throttle:api")->name('Positions_api_delete');
+// la route des actions
+Route::get('positions/action',[App\Http\Controllers\API\PositionController::class,'action'])->withoutMiddleware("throttle:api")->name('Positions_api_delete');
+// la route des actions
+Route::post('positions/action',[App\Http\Controllers\API\PositionController::class,'action'])->withoutMiddleware("throttle:api")->name('Positions_api_delete');
+
+
+
+//Route::resource('Postes',App\Http\Controllers\API\PosteController::class);
+// les routes d'affichage
+Route::get('postes/{key}/{val}',[App\Http\Controllers\API\PosteController::class,'data'])->withoutMiddleware("throttle:api")->name('Postes_api_index2');
+Route::get('postes',[App\Http\Controllers\API\PosteController::class,'data1'])->withoutMiddleware("throttle:api")->name('Postes_api_index');
+Route::post('postes-Aggrid', [App\Http\Controllers\API\PosteController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Postes_api_aggrid');
+
+// la route de creation
+Route::post('postes',[App\Http\Controllers\API\PosteController::class,'create'])->withoutMiddleware("throttle:api")->name('Postes_api_create');
+// la route d'edition
+Route::post('postes/{Postes}/update',[App\Http\Controllers\API\PosteController::class,'update'])->withoutMiddleware("throttle:api")->name('Postes_api_update');
+// la route de suppression
+Route::post('postes/{Postes}/delete',[App\Http\Controllers\API\PosteController::class,'delete'])->withoutMiddleware("throttle:api")->name('Postes_api_delete');
+// la route des actions
+Route::get('postes/action',[App\Http\Controllers\API\PosteController::class,'action'])->withoutMiddleware("throttle:api")->name('Postes_api_delete');
+// la route des actions
+Route::post('postes/action',[App\Http\Controllers\API\PosteController::class,'action'])->withoutMiddleware("throttle:api")->name('Postes_api_delete');
+
+
+
+//Route::resource('Postesarticles',App\Http\Controllers\API\PostesarticleController::class);
+// les routes d'affichage
+Route::get('postesarticles/{key}/{val}',[App\Http\Controllers\API\PostesarticleController::class,'data'])->withoutMiddleware("throttle:api")->name('Postesarticles_api_index2');
+Route::get('postesarticles',[App\Http\Controllers\API\PostesarticleController::class,'data1'])->withoutMiddleware("throttle:api")->name('Postesarticles_api_index');
+Route::post('postesarticles-Aggrid', [App\Http\Controllers\API\PostesarticleController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Postesarticles_api_aggrid');
+
+// la route de creation
+Route::post('postesarticles',[App\Http\Controllers\API\PostesarticleController::class,'create'])->withoutMiddleware("throttle:api")->name('Postesarticles_api_create');
+// la route d'edition
+Route::post('postesarticles/{Postesarticles}/update',[App\Http\Controllers\API\PostesarticleController::class,'update'])->withoutMiddleware("throttle:api")->name('Postesarticles_api_update');
+// la route de suppression
+Route::post('postesarticles/{Postesarticles}/delete',[App\Http\Controllers\API\PostesarticleController::class,'delete'])->withoutMiddleware("throttle:api")->name('Postesarticles_api_delete');
+// la route des actions
+Route::get('postesarticles/action',[App\Http\Controllers\API\PostesarticleController::class,'action'])->withoutMiddleware("throttle:api")->name('Postesarticles_api_delete');
+// la route des actions
+Route::post('postesarticles/action',[App\Http\Controllers\API\PostesarticleController::class,'action'])->withoutMiddleware("throttle:api")->name('Postesarticles_api_delete');
+
+
+
+//Route::resource('Postespointeuses',App\Http\Controllers\API\PostespointeuseController::class);
+// les routes d'affichage
+Route::get('postespointeuses/{key}/{val}',[App\Http\Controllers\API\PostespointeuseController::class,'data'])->withoutMiddleware("throttle:api")->name('Postespointeuses_api_index2');
+Route::get('postespointeuses',[App\Http\Controllers\API\PostespointeuseController::class,'data1'])->withoutMiddleware("throttle:api")->name('Postespointeuses_api_index');
+Route::post('postespointeuses-Aggrid', [App\Http\Controllers\API\PostespointeuseController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Postespointeuses_api_aggrid');
+
+// la route de creation
+Route::post('postespointeuses',[App\Http\Controllers\API\PostespointeuseController::class,'create'])->withoutMiddleware("throttle:api")->name('Postespointeuses_api_create');
+// la route d'edition
+Route::post('postespointeuses/{Postespointeuses}/update',[App\Http\Controllers\API\PostespointeuseController::class,'update'])->withoutMiddleware("throttle:api")->name('Postespointeuses_api_update');
+// la route de suppression
+Route::post('postespointeuses/{Postespointeuses}/delete',[App\Http\Controllers\API\PostespointeuseController::class,'delete'])->withoutMiddleware("throttle:api")->name('Postespointeuses_api_delete');
+// la route des actions
+Route::get('postespointeuses/action',[App\Http\Controllers\API\PostespointeuseController::class,'action'])->withoutMiddleware("throttle:api")->name('Postespointeuses_api_delete');
+// la route des actions
+Route::post('postespointeuses/action',[App\Http\Controllers\API\PostespointeuseController::class,'action'])->withoutMiddleware("throttle:api")->name('Postespointeuses_api_delete');
+
+
+
+//Route::resource('Presences',App\Http\Controllers\API\PresenceController::class);
+// les routes d'affichage
+Route::get('presences/{key}/{val}',[App\Http\Controllers\API\PresenceController::class,'data'])->withoutMiddleware("throttle:api")->name('Presences_api_index2');
+Route::get('presences',[App\Http\Controllers\API\PresenceController::class,'data1'])->withoutMiddleware("throttle:api")->name('Presences_api_index');
+Route::post('presences-Aggrid', [App\Http\Controllers\API\PresenceController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Presences_api_aggrid');
+
+// la route de creation
+Route::post('presences',[App\Http\Controllers\API\PresenceController::class,'create'])->withoutMiddleware("throttle:api")->name('Presences_api_create');
+// la route d'edition
+Route::post('presences/{Presences}/update',[App\Http\Controllers\API\PresenceController::class,'update'])->withoutMiddleware("throttle:api")->name('Presences_api_update');
+// la route de suppression
+Route::post('presences/{Presences}/delete',[App\Http\Controllers\API\PresenceController::class,'delete'])->withoutMiddleware("throttle:api")->name('Presences_api_delete');
+// la route des actions
+Route::get('presences/action',[App\Http\Controllers\API\PresenceController::class,'action'])->withoutMiddleware("throttle:api")->name('Presences_api_delete');
+// la route des actions
+Route::post('presences/action',[App\Http\Controllers\API\PresenceController::class,'action'])->withoutMiddleware("throttle:api")->name('Presences_api_delete');
+
+
+
+//Route::resource('Preuves',App\Http\Controllers\API\PreuveController::class);
+// les routes d'affichage
+Route::get('preuves/{key}/{val}',[App\Http\Controllers\API\PreuveController::class,'data'])->withoutMiddleware("throttle:api")->name('Preuves_api_index2');
+Route::get('preuves',[App\Http\Controllers\API\PreuveController::class,'data1'])->withoutMiddleware("throttle:api")->name('Preuves_api_index');
+Route::post('preuves-Aggrid', [App\Http\Controllers\API\PreuveController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Preuves_api_aggrid');
+
+// la route de creation
+Route::post('preuves',[App\Http\Controllers\API\PreuveController::class,'create'])->withoutMiddleware("throttle:api")->name('Preuves_api_create');
+// la route d'edition
+Route::post('preuves/{Preuves}/update',[App\Http\Controllers\API\PreuveController::class,'update'])->withoutMiddleware("throttle:api")->name('Preuves_api_update');
+// la route de suppression
+Route::post('preuves/{Preuves}/delete',[App\Http\Controllers\API\PreuveController::class,'delete'])->withoutMiddleware("throttle:api")->name('Preuves_api_delete');
+// la route des actions
+Route::get('preuves/action',[App\Http\Controllers\API\PreuveController::class,'action'])->withoutMiddleware("throttle:api")->name('Preuves_api_delete');
+// la route des actions
+Route::post('preuves/action',[App\Http\Controllers\API\PreuveController::class,'action'])->withoutMiddleware("throttle:api")->name('Preuves_api_delete');
+
+
+
+//Route::resource('Programmations',App\Http\Controllers\API\ProgrammationController::class);
+// les routes d'affichage
+Route::get('programmations/{key}/{val}',[App\Http\Controllers\API\ProgrammationController::class,'data'])->withoutMiddleware("throttle:api")->name('Programmations_api_index2');
+Route::get('programmations',[App\Http\Controllers\API\ProgrammationController::class,'data1'])->withoutMiddleware("throttle:api")->name('Programmations_api_index');
+Route::post('programmations-Aggrid', [App\Http\Controllers\API\ProgrammationController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Programmations_api_aggrid');
+
+// la route de creation
+Route::post('programmations',[App\Http\Controllers\API\ProgrammationController::class,'create'])->withoutMiddleware("throttle:api")->name('Programmations_api_create');
+// la route d'edition
+Route::post('programmations/{Programmations}/update',[App\Http\Controllers\API\ProgrammationController::class,'update'])->withoutMiddleware("throttle:api")->name('Programmations_api_update');
+// la route de suppression
+Route::post('programmations/{Programmations}/delete',[App\Http\Controllers\API\ProgrammationController::class,'delete'])->withoutMiddleware("throttle:api")->name('Programmations_api_delete');
+// la route des actions
+Route::get('programmations/action',[App\Http\Controllers\API\ProgrammationController::class,'action'])->withoutMiddleware("throttle:api")->name('Programmations_api_delete');
+// la route des actions
+Route::post('programmations/action',[App\Http\Controllers\API\ProgrammationController::class,'action'])->withoutMiddleware("throttle:api")->name('Programmations_api_delete');
+
+
+
+//Route::resource('Programmationsdetails',App\Http\Controllers\API\ProgrammationsdetailController::class);
+// les routes d'affichage
+Route::get('programmationsdetails/{key}/{val}',[App\Http\Controllers\API\ProgrammationsdetailController::class,'data'])->withoutMiddleware("throttle:api")->name('Programmationsdetails_api_index2');
+Route::get('programmationsdetails',[App\Http\Controllers\API\ProgrammationsdetailController::class,'data1'])->withoutMiddleware("throttle:api")->name('Programmationsdetails_api_index');
+Route::post('programmationsdetails-Aggrid', [App\Http\Controllers\API\ProgrammationsdetailController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Programmationsdetails_api_aggrid');
+
+// la route de creation
+Route::post('programmationsdetails',[App\Http\Controllers\API\ProgrammationsdetailController::class,'create'])->withoutMiddleware("throttle:api")->name('Programmationsdetails_api_create');
+// la route d'edition
+Route::post('programmationsdetails/{Programmationsdetails}/update',[App\Http\Controllers\API\ProgrammationsdetailController::class,'update'])->withoutMiddleware("throttle:api")->name('Programmationsdetails_api_update');
+// la route de suppression
+Route::post('programmationsdetails/{Programmationsdetails}/delete',[App\Http\Controllers\API\ProgrammationsdetailController::class,'delete'])->withoutMiddleware("throttle:api")->name('Programmationsdetails_api_delete');
+// la route des actions
+Route::get('programmationsdetails/action',[App\Http\Controllers\API\ProgrammationsdetailController::class,'action'])->withoutMiddleware("throttle:api")->name('Programmationsdetails_api_delete');
+// la route des actions
+Route::post('programmationsdetails/action',[App\Http\Controllers\API\ProgrammationsdetailController::class,'action'])->withoutMiddleware("throttle:api")->name('Programmationsdetails_api_delete');
+
+
+
+//Route::resource('Programmes',App\Http\Controllers\API\ProgrammeController::class);
+// les routes d'affichage
+Route::get('programmes/{key}/{val}',[App\Http\Controllers\API\ProgrammeController::class,'data'])->withoutMiddleware("throttle:api")->name('Programmes_api_index2');
+Route::get('programmes',[App\Http\Controllers\API\ProgrammeController::class,'data1'])->withoutMiddleware("throttle:api")->name('Programmes_api_index');
+Route::post('programmes-Aggrid', [App\Http\Controllers\API\ProgrammeController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Programmes_api_aggrid');
+
+// la route de creation
+Route::post('programmes',[App\Http\Controllers\API\ProgrammeController::class,'create'])->withoutMiddleware("throttle:api")->name('Programmes_api_create');
+// la route d'edition
+Route::post('programmes/{Programmes}/update',[App\Http\Controllers\API\ProgrammeController::class,'update'])->withoutMiddleware("throttle:api")->name('Programmes_api_update');
+// la route de suppression
+Route::post('programmes/{Programmes}/delete',[App\Http\Controllers\API\ProgrammeController::class,'delete'])->withoutMiddleware("throttle:api")->name('Programmes_api_delete');
+// la route des actions
+Route::get('programmes/action',[App\Http\Controllers\API\ProgrammeController::class,'action'])->withoutMiddleware("throttle:api")->name('Programmes_api_delete');
+// la route des actions
+Route::post('programmes/action',[App\Http\Controllers\API\ProgrammeController::class,'action'])->withoutMiddleware("throttle:api")->name('Programmes_api_delete');
+
+
+
+//Route::resource('Projets',App\Http\Controllers\API\ProjetController::class);
+// les routes d'affichage
+Route::get('projets/{key}/{val}',[App\Http\Controllers\API\ProjetController::class,'data'])->withoutMiddleware("throttle:api")->name('Projets_api_index2');
+Route::get('projets',[App\Http\Controllers\API\ProjetController::class,'data1'])->withoutMiddleware("throttle:api")->name('Projets_api_index');
+Route::post('projets-Aggrid', [App\Http\Controllers\API\ProjetController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Projets_api_aggrid');
+
+// la route de creation
+Route::post('projets',[App\Http\Controllers\API\ProjetController::class,'create'])->withoutMiddleware("throttle:api")->name('Projets_api_create');
+// la route d'edition
+Route::post('projets/{Projets}/update',[App\Http\Controllers\API\ProjetController::class,'update'])->withoutMiddleware("throttle:api")->name('Projets_api_update');
+// la route de suppression
+Route::post('projets/{Projets}/delete',[App\Http\Controllers\API\ProjetController::class,'delete'])->withoutMiddleware("throttle:api")->name('Projets_api_delete');
+// la route des actions
+Route::get('projets/action',[App\Http\Controllers\API\ProjetController::class,'action'])->withoutMiddleware("throttle:api")->name('Projets_api_delete');
+// la route des actions
+Route::post('projets/action',[App\Http\Controllers\API\ProjetController::class,'action'])->withoutMiddleware("throttle:api")->name('Projets_api_delete');
+
+
+
+//Route::resource('Provinces',App\Http\Controllers\API\ProvinceController::class);
+// les routes d'affichage
+Route::get('provinces/{key}/{val}',[App\Http\Controllers\API\ProvinceController::class,'data'])->withoutMiddleware("throttle:api")->name('Provinces_api_index2');
+Route::get('provinces',[App\Http\Controllers\API\ProvinceController::class,'data1'])->withoutMiddleware("throttle:api")->name('Provinces_api_index');
+Route::post('provinces-Aggrid', [App\Http\Controllers\API\ProvinceController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Provinces_api_aggrid');
+
+// la route de creation
+Route::post('provinces',[App\Http\Controllers\API\ProvinceController::class,'create'])->withoutMiddleware("throttle:api")->name('Provinces_api_create');
+// la route d'edition
+Route::post('provinces/{Provinces}/update',[App\Http\Controllers\API\ProvinceController::class,'update'])->withoutMiddleware("throttle:api")->name('Provinces_api_update');
+// la route de suppression
+Route::post('provinces/{Provinces}/delete',[App\Http\Controllers\API\ProvinceController::class,'delete'])->withoutMiddleware("throttle:api")->name('Provinces_api_delete');
+// la route des actions
+Route::get('provinces/action',[App\Http\Controllers\API\ProvinceController::class,'action'])->withoutMiddleware("throttle:api")->name('Provinces_api_delete');
+// la route des actions
+Route::post('provinces/action',[App\Http\Controllers\API\ProvinceController::class,'action'])->withoutMiddleware("throttle:api")->name('Provinces_api_delete');
+
+
+
+//Route::resource('Rapportpostes',App\Http\Controllers\API\RapportposteController::class);
+// les routes d'affichage
+Route::get('rapportpostes/{key}/{val}',[App\Http\Controllers\API\RapportposteController::class,'data'])->withoutMiddleware("throttle:api")->name('Rapportpostes_api_index2');
+Route::get('rapportpostes',[App\Http\Controllers\API\RapportposteController::class,'data1'])->withoutMiddleware("throttle:api")->name('Rapportpostes_api_index');
+Route::post('rapportpostes-Aggrid', [App\Http\Controllers\API\RapportposteController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Rapportpostes_api_aggrid');
+
+// la route de creation
+Route::post('rapportpostes',[App\Http\Controllers\API\RapportposteController::class,'create'])->withoutMiddleware("throttle:api")->name('Rapportpostes_api_create');
+// la route d'edition
+Route::post('rapportpostes/{Rapportpostes}/update',[App\Http\Controllers\API\RapportposteController::class,'update'])->withoutMiddleware("throttle:api")->name('Rapportpostes_api_update');
+// la route de suppression
+Route::post('rapportpostes/{Rapportpostes}/delete',[App\Http\Controllers\API\RapportposteController::class,'delete'])->withoutMiddleware("throttle:api")->name('Rapportpostes_api_delete');
+// la route des actions
+Route::get('rapportpostes/action',[App\Http\Controllers\API\RapportposteController::class,'action'])->withoutMiddleware("throttle:api")->name('Rapportpostes_api_delete');
+// la route des actions
+Route::post('rapportpostes/action',[App\Http\Controllers\API\RapportposteController::class,'action'])->withoutMiddleware("throttle:api")->name('Rapportpostes_api_delete');
+
+
+
+//Route::resource('Rapports',App\Http\Controllers\API\RapportController::class);
+// les routes d'affichage
+Route::get('rapports/{key}/{val}',[App\Http\Controllers\API\RapportController::class,'data'])->withoutMiddleware("throttle:api")->name('Rapports_api_index2');
+Route::get('rapports',[App\Http\Controllers\API\RapportController::class,'data1'])->withoutMiddleware("throttle:api")->name('Rapports_api_index');
+Route::post('rapports-Aggrid', [App\Http\Controllers\API\RapportController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Rapports_api_aggrid');
+
+// la route de creation
+Route::post('rapports',[App\Http\Controllers\API\RapportController::class,'create'])->withoutMiddleware("throttle:api")->name('Rapports_api_create');
+// la route d'edition
+Route::post('rapports/{Rapports}/update',[App\Http\Controllers\API\RapportController::class,'update'])->withoutMiddleware("throttle:api")->name('Rapports_api_update');
+// la route de suppression
+Route::post('rapports/{Rapports}/delete',[App\Http\Controllers\API\RapportController::class,'delete'])->withoutMiddleware("throttle:api")->name('Rapports_api_delete');
+// la route des actions
+Route::get('rapports/action',[App\Http\Controllers\API\RapportController::class,'action'])->withoutMiddleware("throttle:api")->name('Rapports_api_delete');
+// la route des actions
+Route::post('rapports/action',[App\Http\Controllers\API\RapportController::class,'action'])->withoutMiddleware("throttle:api")->name('Rapports_api_delete');
+
+
+
+//Route::resource('Role_has_permission',App\Http\Controllers\API\RoleHasPermisionController::class);
+// les routes d'affichage
+Route::get('role_has_permission/{key}/{val}',[App\Http\Controllers\API\RoleHasPermisionController::class,'data'])->withoutMiddleware("throttle:api")->name('Role_has_permission_api_index2');
+Route::get('role_has_permission',[App\Http\Controllers\API\RoleHasPermisionController::class,'data1'])->withoutMiddleware("throttle:api")->name('Role_has_permission_api_index');
+Route::post('role_has_permission-Aggrid', [App\Http\Controllers\API\RoleHasPermisionController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Role_has_permission_api_aggrid');
+
+// la route de creation
+Route::post('role_has_permission',[App\Http\Controllers\API\RoleHasPermisionController::class,'create'])->withoutMiddleware("throttle:api")->name('Role_has_permission_api_create');
+// la route d'edition
+Route::post('role_has_permission/{Role_has_permission}/update',[App\Http\Controllers\API\RoleHasPermisionController::class,'update'])->withoutMiddleware("throttle:api")->name('Role_has_permission_api_update');
+// la route de suppression
+Route::post('role_has_permission/{Role_has_permission}/delete',[App\Http\Controllers\API\RoleHasPermisionController::class,'delete'])->withoutMiddleware("throttle:api")->name('Role_has_permission_api_delete');
+// la route des actions
+Route::get('role_has_permission/action',[App\Http\Controllers\API\RoleHasPermisionController::class,'action'])->withoutMiddleware("throttle:api")->name('Role_has_permission_api_delete');
+// la route des actions
+Route::post('role_has_permission/action',[App\Http\Controllers\API\RoleHasPermisionController::class,'action'])->withoutMiddleware("throttle:api")->name('Role_has_permission_api_delete');
+
+
+
+//Route::resource('Role_has_permissions',App\Http\Controllers\API\RoleHasPermissionController::class);
+// les routes d'affichage
+Route::get('role_has_permissions/{key}/{val}',[App\Http\Controllers\API\RoleHasPermissionController::class,'data'])->withoutMiddleware("throttle:api")->name('Role_has_permissions_api_index2');
+Route::get('role_has_permissions',[App\Http\Controllers\API\RoleHasPermissionController::class,'data1'])->withoutMiddleware("throttle:api")->name('Role_has_permissions_api_index');
+Route::post('role_has_permissions-Aggrid', [App\Http\Controllers\API\RoleHasPermissionController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Role_has_permissions_api_aggrid');
+
+// la route de creation
+Route::post('role_has_permissions',[App\Http\Controllers\API\RoleHasPermissionController::class,'create'])->withoutMiddleware("throttle:api")->name('Role_has_permissions_api_create');
+// la route d'edition
+Route::post('role_has_permissions/{Role_has_permissions}/update',[App\Http\Controllers\API\RoleHasPermissionController::class,'update'])->withoutMiddleware("throttle:api")->name('Role_has_permissions_api_update');
+// la route de suppression
+Route::post('role_has_permissions/{Role_has_permissions}/delete',[App\Http\Controllers\API\RoleHasPermissionController::class,'delete'])->withoutMiddleware("throttle:api")->name('Role_has_permissions_api_delete');
+// la route des actions
+Route::get('role_has_permissions/action',[App\Http\Controllers\API\RoleHasPermissionController::class,'action'])->withoutMiddleware("throttle:api")->name('Role_has_permissions_api_delete');
+// la route des actions
+Route::post('role_has_permissions/action',[App\Http\Controllers\API\RoleHasPermissionController::class,'action'])->withoutMiddleware("throttle:api")->name('Role_has_permissions_api_delete');
+
+
+
+//Route::resource('Roles',App\Http\Controllers\API\RoleController::class);
+// les routes d'affichage
+Route::get('roles/{key}/{val}',[App\Http\Controllers\API\RoleController::class,'data'])->withoutMiddleware("throttle:api")->name('Roles_api_index2');
+Route::get('roles',[App\Http\Controllers\API\RoleController::class,'data1'])->withoutMiddleware("throttle:api")->name('Roles_api_index');
+Route::post('roles-Aggrid', [App\Http\Controllers\API\RoleController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Roles_api_aggrid');
+
+// la route de creation
+Route::post('roles',[App\Http\Controllers\API\RoleController::class,'create'])->withoutMiddleware("throttle:api")->name('Roles_api_create');
+// la route d'edition
+Route::post('roles/{Roles}/update',[App\Http\Controllers\API\RoleController::class,'update'])->withoutMiddleware("throttle:api")->name('Roles_api_update');
+// la route de suppression
+Route::post('roles/{Roles}/delete',[App\Http\Controllers\API\RoleController::class,'delete'])->withoutMiddleware("throttle:api")->name('Roles_api_delete');
+// la route des actions
+Route::get('roles/action',[App\Http\Controllers\API\RoleController::class,'action'])->withoutMiddleware("throttle:api")->name('Roles_api_delete');
+// la route des actions
+Route::post('roles/action',[App\Http\Controllers\API\RoleController::class,'action'])->withoutMiddleware("throttle:api")->name('Roles_api_delete');
+
+
+
+//Route::resource('Services',App\Http\Controllers\API\ServiceController::class);
+// les routes d'affichage
+Route::get('services/{key}/{val}',[App\Http\Controllers\API\ServiceController::class,'data'])->withoutMiddleware("throttle:api")->name('Services_api_index2');
+Route::get('services',[App\Http\Controllers\API\ServiceController::class,'data1'])->withoutMiddleware("throttle:api")->name('Services_api_index');
+Route::post('services-Aggrid', [App\Http\Controllers\API\ServiceController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Services_api_aggrid');
+
+// la route de creation
+Route::post('services',[App\Http\Controllers\API\ServiceController::class,'create'])->withoutMiddleware("throttle:api")->name('Services_api_create');
+// la route d'edition
+Route::post('services/{Services}/update',[App\Http\Controllers\API\ServiceController::class,'update'])->withoutMiddleware("throttle:api")->name('Services_api_update');
+// la route de suppression
+Route::post('services/{Services}/delete',[App\Http\Controllers\API\ServiceController::class,'delete'])->withoutMiddleware("throttle:api")->name('Services_api_delete');
+// la route des actions
+Route::get('services/action',[App\Http\Controllers\API\ServiceController::class,'action'])->withoutMiddleware("throttle:api")->name('Services_api_delete');
+// la route des actions
+Route::post('services/action',[App\Http\Controllers\API\ServiceController::class,'action'])->withoutMiddleware("throttle:api")->name('Services_api_delete');
+
+
+
+//Route::resource('Sexes',App\Http\Controllers\API\SexeController::class);
+// les routes d'affichage
+Route::get('sexes/{key}/{val}',[App\Http\Controllers\API\SexeController::class,'data'])->withoutMiddleware("throttle:api")->name('Sexes_api_index2');
+Route::get('sexes',[App\Http\Controllers\API\SexeController::class,'data1'])->withoutMiddleware("throttle:api")->name('Sexes_api_index');
+Route::post('sexes-Aggrid', [App\Http\Controllers\API\SexeController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Sexes_api_aggrid');
+
+// la route de creation
+Route::post('sexes',[App\Http\Controllers\API\SexeController::class,'create'])->withoutMiddleware("throttle:api")->name('Sexes_api_create');
+// la route d'edition
+Route::post('sexes/{Sexes}/update',[App\Http\Controllers\API\SexeController::class,'update'])->withoutMiddleware("throttle:api")->name('Sexes_api_update');
+// la route de suppression
+Route::post('sexes/{Sexes}/delete',[App\Http\Controllers\API\SexeController::class,'delete'])->withoutMiddleware("throttle:api")->name('Sexes_api_delete');
+// la route des actions
+Route::get('sexes/action',[App\Http\Controllers\API\SexeController::class,'action'])->withoutMiddleware("throttle:api")->name('Sexes_api_delete');
+// la route des actions
+Route::post('sexes/action',[App\Http\Controllers\API\SexeController::class,'action'])->withoutMiddleware("throttle:api")->name('Sexes_api_delete');
+
+
+
+//Route::resource('Sites',App\Http\Controllers\API\SiteController::class);
+// les routes d'affichage
+Route::get('sites/{key}/{val}',[App\Http\Controllers\API\SiteController::class,'data'])->withoutMiddleware("throttle:api")->name('Sites_api_index2');
+Route::get('sites',[App\Http\Controllers\API\SiteController::class,'data1'])->withoutMiddleware("throttle:api")->name('Sites_api_index');
+Route::post('sites-Aggrid', [App\Http\Controllers\API\SiteController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Sites_api_aggrid');
+
+// la route de creation
+Route::post('sites',[App\Http\Controllers\API\SiteController::class,'create'])->withoutMiddleware("throttle:api")->name('Sites_api_create');
+// la route d'edition
+Route::post('sites/{Sites}/update',[App\Http\Controllers\API\SiteController::class,'update'])->withoutMiddleware("throttle:api")->name('Sites_api_update');
+// la route de suppression
+Route::post('sites/{Sites}/delete',[App\Http\Controllers\API\SiteController::class,'delete'])->withoutMiddleware("throttle:api")->name('Sites_api_delete');
+// la route des actions
+Route::get('sites/action',[App\Http\Controllers\API\SiteController::class,'action'])->withoutMiddleware("throttle:api")->name('Sites_api_delete');
+// la route des actions
+Route::post('sites/action',[App\Http\Controllers\API\SiteController::class,'action'])->withoutMiddleware("throttle:api")->name('Sites_api_delete');
+
+
+
+//Route::resource('Sitespointeuses',App\Http\Controllers\API\SitespointeuseController::class);
+// les routes d'affichage
+Route::get('sitespointeuses/{key}/{val}',[App\Http\Controllers\API\SitespointeuseController::class,'data'])->withoutMiddleware("throttle:api")->name('Sitespointeuses_api_index2');
+Route::get('sitespointeuses',[App\Http\Controllers\API\SitespointeuseController::class,'data1'])->withoutMiddleware("throttle:api")->name('Sitespointeuses_api_index');
+Route::post('sitespointeuses-Aggrid', [App\Http\Controllers\API\SitespointeuseController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Sitespointeuses_api_aggrid');
+
+// la route de creation
+Route::post('sitespointeuses',[App\Http\Controllers\API\SitespointeuseController::class,'create'])->withoutMiddleware("throttle:api")->name('Sitespointeuses_api_create');
+// la route d'edition
+Route::post('sitespointeuses/{Sitespointeuses}/update',[App\Http\Controllers\API\SitespointeuseController::class,'update'])->withoutMiddleware("throttle:api")->name('Sitespointeuses_api_update');
+// la route de suppression
+Route::post('sitespointeuses/{Sitespointeuses}/delete',[App\Http\Controllers\API\SitespointeuseController::class,'delete'])->withoutMiddleware("throttle:api")->name('Sitespointeuses_api_delete');
+// la route des actions
+Route::get('sitespointeuses/action',[App\Http\Controllers\API\SitespointeuseController::class,'action'])->withoutMiddleware("throttle:api")->name('Sitespointeuses_api_delete');
+// la route des actions
+Route::post('sitespointeuses/action',[App\Http\Controllers\API\SitespointeuseController::class,'action'])->withoutMiddleware("throttle:api")->name('Sitespointeuses_api_delete');
+
+
+
+//Route::resource('Sitessdeplacements',App\Http\Controllers\API\SitessdeplacementController::class);
+// les routes d'affichage
+Route::get('sitessdeplacements/{key}/{val}',[App\Http\Controllers\API\SitessdeplacementController::class,'data'])->withoutMiddleware("throttle:api")->name('Sitessdeplacements_api_index2');
+Route::get('sitessdeplacements',[App\Http\Controllers\API\SitessdeplacementController::class,'data1'])->withoutMiddleware("throttle:api")->name('Sitessdeplacements_api_index');
+Route::post('sitessdeplacements-Aggrid', [App\Http\Controllers\API\SitessdeplacementController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Sitessdeplacements_api_aggrid');
+
+// la route de creation
+Route::post('sitessdeplacements',[App\Http\Controllers\API\SitessdeplacementController::class,'create'])->withoutMiddleware("throttle:api")->name('Sitessdeplacements_api_create');
+// la route d'edition
+Route::post('sitessdeplacements/{Sitessdeplacements}/update',[App\Http\Controllers\API\SitessdeplacementController::class,'update'])->withoutMiddleware("throttle:api")->name('Sitessdeplacements_api_update');
+// la route de suppression
+Route::post('sitessdeplacements/{Sitessdeplacements}/delete',[App\Http\Controllers\API\SitessdeplacementController::class,'delete'])->withoutMiddleware("throttle:api")->name('Sitessdeplacements_api_delete');
+// la route des actions
+Route::get('sitessdeplacements/action',[App\Http\Controllers\API\SitessdeplacementController::class,'action'])->withoutMiddleware("throttle:api")->name('Sitessdeplacements_api_delete');
+// la route des actions
+Route::post('sitessdeplacements/action',[App\Http\Controllers\API\SitessdeplacementController::class,'action'])->withoutMiddleware("throttle:api")->name('Sitessdeplacements_api_delete');
+
+
+
+//Route::resource('Situations',App\Http\Controllers\API\SituationController::class);
+// les routes d'affichage
+Route::get('situations/{key}/{val}',[App\Http\Controllers\API\SituationController::class,'data'])->withoutMiddleware("throttle:api")->name('Situations_api_index2');
+Route::get('situations',[App\Http\Controllers\API\SituationController::class,'data1'])->withoutMiddleware("throttle:api")->name('Situations_api_index');
+Route::post('situations-Aggrid', [App\Http\Controllers\API\SituationController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Situations_api_aggrid');
+
+// la route de creation
+Route::post('situations',[App\Http\Controllers\API\SituationController::class,'create'])->withoutMiddleware("throttle:api")->name('Situations_api_create');
+// la route d'edition
+Route::post('situations/{Situations}/update',[App\Http\Controllers\API\SituationController::class,'update'])->withoutMiddleware("throttle:api")->name('Situations_api_update');
+// la route de suppression
+Route::post('situations/{Situations}/delete',[App\Http\Controllers\API\SituationController::class,'delete'])->withoutMiddleware("throttle:api")->name('Situations_api_delete');
+// la route des actions
+Route::get('situations/action',[App\Http\Controllers\API\SituationController::class,'action'])->withoutMiddleware("throttle:api")->name('Situations_api_delete');
+// la route des actions
+Route::post('situations/action',[App\Http\Controllers\API\SituationController::class,'action'])->withoutMiddleware("throttle:api")->name('Situations_api_delete');
+
+
+
+//Route::resource('Soldables',App\Http\Controllers\API\SoldableController::class);
+// les routes d'affichage
+Route::get('soldables/{key}/{val}',[App\Http\Controllers\API\SoldableController::class,'data'])->withoutMiddleware("throttle:api")->name('Soldables_api_index2');
+Route::get('soldables',[App\Http\Controllers\API\SoldableController::class,'data1'])->withoutMiddleware("throttle:api")->name('Soldables_api_index');
+Route::post('soldables-Aggrid', [App\Http\Controllers\API\SoldableController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Soldables_api_aggrid');
+
+// la route de creation
+Route::post('soldables',[App\Http\Controllers\API\SoldableController::class,'create'])->withoutMiddleware("throttle:api")->name('Soldables_api_create');
+// la route d'edition
+Route::post('soldables/{Soldables}/update',[App\Http\Controllers\API\SoldableController::class,'update'])->withoutMiddleware("throttle:api")->name('Soldables_api_update');
+// la route de suppression
+Route::post('soldables/{Soldables}/delete',[App\Http\Controllers\API\SoldableController::class,'delete'])->withoutMiddleware("throttle:api")->name('Soldables_api_delete');
+// la route des actions
+Route::get('soldables/action',[App\Http\Controllers\API\SoldableController::class,'action'])->withoutMiddleware("throttle:api")->name('Soldables_api_delete');
+// la route des actions
+Route::post('soldables/action',[App\Http\Controllers\API\SoldableController::class,'action'])->withoutMiddleware("throttle:api")->name('Soldables_api_delete');
+
+
+
+//Route::resource('Statszones',App\Http\Controllers\API\StatszoneController::class);
+// les routes d'affichage
+Route::get('statszones/{key}/{val}',[App\Http\Controllers\API\StatszoneController::class,'data'])->withoutMiddleware("throttle:api")->name('Statszones_api_index2');
+Route::get('statszones',[App\Http\Controllers\API\StatszoneController::class,'data1'])->withoutMiddleware("throttle:api")->name('Statszones_api_index');
+Route::post('statszones-Aggrid', [App\Http\Controllers\API\StatszoneController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Statszones_api_aggrid');
+
+// la route de creation
+Route::post('statszones',[App\Http\Controllers\API\StatszoneController::class,'create'])->withoutMiddleware("throttle:api")->name('Statszones_api_create');
+// la route d'edition
+Route::post('statszones/{Statszones}/update',[App\Http\Controllers\API\StatszoneController::class,'update'])->withoutMiddleware("throttle:api")->name('Statszones_api_update');
+// la route de suppression
+Route::post('statszones/{Statszones}/delete',[App\Http\Controllers\API\StatszoneController::class,'delete'])->withoutMiddleware("throttle:api")->name('Statszones_api_delete');
+// la route des actions
+Route::get('statszones/action',[App\Http\Controllers\API\StatszoneController::class,'action'])->withoutMiddleware("throttle:api")->name('Statszones_api_delete');
+// la route des actions
+Route::post('statszones/action',[App\Http\Controllers\API\StatszoneController::class,'action'])->withoutMiddleware("throttle:api")->name('Statszones_api_delete');
+
+
+
+//Route::resource('Surveillances',App\Http\Controllers\API\SurveillanceController::class);
+// les routes d'affichage
+Route::get('surveillances/{key}/{val}',[App\Http\Controllers\API\SurveillanceController::class,'data'])->withoutMiddleware("throttle:api")->name('Surveillances_api_index2');
+Route::get('surveillances',[App\Http\Controllers\API\SurveillanceController::class,'data1'])->withoutMiddleware("throttle:api")->name('Surveillances_api_index');
+Route::post('surveillances-Aggrid', [App\Http\Controllers\API\SurveillanceController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Surveillances_api_aggrid');
+
+// la route de creation
+Route::post('surveillances',[App\Http\Controllers\API\SurveillanceController::class,'create'])->withoutMiddleware("throttle:api")->name('Surveillances_api_create');
+// la route d'edition
+Route::post('surveillances/{Surveillances}/update',[App\Http\Controllers\API\SurveillanceController::class,'update'])->withoutMiddleware("throttle:api")->name('Surveillances_api_update');
+// la route de suppression
+Route::post('surveillances/{Surveillances}/delete',[App\Http\Controllers\API\SurveillanceController::class,'delete'])->withoutMiddleware("throttle:api")->name('Surveillances_api_delete');
+// la route des actions
+Route::get('surveillances/action',[App\Http\Controllers\API\SurveillanceController::class,'action'])->withoutMiddleware("throttle:api")->name('Surveillances_api_delete');
+// la route des actions
+Route::post('surveillances/action',[App\Http\Controllers\API\SurveillanceController::class,'action'])->withoutMiddleware("throttle:api")->name('Surveillances_api_delete');
+
+
+
+//Route::resource('Switchsusers',App\Http\Controllers\API\SwitchsuserController::class);
+// les routes d'affichage
+Route::get('switchsusers/{key}/{val}',[App\Http\Controllers\API\SwitchsuserController::class,'data'])->withoutMiddleware("throttle:api")->name('Switchsusers_api_index2');
+Route::get('switchsusers',[App\Http\Controllers\API\SwitchsuserController::class,'data1'])->withoutMiddleware("throttle:api")->name('Switchsusers_api_index');
+Route::post('switchsusers-Aggrid', [App\Http\Controllers\API\SwitchsuserController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Switchsusers_api_aggrid');
+
+// la route de creation
+Route::post('switchsusers',[App\Http\Controllers\API\SwitchsuserController::class,'create'])->withoutMiddleware("throttle:api")->name('Switchsusers_api_create');
+// la route d'edition
+Route::post('switchsusers/{Switchsusers}/update',[App\Http\Controllers\API\SwitchsuserController::class,'update'])->withoutMiddleware("throttle:api")->name('Switchsusers_api_update');
+// la route de suppression
+Route::post('switchsusers/{Switchsusers}/delete',[App\Http\Controllers\API\SwitchsuserController::class,'delete'])->withoutMiddleware("throttle:api")->name('Switchsusers_api_delete');
+// la route des actions
+Route::get('switchsusers/action',[App\Http\Controllers\API\SwitchsuserController::class,'action'])->withoutMiddleware("throttle:api")->name('Switchsusers_api_delete');
+// la route des actions
+Route::post('switchsusers/action',[App\Http\Controllers\API\SwitchsuserController::class,'action'])->withoutMiddleware("throttle:api")->name('Switchsusers_api_delete');
+
+
+
+//Route::resource('Terminals',App\Http\Controllers\API\TerminalController::class);
+// les routes d'affichage
+Route::get('terminals/{key}/{val}',[App\Http\Controllers\API\TerminalController::class,'data'])->withoutMiddleware("throttle:api")->name('Terminals_api_index2');
+Route::get('terminals',[App\Http\Controllers\API\TerminalController::class,'data1'])->withoutMiddleware("throttle:api")->name('Terminals_api_index');
+Route::post('terminals-Aggrid', [App\Http\Controllers\API\TerminalController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Terminals_api_aggrid');
+
+// la route de creation
+Route::post('terminals',[App\Http\Controllers\API\TerminalController::class,'create'])->withoutMiddleware("throttle:api")->name('Terminals_api_create');
+// la route d'edition
+Route::post('terminals/{Terminals}/update',[App\Http\Controllers\API\TerminalController::class,'update'])->withoutMiddleware("throttle:api")->name('Terminals_api_update');
+// la route de suppression
+Route::post('terminals/{Terminals}/delete',[App\Http\Controllers\API\TerminalController::class,'delete'])->withoutMiddleware("throttle:api")->name('Terminals_api_delete');
+// la route des actions
+Route::get('terminals/action',[App\Http\Controllers\API\TerminalController::class,'action'])->withoutMiddleware("throttle:api")->name('Terminals_api_delete');
+// la route des actions
+Route::post('terminals/action',[App\Http\Controllers\API\TerminalController::class,'action'])->withoutMiddleware("throttle:api")->name('Terminals_api_delete');
+
+
+
+//Route::resource('Trackings',App\Http\Controllers\API\TrackingController::class);
+// les routes d'affichage
+Route::get('trackings/{key}/{val}',[App\Http\Controllers\API\TrackingController::class,'data'])->withoutMiddleware("throttle:api")->name('Trackings_api_index2');
+Route::get('trackings',[App\Http\Controllers\API\TrackingController::class,'data1'])->withoutMiddleware("throttle:api")->name('Trackings_api_index');
+Route::post('trackings-Aggrid', [App\Http\Controllers\API\TrackingController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Trackings_api_aggrid');
+
+// la route de creation
+Route::post('trackings',[App\Http\Controllers\API\TrackingController::class,'create'])->withoutMiddleware("throttle:api")->name('Trackings_api_create');
+// la route d'edition
+Route::post('trackings/{Trackings}/update',[App\Http\Controllers\API\TrackingController::class,'update'])->withoutMiddleware("throttle:api")->name('Trackings_api_update');
+// la route de suppression
+Route::post('trackings/{Trackings}/delete',[App\Http\Controllers\API\TrackingController::class,'delete'])->withoutMiddleware("throttle:api")->name('Trackings_api_delete');
+// la route des actions
+Route::get('trackings/action',[App\Http\Controllers\API\TrackingController::class,'action'])->withoutMiddleware("throttle:api")->name('Trackings_api_delete');
+// la route des actions
+Route::post('trackings/action',[App\Http\Controllers\API\TrackingController::class,'action'])->withoutMiddleware("throttle:api")->name('Trackings_api_delete');
+
+
+
+//Route::resource('Traitements',App\Http\Controllers\API\TraitementController::class);
+// les routes d'affichage
+Route::get('traitements/{key}/{val}',[App\Http\Controllers\API\TraitementController::class,'data'])->withoutMiddleware("throttle:api")->name('Traitements_api_index2');
+Route::get('traitements',[App\Http\Controllers\API\TraitementController::class,'data1'])->withoutMiddleware("throttle:api")->name('Traitements_api_index');
+Route::post('traitements-Aggrid', [App\Http\Controllers\API\TraitementController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Traitements_api_aggrid');
+
+// la route de creation
+Route::post('traitements',[App\Http\Controllers\API\TraitementController::class,'create'])->withoutMiddleware("throttle:api")->name('Traitements_api_create');
+// la route d'edition
+Route::post('traitements/{Traitements}/update',[App\Http\Controllers\API\TraitementController::class,'update'])->withoutMiddleware("throttle:api")->name('Traitements_api_update');
+// la route de suppression
+Route::post('traitements/{Traitements}/delete',[App\Http\Controllers\API\TraitementController::class,'delete'])->withoutMiddleware("throttle:api")->name('Traitements_api_delete');
+// la route des actions
+Route::get('traitements/action',[App\Http\Controllers\API\TraitementController::class,'action'])->withoutMiddleware("throttle:api")->name('Traitements_api_delete');
+// la route des actions
+Route::post('traitements/action',[App\Http\Controllers\API\TraitementController::class,'action'])->withoutMiddleware("throttle:api")->name('Traitements_api_delete');
+
+
+
+//Route::resource('Trajets',App\Http\Controllers\API\TrajetController::class);
+// les routes d'affichage
+Route::get('trajets/{key}/{val}',[App\Http\Controllers\API\TrajetController::class,'data'])->withoutMiddleware("throttle:api")->name('Trajets_api_index2');
+Route::get('trajets',[App\Http\Controllers\API\TrajetController::class,'data1'])->withoutMiddleware("throttle:api")->name('Trajets_api_index');
+Route::post('trajets-Aggrid', [App\Http\Controllers\API\TrajetController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Trajets_api_aggrid');
+
+// la route de creation
+Route::post('trajets',[App\Http\Controllers\API\TrajetController::class,'create'])->withoutMiddleware("throttle:api")->name('Trajets_api_create');
+// la route d'edition
+Route::post('trajets/{Trajets}/update',[App\Http\Controllers\API\TrajetController::class,'update'])->withoutMiddleware("throttle:api")->name('Trajets_api_update');
+// la route de suppression
+Route::post('trajets/{Trajets}/delete',[App\Http\Controllers\API\TrajetController::class,'delete'])->withoutMiddleware("throttle:api")->name('Trajets_api_delete');
+// la route des actions
+Route::get('trajets/action',[App\Http\Controllers\API\TrajetController::class,'action'])->withoutMiddleware("throttle:api")->name('Trajets_api_delete');
+// la route des actions
+Route::post('trajets/action',[App\Http\Controllers\API\TrajetController::class,'action'])->withoutMiddleware("throttle:api")->name('Trajets_api_delete');
+
+
+
+//Route::resource('Transactions',App\Http\Controllers\API\TransactionController::class);
+// les routes d'affichage
+Route::get('transactions/{key}/{val}',[App\Http\Controllers\API\TransactionController::class,'data'])->withoutMiddleware("throttle:api")->name('Transactions_api_index2');
+Route::get('transactions',[App\Http\Controllers\API\TransactionController::class,'data1'])->withoutMiddleware("throttle:api")->name('Transactions_api_index');
+Route::post('transactions-Aggrid', [App\Http\Controllers\API\TransactionController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Transactions_api_aggrid');
+
+// la route de creation
+Route::post('transactions',[App\Http\Controllers\API\TransactionController::class,'create'])->withoutMiddleware("throttle:api")->name('Transactions_api_create');
+// la route d'edition
+Route::post('transactions/{Transactions}/update',[App\Http\Controllers\API\TransactionController::class,'update'])->withoutMiddleware("throttle:api")->name('Transactions_api_update');
+// la route de suppression
+Route::post('transactions/{Transactions}/delete',[App\Http\Controllers\API\TransactionController::class,'delete'])->withoutMiddleware("throttle:api")->name('Transactions_api_delete');
+// la route des actions
+Route::get('transactions/action',[App\Http\Controllers\API\TransactionController::class,'action'])->withoutMiddleware("throttle:api")->name('Transactions_api_delete');
+// la route des actions
+Route::post('transactions/action',[App\Http\Controllers\API\TransactionController::class,'action'])->withoutMiddleware("throttle:api")->name('Transactions_api_delete');
+
+
+
+//Route::resource('Types',App\Http\Controllers\API\TypeController::class);
+// les routes d'affichage
+Route::get('types/{key}/{val}',[App\Http\Controllers\API\TypeController::class,'data'])->withoutMiddleware("throttle:api")->name('Types_api_index2');
+Route::get('types',[App\Http\Controllers\API\TypeController::class,'data1'])->withoutMiddleware("throttle:api")->name('Types_api_index');
+Route::post('types-Aggrid', [App\Http\Controllers\API\TypeController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Types_api_aggrid');
+
+// la route de creation
+Route::post('types',[App\Http\Controllers\API\TypeController::class,'create'])->withoutMiddleware("throttle:api")->name('Types_api_create');
+// la route d'edition
+Route::post('types/{Types}/update',[App\Http\Controllers\API\TypeController::class,'update'])->withoutMiddleware("throttle:api")->name('Types_api_update');
+// la route de suppression
+Route::post('types/{Types}/delete',[App\Http\Controllers\API\TypeController::class,'delete'])->withoutMiddleware("throttle:api")->name('Types_api_delete');
+// la route des actions
+Route::get('types/action',[App\Http\Controllers\API\TypeController::class,'action'])->withoutMiddleware("throttle:api")->name('Types_api_delete');
+// la route des actions
+Route::post('types/action',[App\Http\Controllers\API\TypeController::class,'action'])->withoutMiddleware("throttle:api")->name('Types_api_delete');
+
+
+
+//Route::resource('Typesabscences',App\Http\Controllers\API\TypesabscenceController::class);
+// les routes d'affichage
+Route::get('typesabscences/{key}/{val}',[App\Http\Controllers\API\TypesabscenceController::class,'data'])->withoutMiddleware("throttle:api")->name('Typesabscences_api_index2');
+Route::get('typesabscences',[App\Http\Controllers\API\TypesabscenceController::class,'data1'])->withoutMiddleware("throttle:api")->name('Typesabscences_api_index');
+Route::post('typesabscences-Aggrid', [App\Http\Controllers\API\TypesabscenceController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Typesabscences_api_aggrid');
+
+// la route de creation
+Route::post('typesabscences',[App\Http\Controllers\API\TypesabscenceController::class,'create'])->withoutMiddleware("throttle:api")->name('Typesabscences_api_create');
+// la route d'edition
+Route::post('typesabscences/{Typesabscences}/update',[App\Http\Controllers\API\TypesabscenceController::class,'update'])->withoutMiddleware("throttle:api")->name('Typesabscences_api_update');
+// la route de suppression
+Route::post('typesabscences/{Typesabscences}/delete',[App\Http\Controllers\API\TypesabscenceController::class,'delete'])->withoutMiddleware("throttle:api")->name('Typesabscences_api_delete');
+// la route des actions
+Route::get('typesabscences/action',[App\Http\Controllers\API\TypesabscenceController::class,'action'])->withoutMiddleware("throttle:api")->name('Typesabscences_api_delete');
+// la route des actions
+Route::post('typesabscences/action',[App\Http\Controllers\API\TypesabscenceController::class,'action'])->withoutMiddleware("throttle:api")->name('Typesabscences_api_delete');
+
+
+
+//Route::resource('Typesagentshoraires',App\Http\Controllers\API\TypesagentshoraireController::class);
+// les routes d'affichage
+Route::get('typesagentshoraires/{key}/{val}',[App\Http\Controllers\API\TypesagentshoraireController::class,'data'])->withoutMiddleware("throttle:api")->name('Typesagentshoraires_api_index2');
+Route::get('typesagentshoraires',[App\Http\Controllers\API\TypesagentshoraireController::class,'data1'])->withoutMiddleware("throttle:api")->name('Typesagentshoraires_api_index');
+Route::post('typesagentshoraires-Aggrid', [App\Http\Controllers\API\TypesagentshoraireController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Typesagentshoraires_api_aggrid');
+
+// la route de creation
+Route::post('typesagentshoraires',[App\Http\Controllers\API\TypesagentshoraireController::class,'create'])->withoutMiddleware("throttle:api")->name('Typesagentshoraires_api_create');
+// la route d'edition
+Route::post('typesagentshoraires/{Typesagentshoraires}/update',[App\Http\Controllers\API\TypesagentshoraireController::class,'update'])->withoutMiddleware("throttle:api")->name('Typesagentshoraires_api_update');
+// la route de suppression
+Route::post('typesagentshoraires/{Typesagentshoraires}/delete',[App\Http\Controllers\API\TypesagentshoraireController::class,'delete'])->withoutMiddleware("throttle:api")->name('Typesagentshoraires_api_delete');
+// la route des actions
+Route::get('typesagentshoraires/action',[App\Http\Controllers\API\TypesagentshoraireController::class,'action'])->withoutMiddleware("throttle:api")->name('Typesagentshoraires_api_delete');
+// la route des actions
+Route::post('typesagentshoraires/action',[App\Http\Controllers\API\TypesagentshoraireController::class,'action'])->withoutMiddleware("throttle:api")->name('Typesagentshoraires_api_delete');
+
+
+
+//Route::resource('Typeseffectifs',App\Http\Controllers\API\TypeseffectifController::class);
+// les routes d'affichage
+Route::get('typeseffectifs/{key}/{val}',[App\Http\Controllers\API\TypeseffectifController::class,'data'])->withoutMiddleware("throttle:api")->name('Typeseffectifs_api_index2');
+Route::get('typeseffectifs',[App\Http\Controllers\API\TypeseffectifController::class,'data1'])->withoutMiddleware("throttle:api")->name('Typeseffectifs_api_index');
+Route::post('typeseffectifs-Aggrid', [App\Http\Controllers\API\TypeseffectifController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Typeseffectifs_api_aggrid');
+
+// la route de creation
+Route::post('typeseffectifs',[App\Http\Controllers\API\TypeseffectifController::class,'create'])->withoutMiddleware("throttle:api")->name('Typeseffectifs_api_create');
+// la route d'edition
+Route::post('typeseffectifs/{Typeseffectifs}/update',[App\Http\Controllers\API\TypeseffectifController::class,'update'])->withoutMiddleware("throttle:api")->name('Typeseffectifs_api_update');
+// la route de suppression
+Route::post('typeseffectifs/{Typeseffectifs}/delete',[App\Http\Controllers\API\TypeseffectifController::class,'delete'])->withoutMiddleware("throttle:api")->name('Typeseffectifs_api_delete');
+// la route des actions
+Route::get('typeseffectifs/action',[App\Http\Controllers\API\TypeseffectifController::class,'action'])->withoutMiddleware("throttle:api")->name('Typeseffectifs_api_delete');
+// la route des actions
+Route::post('typeseffectifs/action',[App\Http\Controllers\API\TypeseffectifController::class,'action'])->withoutMiddleware("throttle:api")->name('Typeseffectifs_api_delete');
+
+
+
+//Route::resource('Typesheures',App\Http\Controllers\API\TypesheureController::class);
+// les routes d'affichage
+Route::get('typesheures/{key}/{val}',[App\Http\Controllers\API\TypesheureController::class,'data'])->withoutMiddleware("throttle:api")->name('Typesheures_api_index2');
+Route::get('typesheures',[App\Http\Controllers\API\TypesheureController::class,'data1'])->withoutMiddleware("throttle:api")->name('Typesheures_api_index');
+Route::post('typesheures-Aggrid', [App\Http\Controllers\API\TypesheureController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Typesheures_api_aggrid');
+
+// la route de creation
+Route::post('typesheures',[App\Http\Controllers\API\TypesheureController::class,'create'])->withoutMiddleware("throttle:api")->name('Typesheures_api_create');
+// la route d'edition
+Route::post('typesheures/{Typesheures}/update',[App\Http\Controllers\API\TypesheureController::class,'update'])->withoutMiddleware("throttle:api")->name('Typesheures_api_update');
+// la route de suppression
+Route::post('typesheures/{Typesheures}/delete',[App\Http\Controllers\API\TypesheureController::class,'delete'])->withoutMiddleware("throttle:api")->name('Typesheures_api_delete');
+// la route des actions
+Route::get('typesheures/action',[App\Http\Controllers\API\TypesheureController::class,'action'])->withoutMiddleware("throttle:api")->name('Typesheures_api_delete');
+// la route des actions
+Route::post('typesheures/action',[App\Http\Controllers\API\TypesheureController::class,'action'])->withoutMiddleware("throttle:api")->name('Typesheures_api_delete');
+
+
+
+//Route::resource('Typesmoyenstransports',App\Http\Controllers\API\TypesmoyenstransportController::class);
+// les routes d'affichage
+Route::get('typesmoyenstransports/{key}/{val}',[App\Http\Controllers\API\TypesmoyenstransportController::class,'data'])->withoutMiddleware("throttle:api")->name('Typesmoyenstransports_api_index2');
+Route::get('typesmoyenstransports',[App\Http\Controllers\API\TypesmoyenstransportController::class,'data1'])->withoutMiddleware("throttle:api")->name('Typesmoyenstransports_api_index');
+Route::post('typesmoyenstransports-Aggrid', [App\Http\Controllers\API\TypesmoyenstransportController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Typesmoyenstransports_api_aggrid');
+
+// la route de creation
+Route::post('typesmoyenstransports',[App\Http\Controllers\API\TypesmoyenstransportController::class,'create'])->withoutMiddleware("throttle:api")->name('Typesmoyenstransports_api_create');
+// la route d'edition
+Route::post('typesmoyenstransports/{Typesmoyenstransports}/update',[App\Http\Controllers\API\TypesmoyenstransportController::class,'update'])->withoutMiddleware("throttle:api")->name('Typesmoyenstransports_api_update');
+// la route de suppression
+Route::post('typesmoyenstransports/{Typesmoyenstransports}/delete',[App\Http\Controllers\API\TypesmoyenstransportController::class,'delete'])->withoutMiddleware("throttle:api")->name('Typesmoyenstransports_api_delete');
+// la route des actions
+Route::get('typesmoyenstransports/action',[App\Http\Controllers\API\TypesmoyenstransportController::class,'action'])->withoutMiddleware("throttle:api")->name('Typesmoyenstransports_api_delete');
+// la route des actions
+Route::post('typesmoyenstransports/action',[App\Http\Controllers\API\TypesmoyenstransportController::class,'action'])->withoutMiddleware("throttle:api")->name('Typesmoyenstransports_api_delete');
+
+
+
+//Route::resource('Typespointages',App\Http\Controllers\API\TypespointageController::class);
+// les routes d'affichage
+Route::get('typespointages/{key}/{val}',[App\Http\Controllers\API\TypespointageController::class,'data'])->withoutMiddleware("throttle:api")->name('Typespointages_api_index2');
+Route::get('typespointages',[App\Http\Controllers\API\TypespointageController::class,'data1'])->withoutMiddleware("throttle:api")->name('Typespointages_api_index');
+Route::post('typespointages-Aggrid', [App\Http\Controllers\API\TypespointageController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Typespointages_api_aggrid');
+
+// la route de creation
+Route::post('typespointages',[App\Http\Controllers\API\TypespointageController::class,'create'])->withoutMiddleware("throttle:api")->name('Typespointages_api_create');
+// la route d'edition
+Route::post('typespointages/{Typespointages}/update',[App\Http\Controllers\API\TypespointageController::class,'update'])->withoutMiddleware("throttle:api")->name('Typespointages_api_update');
+// la route de suppression
+Route::post('typespointages/{Typespointages}/delete',[App\Http\Controllers\API\TypespointageController::class,'delete'])->withoutMiddleware("throttle:api")->name('Typespointages_api_delete');
+// la route des actions
+Route::get('typespointages/action',[App\Http\Controllers\API\TypespointageController::class,'action'])->withoutMiddleware("throttle:api")->name('Typespointages_api_delete');
+// la route des actions
+Route::post('typespointages/action',[App\Http\Controllers\API\TypespointageController::class,'action'])->withoutMiddleware("throttle:api")->name('Typespointages_api_delete');
+
+
+
+//Route::resource('Typespostes',App\Http\Controllers\API\TypesposteController::class);
+// les routes d'affichage
+Route::get('typespostes/{key}/{val}',[App\Http\Controllers\API\TypesposteController::class,'data'])->withoutMiddleware("throttle:api")->name('Typespostes_api_index2');
+Route::get('typespostes',[App\Http\Controllers\API\TypesposteController::class,'data1'])->withoutMiddleware("throttle:api")->name('Typespostes_api_index');
+Route::post('typespostes-Aggrid', [App\Http\Controllers\API\TypesposteController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Typespostes_api_aggrid');
+
+// la route de creation
+Route::post('typespostes',[App\Http\Controllers\API\TypesposteController::class,'create'])->withoutMiddleware("throttle:api")->name('Typespostes_api_create');
+// la route d'edition
+Route::post('typespostes/{Typespostes}/update',[App\Http\Controllers\API\TypesposteController::class,'update'])->withoutMiddleware("throttle:api")->name('Typespostes_api_update');
+// la route de suppression
+Route::post('typespostes/{Typespostes}/delete',[App\Http\Controllers\API\TypesposteController::class,'delete'])->withoutMiddleware("throttle:api")->name('Typespostes_api_delete');
+// la route des actions
+Route::get('typespostes/action',[App\Http\Controllers\API\TypesposteController::class,'action'])->withoutMiddleware("throttle:api")->name('Typespostes_api_delete');
+// la route des actions
+Route::post('typespostes/action',[App\Http\Controllers\API\TypesposteController::class,'action'])->withoutMiddleware("throttle:api")->name('Typespostes_api_delete');
+
+
+
+//Route::resource('Typessites',App\Http\Controllers\API\TypessiteController::class);
+// les routes d'affichage
+Route::get('typessites/{key}/{val}',[App\Http\Controllers\API\TypessiteController::class,'data'])->withoutMiddleware("throttle:api")->name('Typessites_api_index2');
+Route::get('typessites',[App\Http\Controllers\API\TypessiteController::class,'data1'])->withoutMiddleware("throttle:api")->name('Typessites_api_index');
+Route::post('typessites-Aggrid', [App\Http\Controllers\API\TypessiteController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Typessites_api_aggrid');
+
+// la route de creation
+Route::post('typessites',[App\Http\Controllers\API\TypessiteController::class,'create'])->withoutMiddleware("throttle:api")->name('Typessites_api_create');
+// la route d'edition
+Route::post('typessites/{Typessites}/update',[App\Http\Controllers\API\TypessiteController::class,'update'])->withoutMiddleware("throttle:api")->name('Typessites_api_update');
+// la route de suppression
+Route::post('typessites/{Typessites}/delete',[App\Http\Controllers\API\TypessiteController::class,'delete'])->withoutMiddleware("throttle:api")->name('Typessites_api_delete');
+// la route des actions
+Route::get('typessites/action',[App\Http\Controllers\API\TypessiteController::class,'action'])->withoutMiddleware("throttle:api")->name('Typessites_api_delete');
+// la route des actions
+Route::post('typessites/action',[App\Http\Controllers\API\TypessiteController::class,'action'])->withoutMiddleware("throttle:api")->name('Typessites_api_delete');
+
+
+
+//Route::resource('Typesventilations',App\Http\Controllers\API\TypesventilationController::class);
+// les routes d'affichage
+Route::get('typesventilations/{key}/{val}',[App\Http\Controllers\API\TypesventilationController::class,'data'])->withoutMiddleware("throttle:api")->name('Typesventilations_api_index2');
+Route::get('typesventilations',[App\Http\Controllers\API\TypesventilationController::class,'data1'])->withoutMiddleware("throttle:api")->name('Typesventilations_api_index');
+Route::post('typesventilations-Aggrid', [App\Http\Controllers\API\TypesventilationController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Typesventilations_api_aggrid');
+
+// la route de creation
+Route::post('typesventilations',[App\Http\Controllers\API\TypesventilationController::class,'create'])->withoutMiddleware("throttle:api")->name('Typesventilations_api_create');
+// la route d'edition
+Route::post('typesventilations/{Typesventilations}/update',[App\Http\Controllers\API\TypesventilationController::class,'update'])->withoutMiddleware("throttle:api")->name('Typesventilations_api_update');
+// la route de suppression
+Route::post('typesventilations/{Typesventilations}/delete',[App\Http\Controllers\API\TypesventilationController::class,'delete'])->withoutMiddleware("throttle:api")->name('Typesventilations_api_delete');
+// la route des actions
+Route::get('typesventilations/action',[App\Http\Controllers\API\TypesventilationController::class,'action'])->withoutMiddleware("throttle:api")->name('Typesventilations_api_delete');
+// la route des actions
+Route::post('typesventilations/action',[App\Http\Controllers\API\TypesventilationController::class,'action'])->withoutMiddleware("throttle:api")->name('Typesventilations_api_delete');
+
+
+
+//Route::resource('Users',App\Http\Controllers\API\UserController::class);
+// les routes d'affichage
+Route::get('users/{key}/{val}',[App\Http\Controllers\API\UserController::class,'data'])->withoutMiddleware("throttle:api")->name('Users_api_index2');
+Route::get('users',[App\Http\Controllers\API\UserController::class,'data1'])->withoutMiddleware("throttle:api")->name('Users_api_index');
+Route::post('users-Aggrid', [App\Http\Controllers\API\UserController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Users_api_aggrid');
+
+// la route de creation
+Route::post('users',[App\Http\Controllers\API\UserController::class,'create'])->withoutMiddleware("throttle:api")->name('Users_api_create');
+// la route d'edition
+Route::post('users/{Users}/update',[App\Http\Controllers\API\UserController::class,'update'])->withoutMiddleware("throttle:api")->name('Users_api_update');
+// la route de suppression
+Route::post('users/{Users}/delete',[App\Http\Controllers\API\UserController::class,'delete'])->withoutMiddleware("throttle:api")->name('Users_api_delete');
+// la route des actions
+Route::get('users/action',[App\Http\Controllers\API\UserController::class,'action'])->withoutMiddleware("throttle:api")->name('Users_api_delete');
+// la route des actions
+Route::post('users/action',[App\Http\Controllers\API\UserController::class,'action'])->withoutMiddleware("throttle:api")->name('Users_api_delete');
+
+
+
+//Route::resource('Userszones',App\Http\Controllers\API\UserszoneController::class);
+// les routes d'affichage
+Route::get('userszones/{key}/{val}',[App\Http\Controllers\API\UserszoneController::class,'data'])->withoutMiddleware("throttle:api")->name('Userszones_api_index2');
+Route::get('userszones',[App\Http\Controllers\API\UserszoneController::class,'data1'])->withoutMiddleware("throttle:api")->name('Userszones_api_index');
+Route::post('userszones-Aggrid', [App\Http\Controllers\API\UserszoneController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Userszones_api_aggrid');
+
+// la route de creation
+Route::post('userszones',[App\Http\Controllers\API\UserszoneController::class,'create'])->withoutMiddleware("throttle:api")->name('Userszones_api_create');
+// la route d'edition
+Route::post('userszones/{Userszones}/update',[App\Http\Controllers\API\UserszoneController::class,'update'])->withoutMiddleware("throttle:api")->name('Userszones_api_update');
+// la route de suppression
+Route::post('userszones/{Userszones}/delete',[App\Http\Controllers\API\UserszoneController::class,'delete'])->withoutMiddleware("throttle:api")->name('Userszones_api_delete');
+// la route des actions
+Route::get('userszones/action',[App\Http\Controllers\API\UserszoneController::class,'action'])->withoutMiddleware("throttle:api")->name('Userszones_api_delete');
+// la route des actions
+Route::post('userszones/action',[App\Http\Controllers\API\UserszoneController::class,'action'])->withoutMiddleware("throttle:api")->name('Userszones_api_delete');
+
+
+
+//Route::resource('Vacationspostes',App\Http\Controllers\API\VacationsposteController::class);
+// les routes d'affichage
+Route::get('vacationspostes/{key}/{val}',[App\Http\Controllers\API\VacationsposteController::class,'data'])->withoutMiddleware("throttle:api")->name('Vacationspostes_api_index2');
+Route::get('vacationspostes',[App\Http\Controllers\API\VacationsposteController::class,'data1'])->withoutMiddleware("throttle:api")->name('Vacationspostes_api_index');
+Route::post('vacationspostes-Aggrid', [App\Http\Controllers\API\VacationsposteController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Vacationspostes_api_aggrid');
+
+// la route de creation
+Route::post('vacationspostes',[App\Http\Controllers\API\VacationsposteController::class,'create'])->withoutMiddleware("throttle:api")->name('Vacationspostes_api_create');
+// la route d'edition
+Route::post('vacationspostes/{Vacationspostes}/update',[App\Http\Controllers\API\VacationsposteController::class,'update'])->withoutMiddleware("throttle:api")->name('Vacationspostes_api_update');
+// la route de suppression
+Route::post('vacationspostes/{Vacationspostes}/delete',[App\Http\Controllers\API\VacationsposteController::class,'delete'])->withoutMiddleware("throttle:api")->name('Vacationspostes_api_delete');
+// la route des actions
+Route::get('vacationspostes/action',[App\Http\Controllers\API\VacationsposteController::class,'action'])->withoutMiddleware("throttle:api")->name('Vacationspostes_api_delete');
+// la route des actions
+Route::post('vacationspostes/action',[App\Http\Controllers\API\VacationsposteController::class,'action'])->withoutMiddleware("throttle:api")->name('Vacationspostes_api_delete');
+
+
+
+//Route::resource('Validations',App\Http\Controllers\API\ValidationController::class);
+// les routes d'affichage
+Route::get('validations/{key}/{val}',[App\Http\Controllers\API\ValidationController::class,'data'])->withoutMiddleware("throttle:api")->name('Validations_api_index2');
+Route::get('validations',[App\Http\Controllers\API\ValidationController::class,'data1'])->withoutMiddleware("throttle:api")->name('Validations_api_index');
+Route::post('validations-Aggrid', [App\Http\Controllers\API\ValidationController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Validations_api_aggrid');
+
+// la route de creation
+Route::post('validations',[App\Http\Controllers\API\ValidationController::class,'create'])->withoutMiddleware("throttle:api")->name('Validations_api_create');
+// la route d'edition
+Route::post('validations/{Validations}/update',[App\Http\Controllers\API\ValidationController::class,'update'])->withoutMiddleware("throttle:api")->name('Validations_api_update');
+// la route de suppression
+Route::post('validations/{Validations}/delete',[App\Http\Controllers\API\ValidationController::class,'delete'])->withoutMiddleware("throttle:api")->name('Validations_api_delete');
+// la route des actions
+Route::get('validations/action',[App\Http\Controllers\API\ValidationController::class,'action'])->withoutMiddleware("throttle:api")->name('Validations_api_delete');
+// la route des actions
+Route::post('validations/action',[App\Http\Controllers\API\ValidationController::class,'action'])->withoutMiddleware("throttle:api")->name('Validations_api_delete');
+
+
+
+//Route::resource('Variables',App\Http\Controllers\API\VariableController::class);
+// les routes d'affichage
+Route::get('variables/{key}/{val}',[App\Http\Controllers\API\VariableController::class,'data'])->withoutMiddleware("throttle:api")->name('Variables_api_index2');
+Route::get('variables',[App\Http\Controllers\API\VariableController::class,'data1'])->withoutMiddleware("throttle:api")->name('Variables_api_index');
+Route::post('variables-Aggrid', [App\Http\Controllers\API\VariableController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Variables_api_aggrid');
+
+// la route de creation
+Route::post('variables',[App\Http\Controllers\API\VariableController::class,'create'])->withoutMiddleware("throttle:api")->name('Variables_api_create');
+// la route d'edition
+Route::post('variables/{Variables}/update',[App\Http\Controllers\API\VariableController::class,'update'])->withoutMiddleware("throttle:api")->name('Variables_api_update');
+// la route de suppression
+Route::post('variables/{Variables}/delete',[App\Http\Controllers\API\VariableController::class,'delete'])->withoutMiddleware("throttle:api")->name('Variables_api_delete');
+// la route des actions
+Route::get('variables/action',[App\Http\Controllers\API\VariableController::class,'action'])->withoutMiddleware("throttle:api")->name('Variables_api_delete');
+// la route des actions
+Route::post('variables/action',[App\Http\Controllers\API\VariableController::class,'action'])->withoutMiddleware("throttle:api")->name('Variables_api_delete');
+
+
+
+//Route::resource('Vehicules',App\Http\Controllers\API\VehiculeController::class);
+// les routes d'affichage
+Route::get('vehicules/{key}/{val}',[App\Http\Controllers\API\VehiculeController::class,'data'])->withoutMiddleware("throttle:api")->name('Vehicules_api_index2');
+Route::get('vehicules',[App\Http\Controllers\API\VehiculeController::class,'data1'])->withoutMiddleware("throttle:api")->name('Vehicules_api_index');
+Route::post('vehicules-Aggrid', [App\Http\Controllers\API\VehiculeController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Vehicules_api_aggrid');
+
+// la route de creation
+Route::post('vehicules',[App\Http\Controllers\API\VehiculeController::class,'create'])->withoutMiddleware("throttle:api")->name('Vehicules_api_create');
+// la route d'edition
+Route::post('vehicules/{Vehicules}/update',[App\Http\Controllers\API\VehiculeController::class,'update'])->withoutMiddleware("throttle:api")->name('Vehicules_api_update');
+// la route de suppression
+Route::post('vehicules/{Vehicules}/delete',[App\Http\Controllers\API\VehiculeController::class,'delete'])->withoutMiddleware("throttle:api")->name('Vehicules_api_delete');
+// la route des actions
+Route::get('vehicules/action',[App\Http\Controllers\API\VehiculeController::class,'action'])->withoutMiddleware("throttle:api")->name('Vehicules_api_delete');
+// la route des actions
+Route::post('vehicules/action',[App\Http\Controllers\API\VehiculeController::class,'action'])->withoutMiddleware("throttle:api")->name('Vehicules_api_delete');
+
+
+
+//Route::resource('Ventilations',App\Http\Controllers\API\VentilationController::class);
+// les routes d'affichage
+Route::get('ventilations/{key}/{val}',[App\Http\Controllers\API\VentilationController::class,'data'])->withoutMiddleware("throttle:api")->name('Ventilations_api_index2');
+Route::get('ventilations',[App\Http\Controllers\API\VentilationController::class,'data1'])->withoutMiddleware("throttle:api")->name('Ventilations_api_index');
+Route::post('ventilations-Aggrid', [App\Http\Controllers\API\VentilationController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Ventilations_api_aggrid');
+
+// la route de creation
+Route::post('ventilations',[App\Http\Controllers\API\VentilationController::class,'create'])->withoutMiddleware("throttle:api")->name('Ventilations_api_create');
+// la route d'edition
+Route::post('ventilations/{Ventilations}/update',[App\Http\Controllers\API\VentilationController::class,'update'])->withoutMiddleware("throttle:api")->name('Ventilations_api_update');
+// la route de suppression
+Route::post('ventilations/{Ventilations}/delete',[App\Http\Controllers\API\VentilationController::class,'delete'])->withoutMiddleware("throttle:api")->name('Ventilations_api_delete');
+// la route des actions
+Route::get('ventilations/action',[App\Http\Controllers\API\VentilationController::class,'action'])->withoutMiddleware("throttle:api")->name('Ventilations_api_delete');
+// la route des actions
+Route::post('ventilations/action',[App\Http\Controllers\API\VentilationController::class,'action'])->withoutMiddleware("throttle:api")->name('Ventilations_api_delete');
+
+
+
+//Route::resource('Villes',App\Http\Controllers\API\VilleController::class);
+// les routes d'affichage
+Route::get('villes/{key}/{val}',[App\Http\Controllers\API\VilleController::class,'data'])->withoutMiddleware("throttle:api")->name('Villes_api_index2');
+Route::get('villes',[App\Http\Controllers\API\VilleController::class,'data1'])->withoutMiddleware("throttle:api")->name('Villes_api_index');
+Route::post('villes-Aggrid', [App\Http\Controllers\API\VilleController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Villes_api_aggrid');
+
+// la route de creation
+Route::post('villes',[App\Http\Controllers\API\VilleController::class,'create'])->withoutMiddleware("throttle:api")->name('Villes_api_create');
+// la route d'edition
+Route::post('villes/{Villes}/update',[App\Http\Controllers\API\VilleController::class,'update'])->withoutMiddleware("throttle:api")->name('Villes_api_update');
+// la route de suppression
+Route::post('villes/{Villes}/delete',[App\Http\Controllers\API\VilleController::class,'delete'])->withoutMiddleware("throttle:api")->name('Villes_api_delete');
+// la route des actions
+Route::get('villes/action',[App\Http\Controllers\API\VilleController::class,'action'])->withoutMiddleware("throttle:api")->name('Villes_api_delete');
+// la route des actions
+Route::post('villes/action',[App\Http\Controllers\API\VilleController::class,'action'])->withoutMiddleware("throttle:api")->name('Villes_api_delete');
+
+
+
+//Route::resource('Villeszones',App\Http\Controllers\API\VilleszoneController::class);
+// les routes d'affichage
+Route::get('villeszones/{key}/{val}',[App\Http\Controllers\API\VilleszoneController::class,'data'])->withoutMiddleware("throttle:api")->name('Villeszones_api_index2');
+Route::get('villeszones',[App\Http\Controllers\API\VilleszoneController::class,'data1'])->withoutMiddleware("throttle:api")->name('Villeszones_api_index');
+Route::post('villeszones-Aggrid', [App\Http\Controllers\API\VilleszoneController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Villeszones_api_aggrid');
+
+// la route de creation
+Route::post('villeszones',[App\Http\Controllers\API\VilleszoneController::class,'create'])->withoutMiddleware("throttle:api")->name('Villeszones_api_create');
+// la route d'edition
+Route::post('villeszones/{Villeszones}/update',[App\Http\Controllers\API\VilleszoneController::class,'update'])->withoutMiddleware("throttle:api")->name('Villeszones_api_update');
+// la route de suppression
+Route::post('villeszones/{Villeszones}/delete',[App\Http\Controllers\API\VilleszoneController::class,'delete'])->withoutMiddleware("throttle:api")->name('Villeszones_api_delete');
+// la route des actions
+Route::get('villeszones/action',[App\Http\Controllers\API\VilleszoneController::class,'action'])->withoutMiddleware("throttle:api")->name('Villeszones_api_delete');
+// la route des actions
+Route::post('villeszones/action',[App\Http\Controllers\API\VilleszoneController::class,'action'])->withoutMiddleware("throttle:api")->name('Villeszones_api_delete');
+
+
+
+//Route::resource('Websockets_statistics_entries',App\Http\Controllers\API\WebsocketsStatisticsEntrieController::class);
+// les routes d'affichage
+Route::get('websockets_statistics_entries/{key}/{val}',[App\Http\Controllers\API\WebsocketsStatisticsEntrieController::class,'data'])->withoutMiddleware("throttle:api")->name('Websockets_statistics_entries_api_index2');
+Route::get('websockets_statistics_entries',[App\Http\Controllers\API\WebsocketsStatisticsEntrieController::class,'data1'])->withoutMiddleware("throttle:api")->name('Websockets_statistics_entries_api_index');
+Route::post('websockets_statistics_entries-Aggrid', [App\Http\Controllers\API\WebsocketsStatisticsEntrieController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Websockets_statistics_entries_api_aggrid');
+
+// la route de creation
+Route::post('websockets_statistics_entries',[App\Http\Controllers\API\WebsocketsStatisticsEntrieController::class,'create'])->withoutMiddleware("throttle:api")->name('Websockets_statistics_entries_api_create');
+// la route d'edition
+Route::post('websockets_statistics_entries/{Websockets_statistics_entries}/update',[App\Http\Controllers\API\WebsocketsStatisticsEntrieController::class,'update'])->withoutMiddleware("throttle:api")->name('Websockets_statistics_entries_api_update');
+// la route de suppression
+Route::post('websockets_statistics_entries/{Websockets_statistics_entries}/delete',[App\Http\Controllers\API\WebsocketsStatisticsEntrieController::class,'delete'])->withoutMiddleware("throttle:api")->name('Websockets_statistics_entries_api_delete');
+// la route des actions
+Route::get('websockets_statistics_entries/action',[App\Http\Controllers\API\WebsocketsStatisticsEntrieController::class,'action'])->withoutMiddleware("throttle:api")->name('Websockets_statistics_entries_api_delete');
+// la route des actions
+Route::post('websockets_statistics_entries/action',[App\Http\Controllers\API\WebsocketsStatisticsEntrieController::class,'action'])->withoutMiddleware("throttle:api")->name('Websockets_statistics_entries_api_delete');
+
+
+
+//Route::resource('Works',App\Http\Controllers\API\WorkController::class);
+// les routes d'affichage
+Route::get('works/{key}/{val}',[App\Http\Controllers\API\WorkController::class,'data'])->withoutMiddleware("throttle:api")->name('Works_api_index2');
+Route::get('works',[App\Http\Controllers\API\WorkController::class,'data1'])->withoutMiddleware("throttle:api")->name('Works_api_index');
+Route::post('works-Aggrid', [App\Http\Controllers\API\WorkController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Works_api_aggrid');
+
+// la route de creation
+Route::post('works',[App\Http\Controllers\API\WorkController::class,'create'])->withoutMiddleware("throttle:api")->name('Works_api_create');
+// la route d'edition
+Route::post('works/{Works}/update',[App\Http\Controllers\API\WorkController::class,'update'])->withoutMiddleware("throttle:api")->name('Works_api_update');
+// la route de suppression
+Route::post('works/{Works}/delete',[App\Http\Controllers\API\WorkController::class,'delete'])->withoutMiddleware("throttle:api")->name('Works_api_delete');
+// la route des actions
+Route::get('works/action',[App\Http\Controllers\API\WorkController::class,'action'])->withoutMiddleware("throttle:api")->name('Works_api_delete');
+// la route des actions
+Route::post('works/action',[App\Http\Controllers\API\WorkController::class,'action'])->withoutMiddleware("throttle:api")->name('Works_api_delete');
+
+
+
+//Route::resource('Zones',App\Http\Controllers\API\ZoneController::class);
+// les routes d'affichage
+Route::get('zones/{key}/{val}',[App\Http\Controllers\API\ZoneController::class,'data'])->withoutMiddleware("throttle:api")->name('Zones_api_index2');
+Route::get('zones',[App\Http\Controllers\API\ZoneController::class,'data1'])->withoutMiddleware("throttle:api")->name('Zones_api_index');
+Route::post('zones-Aggrid', [App\Http\Controllers\API\ZoneController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Zones_api_aggrid');
+
+// la route de creation
+Route::post('zones',[App\Http\Controllers\API\ZoneController::class,'create'])->withoutMiddleware("throttle:api")->name('Zones_api_create');
+// la route d'edition
+Route::post('zones/{Zones}/update',[App\Http\Controllers\API\ZoneController::class,'update'])->withoutMiddleware("throttle:api")->name('Zones_api_update');
+// la route de suppression
+Route::post('zones/{Zones}/delete',[App\Http\Controllers\API\ZoneController::class,'delete'])->withoutMiddleware("throttle:api")->name('Zones_api_delete');
+// la route des actions
+Route::get('zones/action',[App\Http\Controllers\API\ZoneController::class,'action'])->withoutMiddleware("throttle:api")->name('Zones_api_delete');
+// la route des actions
+Route::post('zones/action',[App\Http\Controllers\API\ZoneController::class,'action'])->withoutMiddleware("throttle:api")->name('Zones_api_delete');
+
+
+
+});
+
+// les routes prod
+ Route::group(['prefix'=>'','middleware'=>['auth:api']],function(){
+Route::get('/')->name('base_api');
+//Route::resource('Abscences',App\Http\Controllers\API\AbscenceController::class);
+// les routes d'affichage
+Route::get('abscences/{key}/{val}',[App\Http\Controllers\API\AbscenceController::class,'data'])->withoutMiddleware("throttle:api")->name('Abscences_api_index2');
+Route::get('abscences',[App\Http\Controllers\API\AbscenceController::class,'data1'])->withoutMiddleware("throttle:api")->name('Abscences_api_index');
+Route::post('abscences-Aggrid', [App\Http\Controllers\API\AbscenceController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Abscences_api_aggrid');
+
+// la route de creation
+Route::post('abscences',[App\Http\Controllers\API\AbscenceController::class,'create'])->withoutMiddleware("throttle:api")->name('Abscences_api_create');
+// la route d'edition
+Route::post('abscences/{Abscences}/update',[App\Http\Controllers\API\AbscenceController::class,'update'])->withoutMiddleware("throttle:api")->name('Abscences_api_update');
+// la route de suppression
+Route::post('abscences/{Abscences}/delete',[App\Http\Controllers\API\AbscenceController::class,'delete'])->withoutMiddleware("throttle:api")->name('Abscences_api_delete');
+// la route des actions
+Route::get('abscences/action',[App\Http\Controllers\API\AbscenceController::class,'action'])->withoutMiddleware("throttle:api")->name('Abscences_api_delete');
+// la route des actions
+Route::post('abscences/action',[App\Http\Controllers\API\AbscenceController::class,'action'])->withoutMiddleware("throttle:api")->name('Abscences_api_delete');
+
+
+
+//Route::resource('Actions',App\Http\Controllers\API\ActionController::class);
+// les routes d'affichage
+Route::get('actions/{key}/{val}',[App\Http\Controllers\API\ActionController::class,'data'])->withoutMiddleware("throttle:api")->name('Actions_api_index2');
+Route::get('actions',[App\Http\Controllers\API\ActionController::class,'data1'])->withoutMiddleware("throttle:api")->name('Actions_api_index');
+Route::post('actions-Aggrid', [App\Http\Controllers\API\ActionController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Actions_api_aggrid');
+
+// la route de creation
+Route::post('actions',[App\Http\Controllers\API\ActionController::class,'create'])->withoutMiddleware("throttle:api")->name('Actions_api_create');
+// la route d'edition
+Route::post('actions/{Actions}/update',[App\Http\Controllers\API\ActionController::class,'update'])->withoutMiddleware("throttle:api")->name('Actions_api_update');
+// la route de suppression
+Route::post('actions/{Actions}/delete',[App\Http\Controllers\API\ActionController::class,'delete'])->withoutMiddleware("throttle:api")->name('Actions_api_delete');
+// la route des actions
+Route::get('actions/action',[App\Http\Controllers\API\ActionController::class,'action'])->withoutMiddleware("throttle:api")->name('Actions_api_delete');
+// la route des actions
+Route::post('actions/action',[App\Http\Controllers\API\ActionController::class,'action'])->withoutMiddleware("throttle:api")->name('Actions_api_delete');
+
+
+
+//Route::resource('Agentsrapports',App\Http\Controllers\API\AgentsrapportController::class);
+// les routes d'affichage
+Route::get('agentsrapports/{key}/{val}',[App\Http\Controllers\API\AgentsrapportController::class,'data'])->withoutMiddleware("throttle:api")->name('Agentsrapports_api_index2');
+Route::get('agentsrapports',[App\Http\Controllers\API\AgentsrapportController::class,'data1'])->withoutMiddleware("throttle:api")->name('Agentsrapports_api_index');
+Route::post('agentsrapports-Aggrid', [App\Http\Controllers\API\AgentsrapportController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Agentsrapports_api_aggrid');
+
+// la route de creation
+Route::post('agentsrapports',[App\Http\Controllers\API\AgentsrapportController::class,'create'])->withoutMiddleware("throttle:api")->name('Agentsrapports_api_create');
+// la route d'edition
+Route::post('agentsrapports/{Agentsrapports}/update',[App\Http\Controllers\API\AgentsrapportController::class,'update'])->withoutMiddleware("throttle:api")->name('Agentsrapports_api_update');
+// la route de suppression
+Route::post('agentsrapports/{Agentsrapports}/delete',[App\Http\Controllers\API\AgentsrapportController::class,'delete'])->withoutMiddleware("throttle:api")->name('Agentsrapports_api_delete');
+// la route des actions
+Route::get('agentsrapports/action',[App\Http\Controllers\API\AgentsrapportController::class,'action'])->withoutMiddleware("throttle:api")->name('Agentsrapports_api_delete');
+// la route des actions
+Route::post('agentsrapports/action',[App\Http\Controllers\API\AgentsrapportController::class,'action'])->withoutMiddleware("throttle:api")->name('Agentsrapports_api_delete');
+
+
+
+//Route::resource('Alarms',App\Http\Controllers\API\AlarmController::class);
+// les routes d'affichage
+Route::get('alarms/{key}/{val}',[App\Http\Controllers\API\AlarmController::class,'data'])->withoutMiddleware("throttle:api")->name('Alarms_api_index2');
+Route::get('alarms',[App\Http\Controllers\API\AlarmController::class,'data1'])->withoutMiddleware("throttle:api")->name('Alarms_api_index');
+Route::post('alarms-Aggrid', [App\Http\Controllers\API\AlarmController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Alarms_api_aggrid');
+
+// la route de creation
+Route::post('alarms',[App\Http\Controllers\API\AlarmController::class,'create'])->withoutMiddleware("throttle:api")->name('Alarms_api_create');
+// la route d'edition
+Route::post('alarms/{Alarms}/update',[App\Http\Controllers\API\AlarmController::class,'update'])->withoutMiddleware("throttle:api")->name('Alarms_api_update');
+// la route de suppression
+Route::post('alarms/{Alarms}/delete',[App\Http\Controllers\API\AlarmController::class,'delete'])->withoutMiddleware("throttle:api")->name('Alarms_api_delete');
+// la route des actions
+Route::get('alarms/action',[App\Http\Controllers\API\AlarmController::class,'action'])->withoutMiddleware("throttle:api")->name('Alarms_api_delete');
+// la route des actions
+Route::post('alarms/action',[App\Http\Controllers\API\AlarmController::class,'action'])->withoutMiddleware("throttle:api")->name('Alarms_api_delete');
+
+
+
+//Route::resource('Alldatas',App\Http\Controllers\API\AlldataController::class);
+// les routes d'affichage
+Route::get('alldatas/{key}/{val}',[App\Http\Controllers\API\AlldataController::class,'data'])->withoutMiddleware("throttle:api")->name('Alldatas_api_index2');
+Route::get('alldatas',[App\Http\Controllers\API\AlldataController::class,'data1'])->withoutMiddleware("throttle:api")->name('Alldatas_api_index');
+Route::post('alldatas-Aggrid', [App\Http\Controllers\API\AlldataController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Alldatas_api_aggrid');
+
+// la route de creation
+Route::post('alldatas',[App\Http\Controllers\API\AlldataController::class,'create'])->withoutMiddleware("throttle:api")->name('Alldatas_api_create');
+// la route d'edition
+Route::post('alldatas/{Alldatas}/update',[App\Http\Controllers\API\AlldataController::class,'update'])->withoutMiddleware("throttle:api")->name('Alldatas_api_update');
+// la route de suppression
+Route::post('alldatas/{Alldatas}/delete',[App\Http\Controllers\API\AlldataController::class,'delete'])->withoutMiddleware("throttle:api")->name('Alldatas_api_delete');
+// la route des actions
+Route::get('alldatas/action',[App\Http\Controllers\API\AlldataController::class,'action'])->withoutMiddleware("throttle:api")->name('Alldatas_api_delete');
+// la route des actions
+Route::post('alldatas/action',[App\Http\Controllers\API\AlldataController::class,'action'])->withoutMiddleware("throttle:api")->name('Alldatas_api_delete');
+
+
+
+//Route::resource('Analysespointeuses',App\Http\Controllers\API\AnalysespointeuseController::class);
+// les routes d'affichage
+Route::get('analysespointeuses/{key}/{val}',[App\Http\Controllers\API\AnalysespointeuseController::class,'data'])->withoutMiddleware("throttle:api")->name('Analysespointeuses_api_index2');
+Route::get('analysespointeuses',[App\Http\Controllers\API\AnalysespointeuseController::class,'data1'])->withoutMiddleware("throttle:api")->name('Analysespointeuses_api_index');
+Route::post('analysespointeuses-Aggrid', [App\Http\Controllers\API\AnalysespointeuseController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Analysespointeuses_api_aggrid');
+
+// la route de creation
+Route::post('analysespointeuses',[App\Http\Controllers\API\AnalysespointeuseController::class,'create'])->withoutMiddleware("throttle:api")->name('Analysespointeuses_api_create');
+// la route d'edition
+Route::post('analysespointeuses/{Analysespointeuses}/update',[App\Http\Controllers\API\AnalysespointeuseController::class,'update'])->withoutMiddleware("throttle:api")->name('Analysespointeuses_api_update');
+// la route de suppression
+Route::post('analysespointeuses/{Analysespointeuses}/delete',[App\Http\Controllers\API\AnalysespointeuseController::class,'delete'])->withoutMiddleware("throttle:api")->name('Analysespointeuses_api_delete');
+// la route des actions
+Route::get('analysespointeuses/action',[App\Http\Controllers\API\AnalysespointeuseController::class,'action'])->withoutMiddleware("throttle:api")->name('Analysespointeuses_api_delete');
+// la route des actions
+Route::post('analysespointeuses/action',[App\Http\Controllers\API\AnalysespointeuseController::class,'action'])->withoutMiddleware("throttle:api")->name('Analysespointeuses_api_delete');
+
+
+
+//Route::resource('Approvisionementdetails',App\Http\Controllers\API\ApprovisionementdetailController::class);
+// les routes d'affichage
+Route::get('approvisionementdetails/{key}/{val}',[App\Http\Controllers\API\ApprovisionementdetailController::class,'data'])->withoutMiddleware("throttle:api")->name('Approvisionementdetails_api_index2');
+Route::get('approvisionementdetails',[App\Http\Controllers\API\ApprovisionementdetailController::class,'data1'])->withoutMiddleware("throttle:api")->name('Approvisionementdetails_api_index');
+Route::post('approvisionementdetails-Aggrid', [App\Http\Controllers\API\ApprovisionementdetailController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Approvisionementdetails_api_aggrid');
+
+// la route de creation
+Route::post('approvisionementdetails',[App\Http\Controllers\API\ApprovisionementdetailController::class,'create'])->withoutMiddleware("throttle:api")->name('Approvisionementdetails_api_create');
+// la route d'edition
+Route::post('approvisionementdetails/{Approvisionementdetails}/update',[App\Http\Controllers\API\ApprovisionementdetailController::class,'update'])->withoutMiddleware("throttle:api")->name('Approvisionementdetails_api_update');
+// la route de suppression
+Route::post('approvisionementdetails/{Approvisionementdetails}/delete',[App\Http\Controllers\API\ApprovisionementdetailController::class,'delete'])->withoutMiddleware("throttle:api")->name('Approvisionementdetails_api_delete');
+// la route des actions
+Route::get('approvisionementdetails/action',[App\Http\Controllers\API\ApprovisionementdetailController::class,'action'])->withoutMiddleware("throttle:api")->name('Approvisionementdetails_api_delete');
+// la route des actions
+Route::post('approvisionementdetails/action',[App\Http\Controllers\API\ApprovisionementdetailController::class,'action'])->withoutMiddleware("throttle:api")->name('Approvisionementdetails_api_delete');
+
+
+
+//Route::resource('Architectures',App\Http\Controllers\API\ArchitectureController::class);
+// les routes d'affichage
+Route::get('architectures/{key}/{val}',[App\Http\Controllers\API\ArchitectureController::class,'data'])->withoutMiddleware("throttle:api")->name('Architectures_api_index2');
+Route::get('architectures',[App\Http\Controllers\API\ArchitectureController::class,'data1'])->withoutMiddleware("throttle:api")->name('Architectures_api_index');
+Route::post('architectures-Aggrid', [App\Http\Controllers\API\ArchitectureController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Architectures_api_aggrid');
+
+// la route de creation
+Route::post('architectures',[App\Http\Controllers\API\ArchitectureController::class,'create'])->withoutMiddleware("throttle:api")->name('Architectures_api_create');
+// la route d'edition
+Route::post('architectures/{Architectures}/update',[App\Http\Controllers\API\ArchitectureController::class,'update'])->withoutMiddleware("throttle:api")->name('Architectures_api_update');
+// la route de suppression
+Route::post('architectures/{Architectures}/delete',[App\Http\Controllers\API\ArchitectureController::class,'delete'])->withoutMiddleware("throttle:api")->name('Architectures_api_delete');
+// la route des actions
+Route::get('architectures/action',[App\Http\Controllers\API\ArchitectureController::class,'action'])->withoutMiddleware("throttle:api")->name('Architectures_api_delete');
+// la route des actions
+Route::post('architectures/action',[App\Http\Controllers\API\ArchitectureController::class,'action'])->withoutMiddleware("throttle:api")->name('Architectures_api_delete');
+
+
+
+//Route::resource('Assignations',App\Http\Controllers\API\AssignationController::class);
+// les routes d'affichage
+Route::get('assignations/{key}/{val}',[App\Http\Controllers\API\AssignationController::class,'data'])->withoutMiddleware("throttle:api")->name('Assignations_api_index2');
+Route::get('assignations',[App\Http\Controllers\API\AssignationController::class,'data1'])->withoutMiddleware("throttle:api")->name('Assignations_api_index');
+Route::post('assignations-Aggrid', [App\Http\Controllers\API\AssignationController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Assignations_api_aggrid');
+
+// la route de creation
+Route::post('assignations',[App\Http\Controllers\API\AssignationController::class,'create'])->withoutMiddleware("throttle:api")->name('Assignations_api_create');
+// la route d'edition
+Route::post('assignations/{Assignations}/update',[App\Http\Controllers\API\AssignationController::class,'update'])->withoutMiddleware("throttle:api")->name('Assignations_api_update');
+// la route de suppression
+Route::post('assignations/{Assignations}/delete',[App\Http\Controllers\API\AssignationController::class,'delete'])->withoutMiddleware("throttle:api")->name('Assignations_api_delete');
+// la route des actions
+Route::get('assignations/action',[App\Http\Controllers\API\AssignationController::class,'action'])->withoutMiddleware("throttle:api")->name('Assignations_api_delete');
+// la route des actions
+Route::post('assignations/action',[App\Http\Controllers\API\AssignationController::class,'action'])->withoutMiddleware("throttle:api")->name('Assignations_api_delete');
+
+
+
+//Route::resource('Backends',App\Http\Controllers\API\BackendController::class);
+// les routes d'affichage
+Route::get('backends/{key}/{val}',[App\Http\Controllers\API\BackendController::class,'data'])->withoutMiddleware("throttle:api")->name('Backends_api_index2');
+Route::get('backends',[App\Http\Controllers\API\BackendController::class,'data1'])->withoutMiddleware("throttle:api")->name('Backends_api_index');
+Route::post('backends-Aggrid', [App\Http\Controllers\API\BackendController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Backends_api_aggrid');
+
+// la route de creation
+Route::post('backends',[App\Http\Controllers\API\BackendController::class,'create'])->withoutMiddleware("throttle:api")->name('Backends_api_create');
+// la route d'edition
+Route::post('backends/{Backends}/update',[App\Http\Controllers\API\BackendController::class,'update'])->withoutMiddleware("throttle:api")->name('Backends_api_update');
+// la route de suppression
+Route::post('backends/{Backends}/delete',[App\Http\Controllers\API\BackendController::class,'delete'])->withoutMiddleware("throttle:api")->name('Backends_api_delete');
+// la route des actions
+Route::get('backends/action',[App\Http\Controllers\API\BackendController::class,'action'])->withoutMiddleware("throttle:api")->name('Backends_api_delete');
+// la route des actions
+Route::post('backends/action',[App\Http\Controllers\API\BackendController::class,'action'])->withoutMiddleware("throttle:api")->name('Backends_api_delete');
+
+
+
+//Route::resource('Badges',App\Http\Controllers\API\BadgeController::class);
+// les routes d'affichage
+Route::get('badges/{key}/{val}',[App\Http\Controllers\API\BadgeController::class,'data'])->withoutMiddleware("throttle:api")->name('Badges_api_index2');
+Route::get('badges',[App\Http\Controllers\API\BadgeController::class,'data1'])->withoutMiddleware("throttle:api")->name('Badges_api_index');
+Route::post('badges-Aggrid', [App\Http\Controllers\API\BadgeController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Badges_api_aggrid');
+
+// la route de creation
+Route::post('badges',[App\Http\Controllers\API\BadgeController::class,'create'])->withoutMiddleware("throttle:api")->name('Badges_api_create');
+// la route d'edition
+Route::post('badges/{Badges}/update',[App\Http\Controllers\API\BadgeController::class,'update'])->withoutMiddleware("throttle:api")->name('Badges_api_update');
+// la route de suppression
+Route::post('badges/{Badges}/delete',[App\Http\Controllers\API\BadgeController::class,'delete'])->withoutMiddleware("throttle:api")->name('Badges_api_delete');
+// la route des actions
+Route::get('badges/action',[App\Http\Controllers\API\BadgeController::class,'action'])->withoutMiddleware("throttle:api")->name('Badges_api_delete');
+// la route des actions
+Route::post('badges/action',[App\Http\Controllers\API\BadgeController::class,'action'])->withoutMiddleware("throttle:api")->name('Badges_api_delete');
+
+
+
+//Route::resource('Balises',App\Http\Controllers\API\BaliseController::class);
+// les routes d'affichage
+Route::get('balises/{key}/{val}',[App\Http\Controllers\API\BaliseController::class,'data'])->withoutMiddleware("throttle:api")->name('Balises_api_index2');
+Route::get('balises',[App\Http\Controllers\API\BaliseController::class,'data1'])->withoutMiddleware("throttle:api")->name('Balises_api_index');
+Route::post('balises-Aggrid', [App\Http\Controllers\API\BaliseController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Balises_api_aggrid');
+
+// la route de creation
+Route::post('balises',[App\Http\Controllers\API\BaliseController::class,'create'])->withoutMiddleware("throttle:api")->name('Balises_api_create');
+// la route d'edition
+Route::post('balises/{Balises}/update',[App\Http\Controllers\API\BaliseController::class,'update'])->withoutMiddleware("throttle:api")->name('Balises_api_update');
+// la route de suppression
+Route::post('balises/{Balises}/delete',[App\Http\Controllers\API\BaliseController::class,'delete'])->withoutMiddleware("throttle:api")->name('Balises_api_delete');
+// la route des actions
+Route::get('balises/action',[App\Http\Controllers\API\BaliseController::class,'action'])->withoutMiddleware("throttle:api")->name('Balises_api_delete');
+// la route des actions
+Route::post('balises/action',[App\Http\Controllers\API\BaliseController::class,'action'])->withoutMiddleware("throttle:api")->name('Balises_api_delete');
+
+
+
+//Route::resource('Basesdedonnees',App\Http\Controllers\API\BasesdedonneeController::class);
+// les routes d'affichage
+Route::get('basesdedonnees/{key}/{val}',[App\Http\Controllers\API\BasesdedonneeController::class,'data'])->withoutMiddleware("throttle:api")->name('Basesdedonnees_api_index2');
+Route::get('basesdedonnees',[App\Http\Controllers\API\BasesdedonneeController::class,'data1'])->withoutMiddleware("throttle:api")->name('Basesdedonnees_api_index');
+Route::post('basesdedonnees-Aggrid', [App\Http\Controllers\API\BasesdedonneeController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Basesdedonnees_api_aggrid');
+
+// la route de creation
+Route::post('basesdedonnees',[App\Http\Controllers\API\BasesdedonneeController::class,'create'])->withoutMiddleware("throttle:api")->name('Basesdedonnees_api_create');
+// la route d'edition
+Route::post('basesdedonnees/{Basesdedonnees}/update',[App\Http\Controllers\API\BasesdedonneeController::class,'update'])->withoutMiddleware("throttle:api")->name('Basesdedonnees_api_update');
+// la route de suppression
+Route::post('basesdedonnees/{Basesdedonnees}/delete',[App\Http\Controllers\API\BasesdedonneeController::class,'delete'])->withoutMiddleware("throttle:api")->name('Basesdedonnees_api_delete');
+// la route des actions
+Route::get('basesdedonnees/action',[App\Http\Controllers\API\BasesdedonneeController::class,'action'])->withoutMiddleware("throttle:api")->name('Basesdedonnees_api_delete');
+// la route des actions
+Route::post('basesdedonnees/action',[App\Http\Controllers\API\BasesdedonneeController::class,'action'])->withoutMiddleware("throttle:api")->name('Basesdedonnees_api_delete');
+
+
+
+//Route::resource('Besoinsfonctionels',App\Http\Controllers\API\BesoinsfonctionelController::class);
+// les routes d'affichage
+Route::get('besoinsfonctionels/{key}/{val}',[App\Http\Controllers\API\BesoinsfonctionelController::class,'data'])->withoutMiddleware("throttle:api")->name('Besoinsfonctionels_api_index2');
+Route::get('besoinsfonctionels',[App\Http\Controllers\API\BesoinsfonctionelController::class,'data1'])->withoutMiddleware("throttle:api")->name('Besoinsfonctionels_api_index');
+Route::post('besoinsfonctionels-Aggrid', [App\Http\Controllers\API\BesoinsfonctionelController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Besoinsfonctionels_api_aggrid');
+
+// la route de creation
+Route::post('besoinsfonctionels',[App\Http\Controllers\API\BesoinsfonctionelController::class,'create'])->withoutMiddleware("throttle:api")->name('Besoinsfonctionels_api_create');
+// la route d'edition
+Route::post('besoinsfonctionels/{Besoinsfonctionels}/update',[App\Http\Controllers\API\BesoinsfonctionelController::class,'update'])->withoutMiddleware("throttle:api")->name('Besoinsfonctionels_api_update');
+// la route de suppression
+Route::post('besoinsfonctionels/{Besoinsfonctionels}/delete',[App\Http\Controllers\API\BesoinsfonctionelController::class,'delete'])->withoutMiddleware("throttle:api")->name('Besoinsfonctionels_api_delete');
+// la route des actions
+Route::get('besoinsfonctionels/action',[App\Http\Controllers\API\BesoinsfonctionelController::class,'action'])->withoutMiddleware("throttle:api")->name('Besoinsfonctionels_api_delete');
+// la route des actions
+Route::post('besoinsfonctionels/action',[App\Http\Controllers\API\BesoinsfonctionelController::class,'action'])->withoutMiddleware("throttle:api")->name('Besoinsfonctionels_api_delete');
+
+
+
+//Route::resource('Besoinstechniques',App\Http\Controllers\API\BesoinstechniqueController::class);
+// les routes d'affichage
+Route::get('besoinstechniques/{key}/{val}',[App\Http\Controllers\API\BesoinstechniqueController::class,'data'])->withoutMiddleware("throttle:api")->name('Besoinstechniques_api_index2');
+Route::get('besoinstechniques',[App\Http\Controllers\API\BesoinstechniqueController::class,'data1'])->withoutMiddleware("throttle:api")->name('Besoinstechniques_api_index');
+Route::post('besoinstechniques-Aggrid', [App\Http\Controllers\API\BesoinstechniqueController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Besoinstechniques_api_aggrid');
+
+// la route de creation
+Route::post('besoinstechniques',[App\Http\Controllers\API\BesoinstechniqueController::class,'create'])->withoutMiddleware("throttle:api")->name('Besoinstechniques_api_create');
+// la route d'edition
+Route::post('besoinstechniques/{Besoinstechniques}/update',[App\Http\Controllers\API\BesoinstechniqueController::class,'update'])->withoutMiddleware("throttle:api")->name('Besoinstechniques_api_update');
+// la route de suppression
+Route::post('besoinstechniques/{Besoinstechniques}/delete',[App\Http\Controllers\API\BesoinstechniqueController::class,'delete'])->withoutMiddleware("throttle:api")->name('Besoinstechniques_api_delete');
+// la route des actions
+Route::get('besoinstechniques/action',[App\Http\Controllers\API\BesoinstechniqueController::class,'action'])->withoutMiddleware("throttle:api")->name('Besoinstechniques_api_delete');
+// la route des actions
+Route::post('besoinstechniques/action',[App\Http\Controllers\API\BesoinstechniqueController::class,'action'])->withoutMiddleware("throttle:api")->name('Besoinstechniques_api_delete');
+
+
+
+//Route::resource('Cartes',App\Http\Controllers\API\CarteController::class);
+// les routes d'affichage
+Route::get('cartes/{key}/{val}',[App\Http\Controllers\API\CarteController::class,'data'])->withoutMiddleware("throttle:api")->name('Cartes_api_index2');
+Route::get('cartes',[App\Http\Controllers\API\CarteController::class,'data1'])->withoutMiddleware("throttle:api")->name('Cartes_api_index');
+Route::post('cartes-Aggrid', [App\Http\Controllers\API\CarteController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Cartes_api_aggrid');
+
+// la route de creation
+Route::post('cartes',[App\Http\Controllers\API\CarteController::class,'create'])->withoutMiddleware("throttle:api")->name('Cartes_api_create');
+// la route d'edition
+Route::post('cartes/{Cartes}/update',[App\Http\Controllers\API\CarteController::class,'update'])->withoutMiddleware("throttle:api")->name('Cartes_api_update');
+// la route de suppression
+Route::post('cartes/{Cartes}/delete',[App\Http\Controllers\API\CarteController::class,'delete'])->withoutMiddleware("throttle:api")->name('Cartes_api_delete');
+// la route des actions
+Route::get('cartes/action',[App\Http\Controllers\API\CarteController::class,'action'])->withoutMiddleware("throttle:api")->name('Cartes_api_delete');
+// la route des actions
+Route::post('cartes/action',[App\Http\Controllers\API\CarteController::class,'action'])->withoutMiddleware("throttle:api")->name('Cartes_api_delete');
+
+
+
+//Route::resource('Categories',App\Http\Controllers\API\CategorieController::class);
+// les routes d'affichage
+Route::get('categories/{key}/{val}',[App\Http\Controllers\API\CategorieController::class,'data'])->withoutMiddleware("throttle:api")->name('Categories_api_index2');
+Route::get('categories',[App\Http\Controllers\API\CategorieController::class,'data1'])->withoutMiddleware("throttle:api")->name('Categories_api_index');
+Route::post('categories-Aggrid', [App\Http\Controllers\API\CategorieController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Categories_api_aggrid');
+
+// la route de creation
+Route::post('categories',[App\Http\Controllers\API\CategorieController::class,'create'])->withoutMiddleware("throttle:api")->name('Categories_api_create');
+// la route d'edition
+Route::post('categories/{Categories}/update',[App\Http\Controllers\API\CategorieController::class,'update'])->withoutMiddleware("throttle:api")->name('Categories_api_update');
+// la route de suppression
+Route::post('categories/{Categories}/delete',[App\Http\Controllers\API\CategorieController::class,'delete'])->withoutMiddleware("throttle:api")->name('Categories_api_delete');
+// la route des actions
+Route::get('categories/action',[App\Http\Controllers\API\CategorieController::class,'action'])->withoutMiddleware("throttle:api")->name('Categories_api_delete');
+// la route des actions
+Route::post('categories/action',[App\Http\Controllers\API\CategorieController::class,'action'])->withoutMiddleware("throttle:api")->name('Categories_api_delete');
+
+
+
+//Route::resource('Clients',App\Http\Controllers\API\ClientController::class);
+// les routes d'affichage
+Route::get('clients/{key}/{val}',[App\Http\Controllers\API\ClientController::class,'data'])->withoutMiddleware("throttle:api")->name('Clients_api_index2');
+Route::get('clients',[App\Http\Controllers\API\ClientController::class,'data1'])->withoutMiddleware("throttle:api")->name('Clients_api_index');
+Route::post('clients-Aggrid', [App\Http\Controllers\API\ClientController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Clients_api_aggrid');
+
+// la route de creation
+Route::post('clients',[App\Http\Controllers\API\ClientController::class,'create'])->withoutMiddleware("throttle:api")->name('Clients_api_create');
+// la route d'edition
+Route::post('clients/{Clients}/update',[App\Http\Controllers\API\ClientController::class,'update'])->withoutMiddleware("throttle:api")->name('Clients_api_update');
+// la route de suppression
+Route::post('clients/{Clients}/delete',[App\Http\Controllers\API\ClientController::class,'delete'])->withoutMiddleware("throttle:api")->name('Clients_api_delete');
+// la route des actions
+Route::get('clients/action',[App\Http\Controllers\API\ClientController::class,'action'])->withoutMiddleware("throttle:api")->name('Clients_api_delete');
+// la route des actions
+Route::post('clients/action',[App\Http\Controllers\API\ClientController::class,'action'])->withoutMiddleware("throttle:api")->name('Clients_api_delete');
+
+
+
+//Route::resource('Configurations',App\Http\Controllers\API\ConfigurationController::class);
+// les routes d'affichage
+Route::get('configurations/{key}/{val}',[App\Http\Controllers\API\ConfigurationController::class,'data'])->withoutMiddleware("throttle:api")->name('Configurations_api_index2');
+Route::get('configurations',[App\Http\Controllers\API\ConfigurationController::class,'data1'])->withoutMiddleware("throttle:api")->name('Configurations_api_index');
+Route::post('configurations-Aggrid', [App\Http\Controllers\API\ConfigurationController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Configurations_api_aggrid');
+
+// la route de creation
+Route::post('configurations',[App\Http\Controllers\API\ConfigurationController::class,'create'])->withoutMiddleware("throttle:api")->name('Configurations_api_create');
+// la route d'edition
+Route::post('configurations/{Configurations}/update',[App\Http\Controllers\API\ConfigurationController::class,'update'])->withoutMiddleware("throttle:api")->name('Configurations_api_update');
+// la route de suppression
+Route::post('configurations/{Configurations}/delete',[App\Http\Controllers\API\ConfigurationController::class,'delete'])->withoutMiddleware("throttle:api")->name('Configurations_api_delete');
+// la route des actions
+Route::get('configurations/action',[App\Http\Controllers\API\ConfigurationController::class,'action'])->withoutMiddleware("throttle:api")->name('Configurations_api_delete');
+// la route des actions
+Route::post('configurations/action',[App\Http\Controllers\API\ConfigurationController::class,'action'])->withoutMiddleware("throttle:api")->name('Configurations_api_delete');
+
+
+
+//Route::resource('Conges',App\Http\Controllers\API\CongeController::class);
+// les routes d'affichage
+Route::get('conges/{key}/{val}',[App\Http\Controllers\API\CongeController::class,'data'])->withoutMiddleware("throttle:api")->name('Conges_api_index2');
+Route::get('conges',[App\Http\Controllers\API\CongeController::class,'data1'])->withoutMiddleware("throttle:api")->name('Conges_api_index');
+Route::post('conges-Aggrid', [App\Http\Controllers\API\CongeController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Conges_api_aggrid');
+
+// la route de creation
+Route::post('conges',[App\Http\Controllers\API\CongeController::class,'create'])->withoutMiddleware("throttle:api")->name('Conges_api_create');
+// la route d'edition
+Route::post('conges/{Conges}/update',[App\Http\Controllers\API\CongeController::class,'update'])->withoutMiddleware("throttle:api")->name('Conges_api_update');
+// la route de suppression
+Route::post('conges/{Conges}/delete',[App\Http\Controllers\API\CongeController::class,'delete'])->withoutMiddleware("throttle:api")->name('Conges_api_delete');
+// la route des actions
+Route::get('conges/action',[App\Http\Controllers\API\CongeController::class,'action'])->withoutMiddleware("throttle:api")->name('Conges_api_delete');
+// la route des actions
+Route::post('conges/action',[App\Http\Controllers\API\CongeController::class,'action'])->withoutMiddleware("throttle:api")->name('Conges_api_delete');
+
+
+
+//Route::resource('Contrats',App\Http\Controllers\API\ContratController::class);
+// les routes d'affichage
+Route::get('contrats/{key}/{val}',[App\Http\Controllers\API\ContratController::class,'data'])->withoutMiddleware("throttle:api")->name('Contrats_api_index2');
+Route::get('contrats',[App\Http\Controllers\API\ContratController::class,'data1'])->withoutMiddleware("throttle:api")->name('Contrats_api_index');
+Route::post('contrats-Aggrid', [App\Http\Controllers\API\ContratController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Contrats_api_aggrid');
+
+// la route de creation
+Route::post('contrats',[App\Http\Controllers\API\ContratController::class,'create'])->withoutMiddleware("throttle:api")->name('Contrats_api_create');
+// la route d'edition
+Route::post('contrats/{Contrats}/update',[App\Http\Controllers\API\ContratController::class,'update'])->withoutMiddleware("throttle:api")->name('Contrats_api_update');
+// la route de suppression
+Route::post('contrats/{Contrats}/delete',[App\Http\Controllers\API\ContratController::class,'delete'])->withoutMiddleware("throttle:api")->name('Contrats_api_delete');
+// la route des actions
+Route::get('contrats/action',[App\Http\Controllers\API\ContratController::class,'action'])->withoutMiddleware("throttle:api")->name('Contrats_api_delete');
+// la route des actions
+Route::post('contrats/action',[App\Http\Controllers\API\ContratController::class,'action'])->withoutMiddleware("throttle:api")->name('Contrats_api_delete');
+
+
+
+//Route::resource('Contratsclients',App\Http\Controllers\API\ContratsclientController::class);
+// les routes d'affichage
+Route::get('contratsclients/{key}/{val}',[App\Http\Controllers\API\ContratsclientController::class,'data'])->withoutMiddleware("throttle:api")->name('Contratsclients_api_index2');
+Route::get('contratsclients',[App\Http\Controllers\API\ContratsclientController::class,'data1'])->withoutMiddleware("throttle:api")->name('Contratsclients_api_index');
+Route::post('contratsclients-Aggrid', [App\Http\Controllers\API\ContratsclientController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Contratsclients_api_aggrid');
+
+// la route de creation
+Route::post('contratsclients',[App\Http\Controllers\API\ContratsclientController::class,'create'])->withoutMiddleware("throttle:api")->name('Contratsclients_api_create');
+// la route d'edition
+Route::post('contratsclients/{Contratsclients}/update',[App\Http\Controllers\API\ContratsclientController::class,'update'])->withoutMiddleware("throttle:api")->name('Contratsclients_api_update');
+// la route de suppression
+Route::post('contratsclients/{Contratsclients}/delete',[App\Http\Controllers\API\ContratsclientController::class,'delete'])->withoutMiddleware("throttle:api")->name('Contratsclients_api_delete');
+// la route des actions
+Route::get('contratsclients/action',[App\Http\Controllers\API\ContratsclientController::class,'action'])->withoutMiddleware("throttle:api")->name('Contratsclients_api_delete');
+// la route des actions
+Route::post('contratsclients/action',[App\Http\Controllers\API\ContratsclientController::class,'action'])->withoutMiddleware("throttle:api")->name('Contratsclients_api_delete');
+
+
+
+//Route::resource('Controlleursacces',App\Http\Controllers\API\ControlleursacceController::class);
+// les routes d'affichage
+Route::get('controlleursacces/{key}/{val}',[App\Http\Controllers\API\ControlleursacceController::class,'data'])->withoutMiddleware("throttle:api")->name('Controlleursacces_api_index2');
+Route::get('controlleursacces',[App\Http\Controllers\API\ControlleursacceController::class,'data1'])->withoutMiddleware("throttle:api")->name('Controlleursacces_api_index');
+Route::post('controlleursacces-Aggrid', [App\Http\Controllers\API\ControlleursacceController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Controlleursacces_api_aggrid');
+
+// la route de creation
+Route::post('controlleursacces',[App\Http\Controllers\API\ControlleursacceController::class,'create'])->withoutMiddleware("throttle:api")->name('Controlleursacces_api_create');
+// la route d'edition
+Route::post('controlleursacces/{Controlleursacces}/update',[App\Http\Controllers\API\ControlleursacceController::class,'update'])->withoutMiddleware("throttle:api")->name('Controlleursacces_api_update');
+// la route de suppression
+Route::post('controlleursacces/{Controlleursacces}/delete',[App\Http\Controllers\API\ControlleursacceController::class,'delete'])->withoutMiddleware("throttle:api")->name('Controlleursacces_api_delete');
+// la route des actions
+Route::get('controlleursacces/action',[App\Http\Controllers\API\ControlleursacceController::class,'action'])->withoutMiddleware("throttle:api")->name('Controlleursacces_api_delete');
+// la route des actions
+Route::post('controlleursacces/action',[App\Http\Controllers\API\ControlleursacceController::class,'action'])->withoutMiddleware("throttle:api")->name('Controlleursacces_api_delete');
+
+
+
+//Route::resource('Credits',App\Http\Controllers\API\CreditController::class);
+// les routes d'affichage
+Route::get('credits/{key}/{val}',[App\Http\Controllers\API\CreditController::class,'data'])->withoutMiddleware("throttle:api")->name('Credits_api_index2');
+Route::get('credits',[App\Http\Controllers\API\CreditController::class,'data1'])->withoutMiddleware("throttle:api")->name('Credits_api_index');
+Route::post('credits-Aggrid', [App\Http\Controllers\API\CreditController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Credits_api_aggrid');
+
+// la route de creation
+Route::post('credits',[App\Http\Controllers\API\CreditController::class,'create'])->withoutMiddleware("throttle:api")->name('Credits_api_create');
+// la route d'edition
+Route::post('credits/{Credits}/update',[App\Http\Controllers\API\CreditController::class,'update'])->withoutMiddleware("throttle:api")->name('Credits_api_update');
+// la route de suppression
+Route::post('credits/{Credits}/delete',[App\Http\Controllers\API\CreditController::class,'delete'])->withoutMiddleware("throttle:api")->name('Credits_api_delete');
+// la route des actions
+Route::get('credits/action',[App\Http\Controllers\API\CreditController::class,'action'])->withoutMiddleware("throttle:api")->name('Credits_api_delete');
+// la route des actions
+Route::post('credits/action',[App\Http\Controllers\API\CreditController::class,'action'])->withoutMiddleware("throttle:api")->name('Credits_api_delete');
+
+
+
+//Route::resource('Cruds',App\Http\Controllers\API\CrudController::class);
+// les routes d'affichage
+Route::get('cruds/{key}/{val}',[App\Http\Controllers\API\CrudController::class,'data'])->withoutMiddleware("throttle:api")->name('Cruds_api_index2');
+Route::get('cruds',[App\Http\Controllers\API\CrudController::class,'data1'])->withoutMiddleware("throttle:api")->name('Cruds_api_index');
+Route::post('cruds-Aggrid', [App\Http\Controllers\API\CrudController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Cruds_api_aggrid');
+
+// la route de creation
+Route::post('cruds',[App\Http\Controllers\API\CrudController::class,'create'])->withoutMiddleware("throttle:api")->name('Cruds_api_create');
+// la route d'edition
+Route::post('cruds/{Cruds}/update',[App\Http\Controllers\API\CrudController::class,'update'])->withoutMiddleware("throttle:api")->name('Cruds_api_update');
+// la route de suppression
+Route::post('cruds/{Cruds}/delete',[App\Http\Controllers\API\CrudController::class,'delete'])->withoutMiddleware("throttle:api")->name('Cruds_api_delete');
+// la route des actions
+Route::get('cruds/action',[App\Http\Controllers\API\CrudController::class,'action'])->withoutMiddleware("throttle:api")->name('Cruds_api_delete');
+// la route des actions
+Route::post('cruds/action',[App\Http\Controllers\API\CrudController::class,'action'])->withoutMiddleware("throttle:api")->name('Cruds_api_delete');
+
+
+
+//Route::resource('Debits',App\Http\Controllers\API\DebitController::class);
+// les routes d'affichage
+Route::get('debits/{key}/{val}',[App\Http\Controllers\API\DebitController::class,'data'])->withoutMiddleware("throttle:api")->name('Debits_api_index2');
+Route::get('debits',[App\Http\Controllers\API\DebitController::class,'data1'])->withoutMiddleware("throttle:api")->name('Debits_api_index');
+Route::post('debits-Aggrid', [App\Http\Controllers\API\DebitController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Debits_api_aggrid');
+
+// la route de creation
+Route::post('debits',[App\Http\Controllers\API\DebitController::class,'create'])->withoutMiddleware("throttle:api")->name('Debits_api_create');
+// la route d'edition
+Route::post('debits/{Debits}/update',[App\Http\Controllers\API\DebitController::class,'update'])->withoutMiddleware("throttle:api")->name('Debits_api_update');
+// la route de suppression
+Route::post('debits/{Debits}/delete',[App\Http\Controllers\API\DebitController::class,'delete'])->withoutMiddleware("throttle:api")->name('Debits_api_delete');
+// la route des actions
+Route::get('debits/action',[App\Http\Controllers\API\DebitController::class,'action'])->withoutMiddleware("throttle:api")->name('Debits_api_delete');
+// la route des actions
+Route::post('debits/action',[App\Http\Controllers\API\DebitController::class,'action'])->withoutMiddleware("throttle:api")->name('Debits_api_delete');
+
+
+
+//Route::resource('Dependances',App\Http\Controllers\API\DependanceController::class);
+// les routes d'affichage
+Route::get('dependances/{key}/{val}',[App\Http\Controllers\API\DependanceController::class,'data'])->withoutMiddleware("throttle:api")->name('Dependances_api_index2');
+Route::get('dependances',[App\Http\Controllers\API\DependanceController::class,'data1'])->withoutMiddleware("throttle:api")->name('Dependances_api_index');
+Route::post('dependances-Aggrid', [App\Http\Controllers\API\DependanceController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Dependances_api_aggrid');
+
+// la route de creation
+Route::post('dependances',[App\Http\Controllers\API\DependanceController::class,'create'])->withoutMiddleware("throttle:api")->name('Dependances_api_create');
+// la route d'edition
+Route::post('dependances/{Dependances}/update',[App\Http\Controllers\API\DependanceController::class,'update'])->withoutMiddleware("throttle:api")->name('Dependances_api_update');
+// la route de suppression
+Route::post('dependances/{Dependances}/delete',[App\Http\Controllers\API\DependanceController::class,'delete'])->withoutMiddleware("throttle:api")->name('Dependances_api_delete');
+// la route des actions
+Route::get('dependances/action',[App\Http\Controllers\API\DependanceController::class,'action'])->withoutMiddleware("throttle:api")->name('Dependances_api_delete');
+// la route des actions
+Route::post('dependances/action',[App\Http\Controllers\API\DependanceController::class,'action'])->withoutMiddleware("throttle:api")->name('Dependances_api_delete');
+
+
+
+//Route::resource('Deplacements',App\Http\Controllers\API\DeplacementController::class);
+// les routes d'affichage
+Route::get('deplacements/{key}/{val}',[App\Http\Controllers\API\DeplacementController::class,'data'])->withoutMiddleware("throttle:api")->name('Deplacements_api_index2');
+Route::get('deplacements',[App\Http\Controllers\API\DeplacementController::class,'data1'])->withoutMiddleware("throttle:api")->name('Deplacements_api_index');
+Route::post('deplacements-Aggrid', [App\Http\Controllers\API\DeplacementController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Deplacements_api_aggrid');
+
+// la route de creation
+Route::post('deplacements',[App\Http\Controllers\API\DeplacementController::class,'create'])->withoutMiddleware("throttle:api")->name('Deplacements_api_create');
+// la route d'edition
+Route::post('deplacements/{Deplacements}/update',[App\Http\Controllers\API\DeplacementController::class,'update'])->withoutMiddleware("throttle:api")->name('Deplacements_api_update');
+// la route de suppression
+Route::post('deplacements/{Deplacements}/delete',[App\Http\Controllers\API\DeplacementController::class,'delete'])->withoutMiddleware("throttle:api")->name('Deplacements_api_delete');
+// la route des actions
+Route::get('deplacements/action',[App\Http\Controllers\API\DeplacementController::class,'action'])->withoutMiddleware("throttle:api")->name('Deplacements_api_delete');
+// la route des actions
+Route::post('deplacements/action',[App\Http\Controllers\API\DeplacementController::class,'action'])->withoutMiddleware("throttle:api")->name('Deplacements_api_delete');
+
+
+
+//Route::resource('Directions',App\Http\Controllers\API\DirectionController::class);
+// les routes d'affichage
+Route::get('directions/{key}/{val}',[App\Http\Controllers\API\DirectionController::class,'data'])->withoutMiddleware("throttle:api")->name('Directions_api_index2');
+Route::get('directions',[App\Http\Controllers\API\DirectionController::class,'data1'])->withoutMiddleware("throttle:api")->name('Directions_api_index');
+Route::post('directions-Aggrid', [App\Http\Controllers\API\DirectionController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Directions_api_aggrid');
+
+// la route de creation
+Route::post('directions',[App\Http\Controllers\API\DirectionController::class,'create'])->withoutMiddleware("throttle:api")->name('Directions_api_create');
+// la route d'edition
+Route::post('directions/{Directions}/update',[App\Http\Controllers\API\DirectionController::class,'update'])->withoutMiddleware("throttle:api")->name('Directions_api_update');
+// la route de suppression
+Route::post('directions/{Directions}/delete',[App\Http\Controllers\API\DirectionController::class,'delete'])->withoutMiddleware("throttle:api")->name('Directions_api_delete');
+// la route des actions
+Route::get('directions/action',[App\Http\Controllers\API\DirectionController::class,'action'])->withoutMiddleware("throttle:api")->name('Directions_api_delete');
+// la route des actions
+Route::post('directions/action',[App\Http\Controllers\API\DirectionController::class,'action'])->withoutMiddleware("throttle:api")->name('Directions_api_delete');
+
+
+
+//Route::resource('Echelons',App\Http\Controllers\API\EchelonController::class);
+// les routes d'affichage
+Route::get('echelons/{key}/{val}',[App\Http\Controllers\API\EchelonController::class,'data'])->withoutMiddleware("throttle:api")->name('Echelons_api_index2');
+Route::get('echelons',[App\Http\Controllers\API\EchelonController::class,'data1'])->withoutMiddleware("throttle:api")->name('Echelons_api_index');
+Route::post('echelons-Aggrid', [App\Http\Controllers\API\EchelonController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Echelons_api_aggrid');
+
+// la route de creation
+Route::post('echelons',[App\Http\Controllers\API\EchelonController::class,'create'])->withoutMiddleware("throttle:api")->name('Echelons_api_create');
+// la route d'edition
+Route::post('echelons/{Echelons}/update',[App\Http\Controllers\API\EchelonController::class,'update'])->withoutMiddleware("throttle:api")->name('Echelons_api_update');
+// la route de suppression
+Route::post('echelons/{Echelons}/delete',[App\Http\Controllers\API\EchelonController::class,'delete'])->withoutMiddleware("throttle:api")->name('Echelons_api_delete');
+// la route des actions
+Route::get('echelons/action',[App\Http\Controllers\API\EchelonController::class,'action'])->withoutMiddleware("throttle:api")->name('Echelons_api_delete');
+// la route des actions
+Route::post('echelons/action',[App\Http\Controllers\API\EchelonController::class,'action'])->withoutMiddleware("throttle:api")->name('Echelons_api_delete');
+
+
+
+//Route::resource('Entreprises',App\Http\Controllers\API\EntrepriseController::class);
+// les routes d'affichage
+Route::get('entreprises/{key}/{val}',[App\Http\Controllers\API\EntrepriseController::class,'data'])->withoutMiddleware("throttle:api")->name('Entreprises_api_index2');
+Route::get('entreprises',[App\Http\Controllers\API\EntrepriseController::class,'data1'])->withoutMiddleware("throttle:api")->name('Entreprises_api_index');
+Route::post('entreprises-Aggrid', [App\Http\Controllers\API\EntrepriseController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Entreprises_api_aggrid');
+
+// la route de creation
+Route::post('entreprises',[App\Http\Controllers\API\EntrepriseController::class,'create'])->withoutMiddleware("throttle:api")->name('Entreprises_api_create');
+// la route d'edition
+Route::post('entreprises/{Entreprises}/update',[App\Http\Controllers\API\EntrepriseController::class,'update'])->withoutMiddleware("throttle:api")->name('Entreprises_api_update');
+// la route de suppression
+Route::post('entreprises/{Entreprises}/delete',[App\Http\Controllers\API\EntrepriseController::class,'delete'])->withoutMiddleware("throttle:api")->name('Entreprises_api_delete');
+// la route des actions
+Route::get('entreprises/action',[App\Http\Controllers\API\EntrepriseController::class,'action'])->withoutMiddleware("throttle:api")->name('Entreprises_api_delete');
+// la route des actions
+Route::post('entreprises/action',[App\Http\Controllers\API\EntrepriseController::class,'action'])->withoutMiddleware("throttle:api")->name('Entreprises_api_delete');
+
+
+
+//Route::resource('Etapes',App\Http\Controllers\API\EtapeController::class);
+// les routes d'affichage
+Route::get('etapes/{key}/{val}',[App\Http\Controllers\API\EtapeController::class,'data'])->withoutMiddleware("throttle:api")->name('Etapes_api_index2');
+Route::get('etapes',[App\Http\Controllers\API\EtapeController::class,'data1'])->withoutMiddleware("throttle:api")->name('Etapes_api_index');
+Route::post('etapes-Aggrid', [App\Http\Controllers\API\EtapeController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Etapes_api_aggrid');
+
+// la route de creation
+Route::post('etapes',[App\Http\Controllers\API\EtapeController::class,'create'])->withoutMiddleware("throttle:api")->name('Etapes_api_create');
+// la route d'edition
+Route::post('etapes/{Etapes}/update',[App\Http\Controllers\API\EtapeController::class,'update'])->withoutMiddleware("throttle:api")->name('Etapes_api_update');
+// la route de suppression
+Route::post('etapes/{Etapes}/delete',[App\Http\Controllers\API\EtapeController::class,'delete'])->withoutMiddleware("throttle:api")->name('Etapes_api_delete');
+// la route des actions
+Route::get('etapes/action',[App\Http\Controllers\API\EtapeController::class,'action'])->withoutMiddleware("throttle:api")->name('Etapes_api_delete');
+// la route des actions
+Route::post('etapes/action',[App\Http\Controllers\API\EtapeController::class,'action'])->withoutMiddleware("throttle:api")->name('Etapes_api_delete');
+
+
+
+//Route::resource('Exports',App\Http\Controllers\API\ExportController::class);
+// les routes d'affichage
+Route::get('exports/{key}/{val}',[App\Http\Controllers\API\ExportController::class,'data'])->withoutMiddleware("throttle:api")->name('Exports_api_index2');
+Route::get('exports',[App\Http\Controllers\API\ExportController::class,'data1'])->withoutMiddleware("throttle:api")->name('Exports_api_index');
+Route::post('exports-Aggrid', [App\Http\Controllers\API\ExportController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Exports_api_aggrid');
+
+// la route de creation
+Route::post('exports',[App\Http\Controllers\API\ExportController::class,'create'])->withoutMiddleware("throttle:api")->name('Exports_api_create');
+// la route d'edition
+Route::post('exports/{Exports}/update',[App\Http\Controllers\API\ExportController::class,'update'])->withoutMiddleware("throttle:api")->name('Exports_api_update');
+// la route de suppression
+Route::post('exports/{Exports}/delete',[App\Http\Controllers\API\ExportController::class,'delete'])->withoutMiddleware("throttle:api")->name('Exports_api_delete');
+// la route des actions
+Route::get('exports/action',[App\Http\Controllers\API\ExportController::class,'action'])->withoutMiddleware("throttle:api")->name('Exports_api_delete');
+// la route des actions
+Route::post('exports/action',[App\Http\Controllers\API\ExportController::class,'action'])->withoutMiddleware("throttle:api")->name('Exports_api_delete');
+
+
+
+//Route::resource('Exportsdetails',App\Http\Controllers\API\ExportsdetailController::class);
+// les routes d'affichage
+Route::get('exportsdetails/{key}/{val}',[App\Http\Controllers\API\ExportsdetailController::class,'data'])->withoutMiddleware("throttle:api")->name('Exportsdetails_api_index2');
+Route::get('exportsdetails',[App\Http\Controllers\API\ExportsdetailController::class,'data1'])->withoutMiddleware("throttle:api")->name('Exportsdetails_api_index');
+Route::post('exportsdetails-Aggrid', [App\Http\Controllers\API\ExportsdetailController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Exportsdetails_api_aggrid');
+
+// la route de creation
+Route::post('exportsdetails',[App\Http\Controllers\API\ExportsdetailController::class,'create'])->withoutMiddleware("throttle:api")->name('Exportsdetails_api_create');
+// la route d'edition
+Route::post('exportsdetails/{Exportsdetails}/update',[App\Http\Controllers\API\ExportsdetailController::class,'update'])->withoutMiddleware("throttle:api")->name('Exportsdetails_api_update');
+// la route de suppression
+Route::post('exportsdetails/{Exportsdetails}/delete',[App\Http\Controllers\API\ExportsdetailController::class,'delete'])->withoutMiddleware("throttle:api")->name('Exportsdetails_api_delete');
+// la route des actions
+Route::get('exportsdetails/action',[App\Http\Controllers\API\ExportsdetailController::class,'action'])->withoutMiddleware("throttle:api")->name('Exportsdetails_api_delete');
+// la route des actions
+Route::post('exportsdetails/action',[App\Http\Controllers\API\ExportsdetailController::class,'action'])->withoutMiddleware("throttle:api")->name('Exportsdetails_api_delete');
+
+
+
+//Route::resource('Extrasdatas',App\Http\Controllers\API\ExtrasdataController::class);
+// les routes d'affichage
+Route::get('extrasdatas/{key}/{val}',[App\Http\Controllers\API\ExtrasdataController::class,'data'])->withoutMiddleware("throttle:api")->name('Extrasdatas_api_index2');
+Route::get('extrasdatas',[App\Http\Controllers\API\ExtrasdataController::class,'data1'])->withoutMiddleware("throttle:api")->name('Extrasdatas_api_index');
+Route::post('extrasdatas-Aggrid', [App\Http\Controllers\API\ExtrasdataController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Extrasdatas_api_aggrid');
+
+// la route de creation
+Route::post('extrasdatas',[App\Http\Controllers\API\ExtrasdataController::class,'create'])->withoutMiddleware("throttle:api")->name('Extrasdatas_api_create');
+// la route d'edition
+Route::post('extrasdatas/{Extrasdatas}/update',[App\Http\Controllers\API\ExtrasdataController::class,'update'])->withoutMiddleware("throttle:api")->name('Extrasdatas_api_update');
+// la route de suppression
+Route::post('extrasdatas/{Extrasdatas}/delete',[App\Http\Controllers\API\ExtrasdataController::class,'delete'])->withoutMiddleware("throttle:api")->name('Extrasdatas_api_delete');
+// la route des actions
+Route::get('extrasdatas/action',[App\Http\Controllers\API\ExtrasdataController::class,'action'])->withoutMiddleware("throttle:api")->name('Extrasdatas_api_delete');
+// la route des actions
+Route::post('extrasdatas/action',[App\Http\Controllers\API\ExtrasdataController::class,'action'])->withoutMiddleware("throttle:api")->name('Extrasdatas_api_delete');
+
+
+
+//Route::resource('Files',App\Http\Controllers\API\FileController::class);
+// les routes d'affichage
+Route::get('files/{key}/{val}',[App\Http\Controllers\API\FileController::class,'data'])->withoutMiddleware("throttle:api")->name('Files_api_index2');
+Route::get('files',[App\Http\Controllers\API\FileController::class,'data1'])->withoutMiddleware("throttle:api")->name('Files_api_index');
+Route::post('files-Aggrid', [App\Http\Controllers\API\FileController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Files_api_aggrid');
+
+// la route de creation
+Route::post('files',[App\Http\Controllers\API\FileController::class,'create'])->withoutMiddleware("throttle:api")->name('Files_api_create');
+// la route d'edition
+Route::post('files/{Files}/update',[App\Http\Controllers\API\FileController::class,'update'])->withoutMiddleware("throttle:api")->name('Files_api_update');
+// la route de suppression
+Route::post('files/{Files}/delete',[App\Http\Controllers\API\FileController::class,'delete'])->withoutMiddleware("throttle:api")->name('Files_api_delete');
+// la route des actions
+Route::get('files/action',[App\Http\Controllers\API\FileController::class,'action'])->withoutMiddleware("throttle:api")->name('Files_api_delete');
+// la route des actions
+Route::post('files/action',[App\Http\Controllers\API\FileController::class,'action'])->withoutMiddleware("throttle:api")->name('Files_api_delete');
+
+
+
+//Route::resource('Fonctions',App\Http\Controllers\API\FonctionController::class);
+// les routes d'affichage
+Route::get('fonctions/{key}/{val}',[App\Http\Controllers\API\FonctionController::class,'data'])->withoutMiddleware("throttle:api")->name('Fonctions_api_index2');
+Route::get('fonctions',[App\Http\Controllers\API\FonctionController::class,'data1'])->withoutMiddleware("throttle:api")->name('Fonctions_api_index');
+Route::post('fonctions-Aggrid', [App\Http\Controllers\API\FonctionController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Fonctions_api_aggrid');
+
+// la route de creation
+Route::post('fonctions',[App\Http\Controllers\API\FonctionController::class,'create'])->withoutMiddleware("throttle:api")->name('Fonctions_api_create');
+// la route d'edition
+Route::post('fonctions/{Fonctions}/update',[App\Http\Controllers\API\FonctionController::class,'update'])->withoutMiddleware("throttle:api")->name('Fonctions_api_update');
+// la route de suppression
+Route::post('fonctions/{Fonctions}/delete',[App\Http\Controllers\API\FonctionController::class,'delete'])->withoutMiddleware("throttle:api")->name('Fonctions_api_delete');
+// la route des actions
+Route::get('fonctions/action',[App\Http\Controllers\API\FonctionController::class,'action'])->withoutMiddleware("throttle:api")->name('Fonctions_api_delete');
+// la route des actions
+Route::post('fonctions/action',[App\Http\Controllers\API\FonctionController::class,'action'])->withoutMiddleware("throttle:api")->name('Fonctions_api_delete');
+
+
+
+//Route::resource('Graphiques',App\Http\Controllers\API\GraphiqueController::class);
+// les routes d'affichage
+Route::get('graphiques/{key}/{val}',[App\Http\Controllers\API\GraphiqueController::class,'data'])->withoutMiddleware("throttle:api")->name('Graphiques_api_index2');
+Route::get('graphiques',[App\Http\Controllers\API\GraphiqueController::class,'data1'])->withoutMiddleware("throttle:api")->name('Graphiques_api_index');
+Route::post('graphiques-Aggrid', [App\Http\Controllers\API\GraphiqueController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Graphiques_api_aggrid');
+
+// la route de creation
+Route::post('graphiques',[App\Http\Controllers\API\GraphiqueController::class,'create'])->withoutMiddleware("throttle:api")->name('Graphiques_api_create');
+// la route d'edition
+Route::post('graphiques/{Graphiques}/update',[App\Http\Controllers\API\GraphiqueController::class,'update'])->withoutMiddleware("throttle:api")->name('Graphiques_api_update');
+// la route de suppression
+Route::post('graphiques/{Graphiques}/delete',[App\Http\Controllers\API\GraphiqueController::class,'delete'])->withoutMiddleware("throttle:api")->name('Graphiques_api_delete');
+// la route des actions
+Route::get('graphiques/action',[App\Http\Controllers\API\GraphiqueController::class,'action'])->withoutMiddleware("throttle:api")->name('Graphiques_api_delete');
+// la route des actions
+Route::post('graphiques/action',[App\Http\Controllers\API\GraphiqueController::class,'action'])->withoutMiddleware("throttle:api")->name('Graphiques_api_delete');
+
+
+
+//Route::resource('Groupedirections',App\Http\Controllers\API\GroupedirectionController::class);
+// les routes d'affichage
+Route::get('groupedirections/{key}/{val}',[App\Http\Controllers\API\GroupedirectionController::class,'data'])->withoutMiddleware("throttle:api")->name('Groupedirections_api_index2');
+Route::get('groupedirections',[App\Http\Controllers\API\GroupedirectionController::class,'data1'])->withoutMiddleware("throttle:api")->name('Groupedirections_api_index');
+Route::post('groupedirections-Aggrid', [App\Http\Controllers\API\GroupedirectionController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Groupedirections_api_aggrid');
+
+// la route de creation
+Route::post('groupedirections',[App\Http\Controllers\API\GroupedirectionController::class,'create'])->withoutMiddleware("throttle:api")->name('Groupedirections_api_create');
+// la route d'edition
+Route::post('groupedirections/{Groupedirections}/update',[App\Http\Controllers\API\GroupedirectionController::class,'update'])->withoutMiddleware("throttle:api")->name('Groupedirections_api_update');
+// la route de suppression
+Route::post('groupedirections/{Groupedirections}/delete',[App\Http\Controllers\API\GroupedirectionController::class,'delete'])->withoutMiddleware("throttle:api")->name('Groupedirections_api_delete');
+// la route des actions
+Route::get('groupedirections/action',[App\Http\Controllers\API\GroupedirectionController::class,'action'])->withoutMiddleware("throttle:api")->name('Groupedirections_api_delete');
+// la route des actions
+Route::post('groupedirections/action',[App\Http\Controllers\API\GroupedirectionController::class,'action'])->withoutMiddleware("throttle:api")->name('Groupedirections_api_delete');
+
+
+
+//Route::resource('Groupepermissions',App\Http\Controllers\API\GroupepermissionController::class);
+// les routes d'affichage
+Route::get('groupepermissions/{key}/{val}',[App\Http\Controllers\API\GroupepermissionController::class,'data'])->withoutMiddleware("throttle:api")->name('Groupepermissions_api_index2');
+Route::get('groupepermissions',[App\Http\Controllers\API\GroupepermissionController::class,'data1'])->withoutMiddleware("throttle:api")->name('Groupepermissions_api_index');
+Route::post('groupepermissions-Aggrid', [App\Http\Controllers\API\GroupepermissionController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Groupepermissions_api_aggrid');
+
+// la route de creation
+Route::post('groupepermissions',[App\Http\Controllers\API\GroupepermissionController::class,'create'])->withoutMiddleware("throttle:api")->name('Groupepermissions_api_create');
+// la route d'edition
+Route::post('groupepermissions/{Groupepermissions}/update',[App\Http\Controllers\API\GroupepermissionController::class,'update'])->withoutMiddleware("throttle:api")->name('Groupepermissions_api_update');
+// la route de suppression
+Route::post('groupepermissions/{Groupepermissions}/delete',[App\Http\Controllers\API\GroupepermissionController::class,'delete'])->withoutMiddleware("throttle:api")->name('Groupepermissions_api_delete');
+// la route des actions
+Route::get('groupepermissions/action',[App\Http\Controllers\API\GroupepermissionController::class,'action'])->withoutMiddleware("throttle:api")->name('Groupepermissions_api_delete');
+// la route des actions
+Route::post('groupepermissions/action',[App\Http\Controllers\API\GroupepermissionController::class,'action'])->withoutMiddleware("throttle:api")->name('Groupepermissions_api_delete');
+
+
+
+//Route::resource('Headselements',App\Http\Controllers\API\HeadselementController::class);
+// les routes d'affichage
+Route::get('headselements/{key}/{val}',[App\Http\Controllers\API\HeadselementController::class,'data'])->withoutMiddleware("throttle:api")->name('Headselements_api_index2');
+Route::get('headselements',[App\Http\Controllers\API\HeadselementController::class,'data1'])->withoutMiddleware("throttle:api")->name('Headselements_api_index');
+Route::post('headselements-Aggrid', [App\Http\Controllers\API\HeadselementController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Headselements_api_aggrid');
+
+// la route de creation
+Route::post('headselements',[App\Http\Controllers\API\HeadselementController::class,'create'])->withoutMiddleware("throttle:api")->name('Headselements_api_create');
+// la route d'edition
+Route::post('headselements/{Headselements}/update',[App\Http\Controllers\API\HeadselementController::class,'update'])->withoutMiddleware("throttle:api")->name('Headselements_api_update');
+// la route de suppression
+Route::post('headselements/{Headselements}/delete',[App\Http\Controllers\API\HeadselementController::class,'delete'])->withoutMiddleware("throttle:api")->name('Headselements_api_delete');
+// la route des actions
+Route::get('headselements/action',[App\Http\Controllers\API\HeadselementController::class,'action'])->withoutMiddleware("throttle:api")->name('Headselements_api_delete');
+// la route des actions
+Route::post('headselements/action',[App\Http\Controllers\API\HeadselementController::class,'action'])->withoutMiddleware("throttle:api")->name('Headselements_api_delete');
+
+
+
+//Route::resource('Historiquemodelslistings',App\Http\Controllers\API\HistoriquemodelslistingController::class);
+// les routes d'affichage
+Route::get('historiquemodelslistings/{key}/{val}',[App\Http\Controllers\API\HistoriquemodelslistingController::class,'data'])->withoutMiddleware("throttle:api")->name('Historiquemodelslistings_api_index2');
+Route::get('historiquemodelslistings',[App\Http\Controllers\API\HistoriquemodelslistingController::class,'data1'])->withoutMiddleware("throttle:api")->name('Historiquemodelslistings_api_index');
+Route::post('historiquemodelslistings-Aggrid', [App\Http\Controllers\API\HistoriquemodelslistingController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Historiquemodelslistings_api_aggrid');
+
+// la route de creation
+Route::post('historiquemodelslistings',[App\Http\Controllers\API\HistoriquemodelslistingController::class,'create'])->withoutMiddleware("throttle:api")->name('Historiquemodelslistings_api_create');
+// la route d'edition
+Route::post('historiquemodelslistings/{Historiquemodelslistings}/update',[App\Http\Controllers\API\HistoriquemodelslistingController::class,'update'])->withoutMiddleware("throttle:api")->name('Historiquemodelslistings_api_update');
+// la route de suppression
+Route::post('historiquemodelslistings/{Historiquemodelslistings}/delete',[App\Http\Controllers\API\HistoriquemodelslistingController::class,'delete'])->withoutMiddleware("throttle:api")->name('Historiquemodelslistings_api_delete');
+// la route des actions
+Route::get('historiquemodelslistings/action',[App\Http\Controllers\API\HistoriquemodelslistingController::class,'action'])->withoutMiddleware("throttle:api")->name('Historiquemodelslistings_api_delete');
+// la route des actions
+Route::post('historiquemodelslistings/action',[App\Http\Controllers\API\HistoriquemodelslistingController::class,'action'])->withoutMiddleware("throttle:api")->name('Historiquemodelslistings_api_delete');
+
+
+
+//Route::resource('Historiques',App\Http\Controllers\API\HistoriqueController::class);
+// les routes d'affichage
+Route::get('historiques/{key}/{val}',[App\Http\Controllers\API\HistoriqueController::class,'data'])->withoutMiddleware("throttle:api")->name('Historiques_api_index2');
+Route::get('historiques',[App\Http\Controllers\API\HistoriqueController::class,'data1'])->withoutMiddleware("throttle:api")->name('Historiques_api_index');
+Route::post('historiques-Aggrid', [App\Http\Controllers\API\HistoriqueController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Historiques_api_aggrid');
+
+// la route de creation
+Route::post('historiques',[App\Http\Controllers\API\HistoriqueController::class,'create'])->withoutMiddleware("throttle:api")->name('Historiques_api_create');
+// la route d'edition
+Route::post('historiques/{Historiques}/update',[App\Http\Controllers\API\HistoriqueController::class,'update'])->withoutMiddleware("throttle:api")->name('Historiques_api_update');
+// la route de suppression
+Route::post('historiques/{Historiques}/delete',[App\Http\Controllers\API\HistoriqueController::class,'delete'])->withoutMiddleware("throttle:api")->name('Historiques_api_delete');
+// la route des actions
+Route::get('historiques/action',[App\Http\Controllers\API\HistoriqueController::class,'action'])->withoutMiddleware("throttle:api")->name('Historiques_api_delete');
+// la route des actions
+Route::post('historiques/action',[App\Http\Controllers\API\HistoriqueController::class,'action'])->withoutMiddleware("throttle:api")->name('Historiques_api_delete');
+
+
+
+//Route::resource('Homes',App\Http\Controllers\API\HomeController::class);
+// les routes d'affichage
+Route::get('homes/{key}/{val}',[App\Http\Controllers\API\HomeController::class,'data'])->withoutMiddleware("throttle:api")->name('Homes_api_index2');
+Route::get('homes',[App\Http\Controllers\API\HomeController::class,'data1'])->withoutMiddleware("throttle:api")->name('Homes_api_index');
+Route::post('homes-Aggrid', [App\Http\Controllers\API\HomeController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Homes_api_aggrid');
+
+// la route de creation
+Route::post('homes',[App\Http\Controllers\API\HomeController::class,'create'])->withoutMiddleware("throttle:api")->name('Homes_api_create');
+// la route d'edition
+Route::post('homes/{Homes}/update',[App\Http\Controllers\API\HomeController::class,'update'])->withoutMiddleware("throttle:api")->name('Homes_api_update');
+// la route de suppression
+Route::post('homes/{Homes}/delete',[App\Http\Controllers\API\HomeController::class,'delete'])->withoutMiddleware("throttle:api")->name('Homes_api_delete');
+// la route des actions
+Route::get('homes/action',[App\Http\Controllers\API\HomeController::class,'action'])->withoutMiddleware("throttle:api")->name('Homes_api_delete');
+// la route des actions
+Route::post('homes/action',[App\Http\Controllers\API\HomeController::class,'action'])->withoutMiddleware("throttle:api")->name('Homes_api_delete');
+
+
+
+//Route::resource('Homezones',App\Http\Controllers\API\HomezoneController::class);
+// les routes d'affichage
+Route::get('homezones/{key}/{val}',[App\Http\Controllers\API\HomezoneController::class,'data'])->withoutMiddleware("throttle:api")->name('Homezones_api_index2');
+Route::get('homezones',[App\Http\Controllers\API\HomezoneController::class,'data1'])->withoutMiddleware("throttle:api")->name('Homezones_api_index');
+Route::post('homezones-Aggrid', [App\Http\Controllers\API\HomezoneController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Homezones_api_aggrid');
+
+// la route de creation
+Route::post('homezones',[App\Http\Controllers\API\HomezoneController::class,'create'])->withoutMiddleware("throttle:api")->name('Homezones_api_create');
+// la route d'edition
+Route::post('homezones/{Homezones}/update',[App\Http\Controllers\API\HomezoneController::class,'update'])->withoutMiddleware("throttle:api")->name('Homezones_api_update');
+// la route de suppression
+Route::post('homezones/{Homezones}/delete',[App\Http\Controllers\API\HomezoneController::class,'delete'])->withoutMiddleware("throttle:api")->name('Homezones_api_delete');
+// la route des actions
+Route::get('homezones/action',[App\Http\Controllers\API\HomezoneController::class,'action'])->withoutMiddleware("throttle:api")->name('Homezones_api_delete');
+// la route des actions
+Route::post('homezones/action',[App\Http\Controllers\API\HomezoneController::class,'action'])->withoutMiddleware("throttle:api")->name('Homezones_api_delete');
+
+
+
+//Route::resource('Horaireagents',App\Http\Controllers\API\HoraireagentController::class);
+// les routes d'affichage
+Route::get('horaireagents/{key}/{val}',[App\Http\Controllers\API\HoraireagentController::class,'data'])->withoutMiddleware("throttle:api")->name('Horaireagents_api_index2');
+Route::get('horaireagents',[App\Http\Controllers\API\HoraireagentController::class,'data1'])->withoutMiddleware("throttle:api")->name('Horaireagents_api_index');
+Route::post('horaireagents-Aggrid', [App\Http\Controllers\API\HoraireagentController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Horaireagents_api_aggrid');
+
+// la route de creation
+Route::post('horaireagents',[App\Http\Controllers\API\HoraireagentController::class,'create'])->withoutMiddleware("throttle:api")->name('Horaireagents_api_create');
+// la route d'edition
+Route::post('horaireagents/{Horaireagents}/update',[App\Http\Controllers\API\HoraireagentController::class,'update'])->withoutMiddleware("throttle:api")->name('Horaireagents_api_update');
+// la route de suppression
+Route::post('horaireagents/{Horaireagents}/delete',[App\Http\Controllers\API\HoraireagentController::class,'delete'])->withoutMiddleware("throttle:api")->name('Horaireagents_api_delete');
+// la route des actions
+Route::get('horaireagents/action',[App\Http\Controllers\API\HoraireagentController::class,'action'])->withoutMiddleware("throttle:api")->name('Horaireagents_api_delete');
+// la route des actions
+Route::post('horaireagents/action',[App\Http\Controllers\API\HoraireagentController::class,'action'])->withoutMiddleware("throttle:api")->name('Horaireagents_api_delete');
+
+
+
+//Route::resource('Horaires',App\Http\Controllers\API\HoraireController::class);
+// les routes d'affichage
+Route::get('horaires/{key}/{val}',[App\Http\Controllers\API\HoraireController::class,'data'])->withoutMiddleware("throttle:api")->name('Horaires_api_index2');
+Route::get('horaires',[App\Http\Controllers\API\HoraireController::class,'data1'])->withoutMiddleware("throttle:api")->name('Horaires_api_index');
+Route::post('horaires-Aggrid', [App\Http\Controllers\API\HoraireController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Horaires_api_aggrid');
+
+// la route de creation
+Route::post('horaires',[App\Http\Controllers\API\HoraireController::class,'create'])->withoutMiddleware("throttle:api")->name('Horaires_api_create');
+// la route d'edition
+Route::post('horaires/{Horaires}/update',[App\Http\Controllers\API\HoraireController::class,'update'])->withoutMiddleware("throttle:api")->name('Horaires_api_update');
+// la route de suppression
+Route::post('horaires/{Horaires}/delete',[App\Http\Controllers\API\HoraireController::class,'delete'])->withoutMiddleware("throttle:api")->name('Horaires_api_delete');
+// la route des actions
+Route::get('horaires/action',[App\Http\Controllers\API\HoraireController::class,'action'])->withoutMiddleware("throttle:api")->name('Horaires_api_delete');
+// la route des actions
+Route::post('horaires/action',[App\Http\Controllers\API\HoraireController::class,'action'])->withoutMiddleware("throttle:api")->name('Horaires_api_delete');
+
+
+
+//Route::resource('Horairesglobalspostes',App\Http\Controllers\API\HorairesglobalsposteController::class);
+// les routes d'affichage
+Route::get('horairesglobalspostes/{key}/{val}',[App\Http\Controllers\API\HorairesglobalsposteController::class,'data'])->withoutMiddleware("throttle:api")->name('Horairesglobalspostes_api_index2');
+Route::get('horairesglobalspostes',[App\Http\Controllers\API\HorairesglobalsposteController::class,'data1'])->withoutMiddleware("throttle:api")->name('Horairesglobalspostes_api_index');
+Route::post('horairesglobalspostes-Aggrid', [App\Http\Controllers\API\HorairesglobalsposteController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Horairesglobalspostes_api_aggrid');
+
+// la route de creation
+Route::post('horairesglobalspostes',[App\Http\Controllers\API\HorairesglobalsposteController::class,'create'])->withoutMiddleware("throttle:api")->name('Horairesglobalspostes_api_create');
+// la route d'edition
+Route::post('horairesglobalspostes/{Horairesglobalspostes}/update',[App\Http\Controllers\API\HorairesglobalsposteController::class,'update'])->withoutMiddleware("throttle:api")->name('Horairesglobalspostes_api_update');
+// la route de suppression
+Route::post('horairesglobalspostes/{Horairesglobalspostes}/delete',[App\Http\Controllers\API\HorairesglobalsposteController::class,'delete'])->withoutMiddleware("throttle:api")->name('Horairesglobalspostes_api_delete');
+// la route des actions
+Route::get('horairesglobalspostes/action',[App\Http\Controllers\API\HorairesglobalsposteController::class,'action'])->withoutMiddleware("throttle:api")->name('Horairesglobalspostes_api_delete');
+// la route des actions
+Route::post('horairesglobalspostes/action',[App\Http\Controllers\API\HorairesglobalsposteController::class,'action'])->withoutMiddleware("throttle:api")->name('Horairesglobalspostes_api_delete');
+
+
+
+//Route::resource('Horairestypespostes',App\Http\Controllers\API\HorairestypesposteController::class);
+// les routes d'affichage
+Route::get('horairestypespostes/{key}/{val}',[App\Http\Controllers\API\HorairestypesposteController::class,'data'])->withoutMiddleware("throttle:api")->name('Horairestypespostes_api_index2');
+Route::get('horairestypespostes',[App\Http\Controllers\API\HorairestypesposteController::class,'data1'])->withoutMiddleware("throttle:api")->name('Horairestypespostes_api_index');
+Route::post('horairestypespostes-Aggrid', [App\Http\Controllers\API\HorairestypesposteController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Horairestypespostes_api_aggrid');
+
+// la route de creation
+Route::post('horairestypespostes',[App\Http\Controllers\API\HorairestypesposteController::class,'create'])->withoutMiddleware("throttle:api")->name('Horairestypespostes_api_create');
+// la route d'edition
+Route::post('horairestypespostes/{Horairestypespostes}/update',[App\Http\Controllers\API\HorairestypesposteController::class,'update'])->withoutMiddleware("throttle:api")->name('Horairestypespostes_api_update');
+// la route de suppression
+Route::post('horairestypespostes/{Horairestypespostes}/delete',[App\Http\Controllers\API\HorairestypesposteController::class,'delete'])->withoutMiddleware("throttle:api")->name('Horairestypespostes_api_delete');
+// la route des actions
+Route::get('horairestypespostes/action',[App\Http\Controllers\API\HorairestypesposteController::class,'action'])->withoutMiddleware("throttle:api")->name('Horairestypespostes_api_delete');
+// la route des actions
+Route::post('horairestypespostes/action',[App\Http\Controllers\API\HorairestypesposteController::class,'action'])->withoutMiddleware("throttle:api")->name('Horairestypespostes_api_delete');
+
+
+
+//Route::resource('Horairestypessites',App\Http\Controllers\API\HorairestypessiteController::class);
+// les routes d'affichage
+Route::get('horairestypessites/{key}/{val}',[App\Http\Controllers\API\HorairestypessiteController::class,'data'])->withoutMiddleware("throttle:api")->name('Horairestypessites_api_index2');
+Route::get('horairestypessites',[App\Http\Controllers\API\HorairestypessiteController::class,'data1'])->withoutMiddleware("throttle:api")->name('Horairestypessites_api_index');
+Route::post('horairestypessites-Aggrid', [App\Http\Controllers\API\HorairestypessiteController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Horairestypessites_api_aggrid');
+
+// la route de creation
+Route::post('horairestypessites',[App\Http\Controllers\API\HorairestypessiteController::class,'create'])->withoutMiddleware("throttle:api")->name('Horairestypessites_api_create');
+// la route d'edition
+Route::post('horairestypessites/{Horairestypessites}/update',[App\Http\Controllers\API\HorairestypessiteController::class,'update'])->withoutMiddleware("throttle:api")->name('Horairestypessites_api_update');
+// la route de suppression
+Route::post('horairestypessites/{Horairestypessites}/delete',[App\Http\Controllers\API\HorairestypessiteController::class,'delete'])->withoutMiddleware("throttle:api")->name('Horairestypessites_api_delete');
+// la route des actions
+Route::get('horairestypessites/action',[App\Http\Controllers\API\HorairestypessiteController::class,'action'])->withoutMiddleware("throttle:api")->name('Horairestypessites_api_delete');
+// la route des actions
+Route::post('horairestypessites/action',[App\Http\Controllers\API\HorairestypessiteController::class,'action'])->withoutMiddleware("throttle:api")->name('Horairestypessites_api_delete');
+
+
+
+//Route::resource('Identifications',App\Http\Controllers\API\IdentificationController::class);
+// les routes d'affichage
+Route::get('identifications/{key}/{val}',[App\Http\Controllers\API\IdentificationController::class,'data'])->withoutMiddleware("throttle:api")->name('Identifications_api_index2');
+Route::get('identifications',[App\Http\Controllers\API\IdentificationController::class,'data1'])->withoutMiddleware("throttle:api")->name('Identifications_api_index');
+Route::post('identifications-Aggrid', [App\Http\Controllers\API\IdentificationController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Identifications_api_aggrid');
+
+// la route de creation
+Route::post('identifications',[App\Http\Controllers\API\IdentificationController::class,'create'])->withoutMiddleware("throttle:api")->name('Identifications_api_create');
+// la route d'edition
+Route::post('identifications/{Identifications}/update',[App\Http\Controllers\API\IdentificationController::class,'update'])->withoutMiddleware("throttle:api")->name('Identifications_api_update');
+// la route de suppression
+Route::post('identifications/{Identifications}/delete',[App\Http\Controllers\API\IdentificationController::class,'delete'])->withoutMiddleware("throttle:api")->name('Identifications_api_delete');
+// la route des actions
+Route::get('identifications/action',[App\Http\Controllers\API\IdentificationController::class,'action'])->withoutMiddleware("throttle:api")->name('Identifications_api_delete');
+// la route des actions
+Route::post('identifications/action',[App\Http\Controllers\API\IdentificationController::class,'action'])->withoutMiddleware("throttle:api")->name('Identifications_api_delete');
+
+
+
+//Route::resource('Imports',App\Http\Controllers\API\ImportController::class);
+// les routes d'affichage
+Route::get('imports/{key}/{val}',[App\Http\Controllers\API\ImportController::class,'data'])->withoutMiddleware("throttle:api")->name('Imports_api_index2');
+Route::get('imports',[App\Http\Controllers\API\ImportController::class,'data1'])->withoutMiddleware("throttle:api")->name('Imports_api_index');
+Route::post('imports-Aggrid', [App\Http\Controllers\API\ImportController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Imports_api_aggrid');
+
+// la route de creation
+Route::post('imports',[App\Http\Controllers\API\ImportController::class,'create'])->withoutMiddleware("throttle:api")->name('Imports_api_create');
+// la route d'edition
+Route::post('imports/{Imports}/update',[App\Http\Controllers\API\ImportController::class,'update'])->withoutMiddleware("throttle:api")->name('Imports_api_update');
+// la route de suppression
+Route::post('imports/{Imports}/delete',[App\Http\Controllers\API\ImportController::class,'delete'])->withoutMiddleware("throttle:api")->name('Imports_api_delete');
+// la route des actions
+Route::get('imports/action',[App\Http\Controllers\API\ImportController::class,'action'])->withoutMiddleware("throttle:api")->name('Imports_api_delete');
+// la route des actions
+Route::post('imports/action',[App\Http\Controllers\API\ImportController::class,'action'])->withoutMiddleware("throttle:api")->name('Imports_api_delete');
+
+
+
+//Route::resource('Introductions',App\Http\Controllers\API\IntroductionController::class);
+// les routes d'affichage
+Route::get('introductions/{key}/{val}',[App\Http\Controllers\API\IntroductionController::class,'data'])->withoutMiddleware("throttle:api")->name('Introductions_api_index2');
+Route::get('introductions',[App\Http\Controllers\API\IntroductionController::class,'data1'])->withoutMiddleware("throttle:api")->name('Introductions_api_index');
+Route::post('introductions-Aggrid', [App\Http\Controllers\API\IntroductionController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Introductions_api_aggrid');
+
+// la route de creation
+Route::post('introductions',[App\Http\Controllers\API\IntroductionController::class,'create'])->withoutMiddleware("throttle:api")->name('Introductions_api_create');
+// la route d'edition
+Route::post('introductions/{Introductions}/update',[App\Http\Controllers\API\IntroductionController::class,'update'])->withoutMiddleware("throttle:api")->name('Introductions_api_update');
+// la route de suppression
+Route::post('introductions/{Introductions}/delete',[App\Http\Controllers\API\IntroductionController::class,'delete'])->withoutMiddleware("throttle:api")->name('Introductions_api_delete');
+// la route des actions
+Route::get('introductions/action',[App\Http\Controllers\API\IntroductionController::class,'action'])->withoutMiddleware("throttle:api")->name('Introductions_api_delete');
+// la route des actions
+Route::post('introductions/action',[App\Http\Controllers\API\IntroductionController::class,'action'])->withoutMiddleware("throttle:api")->name('Introductions_api_delete');
+
+
+
+//Route::resource('Jobs',App\Http\Controllers\API\JobController::class);
+// les routes d'affichage
+Route::get('jobs/{key}/{val}',[App\Http\Controllers\API\JobController::class,'data'])->withoutMiddleware("throttle:api")->name('Jobs_api_index2');
+Route::get('jobs',[App\Http\Controllers\API\JobController::class,'data1'])->withoutMiddleware("throttle:api")->name('Jobs_api_index');
+Route::post('jobs-Aggrid', [App\Http\Controllers\API\JobController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Jobs_api_aggrid');
+
+// la route de creation
+Route::post('jobs',[App\Http\Controllers\API\JobController::class,'create'])->withoutMiddleware("throttle:api")->name('Jobs_api_create');
+// la route d'edition
+Route::post('jobs/{Jobs}/update',[App\Http\Controllers\API\JobController::class,'update'])->withoutMiddleware("throttle:api")->name('Jobs_api_update');
+// la route de suppression
+Route::post('jobs/{Jobs}/delete',[App\Http\Controllers\API\JobController::class,'delete'])->withoutMiddleware("throttle:api")->name('Jobs_api_delete');
+// la route des actions
+Route::get('jobs/action',[App\Http\Controllers\API\JobController::class,'action'])->withoutMiddleware("throttle:api")->name('Jobs_api_delete');
+// la route des actions
+Route::post('jobs/action',[App\Http\Controllers\API\JobController::class,'action'])->withoutMiddleware("throttle:api")->name('Jobs_api_delete');
+
+
+
+//Route::resource('Joursferies',App\Http\Controllers\API\JoursferieController::class);
+// les routes d'affichage
+Route::get('joursferies/{key}/{val}',[App\Http\Controllers\API\JoursferieController::class,'data'])->withoutMiddleware("throttle:api")->name('Joursferies_api_index2');
+Route::get('joursferies',[App\Http\Controllers\API\JoursferieController::class,'data1'])->withoutMiddleware("throttle:api")->name('Joursferies_api_index');
+Route::post('joursferies-Aggrid', [App\Http\Controllers\API\JoursferieController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Joursferies_api_aggrid');
+
+// la route de creation
+Route::post('joursferies',[App\Http\Controllers\API\JoursferieController::class,'create'])->withoutMiddleware("throttle:api")->name('Joursferies_api_create');
+// la route d'edition
+Route::post('joursferies/{Joursferies}/update',[App\Http\Controllers\API\JoursferieController::class,'update'])->withoutMiddleware("throttle:api")->name('Joursferies_api_update');
+// la route de suppression
+Route::post('joursferies/{Joursferies}/delete',[App\Http\Controllers\API\JoursferieController::class,'delete'])->withoutMiddleware("throttle:api")->name('Joursferies_api_delete');
+// la route des actions
+Route::get('joursferies/action',[App\Http\Controllers\API\JoursferieController::class,'action'])->withoutMiddleware("throttle:api")->name('Joursferies_api_delete');
+// la route des actions
+Route::post('joursferies/action',[App\Http\Controllers\API\JoursferieController::class,'action'])->withoutMiddleware("throttle:api")->name('Joursferies_api_delete');
+
+
+
+//Route::resource('Lignes',App\Http\Controllers\API\LigneController::class);
+// les routes d'affichage
+Route::get('lignes/{key}/{val}',[App\Http\Controllers\API\LigneController::class,'data'])->withoutMiddleware("throttle:api")->name('Lignes_api_index2');
+Route::get('lignes',[App\Http\Controllers\API\LigneController::class,'data1'])->withoutMiddleware("throttle:api")->name('Lignes_api_index');
+Route::post('lignes-Aggrid', [App\Http\Controllers\API\LigneController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Lignes_api_aggrid');
+
+// la route de creation
+Route::post('lignes',[App\Http\Controllers\API\LigneController::class,'create'])->withoutMiddleware("throttle:api")->name('Lignes_api_create');
+// la route d'edition
+Route::post('lignes/{Lignes}/update',[App\Http\Controllers\API\LigneController::class,'update'])->withoutMiddleware("throttle:api")->name('Lignes_api_update');
+// la route de suppression
+Route::post('lignes/{Lignes}/delete',[App\Http\Controllers\API\LigneController::class,'delete'])->withoutMiddleware("throttle:api")->name('Lignes_api_delete');
+// la route des actions
+Route::get('lignes/action',[App\Http\Controllers\API\LigneController::class,'action'])->withoutMiddleware("throttle:api")->name('Lignes_api_delete');
+// la route des actions
+Route::post('lignes/action',[App\Http\Controllers\API\LigneController::class,'action'])->withoutMiddleware("throttle:api")->name('Lignes_api_delete');
+
+
+
+//Route::resource('Lignesmoyenstransports',App\Http\Controllers\API\LignesmoyenstransportController::class);
+// les routes d'affichage
+Route::get('lignesmoyenstransports/{key}/{val}',[App\Http\Controllers\API\LignesmoyenstransportController::class,'data'])->withoutMiddleware("throttle:api")->name('Lignesmoyenstransports_api_index2');
+Route::get('lignesmoyenstransports',[App\Http\Controllers\API\LignesmoyenstransportController::class,'data1'])->withoutMiddleware("throttle:api")->name('Lignesmoyenstransports_api_index');
+Route::post('lignesmoyenstransports-Aggrid', [App\Http\Controllers\API\LignesmoyenstransportController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Lignesmoyenstransports_api_aggrid');
+
+// la route de creation
+Route::post('lignesmoyenstransports',[App\Http\Controllers\API\LignesmoyenstransportController::class,'create'])->withoutMiddleware("throttle:api")->name('Lignesmoyenstransports_api_create');
+// la route d'edition
+Route::post('lignesmoyenstransports/{Lignesmoyenstransports}/update',[App\Http\Controllers\API\LignesmoyenstransportController::class,'update'])->withoutMiddleware("throttle:api")->name('Lignesmoyenstransports_api_update');
+// la route de suppression
+Route::post('lignesmoyenstransports/{Lignesmoyenstransports}/delete',[App\Http\Controllers\API\LignesmoyenstransportController::class,'delete'])->withoutMiddleware("throttle:api")->name('Lignesmoyenstransports_api_delete');
+// la route des actions
+Route::get('lignesmoyenstransports/action',[App\Http\Controllers\API\LignesmoyenstransportController::class,'action'])->withoutMiddleware("throttle:api")->name('Lignesmoyenstransports_api_delete');
+// la route des actions
+Route::post('lignesmoyenstransports/action',[App\Http\Controllers\API\LignesmoyenstransportController::class,'action'])->withoutMiddleware("throttle:api")->name('Lignesmoyenstransports_api_delete');
+
+
+
+//Route::resource('Listesjours',App\Http\Controllers\API\ListesjourController::class);
+// les routes d'affichage
+Route::get('listesjours/{key}/{val}',[App\Http\Controllers\API\ListesjourController::class,'data'])->withoutMiddleware("throttle:api")->name('Listesjours_api_index2');
+Route::get('listesjours',[App\Http\Controllers\API\ListesjourController::class,'data1'])->withoutMiddleware("throttle:api")->name('Listesjours_api_index');
+Route::post('listesjours-Aggrid', [App\Http\Controllers\API\ListesjourController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Listesjours_api_aggrid');
+
+// la route de creation
+Route::post('listesjours',[App\Http\Controllers\API\ListesjourController::class,'create'])->withoutMiddleware("throttle:api")->name('Listesjours_api_create');
+// la route d'edition
+Route::post('listesjours/{Listesjours}/update',[App\Http\Controllers\API\ListesjourController::class,'update'])->withoutMiddleware("throttle:api")->name('Listesjours_api_update');
+// la route de suppression
+Route::post('listesjours/{Listesjours}/delete',[App\Http\Controllers\API\ListesjourController::class,'delete'])->withoutMiddleware("throttle:api")->name('Listesjours_api_delete');
+// la route des actions
+Route::get('listesjours/action',[App\Http\Controllers\API\ListesjourController::class,'action'])->withoutMiddleware("throttle:api")->name('Listesjours_api_delete');
+// la route des actions
+Route::post('listesjours/action',[App\Http\Controllers\API\ListesjourController::class,'action'])->withoutMiddleware("throttle:api")->name('Listesjours_api_delete');
+
+
+
+//Route::resource('Listingsetats',App\Http\Controllers\API\ListingsetatController::class);
+// les routes d'affichage
+Route::get('listingsetats/{key}/{val}',[App\Http\Controllers\API\ListingsetatController::class,'data'])->withoutMiddleware("throttle:api")->name('Listingsetats_api_index2');
+Route::get('listingsetats',[App\Http\Controllers\API\ListingsetatController::class,'data1'])->withoutMiddleware("throttle:api")->name('Listingsetats_api_index');
+Route::post('listingsetats-Aggrid', [App\Http\Controllers\API\ListingsetatController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Listingsetats_api_aggrid');
+
+// la route de creation
+Route::post('listingsetats',[App\Http\Controllers\API\ListingsetatController::class,'create'])->withoutMiddleware("throttle:api")->name('Listingsetats_api_create');
+// la route d'edition
+Route::post('listingsetats/{Listingsetats}/update',[App\Http\Controllers\API\ListingsetatController::class,'update'])->withoutMiddleware("throttle:api")->name('Listingsetats_api_update');
+// la route de suppression
+Route::post('listingsetats/{Listingsetats}/delete',[App\Http\Controllers\API\ListingsetatController::class,'delete'])->withoutMiddleware("throttle:api")->name('Listingsetats_api_delete');
+// la route des actions
+Route::get('listingsetats/action',[App\Http\Controllers\API\ListingsetatController::class,'action'])->withoutMiddleware("throttle:api")->name('Listingsetats_api_delete');
+// la route des actions
+Route::post('listingsetats/action',[App\Http\Controllers\API\ListingsetatController::class,'action'])->withoutMiddleware("throttle:api")->name('Listingsetats_api_delete');
+
+
+
+//Route::resource('Logins',App\Http\Controllers\API\LoginController::class);
+// les routes d'affichage
+Route::get('logins/{key}/{val}',[App\Http\Controllers\API\LoginController::class,'data'])->withoutMiddleware("throttle:api")->name('Logins_api_index2');
+Route::get('logins',[App\Http\Controllers\API\LoginController::class,'data1'])->withoutMiddleware("throttle:api")->name('Logins_api_index');
+Route::post('logins-Aggrid', [App\Http\Controllers\API\LoginController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Logins_api_aggrid');
+
+// la route de creation
+Route::post('logins',[App\Http\Controllers\API\LoginController::class,'create'])->withoutMiddleware("throttle:api")->name('Logins_api_create');
+// la route d'edition
+Route::post('logins/{Logins}/update',[App\Http\Controllers\API\LoginController::class,'update'])->withoutMiddleware("throttle:api")->name('Logins_api_update');
+// la route de suppression
+Route::post('logins/{Logins}/delete',[App\Http\Controllers\API\LoginController::class,'delete'])->withoutMiddleware("throttle:api")->name('Logins_api_delete');
+// la route des actions
+Route::get('logins/action',[App\Http\Controllers\API\LoginController::class,'action'])->withoutMiddleware("throttle:api")->name('Logins_api_delete');
+// la route des actions
+Route::post('logins/action',[App\Http\Controllers\API\LoginController::class,'action'])->withoutMiddleware("throttle:api")->name('Logins_api_delete');
+
+
+
+//Route::resource('Logs',App\Http\Controllers\API\LogController::class);
+// les routes d'affichage
+Route::get('logs/{key}/{val}',[App\Http\Controllers\API\LogController::class,'data'])->withoutMiddleware("throttle:api")->name('Logs_api_index2');
+Route::get('logs',[App\Http\Controllers\API\LogController::class,'data1'])->withoutMiddleware("throttle:api")->name('Logs_api_index');
+Route::post('logs-Aggrid', [App\Http\Controllers\API\LogController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Logs_api_aggrid');
+
+// la route de creation
+Route::post('logs',[App\Http\Controllers\API\LogController::class,'create'])->withoutMiddleware("throttle:api")->name('Logs_api_create');
+// la route d'edition
+Route::post('logs/{Logs}/update',[App\Http\Controllers\API\LogController::class,'update'])->withoutMiddleware("throttle:api")->name('Logs_api_update');
+// la route de suppression
+Route::post('logs/{Logs}/delete',[App\Http\Controllers\API\LogController::class,'delete'])->withoutMiddleware("throttle:api")->name('Logs_api_delete');
+// la route des actions
+Route::get('logs/action',[App\Http\Controllers\API\LogController::class,'action'])->withoutMiddleware("throttle:api")->name('Logs_api_delete');
+// la route des actions
+Route::post('logs/action',[App\Http\Controllers\API\LogController::class,'action'])->withoutMiddleware("throttle:api")->name('Logs_api_delete');
+
+
+
+//Route::resource('Matrimoniales',App\Http\Controllers\API\MatrimonialeController::class);
+// les routes d'affichage
+Route::get('matrimoniales/{key}/{val}',[App\Http\Controllers\API\MatrimonialeController::class,'data'])->withoutMiddleware("throttle:api")->name('Matrimoniales_api_index2');
+Route::get('matrimoniales',[App\Http\Controllers\API\MatrimonialeController::class,'data1'])->withoutMiddleware("throttle:api")->name('Matrimoniales_api_index');
+Route::post('matrimoniales-Aggrid', [App\Http\Controllers\API\MatrimonialeController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Matrimoniales_api_aggrid');
+
+// la route de creation
+Route::post('matrimoniales',[App\Http\Controllers\API\MatrimonialeController::class,'create'])->withoutMiddleware("throttle:api")->name('Matrimoniales_api_create');
+// la route d'edition
+Route::post('matrimoniales/{Matrimoniales}/update',[App\Http\Controllers\API\MatrimonialeController::class,'update'])->withoutMiddleware("throttle:api")->name('Matrimoniales_api_update');
+// la route de suppression
+Route::post('matrimoniales/{Matrimoniales}/delete',[App\Http\Controllers\API\MatrimonialeController::class,'delete'])->withoutMiddleware("throttle:api")->name('Matrimoniales_api_delete');
+// la route des actions
+Route::get('matrimoniales/action',[App\Http\Controllers\API\MatrimonialeController::class,'action'])->withoutMiddleware("throttle:api")->name('Matrimoniales_api_delete');
+// la route des actions
+Route::post('matrimoniales/action',[App\Http\Controllers\API\MatrimonialeController::class,'action'])->withoutMiddleware("throttle:api")->name('Matrimoniales_api_delete');
+
+
+
+//Route::resource('Menus',App\Http\Controllers\API\MenuController::class);
+// les routes d'affichage
+Route::get('menus/{key}/{val}',[App\Http\Controllers\API\MenuController::class,'data'])->withoutMiddleware("throttle:api")->name('Menus_api_index2');
+Route::get('menus',[App\Http\Controllers\API\MenuController::class,'data1'])->withoutMiddleware("throttle:api")->name('Menus_api_index');
+Route::post('menus-Aggrid', [App\Http\Controllers\API\MenuController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Menus_api_aggrid');
+
+// la route de creation
+Route::post('menus',[App\Http\Controllers\API\MenuController::class,'create'])->withoutMiddleware("throttle:api")->name('Menus_api_create');
+// la route d'edition
+Route::post('menus/{Menus}/update',[App\Http\Controllers\API\MenuController::class,'update'])->withoutMiddleware("throttle:api")->name('Menus_api_update');
+// la route de suppression
+Route::post('menus/{Menus}/delete',[App\Http\Controllers\API\MenuController::class,'delete'])->withoutMiddleware("throttle:api")->name('Menus_api_delete');
+// la route des actions
+Route::get('menus/action',[App\Http\Controllers\API\MenuController::class,'action'])->withoutMiddleware("throttle:api")->name('Menus_api_delete');
+// la route des actions
+Route::post('menus/action',[App\Http\Controllers\API\MenuController::class,'action'])->withoutMiddleware("throttle:api")->name('Menus_api_delete');
+
+
+
+//Route::resource('Model_has_permissions',App\Http\Controllers\API\ModelHasPermissionController::class);
+// les routes d'affichage
+Route::get('model_has_permissions/{key}/{val}',[App\Http\Controllers\API\ModelHasPermissionController::class,'data'])->withoutMiddleware("throttle:api")->name('Model_has_permissions_api_index2');
+Route::get('model_has_permissions',[App\Http\Controllers\API\ModelHasPermissionController::class,'data1'])->withoutMiddleware("throttle:api")->name('Model_has_permissions_api_index');
+Route::post('model_has_permissions-Aggrid', [App\Http\Controllers\API\ModelHasPermissionController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Model_has_permissions_api_aggrid');
+
+// la route de creation
+Route::post('model_has_permissions',[App\Http\Controllers\API\ModelHasPermissionController::class,'create'])->withoutMiddleware("throttle:api")->name('Model_has_permissions_api_create');
+// la route d'edition
+Route::post('model_has_permissions/{Model_has_permissions}/update',[App\Http\Controllers\API\ModelHasPermissionController::class,'update'])->withoutMiddleware("throttle:api")->name('Model_has_permissions_api_update');
+// la route de suppression
+Route::post('model_has_permissions/{Model_has_permissions}/delete',[App\Http\Controllers\API\ModelHasPermissionController::class,'delete'])->withoutMiddleware("throttle:api")->name('Model_has_permissions_api_delete');
+// la route des actions
+Route::get('model_has_permissions/action',[App\Http\Controllers\API\ModelHasPermissionController::class,'action'])->withoutMiddleware("throttle:api")->name('Model_has_permissions_api_delete');
+// la route des actions
+Route::post('model_has_permissions/action',[App\Http\Controllers\API\ModelHasPermissionController::class,'action'])->withoutMiddleware("throttle:api")->name('Model_has_permissions_api_delete');
+
+
+
+//Route::resource('Modelslistings',App\Http\Controllers\API\ModelslistingController::class);
+// les routes d'affichage
+Route::get('modelslistings/{key}/{val}',[App\Http\Controllers\API\ModelslistingController::class,'data'])->withoutMiddleware("throttle:api")->name('Modelslistings_api_index2');
+Route::get('modelslistings',[App\Http\Controllers\API\ModelslistingController::class,'data1'])->withoutMiddleware("throttle:api")->name('Modelslistings_api_index');
+Route::post('modelslistings-Aggrid', [App\Http\Controllers\API\ModelslistingController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Modelslistings_api_aggrid');
+
+// la route de creation
+Route::post('modelslistings',[App\Http\Controllers\API\ModelslistingController::class,'create'])->withoutMiddleware("throttle:api")->name('Modelslistings_api_create');
+// la route d'edition
+Route::post('modelslistings/{Modelslistings}/update',[App\Http\Controllers\API\ModelslistingController::class,'update'])->withoutMiddleware("throttle:api")->name('Modelslistings_api_update');
+// la route de suppression
+Route::post('modelslistings/{Modelslistings}/delete',[App\Http\Controllers\API\ModelslistingController::class,'delete'])->withoutMiddleware("throttle:api")->name('Modelslistings_api_delete');
+// la route des actions
+Route::get('modelslistings/action',[App\Http\Controllers\API\ModelslistingController::class,'action'])->withoutMiddleware("throttle:api")->name('Modelslistings_api_delete');
+// la route des actions
+Route::post('modelslistings/action',[App\Http\Controllers\API\ModelslistingController::class,'action'])->withoutMiddleware("throttle:api")->name('Modelslistings_api_delete');
+
+
+
+//Route::resource('Moyenstransports',App\Http\Controllers\API\MoyenstransportController::class);
+// les routes d'affichage
+Route::get('moyenstransports/{key}/{val}',[App\Http\Controllers\API\MoyenstransportController::class,'data'])->withoutMiddleware("throttle:api")->name('Moyenstransports_api_index2');
+Route::get('moyenstransports',[App\Http\Controllers\API\MoyenstransportController::class,'data1'])->withoutMiddleware("throttle:api")->name('Moyenstransports_api_index');
+Route::post('moyenstransports-Aggrid', [App\Http\Controllers\API\MoyenstransportController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Moyenstransports_api_aggrid');
+
+// la route de creation
+Route::post('moyenstransports',[App\Http\Controllers\API\MoyenstransportController::class,'create'])->withoutMiddleware("throttle:api")->name('Moyenstransports_api_create');
+// la route d'edition
+Route::post('moyenstransports/{Moyenstransports}/update',[App\Http\Controllers\API\MoyenstransportController::class,'update'])->withoutMiddleware("throttle:api")->name('Moyenstransports_api_update');
+// la route de suppression
+Route::post('moyenstransports/{Moyenstransports}/delete',[App\Http\Controllers\API\MoyenstransportController::class,'delete'])->withoutMiddleware("throttle:api")->name('Moyenstransports_api_delete');
+// la route des actions
+Route::get('moyenstransports/action',[App\Http\Controllers\API\MoyenstransportController::class,'action'])->withoutMiddleware("throttle:api")->name('Moyenstransports_api_delete');
+// la route des actions
+Route::post('moyenstransports/action',[App\Http\Controllers\API\MoyenstransportController::class,'action'])->withoutMiddleware("throttle:api")->name('Moyenstransports_api_delete');
+
+
+
+//Route::resource('Nationalites',App\Http\Controllers\API\NationaliteController::class);
+// les routes d'affichage
+Route::get('nationalites/{key}/{val}',[App\Http\Controllers\API\NationaliteController::class,'data'])->withoutMiddleware("throttle:api")->name('Nationalites_api_index2');
+Route::get('nationalites',[App\Http\Controllers\API\NationaliteController::class,'data1'])->withoutMiddleware("throttle:api")->name('Nationalites_api_index');
+Route::post('nationalites-Aggrid', [App\Http\Controllers\API\NationaliteController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Nationalites_api_aggrid');
+
+// la route de creation
+Route::post('nationalites',[App\Http\Controllers\API\NationaliteController::class,'create'])->withoutMiddleware("throttle:api")->name('Nationalites_api_create');
+// la route d'edition
+Route::post('nationalites/{Nationalites}/update',[App\Http\Controllers\API\NationaliteController::class,'update'])->withoutMiddleware("throttle:api")->name('Nationalites_api_update');
+// la route de suppression
+Route::post('nationalites/{Nationalites}/delete',[App\Http\Controllers\API\NationaliteController::class,'delete'])->withoutMiddleware("throttle:api")->name('Nationalites_api_delete');
+// la route des actions
+Route::get('nationalites/action',[App\Http\Controllers\API\NationaliteController::class,'action'])->withoutMiddleware("throttle:api")->name('Nationalites_api_delete');
+// la route des actions
+Route::post('nationalites/action',[App\Http\Controllers\API\NationaliteController::class,'action'])->withoutMiddleware("throttle:api")->name('Nationalites_api_delete');
+
+
+
+//Route::resource('Oauth_access_tokens',App\Http\Controllers\API\OauthAccessTokenController::class);
+// les routes d'affichage
+Route::get('oauth_access_tokens/{key}/{val}',[App\Http\Controllers\API\OauthAccessTokenController::class,'data'])->withoutMiddleware("throttle:api")->name('Oauth_access_tokens_api_index2');
+Route::get('oauth_access_tokens',[App\Http\Controllers\API\OauthAccessTokenController::class,'data1'])->withoutMiddleware("throttle:api")->name('Oauth_access_tokens_api_index');
+Route::post('oauth_access_tokens-Aggrid', [App\Http\Controllers\API\OauthAccessTokenController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Oauth_access_tokens_api_aggrid');
+
+// la route de creation
+Route::post('oauth_access_tokens',[App\Http\Controllers\API\OauthAccessTokenController::class,'create'])->withoutMiddleware("throttle:api")->name('Oauth_access_tokens_api_create');
+// la route d'edition
+Route::post('oauth_access_tokens/{Oauth_access_tokens}/update',[App\Http\Controllers\API\OauthAccessTokenController::class,'update'])->withoutMiddleware("throttle:api")->name('Oauth_access_tokens_api_update');
+// la route de suppression
+Route::post('oauth_access_tokens/{Oauth_access_tokens}/delete',[App\Http\Controllers\API\OauthAccessTokenController::class,'delete'])->withoutMiddleware("throttle:api")->name('Oauth_access_tokens_api_delete');
+// la route des actions
+Route::get('oauth_access_tokens/action',[App\Http\Controllers\API\OauthAccessTokenController::class,'action'])->withoutMiddleware("throttle:api")->name('Oauth_access_tokens_api_delete');
+// la route des actions
+Route::post('oauth_access_tokens/action',[App\Http\Controllers\API\OauthAccessTokenController::class,'action'])->withoutMiddleware("throttle:api")->name('Oauth_access_tokens_api_delete');
+
+
+
+//Route::resource('Oauth_auth_codes',App\Http\Controllers\API\OauthAuthCodeController::class);
+// les routes d'affichage
+Route::get('oauth_auth_codes/{key}/{val}',[App\Http\Controllers\API\OauthAuthCodeController::class,'data'])->withoutMiddleware("throttle:api")->name('Oauth_auth_codes_api_index2');
+Route::get('oauth_auth_codes',[App\Http\Controllers\API\OauthAuthCodeController::class,'data1'])->withoutMiddleware("throttle:api")->name('Oauth_auth_codes_api_index');
+Route::post('oauth_auth_codes-Aggrid', [App\Http\Controllers\API\OauthAuthCodeController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Oauth_auth_codes_api_aggrid');
+
+// la route de creation
+Route::post('oauth_auth_codes',[App\Http\Controllers\API\OauthAuthCodeController::class,'create'])->withoutMiddleware("throttle:api")->name('Oauth_auth_codes_api_create');
+// la route d'edition
+Route::post('oauth_auth_codes/{Oauth_auth_codes}/update',[App\Http\Controllers\API\OauthAuthCodeController::class,'update'])->withoutMiddleware("throttle:api")->name('Oauth_auth_codes_api_update');
+// la route de suppression
+Route::post('oauth_auth_codes/{Oauth_auth_codes}/delete',[App\Http\Controllers\API\OauthAuthCodeController::class,'delete'])->withoutMiddleware("throttle:api")->name('Oauth_auth_codes_api_delete');
+// la route des actions
+Route::get('oauth_auth_codes/action',[App\Http\Controllers\API\OauthAuthCodeController::class,'action'])->withoutMiddleware("throttle:api")->name('Oauth_auth_codes_api_delete');
+// la route des actions
+Route::post('oauth_auth_codes/action',[App\Http\Controllers\API\OauthAuthCodeController::class,'action'])->withoutMiddleware("throttle:api")->name('Oauth_auth_codes_api_delete');
+
+
+
+//Route::resource('Oauth_clients',App\Http\Controllers\API\OauthClientController::class);
+// les routes d'affichage
+Route::get('oauth_clients/{key}/{val}',[App\Http\Controllers\API\OauthClientController::class,'data'])->withoutMiddleware("throttle:api")->name('Oauth_clients_api_index2');
+Route::get('oauth_clients',[App\Http\Controllers\API\OauthClientController::class,'data1'])->withoutMiddleware("throttle:api")->name('Oauth_clients_api_index');
+Route::post('oauth_clients-Aggrid', [App\Http\Controllers\API\OauthClientController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Oauth_clients_api_aggrid');
+
+// la route de creation
+Route::post('oauth_clients',[App\Http\Controllers\API\OauthClientController::class,'create'])->withoutMiddleware("throttle:api")->name('Oauth_clients_api_create');
+// la route d'edition
+Route::post('oauth_clients/{Oauth_clients}/update',[App\Http\Controllers\API\OauthClientController::class,'update'])->withoutMiddleware("throttle:api")->name('Oauth_clients_api_update');
+// la route de suppression
+Route::post('oauth_clients/{Oauth_clients}/delete',[App\Http\Controllers\API\OauthClientController::class,'delete'])->withoutMiddleware("throttle:api")->name('Oauth_clients_api_delete');
+// la route des actions
+Route::get('oauth_clients/action',[App\Http\Controllers\API\OauthClientController::class,'action'])->withoutMiddleware("throttle:api")->name('Oauth_clients_api_delete');
+// la route des actions
+Route::post('oauth_clients/action',[App\Http\Controllers\API\OauthClientController::class,'action'])->withoutMiddleware("throttle:api")->name('Oauth_clients_api_delete');
+
+
+
+//Route::resource('Oauth_personal_access_clients',App\Http\Controllers\API\OauthPersonalAccessClientController::class);
+// les routes d'affichage
+Route::get('oauth_personal_access_clients/{key}/{val}',[App\Http\Controllers\API\OauthPersonalAccessClientController::class,'data'])->withoutMiddleware("throttle:api")->name('Oauth_personal_access_clients_api_index2');
+Route::get('oauth_personal_access_clients',[App\Http\Controllers\API\OauthPersonalAccessClientController::class,'data1'])->withoutMiddleware("throttle:api")->name('Oauth_personal_access_clients_api_index');
+Route::post('oauth_personal_access_clients-Aggrid', [App\Http\Controllers\API\OauthPersonalAccessClientController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Oauth_personal_access_clients_api_aggrid');
+
+// la route de creation
+Route::post('oauth_personal_access_clients',[App\Http\Controllers\API\OauthPersonalAccessClientController::class,'create'])->withoutMiddleware("throttle:api")->name('Oauth_personal_access_clients_api_create');
+// la route d'edition
+Route::post('oauth_personal_access_clients/{Oauth_personal_access_clients}/update',[App\Http\Controllers\API\OauthPersonalAccessClientController::class,'update'])->withoutMiddleware("throttle:api")->name('Oauth_personal_access_clients_api_update');
+// la route de suppression
+Route::post('oauth_personal_access_clients/{Oauth_personal_access_clients}/delete',[App\Http\Controllers\API\OauthPersonalAccessClientController::class,'delete'])->withoutMiddleware("throttle:api")->name('Oauth_personal_access_clients_api_delete');
+// la route des actions
+Route::get('oauth_personal_access_clients/action',[App\Http\Controllers\API\OauthPersonalAccessClientController::class,'action'])->withoutMiddleware("throttle:api")->name('Oauth_personal_access_clients_api_delete');
+// la route des actions
+Route::post('oauth_personal_access_clients/action',[App\Http\Controllers\API\OauthPersonalAccessClientController::class,'action'])->withoutMiddleware("throttle:api")->name('Oauth_personal_access_clients_api_delete');
+
+
+
+//Route::resource('Oauth_refresh_tokens',App\Http\Controllers\API\OauthRefreshTokenController::class);
+// les routes d'affichage
+Route::get('oauth_refresh_tokens/{key}/{val}',[App\Http\Controllers\API\OauthRefreshTokenController::class,'data'])->withoutMiddleware("throttle:api")->name('Oauth_refresh_tokens_api_index2');
+Route::get('oauth_refresh_tokens',[App\Http\Controllers\API\OauthRefreshTokenController::class,'data1'])->withoutMiddleware("throttle:api")->name('Oauth_refresh_tokens_api_index');
+Route::post('oauth_refresh_tokens-Aggrid', [App\Http\Controllers\API\OauthRefreshTokenController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Oauth_refresh_tokens_api_aggrid');
+
+// la route de creation
+Route::post('oauth_refresh_tokens',[App\Http\Controllers\API\OauthRefreshTokenController::class,'create'])->withoutMiddleware("throttle:api")->name('Oauth_refresh_tokens_api_create');
+// la route d'edition
+Route::post('oauth_refresh_tokens/{Oauth_refresh_tokens}/update',[App\Http\Controllers\API\OauthRefreshTokenController::class,'update'])->withoutMiddleware("throttle:api")->name('Oauth_refresh_tokens_api_update');
+// la route de suppression
+Route::post('oauth_refresh_tokens/{Oauth_refresh_tokens}/delete',[App\Http\Controllers\API\OauthRefreshTokenController::class,'delete'])->withoutMiddleware("throttle:api")->name('Oauth_refresh_tokens_api_delete');
+// la route des actions
+Route::get('oauth_refresh_tokens/action',[App\Http\Controllers\API\OauthRefreshTokenController::class,'action'])->withoutMiddleware("throttle:api")->name('Oauth_refresh_tokens_api_delete');
+// la route des actions
+Route::post('oauth_refresh_tokens/action',[App\Http\Controllers\API\OauthRefreshTokenController::class,'action'])->withoutMiddleware("throttle:api")->name('Oauth_refresh_tokens_api_delete');
+
+
+
+//Route::resource('Passagesrondes',App\Http\Controllers\API\PassagesrondeController::class);
+// les routes d'affichage
+Route::get('passagesrondes/{key}/{val}',[App\Http\Controllers\API\PassagesrondeController::class,'data'])->withoutMiddleware("throttle:api")->name('Passagesrondes_api_index2');
+Route::get('passagesrondes',[App\Http\Controllers\API\PassagesrondeController::class,'data1'])->withoutMiddleware("throttle:api")->name('Passagesrondes_api_index');
+Route::post('passagesrondes-Aggrid', [App\Http\Controllers\API\PassagesrondeController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Passagesrondes_api_aggrid');
+
+// la route de creation
+Route::post('passagesrondes',[App\Http\Controllers\API\PassagesrondeController::class,'create'])->withoutMiddleware("throttle:api")->name('Passagesrondes_api_create');
+// la route d'edition
+Route::post('passagesrondes/{Passagesrondes}/update',[App\Http\Controllers\API\PassagesrondeController::class,'update'])->withoutMiddleware("throttle:api")->name('Passagesrondes_api_update');
+// la route de suppression
+Route::post('passagesrondes/{Passagesrondes}/delete',[App\Http\Controllers\API\PassagesrondeController::class,'delete'])->withoutMiddleware("throttle:api")->name('Passagesrondes_api_delete');
+// la route des actions
+Route::get('passagesrondes/action',[App\Http\Controllers\API\PassagesrondeController::class,'action'])->withoutMiddleware("throttle:api")->name('Passagesrondes_api_delete');
+// la route des actions
+Route::post('passagesrondes/action',[App\Http\Controllers\API\PassagesrondeController::class,'action'])->withoutMiddleware("throttle:api")->name('Passagesrondes_api_delete');
+
+
+
+//Route::resource('Pastilles',App\Http\Controllers\API\PastilleController::class);
+// les routes d'affichage
+Route::get('pastilles/{key}/{val}',[App\Http\Controllers\API\PastilleController::class,'data'])->withoutMiddleware("throttle:api")->name('Pastilles_api_index2');
+Route::get('pastilles',[App\Http\Controllers\API\PastilleController::class,'data1'])->withoutMiddleware("throttle:api")->name('Pastilles_api_index');
+Route::post('pastilles-Aggrid', [App\Http\Controllers\API\PastilleController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Pastilles_api_aggrid');
+
+// la route de creation
+Route::post('pastilles',[App\Http\Controllers\API\PastilleController::class,'create'])->withoutMiddleware("throttle:api")->name('Pastilles_api_create');
+// la route d'edition
+Route::post('pastilles/{Pastilles}/update',[App\Http\Controllers\API\PastilleController::class,'update'])->withoutMiddleware("throttle:api")->name('Pastilles_api_update');
+// la route de suppression
+Route::post('pastilles/{Pastilles}/delete',[App\Http\Controllers\API\PastilleController::class,'delete'])->withoutMiddleware("throttle:api")->name('Pastilles_api_delete');
+// la route des actions
+Route::get('pastilles/action',[App\Http\Controllers\API\PastilleController::class,'action'])->withoutMiddleware("throttle:api")->name('Pastilles_api_delete');
+// la route des actions
+Route::post('pastilles/action',[App\Http\Controllers\API\PastilleController::class,'action'])->withoutMiddleware("throttle:api")->name('Pastilles_api_delete');
+
+
+
+//Route::resource('Permissions',App\Http\Controllers\API\PermissionController::class);
+// les routes d'affichage
+Route::get('permissions/{key}/{val}',[App\Http\Controllers\API\PermissionController::class,'data'])->withoutMiddleware("throttle:api")->name('Permissions_api_index2');
+Route::get('permissions',[App\Http\Controllers\API\PermissionController::class,'data1'])->withoutMiddleware("throttle:api")->name('Permissions_api_index');
+Route::post('permissions-Aggrid', [App\Http\Controllers\API\PermissionController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Permissions_api_aggrid');
+
+// la route de creation
+Route::post('permissions',[App\Http\Controllers\API\PermissionController::class,'create'])->withoutMiddleware("throttle:api")->name('Permissions_api_create');
+// la route d'edition
+Route::post('permissions/{Permissions}/update',[App\Http\Controllers\API\PermissionController::class,'update'])->withoutMiddleware("throttle:api")->name('Permissions_api_update');
+// la route de suppression
+Route::post('permissions/{Permissions}/delete',[App\Http\Controllers\API\PermissionController::class,'delete'])->withoutMiddleware("throttle:api")->name('Permissions_api_delete');
+// la route des actions
+Route::get('permissions/action',[App\Http\Controllers\API\PermissionController::class,'action'])->withoutMiddleware("throttle:api")->name('Permissions_api_delete');
+// la route des actions
+Route::post('permissions/action',[App\Http\Controllers\API\PermissionController::class,'action'])->withoutMiddleware("throttle:api")->name('Permissions_api_delete');
+
+
+
+//Route::resource('Perms',App\Http\Controllers\API\PermController::class);
+// les routes d'affichage
+Route::get('perms/{key}/{val}',[App\Http\Controllers\API\PermController::class,'data'])->withoutMiddleware("throttle:api")->name('Perms_api_index2');
+Route::get('perms',[App\Http\Controllers\API\PermController::class,'data1'])->withoutMiddleware("throttle:api")->name('Perms_api_index');
+Route::post('perms-Aggrid', [App\Http\Controllers\API\PermController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Perms_api_aggrid');
+
+// la route de creation
+Route::post('perms',[App\Http\Controllers\API\PermController::class,'create'])->withoutMiddleware("throttle:api")->name('Perms_api_create');
+// la route d'edition
+Route::post('perms/{Perms}/update',[App\Http\Controllers\API\PermController::class,'update'])->withoutMiddleware("throttle:api")->name('Perms_api_update');
+// la route de suppression
+Route::post('perms/{Perms}/delete',[App\Http\Controllers\API\PermController::class,'delete'])->withoutMiddleware("throttle:api")->name('Perms_api_delete');
+// la route des actions
+Route::get('perms/action',[App\Http\Controllers\API\PermController::class,'action'])->withoutMiddleware("throttle:api")->name('Perms_api_delete');
+// la route des actions
+Route::post('perms/action',[App\Http\Controllers\API\PermController::class,'action'])->withoutMiddleware("throttle:api")->name('Perms_api_delete');
+
+
+
+//Route::resource('Pointages',App\Http\Controllers\API\PointageController::class);
+// les routes d'affichage
+Route::get('pointages/{key}/{val}',[App\Http\Controllers\API\PointageController::class,'data'])->withoutMiddleware("throttle:api")->name('Pointages_api_index2');
+Route::get('pointages',[App\Http\Controllers\API\PointageController::class,'data1'])->withoutMiddleware("throttle:api")->name('Pointages_api_index');
+Route::post('pointages-Aggrid', [App\Http\Controllers\API\PointageController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Pointages_api_aggrid');
+
+// la route de creation
+Route::post('pointages',[App\Http\Controllers\API\PointageController::class,'create'])->withoutMiddleware("throttle:api")->name('Pointages_api_create');
+// la route d'edition
+Route::post('pointages/{Pointages}/update',[App\Http\Controllers\API\PointageController::class,'update'])->withoutMiddleware("throttle:api")->name('Pointages_api_update');
+// la route de suppression
+Route::post('pointages/{Pointages}/delete',[App\Http\Controllers\API\PointageController::class,'delete'])->withoutMiddleware("throttle:api")->name('Pointages_api_delete');
+// la route des actions
+Route::get('pointages/action',[App\Http\Controllers\API\PointageController::class,'action'])->withoutMiddleware("throttle:api")->name('Pointages_api_delete');
+// la route des actions
+Route::post('pointages/action',[App\Http\Controllers\API\PointageController::class,'action'])->withoutMiddleware("throttle:api")->name('Pointages_api_delete');
+
+
+
+//Route::resource('Pointeuses',App\Http\Controllers\API\PointeuseController::class);
+// les routes d'affichage
+Route::get('pointeuses/{key}/{val}',[App\Http\Controllers\API\PointeuseController::class,'data'])->withoutMiddleware("throttle:api")->name('Pointeuses_api_index2');
+Route::get('pointeuses',[App\Http\Controllers\API\PointeuseController::class,'data1'])->withoutMiddleware("throttle:api")->name('Pointeuses_api_index');
+Route::post('pointeuses-Aggrid', [App\Http\Controllers\API\PointeuseController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Pointeuses_api_aggrid');
+
+// la route de creation
+Route::post('pointeuses',[App\Http\Controllers\API\PointeuseController::class,'create'])->withoutMiddleware("throttle:api")->name('Pointeuses_api_create');
+// la route d'edition
+Route::post('pointeuses/{Pointeuses}/update',[App\Http\Controllers\API\PointeuseController::class,'update'])->withoutMiddleware("throttle:api")->name('Pointeuses_api_update');
+// la route de suppression
+Route::post('pointeuses/{Pointeuses}/delete',[App\Http\Controllers\API\PointeuseController::class,'delete'])->withoutMiddleware("throttle:api")->name('Pointeuses_api_delete');
+// la route des actions
+Route::get('pointeuses/action',[App\Http\Controllers\API\PointeuseController::class,'action'])->withoutMiddleware("throttle:api")->name('Pointeuses_api_delete');
+// la route des actions
+Route::post('pointeuses/action',[App\Http\Controllers\API\PointeuseController::class,'action'])->withoutMiddleware("throttle:api")->name('Pointeuses_api_delete');
+
+
+
+//Route::resource('Pointeusestransactions',App\Http\Controllers\API\PointeusestransactionController::class);
+// les routes d'affichage
+Route::get('pointeusestransactions/{key}/{val}',[App\Http\Controllers\API\PointeusestransactionController::class,'data'])->withoutMiddleware("throttle:api")->name('Pointeusestransactions_api_index2');
+Route::get('pointeusestransactions',[App\Http\Controllers\API\PointeusestransactionController::class,'data1'])->withoutMiddleware("throttle:api")->name('Pointeusestransactions_api_index');
+Route::post('pointeusestransactions-Aggrid', [App\Http\Controllers\API\PointeusestransactionController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Pointeusestransactions_api_aggrid');
+
+// la route de creation
+Route::post('pointeusestransactions',[App\Http\Controllers\API\PointeusestransactionController::class,'create'])->withoutMiddleware("throttle:api")->name('Pointeusestransactions_api_create');
+// la route d'edition
+Route::post('pointeusestransactions/{Pointeusestransactions}/update',[App\Http\Controllers\API\PointeusestransactionController::class,'update'])->withoutMiddleware("throttle:api")->name('Pointeusestransactions_api_update');
+// la route de suppression
+Route::post('pointeusestransactions/{Pointeusestransactions}/delete',[App\Http\Controllers\API\PointeusestransactionController::class,'delete'])->withoutMiddleware("throttle:api")->name('Pointeusestransactions_api_delete');
+// la route des actions
+Route::get('pointeusestransactions/action',[App\Http\Controllers\API\PointeusestransactionController::class,'action'])->withoutMiddleware("throttle:api")->name('Pointeusestransactions_api_delete');
+// la route des actions
+Route::post('pointeusestransactions/action',[App\Http\Controllers\API\PointeusestransactionController::class,'action'])->withoutMiddleware("throttle:api")->name('Pointeusestransactions_api_delete');
+
+
+
+//Route::resource('Points',App\Http\Controllers\API\PointController::class);
+// les routes d'affichage
+Route::get('points/{key}/{val}',[App\Http\Controllers\API\PointController::class,'data'])->withoutMiddleware("throttle:api")->name('Points_api_index2');
+Route::get('points',[App\Http\Controllers\API\PointController::class,'data1'])->withoutMiddleware("throttle:api")->name('Points_api_index');
+Route::post('points-Aggrid', [App\Http\Controllers\API\PointController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Points_api_aggrid');
+
+// la route de creation
+Route::post('points',[App\Http\Controllers\API\PointController::class,'create'])->withoutMiddleware("throttle:api")->name('Points_api_create');
+// la route d'edition
+Route::post('points/{Points}/update',[App\Http\Controllers\API\PointController::class,'update'])->withoutMiddleware("throttle:api")->name('Points_api_update');
+// la route de suppression
+Route::post('points/{Points}/delete',[App\Http\Controllers\API\PointController::class,'delete'])->withoutMiddleware("throttle:api")->name('Points_api_delete');
+// la route des actions
+Route::get('points/action',[App\Http\Controllers\API\PointController::class,'action'])->withoutMiddleware("throttle:api")->name('Points_api_delete');
+// la route des actions
+Route::post('points/action',[App\Http\Controllers\API\PointController::class,'action'])->withoutMiddleware("throttle:api")->name('Points_api_delete');
+
+
+
+//Route::resource('Positions',App\Http\Controllers\API\PositionController::class);
+// les routes d'affichage
+Route::get('positions/{key}/{val}',[App\Http\Controllers\API\PositionController::class,'data'])->withoutMiddleware("throttle:api")->name('Positions_api_index2');
+Route::get('positions',[App\Http\Controllers\API\PositionController::class,'data1'])->withoutMiddleware("throttle:api")->name('Positions_api_index');
+Route::post('positions-Aggrid', [App\Http\Controllers\API\PositionController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Positions_api_aggrid');
+
+// la route de creation
+Route::post('positions',[App\Http\Controllers\API\PositionController::class,'create'])->withoutMiddleware("throttle:api")->name('Positions_api_create');
+// la route d'edition
+Route::post('positions/{Positions}/update',[App\Http\Controllers\API\PositionController::class,'update'])->withoutMiddleware("throttle:api")->name('Positions_api_update');
+// la route de suppression
+Route::post('positions/{Positions}/delete',[App\Http\Controllers\API\PositionController::class,'delete'])->withoutMiddleware("throttle:api")->name('Positions_api_delete');
+// la route des actions
+Route::get('positions/action',[App\Http\Controllers\API\PositionController::class,'action'])->withoutMiddleware("throttle:api")->name('Positions_api_delete');
+// la route des actions
+Route::post('positions/action',[App\Http\Controllers\API\PositionController::class,'action'])->withoutMiddleware("throttle:api")->name('Positions_api_delete');
+
+
+
+//Route::resource('Postes',App\Http\Controllers\API\PosteController::class);
+// les routes d'affichage
+Route::get('postes/{key}/{val}',[App\Http\Controllers\API\PosteController::class,'data'])->withoutMiddleware("throttle:api")->name('Postes_api_index2');
+Route::get('postes',[App\Http\Controllers\API\PosteController::class,'data1'])->withoutMiddleware("throttle:api")->name('Postes_api_index');
+Route::post('postes-Aggrid', [App\Http\Controllers\API\PosteController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Postes_api_aggrid');
+
+// la route de creation
+Route::post('postes',[App\Http\Controllers\API\PosteController::class,'create'])->withoutMiddleware("throttle:api")->name('Postes_api_create');
+// la route d'edition
+Route::post('postes/{Postes}/update',[App\Http\Controllers\API\PosteController::class,'update'])->withoutMiddleware("throttle:api")->name('Postes_api_update');
+// la route de suppression
+Route::post('postes/{Postes}/delete',[App\Http\Controllers\API\PosteController::class,'delete'])->withoutMiddleware("throttle:api")->name('Postes_api_delete');
+// la route des actions
+Route::get('postes/action',[App\Http\Controllers\API\PosteController::class,'action'])->withoutMiddleware("throttle:api")->name('Postes_api_delete');
+// la route des actions
+Route::post('postes/action',[App\Http\Controllers\API\PosteController::class,'action'])->withoutMiddleware("throttle:api")->name('Postes_api_delete');
+
+
+
+//Route::resource('Postesarticles',App\Http\Controllers\API\PostesarticleController::class);
+// les routes d'affichage
+Route::get('postesarticles/{key}/{val}',[App\Http\Controllers\API\PostesarticleController::class,'data'])->withoutMiddleware("throttle:api")->name('Postesarticles_api_index2');
+Route::get('postesarticles',[App\Http\Controllers\API\PostesarticleController::class,'data1'])->withoutMiddleware("throttle:api")->name('Postesarticles_api_index');
+Route::post('postesarticles-Aggrid', [App\Http\Controllers\API\PostesarticleController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Postesarticles_api_aggrid');
+
+// la route de creation
+Route::post('postesarticles',[App\Http\Controllers\API\PostesarticleController::class,'create'])->withoutMiddleware("throttle:api")->name('Postesarticles_api_create');
+// la route d'edition
+Route::post('postesarticles/{Postesarticles}/update',[App\Http\Controllers\API\PostesarticleController::class,'update'])->withoutMiddleware("throttle:api")->name('Postesarticles_api_update');
+// la route de suppression
+Route::post('postesarticles/{Postesarticles}/delete',[App\Http\Controllers\API\PostesarticleController::class,'delete'])->withoutMiddleware("throttle:api")->name('Postesarticles_api_delete');
+// la route des actions
+Route::get('postesarticles/action',[App\Http\Controllers\API\PostesarticleController::class,'action'])->withoutMiddleware("throttle:api")->name('Postesarticles_api_delete');
+// la route des actions
+Route::post('postesarticles/action',[App\Http\Controllers\API\PostesarticleController::class,'action'])->withoutMiddleware("throttle:api")->name('Postesarticles_api_delete');
+
+
+
+//Route::resource('Postespointeuses',App\Http\Controllers\API\PostespointeuseController::class);
+// les routes d'affichage
+Route::get('postespointeuses/{key}/{val}',[App\Http\Controllers\API\PostespointeuseController::class,'data'])->withoutMiddleware("throttle:api")->name('Postespointeuses_api_index2');
+Route::get('postespointeuses',[App\Http\Controllers\API\PostespointeuseController::class,'data1'])->withoutMiddleware("throttle:api")->name('Postespointeuses_api_index');
+Route::post('postespointeuses-Aggrid', [App\Http\Controllers\API\PostespointeuseController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Postespointeuses_api_aggrid');
+
+// la route de creation
+Route::post('postespointeuses',[App\Http\Controllers\API\PostespointeuseController::class,'create'])->withoutMiddleware("throttle:api")->name('Postespointeuses_api_create');
+// la route d'edition
+Route::post('postespointeuses/{Postespointeuses}/update',[App\Http\Controllers\API\PostespointeuseController::class,'update'])->withoutMiddleware("throttle:api")->name('Postespointeuses_api_update');
+// la route de suppression
+Route::post('postespointeuses/{Postespointeuses}/delete',[App\Http\Controllers\API\PostespointeuseController::class,'delete'])->withoutMiddleware("throttle:api")->name('Postespointeuses_api_delete');
+// la route des actions
+Route::get('postespointeuses/action',[App\Http\Controllers\API\PostespointeuseController::class,'action'])->withoutMiddleware("throttle:api")->name('Postespointeuses_api_delete');
+// la route des actions
+Route::post('postespointeuses/action',[App\Http\Controllers\API\PostespointeuseController::class,'action'])->withoutMiddleware("throttle:api")->name('Postespointeuses_api_delete');
+
+
+
+//Route::resource('Presences',App\Http\Controllers\API\PresenceController::class);
+// les routes d'affichage
+Route::get('presences/{key}/{val}',[App\Http\Controllers\API\PresenceController::class,'data'])->withoutMiddleware("throttle:api")->name('Presences_api_index2');
+Route::get('presences',[App\Http\Controllers\API\PresenceController::class,'data1'])->withoutMiddleware("throttle:api")->name('Presences_api_index');
+Route::post('presences-Aggrid', [App\Http\Controllers\API\PresenceController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Presences_api_aggrid');
+
+// la route de creation
+Route::post('presences',[App\Http\Controllers\API\PresenceController::class,'create'])->withoutMiddleware("throttle:api")->name('Presences_api_create');
+// la route d'edition
+Route::post('presences/{Presences}/update',[App\Http\Controllers\API\PresenceController::class,'update'])->withoutMiddleware("throttle:api")->name('Presences_api_update');
+// la route de suppression
+Route::post('presences/{Presences}/delete',[App\Http\Controllers\API\PresenceController::class,'delete'])->withoutMiddleware("throttle:api")->name('Presences_api_delete');
+// la route des actions
+Route::get('presences/action',[App\Http\Controllers\API\PresenceController::class,'action'])->withoutMiddleware("throttle:api")->name('Presences_api_delete');
+// la route des actions
+Route::post('presences/action',[App\Http\Controllers\API\PresenceController::class,'action'])->withoutMiddleware("throttle:api")->name('Presences_api_delete');
+
+
+
+//Route::resource('Preuves',App\Http\Controllers\API\PreuveController::class);
+// les routes d'affichage
+Route::get('preuves/{key}/{val}',[App\Http\Controllers\API\PreuveController::class,'data'])->withoutMiddleware("throttle:api")->name('Preuves_api_index2');
+Route::get('preuves',[App\Http\Controllers\API\PreuveController::class,'data1'])->withoutMiddleware("throttle:api")->name('Preuves_api_index');
+Route::post('preuves-Aggrid', [App\Http\Controllers\API\PreuveController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Preuves_api_aggrid');
+
+// la route de creation
+Route::post('preuves',[App\Http\Controllers\API\PreuveController::class,'create'])->withoutMiddleware("throttle:api")->name('Preuves_api_create');
+// la route d'edition
+Route::post('preuves/{Preuves}/update',[App\Http\Controllers\API\PreuveController::class,'update'])->withoutMiddleware("throttle:api")->name('Preuves_api_update');
+// la route de suppression
+Route::post('preuves/{Preuves}/delete',[App\Http\Controllers\API\PreuveController::class,'delete'])->withoutMiddleware("throttle:api")->name('Preuves_api_delete');
+// la route des actions
+Route::get('preuves/action',[App\Http\Controllers\API\PreuveController::class,'action'])->withoutMiddleware("throttle:api")->name('Preuves_api_delete');
+// la route des actions
+Route::post('preuves/action',[App\Http\Controllers\API\PreuveController::class,'action'])->withoutMiddleware("throttle:api")->name('Preuves_api_delete');
+
+
+
+//Route::resource('Programmations',App\Http\Controllers\API\ProgrammationController::class);
+// les routes d'affichage
+Route::get('programmations/{key}/{val}',[App\Http\Controllers\API\ProgrammationController::class,'data'])->withoutMiddleware("throttle:api")->name('Programmations_api_index2');
+Route::get('programmations',[App\Http\Controllers\API\ProgrammationController::class,'data1'])->withoutMiddleware("throttle:api")->name('Programmations_api_index');
+Route::post('programmations-Aggrid', [App\Http\Controllers\API\ProgrammationController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Programmations_api_aggrid');
+
+// la route de creation
+Route::post('programmations',[App\Http\Controllers\API\ProgrammationController::class,'create'])->withoutMiddleware("throttle:api")->name('Programmations_api_create');
+// la route d'edition
+Route::post('programmations/{Programmations}/update',[App\Http\Controllers\API\ProgrammationController::class,'update'])->withoutMiddleware("throttle:api")->name('Programmations_api_update');
+// la route de suppression
+Route::post('programmations/{Programmations}/delete',[App\Http\Controllers\API\ProgrammationController::class,'delete'])->withoutMiddleware("throttle:api")->name('Programmations_api_delete');
+// la route des actions
+Route::get('programmations/action',[App\Http\Controllers\API\ProgrammationController::class,'action'])->withoutMiddleware("throttle:api")->name('Programmations_api_delete');
+// la route des actions
+Route::post('programmations/action',[App\Http\Controllers\API\ProgrammationController::class,'action'])->withoutMiddleware("throttle:api")->name('Programmations_api_delete');
+
+
+
+//Route::resource('Programmationsdetails',App\Http\Controllers\API\ProgrammationsdetailController::class);
+// les routes d'affichage
+Route::get('programmationsdetails/{key}/{val}',[App\Http\Controllers\API\ProgrammationsdetailController::class,'data'])->withoutMiddleware("throttle:api")->name('Programmationsdetails_api_index2');
+Route::get('programmationsdetails',[App\Http\Controllers\API\ProgrammationsdetailController::class,'data1'])->withoutMiddleware("throttle:api")->name('Programmationsdetails_api_index');
+Route::post('programmationsdetails-Aggrid', [App\Http\Controllers\API\ProgrammationsdetailController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Programmationsdetails_api_aggrid');
+
+// la route de creation
+Route::post('programmationsdetails',[App\Http\Controllers\API\ProgrammationsdetailController::class,'create'])->withoutMiddleware("throttle:api")->name('Programmationsdetails_api_create');
+// la route d'edition
+Route::post('programmationsdetails/{Programmationsdetails}/update',[App\Http\Controllers\API\ProgrammationsdetailController::class,'update'])->withoutMiddleware("throttle:api")->name('Programmationsdetails_api_update');
+// la route de suppression
+Route::post('programmationsdetails/{Programmationsdetails}/delete',[App\Http\Controllers\API\ProgrammationsdetailController::class,'delete'])->withoutMiddleware("throttle:api")->name('Programmationsdetails_api_delete');
+// la route des actions
+Route::get('programmationsdetails/action',[App\Http\Controllers\API\ProgrammationsdetailController::class,'action'])->withoutMiddleware("throttle:api")->name('Programmationsdetails_api_delete');
+// la route des actions
+Route::post('programmationsdetails/action',[App\Http\Controllers\API\ProgrammationsdetailController::class,'action'])->withoutMiddleware("throttle:api")->name('Programmationsdetails_api_delete');
+
+
+
+//Route::resource('Programmes',App\Http\Controllers\API\ProgrammeController::class);
+// les routes d'affichage
+Route::get('programmes/{key}/{val}',[App\Http\Controllers\API\ProgrammeController::class,'data'])->withoutMiddleware("throttle:api")->name('Programmes_api_index2');
+Route::get('programmes',[App\Http\Controllers\API\ProgrammeController::class,'data1'])->withoutMiddleware("throttle:api")->name('Programmes_api_index');
+Route::post('programmes-Aggrid', [App\Http\Controllers\API\ProgrammeController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Programmes_api_aggrid');
+
+// la route de creation
+Route::post('programmes',[App\Http\Controllers\API\ProgrammeController::class,'create'])->withoutMiddleware("throttle:api")->name('Programmes_api_create');
+// la route d'edition
+Route::post('programmes/{Programmes}/update',[App\Http\Controllers\API\ProgrammeController::class,'update'])->withoutMiddleware("throttle:api")->name('Programmes_api_update');
+// la route de suppression
+Route::post('programmes/{Programmes}/delete',[App\Http\Controllers\API\ProgrammeController::class,'delete'])->withoutMiddleware("throttle:api")->name('Programmes_api_delete');
+// la route des actions
+Route::get('programmes/action',[App\Http\Controllers\API\ProgrammeController::class,'action'])->withoutMiddleware("throttle:api")->name('Programmes_api_delete');
+// la route des actions
+Route::post('programmes/action',[App\Http\Controllers\API\ProgrammeController::class,'action'])->withoutMiddleware("throttle:api")->name('Programmes_api_delete');
+
+
+
+//Route::resource('Projets',App\Http\Controllers\API\ProjetController::class);
+// les routes d'affichage
+Route::get('projets/{key}/{val}',[App\Http\Controllers\API\ProjetController::class,'data'])->withoutMiddleware("throttle:api")->name('Projets_api_index2');
+Route::get('projets',[App\Http\Controllers\API\ProjetController::class,'data1'])->withoutMiddleware("throttle:api")->name('Projets_api_index');
+Route::post('projets-Aggrid', [App\Http\Controllers\API\ProjetController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Projets_api_aggrid');
+
+// la route de creation
+Route::post('projets',[App\Http\Controllers\API\ProjetController::class,'create'])->withoutMiddleware("throttle:api")->name('Projets_api_create');
+// la route d'edition
+Route::post('projets/{Projets}/update',[App\Http\Controllers\API\ProjetController::class,'update'])->withoutMiddleware("throttle:api")->name('Projets_api_update');
+// la route de suppression
+Route::post('projets/{Projets}/delete',[App\Http\Controllers\API\ProjetController::class,'delete'])->withoutMiddleware("throttle:api")->name('Projets_api_delete');
+// la route des actions
+Route::get('projets/action',[App\Http\Controllers\API\ProjetController::class,'action'])->withoutMiddleware("throttle:api")->name('Projets_api_delete');
+// la route des actions
+Route::post('projets/action',[App\Http\Controllers\API\ProjetController::class,'action'])->withoutMiddleware("throttle:api")->name('Projets_api_delete');
+
+
+
+//Route::resource('Provinces',App\Http\Controllers\API\ProvinceController::class);
+// les routes d'affichage
+Route::get('provinces/{key}/{val}',[App\Http\Controllers\API\ProvinceController::class,'data'])->withoutMiddleware("throttle:api")->name('Provinces_api_index2');
+Route::get('provinces',[App\Http\Controllers\API\ProvinceController::class,'data1'])->withoutMiddleware("throttle:api")->name('Provinces_api_index');
+Route::post('provinces-Aggrid', [App\Http\Controllers\API\ProvinceController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Provinces_api_aggrid');
+
+// la route de creation
+Route::post('provinces',[App\Http\Controllers\API\ProvinceController::class,'create'])->withoutMiddleware("throttle:api")->name('Provinces_api_create');
+// la route d'edition
+Route::post('provinces/{Provinces}/update',[App\Http\Controllers\API\ProvinceController::class,'update'])->withoutMiddleware("throttle:api")->name('Provinces_api_update');
+// la route de suppression
+Route::post('provinces/{Provinces}/delete',[App\Http\Controllers\API\ProvinceController::class,'delete'])->withoutMiddleware("throttle:api")->name('Provinces_api_delete');
+// la route des actions
+Route::get('provinces/action',[App\Http\Controllers\API\ProvinceController::class,'action'])->withoutMiddleware("throttle:api")->name('Provinces_api_delete');
+// la route des actions
+Route::post('provinces/action',[App\Http\Controllers\API\ProvinceController::class,'action'])->withoutMiddleware("throttle:api")->name('Provinces_api_delete');
+
+
+
+//Route::resource('Rapportpostes',App\Http\Controllers\API\RapportposteController::class);
+// les routes d'affichage
+Route::get('rapportpostes/{key}/{val}',[App\Http\Controllers\API\RapportposteController::class,'data'])->withoutMiddleware("throttle:api")->name('Rapportpostes_api_index2');
+Route::get('rapportpostes',[App\Http\Controllers\API\RapportposteController::class,'data1'])->withoutMiddleware("throttle:api")->name('Rapportpostes_api_index');
+Route::post('rapportpostes-Aggrid', [App\Http\Controllers\API\RapportposteController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Rapportpostes_api_aggrid');
+
+// la route de creation
+Route::post('rapportpostes',[App\Http\Controllers\API\RapportposteController::class,'create'])->withoutMiddleware("throttle:api")->name('Rapportpostes_api_create');
+// la route d'edition
+Route::post('rapportpostes/{Rapportpostes}/update',[App\Http\Controllers\API\RapportposteController::class,'update'])->withoutMiddleware("throttle:api")->name('Rapportpostes_api_update');
+// la route de suppression
+Route::post('rapportpostes/{Rapportpostes}/delete',[App\Http\Controllers\API\RapportposteController::class,'delete'])->withoutMiddleware("throttle:api")->name('Rapportpostes_api_delete');
+// la route des actions
+Route::get('rapportpostes/action',[App\Http\Controllers\API\RapportposteController::class,'action'])->withoutMiddleware("throttle:api")->name('Rapportpostes_api_delete');
+// la route des actions
+Route::post('rapportpostes/action',[App\Http\Controllers\API\RapportposteController::class,'action'])->withoutMiddleware("throttle:api")->name('Rapportpostes_api_delete');
+
+
+
+//Route::resource('Rapports',App\Http\Controllers\API\RapportController::class);
+// les routes d'affichage
+Route::get('rapports/{key}/{val}',[App\Http\Controllers\API\RapportController::class,'data'])->withoutMiddleware("throttle:api")->name('Rapports_api_index2');
+Route::get('rapports',[App\Http\Controllers\API\RapportController::class,'data1'])->withoutMiddleware("throttle:api")->name('Rapports_api_index');
+Route::post('rapports-Aggrid', [App\Http\Controllers\API\RapportController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Rapports_api_aggrid');
+
+// la route de creation
+Route::post('rapports',[App\Http\Controllers\API\RapportController::class,'create'])->withoutMiddleware("throttle:api")->name('Rapports_api_create');
+// la route d'edition
+Route::post('rapports/{Rapports}/update',[App\Http\Controllers\API\RapportController::class,'update'])->withoutMiddleware("throttle:api")->name('Rapports_api_update');
+// la route de suppression
+Route::post('rapports/{Rapports}/delete',[App\Http\Controllers\API\RapportController::class,'delete'])->withoutMiddleware("throttle:api")->name('Rapports_api_delete');
+// la route des actions
+Route::get('rapports/action',[App\Http\Controllers\API\RapportController::class,'action'])->withoutMiddleware("throttle:api")->name('Rapports_api_delete');
+// la route des actions
+Route::post('rapports/action',[App\Http\Controllers\API\RapportController::class,'action'])->withoutMiddleware("throttle:api")->name('Rapports_api_delete');
+
+
+
+//Route::resource('Role_has_permission',App\Http\Controllers\API\RoleHasPermisionController::class);
+// les routes d'affichage
+Route::get('role_has_permission/{key}/{val}',[App\Http\Controllers\API\RoleHasPermisionController::class,'data'])->withoutMiddleware("throttle:api")->name('Role_has_permission_api_index2');
+Route::get('role_has_permission',[App\Http\Controllers\API\RoleHasPermisionController::class,'data1'])->withoutMiddleware("throttle:api")->name('Role_has_permission_api_index');
+Route::post('role_has_permission-Aggrid', [App\Http\Controllers\API\RoleHasPermisionController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Role_has_permission_api_aggrid');
+
+// la route de creation
+Route::post('role_has_permission',[App\Http\Controllers\API\RoleHasPermisionController::class,'create'])->withoutMiddleware("throttle:api")->name('Role_has_permission_api_create');
+// la route d'edition
+Route::post('role_has_permission/{Role_has_permission}/update',[App\Http\Controllers\API\RoleHasPermisionController::class,'update'])->withoutMiddleware("throttle:api")->name('Role_has_permission_api_update');
+// la route de suppression
+Route::post('role_has_permission/{Role_has_permission}/delete',[App\Http\Controllers\API\RoleHasPermisionController::class,'delete'])->withoutMiddleware("throttle:api")->name('Role_has_permission_api_delete');
+// la route des actions
+Route::get('role_has_permission/action',[App\Http\Controllers\API\RoleHasPermisionController::class,'action'])->withoutMiddleware("throttle:api")->name('Role_has_permission_api_delete');
+// la route des actions
+Route::post('role_has_permission/action',[App\Http\Controllers\API\RoleHasPermisionController::class,'action'])->withoutMiddleware("throttle:api")->name('Role_has_permission_api_delete');
+
+
+
+//Route::resource('Role_has_permissions',App\Http\Controllers\API\RoleHasPermissionController::class);
+// les routes d'affichage
+Route::get('role_has_permissions/{key}/{val}',[App\Http\Controllers\API\RoleHasPermissionController::class,'data'])->withoutMiddleware("throttle:api")->name('Role_has_permissions_api_index2');
+Route::get('role_has_permissions',[App\Http\Controllers\API\RoleHasPermissionController::class,'data1'])->withoutMiddleware("throttle:api")->name('Role_has_permissions_api_index');
+Route::post('role_has_permissions-Aggrid', [App\Http\Controllers\API\RoleHasPermissionController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Role_has_permissions_api_aggrid');
+
+// la route de creation
+Route::post('role_has_permissions',[App\Http\Controllers\API\RoleHasPermissionController::class,'create'])->withoutMiddleware("throttle:api")->name('Role_has_permissions_api_create');
+// la route d'edition
+Route::post('role_has_permissions/{Role_has_permissions}/update',[App\Http\Controllers\API\RoleHasPermissionController::class,'update'])->withoutMiddleware("throttle:api")->name('Role_has_permissions_api_update');
+// la route de suppression
+Route::post('role_has_permissions/{Role_has_permissions}/delete',[App\Http\Controllers\API\RoleHasPermissionController::class,'delete'])->withoutMiddleware("throttle:api")->name('Role_has_permissions_api_delete');
+// la route des actions
+Route::get('role_has_permissions/action',[App\Http\Controllers\API\RoleHasPermissionController::class,'action'])->withoutMiddleware("throttle:api")->name('Role_has_permissions_api_delete');
+// la route des actions
+Route::post('role_has_permissions/action',[App\Http\Controllers\API\RoleHasPermissionController::class,'action'])->withoutMiddleware("throttle:api")->name('Role_has_permissions_api_delete');
+
+
+
+//Route::resource('Roles',App\Http\Controllers\API\RoleController::class);
+// les routes d'affichage
+Route::get('roles/{key}/{val}',[App\Http\Controllers\API\RoleController::class,'data'])->withoutMiddleware("throttle:api")->name('Roles_api_index2');
+Route::get('roles',[App\Http\Controllers\API\RoleController::class,'data1'])->withoutMiddleware("throttle:api")->name('Roles_api_index');
+Route::post('roles-Aggrid', [App\Http\Controllers\API\RoleController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Roles_api_aggrid');
+
+// la route de creation
+Route::post('roles',[App\Http\Controllers\API\RoleController::class,'create'])->withoutMiddleware("throttle:api")->name('Roles_api_create');
+// la route d'edition
+Route::post('roles/{Roles}/update',[App\Http\Controllers\API\RoleController::class,'update'])->withoutMiddleware("throttle:api")->name('Roles_api_update');
+// la route de suppression
+Route::post('roles/{Roles}/delete',[App\Http\Controllers\API\RoleController::class,'delete'])->withoutMiddleware("throttle:api")->name('Roles_api_delete');
+// la route des actions
+Route::get('roles/action',[App\Http\Controllers\API\RoleController::class,'action'])->withoutMiddleware("throttle:api")->name('Roles_api_delete');
+// la route des actions
+Route::post('roles/action',[App\Http\Controllers\API\RoleController::class,'action'])->withoutMiddleware("throttle:api")->name('Roles_api_delete');
+
+
+
+//Route::resource('Services',App\Http\Controllers\API\ServiceController::class);
+// les routes d'affichage
+Route::get('services/{key}/{val}',[App\Http\Controllers\API\ServiceController::class,'data'])->withoutMiddleware("throttle:api")->name('Services_api_index2');
+Route::get('services',[App\Http\Controllers\API\ServiceController::class,'data1'])->withoutMiddleware("throttle:api")->name('Services_api_index');
+Route::post('services-Aggrid', [App\Http\Controllers\API\ServiceController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Services_api_aggrid');
+
+// la route de creation
+Route::post('services',[App\Http\Controllers\API\ServiceController::class,'create'])->withoutMiddleware("throttle:api")->name('Services_api_create');
+// la route d'edition
+Route::post('services/{Services}/update',[App\Http\Controllers\API\ServiceController::class,'update'])->withoutMiddleware("throttle:api")->name('Services_api_update');
+// la route de suppression
+Route::post('services/{Services}/delete',[App\Http\Controllers\API\ServiceController::class,'delete'])->withoutMiddleware("throttle:api")->name('Services_api_delete');
+// la route des actions
+Route::get('services/action',[App\Http\Controllers\API\ServiceController::class,'action'])->withoutMiddleware("throttle:api")->name('Services_api_delete');
+// la route des actions
+Route::post('services/action',[App\Http\Controllers\API\ServiceController::class,'action'])->withoutMiddleware("throttle:api")->name('Services_api_delete');
+
+
+
+//Route::resource('Sexes',App\Http\Controllers\API\SexeController::class);
+// les routes d'affichage
+Route::get('sexes/{key}/{val}',[App\Http\Controllers\API\SexeController::class,'data'])->withoutMiddleware("throttle:api")->name('Sexes_api_index2');
+Route::get('sexes',[App\Http\Controllers\API\SexeController::class,'data1'])->withoutMiddleware("throttle:api")->name('Sexes_api_index');
+Route::post('sexes-Aggrid', [App\Http\Controllers\API\SexeController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Sexes_api_aggrid');
+
+// la route de creation
+Route::post('sexes',[App\Http\Controllers\API\SexeController::class,'create'])->withoutMiddleware("throttle:api")->name('Sexes_api_create');
+// la route d'edition
+Route::post('sexes/{Sexes}/update',[App\Http\Controllers\API\SexeController::class,'update'])->withoutMiddleware("throttle:api")->name('Sexes_api_update');
+// la route de suppression
+Route::post('sexes/{Sexes}/delete',[App\Http\Controllers\API\SexeController::class,'delete'])->withoutMiddleware("throttle:api")->name('Sexes_api_delete');
+// la route des actions
+Route::get('sexes/action',[App\Http\Controllers\API\SexeController::class,'action'])->withoutMiddleware("throttle:api")->name('Sexes_api_delete');
+// la route des actions
+Route::post('sexes/action',[App\Http\Controllers\API\SexeController::class,'action'])->withoutMiddleware("throttle:api")->name('Sexes_api_delete');
+
+
+
+//Route::resource('Sites',App\Http\Controllers\API\SiteController::class);
+// les routes d'affichage
+Route::get('sites/{key}/{val}',[App\Http\Controllers\API\SiteController::class,'data'])->withoutMiddleware("throttle:api")->name('Sites_api_index2');
+Route::get('sites',[App\Http\Controllers\API\SiteController::class,'data1'])->withoutMiddleware("throttle:api")->name('Sites_api_index');
+Route::post('sites-Aggrid', [App\Http\Controllers\API\SiteController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Sites_api_aggrid');
+
+// la route de creation
+Route::post('sites',[App\Http\Controllers\API\SiteController::class,'create'])->withoutMiddleware("throttle:api")->name('Sites_api_create');
+// la route d'edition
+Route::post('sites/{Sites}/update',[App\Http\Controllers\API\SiteController::class,'update'])->withoutMiddleware("throttle:api")->name('Sites_api_update');
+// la route de suppression
+Route::post('sites/{Sites}/delete',[App\Http\Controllers\API\SiteController::class,'delete'])->withoutMiddleware("throttle:api")->name('Sites_api_delete');
+// la route des actions
+Route::get('sites/action',[App\Http\Controllers\API\SiteController::class,'action'])->withoutMiddleware("throttle:api")->name('Sites_api_delete');
+// la route des actions
+Route::post('sites/action',[App\Http\Controllers\API\SiteController::class,'action'])->withoutMiddleware("throttle:api")->name('Sites_api_delete');
+
+
+
+//Route::resource('Sitespointeuses',App\Http\Controllers\API\SitespointeuseController::class);
+// les routes d'affichage
+Route::get('sitespointeuses/{key}/{val}',[App\Http\Controllers\API\SitespointeuseController::class,'data'])->withoutMiddleware("throttle:api")->name('Sitespointeuses_api_index2');
+Route::get('sitespointeuses',[App\Http\Controllers\API\SitespointeuseController::class,'data1'])->withoutMiddleware("throttle:api")->name('Sitespointeuses_api_index');
+Route::post('sitespointeuses-Aggrid', [App\Http\Controllers\API\SitespointeuseController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Sitespointeuses_api_aggrid');
+
+// la route de creation
+Route::post('sitespointeuses',[App\Http\Controllers\API\SitespointeuseController::class,'create'])->withoutMiddleware("throttle:api")->name('Sitespointeuses_api_create');
+// la route d'edition
+Route::post('sitespointeuses/{Sitespointeuses}/update',[App\Http\Controllers\API\SitespointeuseController::class,'update'])->withoutMiddleware("throttle:api")->name('Sitespointeuses_api_update');
+// la route de suppression
+Route::post('sitespointeuses/{Sitespointeuses}/delete',[App\Http\Controllers\API\SitespointeuseController::class,'delete'])->withoutMiddleware("throttle:api")->name('Sitespointeuses_api_delete');
+// la route des actions
+Route::get('sitespointeuses/action',[App\Http\Controllers\API\SitespointeuseController::class,'action'])->withoutMiddleware("throttle:api")->name('Sitespointeuses_api_delete');
+// la route des actions
+Route::post('sitespointeuses/action',[App\Http\Controllers\API\SitespointeuseController::class,'action'])->withoutMiddleware("throttle:api")->name('Sitespointeuses_api_delete');
+
+
+
+//Route::resource('Sitessdeplacements',App\Http\Controllers\API\SitessdeplacementController::class);
+// les routes d'affichage
+Route::get('sitessdeplacements/{key}/{val}',[App\Http\Controllers\API\SitessdeplacementController::class,'data'])->withoutMiddleware("throttle:api")->name('Sitessdeplacements_api_index2');
+Route::get('sitessdeplacements',[App\Http\Controllers\API\SitessdeplacementController::class,'data1'])->withoutMiddleware("throttle:api")->name('Sitessdeplacements_api_index');
+Route::post('sitessdeplacements-Aggrid', [App\Http\Controllers\API\SitessdeplacementController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Sitessdeplacements_api_aggrid');
+
+// la route de creation
+Route::post('sitessdeplacements',[App\Http\Controllers\API\SitessdeplacementController::class,'create'])->withoutMiddleware("throttle:api")->name('Sitessdeplacements_api_create');
+// la route d'edition
+Route::post('sitessdeplacements/{Sitessdeplacements}/update',[App\Http\Controllers\API\SitessdeplacementController::class,'update'])->withoutMiddleware("throttle:api")->name('Sitessdeplacements_api_update');
+// la route de suppression
+Route::post('sitessdeplacements/{Sitessdeplacements}/delete',[App\Http\Controllers\API\SitessdeplacementController::class,'delete'])->withoutMiddleware("throttle:api")->name('Sitessdeplacements_api_delete');
+// la route des actions
+Route::get('sitessdeplacements/action',[App\Http\Controllers\API\SitessdeplacementController::class,'action'])->withoutMiddleware("throttle:api")->name('Sitessdeplacements_api_delete');
+// la route des actions
+Route::post('sitessdeplacements/action',[App\Http\Controllers\API\SitessdeplacementController::class,'action'])->withoutMiddleware("throttle:api")->name('Sitessdeplacements_api_delete');
+
+
+
+//Route::resource('Situations',App\Http\Controllers\API\SituationController::class);
+// les routes d'affichage
+Route::get('situations/{key}/{val}',[App\Http\Controllers\API\SituationController::class,'data'])->withoutMiddleware("throttle:api")->name('Situations_api_index2');
+Route::get('situations',[App\Http\Controllers\API\SituationController::class,'data1'])->withoutMiddleware("throttle:api")->name('Situations_api_index');
+Route::post('situations-Aggrid', [App\Http\Controllers\API\SituationController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Situations_api_aggrid');
+
+// la route de creation
+Route::post('situations',[App\Http\Controllers\API\SituationController::class,'create'])->withoutMiddleware("throttle:api")->name('Situations_api_create');
+// la route d'edition
+Route::post('situations/{Situations}/update',[App\Http\Controllers\API\SituationController::class,'update'])->withoutMiddleware("throttle:api")->name('Situations_api_update');
+// la route de suppression
+Route::post('situations/{Situations}/delete',[App\Http\Controllers\API\SituationController::class,'delete'])->withoutMiddleware("throttle:api")->name('Situations_api_delete');
+// la route des actions
+Route::get('situations/action',[App\Http\Controllers\API\SituationController::class,'action'])->withoutMiddleware("throttle:api")->name('Situations_api_delete');
+// la route des actions
+Route::post('situations/action',[App\Http\Controllers\API\SituationController::class,'action'])->withoutMiddleware("throttle:api")->name('Situations_api_delete');
+
+
+
+//Route::resource('Soldables',App\Http\Controllers\API\SoldableController::class);
+// les routes d'affichage
+Route::get('soldables/{key}/{val}',[App\Http\Controllers\API\SoldableController::class,'data'])->withoutMiddleware("throttle:api")->name('Soldables_api_index2');
+Route::get('soldables',[App\Http\Controllers\API\SoldableController::class,'data1'])->withoutMiddleware("throttle:api")->name('Soldables_api_index');
+Route::post('soldables-Aggrid', [App\Http\Controllers\API\SoldableController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Soldables_api_aggrid');
+
+// la route de creation
+Route::post('soldables',[App\Http\Controllers\API\SoldableController::class,'create'])->withoutMiddleware("throttle:api")->name('Soldables_api_create');
+// la route d'edition
+Route::post('soldables/{Soldables}/update',[App\Http\Controllers\API\SoldableController::class,'update'])->withoutMiddleware("throttle:api")->name('Soldables_api_update');
+// la route de suppression
+Route::post('soldables/{Soldables}/delete',[App\Http\Controllers\API\SoldableController::class,'delete'])->withoutMiddleware("throttle:api")->name('Soldables_api_delete');
+// la route des actions
+Route::get('soldables/action',[App\Http\Controllers\API\SoldableController::class,'action'])->withoutMiddleware("throttle:api")->name('Soldables_api_delete');
+// la route des actions
+Route::post('soldables/action',[App\Http\Controllers\API\SoldableController::class,'action'])->withoutMiddleware("throttle:api")->name('Soldables_api_delete');
+
+
+
+//Route::resource('Statszones',App\Http\Controllers\API\StatszoneController::class);
+// les routes d'affichage
+Route::get('statszones/{key}/{val}',[App\Http\Controllers\API\StatszoneController::class,'data'])->withoutMiddleware("throttle:api")->name('Statszones_api_index2');
+Route::get('statszones',[App\Http\Controllers\API\StatszoneController::class,'data1'])->withoutMiddleware("throttle:api")->name('Statszones_api_index');
+Route::post('statszones-Aggrid', [App\Http\Controllers\API\StatszoneController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Statszones_api_aggrid');
+
+// la route de creation
+Route::post('statszones',[App\Http\Controllers\API\StatszoneController::class,'create'])->withoutMiddleware("throttle:api")->name('Statszones_api_create');
+// la route d'edition
+Route::post('statszones/{Statszones}/update',[App\Http\Controllers\API\StatszoneController::class,'update'])->withoutMiddleware("throttle:api")->name('Statszones_api_update');
+// la route de suppression
+Route::post('statszones/{Statszones}/delete',[App\Http\Controllers\API\StatszoneController::class,'delete'])->withoutMiddleware("throttle:api")->name('Statszones_api_delete');
+// la route des actions
+Route::get('statszones/action',[App\Http\Controllers\API\StatszoneController::class,'action'])->withoutMiddleware("throttle:api")->name('Statszones_api_delete');
+// la route des actions
+Route::post('statszones/action',[App\Http\Controllers\API\StatszoneController::class,'action'])->withoutMiddleware("throttle:api")->name('Statszones_api_delete');
+
+
+
+//Route::resource('Surveillances',App\Http\Controllers\API\SurveillanceController::class);
+// les routes d'affichage
+Route::get('surveillances/{key}/{val}',[App\Http\Controllers\API\SurveillanceController::class,'data'])->withoutMiddleware("throttle:api")->name('Surveillances_api_index2');
+Route::get('surveillances',[App\Http\Controllers\API\SurveillanceController::class,'data1'])->withoutMiddleware("throttle:api")->name('Surveillances_api_index');
+Route::post('surveillances-Aggrid', [App\Http\Controllers\API\SurveillanceController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Surveillances_api_aggrid');
+
+// la route de creation
+Route::post('surveillances',[App\Http\Controllers\API\SurveillanceController::class,'create'])->withoutMiddleware("throttle:api")->name('Surveillances_api_create');
+// la route d'edition
+Route::post('surveillances/{Surveillances}/update',[App\Http\Controllers\API\SurveillanceController::class,'update'])->withoutMiddleware("throttle:api")->name('Surveillances_api_update');
+// la route de suppression
+Route::post('surveillances/{Surveillances}/delete',[App\Http\Controllers\API\SurveillanceController::class,'delete'])->withoutMiddleware("throttle:api")->name('Surveillances_api_delete');
+// la route des actions
+Route::get('surveillances/action',[App\Http\Controllers\API\SurveillanceController::class,'action'])->withoutMiddleware("throttle:api")->name('Surveillances_api_delete');
+// la route des actions
+Route::post('surveillances/action',[App\Http\Controllers\API\SurveillanceController::class,'action'])->withoutMiddleware("throttle:api")->name('Surveillances_api_delete');
+
+
+
+//Route::resource('Switchsusers',App\Http\Controllers\API\SwitchsuserController::class);
+// les routes d'affichage
+Route::get('switchsusers/{key}/{val}',[App\Http\Controllers\API\SwitchsuserController::class,'data'])->withoutMiddleware("throttle:api")->name('Switchsusers_api_index2');
+Route::get('switchsusers',[App\Http\Controllers\API\SwitchsuserController::class,'data1'])->withoutMiddleware("throttle:api")->name('Switchsusers_api_index');
+Route::post('switchsusers-Aggrid', [App\Http\Controllers\API\SwitchsuserController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Switchsusers_api_aggrid');
+
+// la route de creation
+Route::post('switchsusers',[App\Http\Controllers\API\SwitchsuserController::class,'create'])->withoutMiddleware("throttle:api")->name('Switchsusers_api_create');
+// la route d'edition
+Route::post('switchsusers/{Switchsusers}/update',[App\Http\Controllers\API\SwitchsuserController::class,'update'])->withoutMiddleware("throttle:api")->name('Switchsusers_api_update');
+// la route de suppression
+Route::post('switchsusers/{Switchsusers}/delete',[App\Http\Controllers\API\SwitchsuserController::class,'delete'])->withoutMiddleware("throttle:api")->name('Switchsusers_api_delete');
+// la route des actions
+Route::get('switchsusers/action',[App\Http\Controllers\API\SwitchsuserController::class,'action'])->withoutMiddleware("throttle:api")->name('Switchsusers_api_delete');
+// la route des actions
+Route::post('switchsusers/action',[App\Http\Controllers\API\SwitchsuserController::class,'action'])->withoutMiddleware("throttle:api")->name('Switchsusers_api_delete');
+
+
+
+//Route::resource('Terminals',App\Http\Controllers\API\TerminalController::class);
+// les routes d'affichage
+Route::get('terminals/{key}/{val}',[App\Http\Controllers\API\TerminalController::class,'data'])->withoutMiddleware("throttle:api")->name('Terminals_api_index2');
+Route::get('terminals',[App\Http\Controllers\API\TerminalController::class,'data1'])->withoutMiddleware("throttle:api")->name('Terminals_api_index');
+Route::post('terminals-Aggrid', [App\Http\Controllers\API\TerminalController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Terminals_api_aggrid');
+
+// la route de creation
+Route::post('terminals',[App\Http\Controllers\API\TerminalController::class,'create'])->withoutMiddleware("throttle:api")->name('Terminals_api_create');
+// la route d'edition
+Route::post('terminals/{Terminals}/update',[App\Http\Controllers\API\TerminalController::class,'update'])->withoutMiddleware("throttle:api")->name('Terminals_api_update');
+// la route de suppression
+Route::post('terminals/{Terminals}/delete',[App\Http\Controllers\API\TerminalController::class,'delete'])->withoutMiddleware("throttle:api")->name('Terminals_api_delete');
+// la route des actions
+Route::get('terminals/action',[App\Http\Controllers\API\TerminalController::class,'action'])->withoutMiddleware("throttle:api")->name('Terminals_api_delete');
+// la route des actions
+Route::post('terminals/action',[App\Http\Controllers\API\TerminalController::class,'action'])->withoutMiddleware("throttle:api")->name('Terminals_api_delete');
+
+
+
+//Route::resource('Trackings',App\Http\Controllers\API\TrackingController::class);
+// les routes d'affichage
+Route::get('trackings/{key}/{val}',[App\Http\Controllers\API\TrackingController::class,'data'])->withoutMiddleware("throttle:api")->name('Trackings_api_index2');
+Route::get('trackings',[App\Http\Controllers\API\TrackingController::class,'data1'])->withoutMiddleware("throttle:api")->name('Trackings_api_index');
+Route::post('trackings-Aggrid', [App\Http\Controllers\API\TrackingController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Trackings_api_aggrid');
+
+// la route de creation
+Route::post('trackings',[App\Http\Controllers\API\TrackingController::class,'create'])->withoutMiddleware("throttle:api")->name('Trackings_api_create');
+// la route d'edition
+Route::post('trackings/{Trackings}/update',[App\Http\Controllers\API\TrackingController::class,'update'])->withoutMiddleware("throttle:api")->name('Trackings_api_update');
+// la route de suppression
+Route::post('trackings/{Trackings}/delete',[App\Http\Controllers\API\TrackingController::class,'delete'])->withoutMiddleware("throttle:api")->name('Trackings_api_delete');
+// la route des actions
+Route::get('trackings/action',[App\Http\Controllers\API\TrackingController::class,'action'])->withoutMiddleware("throttle:api")->name('Trackings_api_delete');
+// la route des actions
+Route::post('trackings/action',[App\Http\Controllers\API\TrackingController::class,'action'])->withoutMiddleware("throttle:api")->name('Trackings_api_delete');
+
+
+
+//Route::resource('Traitements',App\Http\Controllers\API\TraitementController::class);
+// les routes d'affichage
+Route::get('traitements/{key}/{val}',[App\Http\Controllers\API\TraitementController::class,'data'])->withoutMiddleware("throttle:api")->name('Traitements_api_index2');
+Route::get('traitements',[App\Http\Controllers\API\TraitementController::class,'data1'])->withoutMiddleware("throttle:api")->name('Traitements_api_index');
+Route::post('traitements-Aggrid', [App\Http\Controllers\API\TraitementController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Traitements_api_aggrid');
+
+// la route de creation
+Route::post('traitements',[App\Http\Controllers\API\TraitementController::class,'create'])->withoutMiddleware("throttle:api")->name('Traitements_api_create');
+// la route d'edition
+Route::post('traitements/{Traitements}/update',[App\Http\Controllers\API\TraitementController::class,'update'])->withoutMiddleware("throttle:api")->name('Traitements_api_update');
+// la route de suppression
+Route::post('traitements/{Traitements}/delete',[App\Http\Controllers\API\TraitementController::class,'delete'])->withoutMiddleware("throttle:api")->name('Traitements_api_delete');
+// la route des actions
+Route::get('traitements/action',[App\Http\Controllers\API\TraitementController::class,'action'])->withoutMiddleware("throttle:api")->name('Traitements_api_delete');
+// la route des actions
+Route::post('traitements/action',[App\Http\Controllers\API\TraitementController::class,'action'])->withoutMiddleware("throttle:api")->name('Traitements_api_delete');
+
+
+
+//Route::resource('Trajets',App\Http\Controllers\API\TrajetController::class);
+// les routes d'affichage
+Route::get('trajets/{key}/{val}',[App\Http\Controllers\API\TrajetController::class,'data'])->withoutMiddleware("throttle:api")->name('Trajets_api_index2');
+Route::get('trajets',[App\Http\Controllers\API\TrajetController::class,'data1'])->withoutMiddleware("throttle:api")->name('Trajets_api_index');
+Route::post('trajets-Aggrid', [App\Http\Controllers\API\TrajetController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Trajets_api_aggrid');
+
+// la route de creation
+Route::post('trajets',[App\Http\Controllers\API\TrajetController::class,'create'])->withoutMiddleware("throttle:api")->name('Trajets_api_create');
+// la route d'edition
+Route::post('trajets/{Trajets}/update',[App\Http\Controllers\API\TrajetController::class,'update'])->withoutMiddleware("throttle:api")->name('Trajets_api_update');
+// la route de suppression
+Route::post('trajets/{Trajets}/delete',[App\Http\Controllers\API\TrajetController::class,'delete'])->withoutMiddleware("throttle:api")->name('Trajets_api_delete');
+// la route des actions
+Route::get('trajets/action',[App\Http\Controllers\API\TrajetController::class,'action'])->withoutMiddleware("throttle:api")->name('Trajets_api_delete');
+// la route des actions
+Route::post('trajets/action',[App\Http\Controllers\API\TrajetController::class,'action'])->withoutMiddleware("throttle:api")->name('Trajets_api_delete');
+
+
+
+//Route::resource('Transactions',App\Http\Controllers\API\TransactionController::class);
+// les routes d'affichage
+Route::get('transactions/{key}/{val}',[App\Http\Controllers\API\TransactionController::class,'data'])->withoutMiddleware("throttle:api")->name('Transactions_api_index2');
+Route::get('transactions',[App\Http\Controllers\API\TransactionController::class,'data1'])->withoutMiddleware("throttle:api")->name('Transactions_api_index');
+Route::post('transactions-Aggrid', [App\Http\Controllers\API\TransactionController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Transactions_api_aggrid');
+
+// la route de creation
+Route::post('transactions',[App\Http\Controllers\API\TransactionController::class,'create'])->withoutMiddleware("throttle:api")->name('Transactions_api_create');
+// la route d'edition
+Route::post('transactions/{Transactions}/update',[App\Http\Controllers\API\TransactionController::class,'update'])->withoutMiddleware("throttle:api")->name('Transactions_api_update');
+// la route de suppression
+Route::post('transactions/{Transactions}/delete',[App\Http\Controllers\API\TransactionController::class,'delete'])->withoutMiddleware("throttle:api")->name('Transactions_api_delete');
+// la route des actions
+Route::get('transactions/action',[App\Http\Controllers\API\TransactionController::class,'action'])->withoutMiddleware("throttle:api")->name('Transactions_api_delete');
+// la route des actions
+Route::post('transactions/action',[App\Http\Controllers\API\TransactionController::class,'action'])->withoutMiddleware("throttle:api")->name('Transactions_api_delete');
+
+
+
+//Route::resource('Types',App\Http\Controllers\API\TypeController::class);
+// les routes d'affichage
+Route::get('types/{key}/{val}',[App\Http\Controllers\API\TypeController::class,'data'])->withoutMiddleware("throttle:api")->name('Types_api_index2');
+Route::get('types',[App\Http\Controllers\API\TypeController::class,'data1'])->withoutMiddleware("throttle:api")->name('Types_api_index');
+Route::post('types-Aggrid', [App\Http\Controllers\API\TypeController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Types_api_aggrid');
+
+// la route de creation
+Route::post('types',[App\Http\Controllers\API\TypeController::class,'create'])->withoutMiddleware("throttle:api")->name('Types_api_create');
+// la route d'edition
+Route::post('types/{Types}/update',[App\Http\Controllers\API\TypeController::class,'update'])->withoutMiddleware("throttle:api")->name('Types_api_update');
+// la route de suppression
+Route::post('types/{Types}/delete',[App\Http\Controllers\API\TypeController::class,'delete'])->withoutMiddleware("throttle:api")->name('Types_api_delete');
+// la route des actions
+Route::get('types/action',[App\Http\Controllers\API\TypeController::class,'action'])->withoutMiddleware("throttle:api")->name('Types_api_delete');
+// la route des actions
+Route::post('types/action',[App\Http\Controllers\API\TypeController::class,'action'])->withoutMiddleware("throttle:api")->name('Types_api_delete');
+
+
+
+//Route::resource('Typesabscences',App\Http\Controllers\API\TypesabscenceController::class);
+// les routes d'affichage
+Route::get('typesabscences/{key}/{val}',[App\Http\Controllers\API\TypesabscenceController::class,'data'])->withoutMiddleware("throttle:api")->name('Typesabscences_api_index2');
+Route::get('typesabscences',[App\Http\Controllers\API\TypesabscenceController::class,'data1'])->withoutMiddleware("throttle:api")->name('Typesabscences_api_index');
+Route::post('typesabscences-Aggrid', [App\Http\Controllers\API\TypesabscenceController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Typesabscences_api_aggrid');
+
+// la route de creation
+Route::post('typesabscences',[App\Http\Controllers\API\TypesabscenceController::class,'create'])->withoutMiddleware("throttle:api")->name('Typesabscences_api_create');
+// la route d'edition
+Route::post('typesabscences/{Typesabscences}/update',[App\Http\Controllers\API\TypesabscenceController::class,'update'])->withoutMiddleware("throttle:api")->name('Typesabscences_api_update');
+// la route de suppression
+Route::post('typesabscences/{Typesabscences}/delete',[App\Http\Controllers\API\TypesabscenceController::class,'delete'])->withoutMiddleware("throttle:api")->name('Typesabscences_api_delete');
+// la route des actions
+Route::get('typesabscences/action',[App\Http\Controllers\API\TypesabscenceController::class,'action'])->withoutMiddleware("throttle:api")->name('Typesabscences_api_delete');
+// la route des actions
+Route::post('typesabscences/action',[App\Http\Controllers\API\TypesabscenceController::class,'action'])->withoutMiddleware("throttle:api")->name('Typesabscences_api_delete');
+
+
+
+//Route::resource('Typesagentshoraires',App\Http\Controllers\API\TypesagentshoraireController::class);
+// les routes d'affichage
+Route::get('typesagentshoraires/{key}/{val}',[App\Http\Controllers\API\TypesagentshoraireController::class,'data'])->withoutMiddleware("throttle:api")->name('Typesagentshoraires_api_index2');
+Route::get('typesagentshoraires',[App\Http\Controllers\API\TypesagentshoraireController::class,'data1'])->withoutMiddleware("throttle:api")->name('Typesagentshoraires_api_index');
+Route::post('typesagentshoraires-Aggrid', [App\Http\Controllers\API\TypesagentshoraireController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Typesagentshoraires_api_aggrid');
+
+// la route de creation
+Route::post('typesagentshoraires',[App\Http\Controllers\API\TypesagentshoraireController::class,'create'])->withoutMiddleware("throttle:api")->name('Typesagentshoraires_api_create');
+// la route d'edition
+Route::post('typesagentshoraires/{Typesagentshoraires}/update',[App\Http\Controllers\API\TypesagentshoraireController::class,'update'])->withoutMiddleware("throttle:api")->name('Typesagentshoraires_api_update');
+// la route de suppression
+Route::post('typesagentshoraires/{Typesagentshoraires}/delete',[App\Http\Controllers\API\TypesagentshoraireController::class,'delete'])->withoutMiddleware("throttle:api")->name('Typesagentshoraires_api_delete');
+// la route des actions
+Route::get('typesagentshoraires/action',[App\Http\Controllers\API\TypesagentshoraireController::class,'action'])->withoutMiddleware("throttle:api")->name('Typesagentshoraires_api_delete');
+// la route des actions
+Route::post('typesagentshoraires/action',[App\Http\Controllers\API\TypesagentshoraireController::class,'action'])->withoutMiddleware("throttle:api")->name('Typesagentshoraires_api_delete');
+
+
+
+//Route::resource('Typeseffectifs',App\Http\Controllers\API\TypeseffectifController::class);
+// les routes d'affichage
+Route::get('typeseffectifs/{key}/{val}',[App\Http\Controllers\API\TypeseffectifController::class,'data'])->withoutMiddleware("throttle:api")->name('Typeseffectifs_api_index2');
+Route::get('typeseffectifs',[App\Http\Controllers\API\TypeseffectifController::class,'data1'])->withoutMiddleware("throttle:api")->name('Typeseffectifs_api_index');
+Route::post('typeseffectifs-Aggrid', [App\Http\Controllers\API\TypeseffectifController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Typeseffectifs_api_aggrid');
+
+// la route de creation
+Route::post('typeseffectifs',[App\Http\Controllers\API\TypeseffectifController::class,'create'])->withoutMiddleware("throttle:api")->name('Typeseffectifs_api_create');
+// la route d'edition
+Route::post('typeseffectifs/{Typeseffectifs}/update',[App\Http\Controllers\API\TypeseffectifController::class,'update'])->withoutMiddleware("throttle:api")->name('Typeseffectifs_api_update');
+// la route de suppression
+Route::post('typeseffectifs/{Typeseffectifs}/delete',[App\Http\Controllers\API\TypeseffectifController::class,'delete'])->withoutMiddleware("throttle:api")->name('Typeseffectifs_api_delete');
+// la route des actions
+Route::get('typeseffectifs/action',[App\Http\Controllers\API\TypeseffectifController::class,'action'])->withoutMiddleware("throttle:api")->name('Typeseffectifs_api_delete');
+// la route des actions
+Route::post('typeseffectifs/action',[App\Http\Controllers\API\TypeseffectifController::class,'action'])->withoutMiddleware("throttle:api")->name('Typeseffectifs_api_delete');
+
+
+
+//Route::resource('Typesheures',App\Http\Controllers\API\TypesheureController::class);
+// les routes d'affichage
+Route::get('typesheures/{key}/{val}',[App\Http\Controllers\API\TypesheureController::class,'data'])->withoutMiddleware("throttle:api")->name('Typesheures_api_index2');
+Route::get('typesheures',[App\Http\Controllers\API\TypesheureController::class,'data1'])->withoutMiddleware("throttle:api")->name('Typesheures_api_index');
+Route::post('typesheures-Aggrid', [App\Http\Controllers\API\TypesheureController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Typesheures_api_aggrid');
+
+// la route de creation
+Route::post('typesheures',[App\Http\Controllers\API\TypesheureController::class,'create'])->withoutMiddleware("throttle:api")->name('Typesheures_api_create');
+// la route d'edition
+Route::post('typesheures/{Typesheures}/update',[App\Http\Controllers\API\TypesheureController::class,'update'])->withoutMiddleware("throttle:api")->name('Typesheures_api_update');
+// la route de suppression
+Route::post('typesheures/{Typesheures}/delete',[App\Http\Controllers\API\TypesheureController::class,'delete'])->withoutMiddleware("throttle:api")->name('Typesheures_api_delete');
+// la route des actions
+Route::get('typesheures/action',[App\Http\Controllers\API\TypesheureController::class,'action'])->withoutMiddleware("throttle:api")->name('Typesheures_api_delete');
+// la route des actions
+Route::post('typesheures/action',[App\Http\Controllers\API\TypesheureController::class,'action'])->withoutMiddleware("throttle:api")->name('Typesheures_api_delete');
+
+
+
+//Route::resource('Typesmoyenstransports',App\Http\Controllers\API\TypesmoyenstransportController::class);
+// les routes d'affichage
+Route::get('typesmoyenstransports/{key}/{val}',[App\Http\Controllers\API\TypesmoyenstransportController::class,'data'])->withoutMiddleware("throttle:api")->name('Typesmoyenstransports_api_index2');
+Route::get('typesmoyenstransports',[App\Http\Controllers\API\TypesmoyenstransportController::class,'data1'])->withoutMiddleware("throttle:api")->name('Typesmoyenstransports_api_index');
+Route::post('typesmoyenstransports-Aggrid', [App\Http\Controllers\API\TypesmoyenstransportController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Typesmoyenstransports_api_aggrid');
+
+// la route de creation
+Route::post('typesmoyenstransports',[App\Http\Controllers\API\TypesmoyenstransportController::class,'create'])->withoutMiddleware("throttle:api")->name('Typesmoyenstransports_api_create');
+// la route d'edition
+Route::post('typesmoyenstransports/{Typesmoyenstransports}/update',[App\Http\Controllers\API\TypesmoyenstransportController::class,'update'])->withoutMiddleware("throttle:api")->name('Typesmoyenstransports_api_update');
+// la route de suppression
+Route::post('typesmoyenstransports/{Typesmoyenstransports}/delete',[App\Http\Controllers\API\TypesmoyenstransportController::class,'delete'])->withoutMiddleware("throttle:api")->name('Typesmoyenstransports_api_delete');
+// la route des actions
+Route::get('typesmoyenstransports/action',[App\Http\Controllers\API\TypesmoyenstransportController::class,'action'])->withoutMiddleware("throttle:api")->name('Typesmoyenstransports_api_delete');
+// la route des actions
+Route::post('typesmoyenstransports/action',[App\Http\Controllers\API\TypesmoyenstransportController::class,'action'])->withoutMiddleware("throttle:api")->name('Typesmoyenstransports_api_delete');
+
+
+
+//Route::resource('Typespointages',App\Http\Controllers\API\TypespointageController::class);
+// les routes d'affichage
+Route::get('typespointages/{key}/{val}',[App\Http\Controllers\API\TypespointageController::class,'data'])->withoutMiddleware("throttle:api")->name('Typespointages_api_index2');
+Route::get('typespointages',[App\Http\Controllers\API\TypespointageController::class,'data1'])->withoutMiddleware("throttle:api")->name('Typespointages_api_index');
+Route::post('typespointages-Aggrid', [App\Http\Controllers\API\TypespointageController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Typespointages_api_aggrid');
+
+// la route de creation
+Route::post('typespointages',[App\Http\Controllers\API\TypespointageController::class,'create'])->withoutMiddleware("throttle:api")->name('Typespointages_api_create');
+// la route d'edition
+Route::post('typespointages/{Typespointages}/update',[App\Http\Controllers\API\TypespointageController::class,'update'])->withoutMiddleware("throttle:api")->name('Typespointages_api_update');
+// la route de suppression
+Route::post('typespointages/{Typespointages}/delete',[App\Http\Controllers\API\TypespointageController::class,'delete'])->withoutMiddleware("throttle:api")->name('Typespointages_api_delete');
+// la route des actions
+Route::get('typespointages/action',[App\Http\Controllers\API\TypespointageController::class,'action'])->withoutMiddleware("throttle:api")->name('Typespointages_api_delete');
+// la route des actions
+Route::post('typespointages/action',[App\Http\Controllers\API\TypespointageController::class,'action'])->withoutMiddleware("throttle:api")->name('Typespointages_api_delete');
+
+
+
+//Route::resource('Typespostes',App\Http\Controllers\API\TypesposteController::class);
+// les routes d'affichage
+Route::get('typespostes/{key}/{val}',[App\Http\Controllers\API\TypesposteController::class,'data'])->withoutMiddleware("throttle:api")->name('Typespostes_api_index2');
+Route::get('typespostes',[App\Http\Controllers\API\TypesposteController::class,'data1'])->withoutMiddleware("throttle:api")->name('Typespostes_api_index');
+Route::post('typespostes-Aggrid', [App\Http\Controllers\API\TypesposteController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Typespostes_api_aggrid');
+
+// la route de creation
+Route::post('typespostes',[App\Http\Controllers\API\TypesposteController::class,'create'])->withoutMiddleware("throttle:api")->name('Typespostes_api_create');
+// la route d'edition
+Route::post('typespostes/{Typespostes}/update',[App\Http\Controllers\API\TypesposteController::class,'update'])->withoutMiddleware("throttle:api")->name('Typespostes_api_update');
+// la route de suppression
+Route::post('typespostes/{Typespostes}/delete',[App\Http\Controllers\API\TypesposteController::class,'delete'])->withoutMiddleware("throttle:api")->name('Typespostes_api_delete');
+// la route des actions
+Route::get('typespostes/action',[App\Http\Controllers\API\TypesposteController::class,'action'])->withoutMiddleware("throttle:api")->name('Typespostes_api_delete');
+// la route des actions
+Route::post('typespostes/action',[App\Http\Controllers\API\TypesposteController::class,'action'])->withoutMiddleware("throttle:api")->name('Typespostes_api_delete');
+
+
+
+//Route::resource('Typessites',App\Http\Controllers\API\TypessiteController::class);
+// les routes d'affichage
+Route::get('typessites/{key}/{val}',[App\Http\Controllers\API\TypessiteController::class,'data'])->withoutMiddleware("throttle:api")->name('Typessites_api_index2');
+Route::get('typessites',[App\Http\Controllers\API\TypessiteController::class,'data1'])->withoutMiddleware("throttle:api")->name('Typessites_api_index');
+Route::post('typessites-Aggrid', [App\Http\Controllers\API\TypessiteController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Typessites_api_aggrid');
+
+// la route de creation
+Route::post('typessites',[App\Http\Controllers\API\TypessiteController::class,'create'])->withoutMiddleware("throttle:api")->name('Typessites_api_create');
+// la route d'edition
+Route::post('typessites/{Typessites}/update',[App\Http\Controllers\API\TypessiteController::class,'update'])->withoutMiddleware("throttle:api")->name('Typessites_api_update');
+// la route de suppression
+Route::post('typessites/{Typessites}/delete',[App\Http\Controllers\API\TypessiteController::class,'delete'])->withoutMiddleware("throttle:api")->name('Typessites_api_delete');
+// la route des actions
+Route::get('typessites/action',[App\Http\Controllers\API\TypessiteController::class,'action'])->withoutMiddleware("throttle:api")->name('Typessites_api_delete');
+// la route des actions
+Route::post('typessites/action',[App\Http\Controllers\API\TypessiteController::class,'action'])->withoutMiddleware("throttle:api")->name('Typessites_api_delete');
+
+
+
+//Route::resource('Typesventilations',App\Http\Controllers\API\TypesventilationController::class);
+// les routes d'affichage
+Route::get('typesventilations/{key}/{val}',[App\Http\Controllers\API\TypesventilationController::class,'data'])->withoutMiddleware("throttle:api")->name('Typesventilations_api_index2');
+Route::get('typesventilations',[App\Http\Controllers\API\TypesventilationController::class,'data1'])->withoutMiddleware("throttle:api")->name('Typesventilations_api_index');
+Route::post('typesventilations-Aggrid', [App\Http\Controllers\API\TypesventilationController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Typesventilations_api_aggrid');
+
+// la route de creation
+Route::post('typesventilations',[App\Http\Controllers\API\TypesventilationController::class,'create'])->withoutMiddleware("throttle:api")->name('Typesventilations_api_create');
+// la route d'edition
+Route::post('typesventilations/{Typesventilations}/update',[App\Http\Controllers\API\TypesventilationController::class,'update'])->withoutMiddleware("throttle:api")->name('Typesventilations_api_update');
+// la route de suppression
+Route::post('typesventilations/{Typesventilations}/delete',[App\Http\Controllers\API\TypesventilationController::class,'delete'])->withoutMiddleware("throttle:api")->name('Typesventilations_api_delete');
+// la route des actions
+Route::get('typesventilations/action',[App\Http\Controllers\API\TypesventilationController::class,'action'])->withoutMiddleware("throttle:api")->name('Typesventilations_api_delete');
+// la route des actions
+Route::post('typesventilations/action',[App\Http\Controllers\API\TypesventilationController::class,'action'])->withoutMiddleware("throttle:api")->name('Typesventilations_api_delete');
+
+
+
+//Route::resource('Users',App\Http\Controllers\API\UserController::class);
+// les routes d'affichage
+Route::get('users/{key}/{val}',[App\Http\Controllers\API\UserController::class,'data'])->withoutMiddleware("throttle:api")->name('Users_api_index2');
+Route::get('users',[App\Http\Controllers\API\UserController::class,'data1'])->withoutMiddleware("throttle:api")->name('Users_api_index');
+Route::post('users-Aggrid', [App\Http\Controllers\API\UserController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Users_api_aggrid');
+
+// la route de creation
+Route::post('users',[App\Http\Controllers\API\UserController::class,'create'])->withoutMiddleware("throttle:api")->name('Users_api_create');
+// la route d'edition
+Route::post('users/{Users}/update',[App\Http\Controllers\API\UserController::class,'update'])->withoutMiddleware("throttle:api")->name('Users_api_update');
+// la route de suppression
+Route::post('users/{Users}/delete',[App\Http\Controllers\API\UserController::class,'delete'])->withoutMiddleware("throttle:api")->name('Users_api_delete');
+// la route des actions
+Route::get('users/action',[App\Http\Controllers\API\UserController::class,'action'])->withoutMiddleware("throttle:api")->name('Users_api_delete');
+// la route des actions
+Route::post('users/action',[App\Http\Controllers\API\UserController::class,'action'])->withoutMiddleware("throttle:api")->name('Users_api_delete');
+
+
+
+//Route::resource('Userszones',App\Http\Controllers\API\UserszoneController::class);
+// les routes d'affichage
+Route::get('userszones/{key}/{val}',[App\Http\Controllers\API\UserszoneController::class,'data'])->withoutMiddleware("throttle:api")->name('Userszones_api_index2');
+Route::get('userszones',[App\Http\Controllers\API\UserszoneController::class,'data1'])->withoutMiddleware("throttle:api")->name('Userszones_api_index');
+Route::post('userszones-Aggrid', [App\Http\Controllers\API\UserszoneController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Userszones_api_aggrid');
+
+// la route de creation
+Route::post('userszones',[App\Http\Controllers\API\UserszoneController::class,'create'])->withoutMiddleware("throttle:api")->name('Userszones_api_create');
+// la route d'edition
+Route::post('userszones/{Userszones}/update',[App\Http\Controllers\API\UserszoneController::class,'update'])->withoutMiddleware("throttle:api")->name('Userszones_api_update');
+// la route de suppression
+Route::post('userszones/{Userszones}/delete',[App\Http\Controllers\API\UserszoneController::class,'delete'])->withoutMiddleware("throttle:api")->name('Userszones_api_delete');
+// la route des actions
+Route::get('userszones/action',[App\Http\Controllers\API\UserszoneController::class,'action'])->withoutMiddleware("throttle:api")->name('Userszones_api_delete');
+// la route des actions
+Route::post('userszones/action',[App\Http\Controllers\API\UserszoneController::class,'action'])->withoutMiddleware("throttle:api")->name('Userszones_api_delete');
+
+
+
+//Route::resource('Vacationspostes',App\Http\Controllers\API\VacationsposteController::class);
+// les routes d'affichage
+Route::get('vacationspostes/{key}/{val}',[App\Http\Controllers\API\VacationsposteController::class,'data'])->withoutMiddleware("throttle:api")->name('Vacationspostes_api_index2');
+Route::get('vacationspostes',[App\Http\Controllers\API\VacationsposteController::class,'data1'])->withoutMiddleware("throttle:api")->name('Vacationspostes_api_index');
+Route::post('vacationspostes-Aggrid', [App\Http\Controllers\API\VacationsposteController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Vacationspostes_api_aggrid');
+
+// la route de creation
+Route::post('vacationspostes',[App\Http\Controllers\API\VacationsposteController::class,'create'])->withoutMiddleware("throttle:api")->name('Vacationspostes_api_create');
+// la route d'edition
+Route::post('vacationspostes/{Vacationspostes}/update',[App\Http\Controllers\API\VacationsposteController::class,'update'])->withoutMiddleware("throttle:api")->name('Vacationspostes_api_update');
+// la route de suppression
+Route::post('vacationspostes/{Vacationspostes}/delete',[App\Http\Controllers\API\VacationsposteController::class,'delete'])->withoutMiddleware("throttle:api")->name('Vacationspostes_api_delete');
+// la route des actions
+Route::get('vacationspostes/action',[App\Http\Controllers\API\VacationsposteController::class,'action'])->withoutMiddleware("throttle:api")->name('Vacationspostes_api_delete');
+// la route des actions
+Route::post('vacationspostes/action',[App\Http\Controllers\API\VacationsposteController::class,'action'])->withoutMiddleware("throttle:api")->name('Vacationspostes_api_delete');
+
+
+
+//Route::resource('Validations',App\Http\Controllers\API\ValidationController::class);
+// les routes d'affichage
+Route::get('validations/{key}/{val}',[App\Http\Controllers\API\ValidationController::class,'data'])->withoutMiddleware("throttle:api")->name('Validations_api_index2');
+Route::get('validations',[App\Http\Controllers\API\ValidationController::class,'data1'])->withoutMiddleware("throttle:api")->name('Validations_api_index');
+Route::post('validations-Aggrid', [App\Http\Controllers\API\ValidationController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Validations_api_aggrid');
+
+// la route de creation
+Route::post('validations',[App\Http\Controllers\API\ValidationController::class,'create'])->withoutMiddleware("throttle:api")->name('Validations_api_create');
+// la route d'edition
+Route::post('validations/{Validations}/update',[App\Http\Controllers\API\ValidationController::class,'update'])->withoutMiddleware("throttle:api")->name('Validations_api_update');
+// la route de suppression
+Route::post('validations/{Validations}/delete',[App\Http\Controllers\API\ValidationController::class,'delete'])->withoutMiddleware("throttle:api")->name('Validations_api_delete');
+// la route des actions
+Route::get('validations/action',[App\Http\Controllers\API\ValidationController::class,'action'])->withoutMiddleware("throttle:api")->name('Validations_api_delete');
+// la route des actions
+Route::post('validations/action',[App\Http\Controllers\API\ValidationController::class,'action'])->withoutMiddleware("throttle:api")->name('Validations_api_delete');
+
+
+
+//Route::resource('Variables',App\Http\Controllers\API\VariableController::class);
+// les routes d'affichage
+Route::get('variables/{key}/{val}',[App\Http\Controllers\API\VariableController::class,'data'])->withoutMiddleware("throttle:api")->name('Variables_api_index2');
+Route::get('variables',[App\Http\Controllers\API\VariableController::class,'data1'])->withoutMiddleware("throttle:api")->name('Variables_api_index');
+Route::post('variables-Aggrid', [App\Http\Controllers\API\VariableController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Variables_api_aggrid');
+
+// la route de creation
+Route::post('variables',[App\Http\Controllers\API\VariableController::class,'create'])->withoutMiddleware("throttle:api")->name('Variables_api_create');
+// la route d'edition
+Route::post('variables/{Variables}/update',[App\Http\Controllers\API\VariableController::class,'update'])->withoutMiddleware("throttle:api")->name('Variables_api_update');
+// la route de suppression
+Route::post('variables/{Variables}/delete',[App\Http\Controllers\API\VariableController::class,'delete'])->withoutMiddleware("throttle:api")->name('Variables_api_delete');
+// la route des actions
+Route::get('variables/action',[App\Http\Controllers\API\VariableController::class,'action'])->withoutMiddleware("throttle:api")->name('Variables_api_delete');
+// la route des actions
+Route::post('variables/action',[App\Http\Controllers\API\VariableController::class,'action'])->withoutMiddleware("throttle:api")->name('Variables_api_delete');
+
+
+
+//Route::resource('Vehicules',App\Http\Controllers\API\VehiculeController::class);
+// les routes d'affichage
+Route::get('vehicules/{key}/{val}',[App\Http\Controllers\API\VehiculeController::class,'data'])->withoutMiddleware("throttle:api")->name('Vehicules_api_index2');
+Route::get('vehicules',[App\Http\Controllers\API\VehiculeController::class,'data1'])->withoutMiddleware("throttle:api")->name('Vehicules_api_index');
+Route::post('vehicules-Aggrid', [App\Http\Controllers\API\VehiculeController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Vehicules_api_aggrid');
+
+// la route de creation
+Route::post('vehicules',[App\Http\Controllers\API\VehiculeController::class,'create'])->withoutMiddleware("throttle:api")->name('Vehicules_api_create');
+// la route d'edition
+Route::post('vehicules/{Vehicules}/update',[App\Http\Controllers\API\VehiculeController::class,'update'])->withoutMiddleware("throttle:api")->name('Vehicules_api_update');
+// la route de suppression
+Route::post('vehicules/{Vehicules}/delete',[App\Http\Controllers\API\VehiculeController::class,'delete'])->withoutMiddleware("throttle:api")->name('Vehicules_api_delete');
+// la route des actions
+Route::get('vehicules/action',[App\Http\Controllers\API\VehiculeController::class,'action'])->withoutMiddleware("throttle:api")->name('Vehicules_api_delete');
+// la route des actions
+Route::post('vehicules/action',[App\Http\Controllers\API\VehiculeController::class,'action'])->withoutMiddleware("throttle:api")->name('Vehicules_api_delete');
+
+
+
+//Route::resource('Ventilations',App\Http\Controllers\API\VentilationController::class);
+// les routes d'affichage
+Route::get('ventilations/{key}/{val}',[App\Http\Controllers\API\VentilationController::class,'data'])->withoutMiddleware("throttle:api")->name('Ventilations_api_index2');
+Route::get('ventilations',[App\Http\Controllers\API\VentilationController::class,'data1'])->withoutMiddleware("throttle:api")->name('Ventilations_api_index');
+Route::post('ventilations-Aggrid', [App\Http\Controllers\API\VentilationController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Ventilations_api_aggrid');
+
+// la route de creation
+Route::post('ventilations',[App\Http\Controllers\API\VentilationController::class,'create'])->withoutMiddleware("throttle:api")->name('Ventilations_api_create');
+// la route d'edition
+Route::post('ventilations/{Ventilations}/update',[App\Http\Controllers\API\VentilationController::class,'update'])->withoutMiddleware("throttle:api")->name('Ventilations_api_update');
+// la route de suppression
+Route::post('ventilations/{Ventilations}/delete',[App\Http\Controllers\API\VentilationController::class,'delete'])->withoutMiddleware("throttle:api")->name('Ventilations_api_delete');
+// la route des actions
+Route::get('ventilations/action',[App\Http\Controllers\API\VentilationController::class,'action'])->withoutMiddleware("throttle:api")->name('Ventilations_api_delete');
+// la route des actions
+Route::post('ventilations/action',[App\Http\Controllers\API\VentilationController::class,'action'])->withoutMiddleware("throttle:api")->name('Ventilations_api_delete');
+
+
+
+//Route::resource('Villes',App\Http\Controllers\API\VilleController::class);
+// les routes d'affichage
+Route::get('villes/{key}/{val}',[App\Http\Controllers\API\VilleController::class,'data'])->withoutMiddleware("throttle:api")->name('Villes_api_index2');
+Route::get('villes',[App\Http\Controllers\API\VilleController::class,'data1'])->withoutMiddleware("throttle:api")->name('Villes_api_index');
+Route::post('villes-Aggrid', [App\Http\Controllers\API\VilleController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Villes_api_aggrid');
+
+// la route de creation
+Route::post('villes',[App\Http\Controllers\API\VilleController::class,'create'])->withoutMiddleware("throttle:api")->name('Villes_api_create');
+// la route d'edition
+Route::post('villes/{Villes}/update',[App\Http\Controllers\API\VilleController::class,'update'])->withoutMiddleware("throttle:api")->name('Villes_api_update');
+// la route de suppression
+Route::post('villes/{Villes}/delete',[App\Http\Controllers\API\VilleController::class,'delete'])->withoutMiddleware("throttle:api")->name('Villes_api_delete');
+// la route des actions
+Route::get('villes/action',[App\Http\Controllers\API\VilleController::class,'action'])->withoutMiddleware("throttle:api")->name('Villes_api_delete');
+// la route des actions
+Route::post('villes/action',[App\Http\Controllers\API\VilleController::class,'action'])->withoutMiddleware("throttle:api")->name('Villes_api_delete');
+
+
+
+//Route::resource('Villeszones',App\Http\Controllers\API\VilleszoneController::class);
+// les routes d'affichage
+Route::get('villeszones/{key}/{val}',[App\Http\Controllers\API\VilleszoneController::class,'data'])->withoutMiddleware("throttle:api")->name('Villeszones_api_index2');
+Route::get('villeszones',[App\Http\Controllers\API\VilleszoneController::class,'data1'])->withoutMiddleware("throttle:api")->name('Villeszones_api_index');
+Route::post('villeszones-Aggrid', [App\Http\Controllers\API\VilleszoneController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Villeszones_api_aggrid');
+
+// la route de creation
+Route::post('villeszones',[App\Http\Controllers\API\VilleszoneController::class,'create'])->withoutMiddleware("throttle:api")->name('Villeszones_api_create');
+// la route d'edition
+Route::post('villeszones/{Villeszones}/update',[App\Http\Controllers\API\VilleszoneController::class,'update'])->withoutMiddleware("throttle:api")->name('Villeszones_api_update');
+// la route de suppression
+Route::post('villeszones/{Villeszones}/delete',[App\Http\Controllers\API\VilleszoneController::class,'delete'])->withoutMiddleware("throttle:api")->name('Villeszones_api_delete');
+// la route des actions
+Route::get('villeszones/action',[App\Http\Controllers\API\VilleszoneController::class,'action'])->withoutMiddleware("throttle:api")->name('Villeszones_api_delete');
+// la route des actions
+Route::post('villeszones/action',[App\Http\Controllers\API\VilleszoneController::class,'action'])->withoutMiddleware("throttle:api")->name('Villeszones_api_delete');
+
+
+
+//Route::resource('Websockets_statistics_entries',App\Http\Controllers\API\WebsocketsStatisticsEntrieController::class);
+// les routes d'affichage
+Route::get('websockets_statistics_entries/{key}/{val}',[App\Http\Controllers\API\WebsocketsStatisticsEntrieController::class,'data'])->withoutMiddleware("throttle:api")->name('Websockets_statistics_entries_api_index2');
+Route::get('websockets_statistics_entries',[App\Http\Controllers\API\WebsocketsStatisticsEntrieController::class,'data1'])->withoutMiddleware("throttle:api")->name('Websockets_statistics_entries_api_index');
+Route::post('websockets_statistics_entries-Aggrid', [App\Http\Controllers\API\WebsocketsStatisticsEntrieController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Websockets_statistics_entries_api_aggrid');
+
+// la route de creation
+Route::post('websockets_statistics_entries',[App\Http\Controllers\API\WebsocketsStatisticsEntrieController::class,'create'])->withoutMiddleware("throttle:api")->name('Websockets_statistics_entries_api_create');
+// la route d'edition
+Route::post('websockets_statistics_entries/{Websockets_statistics_entries}/update',[App\Http\Controllers\API\WebsocketsStatisticsEntrieController::class,'update'])->withoutMiddleware("throttle:api")->name('Websockets_statistics_entries_api_update');
+// la route de suppression
+Route::post('websockets_statistics_entries/{Websockets_statistics_entries}/delete',[App\Http\Controllers\API\WebsocketsStatisticsEntrieController::class,'delete'])->withoutMiddleware("throttle:api")->name('Websockets_statistics_entries_api_delete');
+// la route des actions
+Route::get('websockets_statistics_entries/action',[App\Http\Controllers\API\WebsocketsStatisticsEntrieController::class,'action'])->withoutMiddleware("throttle:api")->name('Websockets_statistics_entries_api_delete');
+// la route des actions
+Route::post('websockets_statistics_entries/action',[App\Http\Controllers\API\WebsocketsStatisticsEntrieController::class,'action'])->withoutMiddleware("throttle:api")->name('Websockets_statistics_entries_api_delete');
+
+
+
+//Route::resource('Works',App\Http\Controllers\API\WorkController::class);
+// les routes d'affichage
+Route::get('works/{key}/{val}',[App\Http\Controllers\API\WorkController::class,'data'])->withoutMiddleware("throttle:api")->name('Works_api_index2');
+Route::get('works',[App\Http\Controllers\API\WorkController::class,'data1'])->withoutMiddleware("throttle:api")->name('Works_api_index');
+Route::post('works-Aggrid', [App\Http\Controllers\API\WorkController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Works_api_aggrid');
+
+// la route de creation
+Route::post('works',[App\Http\Controllers\API\WorkController::class,'create'])->withoutMiddleware("throttle:api")->name('Works_api_create');
+// la route d'edition
+Route::post('works/{Works}/update',[App\Http\Controllers\API\WorkController::class,'update'])->withoutMiddleware("throttle:api")->name('Works_api_update');
+// la route de suppression
+Route::post('works/{Works}/delete',[App\Http\Controllers\API\WorkController::class,'delete'])->withoutMiddleware("throttle:api")->name('Works_api_delete');
+// la route des actions
+Route::get('works/action',[App\Http\Controllers\API\WorkController::class,'action'])->withoutMiddleware("throttle:api")->name('Works_api_delete');
+// la route des actions
+Route::post('works/action',[App\Http\Controllers\API\WorkController::class,'action'])->withoutMiddleware("throttle:api")->name('Works_api_delete');
+
+
+
+//Route::resource('Zones',App\Http\Controllers\API\ZoneController::class);
+// les routes d'affichage
+Route::get('zones/{key}/{val}',[App\Http\Controllers\API\ZoneController::class,'data'])->withoutMiddleware("throttle:api")->name('Zones_api_index2');
+Route::get('zones',[App\Http\Controllers\API\ZoneController::class,'data1'])->withoutMiddleware("throttle:api")->name('Zones_api_index');
+Route::post('zones-Aggrid', [App\Http\Controllers\API\ZoneController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Zones_api_aggrid');
+
+// la route de creation
+Route::post('zones',[App\Http\Controllers\API\ZoneController::class,'create'])->withoutMiddleware("throttle:api")->name('Zones_api_create');
+// la route d'edition
+Route::post('zones/{Zones}/update',[App\Http\Controllers\API\ZoneController::class,'update'])->withoutMiddleware("throttle:api")->name('Zones_api_update');
+// la route de suppression
+Route::post('zones/{Zones}/delete',[App\Http\Controllers\API\ZoneController::class,'delete'])->withoutMiddleware("throttle:api")->name('Zones_api_delete');
+// la route des actions
+Route::get('zones/action',[App\Http\Controllers\API\ZoneController::class,'action'])->withoutMiddleware("throttle:api")->name('Zones_api_delete');
+// la route des actions
+Route::post('zones/action',[App\Http\Controllers\API\ZoneController::class,'action'])->withoutMiddleware("throttle:api")->name('Zones_api_delete');
+
+
+
+});
+// les routes prod
+ Route::group(['prefix'=>'','middleware'=>['auth:api']],function(){
+Route::get('/')->name('base_api');
+//Route::resource('Abscences',App\Http\Controllers\API\AbscenceController::class);
+// les routes d'affichage
+Route::get('abscences/{key}/{val}',[App\Http\Controllers\API\AbscenceController::class,'data'])->withoutMiddleware("throttle:api")->name('Abscences_api_index2');
+Route::get('abscences',[App\Http\Controllers\API\AbscenceController::class,'data1'])->withoutMiddleware("throttle:api")->name('Abscences_api_index');
+Route::post('abscences-Aggrid', [App\Http\Controllers\API\AbscenceController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Abscences_api_aggrid');
+
+// la route de creation
+Route::post('abscences',[App\Http\Controllers\API\AbscenceController::class,'create'])->withoutMiddleware("throttle:api")->name('Abscences_api_create');
+// la route d'edition
+Route::post('abscences/{Abscences}/update',[App\Http\Controllers\API\AbscenceController::class,'update'])->withoutMiddleware("throttle:api")->name('Abscences_api_update');
+// la route de suppression
+Route::post('abscences/{Abscences}/delete',[App\Http\Controllers\API\AbscenceController::class,'delete'])->withoutMiddleware("throttle:api")->name('Abscences_api_delete');
+// la route des actions
+Route::get('abscences/action',[App\Http\Controllers\API\AbscenceController::class,'action'])->withoutMiddleware("throttle:api")->name('Abscences_api_delete');
+// la route des actions
+Route::post('abscences/action',[App\Http\Controllers\API\AbscenceController::class,'action'])->withoutMiddleware("throttle:api")->name('Abscences_api_delete');
+
+
+
+//Route::resource('Actions',App\Http\Controllers\API\ActionController::class);
+// les routes d'affichage
+Route::get('actions/{key}/{val}',[App\Http\Controllers\API\ActionController::class,'data'])->withoutMiddleware("throttle:api")->name('Actions_api_index2');
+Route::get('actions',[App\Http\Controllers\API\ActionController::class,'data1'])->withoutMiddleware("throttle:api")->name('Actions_api_index');
+Route::post('actions-Aggrid', [App\Http\Controllers\API\ActionController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Actions_api_aggrid');
+
+// la route de creation
+Route::post('actions',[App\Http\Controllers\API\ActionController::class,'create'])->withoutMiddleware("throttle:api")->name('Actions_api_create');
+// la route d'edition
+Route::post('actions/{Actions}/update',[App\Http\Controllers\API\ActionController::class,'update'])->withoutMiddleware("throttle:api")->name('Actions_api_update');
+// la route de suppression
+Route::post('actions/{Actions}/delete',[App\Http\Controllers\API\ActionController::class,'delete'])->withoutMiddleware("throttle:api")->name('Actions_api_delete');
+// la route des actions
+Route::get('actions/action',[App\Http\Controllers\API\ActionController::class,'action'])->withoutMiddleware("throttle:api")->name('Actions_api_delete');
+// la route des actions
+Route::post('actions/action',[App\Http\Controllers\API\ActionController::class,'action'])->withoutMiddleware("throttle:api")->name('Actions_api_delete');
+
+
+
+//Route::resource('Agentsrapports',App\Http\Controllers\API\AgentsrapportController::class);
+// les routes d'affichage
+Route::get('agentsrapports/{key}/{val}',[App\Http\Controllers\API\AgentsrapportController::class,'data'])->withoutMiddleware("throttle:api")->name('Agentsrapports_api_index2');
+Route::get('agentsrapports',[App\Http\Controllers\API\AgentsrapportController::class,'data1'])->withoutMiddleware("throttle:api")->name('Agentsrapports_api_index');
+Route::post('agentsrapports-Aggrid', [App\Http\Controllers\API\AgentsrapportController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Agentsrapports_api_aggrid');
+
+// la route de creation
+Route::post('agentsrapports',[App\Http\Controllers\API\AgentsrapportController::class,'create'])->withoutMiddleware("throttle:api")->name('Agentsrapports_api_create');
+// la route d'edition
+Route::post('agentsrapports/{Agentsrapports}/update',[App\Http\Controllers\API\AgentsrapportController::class,'update'])->withoutMiddleware("throttle:api")->name('Agentsrapports_api_update');
+// la route de suppression
+Route::post('agentsrapports/{Agentsrapports}/delete',[App\Http\Controllers\API\AgentsrapportController::class,'delete'])->withoutMiddleware("throttle:api")->name('Agentsrapports_api_delete');
+// la route des actions
+Route::get('agentsrapports/action',[App\Http\Controllers\API\AgentsrapportController::class,'action'])->withoutMiddleware("throttle:api")->name('Agentsrapports_api_delete');
+// la route des actions
+Route::post('agentsrapports/action',[App\Http\Controllers\API\AgentsrapportController::class,'action'])->withoutMiddleware("throttle:api")->name('Agentsrapports_api_delete');
+
+
+
+//Route::resource('Alarms',App\Http\Controllers\API\AlarmController::class);
+// les routes d'affichage
+Route::get('alarms/{key}/{val}',[App\Http\Controllers\API\AlarmController::class,'data'])->withoutMiddleware("throttle:api")->name('Alarms_api_index2');
+Route::get('alarms',[App\Http\Controllers\API\AlarmController::class,'data1'])->withoutMiddleware("throttle:api")->name('Alarms_api_index');
+Route::post('alarms-Aggrid', [App\Http\Controllers\API\AlarmController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Alarms_api_aggrid');
+
+// la route de creation
+Route::post('alarms',[App\Http\Controllers\API\AlarmController::class,'create'])->withoutMiddleware("throttle:api")->name('Alarms_api_create');
+// la route d'edition
+Route::post('alarms/{Alarms}/update',[App\Http\Controllers\API\AlarmController::class,'update'])->withoutMiddleware("throttle:api")->name('Alarms_api_update');
+// la route de suppression
+Route::post('alarms/{Alarms}/delete',[App\Http\Controllers\API\AlarmController::class,'delete'])->withoutMiddleware("throttle:api")->name('Alarms_api_delete');
+// la route des actions
+Route::get('alarms/action',[App\Http\Controllers\API\AlarmController::class,'action'])->withoutMiddleware("throttle:api")->name('Alarms_api_delete');
+// la route des actions
+Route::post('alarms/action',[App\Http\Controllers\API\AlarmController::class,'action'])->withoutMiddleware("throttle:api")->name('Alarms_api_delete');
+
+
+
+//Route::resource('Alldatas',App\Http\Controllers\API\AlldataController::class);
+// les routes d'affichage
+Route::get('alldatas/{key}/{val}',[App\Http\Controllers\API\AlldataController::class,'data'])->withoutMiddleware("throttle:api")->name('Alldatas_api_index2');
+Route::get('alldatas',[App\Http\Controllers\API\AlldataController::class,'data1'])->withoutMiddleware("throttle:api")->name('Alldatas_api_index');
+Route::post('alldatas-Aggrid', [App\Http\Controllers\API\AlldataController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Alldatas_api_aggrid');
+
+// la route de creation
+Route::post('alldatas',[App\Http\Controllers\API\AlldataController::class,'create'])->withoutMiddleware("throttle:api")->name('Alldatas_api_create');
+// la route d'edition
+Route::post('alldatas/{Alldatas}/update',[App\Http\Controllers\API\AlldataController::class,'update'])->withoutMiddleware("throttle:api")->name('Alldatas_api_update');
+// la route de suppression
+Route::post('alldatas/{Alldatas}/delete',[App\Http\Controllers\API\AlldataController::class,'delete'])->withoutMiddleware("throttle:api")->name('Alldatas_api_delete');
+// la route des actions
+Route::get('alldatas/action',[App\Http\Controllers\API\AlldataController::class,'action'])->withoutMiddleware("throttle:api")->name('Alldatas_api_delete');
+// la route des actions
+Route::post('alldatas/action',[App\Http\Controllers\API\AlldataController::class,'action'])->withoutMiddleware("throttle:api")->name('Alldatas_api_delete');
+
+
+
+//Route::resource('Analysespointeuses',App\Http\Controllers\API\AnalysespointeuseController::class);
+// les routes d'affichage
+Route::get('analysespointeuses/{key}/{val}',[App\Http\Controllers\API\AnalysespointeuseController::class,'data'])->withoutMiddleware("throttle:api")->name('Analysespointeuses_api_index2');
+Route::get('analysespointeuses',[App\Http\Controllers\API\AnalysespointeuseController::class,'data1'])->withoutMiddleware("throttle:api")->name('Analysespointeuses_api_index');
+Route::post('analysespointeuses-Aggrid', [App\Http\Controllers\API\AnalysespointeuseController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Analysespointeuses_api_aggrid');
+
+// la route de creation
+Route::post('analysespointeuses',[App\Http\Controllers\API\AnalysespointeuseController::class,'create'])->withoutMiddleware("throttle:api")->name('Analysespointeuses_api_create');
+// la route d'edition
+Route::post('analysespointeuses/{Analysespointeuses}/update',[App\Http\Controllers\API\AnalysespointeuseController::class,'update'])->withoutMiddleware("throttle:api")->name('Analysespointeuses_api_update');
+// la route de suppression
+Route::post('analysespointeuses/{Analysespointeuses}/delete',[App\Http\Controllers\API\AnalysespointeuseController::class,'delete'])->withoutMiddleware("throttle:api")->name('Analysespointeuses_api_delete');
+// la route des actions
+Route::get('analysespointeuses/action',[App\Http\Controllers\API\AnalysespointeuseController::class,'action'])->withoutMiddleware("throttle:api")->name('Analysespointeuses_api_delete');
+// la route des actions
+Route::post('analysespointeuses/action',[App\Http\Controllers\API\AnalysespointeuseController::class,'action'])->withoutMiddleware("throttle:api")->name('Analysespointeuses_api_delete');
+
+
+
+//Route::resource('Approvisionementdetails',App\Http\Controllers\API\ApprovisionementdetailController::class);
+// les routes d'affichage
+Route::get('approvisionementdetails/{key}/{val}',[App\Http\Controllers\API\ApprovisionementdetailController::class,'data'])->withoutMiddleware("throttle:api")->name('Approvisionementdetails_api_index2');
+Route::get('approvisionementdetails',[App\Http\Controllers\API\ApprovisionementdetailController::class,'data1'])->withoutMiddleware("throttle:api")->name('Approvisionementdetails_api_index');
+Route::post('approvisionementdetails-Aggrid', [App\Http\Controllers\API\ApprovisionementdetailController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Approvisionementdetails_api_aggrid');
+
+// la route de creation
+Route::post('approvisionementdetails',[App\Http\Controllers\API\ApprovisionementdetailController::class,'create'])->withoutMiddleware("throttle:api")->name('Approvisionementdetails_api_create');
+// la route d'edition
+Route::post('approvisionementdetails/{Approvisionementdetails}/update',[App\Http\Controllers\API\ApprovisionementdetailController::class,'update'])->withoutMiddleware("throttle:api")->name('Approvisionementdetails_api_update');
+// la route de suppression
+Route::post('approvisionementdetails/{Approvisionementdetails}/delete',[App\Http\Controllers\API\ApprovisionementdetailController::class,'delete'])->withoutMiddleware("throttle:api")->name('Approvisionementdetails_api_delete');
+// la route des actions
+Route::get('approvisionementdetails/action',[App\Http\Controllers\API\ApprovisionementdetailController::class,'action'])->withoutMiddleware("throttle:api")->name('Approvisionementdetails_api_delete');
+// la route des actions
+Route::post('approvisionementdetails/action',[App\Http\Controllers\API\ApprovisionementdetailController::class,'action'])->withoutMiddleware("throttle:api")->name('Approvisionementdetails_api_delete');
+
+
+
+//Route::resource('Architectures',App\Http\Controllers\API\ArchitectureController::class);
+// les routes d'affichage
+Route::get('architectures/{key}/{val}',[App\Http\Controllers\API\ArchitectureController::class,'data'])->withoutMiddleware("throttle:api")->name('Architectures_api_index2');
+Route::get('architectures',[App\Http\Controllers\API\ArchitectureController::class,'data1'])->withoutMiddleware("throttle:api")->name('Architectures_api_index');
+Route::post('architectures-Aggrid', [App\Http\Controllers\API\ArchitectureController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Architectures_api_aggrid');
+
+// la route de creation
+Route::post('architectures',[App\Http\Controllers\API\ArchitectureController::class,'create'])->withoutMiddleware("throttle:api")->name('Architectures_api_create');
+// la route d'edition
+Route::post('architectures/{Architectures}/update',[App\Http\Controllers\API\ArchitectureController::class,'update'])->withoutMiddleware("throttle:api")->name('Architectures_api_update');
+// la route de suppression
+Route::post('architectures/{Architectures}/delete',[App\Http\Controllers\API\ArchitectureController::class,'delete'])->withoutMiddleware("throttle:api")->name('Architectures_api_delete');
+// la route des actions
+Route::get('architectures/action',[App\Http\Controllers\API\ArchitectureController::class,'action'])->withoutMiddleware("throttle:api")->name('Architectures_api_delete');
+// la route des actions
+Route::post('architectures/action',[App\Http\Controllers\API\ArchitectureController::class,'action'])->withoutMiddleware("throttle:api")->name('Architectures_api_delete');
+
+
+
+//Route::resource('Assignations',App\Http\Controllers\API\AssignationController::class);
+// les routes d'affichage
+Route::get('assignations/{key}/{val}',[App\Http\Controllers\API\AssignationController::class,'data'])->withoutMiddleware("throttle:api")->name('Assignations_api_index2');
+Route::get('assignations',[App\Http\Controllers\API\AssignationController::class,'data1'])->withoutMiddleware("throttle:api")->name('Assignations_api_index');
+Route::post('assignations-Aggrid', [App\Http\Controllers\API\AssignationController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Assignations_api_aggrid');
+
+// la route de creation
+Route::post('assignations',[App\Http\Controllers\API\AssignationController::class,'create'])->withoutMiddleware("throttle:api")->name('Assignations_api_create');
+// la route d'edition
+Route::post('assignations/{Assignations}/update',[App\Http\Controllers\API\AssignationController::class,'update'])->withoutMiddleware("throttle:api")->name('Assignations_api_update');
+// la route de suppression
+Route::post('assignations/{Assignations}/delete',[App\Http\Controllers\API\AssignationController::class,'delete'])->withoutMiddleware("throttle:api")->name('Assignations_api_delete');
+// la route des actions
+Route::get('assignations/action',[App\Http\Controllers\API\AssignationController::class,'action'])->withoutMiddleware("throttle:api")->name('Assignations_api_delete');
+// la route des actions
+Route::post('assignations/action',[App\Http\Controllers\API\AssignationController::class,'action'])->withoutMiddleware("throttle:api")->name('Assignations_api_delete');
+
+
+
+//Route::resource('Backends',App\Http\Controllers\API\BackendController::class);
+// les routes d'affichage
+Route::get('backends/{key}/{val}',[App\Http\Controllers\API\BackendController::class,'data'])->withoutMiddleware("throttle:api")->name('Backends_api_index2');
+Route::get('backends',[App\Http\Controllers\API\BackendController::class,'data1'])->withoutMiddleware("throttle:api")->name('Backends_api_index');
+Route::post('backends-Aggrid', [App\Http\Controllers\API\BackendController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Backends_api_aggrid');
+
+// la route de creation
+Route::post('backends',[App\Http\Controllers\API\BackendController::class,'create'])->withoutMiddleware("throttle:api")->name('Backends_api_create');
+// la route d'edition
+Route::post('backends/{Backends}/update',[App\Http\Controllers\API\BackendController::class,'update'])->withoutMiddleware("throttle:api")->name('Backends_api_update');
+// la route de suppression
+Route::post('backends/{Backends}/delete',[App\Http\Controllers\API\BackendController::class,'delete'])->withoutMiddleware("throttle:api")->name('Backends_api_delete');
+// la route des actions
+Route::get('backends/action',[App\Http\Controllers\API\BackendController::class,'action'])->withoutMiddleware("throttle:api")->name('Backends_api_delete');
+// la route des actions
+Route::post('backends/action',[App\Http\Controllers\API\BackendController::class,'action'])->withoutMiddleware("throttle:api")->name('Backends_api_delete');
+
+
+
+//Route::resource('Badges',App\Http\Controllers\API\BadgeController::class);
+// les routes d'affichage
+Route::get('badges/{key}/{val}',[App\Http\Controllers\API\BadgeController::class,'data'])->withoutMiddleware("throttle:api")->name('Badges_api_index2');
+Route::get('badges',[App\Http\Controllers\API\BadgeController::class,'data1'])->withoutMiddleware("throttle:api")->name('Badges_api_index');
+Route::post('badges-Aggrid', [App\Http\Controllers\API\BadgeController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Badges_api_aggrid');
+
+// la route de creation
+Route::post('badges',[App\Http\Controllers\API\BadgeController::class,'create'])->withoutMiddleware("throttle:api")->name('Badges_api_create');
+// la route d'edition
+Route::post('badges/{Badges}/update',[App\Http\Controllers\API\BadgeController::class,'update'])->withoutMiddleware("throttle:api")->name('Badges_api_update');
+// la route de suppression
+Route::post('badges/{Badges}/delete',[App\Http\Controllers\API\BadgeController::class,'delete'])->withoutMiddleware("throttle:api")->name('Badges_api_delete');
+// la route des actions
+Route::get('badges/action',[App\Http\Controllers\API\BadgeController::class,'action'])->withoutMiddleware("throttle:api")->name('Badges_api_delete');
+// la route des actions
+Route::post('badges/action',[App\Http\Controllers\API\BadgeController::class,'action'])->withoutMiddleware("throttle:api")->name('Badges_api_delete');
+
+
+
+//Route::resource('Balises',App\Http\Controllers\API\BaliseController::class);
+// les routes d'affichage
+Route::get('balises/{key}/{val}',[App\Http\Controllers\API\BaliseController::class,'data'])->withoutMiddleware("throttle:api")->name('Balises_api_index2');
+Route::get('balises',[App\Http\Controllers\API\BaliseController::class,'data1'])->withoutMiddleware("throttle:api")->name('Balises_api_index');
+Route::post('balises-Aggrid', [App\Http\Controllers\API\BaliseController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Balises_api_aggrid');
+
+// la route de creation
+Route::post('balises',[App\Http\Controllers\API\BaliseController::class,'create'])->withoutMiddleware("throttle:api")->name('Balises_api_create');
+// la route d'edition
+Route::post('balises/{Balises}/update',[App\Http\Controllers\API\BaliseController::class,'update'])->withoutMiddleware("throttle:api")->name('Balises_api_update');
+// la route de suppression
+Route::post('balises/{Balises}/delete',[App\Http\Controllers\API\BaliseController::class,'delete'])->withoutMiddleware("throttle:api")->name('Balises_api_delete');
+// la route des actions
+Route::get('balises/action',[App\Http\Controllers\API\BaliseController::class,'action'])->withoutMiddleware("throttle:api")->name('Balises_api_delete');
+// la route des actions
+Route::post('balises/action',[App\Http\Controllers\API\BaliseController::class,'action'])->withoutMiddleware("throttle:api")->name('Balises_api_delete');
+
+
+
+//Route::resource('Basesdedonnees',App\Http\Controllers\API\BasesdedonneeController::class);
+// les routes d'affichage
+Route::get('basesdedonnees/{key}/{val}',[App\Http\Controllers\API\BasesdedonneeController::class,'data'])->withoutMiddleware("throttle:api")->name('Basesdedonnees_api_index2');
+Route::get('basesdedonnees',[App\Http\Controllers\API\BasesdedonneeController::class,'data1'])->withoutMiddleware("throttle:api")->name('Basesdedonnees_api_index');
+Route::post('basesdedonnees-Aggrid', [App\Http\Controllers\API\BasesdedonneeController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Basesdedonnees_api_aggrid');
+
+// la route de creation
+Route::post('basesdedonnees',[App\Http\Controllers\API\BasesdedonneeController::class,'create'])->withoutMiddleware("throttle:api")->name('Basesdedonnees_api_create');
+// la route d'edition
+Route::post('basesdedonnees/{Basesdedonnees}/update',[App\Http\Controllers\API\BasesdedonneeController::class,'update'])->withoutMiddleware("throttle:api")->name('Basesdedonnees_api_update');
+// la route de suppression
+Route::post('basesdedonnees/{Basesdedonnees}/delete',[App\Http\Controllers\API\BasesdedonneeController::class,'delete'])->withoutMiddleware("throttle:api")->name('Basesdedonnees_api_delete');
+// la route des actions
+Route::get('basesdedonnees/action',[App\Http\Controllers\API\BasesdedonneeController::class,'action'])->withoutMiddleware("throttle:api")->name('Basesdedonnees_api_delete');
+// la route des actions
+Route::post('basesdedonnees/action',[App\Http\Controllers\API\BasesdedonneeController::class,'action'])->withoutMiddleware("throttle:api")->name('Basesdedonnees_api_delete');
+
+
+
+//Route::resource('Besoinsfonctionels',App\Http\Controllers\API\BesoinsfonctionelController::class);
+// les routes d'affichage
+Route::get('besoinsfonctionels/{key}/{val}',[App\Http\Controllers\API\BesoinsfonctionelController::class,'data'])->withoutMiddleware("throttle:api")->name('Besoinsfonctionels_api_index2');
+Route::get('besoinsfonctionels',[App\Http\Controllers\API\BesoinsfonctionelController::class,'data1'])->withoutMiddleware("throttle:api")->name('Besoinsfonctionels_api_index');
+Route::post('besoinsfonctionels-Aggrid', [App\Http\Controllers\API\BesoinsfonctionelController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Besoinsfonctionels_api_aggrid');
+
+// la route de creation
+Route::post('besoinsfonctionels',[App\Http\Controllers\API\BesoinsfonctionelController::class,'create'])->withoutMiddleware("throttle:api")->name('Besoinsfonctionels_api_create');
+// la route d'edition
+Route::post('besoinsfonctionels/{Besoinsfonctionels}/update',[App\Http\Controllers\API\BesoinsfonctionelController::class,'update'])->withoutMiddleware("throttle:api")->name('Besoinsfonctionels_api_update');
+// la route de suppression
+Route::post('besoinsfonctionels/{Besoinsfonctionels}/delete',[App\Http\Controllers\API\BesoinsfonctionelController::class,'delete'])->withoutMiddleware("throttle:api")->name('Besoinsfonctionels_api_delete');
+// la route des actions
+Route::get('besoinsfonctionels/action',[App\Http\Controllers\API\BesoinsfonctionelController::class,'action'])->withoutMiddleware("throttle:api")->name('Besoinsfonctionels_api_delete');
+// la route des actions
+Route::post('besoinsfonctionels/action',[App\Http\Controllers\API\BesoinsfonctionelController::class,'action'])->withoutMiddleware("throttle:api")->name('Besoinsfonctionels_api_delete');
+
+
+
+//Route::resource('Besoinstechniques',App\Http\Controllers\API\BesoinstechniqueController::class);
+// les routes d'affichage
+Route::get('besoinstechniques/{key}/{val}',[App\Http\Controllers\API\BesoinstechniqueController::class,'data'])->withoutMiddleware("throttle:api")->name('Besoinstechniques_api_index2');
+Route::get('besoinstechniques',[App\Http\Controllers\API\BesoinstechniqueController::class,'data1'])->withoutMiddleware("throttle:api")->name('Besoinstechniques_api_index');
+Route::post('besoinstechniques-Aggrid', [App\Http\Controllers\API\BesoinstechniqueController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Besoinstechniques_api_aggrid');
+
+// la route de creation
+Route::post('besoinstechniques',[App\Http\Controllers\API\BesoinstechniqueController::class,'create'])->withoutMiddleware("throttle:api")->name('Besoinstechniques_api_create');
+// la route d'edition
+Route::post('besoinstechniques/{Besoinstechniques}/update',[App\Http\Controllers\API\BesoinstechniqueController::class,'update'])->withoutMiddleware("throttle:api")->name('Besoinstechniques_api_update');
+// la route de suppression
+Route::post('besoinstechniques/{Besoinstechniques}/delete',[App\Http\Controllers\API\BesoinstechniqueController::class,'delete'])->withoutMiddleware("throttle:api")->name('Besoinstechniques_api_delete');
+// la route des actions
+Route::get('besoinstechniques/action',[App\Http\Controllers\API\BesoinstechniqueController::class,'action'])->withoutMiddleware("throttle:api")->name('Besoinstechniques_api_delete');
+// la route des actions
+Route::post('besoinstechniques/action',[App\Http\Controllers\API\BesoinstechniqueController::class,'action'])->withoutMiddleware("throttle:api")->name('Besoinstechniques_api_delete');
+
+
+
+//Route::resource('Cartes',App\Http\Controllers\API\CarteController::class);
+// les routes d'affichage
+Route::get('cartes/{key}/{val}',[App\Http\Controllers\API\CarteController::class,'data'])->withoutMiddleware("throttle:api")->name('Cartes_api_index2');
+Route::get('cartes',[App\Http\Controllers\API\CarteController::class,'data1'])->withoutMiddleware("throttle:api")->name('Cartes_api_index');
+Route::post('cartes-Aggrid', [App\Http\Controllers\API\CarteController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Cartes_api_aggrid');
+
+// la route de creation
+Route::post('cartes',[App\Http\Controllers\API\CarteController::class,'create'])->withoutMiddleware("throttle:api")->name('Cartes_api_create');
+// la route d'edition
+Route::post('cartes/{Cartes}/update',[App\Http\Controllers\API\CarteController::class,'update'])->withoutMiddleware("throttle:api")->name('Cartes_api_update');
+// la route de suppression
+Route::post('cartes/{Cartes}/delete',[App\Http\Controllers\API\CarteController::class,'delete'])->withoutMiddleware("throttle:api")->name('Cartes_api_delete');
+// la route des actions
+Route::get('cartes/action',[App\Http\Controllers\API\CarteController::class,'action'])->withoutMiddleware("throttle:api")->name('Cartes_api_delete');
+// la route des actions
+Route::post('cartes/action',[App\Http\Controllers\API\CarteController::class,'action'])->withoutMiddleware("throttle:api")->name('Cartes_api_delete');
+
+
+
+//Route::resource('Categories',App\Http\Controllers\API\CategorieController::class);
+// les routes d'affichage
+Route::get('categories/{key}/{val}',[App\Http\Controllers\API\CategorieController::class,'data'])->withoutMiddleware("throttle:api")->name('Categories_api_index2');
+Route::get('categories',[App\Http\Controllers\API\CategorieController::class,'data1'])->withoutMiddleware("throttle:api")->name('Categories_api_index');
+Route::post('categories-Aggrid', [App\Http\Controllers\API\CategorieController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Categories_api_aggrid');
+
+// la route de creation
+Route::post('categories',[App\Http\Controllers\API\CategorieController::class,'create'])->withoutMiddleware("throttle:api")->name('Categories_api_create');
+// la route d'edition
+Route::post('categories/{Categories}/update',[App\Http\Controllers\API\CategorieController::class,'update'])->withoutMiddleware("throttle:api")->name('Categories_api_update');
+// la route de suppression
+Route::post('categories/{Categories}/delete',[App\Http\Controllers\API\CategorieController::class,'delete'])->withoutMiddleware("throttle:api")->name('Categories_api_delete');
+// la route des actions
+Route::get('categories/action',[App\Http\Controllers\API\CategorieController::class,'action'])->withoutMiddleware("throttle:api")->name('Categories_api_delete');
+// la route des actions
+Route::post('categories/action',[App\Http\Controllers\API\CategorieController::class,'action'])->withoutMiddleware("throttle:api")->name('Categories_api_delete');
+
+
+
+//Route::resource('Clients',App\Http\Controllers\API\ClientController::class);
+// les routes d'affichage
+Route::get('clients/{key}/{val}',[App\Http\Controllers\API\ClientController::class,'data'])->withoutMiddleware("throttle:api")->name('Clients_api_index2');
+Route::get('clients',[App\Http\Controllers\API\ClientController::class,'data1'])->withoutMiddleware("throttle:api")->name('Clients_api_index');
+Route::post('clients-Aggrid', [App\Http\Controllers\API\ClientController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Clients_api_aggrid');
+
+// la route de creation
+Route::post('clients',[App\Http\Controllers\API\ClientController::class,'create'])->withoutMiddleware("throttle:api")->name('Clients_api_create');
+// la route d'edition
+Route::post('clients/{Clients}/update',[App\Http\Controllers\API\ClientController::class,'update'])->withoutMiddleware("throttle:api")->name('Clients_api_update');
+// la route de suppression
+Route::post('clients/{Clients}/delete',[App\Http\Controllers\API\ClientController::class,'delete'])->withoutMiddleware("throttle:api")->name('Clients_api_delete');
+// la route des actions
+Route::get('clients/action',[App\Http\Controllers\API\ClientController::class,'action'])->withoutMiddleware("throttle:api")->name('Clients_api_delete');
+// la route des actions
+Route::post('clients/action',[App\Http\Controllers\API\ClientController::class,'action'])->withoutMiddleware("throttle:api")->name('Clients_api_delete');
+
+
+
+//Route::resource('Configurations',App\Http\Controllers\API\ConfigurationController::class);
+// les routes d'affichage
+Route::get('configurations/{key}/{val}',[App\Http\Controllers\API\ConfigurationController::class,'data'])->withoutMiddleware("throttle:api")->name('Configurations_api_index2');
+Route::get('configurations',[App\Http\Controllers\API\ConfigurationController::class,'data1'])->withoutMiddleware("throttle:api")->name('Configurations_api_index');
+Route::post('configurations-Aggrid', [App\Http\Controllers\API\ConfigurationController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Configurations_api_aggrid');
+
+// la route de creation
+Route::post('configurations',[App\Http\Controllers\API\ConfigurationController::class,'create'])->withoutMiddleware("throttle:api")->name('Configurations_api_create');
+// la route d'edition
+Route::post('configurations/{Configurations}/update',[App\Http\Controllers\API\ConfigurationController::class,'update'])->withoutMiddleware("throttle:api")->name('Configurations_api_update');
+// la route de suppression
+Route::post('configurations/{Configurations}/delete',[App\Http\Controllers\API\ConfigurationController::class,'delete'])->withoutMiddleware("throttle:api")->name('Configurations_api_delete');
+// la route des actions
+Route::get('configurations/action',[App\Http\Controllers\API\ConfigurationController::class,'action'])->withoutMiddleware("throttle:api")->name('Configurations_api_delete');
+// la route des actions
+Route::post('configurations/action',[App\Http\Controllers\API\ConfigurationController::class,'action'])->withoutMiddleware("throttle:api")->name('Configurations_api_delete');
+
+
+
+//Route::resource('Conges',App\Http\Controllers\API\CongeController::class);
+// les routes d'affichage
+Route::get('conges/{key}/{val}',[App\Http\Controllers\API\CongeController::class,'data'])->withoutMiddleware("throttle:api")->name('Conges_api_index2');
+Route::get('conges',[App\Http\Controllers\API\CongeController::class,'data1'])->withoutMiddleware("throttle:api")->name('Conges_api_index');
+Route::post('conges-Aggrid', [App\Http\Controllers\API\CongeController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Conges_api_aggrid');
+
+// la route de creation
+Route::post('conges',[App\Http\Controllers\API\CongeController::class,'create'])->withoutMiddleware("throttle:api")->name('Conges_api_create');
+// la route d'edition
+Route::post('conges/{Conges}/update',[App\Http\Controllers\API\CongeController::class,'update'])->withoutMiddleware("throttle:api")->name('Conges_api_update');
+// la route de suppression
+Route::post('conges/{Conges}/delete',[App\Http\Controllers\API\CongeController::class,'delete'])->withoutMiddleware("throttle:api")->name('Conges_api_delete');
+// la route des actions
+Route::get('conges/action',[App\Http\Controllers\API\CongeController::class,'action'])->withoutMiddleware("throttle:api")->name('Conges_api_delete');
+// la route des actions
+Route::post('conges/action',[App\Http\Controllers\API\CongeController::class,'action'])->withoutMiddleware("throttle:api")->name('Conges_api_delete');
+
+
+
+//Route::resource('Contrats',App\Http\Controllers\API\ContratController::class);
+// les routes d'affichage
+Route::get('contrats/{key}/{val}',[App\Http\Controllers\API\ContratController::class,'data'])->withoutMiddleware("throttle:api")->name('Contrats_api_index2');
+Route::get('contrats',[App\Http\Controllers\API\ContratController::class,'data1'])->withoutMiddleware("throttle:api")->name('Contrats_api_index');
+Route::post('contrats-Aggrid', [App\Http\Controllers\API\ContratController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Contrats_api_aggrid');
+
+// la route de creation
+Route::post('contrats',[App\Http\Controllers\API\ContratController::class,'create'])->withoutMiddleware("throttle:api")->name('Contrats_api_create');
+// la route d'edition
+Route::post('contrats/{Contrats}/update',[App\Http\Controllers\API\ContratController::class,'update'])->withoutMiddleware("throttle:api")->name('Contrats_api_update');
+// la route de suppression
+Route::post('contrats/{Contrats}/delete',[App\Http\Controllers\API\ContratController::class,'delete'])->withoutMiddleware("throttle:api")->name('Contrats_api_delete');
+// la route des actions
+Route::get('contrats/action',[App\Http\Controllers\API\ContratController::class,'action'])->withoutMiddleware("throttle:api")->name('Contrats_api_delete');
+// la route des actions
+Route::post('contrats/action',[App\Http\Controllers\API\ContratController::class,'action'])->withoutMiddleware("throttle:api")->name('Contrats_api_delete');
+
+
+
+//Route::resource('Contratsclients',App\Http\Controllers\API\ContratsclientController::class);
+// les routes d'affichage
+Route::get('contratsclients/{key}/{val}',[App\Http\Controllers\API\ContratsclientController::class,'data'])->withoutMiddleware("throttle:api")->name('Contratsclients_api_index2');
+Route::get('contratsclients',[App\Http\Controllers\API\ContratsclientController::class,'data1'])->withoutMiddleware("throttle:api")->name('Contratsclients_api_index');
+Route::post('contratsclients-Aggrid', [App\Http\Controllers\API\ContratsclientController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Contratsclients_api_aggrid');
+
+// la route de creation
+Route::post('contratsclients',[App\Http\Controllers\API\ContratsclientController::class,'create'])->withoutMiddleware("throttle:api")->name('Contratsclients_api_create');
+// la route d'edition
+Route::post('contratsclients/{Contratsclients}/update',[App\Http\Controllers\API\ContratsclientController::class,'update'])->withoutMiddleware("throttle:api")->name('Contratsclients_api_update');
+// la route de suppression
+Route::post('contratsclients/{Contratsclients}/delete',[App\Http\Controllers\API\ContratsclientController::class,'delete'])->withoutMiddleware("throttle:api")->name('Contratsclients_api_delete');
+// la route des actions
+Route::get('contratsclients/action',[App\Http\Controllers\API\ContratsclientController::class,'action'])->withoutMiddleware("throttle:api")->name('Contratsclients_api_delete');
+// la route des actions
+Route::post('contratsclients/action',[App\Http\Controllers\API\ContratsclientController::class,'action'])->withoutMiddleware("throttle:api")->name('Contratsclients_api_delete');
+
+
+
+//Route::resource('Contributions',App\Http\Controllers\API\ContributionController::class);
+// les routes d'affichage
+Route::get('contributions/{key}/{val}',[App\Http\Controllers\API\ContributionController::class,'data'])->withoutMiddleware("throttle:api")->name('Contributions_api_index2');
+Route::get('contributions',[App\Http\Controllers\API\ContributionController::class,'data1'])->withoutMiddleware("throttle:api")->name('Contributions_api_index');
+Route::post('contributions-Aggrid', [App\Http\Controllers\API\ContributionController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Contributions_api_aggrid');
+
+// la route de creation
+Route::post('contributions',[App\Http\Controllers\API\ContributionController::class,'create'])->withoutMiddleware("throttle:api")->name('Contributions_api_create');
+// la route d'edition
+Route::post('contributions/{Contributions}/update',[App\Http\Controllers\API\ContributionController::class,'update'])->withoutMiddleware("throttle:api")->name('Contributions_api_update');
+// la route de suppression
+Route::post('contributions/{Contributions}/delete',[App\Http\Controllers\API\ContributionController::class,'delete'])->withoutMiddleware("throttle:api")->name('Contributions_api_delete');
+// la route des actions
+Route::get('contributions/action',[App\Http\Controllers\API\ContributionController::class,'action'])->withoutMiddleware("throttle:api")->name('Contributions_api_delete');
+// la route des actions
+Route::post('contributions/action',[App\Http\Controllers\API\ContributionController::class,'action'])->withoutMiddleware("throttle:api")->name('Contributions_api_delete');
+
+
+
+//Route::resource('Controlleursacces',App\Http\Controllers\API\ControlleursacceController::class);
+// les routes d'affichage
+Route::get('controlleursacces/{key}/{val}',[App\Http\Controllers\API\ControlleursacceController::class,'data'])->withoutMiddleware("throttle:api")->name('Controlleursacces_api_index2');
+Route::get('controlleursacces',[App\Http\Controllers\API\ControlleursacceController::class,'data1'])->withoutMiddleware("throttle:api")->name('Controlleursacces_api_index');
+Route::post('controlleursacces-Aggrid', [App\Http\Controllers\API\ControlleursacceController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Controlleursacces_api_aggrid');
+
+// la route de creation
+Route::post('controlleursacces',[App\Http\Controllers\API\ControlleursacceController::class,'create'])->withoutMiddleware("throttle:api")->name('Controlleursacces_api_create');
+// la route d'edition
+Route::post('controlleursacces/{Controlleursacces}/update',[App\Http\Controllers\API\ControlleursacceController::class,'update'])->withoutMiddleware("throttle:api")->name('Controlleursacces_api_update');
+// la route de suppression
+Route::post('controlleursacces/{Controlleursacces}/delete',[App\Http\Controllers\API\ControlleursacceController::class,'delete'])->withoutMiddleware("throttle:api")->name('Controlleursacces_api_delete');
+// la route des actions
+Route::get('controlleursacces/action',[App\Http\Controllers\API\ControlleursacceController::class,'action'])->withoutMiddleware("throttle:api")->name('Controlleursacces_api_delete');
+// la route des actions
+Route::post('controlleursacces/action',[App\Http\Controllers\API\ControlleursacceController::class,'action'])->withoutMiddleware("throttle:api")->name('Controlleursacces_api_delete');
+
+
+
+//Route::resource('Credits',App\Http\Controllers\API\CreditController::class);
+// les routes d'affichage
+Route::get('credits/{key}/{val}',[App\Http\Controllers\API\CreditController::class,'data'])->withoutMiddleware("throttle:api")->name('Credits_api_index2');
+Route::get('credits',[App\Http\Controllers\API\CreditController::class,'data1'])->withoutMiddleware("throttle:api")->name('Credits_api_index');
+Route::post('credits-Aggrid', [App\Http\Controllers\API\CreditController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Credits_api_aggrid');
+
+// la route de creation
+Route::post('credits',[App\Http\Controllers\API\CreditController::class,'create'])->withoutMiddleware("throttle:api")->name('Credits_api_create');
+// la route d'edition
+Route::post('credits/{Credits}/update',[App\Http\Controllers\API\CreditController::class,'update'])->withoutMiddleware("throttle:api")->name('Credits_api_update');
+// la route de suppression
+Route::post('credits/{Credits}/delete',[App\Http\Controllers\API\CreditController::class,'delete'])->withoutMiddleware("throttle:api")->name('Credits_api_delete');
+// la route des actions
+Route::get('credits/action',[App\Http\Controllers\API\CreditController::class,'action'])->withoutMiddleware("throttle:api")->name('Credits_api_delete');
+// la route des actions
+Route::post('credits/action',[App\Http\Controllers\API\CreditController::class,'action'])->withoutMiddleware("throttle:api")->name('Credits_api_delete');
+
+
+
+//Route::resource('Cruds',App\Http\Controllers\API\CrudController::class);
+// les routes d'affichage
+Route::get('cruds/{key}/{val}',[App\Http\Controllers\API\CrudController::class,'data'])->withoutMiddleware("throttle:api")->name('Cruds_api_index2');
+Route::get('cruds',[App\Http\Controllers\API\CrudController::class,'data1'])->withoutMiddleware("throttle:api")->name('Cruds_api_index');
+Route::post('cruds-Aggrid', [App\Http\Controllers\API\CrudController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Cruds_api_aggrid');
+
+// la route de creation
+Route::post('cruds',[App\Http\Controllers\API\CrudController::class,'create'])->withoutMiddleware("throttle:api")->name('Cruds_api_create');
+// la route d'edition
+Route::post('cruds/{Cruds}/update',[App\Http\Controllers\API\CrudController::class,'update'])->withoutMiddleware("throttle:api")->name('Cruds_api_update');
+// la route de suppression
+Route::post('cruds/{Cruds}/delete',[App\Http\Controllers\API\CrudController::class,'delete'])->withoutMiddleware("throttle:api")->name('Cruds_api_delete');
+// la route des actions
+Route::get('cruds/action',[App\Http\Controllers\API\CrudController::class,'action'])->withoutMiddleware("throttle:api")->name('Cruds_api_delete');
+// la route des actions
+Route::post('cruds/action',[App\Http\Controllers\API\CrudController::class,'action'])->withoutMiddleware("throttle:api")->name('Cruds_api_delete');
+
+
+
+//Route::resource('Debits',App\Http\Controllers\API\DebitController::class);
+// les routes d'affichage
+Route::get('debits/{key}/{val}',[App\Http\Controllers\API\DebitController::class,'data'])->withoutMiddleware("throttle:api")->name('Debits_api_index2');
+Route::get('debits',[App\Http\Controllers\API\DebitController::class,'data1'])->withoutMiddleware("throttle:api")->name('Debits_api_index');
+Route::post('debits-Aggrid', [App\Http\Controllers\API\DebitController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Debits_api_aggrid');
+
+// la route de creation
+Route::post('debits',[App\Http\Controllers\API\DebitController::class,'create'])->withoutMiddleware("throttle:api")->name('Debits_api_create');
+// la route d'edition
+Route::post('debits/{Debits}/update',[App\Http\Controllers\API\DebitController::class,'update'])->withoutMiddleware("throttle:api")->name('Debits_api_update');
+// la route de suppression
+Route::post('debits/{Debits}/delete',[App\Http\Controllers\API\DebitController::class,'delete'])->withoutMiddleware("throttle:api")->name('Debits_api_delete');
+// la route des actions
+Route::get('debits/action',[App\Http\Controllers\API\DebitController::class,'action'])->withoutMiddleware("throttle:api")->name('Debits_api_delete');
+// la route des actions
+Route::post('debits/action',[App\Http\Controllers\API\DebitController::class,'action'])->withoutMiddleware("throttle:api")->name('Debits_api_delete');
+
+
+
+//Route::resource('Dependances',App\Http\Controllers\API\DependanceController::class);
+// les routes d'affichage
+Route::get('dependances/{key}/{val}',[App\Http\Controllers\API\DependanceController::class,'data'])->withoutMiddleware("throttle:api")->name('Dependances_api_index2');
+Route::get('dependances',[App\Http\Controllers\API\DependanceController::class,'data1'])->withoutMiddleware("throttle:api")->name('Dependances_api_index');
+Route::post('dependances-Aggrid', [App\Http\Controllers\API\DependanceController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Dependances_api_aggrid');
+
+// la route de creation
+Route::post('dependances',[App\Http\Controllers\API\DependanceController::class,'create'])->withoutMiddleware("throttle:api")->name('Dependances_api_create');
+// la route d'edition
+Route::post('dependances/{Dependances}/update',[App\Http\Controllers\API\DependanceController::class,'update'])->withoutMiddleware("throttle:api")->name('Dependances_api_update');
+// la route de suppression
+Route::post('dependances/{Dependances}/delete',[App\Http\Controllers\API\DependanceController::class,'delete'])->withoutMiddleware("throttle:api")->name('Dependances_api_delete');
+// la route des actions
+Route::get('dependances/action',[App\Http\Controllers\API\DependanceController::class,'action'])->withoutMiddleware("throttle:api")->name('Dependances_api_delete');
+// la route des actions
+Route::post('dependances/action',[App\Http\Controllers\API\DependanceController::class,'action'])->withoutMiddleware("throttle:api")->name('Dependances_api_delete');
+
+
+
+//Route::resource('Deplacements',App\Http\Controllers\API\DeplacementController::class);
+// les routes d'affichage
+Route::get('deplacements/{key}/{val}',[App\Http\Controllers\API\DeplacementController::class,'data'])->withoutMiddleware("throttle:api")->name('Deplacements_api_index2');
+Route::get('deplacements',[App\Http\Controllers\API\DeplacementController::class,'data1'])->withoutMiddleware("throttle:api")->name('Deplacements_api_index');
+Route::post('deplacements-Aggrid', [App\Http\Controllers\API\DeplacementController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Deplacements_api_aggrid');
+
+// la route de creation
+Route::post('deplacements',[App\Http\Controllers\API\DeplacementController::class,'create'])->withoutMiddleware("throttle:api")->name('Deplacements_api_create');
+// la route d'edition
+Route::post('deplacements/{Deplacements}/update',[App\Http\Controllers\API\DeplacementController::class,'update'])->withoutMiddleware("throttle:api")->name('Deplacements_api_update');
+// la route de suppression
+Route::post('deplacements/{Deplacements}/delete',[App\Http\Controllers\API\DeplacementController::class,'delete'])->withoutMiddleware("throttle:api")->name('Deplacements_api_delete');
+// la route des actions
+Route::get('deplacements/action',[App\Http\Controllers\API\DeplacementController::class,'action'])->withoutMiddleware("throttle:api")->name('Deplacements_api_delete');
+// la route des actions
+Route::post('deplacements/action',[App\Http\Controllers\API\DeplacementController::class,'action'])->withoutMiddleware("throttle:api")->name('Deplacements_api_delete');
+
+
+
+//Route::resource('Deploiments',App\Http\Controllers\API\DeploimentController::class);
+// les routes d'affichage
+Route::get('deploiments/{key}/{val}',[App\Http\Controllers\API\DeploimentController::class,'data'])->withoutMiddleware("throttle:api")->name('Deploiments_api_index2');
+Route::get('deploiments',[App\Http\Controllers\API\DeploimentController::class,'data1'])->withoutMiddleware("throttle:api")->name('Deploiments_api_index');
+Route::post('deploiments-Aggrid', [App\Http\Controllers\API\DeploimentController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Deploiments_api_aggrid');
+
+// la route de creation
+Route::post('deploiments',[App\Http\Controllers\API\DeploimentController::class,'create'])->withoutMiddleware("throttle:api")->name('Deploiments_api_create');
+// la route d'edition
+Route::post('deploiments/{Deploiments}/update',[App\Http\Controllers\API\DeploimentController::class,'update'])->withoutMiddleware("throttle:api")->name('Deploiments_api_update');
+// la route de suppression
+Route::post('deploiments/{Deploiments}/delete',[App\Http\Controllers\API\DeploimentController::class,'delete'])->withoutMiddleware("throttle:api")->name('Deploiments_api_delete');
+// la route des actions
+Route::get('deploiments/action',[App\Http\Controllers\API\DeploimentController::class,'action'])->withoutMiddleware("throttle:api")->name('Deploiments_api_delete');
+// la route des actions
+Route::post('deploiments/action',[App\Http\Controllers\API\DeploimentController::class,'action'])->withoutMiddleware("throttle:api")->name('Deploiments_api_delete');
+
+
+
+//Route::resource('Directions',App\Http\Controllers\API\DirectionController::class);
+// les routes d'affichage
+Route::get('directions/{key}/{val}',[App\Http\Controllers\API\DirectionController::class,'data'])->withoutMiddleware("throttle:api")->name('Directions_api_index2');
+Route::get('directions',[App\Http\Controllers\API\DirectionController::class,'data1'])->withoutMiddleware("throttle:api")->name('Directions_api_index');
+Route::post('directions-Aggrid', [App\Http\Controllers\API\DirectionController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Directions_api_aggrid');
+
+// la route de creation
+Route::post('directions',[App\Http\Controllers\API\DirectionController::class,'create'])->withoutMiddleware("throttle:api")->name('Directions_api_create');
+// la route d'edition
+Route::post('directions/{Directions}/update',[App\Http\Controllers\API\DirectionController::class,'update'])->withoutMiddleware("throttle:api")->name('Directions_api_update');
+// la route de suppression
+Route::post('directions/{Directions}/delete',[App\Http\Controllers\API\DirectionController::class,'delete'])->withoutMiddleware("throttle:api")->name('Directions_api_delete');
+// la route des actions
+Route::get('directions/action',[App\Http\Controllers\API\DirectionController::class,'action'])->withoutMiddleware("throttle:api")->name('Directions_api_delete');
+// la route des actions
+Route::post('directions/action',[App\Http\Controllers\API\DirectionController::class,'action'])->withoutMiddleware("throttle:api")->name('Directions_api_delete');
+
+
+
+//Route::resource('Echelons',App\Http\Controllers\API\EchelonController::class);
+// les routes d'affichage
+Route::get('echelons/{key}/{val}',[App\Http\Controllers\API\EchelonController::class,'data'])->withoutMiddleware("throttle:api")->name('Echelons_api_index2');
+Route::get('echelons',[App\Http\Controllers\API\EchelonController::class,'data1'])->withoutMiddleware("throttle:api")->name('Echelons_api_index');
+Route::post('echelons-Aggrid', [App\Http\Controllers\API\EchelonController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Echelons_api_aggrid');
+
+// la route de creation
+Route::post('echelons',[App\Http\Controllers\API\EchelonController::class,'create'])->withoutMiddleware("throttle:api")->name('Echelons_api_create');
+// la route d'edition
+Route::post('echelons/{Echelons}/update',[App\Http\Controllers\API\EchelonController::class,'update'])->withoutMiddleware("throttle:api")->name('Echelons_api_update');
+// la route de suppression
+Route::post('echelons/{Echelons}/delete',[App\Http\Controllers\API\EchelonController::class,'delete'])->withoutMiddleware("throttle:api")->name('Echelons_api_delete');
+// la route des actions
+Route::get('echelons/action',[App\Http\Controllers\API\EchelonController::class,'action'])->withoutMiddleware("throttle:api")->name('Echelons_api_delete');
+// la route des actions
+Route::post('echelons/action',[App\Http\Controllers\API\EchelonController::class,'action'])->withoutMiddleware("throttle:api")->name('Echelons_api_delete');
+
+
+
+//Route::resource('Entreprises',App\Http\Controllers\API\EntrepriseController::class);
+// les routes d'affichage
+Route::get('entreprises/{key}/{val}',[App\Http\Controllers\API\EntrepriseController::class,'data'])->withoutMiddleware("throttle:api")->name('Entreprises_api_index2');
+Route::get('entreprises',[App\Http\Controllers\API\EntrepriseController::class,'data1'])->withoutMiddleware("throttle:api")->name('Entreprises_api_index');
+Route::post('entreprises-Aggrid', [App\Http\Controllers\API\EntrepriseController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Entreprises_api_aggrid');
+
+// la route de creation
+Route::post('entreprises',[App\Http\Controllers\API\EntrepriseController::class,'create'])->withoutMiddleware("throttle:api")->name('Entreprises_api_create');
+// la route d'edition
+Route::post('entreprises/{Entreprises}/update',[App\Http\Controllers\API\EntrepriseController::class,'update'])->withoutMiddleware("throttle:api")->name('Entreprises_api_update');
+// la route de suppression
+Route::post('entreprises/{Entreprises}/delete',[App\Http\Controllers\API\EntrepriseController::class,'delete'])->withoutMiddleware("throttle:api")->name('Entreprises_api_delete');
+// la route des actions
+Route::get('entreprises/action',[App\Http\Controllers\API\EntrepriseController::class,'action'])->withoutMiddleware("throttle:api")->name('Entreprises_api_delete');
+// la route des actions
+Route::post('entreprises/action',[App\Http\Controllers\API\EntrepriseController::class,'action'])->withoutMiddleware("throttle:api")->name('Entreprises_api_delete');
+
+
+
+//Route::resource('Etapes',App\Http\Controllers\API\EtapeController::class);
+// les routes d'affichage
+Route::get('etapes/{key}/{val}',[App\Http\Controllers\API\EtapeController::class,'data'])->withoutMiddleware("throttle:api")->name('Etapes_api_index2');
+Route::get('etapes',[App\Http\Controllers\API\EtapeController::class,'data1'])->withoutMiddleware("throttle:api")->name('Etapes_api_index');
+Route::post('etapes-Aggrid', [App\Http\Controllers\API\EtapeController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Etapes_api_aggrid');
+
+// la route de creation
+Route::post('etapes',[App\Http\Controllers\API\EtapeController::class,'create'])->withoutMiddleware("throttle:api")->name('Etapes_api_create');
+// la route d'edition
+Route::post('etapes/{Etapes}/update',[App\Http\Controllers\API\EtapeController::class,'update'])->withoutMiddleware("throttle:api")->name('Etapes_api_update');
+// la route de suppression
+Route::post('etapes/{Etapes}/delete',[App\Http\Controllers\API\EtapeController::class,'delete'])->withoutMiddleware("throttle:api")->name('Etapes_api_delete');
+// la route des actions
+Route::get('etapes/action',[App\Http\Controllers\API\EtapeController::class,'action'])->withoutMiddleware("throttle:api")->name('Etapes_api_delete');
+// la route des actions
+Route::post('etapes/action',[App\Http\Controllers\API\EtapeController::class,'action'])->withoutMiddleware("throttle:api")->name('Etapes_api_delete');
+
+
+
+//Route::resource('Exports',App\Http\Controllers\API\ExportController::class);
+// les routes d'affichage
+Route::get('exports/{key}/{val}',[App\Http\Controllers\API\ExportController::class,'data'])->withoutMiddleware("throttle:api")->name('Exports_api_index2');
+Route::get('exports',[App\Http\Controllers\API\ExportController::class,'data1'])->withoutMiddleware("throttle:api")->name('Exports_api_index');
+Route::post('exports-Aggrid', [App\Http\Controllers\API\ExportController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Exports_api_aggrid');
+
+// la route de creation
+Route::post('exports',[App\Http\Controllers\API\ExportController::class,'create'])->withoutMiddleware("throttle:api")->name('Exports_api_create');
+// la route d'edition
+Route::post('exports/{Exports}/update',[App\Http\Controllers\API\ExportController::class,'update'])->withoutMiddleware("throttle:api")->name('Exports_api_update');
+// la route de suppression
+Route::post('exports/{Exports}/delete',[App\Http\Controllers\API\ExportController::class,'delete'])->withoutMiddleware("throttle:api")->name('Exports_api_delete');
+// la route des actions
+Route::get('exports/action',[App\Http\Controllers\API\ExportController::class,'action'])->withoutMiddleware("throttle:api")->name('Exports_api_delete');
+// la route des actions
+Route::post('exports/action',[App\Http\Controllers\API\ExportController::class,'action'])->withoutMiddleware("throttle:api")->name('Exports_api_delete');
+
+
+
+//Route::resource('Exportsdetails',App\Http\Controllers\API\ExportsdetailController::class);
+// les routes d'affichage
+Route::get('exportsdetails/{key}/{val}',[App\Http\Controllers\API\ExportsdetailController::class,'data'])->withoutMiddleware("throttle:api")->name('Exportsdetails_api_index2');
+Route::get('exportsdetails',[App\Http\Controllers\API\ExportsdetailController::class,'data1'])->withoutMiddleware("throttle:api")->name('Exportsdetails_api_index');
+Route::post('exportsdetails-Aggrid', [App\Http\Controllers\API\ExportsdetailController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Exportsdetails_api_aggrid');
+
+// la route de creation
+Route::post('exportsdetails',[App\Http\Controllers\API\ExportsdetailController::class,'create'])->withoutMiddleware("throttle:api")->name('Exportsdetails_api_create');
+// la route d'edition
+Route::post('exportsdetails/{Exportsdetails}/update',[App\Http\Controllers\API\ExportsdetailController::class,'update'])->withoutMiddleware("throttle:api")->name('Exportsdetails_api_update');
+// la route de suppression
+Route::post('exportsdetails/{Exportsdetails}/delete',[App\Http\Controllers\API\ExportsdetailController::class,'delete'])->withoutMiddleware("throttle:api")->name('Exportsdetails_api_delete');
+// la route des actions
+Route::get('exportsdetails/action',[App\Http\Controllers\API\ExportsdetailController::class,'action'])->withoutMiddleware("throttle:api")->name('Exportsdetails_api_delete');
+// la route des actions
+Route::post('exportsdetails/action',[App\Http\Controllers\API\ExportsdetailController::class,'action'])->withoutMiddleware("throttle:api")->name('Exportsdetails_api_delete');
+
+
+
+//Route::resource('Extrasdatas',App\Http\Controllers\API\ExtrasdataController::class);
+// les routes d'affichage
+Route::get('extrasdatas/{key}/{val}',[App\Http\Controllers\API\ExtrasdataController::class,'data'])->withoutMiddleware("throttle:api")->name('Extrasdatas_api_index2');
+Route::get('extrasdatas',[App\Http\Controllers\API\ExtrasdataController::class,'data1'])->withoutMiddleware("throttle:api")->name('Extrasdatas_api_index');
+Route::post('extrasdatas-Aggrid', [App\Http\Controllers\API\ExtrasdataController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Extrasdatas_api_aggrid');
+
+// la route de creation
+Route::post('extrasdatas',[App\Http\Controllers\API\ExtrasdataController::class,'create'])->withoutMiddleware("throttle:api")->name('Extrasdatas_api_create');
+// la route d'edition
+Route::post('extrasdatas/{Extrasdatas}/update',[App\Http\Controllers\API\ExtrasdataController::class,'update'])->withoutMiddleware("throttle:api")->name('Extrasdatas_api_update');
+// la route de suppression
+Route::post('extrasdatas/{Extrasdatas}/delete',[App\Http\Controllers\API\ExtrasdataController::class,'delete'])->withoutMiddleware("throttle:api")->name('Extrasdatas_api_delete');
+// la route des actions
+Route::get('extrasdatas/action',[App\Http\Controllers\API\ExtrasdataController::class,'action'])->withoutMiddleware("throttle:api")->name('Extrasdatas_api_delete');
+// la route des actions
+Route::post('extrasdatas/action',[App\Http\Controllers\API\ExtrasdataController::class,'action'])->withoutMiddleware("throttle:api")->name('Extrasdatas_api_delete');
+
+
+
+//Route::resource('Files',App\Http\Controllers\API\FileController::class);
+// les routes d'affichage
+Route::get('files/{key}/{val}',[App\Http\Controllers\API\FileController::class,'data'])->withoutMiddleware("throttle:api")->name('Files_api_index2');
+Route::get('files',[App\Http\Controllers\API\FileController::class,'data1'])->withoutMiddleware("throttle:api")->name('Files_api_index');
+Route::post('files-Aggrid', [App\Http\Controllers\API\FileController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Files_api_aggrid');
+
+// la route de creation
+Route::post('files',[App\Http\Controllers\API\FileController::class,'create'])->withoutMiddleware("throttle:api")->name('Files_api_create');
+// la route d'edition
+Route::post('files/{Files}/update',[App\Http\Controllers\API\FileController::class,'update'])->withoutMiddleware("throttle:api")->name('Files_api_update');
+// la route de suppression
+Route::post('files/{Files}/delete',[App\Http\Controllers\API\FileController::class,'delete'])->withoutMiddleware("throttle:api")->name('Files_api_delete');
+// la route des actions
+Route::get('files/action',[App\Http\Controllers\API\FileController::class,'action'])->withoutMiddleware("throttle:api")->name('Files_api_delete');
+// la route des actions
+Route::post('files/action',[App\Http\Controllers\API\FileController::class,'action'])->withoutMiddleware("throttle:api")->name('Files_api_delete');
+
+
+
+//Route::resource('Fonctions',App\Http\Controllers\API\FonctionController::class);
+// les routes d'affichage
+Route::get('fonctions/{key}/{val}',[App\Http\Controllers\API\FonctionController::class,'data'])->withoutMiddleware("throttle:api")->name('Fonctions_api_index2');
+Route::get('fonctions',[App\Http\Controllers\API\FonctionController::class,'data1'])->withoutMiddleware("throttle:api")->name('Fonctions_api_index');
+Route::post('fonctions-Aggrid', [App\Http\Controllers\API\FonctionController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Fonctions_api_aggrid');
+
+// la route de creation
+Route::post('fonctions',[App\Http\Controllers\API\FonctionController::class,'create'])->withoutMiddleware("throttle:api")->name('Fonctions_api_create');
+// la route d'edition
+Route::post('fonctions/{Fonctions}/update',[App\Http\Controllers\API\FonctionController::class,'update'])->withoutMiddleware("throttle:api")->name('Fonctions_api_update');
+// la route de suppression
+Route::post('fonctions/{Fonctions}/delete',[App\Http\Controllers\API\FonctionController::class,'delete'])->withoutMiddleware("throttle:api")->name('Fonctions_api_delete');
+// la route des actions
+Route::get('fonctions/action',[App\Http\Controllers\API\FonctionController::class,'action'])->withoutMiddleware("throttle:api")->name('Fonctions_api_delete');
+// la route des actions
+Route::post('fonctions/action',[App\Http\Controllers\API\FonctionController::class,'action'])->withoutMiddleware("throttle:api")->name('Fonctions_api_delete');
+
+
+
+//Route::resource('Graphiques',App\Http\Controllers\API\GraphiqueController::class);
+// les routes d'affichage
+Route::get('graphiques/{key}/{val}',[App\Http\Controllers\API\GraphiqueController::class,'data'])->withoutMiddleware("throttle:api")->name('Graphiques_api_index2');
+Route::get('graphiques',[App\Http\Controllers\API\GraphiqueController::class,'data1'])->withoutMiddleware("throttle:api")->name('Graphiques_api_index');
+Route::post('graphiques-Aggrid', [App\Http\Controllers\API\GraphiqueController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Graphiques_api_aggrid');
+
+// la route de creation
+Route::post('graphiques',[App\Http\Controllers\API\GraphiqueController::class,'create'])->withoutMiddleware("throttle:api")->name('Graphiques_api_create');
+// la route d'edition
+Route::post('graphiques/{Graphiques}/update',[App\Http\Controllers\API\GraphiqueController::class,'update'])->withoutMiddleware("throttle:api")->name('Graphiques_api_update');
+// la route de suppression
+Route::post('graphiques/{Graphiques}/delete',[App\Http\Controllers\API\GraphiqueController::class,'delete'])->withoutMiddleware("throttle:api")->name('Graphiques_api_delete');
+// la route des actions
+Route::get('graphiques/action',[App\Http\Controllers\API\GraphiqueController::class,'action'])->withoutMiddleware("throttle:api")->name('Graphiques_api_delete');
+// la route des actions
+Route::post('graphiques/action',[App\Http\Controllers\API\GraphiqueController::class,'action'])->withoutMiddleware("throttle:api")->name('Graphiques_api_delete');
+
+
+
+//Route::resource('Groupedirections',App\Http\Controllers\API\GroupedirectionController::class);
+// les routes d'affichage
+Route::get('groupedirections/{key}/{val}',[App\Http\Controllers\API\GroupedirectionController::class,'data'])->withoutMiddleware("throttle:api")->name('Groupedirections_api_index2');
+Route::get('groupedirections',[App\Http\Controllers\API\GroupedirectionController::class,'data1'])->withoutMiddleware("throttle:api")->name('Groupedirections_api_index');
+Route::post('groupedirections-Aggrid', [App\Http\Controllers\API\GroupedirectionController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Groupedirections_api_aggrid');
+
+// la route de creation
+Route::post('groupedirections',[App\Http\Controllers\API\GroupedirectionController::class,'create'])->withoutMiddleware("throttle:api")->name('Groupedirections_api_create');
+// la route d'edition
+Route::post('groupedirections/{Groupedirections}/update',[App\Http\Controllers\API\GroupedirectionController::class,'update'])->withoutMiddleware("throttle:api")->name('Groupedirections_api_update');
+// la route de suppression
+Route::post('groupedirections/{Groupedirections}/delete',[App\Http\Controllers\API\GroupedirectionController::class,'delete'])->withoutMiddleware("throttle:api")->name('Groupedirections_api_delete');
+// la route des actions
+Route::get('groupedirections/action',[App\Http\Controllers\API\GroupedirectionController::class,'action'])->withoutMiddleware("throttle:api")->name('Groupedirections_api_delete');
+// la route des actions
+Route::post('groupedirections/action',[App\Http\Controllers\API\GroupedirectionController::class,'action'])->withoutMiddleware("throttle:api")->name('Groupedirections_api_delete');
+
+
+
+//Route::resource('Groupepermissions',App\Http\Controllers\API\GroupepermissionController::class);
+// les routes d'affichage
+Route::get('groupepermissions/{key}/{val}',[App\Http\Controllers\API\GroupepermissionController::class,'data'])->withoutMiddleware("throttle:api")->name('Groupepermissions_api_index2');
+Route::get('groupepermissions',[App\Http\Controllers\API\GroupepermissionController::class,'data1'])->withoutMiddleware("throttle:api")->name('Groupepermissions_api_index');
+Route::post('groupepermissions-Aggrid', [App\Http\Controllers\API\GroupepermissionController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Groupepermissions_api_aggrid');
+
+// la route de creation
+Route::post('groupepermissions',[App\Http\Controllers\API\GroupepermissionController::class,'create'])->withoutMiddleware("throttle:api")->name('Groupepermissions_api_create');
+// la route d'edition
+Route::post('groupepermissions/{Groupepermissions}/update',[App\Http\Controllers\API\GroupepermissionController::class,'update'])->withoutMiddleware("throttle:api")->name('Groupepermissions_api_update');
+// la route de suppression
+Route::post('groupepermissions/{Groupepermissions}/delete',[App\Http\Controllers\API\GroupepermissionController::class,'delete'])->withoutMiddleware("throttle:api")->name('Groupepermissions_api_delete');
+// la route des actions
+Route::get('groupepermissions/action',[App\Http\Controllers\API\GroupepermissionController::class,'action'])->withoutMiddleware("throttle:api")->name('Groupepermissions_api_delete');
+// la route des actions
+Route::post('groupepermissions/action',[App\Http\Controllers\API\GroupepermissionController::class,'action'])->withoutMiddleware("throttle:api")->name('Groupepermissions_api_delete');
+
+
+
+//Route::resource('Headselements',App\Http\Controllers\API\HeadselementController::class);
+// les routes d'affichage
+Route::get('headselements/{key}/{val}',[App\Http\Controllers\API\HeadselementController::class,'data'])->withoutMiddleware("throttle:api")->name('Headselements_api_index2');
+Route::get('headselements',[App\Http\Controllers\API\HeadselementController::class,'data1'])->withoutMiddleware("throttle:api")->name('Headselements_api_index');
+Route::post('headselements-Aggrid', [App\Http\Controllers\API\HeadselementController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Headselements_api_aggrid');
+
+// la route de creation
+Route::post('headselements',[App\Http\Controllers\API\HeadselementController::class,'create'])->withoutMiddleware("throttle:api")->name('Headselements_api_create');
+// la route d'edition
+Route::post('headselements/{Headselements}/update',[App\Http\Controllers\API\HeadselementController::class,'update'])->withoutMiddleware("throttle:api")->name('Headselements_api_update');
+// la route de suppression
+Route::post('headselements/{Headselements}/delete',[App\Http\Controllers\API\HeadselementController::class,'delete'])->withoutMiddleware("throttle:api")->name('Headselements_api_delete');
+// la route des actions
+Route::get('headselements/action',[App\Http\Controllers\API\HeadselementController::class,'action'])->withoutMiddleware("throttle:api")->name('Headselements_api_delete');
+// la route des actions
+Route::post('headselements/action',[App\Http\Controllers\API\HeadselementController::class,'action'])->withoutMiddleware("throttle:api")->name('Headselements_api_delete');
+
+
+
+//Route::resource('Historiquemodelslistings',App\Http\Controllers\API\HistoriquemodelslistingController::class);
+// les routes d'affichage
+Route::get('historiquemodelslistings/{key}/{val}',[App\Http\Controllers\API\HistoriquemodelslistingController::class,'data'])->withoutMiddleware("throttle:api")->name('Historiquemodelslistings_api_index2');
+Route::get('historiquemodelslistings',[App\Http\Controllers\API\HistoriquemodelslistingController::class,'data1'])->withoutMiddleware("throttle:api")->name('Historiquemodelslistings_api_index');
+Route::post('historiquemodelslistings-Aggrid', [App\Http\Controllers\API\HistoriquemodelslistingController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Historiquemodelslistings_api_aggrid');
+
+// la route de creation
+Route::post('historiquemodelslistings',[App\Http\Controllers\API\HistoriquemodelslistingController::class,'create'])->withoutMiddleware("throttle:api")->name('Historiquemodelslistings_api_create');
+// la route d'edition
+Route::post('historiquemodelslistings/{Historiquemodelslistings}/update',[App\Http\Controllers\API\HistoriquemodelslistingController::class,'update'])->withoutMiddleware("throttle:api")->name('Historiquemodelslistings_api_update');
+// la route de suppression
+Route::post('historiquemodelslistings/{Historiquemodelslistings}/delete',[App\Http\Controllers\API\HistoriquemodelslistingController::class,'delete'])->withoutMiddleware("throttle:api")->name('Historiquemodelslistings_api_delete');
+// la route des actions
+Route::get('historiquemodelslistings/action',[App\Http\Controllers\API\HistoriquemodelslistingController::class,'action'])->withoutMiddleware("throttle:api")->name('Historiquemodelslistings_api_delete');
+// la route des actions
+Route::post('historiquemodelslistings/action',[App\Http\Controllers\API\HistoriquemodelslistingController::class,'action'])->withoutMiddleware("throttle:api")->name('Historiquemodelslistings_api_delete');
+
+
+
+//Route::resource('Historiques',App\Http\Controllers\API\HistoriqueController::class);
+// les routes d'affichage
+Route::get('historiques/{key}/{val}',[App\Http\Controllers\API\HistoriqueController::class,'data'])->withoutMiddleware("throttle:api")->name('Historiques_api_index2');
+Route::get('historiques',[App\Http\Controllers\API\HistoriqueController::class,'data1'])->withoutMiddleware("throttle:api")->name('Historiques_api_index');
+Route::post('historiques-Aggrid', [App\Http\Controllers\API\HistoriqueController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Historiques_api_aggrid');
+
+// la route de creation
+Route::post('historiques',[App\Http\Controllers\API\HistoriqueController::class,'create'])->withoutMiddleware("throttle:api")->name('Historiques_api_create');
+// la route d'edition
+Route::post('historiques/{Historiques}/update',[App\Http\Controllers\API\HistoriqueController::class,'update'])->withoutMiddleware("throttle:api")->name('Historiques_api_update');
+// la route de suppression
+Route::post('historiques/{Historiques}/delete',[App\Http\Controllers\API\HistoriqueController::class,'delete'])->withoutMiddleware("throttle:api")->name('Historiques_api_delete');
+// la route des actions
+Route::get('historiques/action',[App\Http\Controllers\API\HistoriqueController::class,'action'])->withoutMiddleware("throttle:api")->name('Historiques_api_delete');
+// la route des actions
+Route::post('historiques/action',[App\Http\Controllers\API\HistoriqueController::class,'action'])->withoutMiddleware("throttle:api")->name('Historiques_api_delete');
+
+
+
+//Route::resource('Homes',App\Http\Controllers\API\HomeController::class);
+// les routes d'affichage
+Route::get('homes/{key}/{val}',[App\Http\Controllers\API\HomeController::class,'data'])->withoutMiddleware("throttle:api")->name('Homes_api_index2');
+Route::get('homes',[App\Http\Controllers\API\HomeController::class,'data1'])->withoutMiddleware("throttle:api")->name('Homes_api_index');
+Route::post('homes-Aggrid', [App\Http\Controllers\API\HomeController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Homes_api_aggrid');
+
+// la route de creation
+Route::post('homes',[App\Http\Controllers\API\HomeController::class,'create'])->withoutMiddleware("throttle:api")->name('Homes_api_create');
+// la route d'edition
+Route::post('homes/{Homes}/update',[App\Http\Controllers\API\HomeController::class,'update'])->withoutMiddleware("throttle:api")->name('Homes_api_update');
+// la route de suppression
+Route::post('homes/{Homes}/delete',[App\Http\Controllers\API\HomeController::class,'delete'])->withoutMiddleware("throttle:api")->name('Homes_api_delete');
+// la route des actions
+Route::get('homes/action',[App\Http\Controllers\API\HomeController::class,'action'])->withoutMiddleware("throttle:api")->name('Homes_api_delete');
+// la route des actions
+Route::post('homes/action',[App\Http\Controllers\API\HomeController::class,'action'])->withoutMiddleware("throttle:api")->name('Homes_api_delete');
+
+
+
+//Route::resource('Homezones',App\Http\Controllers\API\HomezoneController::class);
+// les routes d'affichage
+Route::get('homezones/{key}/{val}',[App\Http\Controllers\API\HomezoneController::class,'data'])->withoutMiddleware("throttle:api")->name('Homezones_api_index2');
+Route::get('homezones',[App\Http\Controllers\API\HomezoneController::class,'data1'])->withoutMiddleware("throttle:api")->name('Homezones_api_index');
+Route::post('homezones-Aggrid', [App\Http\Controllers\API\HomezoneController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Homezones_api_aggrid');
+
+// la route de creation
+Route::post('homezones',[App\Http\Controllers\API\HomezoneController::class,'create'])->withoutMiddleware("throttle:api")->name('Homezones_api_create');
+// la route d'edition
+Route::post('homezones/{Homezones}/update',[App\Http\Controllers\API\HomezoneController::class,'update'])->withoutMiddleware("throttle:api")->name('Homezones_api_update');
+// la route de suppression
+Route::post('homezones/{Homezones}/delete',[App\Http\Controllers\API\HomezoneController::class,'delete'])->withoutMiddleware("throttle:api")->name('Homezones_api_delete');
+// la route des actions
+Route::get('homezones/action',[App\Http\Controllers\API\HomezoneController::class,'action'])->withoutMiddleware("throttle:api")->name('Homezones_api_delete');
+// la route des actions
+Route::post('homezones/action',[App\Http\Controllers\API\HomezoneController::class,'action'])->withoutMiddleware("throttle:api")->name('Homezones_api_delete');
+
+
+
+//Route::resource('Horaireagents',App\Http\Controllers\API\HoraireagentController::class);
+// les routes d'affichage
+Route::get('horaireagents/{key}/{val}',[App\Http\Controllers\API\HoraireagentController::class,'data'])->withoutMiddleware("throttle:api")->name('Horaireagents_api_index2');
+Route::get('horaireagents',[App\Http\Controllers\API\HoraireagentController::class,'data1'])->withoutMiddleware("throttle:api")->name('Horaireagents_api_index');
+Route::post('horaireagents-Aggrid', [App\Http\Controllers\API\HoraireagentController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Horaireagents_api_aggrid');
+
+// la route de creation
+Route::post('horaireagents',[App\Http\Controllers\API\HoraireagentController::class,'create'])->withoutMiddleware("throttle:api")->name('Horaireagents_api_create');
+// la route d'edition
+Route::post('horaireagents/{Horaireagents}/update',[App\Http\Controllers\API\HoraireagentController::class,'update'])->withoutMiddleware("throttle:api")->name('Horaireagents_api_update');
+// la route de suppression
+Route::post('horaireagents/{Horaireagents}/delete',[App\Http\Controllers\API\HoraireagentController::class,'delete'])->withoutMiddleware("throttle:api")->name('Horaireagents_api_delete');
+// la route des actions
+Route::get('horaireagents/action',[App\Http\Controllers\API\HoraireagentController::class,'action'])->withoutMiddleware("throttle:api")->name('Horaireagents_api_delete');
+// la route des actions
+Route::post('horaireagents/action',[App\Http\Controllers\API\HoraireagentController::class,'action'])->withoutMiddleware("throttle:api")->name('Horaireagents_api_delete');
+
+
+
+//Route::resource('Horaires',App\Http\Controllers\API\HoraireController::class);
+// les routes d'affichage
+Route::get('horaires/{key}/{val}',[App\Http\Controllers\API\HoraireController::class,'data'])->withoutMiddleware("throttle:api")->name('Horaires_api_index2');
+Route::get('horaires',[App\Http\Controllers\API\HoraireController::class,'data1'])->withoutMiddleware("throttle:api")->name('Horaires_api_index');
+Route::post('horaires-Aggrid', [App\Http\Controllers\API\HoraireController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Horaires_api_aggrid');
+
+// la route de creation
+Route::post('horaires',[App\Http\Controllers\API\HoraireController::class,'create'])->withoutMiddleware("throttle:api")->name('Horaires_api_create');
+// la route d'edition
+Route::post('horaires/{Horaires}/update',[App\Http\Controllers\API\HoraireController::class,'update'])->withoutMiddleware("throttle:api")->name('Horaires_api_update');
+// la route de suppression
+Route::post('horaires/{Horaires}/delete',[App\Http\Controllers\API\HoraireController::class,'delete'])->withoutMiddleware("throttle:api")->name('Horaires_api_delete');
+// la route des actions
+Route::get('horaires/action',[App\Http\Controllers\API\HoraireController::class,'action'])->withoutMiddleware("throttle:api")->name('Horaires_api_delete');
+// la route des actions
+Route::post('horaires/action',[App\Http\Controllers\API\HoraireController::class,'action'])->withoutMiddleware("throttle:api")->name('Horaires_api_delete');
+
+
+
+//Route::resource('Horairesglobalspostes',App\Http\Controllers\API\HorairesglobalsposteController::class);
+// les routes d'affichage
+Route::get('horairesglobalspostes/{key}/{val}',[App\Http\Controllers\API\HorairesglobalsposteController::class,'data'])->withoutMiddleware("throttle:api")->name('Horairesglobalspostes_api_index2');
+Route::get('horairesglobalspostes',[App\Http\Controllers\API\HorairesglobalsposteController::class,'data1'])->withoutMiddleware("throttle:api")->name('Horairesglobalspostes_api_index');
+Route::post('horairesglobalspostes-Aggrid', [App\Http\Controllers\API\HorairesglobalsposteController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Horairesglobalspostes_api_aggrid');
+
+// la route de creation
+Route::post('horairesglobalspostes',[App\Http\Controllers\API\HorairesglobalsposteController::class,'create'])->withoutMiddleware("throttle:api")->name('Horairesglobalspostes_api_create');
+// la route d'edition
+Route::post('horairesglobalspostes/{Horairesglobalspostes}/update',[App\Http\Controllers\API\HorairesglobalsposteController::class,'update'])->withoutMiddleware("throttle:api")->name('Horairesglobalspostes_api_update');
+// la route de suppression
+Route::post('horairesglobalspostes/{Horairesglobalspostes}/delete',[App\Http\Controllers\API\HorairesglobalsposteController::class,'delete'])->withoutMiddleware("throttle:api")->name('Horairesglobalspostes_api_delete');
+// la route des actions
+Route::get('horairesglobalspostes/action',[App\Http\Controllers\API\HorairesglobalsposteController::class,'action'])->withoutMiddleware("throttle:api")->name('Horairesglobalspostes_api_delete');
+// la route des actions
+Route::post('horairesglobalspostes/action',[App\Http\Controllers\API\HorairesglobalsposteController::class,'action'])->withoutMiddleware("throttle:api")->name('Horairesglobalspostes_api_delete');
+
+
+
+//Route::resource('Horairestypespostes',App\Http\Controllers\API\HorairestypesposteController::class);
+// les routes d'affichage
+Route::get('horairestypespostes/{key}/{val}',[App\Http\Controllers\API\HorairestypesposteController::class,'data'])->withoutMiddleware("throttle:api")->name('Horairestypespostes_api_index2');
+Route::get('horairestypespostes',[App\Http\Controllers\API\HorairestypesposteController::class,'data1'])->withoutMiddleware("throttle:api")->name('Horairestypespostes_api_index');
+Route::post('horairestypespostes-Aggrid', [App\Http\Controllers\API\HorairestypesposteController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Horairestypespostes_api_aggrid');
+
+// la route de creation
+Route::post('horairestypespostes',[App\Http\Controllers\API\HorairestypesposteController::class,'create'])->withoutMiddleware("throttle:api")->name('Horairestypespostes_api_create');
+// la route d'edition
+Route::post('horairestypespostes/{Horairestypespostes}/update',[App\Http\Controllers\API\HorairestypesposteController::class,'update'])->withoutMiddleware("throttle:api")->name('Horairestypespostes_api_update');
+// la route de suppression
+Route::post('horairestypespostes/{Horairestypespostes}/delete',[App\Http\Controllers\API\HorairestypesposteController::class,'delete'])->withoutMiddleware("throttle:api")->name('Horairestypespostes_api_delete');
+// la route des actions
+Route::get('horairestypespostes/action',[App\Http\Controllers\API\HorairestypesposteController::class,'action'])->withoutMiddleware("throttle:api")->name('Horairestypespostes_api_delete');
+// la route des actions
+Route::post('horairestypespostes/action',[App\Http\Controllers\API\HorairestypesposteController::class,'action'])->withoutMiddleware("throttle:api")->name('Horairestypespostes_api_delete');
+
+
+
+//Route::resource('Horairestypessites',App\Http\Controllers\API\HorairestypessiteController::class);
+// les routes d'affichage
+Route::get('horairestypessites/{key}/{val}',[App\Http\Controllers\API\HorairestypessiteController::class,'data'])->withoutMiddleware("throttle:api")->name('Horairestypessites_api_index2');
+Route::get('horairestypessites',[App\Http\Controllers\API\HorairestypessiteController::class,'data1'])->withoutMiddleware("throttle:api")->name('Horairestypessites_api_index');
+Route::post('horairestypessites-Aggrid', [App\Http\Controllers\API\HorairestypessiteController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Horairestypessites_api_aggrid');
+
+// la route de creation
+Route::post('horairestypessites',[App\Http\Controllers\API\HorairestypessiteController::class,'create'])->withoutMiddleware("throttle:api")->name('Horairestypessites_api_create');
+// la route d'edition
+Route::post('horairestypessites/{Horairestypessites}/update',[App\Http\Controllers\API\HorairestypessiteController::class,'update'])->withoutMiddleware("throttle:api")->name('Horairestypessites_api_update');
+// la route de suppression
+Route::post('horairestypessites/{Horairestypessites}/delete',[App\Http\Controllers\API\HorairestypessiteController::class,'delete'])->withoutMiddleware("throttle:api")->name('Horairestypessites_api_delete');
+// la route des actions
+Route::get('horairestypessites/action',[App\Http\Controllers\API\HorairestypessiteController::class,'action'])->withoutMiddleware("throttle:api")->name('Horairestypessites_api_delete');
+// la route des actions
+Route::post('horairestypessites/action',[App\Http\Controllers\API\HorairestypessiteController::class,'action'])->withoutMiddleware("throttle:api")->name('Horairestypessites_api_delete');
+
+
+
+//Route::resource('Identifications',App\Http\Controllers\API\IdentificationController::class);
+// les routes d'affichage
+Route::get('identifications/{key}/{val}',[App\Http\Controllers\API\IdentificationController::class,'data'])->withoutMiddleware("throttle:api")->name('Identifications_api_index2');
+Route::get('identifications',[App\Http\Controllers\API\IdentificationController::class,'data1'])->withoutMiddleware("throttle:api")->name('Identifications_api_index');
+Route::post('identifications-Aggrid', [App\Http\Controllers\API\IdentificationController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Identifications_api_aggrid');
+
+// la route de creation
+Route::post('identifications',[App\Http\Controllers\API\IdentificationController::class,'create'])->withoutMiddleware("throttle:api")->name('Identifications_api_create');
+// la route d'edition
+Route::post('identifications/{Identifications}/update',[App\Http\Controllers\API\IdentificationController::class,'update'])->withoutMiddleware("throttle:api")->name('Identifications_api_update');
+// la route de suppression
+Route::post('identifications/{Identifications}/delete',[App\Http\Controllers\API\IdentificationController::class,'delete'])->withoutMiddleware("throttle:api")->name('Identifications_api_delete');
+// la route des actions
+Route::get('identifications/action',[App\Http\Controllers\API\IdentificationController::class,'action'])->withoutMiddleware("throttle:api")->name('Identifications_api_delete');
+// la route des actions
+Route::post('identifications/action',[App\Http\Controllers\API\IdentificationController::class,'action'])->withoutMiddleware("throttle:api")->name('Identifications_api_delete');
+
+
+
+//Route::resource('Imports',App\Http\Controllers\API\ImportController::class);
+// les routes d'affichage
+Route::get('imports/{key}/{val}',[App\Http\Controllers\API\ImportController::class,'data'])->withoutMiddleware("throttle:api")->name('Imports_api_index2');
+Route::get('imports',[App\Http\Controllers\API\ImportController::class,'data1'])->withoutMiddleware("throttle:api")->name('Imports_api_index');
+Route::post('imports-Aggrid', [App\Http\Controllers\API\ImportController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Imports_api_aggrid');
+
+// la route de creation
+Route::post('imports',[App\Http\Controllers\API\ImportController::class,'create'])->withoutMiddleware("throttle:api")->name('Imports_api_create');
+// la route d'edition
+Route::post('imports/{Imports}/update',[App\Http\Controllers\API\ImportController::class,'update'])->withoutMiddleware("throttle:api")->name('Imports_api_update');
+// la route de suppression
+Route::post('imports/{Imports}/delete',[App\Http\Controllers\API\ImportController::class,'delete'])->withoutMiddleware("throttle:api")->name('Imports_api_delete');
+// la route des actions
+Route::get('imports/action',[App\Http\Controllers\API\ImportController::class,'action'])->withoutMiddleware("throttle:api")->name('Imports_api_delete');
+// la route des actions
+Route::post('imports/action',[App\Http\Controllers\API\ImportController::class,'action'])->withoutMiddleware("throttle:api")->name('Imports_api_delete');
+
+
+
+//Route::resource('Initialisations',App\Http\Controllers\API\InitialisationController::class);
+// les routes d'affichage
+Route::get('initialisations/{key}/{val}',[App\Http\Controllers\API\InitialisationController::class,'data'])->withoutMiddleware("throttle:api")->name('Initialisations_api_index2');
+Route::get('initialisations',[App\Http\Controllers\API\InitialisationController::class,'data1'])->withoutMiddleware("throttle:api")->name('Initialisations_api_index');
+Route::post('initialisations-Aggrid', [App\Http\Controllers\API\InitialisationController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Initialisations_api_aggrid');
+
+// la route de creation
+Route::post('initialisations',[App\Http\Controllers\API\InitialisationController::class,'create'])->withoutMiddleware("throttle:api")->name('Initialisations_api_create');
+// la route d'edition
+Route::post('initialisations/{Initialisations}/update',[App\Http\Controllers\API\InitialisationController::class,'update'])->withoutMiddleware("throttle:api")->name('Initialisations_api_update');
+// la route de suppression
+Route::post('initialisations/{Initialisations}/delete',[App\Http\Controllers\API\InitialisationController::class,'delete'])->withoutMiddleware("throttle:api")->name('Initialisations_api_delete');
+// la route des actions
+Route::get('initialisations/action',[App\Http\Controllers\API\InitialisationController::class,'action'])->withoutMiddleware("throttle:api")->name('Initialisations_api_delete');
+// la route des actions
+Route::post('initialisations/action',[App\Http\Controllers\API\InitialisationController::class,'action'])->withoutMiddleware("throttle:api")->name('Initialisations_api_delete');
+
+
+
+//Route::resource('Introductions',App\Http\Controllers\API\IntroductionController::class);
+// les routes d'affichage
+Route::get('introductions/{key}/{val}',[App\Http\Controllers\API\IntroductionController::class,'data'])->withoutMiddleware("throttle:api")->name('Introductions_api_index2');
+Route::get('introductions',[App\Http\Controllers\API\IntroductionController::class,'data1'])->withoutMiddleware("throttle:api")->name('Introductions_api_index');
+Route::post('introductions-Aggrid', [App\Http\Controllers\API\IntroductionController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Introductions_api_aggrid');
+
+// la route de creation
+Route::post('introductions',[App\Http\Controllers\API\IntroductionController::class,'create'])->withoutMiddleware("throttle:api")->name('Introductions_api_create');
+// la route d'edition
+Route::post('introductions/{Introductions}/update',[App\Http\Controllers\API\IntroductionController::class,'update'])->withoutMiddleware("throttle:api")->name('Introductions_api_update');
+// la route de suppression
+Route::post('introductions/{Introductions}/delete',[App\Http\Controllers\API\IntroductionController::class,'delete'])->withoutMiddleware("throttle:api")->name('Introductions_api_delete');
+// la route des actions
+Route::get('introductions/action',[App\Http\Controllers\API\IntroductionController::class,'action'])->withoutMiddleware("throttle:api")->name('Introductions_api_delete');
+// la route des actions
+Route::post('introductions/action',[App\Http\Controllers\API\IntroductionController::class,'action'])->withoutMiddleware("throttle:api")->name('Introductions_api_delete');
+
+
+
+//Route::resource('Jobs',App\Http\Controllers\API\JobController::class);
+// les routes d'affichage
+Route::get('jobs/{key}/{val}',[App\Http\Controllers\API\JobController::class,'data'])->withoutMiddleware("throttle:api")->name('Jobs_api_index2');
+Route::get('jobs',[App\Http\Controllers\API\JobController::class,'data1'])->withoutMiddleware("throttle:api")->name('Jobs_api_index');
+Route::post('jobs-Aggrid', [App\Http\Controllers\API\JobController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Jobs_api_aggrid');
+
+// la route de creation
+Route::post('jobs',[App\Http\Controllers\API\JobController::class,'create'])->withoutMiddleware("throttle:api")->name('Jobs_api_create');
+// la route d'edition
+Route::post('jobs/{Jobs}/update',[App\Http\Controllers\API\JobController::class,'update'])->withoutMiddleware("throttle:api")->name('Jobs_api_update');
+// la route de suppression
+Route::post('jobs/{Jobs}/delete',[App\Http\Controllers\API\JobController::class,'delete'])->withoutMiddleware("throttle:api")->name('Jobs_api_delete');
+// la route des actions
+Route::get('jobs/action',[App\Http\Controllers\API\JobController::class,'action'])->withoutMiddleware("throttle:api")->name('Jobs_api_delete');
+// la route des actions
+Route::post('jobs/action',[App\Http\Controllers\API\JobController::class,'action'])->withoutMiddleware("throttle:api")->name('Jobs_api_delete');
+
+
+
+//Route::resource('Joursferies',App\Http\Controllers\API\JoursferieController::class);
+// les routes d'affichage
+Route::get('joursferies/{key}/{val}',[App\Http\Controllers\API\JoursferieController::class,'data'])->withoutMiddleware("throttle:api")->name('Joursferies_api_index2');
+Route::get('joursferies',[App\Http\Controllers\API\JoursferieController::class,'data1'])->withoutMiddleware("throttle:api")->name('Joursferies_api_index');
+Route::post('joursferies-Aggrid', [App\Http\Controllers\API\JoursferieController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Joursferies_api_aggrid');
+
+// la route de creation
+Route::post('joursferies',[App\Http\Controllers\API\JoursferieController::class,'create'])->withoutMiddleware("throttle:api")->name('Joursferies_api_create');
+// la route d'edition
+Route::post('joursferies/{Joursferies}/update',[App\Http\Controllers\API\JoursferieController::class,'update'])->withoutMiddleware("throttle:api")->name('Joursferies_api_update');
+// la route de suppression
+Route::post('joursferies/{Joursferies}/delete',[App\Http\Controllers\API\JoursferieController::class,'delete'])->withoutMiddleware("throttle:api")->name('Joursferies_api_delete');
+// la route des actions
+Route::get('joursferies/action',[App\Http\Controllers\API\JoursferieController::class,'action'])->withoutMiddleware("throttle:api")->name('Joursferies_api_delete');
+// la route des actions
+Route::post('joursferies/action',[App\Http\Controllers\API\JoursferieController::class,'action'])->withoutMiddleware("throttle:api")->name('Joursferies_api_delete');
+
+
+
+//Route::resource('Lignes',App\Http\Controllers\API\LigneController::class);
+// les routes d'affichage
+Route::get('lignes/{key}/{val}',[App\Http\Controllers\API\LigneController::class,'data'])->withoutMiddleware("throttle:api")->name('Lignes_api_index2');
+Route::get('lignes',[App\Http\Controllers\API\LigneController::class,'data1'])->withoutMiddleware("throttle:api")->name('Lignes_api_index');
+Route::post('lignes-Aggrid', [App\Http\Controllers\API\LigneController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Lignes_api_aggrid');
+
+// la route de creation
+Route::post('lignes',[App\Http\Controllers\API\LigneController::class,'create'])->withoutMiddleware("throttle:api")->name('Lignes_api_create');
+// la route d'edition
+Route::post('lignes/{Lignes}/update',[App\Http\Controllers\API\LigneController::class,'update'])->withoutMiddleware("throttle:api")->name('Lignes_api_update');
+// la route de suppression
+Route::post('lignes/{Lignes}/delete',[App\Http\Controllers\API\LigneController::class,'delete'])->withoutMiddleware("throttle:api")->name('Lignes_api_delete');
+// la route des actions
+Route::get('lignes/action',[App\Http\Controllers\API\LigneController::class,'action'])->withoutMiddleware("throttle:api")->name('Lignes_api_delete');
+// la route des actions
+Route::post('lignes/action',[App\Http\Controllers\API\LigneController::class,'action'])->withoutMiddleware("throttle:api")->name('Lignes_api_delete');
+
+
+
+//Route::resource('Lignesmoyenstransports',App\Http\Controllers\API\LignesmoyenstransportController::class);
+// les routes d'affichage
+Route::get('lignesmoyenstransports/{key}/{val}',[App\Http\Controllers\API\LignesmoyenstransportController::class,'data'])->withoutMiddleware("throttle:api")->name('Lignesmoyenstransports_api_index2');
+Route::get('lignesmoyenstransports',[App\Http\Controllers\API\LignesmoyenstransportController::class,'data1'])->withoutMiddleware("throttle:api")->name('Lignesmoyenstransports_api_index');
+Route::post('lignesmoyenstransports-Aggrid', [App\Http\Controllers\API\LignesmoyenstransportController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Lignesmoyenstransports_api_aggrid');
+
+// la route de creation
+Route::post('lignesmoyenstransports',[App\Http\Controllers\API\LignesmoyenstransportController::class,'create'])->withoutMiddleware("throttle:api")->name('Lignesmoyenstransports_api_create');
+// la route d'edition
+Route::post('lignesmoyenstransports/{Lignesmoyenstransports}/update',[App\Http\Controllers\API\LignesmoyenstransportController::class,'update'])->withoutMiddleware("throttle:api")->name('Lignesmoyenstransports_api_update');
+// la route de suppression
+Route::post('lignesmoyenstransports/{Lignesmoyenstransports}/delete',[App\Http\Controllers\API\LignesmoyenstransportController::class,'delete'])->withoutMiddleware("throttle:api")->name('Lignesmoyenstransports_api_delete');
+// la route des actions
+Route::get('lignesmoyenstransports/action',[App\Http\Controllers\API\LignesmoyenstransportController::class,'action'])->withoutMiddleware("throttle:api")->name('Lignesmoyenstransports_api_delete');
+// la route des actions
+Route::post('lignesmoyenstransports/action',[App\Http\Controllers\API\LignesmoyenstransportController::class,'action'])->withoutMiddleware("throttle:api")->name('Lignesmoyenstransports_api_delete');
+
+
+
+//Route::resource('Listesjours',App\Http\Controllers\API\ListesjourController::class);
+// les routes d'affichage
+Route::get('listesjours/{key}/{val}',[App\Http\Controllers\API\ListesjourController::class,'data'])->withoutMiddleware("throttle:api")->name('Listesjours_api_index2');
+Route::get('listesjours',[App\Http\Controllers\API\ListesjourController::class,'data1'])->withoutMiddleware("throttle:api")->name('Listesjours_api_index');
+Route::post('listesjours-Aggrid', [App\Http\Controllers\API\ListesjourController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Listesjours_api_aggrid');
+
+// la route de creation
+Route::post('listesjours',[App\Http\Controllers\API\ListesjourController::class,'create'])->withoutMiddleware("throttle:api")->name('Listesjours_api_create');
+// la route d'edition
+Route::post('listesjours/{Listesjours}/update',[App\Http\Controllers\API\ListesjourController::class,'update'])->withoutMiddleware("throttle:api")->name('Listesjours_api_update');
+// la route de suppression
+Route::post('listesjours/{Listesjours}/delete',[App\Http\Controllers\API\ListesjourController::class,'delete'])->withoutMiddleware("throttle:api")->name('Listesjours_api_delete');
+// la route des actions
+Route::get('listesjours/action',[App\Http\Controllers\API\ListesjourController::class,'action'])->withoutMiddleware("throttle:api")->name('Listesjours_api_delete');
+// la route des actions
+Route::post('listesjours/action',[App\Http\Controllers\API\ListesjourController::class,'action'])->withoutMiddleware("throttle:api")->name('Listesjours_api_delete');
+
+
+
+//Route::resource('Listingsetats',App\Http\Controllers\API\ListingsetatController::class);
+// les routes d'affichage
+Route::get('listingsetats/{key}/{val}',[App\Http\Controllers\API\ListingsetatController::class,'data'])->withoutMiddleware("throttle:api")->name('Listingsetats_api_index2');
+Route::get('listingsetats',[App\Http\Controllers\API\ListingsetatController::class,'data1'])->withoutMiddleware("throttle:api")->name('Listingsetats_api_index');
+Route::post('listingsetats-Aggrid', [App\Http\Controllers\API\ListingsetatController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Listingsetats_api_aggrid');
+
+// la route de creation
+Route::post('listingsetats',[App\Http\Controllers\API\ListingsetatController::class,'create'])->withoutMiddleware("throttle:api")->name('Listingsetats_api_create');
+// la route d'edition
+Route::post('listingsetats/{Listingsetats}/update',[App\Http\Controllers\API\ListingsetatController::class,'update'])->withoutMiddleware("throttle:api")->name('Listingsetats_api_update');
+// la route de suppression
+Route::post('listingsetats/{Listingsetats}/delete',[App\Http\Controllers\API\ListingsetatController::class,'delete'])->withoutMiddleware("throttle:api")->name('Listingsetats_api_delete');
+// la route des actions
+Route::get('listingsetats/action',[App\Http\Controllers\API\ListingsetatController::class,'action'])->withoutMiddleware("throttle:api")->name('Listingsetats_api_delete');
+// la route des actions
+Route::post('listingsetats/action',[App\Http\Controllers\API\ListingsetatController::class,'action'])->withoutMiddleware("throttle:api")->name('Listingsetats_api_delete');
+
+
+
+//Route::resource('Logins',App\Http\Controllers\API\LoginController::class);
+// les routes d'affichage
+Route::get('logins/{key}/{val}',[App\Http\Controllers\API\LoginController::class,'data'])->withoutMiddleware("throttle:api")->name('Logins_api_index2');
+Route::get('logins',[App\Http\Controllers\API\LoginController::class,'data1'])->withoutMiddleware("throttle:api")->name('Logins_api_index');
+Route::post('logins-Aggrid', [App\Http\Controllers\API\LoginController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Logins_api_aggrid');
+
+// la route de creation
+Route::post('logins',[App\Http\Controllers\API\LoginController::class,'create'])->withoutMiddleware("throttle:api")->name('Logins_api_create');
+// la route d'edition
+Route::post('logins/{Logins}/update',[App\Http\Controllers\API\LoginController::class,'update'])->withoutMiddleware("throttle:api")->name('Logins_api_update');
+// la route de suppression
+Route::post('logins/{Logins}/delete',[App\Http\Controllers\API\LoginController::class,'delete'])->withoutMiddleware("throttle:api")->name('Logins_api_delete');
+// la route des actions
+Route::get('logins/action',[App\Http\Controllers\API\LoginController::class,'action'])->withoutMiddleware("throttle:api")->name('Logins_api_delete');
+// la route des actions
+Route::post('logins/action',[App\Http\Controllers\API\LoginController::class,'action'])->withoutMiddleware("throttle:api")->name('Logins_api_delete');
+
+
+
+//Route::resource('Logs',App\Http\Controllers\API\LogController::class);
+// les routes d'affichage
+Route::get('logs/{key}/{val}',[App\Http\Controllers\API\LogController::class,'data'])->withoutMiddleware("throttle:api")->name('Logs_api_index2');
+Route::get('logs',[App\Http\Controllers\API\LogController::class,'data1'])->withoutMiddleware("throttle:api")->name('Logs_api_index');
+Route::post('logs-Aggrid', [App\Http\Controllers\API\LogController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Logs_api_aggrid');
+
+// la route de creation
+Route::post('logs',[App\Http\Controllers\API\LogController::class,'create'])->withoutMiddleware("throttle:api")->name('Logs_api_create');
+// la route d'edition
+Route::post('logs/{Logs}/update',[App\Http\Controllers\API\LogController::class,'update'])->withoutMiddleware("throttle:api")->name('Logs_api_update');
+// la route de suppression
+Route::post('logs/{Logs}/delete',[App\Http\Controllers\API\LogController::class,'delete'])->withoutMiddleware("throttle:api")->name('Logs_api_delete');
+// la route des actions
+Route::get('logs/action',[App\Http\Controllers\API\LogController::class,'action'])->withoutMiddleware("throttle:api")->name('Logs_api_delete');
+// la route des actions
+Route::post('logs/action',[App\Http\Controllers\API\LogController::class,'action'])->withoutMiddleware("throttle:api")->name('Logs_api_delete');
+
+
+
+//Route::resource('Matrimoniales',App\Http\Controllers\API\MatrimonialeController::class);
+// les routes d'affichage
+Route::get('matrimoniales/{key}/{val}',[App\Http\Controllers\API\MatrimonialeController::class,'data'])->withoutMiddleware("throttle:api")->name('Matrimoniales_api_index2');
+Route::get('matrimoniales',[App\Http\Controllers\API\MatrimonialeController::class,'data1'])->withoutMiddleware("throttle:api")->name('Matrimoniales_api_index');
+Route::post('matrimoniales-Aggrid', [App\Http\Controllers\API\MatrimonialeController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Matrimoniales_api_aggrid');
+
+// la route de creation
+Route::post('matrimoniales',[App\Http\Controllers\API\MatrimonialeController::class,'create'])->withoutMiddleware("throttle:api")->name('Matrimoniales_api_create');
+// la route d'edition
+Route::post('matrimoniales/{Matrimoniales}/update',[App\Http\Controllers\API\MatrimonialeController::class,'update'])->withoutMiddleware("throttle:api")->name('Matrimoniales_api_update');
+// la route de suppression
+Route::post('matrimoniales/{Matrimoniales}/delete',[App\Http\Controllers\API\MatrimonialeController::class,'delete'])->withoutMiddleware("throttle:api")->name('Matrimoniales_api_delete');
+// la route des actions
+Route::get('matrimoniales/action',[App\Http\Controllers\API\MatrimonialeController::class,'action'])->withoutMiddleware("throttle:api")->name('Matrimoniales_api_delete');
+// la route des actions
+Route::post('matrimoniales/action',[App\Http\Controllers\API\MatrimonialeController::class,'action'])->withoutMiddleware("throttle:api")->name('Matrimoniales_api_delete');
+
+
+
+//Route::resource('Menus',App\Http\Controllers\API\MenuController::class);
+// les routes d'affichage
+Route::get('menus/{key}/{val}',[App\Http\Controllers\API\MenuController::class,'data'])->withoutMiddleware("throttle:api")->name('Menus_api_index2');
+Route::get('menus',[App\Http\Controllers\API\MenuController::class,'data1'])->withoutMiddleware("throttle:api")->name('Menus_api_index');
+Route::post('menus-Aggrid', [App\Http\Controllers\API\MenuController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Menus_api_aggrid');
+
+// la route de creation
+Route::post('menus',[App\Http\Controllers\API\MenuController::class,'create'])->withoutMiddleware("throttle:api")->name('Menus_api_create');
+// la route d'edition
+Route::post('menus/{Menus}/update',[App\Http\Controllers\API\MenuController::class,'update'])->withoutMiddleware("throttle:api")->name('Menus_api_update');
+// la route de suppression
+Route::post('menus/{Menus}/delete',[App\Http\Controllers\API\MenuController::class,'delete'])->withoutMiddleware("throttle:api")->name('Menus_api_delete');
+// la route des actions
+Route::get('menus/action',[App\Http\Controllers\API\MenuController::class,'action'])->withoutMiddleware("throttle:api")->name('Menus_api_delete');
+// la route des actions
+Route::post('menus/action',[App\Http\Controllers\API\MenuController::class,'action'])->withoutMiddleware("throttle:api")->name('Menus_api_delete');
+
+
+
+//Route::resource('Model_has_permissions',App\Http\Controllers\API\ModelHasPermissionController::class);
+// les routes d'affichage
+Route::get('model_has_permissions/{key}/{val}',[App\Http\Controllers\API\ModelHasPermissionController::class,'data'])->withoutMiddleware("throttle:api")->name('Model_has_permissions_api_index2');
+Route::get('model_has_permissions',[App\Http\Controllers\API\ModelHasPermissionController::class,'data1'])->withoutMiddleware("throttle:api")->name('Model_has_permissions_api_index');
+Route::post('model_has_permissions-Aggrid', [App\Http\Controllers\API\ModelHasPermissionController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Model_has_permissions_api_aggrid');
+
+// la route de creation
+Route::post('model_has_permissions',[App\Http\Controllers\API\ModelHasPermissionController::class,'create'])->withoutMiddleware("throttle:api")->name('Model_has_permissions_api_create');
+// la route d'edition
+Route::post('model_has_permissions/{Model_has_permissions}/update',[App\Http\Controllers\API\ModelHasPermissionController::class,'update'])->withoutMiddleware("throttle:api")->name('Model_has_permissions_api_update');
+// la route de suppression
+Route::post('model_has_permissions/{Model_has_permissions}/delete',[App\Http\Controllers\API\ModelHasPermissionController::class,'delete'])->withoutMiddleware("throttle:api")->name('Model_has_permissions_api_delete');
+// la route des actions
+Route::get('model_has_permissions/action',[App\Http\Controllers\API\ModelHasPermissionController::class,'action'])->withoutMiddleware("throttle:api")->name('Model_has_permissions_api_delete');
+// la route des actions
+Route::post('model_has_permissions/action',[App\Http\Controllers\API\ModelHasPermissionController::class,'action'])->withoutMiddleware("throttle:api")->name('Model_has_permissions_api_delete');
+
+
+
+//Route::resource('Modelslistings',App\Http\Controllers\API\ModelslistingController::class);
+// les routes d'affichage
+Route::get('modelslistings/{key}/{val}',[App\Http\Controllers\API\ModelslistingController::class,'data'])->withoutMiddleware("throttle:api")->name('Modelslistings_api_index2');
+Route::get('modelslistings',[App\Http\Controllers\API\ModelslistingController::class,'data1'])->withoutMiddleware("throttle:api")->name('Modelslistings_api_index');
+Route::post('modelslistings-Aggrid', [App\Http\Controllers\API\ModelslistingController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Modelslistings_api_aggrid');
+
+// la route de creation
+Route::post('modelslistings',[App\Http\Controllers\API\ModelslistingController::class,'create'])->withoutMiddleware("throttle:api")->name('Modelslistings_api_create');
+// la route d'edition
+Route::post('modelslistings/{Modelslistings}/update',[App\Http\Controllers\API\ModelslistingController::class,'update'])->withoutMiddleware("throttle:api")->name('Modelslistings_api_update');
+// la route de suppression
+Route::post('modelslistings/{Modelslistings}/delete',[App\Http\Controllers\API\ModelslistingController::class,'delete'])->withoutMiddleware("throttle:api")->name('Modelslistings_api_delete');
+// la route des actions
+Route::get('modelslistings/action',[App\Http\Controllers\API\ModelslistingController::class,'action'])->withoutMiddleware("throttle:api")->name('Modelslistings_api_delete');
+// la route des actions
+Route::post('modelslistings/action',[App\Http\Controllers\API\ModelslistingController::class,'action'])->withoutMiddleware("throttle:api")->name('Modelslistings_api_delete');
+
+
+
+//Route::resource('Moyenstransports',App\Http\Controllers\API\MoyenstransportController::class);
+// les routes d'affichage
+Route::get('moyenstransports/{key}/{val}',[App\Http\Controllers\API\MoyenstransportController::class,'data'])->withoutMiddleware("throttle:api")->name('Moyenstransports_api_index2');
+Route::get('moyenstransports',[App\Http\Controllers\API\MoyenstransportController::class,'data1'])->withoutMiddleware("throttle:api")->name('Moyenstransports_api_index');
+Route::post('moyenstransports-Aggrid', [App\Http\Controllers\API\MoyenstransportController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Moyenstransports_api_aggrid');
+
+// la route de creation
+Route::post('moyenstransports',[App\Http\Controllers\API\MoyenstransportController::class,'create'])->withoutMiddleware("throttle:api")->name('Moyenstransports_api_create');
+// la route d'edition
+Route::post('moyenstransports/{Moyenstransports}/update',[App\Http\Controllers\API\MoyenstransportController::class,'update'])->withoutMiddleware("throttle:api")->name('Moyenstransports_api_update');
+// la route de suppression
+Route::post('moyenstransports/{Moyenstransports}/delete',[App\Http\Controllers\API\MoyenstransportController::class,'delete'])->withoutMiddleware("throttle:api")->name('Moyenstransports_api_delete');
+// la route des actions
+Route::get('moyenstransports/action',[App\Http\Controllers\API\MoyenstransportController::class,'action'])->withoutMiddleware("throttle:api")->name('Moyenstransports_api_delete');
+// la route des actions
+Route::post('moyenstransports/action',[App\Http\Controllers\API\MoyenstransportController::class,'action'])->withoutMiddleware("throttle:api")->name('Moyenstransports_api_delete');
+
+
+
+//Route::resource('Nationalites',App\Http\Controllers\API\NationaliteController::class);
+// les routes d'affichage
+Route::get('nationalites/{key}/{val}',[App\Http\Controllers\API\NationaliteController::class,'data'])->withoutMiddleware("throttle:api")->name('Nationalites_api_index2');
+Route::get('nationalites',[App\Http\Controllers\API\NationaliteController::class,'data1'])->withoutMiddleware("throttle:api")->name('Nationalites_api_index');
+Route::post('nationalites-Aggrid', [App\Http\Controllers\API\NationaliteController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Nationalites_api_aggrid');
+
+// la route de creation
+Route::post('nationalites',[App\Http\Controllers\API\NationaliteController::class,'create'])->withoutMiddleware("throttle:api")->name('Nationalites_api_create');
+// la route d'edition
+Route::post('nationalites/{Nationalites}/update',[App\Http\Controllers\API\NationaliteController::class,'update'])->withoutMiddleware("throttle:api")->name('Nationalites_api_update');
+// la route de suppression
+Route::post('nationalites/{Nationalites}/delete',[App\Http\Controllers\API\NationaliteController::class,'delete'])->withoutMiddleware("throttle:api")->name('Nationalites_api_delete');
+// la route des actions
+Route::get('nationalites/action',[App\Http\Controllers\API\NationaliteController::class,'action'])->withoutMiddleware("throttle:api")->name('Nationalites_api_delete');
+// la route des actions
+Route::post('nationalites/action',[App\Http\Controllers\API\NationaliteController::class,'action'])->withoutMiddleware("throttle:api")->name('Nationalites_api_delete');
+
+
+
+//Route::resource('Oauth_access_tokens',App\Http\Controllers\API\OauthAccessTokenController::class);
+// les routes d'affichage
+Route::get('oauth_access_tokens/{key}/{val}',[App\Http\Controllers\API\OauthAccessTokenController::class,'data'])->withoutMiddleware("throttle:api")->name('Oauth_access_tokens_api_index2');
+Route::get('oauth_access_tokens',[App\Http\Controllers\API\OauthAccessTokenController::class,'data1'])->withoutMiddleware("throttle:api")->name('Oauth_access_tokens_api_index');
+Route::post('oauth_access_tokens-Aggrid', [App\Http\Controllers\API\OauthAccessTokenController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Oauth_access_tokens_api_aggrid');
+
+// la route de creation
+Route::post('oauth_access_tokens',[App\Http\Controllers\API\OauthAccessTokenController::class,'create'])->withoutMiddleware("throttle:api")->name('Oauth_access_tokens_api_create');
+// la route d'edition
+Route::post('oauth_access_tokens/{Oauth_access_tokens}/update',[App\Http\Controllers\API\OauthAccessTokenController::class,'update'])->withoutMiddleware("throttle:api")->name('Oauth_access_tokens_api_update');
+// la route de suppression
+Route::post('oauth_access_tokens/{Oauth_access_tokens}/delete',[App\Http\Controllers\API\OauthAccessTokenController::class,'delete'])->withoutMiddleware("throttle:api")->name('Oauth_access_tokens_api_delete');
+// la route des actions
+Route::get('oauth_access_tokens/action',[App\Http\Controllers\API\OauthAccessTokenController::class,'action'])->withoutMiddleware("throttle:api")->name('Oauth_access_tokens_api_delete');
+// la route des actions
+Route::post('oauth_access_tokens/action',[App\Http\Controllers\API\OauthAccessTokenController::class,'action'])->withoutMiddleware("throttle:api")->name('Oauth_access_tokens_api_delete');
+
+
+
+//Route::resource('Oauth_auth_codes',App\Http\Controllers\API\OauthAuthCodeController::class);
+// les routes d'affichage
+Route::get('oauth_auth_codes/{key}/{val}',[App\Http\Controllers\API\OauthAuthCodeController::class,'data'])->withoutMiddleware("throttle:api")->name('Oauth_auth_codes_api_index2');
+Route::get('oauth_auth_codes',[App\Http\Controllers\API\OauthAuthCodeController::class,'data1'])->withoutMiddleware("throttle:api")->name('Oauth_auth_codes_api_index');
+Route::post('oauth_auth_codes-Aggrid', [App\Http\Controllers\API\OauthAuthCodeController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Oauth_auth_codes_api_aggrid');
+
+// la route de creation
+Route::post('oauth_auth_codes',[App\Http\Controllers\API\OauthAuthCodeController::class,'create'])->withoutMiddleware("throttle:api")->name('Oauth_auth_codes_api_create');
+// la route d'edition
+Route::post('oauth_auth_codes/{Oauth_auth_codes}/update',[App\Http\Controllers\API\OauthAuthCodeController::class,'update'])->withoutMiddleware("throttle:api")->name('Oauth_auth_codes_api_update');
+// la route de suppression
+Route::post('oauth_auth_codes/{Oauth_auth_codes}/delete',[App\Http\Controllers\API\OauthAuthCodeController::class,'delete'])->withoutMiddleware("throttle:api")->name('Oauth_auth_codes_api_delete');
+// la route des actions
+Route::get('oauth_auth_codes/action',[App\Http\Controllers\API\OauthAuthCodeController::class,'action'])->withoutMiddleware("throttle:api")->name('Oauth_auth_codes_api_delete');
+// la route des actions
+Route::post('oauth_auth_codes/action',[App\Http\Controllers\API\OauthAuthCodeController::class,'action'])->withoutMiddleware("throttle:api")->name('Oauth_auth_codes_api_delete');
+
+
+
+//Route::resource('Oauth_clients',App\Http\Controllers\API\OauthClientController::class);
+// les routes d'affichage
+Route::get('oauth_clients/{key}/{val}',[App\Http\Controllers\API\OauthClientController::class,'data'])->withoutMiddleware("throttle:api")->name('Oauth_clients_api_index2');
+Route::get('oauth_clients',[App\Http\Controllers\API\OauthClientController::class,'data1'])->withoutMiddleware("throttle:api")->name('Oauth_clients_api_index');
+Route::post('oauth_clients-Aggrid', [App\Http\Controllers\API\OauthClientController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Oauth_clients_api_aggrid');
+
+// la route de creation
+Route::post('oauth_clients',[App\Http\Controllers\API\OauthClientController::class,'create'])->withoutMiddleware("throttle:api")->name('Oauth_clients_api_create');
+// la route d'edition
+Route::post('oauth_clients/{Oauth_clients}/update',[App\Http\Controllers\API\OauthClientController::class,'update'])->withoutMiddleware("throttle:api")->name('Oauth_clients_api_update');
+// la route de suppression
+Route::post('oauth_clients/{Oauth_clients}/delete',[App\Http\Controllers\API\OauthClientController::class,'delete'])->withoutMiddleware("throttle:api")->name('Oauth_clients_api_delete');
+// la route des actions
+Route::get('oauth_clients/action',[App\Http\Controllers\API\OauthClientController::class,'action'])->withoutMiddleware("throttle:api")->name('Oauth_clients_api_delete');
+// la route des actions
+Route::post('oauth_clients/action',[App\Http\Controllers\API\OauthClientController::class,'action'])->withoutMiddleware("throttle:api")->name('Oauth_clients_api_delete');
+
+
+
+//Route::resource('Oauth_personal_access_clients',App\Http\Controllers\API\OauthPersonalAccessClientController::class);
+// les routes d'affichage
+Route::get('oauth_personal_access_clients/{key}/{val}',[App\Http\Controllers\API\OauthPersonalAccessClientController::class,'data'])->withoutMiddleware("throttle:api")->name('Oauth_personal_access_clients_api_index2');
+Route::get('oauth_personal_access_clients',[App\Http\Controllers\API\OauthPersonalAccessClientController::class,'data1'])->withoutMiddleware("throttle:api")->name('Oauth_personal_access_clients_api_index');
+Route::post('oauth_personal_access_clients-Aggrid', [App\Http\Controllers\API\OauthPersonalAccessClientController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Oauth_personal_access_clients_api_aggrid');
+
+// la route de creation
+Route::post('oauth_personal_access_clients',[App\Http\Controllers\API\OauthPersonalAccessClientController::class,'create'])->withoutMiddleware("throttle:api")->name('Oauth_personal_access_clients_api_create');
+// la route d'edition
+Route::post('oauth_personal_access_clients/{Oauth_personal_access_clients}/update',[App\Http\Controllers\API\OauthPersonalAccessClientController::class,'update'])->withoutMiddleware("throttle:api")->name('Oauth_personal_access_clients_api_update');
+// la route de suppression
+Route::post('oauth_personal_access_clients/{Oauth_personal_access_clients}/delete',[App\Http\Controllers\API\OauthPersonalAccessClientController::class,'delete'])->withoutMiddleware("throttle:api")->name('Oauth_personal_access_clients_api_delete');
+// la route des actions
+Route::get('oauth_personal_access_clients/action',[App\Http\Controllers\API\OauthPersonalAccessClientController::class,'action'])->withoutMiddleware("throttle:api")->name('Oauth_personal_access_clients_api_delete');
+// la route des actions
+Route::post('oauth_personal_access_clients/action',[App\Http\Controllers\API\OauthPersonalAccessClientController::class,'action'])->withoutMiddleware("throttle:api")->name('Oauth_personal_access_clients_api_delete');
+
+
+
+//Route::resource('Oauth_refresh_tokens',App\Http\Controllers\API\OauthRefreshTokenController::class);
+// les routes d'affichage
+Route::get('oauth_refresh_tokens/{key}/{val}',[App\Http\Controllers\API\OauthRefreshTokenController::class,'data'])->withoutMiddleware("throttle:api")->name('Oauth_refresh_tokens_api_index2');
+Route::get('oauth_refresh_tokens',[App\Http\Controllers\API\OauthRefreshTokenController::class,'data1'])->withoutMiddleware("throttle:api")->name('Oauth_refresh_tokens_api_index');
+Route::post('oauth_refresh_tokens-Aggrid', [App\Http\Controllers\API\OauthRefreshTokenController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Oauth_refresh_tokens_api_aggrid');
+
+// la route de creation
+Route::post('oauth_refresh_tokens',[App\Http\Controllers\API\OauthRefreshTokenController::class,'create'])->withoutMiddleware("throttle:api")->name('Oauth_refresh_tokens_api_create');
+// la route d'edition
+Route::post('oauth_refresh_tokens/{Oauth_refresh_tokens}/update',[App\Http\Controllers\API\OauthRefreshTokenController::class,'update'])->withoutMiddleware("throttle:api")->name('Oauth_refresh_tokens_api_update');
+// la route de suppression
+Route::post('oauth_refresh_tokens/{Oauth_refresh_tokens}/delete',[App\Http\Controllers\API\OauthRefreshTokenController::class,'delete'])->withoutMiddleware("throttle:api")->name('Oauth_refresh_tokens_api_delete');
+// la route des actions
+Route::get('oauth_refresh_tokens/action',[App\Http\Controllers\API\OauthRefreshTokenController::class,'action'])->withoutMiddleware("throttle:api")->name('Oauth_refresh_tokens_api_delete');
+// la route des actions
+Route::post('oauth_refresh_tokens/action',[App\Http\Controllers\API\OauthRefreshTokenController::class,'action'])->withoutMiddleware("throttle:api")->name('Oauth_refresh_tokens_api_delete');
+
+
+
+//Route::resource('Passagesrondes',App\Http\Controllers\API\PassagesrondeController::class);
+// les routes d'affichage
+Route::get('passagesrondes/{key}/{val}',[App\Http\Controllers\API\PassagesrondeController::class,'data'])->withoutMiddleware("throttle:api")->name('Passagesrondes_api_index2');
+Route::get('passagesrondes',[App\Http\Controllers\API\PassagesrondeController::class,'data1'])->withoutMiddleware("throttle:api")->name('Passagesrondes_api_index');
+Route::post('passagesrondes-Aggrid', [App\Http\Controllers\API\PassagesrondeController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Passagesrondes_api_aggrid');
+
+// la route de creation
+Route::post('passagesrondes',[App\Http\Controllers\API\PassagesrondeController::class,'create'])->withoutMiddleware("throttle:api")->name('Passagesrondes_api_create');
+// la route d'edition
+Route::post('passagesrondes/{Passagesrondes}/update',[App\Http\Controllers\API\PassagesrondeController::class,'update'])->withoutMiddleware("throttle:api")->name('Passagesrondes_api_update');
+// la route de suppression
+Route::post('passagesrondes/{Passagesrondes}/delete',[App\Http\Controllers\API\PassagesrondeController::class,'delete'])->withoutMiddleware("throttle:api")->name('Passagesrondes_api_delete');
+// la route des actions
+Route::get('passagesrondes/action',[App\Http\Controllers\API\PassagesrondeController::class,'action'])->withoutMiddleware("throttle:api")->name('Passagesrondes_api_delete');
+// la route des actions
+Route::post('passagesrondes/action',[App\Http\Controllers\API\PassagesrondeController::class,'action'])->withoutMiddleware("throttle:api")->name('Passagesrondes_api_delete');
+
+
+
+//Route::resource('Pastilles',App\Http\Controllers\API\PastilleController::class);
+// les routes d'affichage
+Route::get('pastilles/{key}/{val}',[App\Http\Controllers\API\PastilleController::class,'data'])->withoutMiddleware("throttle:api")->name('Pastilles_api_index2');
+Route::get('pastilles',[App\Http\Controllers\API\PastilleController::class,'data1'])->withoutMiddleware("throttle:api")->name('Pastilles_api_index');
+Route::post('pastilles-Aggrid', [App\Http\Controllers\API\PastilleController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Pastilles_api_aggrid');
+
+// la route de creation
+Route::post('pastilles',[App\Http\Controllers\API\PastilleController::class,'create'])->withoutMiddleware("throttle:api")->name('Pastilles_api_create');
+// la route d'edition
+Route::post('pastilles/{Pastilles}/update',[App\Http\Controllers\API\PastilleController::class,'update'])->withoutMiddleware("throttle:api")->name('Pastilles_api_update');
+// la route de suppression
+Route::post('pastilles/{Pastilles}/delete',[App\Http\Controllers\API\PastilleController::class,'delete'])->withoutMiddleware("throttle:api")->name('Pastilles_api_delete');
+// la route des actions
+Route::get('pastilles/action',[App\Http\Controllers\API\PastilleController::class,'action'])->withoutMiddleware("throttle:api")->name('Pastilles_api_delete');
+// la route des actions
+Route::post('pastilles/action',[App\Http\Controllers\API\PastilleController::class,'action'])->withoutMiddleware("throttle:api")->name('Pastilles_api_delete');
+
+
+
+//Route::resource('Permissions',App\Http\Controllers\API\PermissionController::class);
+// les routes d'affichage
+Route::get('permissions/{key}/{val}',[App\Http\Controllers\API\PermissionController::class,'data'])->withoutMiddleware("throttle:api")->name('Permissions_api_index2');
+Route::get('permissions',[App\Http\Controllers\API\PermissionController::class,'data1'])->withoutMiddleware("throttle:api")->name('Permissions_api_index');
+Route::post('permissions-Aggrid', [App\Http\Controllers\API\PermissionController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Permissions_api_aggrid');
+
+// la route de creation
+Route::post('permissions',[App\Http\Controllers\API\PermissionController::class,'create'])->withoutMiddleware("throttle:api")->name('Permissions_api_create');
+// la route d'edition
+Route::post('permissions/{Permissions}/update',[App\Http\Controllers\API\PermissionController::class,'update'])->withoutMiddleware("throttle:api")->name('Permissions_api_update');
+// la route de suppression
+Route::post('permissions/{Permissions}/delete',[App\Http\Controllers\API\PermissionController::class,'delete'])->withoutMiddleware("throttle:api")->name('Permissions_api_delete');
+// la route des actions
+Route::get('permissions/action',[App\Http\Controllers\API\PermissionController::class,'action'])->withoutMiddleware("throttle:api")->name('Permissions_api_delete');
+// la route des actions
+Route::post('permissions/action',[App\Http\Controllers\API\PermissionController::class,'action'])->withoutMiddleware("throttle:api")->name('Permissions_api_delete');
+
+
+
+//Route::resource('Perms',App\Http\Controllers\API\PermController::class);
+// les routes d'affichage
+Route::get('perms/{key}/{val}',[App\Http\Controllers\API\PermController::class,'data'])->withoutMiddleware("throttle:api")->name('Perms_api_index2');
+Route::get('perms',[App\Http\Controllers\API\PermController::class,'data1'])->withoutMiddleware("throttle:api")->name('Perms_api_index');
+Route::post('perms-Aggrid', [App\Http\Controllers\API\PermController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Perms_api_aggrid');
+
+// la route de creation
+Route::post('perms',[App\Http\Controllers\API\PermController::class,'create'])->withoutMiddleware("throttle:api")->name('Perms_api_create');
+// la route d'edition
+Route::post('perms/{Perms}/update',[App\Http\Controllers\API\PermController::class,'update'])->withoutMiddleware("throttle:api")->name('Perms_api_update');
+// la route de suppression
+Route::post('perms/{Perms}/delete',[App\Http\Controllers\API\PermController::class,'delete'])->withoutMiddleware("throttle:api")->name('Perms_api_delete');
+// la route des actions
+Route::get('perms/action',[App\Http\Controllers\API\PermController::class,'action'])->withoutMiddleware("throttle:api")->name('Perms_api_delete');
+// la route des actions
+Route::post('perms/action',[App\Http\Controllers\API\PermController::class,'action'])->withoutMiddleware("throttle:api")->name('Perms_api_delete');
+
+
+
+//Route::resource('Pointages',App\Http\Controllers\API\PointageController::class);
+// les routes d'affichage
+Route::get('pointages/{key}/{val}',[App\Http\Controllers\API\PointageController::class,'data'])->withoutMiddleware("throttle:api")->name('Pointages_api_index2');
+Route::get('pointages',[App\Http\Controllers\API\PointageController::class,'data1'])->withoutMiddleware("throttle:api")->name('Pointages_api_index');
+Route::post('pointages-Aggrid', [App\Http\Controllers\API\PointageController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Pointages_api_aggrid');
+
+// la route de creation
+Route::post('pointages',[App\Http\Controllers\API\PointageController::class,'create'])->withoutMiddleware("throttle:api")->name('Pointages_api_create');
+// la route d'edition
+Route::post('pointages/{Pointages}/update',[App\Http\Controllers\API\PointageController::class,'update'])->withoutMiddleware("throttle:api")->name('Pointages_api_update');
+// la route de suppression
+Route::post('pointages/{Pointages}/delete',[App\Http\Controllers\API\PointageController::class,'delete'])->withoutMiddleware("throttle:api")->name('Pointages_api_delete');
+// la route des actions
+Route::get('pointages/action',[App\Http\Controllers\API\PointageController::class,'action'])->withoutMiddleware("throttle:api")->name('Pointages_api_delete');
+// la route des actions
+Route::post('pointages/action',[App\Http\Controllers\API\PointageController::class,'action'])->withoutMiddleware("throttle:api")->name('Pointages_api_delete');
+
+
+
+//Route::resource('Pointeuses',App\Http\Controllers\API\PointeuseController::class);
+// les routes d'affichage
+Route::get('pointeuses/{key}/{val}',[App\Http\Controllers\API\PointeuseController::class,'data'])->withoutMiddleware("throttle:api")->name('Pointeuses_api_index2');
+Route::get('pointeuses',[App\Http\Controllers\API\PointeuseController::class,'data1'])->withoutMiddleware("throttle:api")->name('Pointeuses_api_index');
+Route::post('pointeuses-Aggrid', [App\Http\Controllers\API\PointeuseController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Pointeuses_api_aggrid');
+
+// la route de creation
+Route::post('pointeuses',[App\Http\Controllers\API\PointeuseController::class,'create'])->withoutMiddleware("throttle:api")->name('Pointeuses_api_create');
+// la route d'edition
+Route::post('pointeuses/{Pointeuses}/update',[App\Http\Controllers\API\PointeuseController::class,'update'])->withoutMiddleware("throttle:api")->name('Pointeuses_api_update');
+// la route de suppression
+Route::post('pointeuses/{Pointeuses}/delete',[App\Http\Controllers\API\PointeuseController::class,'delete'])->withoutMiddleware("throttle:api")->name('Pointeuses_api_delete');
+// la route des actions
+Route::get('pointeuses/action',[App\Http\Controllers\API\PointeuseController::class,'action'])->withoutMiddleware("throttle:api")->name('Pointeuses_api_delete');
+// la route des actions
+Route::post('pointeuses/action',[App\Http\Controllers\API\PointeuseController::class,'action'])->withoutMiddleware("throttle:api")->name('Pointeuses_api_delete');
+
+
+
+//Route::resource('Pointeusestransactions',App\Http\Controllers\API\PointeusestransactionController::class);
+// les routes d'affichage
+Route::get('pointeusestransactions/{key}/{val}',[App\Http\Controllers\API\PointeusestransactionController::class,'data'])->withoutMiddleware("throttle:api")->name('Pointeusestransactions_api_index2');
+Route::get('pointeusestransactions',[App\Http\Controllers\API\PointeusestransactionController::class,'data1'])->withoutMiddleware("throttle:api")->name('Pointeusestransactions_api_index');
+Route::post('pointeusestransactions-Aggrid', [App\Http\Controllers\API\PointeusestransactionController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Pointeusestransactions_api_aggrid');
+
+// la route de creation
+Route::post('pointeusestransactions',[App\Http\Controllers\API\PointeusestransactionController::class,'create'])->withoutMiddleware("throttle:api")->name('Pointeusestransactions_api_create');
+// la route d'edition
+Route::post('pointeusestransactions/{Pointeusestransactions}/update',[App\Http\Controllers\API\PointeusestransactionController::class,'update'])->withoutMiddleware("throttle:api")->name('Pointeusestransactions_api_update');
+// la route de suppression
+Route::post('pointeusestransactions/{Pointeusestransactions}/delete',[App\Http\Controllers\API\PointeusestransactionController::class,'delete'])->withoutMiddleware("throttle:api")->name('Pointeusestransactions_api_delete');
+// la route des actions
+Route::get('pointeusestransactions/action',[App\Http\Controllers\API\PointeusestransactionController::class,'action'])->withoutMiddleware("throttle:api")->name('Pointeusestransactions_api_delete');
+// la route des actions
+Route::post('pointeusestransactions/action',[App\Http\Controllers\API\PointeusestransactionController::class,'action'])->withoutMiddleware("throttle:api")->name('Pointeusestransactions_api_delete');
+
+
+
+//Route::resource('Points',App\Http\Controllers\API\PointController::class);
+// les routes d'affichage
+Route::get('points/{key}/{val}',[App\Http\Controllers\API\PointController::class,'data'])->withoutMiddleware("throttle:api")->name('Points_api_index2');
+Route::get('points',[App\Http\Controllers\API\PointController::class,'data1'])->withoutMiddleware("throttle:api")->name('Points_api_index');
+Route::post('points-Aggrid', [App\Http\Controllers\API\PointController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Points_api_aggrid');
+
+// la route de creation
+Route::post('points',[App\Http\Controllers\API\PointController::class,'create'])->withoutMiddleware("throttle:api")->name('Points_api_create');
+// la route d'edition
+Route::post('points/{Points}/update',[App\Http\Controllers\API\PointController::class,'update'])->withoutMiddleware("throttle:api")->name('Points_api_update');
+// la route de suppression
+Route::post('points/{Points}/delete',[App\Http\Controllers\API\PointController::class,'delete'])->withoutMiddleware("throttle:api")->name('Points_api_delete');
+// la route des actions
+Route::get('points/action',[App\Http\Controllers\API\PointController::class,'action'])->withoutMiddleware("throttle:api")->name('Points_api_delete');
+// la route des actions
+Route::post('points/action',[App\Http\Controllers\API\PointController::class,'action'])->withoutMiddleware("throttle:api")->name('Points_api_delete');
+
+
+
+//Route::resource('Positions',App\Http\Controllers\API\PositionController::class);
+// les routes d'affichage
+Route::get('positions/{key}/{val}',[App\Http\Controllers\API\PositionController::class,'data'])->withoutMiddleware("throttle:api")->name('Positions_api_index2');
+Route::get('positions',[App\Http\Controllers\API\PositionController::class,'data1'])->withoutMiddleware("throttle:api")->name('Positions_api_index');
+Route::post('positions-Aggrid', [App\Http\Controllers\API\PositionController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Positions_api_aggrid');
+
+// la route de creation
+Route::post('positions',[App\Http\Controllers\API\PositionController::class,'create'])->withoutMiddleware("throttle:api")->name('Positions_api_create');
+// la route d'edition
+Route::post('positions/{Positions}/update',[App\Http\Controllers\API\PositionController::class,'update'])->withoutMiddleware("throttle:api")->name('Positions_api_update');
+// la route de suppression
+Route::post('positions/{Positions}/delete',[App\Http\Controllers\API\PositionController::class,'delete'])->withoutMiddleware("throttle:api")->name('Positions_api_delete');
+// la route des actions
+Route::get('positions/action',[App\Http\Controllers\API\PositionController::class,'action'])->withoutMiddleware("throttle:api")->name('Positions_api_delete');
+// la route des actions
+Route::post('positions/action',[App\Http\Controllers\API\PositionController::class,'action'])->withoutMiddleware("throttle:api")->name('Positions_api_delete');
+
+
+
+//Route::resource('Postes',App\Http\Controllers\API\PosteController::class);
+// les routes d'affichage
+Route::get('postes/{key}/{val}',[App\Http\Controllers\API\PosteController::class,'data'])->withoutMiddleware("throttle:api")->name('Postes_api_index2');
+Route::get('postes',[App\Http\Controllers\API\PosteController::class,'data1'])->withoutMiddleware("throttle:api")->name('Postes_api_index');
+Route::post('postes-Aggrid', [App\Http\Controllers\API\PosteController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Postes_api_aggrid');
+
+// la route de creation
+Route::post('postes',[App\Http\Controllers\API\PosteController::class,'create'])->withoutMiddleware("throttle:api")->name('Postes_api_create');
+// la route d'edition
+Route::post('postes/{Postes}/update',[App\Http\Controllers\API\PosteController::class,'update'])->withoutMiddleware("throttle:api")->name('Postes_api_update');
+// la route de suppression
+Route::post('postes/{Postes}/delete',[App\Http\Controllers\API\PosteController::class,'delete'])->withoutMiddleware("throttle:api")->name('Postes_api_delete');
+// la route des actions
+Route::get('postes/action',[App\Http\Controllers\API\PosteController::class,'action'])->withoutMiddleware("throttle:api")->name('Postes_api_delete');
+// la route des actions
+Route::post('postes/action',[App\Http\Controllers\API\PosteController::class,'action'])->withoutMiddleware("throttle:api")->name('Postes_api_delete');
+
+
+
+//Route::resource('Postesarticles',App\Http\Controllers\API\PostesarticleController::class);
+// les routes d'affichage
+Route::get('postesarticles/{key}/{val}',[App\Http\Controllers\API\PostesarticleController::class,'data'])->withoutMiddleware("throttle:api")->name('Postesarticles_api_index2');
+Route::get('postesarticles',[App\Http\Controllers\API\PostesarticleController::class,'data1'])->withoutMiddleware("throttle:api")->name('Postesarticles_api_index');
+Route::post('postesarticles-Aggrid', [App\Http\Controllers\API\PostesarticleController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Postesarticles_api_aggrid');
+
+// la route de creation
+Route::post('postesarticles',[App\Http\Controllers\API\PostesarticleController::class,'create'])->withoutMiddleware("throttle:api")->name('Postesarticles_api_create');
+// la route d'edition
+Route::post('postesarticles/{Postesarticles}/update',[App\Http\Controllers\API\PostesarticleController::class,'update'])->withoutMiddleware("throttle:api")->name('Postesarticles_api_update');
+// la route de suppression
+Route::post('postesarticles/{Postesarticles}/delete',[App\Http\Controllers\API\PostesarticleController::class,'delete'])->withoutMiddleware("throttle:api")->name('Postesarticles_api_delete');
+// la route des actions
+Route::get('postesarticles/action',[App\Http\Controllers\API\PostesarticleController::class,'action'])->withoutMiddleware("throttle:api")->name('Postesarticles_api_delete');
+// la route des actions
+Route::post('postesarticles/action',[App\Http\Controllers\API\PostesarticleController::class,'action'])->withoutMiddleware("throttle:api")->name('Postesarticles_api_delete');
+
+
+
+//Route::resource('Postespointeuses',App\Http\Controllers\API\PostespointeuseController::class);
+// les routes d'affichage
+Route::get('postespointeuses/{key}/{val}',[App\Http\Controllers\API\PostespointeuseController::class,'data'])->withoutMiddleware("throttle:api")->name('Postespointeuses_api_index2');
+Route::get('postespointeuses',[App\Http\Controllers\API\PostespointeuseController::class,'data1'])->withoutMiddleware("throttle:api")->name('Postespointeuses_api_index');
+Route::post('postespointeuses-Aggrid', [App\Http\Controllers\API\PostespointeuseController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Postespointeuses_api_aggrid');
+
+// la route de creation
+Route::post('postespointeuses',[App\Http\Controllers\API\PostespointeuseController::class,'create'])->withoutMiddleware("throttle:api")->name('Postespointeuses_api_create');
+// la route d'edition
+Route::post('postespointeuses/{Postespointeuses}/update',[App\Http\Controllers\API\PostespointeuseController::class,'update'])->withoutMiddleware("throttle:api")->name('Postespointeuses_api_update');
+// la route de suppression
+Route::post('postespointeuses/{Postespointeuses}/delete',[App\Http\Controllers\API\PostespointeuseController::class,'delete'])->withoutMiddleware("throttle:api")->name('Postespointeuses_api_delete');
+// la route des actions
+Route::get('postespointeuses/action',[App\Http\Controllers\API\PostespointeuseController::class,'action'])->withoutMiddleware("throttle:api")->name('Postespointeuses_api_delete');
+// la route des actions
+Route::post('postespointeuses/action',[App\Http\Controllers\API\PostespointeuseController::class,'action'])->withoutMiddleware("throttle:api")->name('Postespointeuses_api_delete');
+
+
+
+//Route::resource('Presences',App\Http\Controllers\API\PresenceController::class);
+// les routes d'affichage
+Route::get('presences/{key}/{val}',[App\Http\Controllers\API\PresenceController::class,'data'])->withoutMiddleware("throttle:api")->name('Presences_api_index2');
+Route::get('presences',[App\Http\Controllers\API\PresenceController::class,'data1'])->withoutMiddleware("throttle:api")->name('Presences_api_index');
+Route::post('presences-Aggrid', [App\Http\Controllers\API\PresenceController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Presences_api_aggrid');
+
+// la route de creation
+Route::post('presences',[App\Http\Controllers\API\PresenceController::class,'create'])->withoutMiddleware("throttle:api")->name('Presences_api_create');
+// la route d'edition
+Route::post('presences/{Presences}/update',[App\Http\Controllers\API\PresenceController::class,'update'])->withoutMiddleware("throttle:api")->name('Presences_api_update');
+// la route de suppression
+Route::post('presences/{Presences}/delete',[App\Http\Controllers\API\PresenceController::class,'delete'])->withoutMiddleware("throttle:api")->name('Presences_api_delete');
+// la route des actions
+Route::get('presences/action',[App\Http\Controllers\API\PresenceController::class,'action'])->withoutMiddleware("throttle:api")->name('Presences_api_delete');
+// la route des actions
+Route::post('presences/action',[App\Http\Controllers\API\PresenceController::class,'action'])->withoutMiddleware("throttle:api")->name('Presences_api_delete');
+
+
+
+//Route::resource('Preuves',App\Http\Controllers\API\PreuveController::class);
+// les routes d'affichage
+Route::get('preuves/{key}/{val}',[App\Http\Controllers\API\PreuveController::class,'data'])->withoutMiddleware("throttle:api")->name('Preuves_api_index2');
+Route::get('preuves',[App\Http\Controllers\API\PreuveController::class,'data1'])->withoutMiddleware("throttle:api")->name('Preuves_api_index');
+Route::post('preuves-Aggrid', [App\Http\Controllers\API\PreuveController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Preuves_api_aggrid');
+
+// la route de creation
+Route::post('preuves',[App\Http\Controllers\API\PreuveController::class,'create'])->withoutMiddleware("throttle:api")->name('Preuves_api_create');
+// la route d'edition
+Route::post('preuves/{Preuves}/update',[App\Http\Controllers\API\PreuveController::class,'update'])->withoutMiddleware("throttle:api")->name('Preuves_api_update');
+// la route de suppression
+Route::post('preuves/{Preuves}/delete',[App\Http\Controllers\API\PreuveController::class,'delete'])->withoutMiddleware("throttle:api")->name('Preuves_api_delete');
+// la route des actions
+Route::get('preuves/action',[App\Http\Controllers\API\PreuveController::class,'action'])->withoutMiddleware("throttle:api")->name('Preuves_api_delete');
+// la route des actions
+Route::post('preuves/action',[App\Http\Controllers\API\PreuveController::class,'action'])->withoutMiddleware("throttle:api")->name('Preuves_api_delete');
+
+
+
+//Route::resource('Programmations',App\Http\Controllers\API\ProgrammationController::class);
+// les routes d'affichage
+Route::get('programmations/{key}/{val}',[App\Http\Controllers\API\ProgrammationController::class,'data'])->withoutMiddleware("throttle:api")->name('Programmations_api_index2');
+Route::get('programmations',[App\Http\Controllers\API\ProgrammationController::class,'data1'])->withoutMiddleware("throttle:api")->name('Programmations_api_index');
+Route::post('programmations-Aggrid', [App\Http\Controllers\API\ProgrammationController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Programmations_api_aggrid');
+
+// la route de creation
+Route::post('programmations',[App\Http\Controllers\API\ProgrammationController::class,'create'])->withoutMiddleware("throttle:api")->name('Programmations_api_create');
+// la route d'edition
+Route::post('programmations/{Programmations}/update',[App\Http\Controllers\API\ProgrammationController::class,'update'])->withoutMiddleware("throttle:api")->name('Programmations_api_update');
+// la route de suppression
+Route::post('programmations/{Programmations}/delete',[App\Http\Controllers\API\ProgrammationController::class,'delete'])->withoutMiddleware("throttle:api")->name('Programmations_api_delete');
+// la route des actions
+Route::get('programmations/action',[App\Http\Controllers\API\ProgrammationController::class,'action'])->withoutMiddleware("throttle:api")->name('Programmations_api_delete');
+// la route des actions
+Route::post('programmations/action',[App\Http\Controllers\API\ProgrammationController::class,'action'])->withoutMiddleware("throttle:api")->name('Programmations_api_delete');
+
+
+
+//Route::resource('Programmationsdetails',App\Http\Controllers\API\ProgrammationsdetailController::class);
+// les routes d'affichage
+Route::get('programmationsdetails/{key}/{val}',[App\Http\Controllers\API\ProgrammationsdetailController::class,'data'])->withoutMiddleware("throttle:api")->name('Programmationsdetails_api_index2');
+Route::get('programmationsdetails',[App\Http\Controllers\API\ProgrammationsdetailController::class,'data1'])->withoutMiddleware("throttle:api")->name('Programmationsdetails_api_index');
+Route::post('programmationsdetails-Aggrid', [App\Http\Controllers\API\ProgrammationsdetailController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Programmationsdetails_api_aggrid');
+
+// la route de creation
+Route::post('programmationsdetails',[App\Http\Controllers\API\ProgrammationsdetailController::class,'create'])->withoutMiddleware("throttle:api")->name('Programmationsdetails_api_create');
+// la route d'edition
+Route::post('programmationsdetails/{Programmationsdetails}/update',[App\Http\Controllers\API\ProgrammationsdetailController::class,'update'])->withoutMiddleware("throttle:api")->name('Programmationsdetails_api_update');
+// la route de suppression
+Route::post('programmationsdetails/{Programmationsdetails}/delete',[App\Http\Controllers\API\ProgrammationsdetailController::class,'delete'])->withoutMiddleware("throttle:api")->name('Programmationsdetails_api_delete');
+// la route des actions
+Route::get('programmationsdetails/action',[App\Http\Controllers\API\ProgrammationsdetailController::class,'action'])->withoutMiddleware("throttle:api")->name('Programmationsdetails_api_delete');
+// la route des actions
+Route::post('programmationsdetails/action',[App\Http\Controllers\API\ProgrammationsdetailController::class,'action'])->withoutMiddleware("throttle:api")->name('Programmationsdetails_api_delete');
+
+
+
+//Route::resource('Programmes',App\Http\Controllers\API\ProgrammeController::class);
+// les routes d'affichage
+Route::get('programmes/{key}/{val}',[App\Http\Controllers\API\ProgrammeController::class,'data'])->withoutMiddleware("throttle:api")->name('Programmes_api_index2');
+Route::get('programmes',[App\Http\Controllers\API\ProgrammeController::class,'data1'])->withoutMiddleware("throttle:api")->name('Programmes_api_index');
+Route::post('programmes-Aggrid', [App\Http\Controllers\API\ProgrammeController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Programmes_api_aggrid');
+
+// la route de creation
+Route::post('programmes',[App\Http\Controllers\API\ProgrammeController::class,'create'])->withoutMiddleware("throttle:api")->name('Programmes_api_create');
+// la route d'edition
+Route::post('programmes/{Programmes}/update',[App\Http\Controllers\API\ProgrammeController::class,'update'])->withoutMiddleware("throttle:api")->name('Programmes_api_update');
+// la route de suppression
+Route::post('programmes/{Programmes}/delete',[App\Http\Controllers\API\ProgrammeController::class,'delete'])->withoutMiddleware("throttle:api")->name('Programmes_api_delete');
+// la route des actions
+Route::get('programmes/action',[App\Http\Controllers\API\ProgrammeController::class,'action'])->withoutMiddleware("throttle:api")->name('Programmes_api_delete');
+// la route des actions
+Route::post('programmes/action',[App\Http\Controllers\API\ProgrammeController::class,'action'])->withoutMiddleware("throttle:api")->name('Programmes_api_delete');
+
+
+
+//Route::resource('Projets',App\Http\Controllers\API\ProjetController::class);
+// les routes d'affichage
+Route::get('projets/{key}/{val}',[App\Http\Controllers\API\ProjetController::class,'data'])->withoutMiddleware("throttle:api")->name('Projets_api_index2');
+Route::get('projets',[App\Http\Controllers\API\ProjetController::class,'data1'])->withoutMiddleware("throttle:api")->name('Projets_api_index');
+Route::post('projets-Aggrid', [App\Http\Controllers\API\ProjetController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Projets_api_aggrid');
+
+// la route de creation
+Route::post('projets',[App\Http\Controllers\API\ProjetController::class,'create'])->withoutMiddleware("throttle:api")->name('Projets_api_create');
+// la route d'edition
+Route::post('projets/{Projets}/update',[App\Http\Controllers\API\ProjetController::class,'update'])->withoutMiddleware("throttle:api")->name('Projets_api_update');
+// la route de suppression
+Route::post('projets/{Projets}/delete',[App\Http\Controllers\API\ProjetController::class,'delete'])->withoutMiddleware("throttle:api")->name('Projets_api_delete');
+// la route des actions
+Route::get('projets/action',[App\Http\Controllers\API\ProjetController::class,'action'])->withoutMiddleware("throttle:api")->name('Projets_api_delete');
+// la route des actions
+Route::post('projets/action',[App\Http\Controllers\API\ProjetController::class,'action'])->withoutMiddleware("throttle:api")->name('Projets_api_delete');
+
+
+
+//Route::resource('Provinces',App\Http\Controllers\API\ProvinceController::class);
+// les routes d'affichage
+Route::get('provinces/{key}/{val}',[App\Http\Controllers\API\ProvinceController::class,'data'])->withoutMiddleware("throttle:api")->name('Provinces_api_index2');
+Route::get('provinces',[App\Http\Controllers\API\ProvinceController::class,'data1'])->withoutMiddleware("throttle:api")->name('Provinces_api_index');
+Route::post('provinces-Aggrid', [App\Http\Controllers\API\ProvinceController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Provinces_api_aggrid');
+
+// la route de creation
+Route::post('provinces',[App\Http\Controllers\API\ProvinceController::class,'create'])->withoutMiddleware("throttle:api")->name('Provinces_api_create');
+// la route d'edition
+Route::post('provinces/{Provinces}/update',[App\Http\Controllers\API\ProvinceController::class,'update'])->withoutMiddleware("throttle:api")->name('Provinces_api_update');
+// la route de suppression
+Route::post('provinces/{Provinces}/delete',[App\Http\Controllers\API\ProvinceController::class,'delete'])->withoutMiddleware("throttle:api")->name('Provinces_api_delete');
+// la route des actions
+Route::get('provinces/action',[App\Http\Controllers\API\ProvinceController::class,'action'])->withoutMiddleware("throttle:api")->name('Provinces_api_delete');
+// la route des actions
+Route::post('provinces/action',[App\Http\Controllers\API\ProvinceController::class,'action'])->withoutMiddleware("throttle:api")->name('Provinces_api_delete');
+
+
+
+//Route::resource('Rapportpostes',App\Http\Controllers\API\RapportposteController::class);
+// les routes d'affichage
+Route::get('rapportpostes/{key}/{val}',[App\Http\Controllers\API\RapportposteController::class,'data'])->withoutMiddleware("throttle:api")->name('Rapportpostes_api_index2');
+Route::get('rapportpostes',[App\Http\Controllers\API\RapportposteController::class,'data1'])->withoutMiddleware("throttle:api")->name('Rapportpostes_api_index');
+Route::post('rapportpostes-Aggrid', [App\Http\Controllers\API\RapportposteController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Rapportpostes_api_aggrid');
+
+// la route de creation
+Route::post('rapportpostes',[App\Http\Controllers\API\RapportposteController::class,'create'])->withoutMiddleware("throttle:api")->name('Rapportpostes_api_create');
+// la route d'edition
+Route::post('rapportpostes/{Rapportpostes}/update',[App\Http\Controllers\API\RapportposteController::class,'update'])->withoutMiddleware("throttle:api")->name('Rapportpostes_api_update');
+// la route de suppression
+Route::post('rapportpostes/{Rapportpostes}/delete',[App\Http\Controllers\API\RapportposteController::class,'delete'])->withoutMiddleware("throttle:api")->name('Rapportpostes_api_delete');
+// la route des actions
+Route::get('rapportpostes/action',[App\Http\Controllers\API\RapportposteController::class,'action'])->withoutMiddleware("throttle:api")->name('Rapportpostes_api_delete');
+// la route des actions
+Route::post('rapportpostes/action',[App\Http\Controllers\API\RapportposteController::class,'action'])->withoutMiddleware("throttle:api")->name('Rapportpostes_api_delete');
+
+
+
+//Route::resource('Rapports',App\Http\Controllers\API\RapportController::class);
+// les routes d'affichage
+Route::get('rapports/{key}/{val}',[App\Http\Controllers\API\RapportController::class,'data'])->withoutMiddleware("throttle:api")->name('Rapports_api_index2');
+Route::get('rapports',[App\Http\Controllers\API\RapportController::class,'data1'])->withoutMiddleware("throttle:api")->name('Rapports_api_index');
+Route::post('rapports-Aggrid', [App\Http\Controllers\API\RapportController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Rapports_api_aggrid');
+
+// la route de creation
+Route::post('rapports',[App\Http\Controllers\API\RapportController::class,'create'])->withoutMiddleware("throttle:api")->name('Rapports_api_create');
+// la route d'edition
+Route::post('rapports/{Rapports}/update',[App\Http\Controllers\API\RapportController::class,'update'])->withoutMiddleware("throttle:api")->name('Rapports_api_update');
+// la route de suppression
+Route::post('rapports/{Rapports}/delete',[App\Http\Controllers\API\RapportController::class,'delete'])->withoutMiddleware("throttle:api")->name('Rapports_api_delete');
+// la route des actions
+Route::get('rapports/action',[App\Http\Controllers\API\RapportController::class,'action'])->withoutMiddleware("throttle:api")->name('Rapports_api_delete');
+// la route des actions
+Route::post('rapports/action',[App\Http\Controllers\API\RapportController::class,'action'])->withoutMiddleware("throttle:api")->name('Rapports_api_delete');
+
+
+
+//Route::resource('Role_has_permission',App\Http\Controllers\API\RoleHasPermisionController::class);
+// les routes d'affichage
+Route::get('role_has_permission/{key}/{val}',[App\Http\Controllers\API\RoleHasPermisionController::class,'data'])->withoutMiddleware("throttle:api")->name('Role_has_permission_api_index2');
+Route::get('role_has_permission',[App\Http\Controllers\API\RoleHasPermisionController::class,'data1'])->withoutMiddleware("throttle:api")->name('Role_has_permission_api_index');
+Route::post('role_has_permission-Aggrid', [App\Http\Controllers\API\RoleHasPermisionController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Role_has_permission_api_aggrid');
+
+// la route de creation
+Route::post('role_has_permission',[App\Http\Controllers\API\RoleHasPermisionController::class,'create'])->withoutMiddleware("throttle:api")->name('Role_has_permission_api_create');
+// la route d'edition
+Route::post('role_has_permission/{Role_has_permission}/update',[App\Http\Controllers\API\RoleHasPermisionController::class,'update'])->withoutMiddleware("throttle:api")->name('Role_has_permission_api_update');
+// la route de suppression
+Route::post('role_has_permission/{Role_has_permission}/delete',[App\Http\Controllers\API\RoleHasPermisionController::class,'delete'])->withoutMiddleware("throttle:api")->name('Role_has_permission_api_delete');
+// la route des actions
+Route::get('role_has_permission/action',[App\Http\Controllers\API\RoleHasPermisionController::class,'action'])->withoutMiddleware("throttle:api")->name('Role_has_permission_api_delete');
+// la route des actions
+Route::post('role_has_permission/action',[App\Http\Controllers\API\RoleHasPermisionController::class,'action'])->withoutMiddleware("throttle:api")->name('Role_has_permission_api_delete');
+
+
+
+//Route::resource('Role_has_permissions',App\Http\Controllers\API\RoleHasPermissionController::class);
+// les routes d'affichage
+Route::get('role_has_permissions/{key}/{val}',[App\Http\Controllers\API\RoleHasPermissionController::class,'data'])->withoutMiddleware("throttle:api")->name('Role_has_permissions_api_index2');
+Route::get('role_has_permissions',[App\Http\Controllers\API\RoleHasPermissionController::class,'data1'])->withoutMiddleware("throttle:api")->name('Role_has_permissions_api_index');
+Route::post('role_has_permissions-Aggrid', [App\Http\Controllers\API\RoleHasPermissionController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Role_has_permissions_api_aggrid');
+
+// la route de creation
+Route::post('role_has_permissions',[App\Http\Controllers\API\RoleHasPermissionController::class,'create'])->withoutMiddleware("throttle:api")->name('Role_has_permissions_api_create');
+// la route d'edition
+Route::post('role_has_permissions/{Role_has_permissions}/update',[App\Http\Controllers\API\RoleHasPermissionController::class,'update'])->withoutMiddleware("throttle:api")->name('Role_has_permissions_api_update');
+// la route de suppression
+Route::post('role_has_permissions/{Role_has_permissions}/delete',[App\Http\Controllers\API\RoleHasPermissionController::class,'delete'])->withoutMiddleware("throttle:api")->name('Role_has_permissions_api_delete');
+// la route des actions
+Route::get('role_has_permissions/action',[App\Http\Controllers\API\RoleHasPermissionController::class,'action'])->withoutMiddleware("throttle:api")->name('Role_has_permissions_api_delete');
+// la route des actions
+Route::post('role_has_permissions/action',[App\Http\Controllers\API\RoleHasPermissionController::class,'action'])->withoutMiddleware("throttle:api")->name('Role_has_permissions_api_delete');
+
+
+
+//Route::resource('Roles',App\Http\Controllers\API\RoleController::class);
+// les routes d'affichage
+Route::get('roles/{key}/{val}',[App\Http\Controllers\API\RoleController::class,'data'])->withoutMiddleware("throttle:api")->name('Roles_api_index2');
+Route::get('roles',[App\Http\Controllers\API\RoleController::class,'data1'])->withoutMiddleware("throttle:api")->name('Roles_api_index');
+Route::post('roles-Aggrid', [App\Http\Controllers\API\RoleController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Roles_api_aggrid');
+
+// la route de creation
+Route::post('roles',[App\Http\Controllers\API\RoleController::class,'create'])->withoutMiddleware("throttle:api")->name('Roles_api_create');
+// la route d'edition
+Route::post('roles/{Roles}/update',[App\Http\Controllers\API\RoleController::class,'update'])->withoutMiddleware("throttle:api")->name('Roles_api_update');
+// la route de suppression
+Route::post('roles/{Roles}/delete',[App\Http\Controllers\API\RoleController::class,'delete'])->withoutMiddleware("throttle:api")->name('Roles_api_delete');
+// la route des actions
+Route::get('roles/action',[App\Http\Controllers\API\RoleController::class,'action'])->withoutMiddleware("throttle:api")->name('Roles_api_delete');
+// la route des actions
+Route::post('roles/action',[App\Http\Controllers\API\RoleController::class,'action'])->withoutMiddleware("throttle:api")->name('Roles_api_delete');
+
+
+
+//Route::resource('Services',App\Http\Controllers\API\ServiceController::class);
+// les routes d'affichage
+Route::get('services/{key}/{val}',[App\Http\Controllers\API\ServiceController::class,'data'])->withoutMiddleware("throttle:api")->name('Services_api_index2');
+Route::get('services',[App\Http\Controllers\API\ServiceController::class,'data1'])->withoutMiddleware("throttle:api")->name('Services_api_index');
+Route::post('services-Aggrid', [App\Http\Controllers\API\ServiceController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Services_api_aggrid');
+
+// la route de creation
+Route::post('services',[App\Http\Controllers\API\ServiceController::class,'create'])->withoutMiddleware("throttle:api")->name('Services_api_create');
+// la route d'edition
+Route::post('services/{Services}/update',[App\Http\Controllers\API\ServiceController::class,'update'])->withoutMiddleware("throttle:api")->name('Services_api_update');
+// la route de suppression
+Route::post('services/{Services}/delete',[App\Http\Controllers\API\ServiceController::class,'delete'])->withoutMiddleware("throttle:api")->name('Services_api_delete');
+// la route des actions
+Route::get('services/action',[App\Http\Controllers\API\ServiceController::class,'action'])->withoutMiddleware("throttle:api")->name('Services_api_delete');
+// la route des actions
+Route::post('services/action',[App\Http\Controllers\API\ServiceController::class,'action'])->withoutMiddleware("throttle:api")->name('Services_api_delete');
+
+
+
+//Route::resource('Sexes',App\Http\Controllers\API\SexeController::class);
+// les routes d'affichage
+Route::get('sexes/{key}/{val}',[App\Http\Controllers\API\SexeController::class,'data'])->withoutMiddleware("throttle:api")->name('Sexes_api_index2');
+Route::get('sexes',[App\Http\Controllers\API\SexeController::class,'data1'])->withoutMiddleware("throttle:api")->name('Sexes_api_index');
+Route::post('sexes-Aggrid', [App\Http\Controllers\API\SexeController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Sexes_api_aggrid');
+
+// la route de creation
+Route::post('sexes',[App\Http\Controllers\API\SexeController::class,'create'])->withoutMiddleware("throttle:api")->name('Sexes_api_create');
+// la route d'edition
+Route::post('sexes/{Sexes}/update',[App\Http\Controllers\API\SexeController::class,'update'])->withoutMiddleware("throttle:api")->name('Sexes_api_update');
+// la route de suppression
+Route::post('sexes/{Sexes}/delete',[App\Http\Controllers\API\SexeController::class,'delete'])->withoutMiddleware("throttle:api")->name('Sexes_api_delete');
+// la route des actions
+Route::get('sexes/action',[App\Http\Controllers\API\SexeController::class,'action'])->withoutMiddleware("throttle:api")->name('Sexes_api_delete');
+// la route des actions
+Route::post('sexes/action',[App\Http\Controllers\API\SexeController::class,'action'])->withoutMiddleware("throttle:api")->name('Sexes_api_delete');
+
+
+
+//Route::resource('Sites',App\Http\Controllers\API\SiteController::class);
+// les routes d'affichage
+Route::get('sites/{key}/{val}',[App\Http\Controllers\API\SiteController::class,'data'])->withoutMiddleware("throttle:api")->name('Sites_api_index2');
+Route::get('sites',[App\Http\Controllers\API\SiteController::class,'data1'])->withoutMiddleware("throttle:api")->name('Sites_api_index');
+Route::post('sites-Aggrid', [App\Http\Controllers\API\SiteController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Sites_api_aggrid');
+
+// la route de creation
+Route::post('sites',[App\Http\Controllers\API\SiteController::class,'create'])->withoutMiddleware("throttle:api")->name('Sites_api_create');
+// la route d'edition
+Route::post('sites/{Sites}/update',[App\Http\Controllers\API\SiteController::class,'update'])->withoutMiddleware("throttle:api")->name('Sites_api_update');
+// la route de suppression
+Route::post('sites/{Sites}/delete',[App\Http\Controllers\API\SiteController::class,'delete'])->withoutMiddleware("throttle:api")->name('Sites_api_delete');
+// la route des actions
+Route::get('sites/action',[App\Http\Controllers\API\SiteController::class,'action'])->withoutMiddleware("throttle:api")->name('Sites_api_delete');
+// la route des actions
+Route::post('sites/action',[App\Http\Controllers\API\SiteController::class,'action'])->withoutMiddleware("throttle:api")->name('Sites_api_delete');
+
+
+
+//Route::resource('Sitespointeuses',App\Http\Controllers\API\SitespointeuseController::class);
+// les routes d'affichage
+Route::get('sitespointeuses/{key}/{val}',[App\Http\Controllers\API\SitespointeuseController::class,'data'])->withoutMiddleware("throttle:api")->name('Sitespointeuses_api_index2');
+Route::get('sitespointeuses',[App\Http\Controllers\API\SitespointeuseController::class,'data1'])->withoutMiddleware("throttle:api")->name('Sitespointeuses_api_index');
+Route::post('sitespointeuses-Aggrid', [App\Http\Controllers\API\SitespointeuseController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Sitespointeuses_api_aggrid');
+
+// la route de creation
+Route::post('sitespointeuses',[App\Http\Controllers\API\SitespointeuseController::class,'create'])->withoutMiddleware("throttle:api")->name('Sitespointeuses_api_create');
+// la route d'edition
+Route::post('sitespointeuses/{Sitespointeuses}/update',[App\Http\Controllers\API\SitespointeuseController::class,'update'])->withoutMiddleware("throttle:api")->name('Sitespointeuses_api_update');
+// la route de suppression
+Route::post('sitespointeuses/{Sitespointeuses}/delete',[App\Http\Controllers\API\SitespointeuseController::class,'delete'])->withoutMiddleware("throttle:api")->name('Sitespointeuses_api_delete');
+// la route des actions
+Route::get('sitespointeuses/action',[App\Http\Controllers\API\SitespointeuseController::class,'action'])->withoutMiddleware("throttle:api")->name('Sitespointeuses_api_delete');
+// la route des actions
+Route::post('sitespointeuses/action',[App\Http\Controllers\API\SitespointeuseController::class,'action'])->withoutMiddleware("throttle:api")->name('Sitespointeuses_api_delete');
+
+
+
+//Route::resource('Sitessdeplacements',App\Http\Controllers\API\SitessdeplacementController::class);
+// les routes d'affichage
+Route::get('sitessdeplacements/{key}/{val}',[App\Http\Controllers\API\SitessdeplacementController::class,'data'])->withoutMiddleware("throttle:api")->name('Sitessdeplacements_api_index2');
+Route::get('sitessdeplacements',[App\Http\Controllers\API\SitessdeplacementController::class,'data1'])->withoutMiddleware("throttle:api")->name('Sitessdeplacements_api_index');
+Route::post('sitessdeplacements-Aggrid', [App\Http\Controllers\API\SitessdeplacementController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Sitessdeplacements_api_aggrid');
+
+// la route de creation
+Route::post('sitessdeplacements',[App\Http\Controllers\API\SitessdeplacementController::class,'create'])->withoutMiddleware("throttle:api")->name('Sitessdeplacements_api_create');
+// la route d'edition
+Route::post('sitessdeplacements/{Sitessdeplacements}/update',[App\Http\Controllers\API\SitessdeplacementController::class,'update'])->withoutMiddleware("throttle:api")->name('Sitessdeplacements_api_update');
+// la route de suppression
+Route::post('sitessdeplacements/{Sitessdeplacements}/delete',[App\Http\Controllers\API\SitessdeplacementController::class,'delete'])->withoutMiddleware("throttle:api")->name('Sitessdeplacements_api_delete');
+// la route des actions
+Route::get('sitessdeplacements/action',[App\Http\Controllers\API\SitessdeplacementController::class,'action'])->withoutMiddleware("throttle:api")->name('Sitessdeplacements_api_delete');
+// la route des actions
+Route::post('sitessdeplacements/action',[App\Http\Controllers\API\SitessdeplacementController::class,'action'])->withoutMiddleware("throttle:api")->name('Sitessdeplacements_api_delete');
+
+
+
+//Route::resource('Situations',App\Http\Controllers\API\SituationController::class);
+// les routes d'affichage
+Route::get('situations/{key}/{val}',[App\Http\Controllers\API\SituationController::class,'data'])->withoutMiddleware("throttle:api")->name('Situations_api_index2');
+Route::get('situations',[App\Http\Controllers\API\SituationController::class,'data1'])->withoutMiddleware("throttle:api")->name('Situations_api_index');
+Route::post('situations-Aggrid', [App\Http\Controllers\API\SituationController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Situations_api_aggrid');
+
+// la route de creation
+Route::post('situations',[App\Http\Controllers\API\SituationController::class,'create'])->withoutMiddleware("throttle:api")->name('Situations_api_create');
+// la route d'edition
+Route::post('situations/{Situations}/update',[App\Http\Controllers\API\SituationController::class,'update'])->withoutMiddleware("throttle:api")->name('Situations_api_update');
+// la route de suppression
+Route::post('situations/{Situations}/delete',[App\Http\Controllers\API\SituationController::class,'delete'])->withoutMiddleware("throttle:api")->name('Situations_api_delete');
+// la route des actions
+Route::get('situations/action',[App\Http\Controllers\API\SituationController::class,'action'])->withoutMiddleware("throttle:api")->name('Situations_api_delete');
+// la route des actions
+Route::post('situations/action',[App\Http\Controllers\API\SituationController::class,'action'])->withoutMiddleware("throttle:api")->name('Situations_api_delete');
+
+
+
+//Route::resource('Soldables',App\Http\Controllers\API\SoldableController::class);
+// les routes d'affichage
+Route::get('soldables/{key}/{val}',[App\Http\Controllers\API\SoldableController::class,'data'])->withoutMiddleware("throttle:api")->name('Soldables_api_index2');
+Route::get('soldables',[App\Http\Controllers\API\SoldableController::class,'data1'])->withoutMiddleware("throttle:api")->name('Soldables_api_index');
+Route::post('soldables-Aggrid', [App\Http\Controllers\API\SoldableController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Soldables_api_aggrid');
+
+// la route de creation
+Route::post('soldables',[App\Http\Controllers\API\SoldableController::class,'create'])->withoutMiddleware("throttle:api")->name('Soldables_api_create');
+// la route d'edition
+Route::post('soldables/{Soldables}/update',[App\Http\Controllers\API\SoldableController::class,'update'])->withoutMiddleware("throttle:api")->name('Soldables_api_update');
+// la route de suppression
+Route::post('soldables/{Soldables}/delete',[App\Http\Controllers\API\SoldableController::class,'delete'])->withoutMiddleware("throttle:api")->name('Soldables_api_delete');
+// la route des actions
+Route::get('soldables/action',[App\Http\Controllers\API\SoldableController::class,'action'])->withoutMiddleware("throttle:api")->name('Soldables_api_delete');
+// la route des actions
+Route::post('soldables/action',[App\Http\Controllers\API\SoldableController::class,'action'])->withoutMiddleware("throttle:api")->name('Soldables_api_delete');
+
+
+
+//Route::resource('Statszones',App\Http\Controllers\API\StatszoneController::class);
+// les routes d'affichage
+Route::get('statszones/{key}/{val}',[App\Http\Controllers\API\StatszoneController::class,'data'])->withoutMiddleware("throttle:api")->name('Statszones_api_index2');
+Route::get('statszones',[App\Http\Controllers\API\StatszoneController::class,'data1'])->withoutMiddleware("throttle:api")->name('Statszones_api_index');
+Route::post('statszones-Aggrid', [App\Http\Controllers\API\StatszoneController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Statszones_api_aggrid');
+
+// la route de creation
+Route::post('statszones',[App\Http\Controllers\API\StatszoneController::class,'create'])->withoutMiddleware("throttle:api")->name('Statszones_api_create');
+// la route d'edition
+Route::post('statszones/{Statszones}/update',[App\Http\Controllers\API\StatszoneController::class,'update'])->withoutMiddleware("throttle:api")->name('Statszones_api_update');
+// la route de suppression
+Route::post('statszones/{Statszones}/delete',[App\Http\Controllers\API\StatszoneController::class,'delete'])->withoutMiddleware("throttle:api")->name('Statszones_api_delete');
+// la route des actions
+Route::get('statszones/action',[App\Http\Controllers\API\StatszoneController::class,'action'])->withoutMiddleware("throttle:api")->name('Statszones_api_delete');
+// la route des actions
+Route::post('statszones/action',[App\Http\Controllers\API\StatszoneController::class,'action'])->withoutMiddleware("throttle:api")->name('Statszones_api_delete');
+
+
+
+//Route::resource('Structures',App\Http\Controllers\API\StructureController::class);
+// les routes d'affichage
+Route::get('structures/{key}/{val}',[App\Http\Controllers\API\StructureController::class,'data'])->withoutMiddleware("throttle:api")->name('Structures_api_index2');
+Route::get('structures',[App\Http\Controllers\API\StructureController::class,'data1'])->withoutMiddleware("throttle:api")->name('Structures_api_index');
+Route::post('structures-Aggrid', [App\Http\Controllers\API\StructureController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Structures_api_aggrid');
+
+// la route de creation
+Route::post('structures',[App\Http\Controllers\API\StructureController::class,'create'])->withoutMiddleware("throttle:api")->name('Structures_api_create');
+// la route d'edition
+Route::post('structures/{Structures}/update',[App\Http\Controllers\API\StructureController::class,'update'])->withoutMiddleware("throttle:api")->name('Structures_api_update');
+// la route de suppression
+Route::post('structures/{Structures}/delete',[App\Http\Controllers\API\StructureController::class,'delete'])->withoutMiddleware("throttle:api")->name('Structures_api_delete');
+// la route des actions
+Route::get('structures/action',[App\Http\Controllers\API\StructureController::class,'action'])->withoutMiddleware("throttle:api")->name('Structures_api_delete');
+// la route des actions
+Route::post('structures/action',[App\Http\Controllers\API\StructureController::class,'action'])->withoutMiddleware("throttle:api")->name('Structures_api_delete');
+
+
+
+//Route::resource('Surveillances',App\Http\Controllers\API\SurveillanceController::class);
+// les routes d'affichage
+Route::get('surveillances/{key}/{val}',[App\Http\Controllers\API\SurveillanceController::class,'data'])->withoutMiddleware("throttle:api")->name('Surveillances_api_index2');
+Route::get('surveillances',[App\Http\Controllers\API\SurveillanceController::class,'data1'])->withoutMiddleware("throttle:api")->name('Surveillances_api_index');
+Route::post('surveillances-Aggrid', [App\Http\Controllers\API\SurveillanceController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Surveillances_api_aggrid');
+
+// la route de creation
+Route::post('surveillances',[App\Http\Controllers\API\SurveillanceController::class,'create'])->withoutMiddleware("throttle:api")->name('Surveillances_api_create');
+// la route d'edition
+Route::post('surveillances/{Surveillances}/update',[App\Http\Controllers\API\SurveillanceController::class,'update'])->withoutMiddleware("throttle:api")->name('Surveillances_api_update');
+// la route de suppression
+Route::post('surveillances/{Surveillances}/delete',[App\Http\Controllers\API\SurveillanceController::class,'delete'])->withoutMiddleware("throttle:api")->name('Surveillances_api_delete');
+// la route des actions
+Route::get('surveillances/action',[App\Http\Controllers\API\SurveillanceController::class,'action'])->withoutMiddleware("throttle:api")->name('Surveillances_api_delete');
+// la route des actions
+Route::post('surveillances/action',[App\Http\Controllers\API\SurveillanceController::class,'action'])->withoutMiddleware("throttle:api")->name('Surveillances_api_delete');
+
+
+
+//Route::resource('Switchsusers',App\Http\Controllers\API\SwitchsuserController::class);
+// les routes d'affichage
+Route::get('switchsusers/{key}/{val}',[App\Http\Controllers\API\SwitchsuserController::class,'data'])->withoutMiddleware("throttle:api")->name('Switchsusers_api_index2');
+Route::get('switchsusers',[App\Http\Controllers\API\SwitchsuserController::class,'data1'])->withoutMiddleware("throttle:api")->name('Switchsusers_api_index');
+Route::post('switchsusers-Aggrid', [App\Http\Controllers\API\SwitchsuserController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Switchsusers_api_aggrid');
+
+// la route de creation
+Route::post('switchsusers',[App\Http\Controllers\API\SwitchsuserController::class,'create'])->withoutMiddleware("throttle:api")->name('Switchsusers_api_create');
+// la route d'edition
+Route::post('switchsusers/{Switchsusers}/update',[App\Http\Controllers\API\SwitchsuserController::class,'update'])->withoutMiddleware("throttle:api")->name('Switchsusers_api_update');
+// la route de suppression
+Route::post('switchsusers/{Switchsusers}/delete',[App\Http\Controllers\API\SwitchsuserController::class,'delete'])->withoutMiddleware("throttle:api")->name('Switchsusers_api_delete');
+// la route des actions
+Route::get('switchsusers/action',[App\Http\Controllers\API\SwitchsuserController::class,'action'])->withoutMiddleware("throttle:api")->name('Switchsusers_api_delete');
+// la route des actions
+Route::post('switchsusers/action',[App\Http\Controllers\API\SwitchsuserController::class,'action'])->withoutMiddleware("throttle:api")->name('Switchsusers_api_delete');
+
+
+
+//Route::resource('Technologies',App\Http\Controllers\API\TechnologieController::class);
+// les routes d'affichage
+Route::get('technologies/{key}/{val}',[App\Http\Controllers\API\TechnologieController::class,'data'])->withoutMiddleware("throttle:api")->name('Technologies_api_index2');
+Route::get('technologies',[App\Http\Controllers\API\TechnologieController::class,'data1'])->withoutMiddleware("throttle:api")->name('Technologies_api_index');
+Route::post('technologies-Aggrid', [App\Http\Controllers\API\TechnologieController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Technologies_api_aggrid');
+
+// la route de creation
+Route::post('technologies',[App\Http\Controllers\API\TechnologieController::class,'create'])->withoutMiddleware("throttle:api")->name('Technologies_api_create');
+// la route d'edition
+Route::post('technologies/{Technologies}/update',[App\Http\Controllers\API\TechnologieController::class,'update'])->withoutMiddleware("throttle:api")->name('Technologies_api_update');
+// la route de suppression
+Route::post('technologies/{Technologies}/delete',[App\Http\Controllers\API\TechnologieController::class,'delete'])->withoutMiddleware("throttle:api")->name('Technologies_api_delete');
+// la route des actions
+Route::get('technologies/action',[App\Http\Controllers\API\TechnologieController::class,'action'])->withoutMiddleware("throttle:api")->name('Technologies_api_delete');
+// la route des actions
+Route::post('technologies/action',[App\Http\Controllers\API\TechnologieController::class,'action'])->withoutMiddleware("throttle:api")->name('Technologies_api_delete');
+
+
+
+//Route::resource('Terminals',App\Http\Controllers\API\TerminalController::class);
+// les routes d'affichage
+Route::get('terminals/{key}/{val}',[App\Http\Controllers\API\TerminalController::class,'data'])->withoutMiddleware("throttle:api")->name('Terminals_api_index2');
+Route::get('terminals',[App\Http\Controllers\API\TerminalController::class,'data1'])->withoutMiddleware("throttle:api")->name('Terminals_api_index');
+Route::post('terminals-Aggrid', [App\Http\Controllers\API\TerminalController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Terminals_api_aggrid');
+
+// la route de creation
+Route::post('terminals',[App\Http\Controllers\API\TerminalController::class,'create'])->withoutMiddleware("throttle:api")->name('Terminals_api_create');
+// la route d'edition
+Route::post('terminals/{Terminals}/update',[App\Http\Controllers\API\TerminalController::class,'update'])->withoutMiddleware("throttle:api")->name('Terminals_api_update');
+// la route de suppression
+Route::post('terminals/{Terminals}/delete',[App\Http\Controllers\API\TerminalController::class,'delete'])->withoutMiddleware("throttle:api")->name('Terminals_api_delete');
+// la route des actions
+Route::get('terminals/action',[App\Http\Controllers\API\TerminalController::class,'action'])->withoutMiddleware("throttle:api")->name('Terminals_api_delete');
+// la route des actions
+Route::post('terminals/action',[App\Http\Controllers\API\TerminalController::class,'action'])->withoutMiddleware("throttle:api")->name('Terminals_api_delete');
+
+
+
+//Route::resource('Trackings',App\Http\Controllers\API\TrackingController::class);
+// les routes d'affichage
+Route::get('trackings/{key}/{val}',[App\Http\Controllers\API\TrackingController::class,'data'])->withoutMiddleware("throttle:api")->name('Trackings_api_index2');
+Route::get('trackings',[App\Http\Controllers\API\TrackingController::class,'data1'])->withoutMiddleware("throttle:api")->name('Trackings_api_index');
+Route::post('trackings-Aggrid', [App\Http\Controllers\API\TrackingController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Trackings_api_aggrid');
+
+// la route de creation
+Route::post('trackings',[App\Http\Controllers\API\TrackingController::class,'create'])->withoutMiddleware("throttle:api")->name('Trackings_api_create');
+// la route d'edition
+Route::post('trackings/{Trackings}/update',[App\Http\Controllers\API\TrackingController::class,'update'])->withoutMiddleware("throttle:api")->name('Trackings_api_update');
+// la route de suppression
+Route::post('trackings/{Trackings}/delete',[App\Http\Controllers\API\TrackingController::class,'delete'])->withoutMiddleware("throttle:api")->name('Trackings_api_delete');
+// la route des actions
+Route::get('trackings/action',[App\Http\Controllers\API\TrackingController::class,'action'])->withoutMiddleware("throttle:api")->name('Trackings_api_delete');
+// la route des actions
+Route::post('trackings/action',[App\Http\Controllers\API\TrackingController::class,'action'])->withoutMiddleware("throttle:api")->name('Trackings_api_delete');
+
+
+
+//Route::resource('Traitements',App\Http\Controllers\API\TraitementController::class);
+// les routes d'affichage
+Route::get('traitements/{key}/{val}',[App\Http\Controllers\API\TraitementController::class,'data'])->withoutMiddleware("throttle:api")->name('Traitements_api_index2');
+Route::get('traitements',[App\Http\Controllers\API\TraitementController::class,'data1'])->withoutMiddleware("throttle:api")->name('Traitements_api_index');
+Route::post('traitements-Aggrid', [App\Http\Controllers\API\TraitementController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Traitements_api_aggrid');
+
+// la route de creation
+Route::post('traitements',[App\Http\Controllers\API\TraitementController::class,'create'])->withoutMiddleware("throttle:api")->name('Traitements_api_create');
+// la route d'edition
+Route::post('traitements/{Traitements}/update',[App\Http\Controllers\API\TraitementController::class,'update'])->withoutMiddleware("throttle:api")->name('Traitements_api_update');
+// la route de suppression
+Route::post('traitements/{Traitements}/delete',[App\Http\Controllers\API\TraitementController::class,'delete'])->withoutMiddleware("throttle:api")->name('Traitements_api_delete');
+// la route des actions
+Route::get('traitements/action',[App\Http\Controllers\API\TraitementController::class,'action'])->withoutMiddleware("throttle:api")->name('Traitements_api_delete');
+// la route des actions
+Route::post('traitements/action',[App\Http\Controllers\API\TraitementController::class,'action'])->withoutMiddleware("throttle:api")->name('Traitements_api_delete');
+
+
+
+//Route::resource('Trajets',App\Http\Controllers\API\TrajetController::class);
+// les routes d'affichage
+Route::get('trajets/{key}/{val}',[App\Http\Controllers\API\TrajetController::class,'data'])->withoutMiddleware("throttle:api")->name('Trajets_api_index2');
+Route::get('trajets',[App\Http\Controllers\API\TrajetController::class,'data1'])->withoutMiddleware("throttle:api")->name('Trajets_api_index');
+Route::post('trajets-Aggrid', [App\Http\Controllers\API\TrajetController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Trajets_api_aggrid');
+
+// la route de creation
+Route::post('trajets',[App\Http\Controllers\API\TrajetController::class,'create'])->withoutMiddleware("throttle:api")->name('Trajets_api_create');
+// la route d'edition
+Route::post('trajets/{Trajets}/update',[App\Http\Controllers\API\TrajetController::class,'update'])->withoutMiddleware("throttle:api")->name('Trajets_api_update');
+// la route de suppression
+Route::post('trajets/{Trajets}/delete',[App\Http\Controllers\API\TrajetController::class,'delete'])->withoutMiddleware("throttle:api")->name('Trajets_api_delete');
+// la route des actions
+Route::get('trajets/action',[App\Http\Controllers\API\TrajetController::class,'action'])->withoutMiddleware("throttle:api")->name('Trajets_api_delete');
+// la route des actions
+Route::post('trajets/action',[App\Http\Controllers\API\TrajetController::class,'action'])->withoutMiddleware("throttle:api")->name('Trajets_api_delete');
+
+
+
+//Route::resource('Transactions',App\Http\Controllers\API\TransactionController::class);
+// les routes d'affichage
+Route::get('transactions/{key}/{val}',[App\Http\Controllers\API\TransactionController::class,'data'])->withoutMiddleware("throttle:api")->name('Transactions_api_index2');
+Route::get('transactions',[App\Http\Controllers\API\TransactionController::class,'data1'])->withoutMiddleware("throttle:api")->name('Transactions_api_index');
+Route::post('transactions-Aggrid', [App\Http\Controllers\API\TransactionController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Transactions_api_aggrid');
+
+// la route de creation
+Route::post('transactions',[App\Http\Controllers\API\TransactionController::class,'create'])->withoutMiddleware("throttle:api")->name('Transactions_api_create');
+// la route d'edition
+Route::post('transactions/{Transactions}/update',[App\Http\Controllers\API\TransactionController::class,'update'])->withoutMiddleware("throttle:api")->name('Transactions_api_update');
+// la route de suppression
+Route::post('transactions/{Transactions}/delete',[App\Http\Controllers\API\TransactionController::class,'delete'])->withoutMiddleware("throttle:api")->name('Transactions_api_delete');
+// la route des actions
+Route::get('transactions/action',[App\Http\Controllers\API\TransactionController::class,'action'])->withoutMiddleware("throttle:api")->name('Transactions_api_delete');
+// la route des actions
+Route::post('transactions/action',[App\Http\Controllers\API\TransactionController::class,'action'])->withoutMiddleware("throttle:api")->name('Transactions_api_delete');
+
+
+
+//Route::resource('Types',App\Http\Controllers\API\TypeController::class);
+// les routes d'affichage
+Route::get('types/{key}/{val}',[App\Http\Controllers\API\TypeController::class,'data'])->withoutMiddleware("throttle:api")->name('Types_api_index2');
+Route::get('types',[App\Http\Controllers\API\TypeController::class,'data1'])->withoutMiddleware("throttle:api")->name('Types_api_index');
+Route::post('types-Aggrid', [App\Http\Controllers\API\TypeController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Types_api_aggrid');
+
+// la route de creation
+Route::post('types',[App\Http\Controllers\API\TypeController::class,'create'])->withoutMiddleware("throttle:api")->name('Types_api_create');
+// la route d'edition
+Route::post('types/{Types}/update',[App\Http\Controllers\API\TypeController::class,'update'])->withoutMiddleware("throttle:api")->name('Types_api_update');
+// la route de suppression
+Route::post('types/{Types}/delete',[App\Http\Controllers\API\TypeController::class,'delete'])->withoutMiddleware("throttle:api")->name('Types_api_delete');
+// la route des actions
+Route::get('types/action',[App\Http\Controllers\API\TypeController::class,'action'])->withoutMiddleware("throttle:api")->name('Types_api_delete');
+// la route des actions
+Route::post('types/action',[App\Http\Controllers\API\TypeController::class,'action'])->withoutMiddleware("throttle:api")->name('Types_api_delete');
+
+
+
+//Route::resource('Typesabscences',App\Http\Controllers\API\TypesabscenceController::class);
+// les routes d'affichage
+Route::get('typesabscences/{key}/{val}',[App\Http\Controllers\API\TypesabscenceController::class,'data'])->withoutMiddleware("throttle:api")->name('Typesabscences_api_index2');
+Route::get('typesabscences',[App\Http\Controllers\API\TypesabscenceController::class,'data1'])->withoutMiddleware("throttle:api")->name('Typesabscences_api_index');
+Route::post('typesabscences-Aggrid', [App\Http\Controllers\API\TypesabscenceController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Typesabscences_api_aggrid');
+
+// la route de creation
+Route::post('typesabscences',[App\Http\Controllers\API\TypesabscenceController::class,'create'])->withoutMiddleware("throttle:api")->name('Typesabscences_api_create');
+// la route d'edition
+Route::post('typesabscences/{Typesabscences}/update',[App\Http\Controllers\API\TypesabscenceController::class,'update'])->withoutMiddleware("throttle:api")->name('Typesabscences_api_update');
+// la route de suppression
+Route::post('typesabscences/{Typesabscences}/delete',[App\Http\Controllers\API\TypesabscenceController::class,'delete'])->withoutMiddleware("throttle:api")->name('Typesabscences_api_delete');
+// la route des actions
+Route::get('typesabscences/action',[App\Http\Controllers\API\TypesabscenceController::class,'action'])->withoutMiddleware("throttle:api")->name('Typesabscences_api_delete');
+// la route des actions
+Route::post('typesabscences/action',[App\Http\Controllers\API\TypesabscenceController::class,'action'])->withoutMiddleware("throttle:api")->name('Typesabscences_api_delete');
+
+
+
+//Route::resource('Typesagentshoraires',App\Http\Controllers\API\TypesagentshoraireController::class);
+// les routes d'affichage
+Route::get('typesagentshoraires/{key}/{val}',[App\Http\Controllers\API\TypesagentshoraireController::class,'data'])->withoutMiddleware("throttle:api")->name('Typesagentshoraires_api_index2');
+Route::get('typesagentshoraires',[App\Http\Controllers\API\TypesagentshoraireController::class,'data1'])->withoutMiddleware("throttle:api")->name('Typesagentshoraires_api_index');
+Route::post('typesagentshoraires-Aggrid', [App\Http\Controllers\API\TypesagentshoraireController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Typesagentshoraires_api_aggrid');
+
+// la route de creation
+Route::post('typesagentshoraires',[App\Http\Controllers\API\TypesagentshoraireController::class,'create'])->withoutMiddleware("throttle:api")->name('Typesagentshoraires_api_create');
+// la route d'edition
+Route::post('typesagentshoraires/{Typesagentshoraires}/update',[App\Http\Controllers\API\TypesagentshoraireController::class,'update'])->withoutMiddleware("throttle:api")->name('Typesagentshoraires_api_update');
+// la route de suppression
+Route::post('typesagentshoraires/{Typesagentshoraires}/delete',[App\Http\Controllers\API\TypesagentshoraireController::class,'delete'])->withoutMiddleware("throttle:api")->name('Typesagentshoraires_api_delete');
+// la route des actions
+Route::get('typesagentshoraires/action',[App\Http\Controllers\API\TypesagentshoraireController::class,'action'])->withoutMiddleware("throttle:api")->name('Typesagentshoraires_api_delete');
+// la route des actions
+Route::post('typesagentshoraires/action',[App\Http\Controllers\API\TypesagentshoraireController::class,'action'])->withoutMiddleware("throttle:api")->name('Typesagentshoraires_api_delete');
+
+
+
+//Route::resource('Typeseffectifs',App\Http\Controllers\API\TypeseffectifController::class);
+// les routes d'affichage
+Route::get('typeseffectifs/{key}/{val}',[App\Http\Controllers\API\TypeseffectifController::class,'data'])->withoutMiddleware("throttle:api")->name('Typeseffectifs_api_index2');
+Route::get('typeseffectifs',[App\Http\Controllers\API\TypeseffectifController::class,'data1'])->withoutMiddleware("throttle:api")->name('Typeseffectifs_api_index');
+Route::post('typeseffectifs-Aggrid', [App\Http\Controllers\API\TypeseffectifController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Typeseffectifs_api_aggrid');
+
+// la route de creation
+Route::post('typeseffectifs',[App\Http\Controllers\API\TypeseffectifController::class,'create'])->withoutMiddleware("throttle:api")->name('Typeseffectifs_api_create');
+// la route d'edition
+Route::post('typeseffectifs/{Typeseffectifs}/update',[App\Http\Controllers\API\TypeseffectifController::class,'update'])->withoutMiddleware("throttle:api")->name('Typeseffectifs_api_update');
+// la route de suppression
+Route::post('typeseffectifs/{Typeseffectifs}/delete',[App\Http\Controllers\API\TypeseffectifController::class,'delete'])->withoutMiddleware("throttle:api")->name('Typeseffectifs_api_delete');
+// la route des actions
+Route::get('typeseffectifs/action',[App\Http\Controllers\API\TypeseffectifController::class,'action'])->withoutMiddleware("throttle:api")->name('Typeseffectifs_api_delete');
+// la route des actions
+Route::post('typeseffectifs/action',[App\Http\Controllers\API\TypeseffectifController::class,'action'])->withoutMiddleware("throttle:api")->name('Typeseffectifs_api_delete');
+
+
+
+//Route::resource('Typesheures',App\Http\Controllers\API\TypesheureController::class);
+// les routes d'affichage
+Route::get('typesheures/{key}/{val}',[App\Http\Controllers\API\TypesheureController::class,'data'])->withoutMiddleware("throttle:api")->name('Typesheures_api_index2');
+Route::get('typesheures',[App\Http\Controllers\API\TypesheureController::class,'data1'])->withoutMiddleware("throttle:api")->name('Typesheures_api_index');
+Route::post('typesheures-Aggrid', [App\Http\Controllers\API\TypesheureController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Typesheures_api_aggrid');
+
+// la route de creation
+Route::post('typesheures',[App\Http\Controllers\API\TypesheureController::class,'create'])->withoutMiddleware("throttle:api")->name('Typesheures_api_create');
+// la route d'edition
+Route::post('typesheures/{Typesheures}/update',[App\Http\Controllers\API\TypesheureController::class,'update'])->withoutMiddleware("throttle:api")->name('Typesheures_api_update');
+// la route de suppression
+Route::post('typesheures/{Typesheures}/delete',[App\Http\Controllers\API\TypesheureController::class,'delete'])->withoutMiddleware("throttle:api")->name('Typesheures_api_delete');
+// la route des actions
+Route::get('typesheures/action',[App\Http\Controllers\API\TypesheureController::class,'action'])->withoutMiddleware("throttle:api")->name('Typesheures_api_delete');
+// la route des actions
+Route::post('typesheures/action',[App\Http\Controllers\API\TypesheureController::class,'action'])->withoutMiddleware("throttle:api")->name('Typesheures_api_delete');
+
+
+
+//Route::resource('Typesmoyenstransports',App\Http\Controllers\API\TypesmoyenstransportController::class);
+// les routes d'affichage
+Route::get('typesmoyenstransports/{key}/{val}',[App\Http\Controllers\API\TypesmoyenstransportController::class,'data'])->withoutMiddleware("throttle:api")->name('Typesmoyenstransports_api_index2');
+Route::get('typesmoyenstransports',[App\Http\Controllers\API\TypesmoyenstransportController::class,'data1'])->withoutMiddleware("throttle:api")->name('Typesmoyenstransports_api_index');
+Route::post('typesmoyenstransports-Aggrid', [App\Http\Controllers\API\TypesmoyenstransportController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Typesmoyenstransports_api_aggrid');
+
+// la route de creation
+Route::post('typesmoyenstransports',[App\Http\Controllers\API\TypesmoyenstransportController::class,'create'])->withoutMiddleware("throttle:api")->name('Typesmoyenstransports_api_create');
+// la route d'edition
+Route::post('typesmoyenstransports/{Typesmoyenstransports}/update',[App\Http\Controllers\API\TypesmoyenstransportController::class,'update'])->withoutMiddleware("throttle:api")->name('Typesmoyenstransports_api_update');
+// la route de suppression
+Route::post('typesmoyenstransports/{Typesmoyenstransports}/delete',[App\Http\Controllers\API\TypesmoyenstransportController::class,'delete'])->withoutMiddleware("throttle:api")->name('Typesmoyenstransports_api_delete');
+// la route des actions
+Route::get('typesmoyenstransports/action',[App\Http\Controllers\API\TypesmoyenstransportController::class,'action'])->withoutMiddleware("throttle:api")->name('Typesmoyenstransports_api_delete');
+// la route des actions
+Route::post('typesmoyenstransports/action',[App\Http\Controllers\API\TypesmoyenstransportController::class,'action'])->withoutMiddleware("throttle:api")->name('Typesmoyenstransports_api_delete');
+
+
+
+//Route::resource('Typespointages',App\Http\Controllers\API\TypespointageController::class);
+// les routes d'affichage
+Route::get('typespointages/{key}/{val}',[App\Http\Controllers\API\TypespointageController::class,'data'])->withoutMiddleware("throttle:api")->name('Typespointages_api_index2');
+Route::get('typespointages',[App\Http\Controllers\API\TypespointageController::class,'data1'])->withoutMiddleware("throttle:api")->name('Typespointages_api_index');
+Route::post('typespointages-Aggrid', [App\Http\Controllers\API\TypespointageController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Typespointages_api_aggrid');
+
+// la route de creation
+Route::post('typespointages',[App\Http\Controllers\API\TypespointageController::class,'create'])->withoutMiddleware("throttle:api")->name('Typespointages_api_create');
+// la route d'edition
+Route::post('typespointages/{Typespointages}/update',[App\Http\Controllers\API\TypespointageController::class,'update'])->withoutMiddleware("throttle:api")->name('Typespointages_api_update');
+// la route de suppression
+Route::post('typespointages/{Typespointages}/delete',[App\Http\Controllers\API\TypespointageController::class,'delete'])->withoutMiddleware("throttle:api")->name('Typespointages_api_delete');
+// la route des actions
+Route::get('typespointages/action',[App\Http\Controllers\API\TypespointageController::class,'action'])->withoutMiddleware("throttle:api")->name('Typespointages_api_delete');
+// la route des actions
+Route::post('typespointages/action',[App\Http\Controllers\API\TypespointageController::class,'action'])->withoutMiddleware("throttle:api")->name('Typespointages_api_delete');
+
+
+
+//Route::resource('Typespostes',App\Http\Controllers\API\TypesposteController::class);
+// les routes d'affichage
+Route::get('typespostes/{key}/{val}',[App\Http\Controllers\API\TypesposteController::class,'data'])->withoutMiddleware("throttle:api")->name('Typespostes_api_index2');
+Route::get('typespostes',[App\Http\Controllers\API\TypesposteController::class,'data1'])->withoutMiddleware("throttle:api")->name('Typespostes_api_index');
+Route::post('typespostes-Aggrid', [App\Http\Controllers\API\TypesposteController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Typespostes_api_aggrid');
+
+// la route de creation
+Route::post('typespostes',[App\Http\Controllers\API\TypesposteController::class,'create'])->withoutMiddleware("throttle:api")->name('Typespostes_api_create');
+// la route d'edition
+Route::post('typespostes/{Typespostes}/update',[App\Http\Controllers\API\TypesposteController::class,'update'])->withoutMiddleware("throttle:api")->name('Typespostes_api_update');
+// la route de suppression
+Route::post('typespostes/{Typespostes}/delete',[App\Http\Controllers\API\TypesposteController::class,'delete'])->withoutMiddleware("throttle:api")->name('Typespostes_api_delete');
+// la route des actions
+Route::get('typespostes/action',[App\Http\Controllers\API\TypesposteController::class,'action'])->withoutMiddleware("throttle:api")->name('Typespostes_api_delete');
+// la route des actions
+Route::post('typespostes/action',[App\Http\Controllers\API\TypesposteController::class,'action'])->withoutMiddleware("throttle:api")->name('Typespostes_api_delete');
+
+
+
+//Route::resource('Typessites',App\Http\Controllers\API\TypessiteController::class);
+// les routes d'affichage
+Route::get('typessites/{key}/{val}',[App\Http\Controllers\API\TypessiteController::class,'data'])->withoutMiddleware("throttle:api")->name('Typessites_api_index2');
+Route::get('typessites',[App\Http\Controllers\API\TypessiteController::class,'data1'])->withoutMiddleware("throttle:api")->name('Typessites_api_index');
+Route::post('typessites-Aggrid', [App\Http\Controllers\API\TypessiteController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Typessites_api_aggrid');
+
+// la route de creation
+Route::post('typessites',[App\Http\Controllers\API\TypessiteController::class,'create'])->withoutMiddleware("throttle:api")->name('Typessites_api_create');
+// la route d'edition
+Route::post('typessites/{Typessites}/update',[App\Http\Controllers\API\TypessiteController::class,'update'])->withoutMiddleware("throttle:api")->name('Typessites_api_update');
+// la route de suppression
+Route::post('typessites/{Typessites}/delete',[App\Http\Controllers\API\TypessiteController::class,'delete'])->withoutMiddleware("throttle:api")->name('Typessites_api_delete');
+// la route des actions
+Route::get('typessites/action',[App\Http\Controllers\API\TypessiteController::class,'action'])->withoutMiddleware("throttle:api")->name('Typessites_api_delete');
+// la route des actions
+Route::post('typessites/action',[App\Http\Controllers\API\TypessiteController::class,'action'])->withoutMiddleware("throttle:api")->name('Typessites_api_delete');
+
+
+
+//Route::resource('Typesventilations',App\Http\Controllers\API\TypesventilationController::class);
+// les routes d'affichage
+Route::get('typesventilations/{key}/{val}',[App\Http\Controllers\API\TypesventilationController::class,'data'])->withoutMiddleware("throttle:api")->name('Typesventilations_api_index2');
+Route::get('typesventilations',[App\Http\Controllers\API\TypesventilationController::class,'data1'])->withoutMiddleware("throttle:api")->name('Typesventilations_api_index');
+Route::post('typesventilations-Aggrid', [App\Http\Controllers\API\TypesventilationController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Typesventilations_api_aggrid');
+
+// la route de creation
+Route::post('typesventilations',[App\Http\Controllers\API\TypesventilationController::class,'create'])->withoutMiddleware("throttle:api")->name('Typesventilations_api_create');
+// la route d'edition
+Route::post('typesventilations/{Typesventilations}/update',[App\Http\Controllers\API\TypesventilationController::class,'update'])->withoutMiddleware("throttle:api")->name('Typesventilations_api_update');
+// la route de suppression
+Route::post('typesventilations/{Typesventilations}/delete',[App\Http\Controllers\API\TypesventilationController::class,'delete'])->withoutMiddleware("throttle:api")->name('Typesventilations_api_delete');
+// la route des actions
+Route::get('typesventilations/action',[App\Http\Controllers\API\TypesventilationController::class,'action'])->withoutMiddleware("throttle:api")->name('Typesventilations_api_delete');
+// la route des actions
+Route::post('typesventilations/action',[App\Http\Controllers\API\TypesventilationController::class,'action'])->withoutMiddleware("throttle:api")->name('Typesventilations_api_delete');
+
+
+
+//Route::resource('Users',App\Http\Controllers\API\UserController::class);
+// les routes d'affichage
+Route::get('users/{key}/{val}',[App\Http\Controllers\API\UserController::class,'data'])->withoutMiddleware("throttle:api")->name('Users_api_index2');
+Route::get('users',[App\Http\Controllers\API\UserController::class,'data1'])->withoutMiddleware("throttle:api")->name('Users_api_index');
+Route::post('users-Aggrid', [App\Http\Controllers\API\UserController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Users_api_aggrid');
+
+// la route de creation
+Route::post('users',[App\Http\Controllers\API\UserController::class,'create'])->withoutMiddleware("throttle:api")->name('Users_api_create');
+// la route d'edition
+Route::post('users/{Users}/update',[App\Http\Controllers\API\UserController::class,'update'])->withoutMiddleware("throttle:api")->name('Users_api_update');
+// la route de suppression
+Route::post('users/{Users}/delete',[App\Http\Controllers\API\UserController::class,'delete'])->withoutMiddleware("throttle:api")->name('Users_api_delete');
+// la route des actions
+Route::get('users/action',[App\Http\Controllers\API\UserController::class,'action'])->withoutMiddleware("throttle:api")->name('Users_api_delete');
+// la route des actions
+Route::post('users/action',[App\Http\Controllers\API\UserController::class,'action'])->withoutMiddleware("throttle:api")->name('Users_api_delete');
+
+
+
+//Route::resource('Userszones',App\Http\Controllers\API\UserszoneController::class);
+// les routes d'affichage
+Route::get('userszones/{key}/{val}',[App\Http\Controllers\API\UserszoneController::class,'data'])->withoutMiddleware("throttle:api")->name('Userszones_api_index2');
+Route::get('userszones',[App\Http\Controllers\API\UserszoneController::class,'data1'])->withoutMiddleware("throttle:api")->name('Userszones_api_index');
+Route::post('userszones-Aggrid', [App\Http\Controllers\API\UserszoneController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Userszones_api_aggrid');
+
+// la route de creation
+Route::post('userszones',[App\Http\Controllers\API\UserszoneController::class,'create'])->withoutMiddleware("throttle:api")->name('Userszones_api_create');
+// la route d'edition
+Route::post('userszones/{Userszones}/update',[App\Http\Controllers\API\UserszoneController::class,'update'])->withoutMiddleware("throttle:api")->name('Userszones_api_update');
+// la route de suppression
+Route::post('userszones/{Userszones}/delete',[App\Http\Controllers\API\UserszoneController::class,'delete'])->withoutMiddleware("throttle:api")->name('Userszones_api_delete');
+// la route des actions
+Route::get('userszones/action',[App\Http\Controllers\API\UserszoneController::class,'action'])->withoutMiddleware("throttle:api")->name('Userszones_api_delete');
+// la route des actions
+Route::post('userszones/action',[App\Http\Controllers\API\UserszoneController::class,'action'])->withoutMiddleware("throttle:api")->name('Userszones_api_delete');
+
+
+
+//Route::resource('Vacationspostes',App\Http\Controllers\API\VacationsposteController::class);
+// les routes d'affichage
+Route::get('vacationspostes/{key}/{val}',[App\Http\Controllers\API\VacationsposteController::class,'data'])->withoutMiddleware("throttle:api")->name('Vacationspostes_api_index2');
+Route::get('vacationspostes',[App\Http\Controllers\API\VacationsposteController::class,'data1'])->withoutMiddleware("throttle:api")->name('Vacationspostes_api_index');
+Route::post('vacationspostes-Aggrid', [App\Http\Controllers\API\VacationsposteController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Vacationspostes_api_aggrid');
+
+// la route de creation
+Route::post('vacationspostes',[App\Http\Controllers\API\VacationsposteController::class,'create'])->withoutMiddleware("throttle:api")->name('Vacationspostes_api_create');
+// la route d'edition
+Route::post('vacationspostes/{Vacationspostes}/update',[App\Http\Controllers\API\VacationsposteController::class,'update'])->withoutMiddleware("throttle:api")->name('Vacationspostes_api_update');
+// la route de suppression
+Route::post('vacationspostes/{Vacationspostes}/delete',[App\Http\Controllers\API\VacationsposteController::class,'delete'])->withoutMiddleware("throttle:api")->name('Vacationspostes_api_delete');
+// la route des actions
+Route::get('vacationspostes/action',[App\Http\Controllers\API\VacationsposteController::class,'action'])->withoutMiddleware("throttle:api")->name('Vacationspostes_api_delete');
+// la route des actions
+Route::post('vacationspostes/action',[App\Http\Controllers\API\VacationsposteController::class,'action'])->withoutMiddleware("throttle:api")->name('Vacationspostes_api_delete');
+
+
+
+//Route::resource('Validations',App\Http\Controllers\API\ValidationController::class);
+// les routes d'affichage
+Route::get('validations/{key}/{val}',[App\Http\Controllers\API\ValidationController::class,'data'])->withoutMiddleware("throttle:api")->name('Validations_api_index2');
+Route::get('validations',[App\Http\Controllers\API\ValidationController::class,'data1'])->withoutMiddleware("throttle:api")->name('Validations_api_index');
+Route::post('validations-Aggrid', [App\Http\Controllers\API\ValidationController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Validations_api_aggrid');
+
+// la route de creation
+Route::post('validations',[App\Http\Controllers\API\ValidationController::class,'create'])->withoutMiddleware("throttle:api")->name('Validations_api_create');
+// la route d'edition
+Route::post('validations/{Validations}/update',[App\Http\Controllers\API\ValidationController::class,'update'])->withoutMiddleware("throttle:api")->name('Validations_api_update');
+// la route de suppression
+Route::post('validations/{Validations}/delete',[App\Http\Controllers\API\ValidationController::class,'delete'])->withoutMiddleware("throttle:api")->name('Validations_api_delete');
+// la route des actions
+Route::get('validations/action',[App\Http\Controllers\API\ValidationController::class,'action'])->withoutMiddleware("throttle:api")->name('Validations_api_delete');
+// la route des actions
+Route::post('validations/action',[App\Http\Controllers\API\ValidationController::class,'action'])->withoutMiddleware("throttle:api")->name('Validations_api_delete');
+
+
+
+//Route::resource('Variables',App\Http\Controllers\API\VariableController::class);
+// les routes d'affichage
+Route::get('variables/{key}/{val}',[App\Http\Controllers\API\VariableController::class,'data'])->withoutMiddleware("throttle:api")->name('Variables_api_index2');
+Route::get('variables',[App\Http\Controllers\API\VariableController::class,'data1'])->withoutMiddleware("throttle:api")->name('Variables_api_index');
+Route::post('variables-Aggrid', [App\Http\Controllers\API\VariableController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Variables_api_aggrid');
+
+// la route de creation
+Route::post('variables',[App\Http\Controllers\API\VariableController::class,'create'])->withoutMiddleware("throttle:api")->name('Variables_api_create');
+// la route d'edition
+Route::post('variables/{Variables}/update',[App\Http\Controllers\API\VariableController::class,'update'])->withoutMiddleware("throttle:api")->name('Variables_api_update');
+// la route de suppression
+Route::post('variables/{Variables}/delete',[App\Http\Controllers\API\VariableController::class,'delete'])->withoutMiddleware("throttle:api")->name('Variables_api_delete');
+// la route des actions
+Route::get('variables/action',[App\Http\Controllers\API\VariableController::class,'action'])->withoutMiddleware("throttle:api")->name('Variables_api_delete');
+// la route des actions
+Route::post('variables/action',[App\Http\Controllers\API\VariableController::class,'action'])->withoutMiddleware("throttle:api")->name('Variables_api_delete');
+
+
+
+//Route::resource('Vehicules',App\Http\Controllers\API\VehiculeController::class);
+// les routes d'affichage
+Route::get('vehicules/{key}/{val}',[App\Http\Controllers\API\VehiculeController::class,'data'])->withoutMiddleware("throttle:api")->name('Vehicules_api_index2');
+Route::get('vehicules',[App\Http\Controllers\API\VehiculeController::class,'data1'])->withoutMiddleware("throttle:api")->name('Vehicules_api_index');
+Route::post('vehicules-Aggrid', [App\Http\Controllers\API\VehiculeController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Vehicules_api_aggrid');
+
+// la route de creation
+Route::post('vehicules',[App\Http\Controllers\API\VehiculeController::class,'create'])->withoutMiddleware("throttle:api")->name('Vehicules_api_create');
+// la route d'edition
+Route::post('vehicules/{Vehicules}/update',[App\Http\Controllers\API\VehiculeController::class,'update'])->withoutMiddleware("throttle:api")->name('Vehicules_api_update');
+// la route de suppression
+Route::post('vehicules/{Vehicules}/delete',[App\Http\Controllers\API\VehiculeController::class,'delete'])->withoutMiddleware("throttle:api")->name('Vehicules_api_delete');
+// la route des actions
+Route::get('vehicules/action',[App\Http\Controllers\API\VehiculeController::class,'action'])->withoutMiddleware("throttle:api")->name('Vehicules_api_delete');
+// la route des actions
+Route::post('vehicules/action',[App\Http\Controllers\API\VehiculeController::class,'action'])->withoutMiddleware("throttle:api")->name('Vehicules_api_delete');
+
+
+
+//Route::resource('Ventilations',App\Http\Controllers\API\VentilationController::class);
+// les routes d'affichage
+Route::get('ventilations/{key}/{val}',[App\Http\Controllers\API\VentilationController::class,'data'])->withoutMiddleware("throttle:api")->name('Ventilations_api_index2');
+Route::get('ventilations',[App\Http\Controllers\API\VentilationController::class,'data1'])->withoutMiddleware("throttle:api")->name('Ventilations_api_index');
+Route::post('ventilations-Aggrid', [App\Http\Controllers\API\VentilationController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Ventilations_api_aggrid');
+
+// la route de creation
+Route::post('ventilations',[App\Http\Controllers\API\VentilationController::class,'create'])->withoutMiddleware("throttle:api")->name('Ventilations_api_create');
+// la route d'edition
+Route::post('ventilations/{Ventilations}/update',[App\Http\Controllers\API\VentilationController::class,'update'])->withoutMiddleware("throttle:api")->name('Ventilations_api_update');
+// la route de suppression
+Route::post('ventilations/{Ventilations}/delete',[App\Http\Controllers\API\VentilationController::class,'delete'])->withoutMiddleware("throttle:api")->name('Ventilations_api_delete');
+// la route des actions
+Route::get('ventilations/action',[App\Http\Controllers\API\VentilationController::class,'action'])->withoutMiddleware("throttle:api")->name('Ventilations_api_delete');
+// la route des actions
+Route::post('ventilations/action',[App\Http\Controllers\API\VentilationController::class,'action'])->withoutMiddleware("throttle:api")->name('Ventilations_api_delete');
+
+
+
+//Route::resource('Villes',App\Http\Controllers\API\VilleController::class);
+// les routes d'affichage
+Route::get('villes/{key}/{val}',[App\Http\Controllers\API\VilleController::class,'data'])->withoutMiddleware("throttle:api")->name('Villes_api_index2');
+Route::get('villes',[App\Http\Controllers\API\VilleController::class,'data1'])->withoutMiddleware("throttle:api")->name('Villes_api_index');
+Route::post('villes-Aggrid', [App\Http\Controllers\API\VilleController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Villes_api_aggrid');
+
+// la route de creation
+Route::post('villes',[App\Http\Controllers\API\VilleController::class,'create'])->withoutMiddleware("throttle:api")->name('Villes_api_create');
+// la route d'edition
+Route::post('villes/{Villes}/update',[App\Http\Controllers\API\VilleController::class,'update'])->withoutMiddleware("throttle:api")->name('Villes_api_update');
+// la route de suppression
+Route::post('villes/{Villes}/delete',[App\Http\Controllers\API\VilleController::class,'delete'])->withoutMiddleware("throttle:api")->name('Villes_api_delete');
+// la route des actions
+Route::get('villes/action',[App\Http\Controllers\API\VilleController::class,'action'])->withoutMiddleware("throttle:api")->name('Villes_api_delete');
+// la route des actions
+Route::post('villes/action',[App\Http\Controllers\API\VilleController::class,'action'])->withoutMiddleware("throttle:api")->name('Villes_api_delete');
+
+
+
+//Route::resource('Villeszones',App\Http\Controllers\API\VilleszoneController::class);
+// les routes d'affichage
+Route::get('villeszones/{key}/{val}',[App\Http\Controllers\API\VilleszoneController::class,'data'])->withoutMiddleware("throttle:api")->name('Villeszones_api_index2');
+Route::get('villeszones',[App\Http\Controllers\API\VilleszoneController::class,'data1'])->withoutMiddleware("throttle:api")->name('Villeszones_api_index');
+Route::post('villeszones-Aggrid', [App\Http\Controllers\API\VilleszoneController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Villeszones_api_aggrid');
+
+// la route de creation
+Route::post('villeszones',[App\Http\Controllers\API\VilleszoneController::class,'create'])->withoutMiddleware("throttle:api")->name('Villeszones_api_create');
+// la route d'edition
+Route::post('villeszones/{Villeszones}/update',[App\Http\Controllers\API\VilleszoneController::class,'update'])->withoutMiddleware("throttle:api")->name('Villeszones_api_update');
+// la route de suppression
+Route::post('villeszones/{Villeszones}/delete',[App\Http\Controllers\API\VilleszoneController::class,'delete'])->withoutMiddleware("throttle:api")->name('Villeszones_api_delete');
+// la route des actions
+Route::get('villeszones/action',[App\Http\Controllers\API\VilleszoneController::class,'action'])->withoutMiddleware("throttle:api")->name('Villeszones_api_delete');
+// la route des actions
+Route::post('villeszones/action',[App\Http\Controllers\API\VilleszoneController::class,'action'])->withoutMiddleware("throttle:api")->name('Villeszones_api_delete');
+
+
+
+//Route::resource('Websockets_statistics_entries',App\Http\Controllers\API\WebsocketsStatisticsEntrieController::class);
+// les routes d'affichage
+Route::get('websockets_statistics_entries/{key}/{val}',[App\Http\Controllers\API\WebsocketsStatisticsEntrieController::class,'data'])->withoutMiddleware("throttle:api")->name('Websockets_statistics_entries_api_index2');
+Route::get('websockets_statistics_entries',[App\Http\Controllers\API\WebsocketsStatisticsEntrieController::class,'data1'])->withoutMiddleware("throttle:api")->name('Websockets_statistics_entries_api_index');
+Route::post('websockets_statistics_entries-Aggrid', [App\Http\Controllers\API\WebsocketsStatisticsEntrieController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Websockets_statistics_entries_api_aggrid');
+
+// la route de creation
+Route::post('websockets_statistics_entries',[App\Http\Controllers\API\WebsocketsStatisticsEntrieController::class,'create'])->withoutMiddleware("throttle:api")->name('Websockets_statistics_entries_api_create');
+// la route d'edition
+Route::post('websockets_statistics_entries/{Websockets_statistics_entries}/update',[App\Http\Controllers\API\WebsocketsStatisticsEntrieController::class,'update'])->withoutMiddleware("throttle:api")->name('Websockets_statistics_entries_api_update');
+// la route de suppression
+Route::post('websockets_statistics_entries/{Websockets_statistics_entries}/delete',[App\Http\Controllers\API\WebsocketsStatisticsEntrieController::class,'delete'])->withoutMiddleware("throttle:api")->name('Websockets_statistics_entries_api_delete');
+// la route des actions
+Route::get('websockets_statistics_entries/action',[App\Http\Controllers\API\WebsocketsStatisticsEntrieController::class,'action'])->withoutMiddleware("throttle:api")->name('Websockets_statistics_entries_api_delete');
+// la route des actions
+Route::post('websockets_statistics_entries/action',[App\Http\Controllers\API\WebsocketsStatisticsEntrieController::class,'action'])->withoutMiddleware("throttle:api")->name('Websockets_statistics_entries_api_delete');
+
+
+
+//Route::resource('Works',App\Http\Controllers\API\WorkController::class);
+// les routes d'affichage
+Route::get('works/{key}/{val}',[App\Http\Controllers\API\WorkController::class,'data'])->withoutMiddleware("throttle:api")->name('Works_api_index2');
+Route::get('works',[App\Http\Controllers\API\WorkController::class,'data1'])->withoutMiddleware("throttle:api")->name('Works_api_index');
+Route::post('works-Aggrid', [App\Http\Controllers\API\WorkController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Works_api_aggrid');
+
+// la route de creation
+Route::post('works',[App\Http\Controllers\API\WorkController::class,'create'])->withoutMiddleware("throttle:api")->name('Works_api_create');
+// la route d'edition
+Route::post('works/{Works}/update',[App\Http\Controllers\API\WorkController::class,'update'])->withoutMiddleware("throttle:api")->name('Works_api_update');
+// la route de suppression
+Route::post('works/{Works}/delete',[App\Http\Controllers\API\WorkController::class,'delete'])->withoutMiddleware("throttle:api")->name('Works_api_delete');
+// la route des actions
+Route::get('works/action',[App\Http\Controllers\API\WorkController::class,'action'])->withoutMiddleware("throttle:api")->name('Works_api_delete');
+// la route des actions
+Route::post('works/action',[App\Http\Controllers\API\WorkController::class,'action'])->withoutMiddleware("throttle:api")->name('Works_api_delete');
+
+
+
+//Route::resource('Zones',App\Http\Controllers\API\ZoneController::class);
+// les routes d'affichage
+Route::get('zones/{key}/{val}',[App\Http\Controllers\API\ZoneController::class,'data'])->withoutMiddleware("throttle:api")->name('Zones_api_index2');
+Route::get('zones',[App\Http\Controllers\API\ZoneController::class,'data1'])->withoutMiddleware("throttle:api")->name('Zones_api_index');
+Route::post('zones-Aggrid', [App\Http\Controllers\API\ZoneController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Zones_api_aggrid');
+
+// la route de creation
+Route::post('zones',[App\Http\Controllers\API\ZoneController::class,'create'])->withoutMiddleware("throttle:api")->name('Zones_api_create');
+// la route d'edition
+Route::post('zones/{Zones}/update',[App\Http\Controllers\API\ZoneController::class,'update'])->withoutMiddleware("throttle:api")->name('Zones_api_update');
+// la route de suppression
+Route::post('zones/{Zones}/delete',[App\Http\Controllers\API\ZoneController::class,'delete'])->withoutMiddleware("throttle:api")->name('Zones_api_delete');
+// la route des actions
+Route::get('zones/action',[App\Http\Controllers\API\ZoneController::class,'action'])->withoutMiddleware("throttle:api")->name('Zones_api_delete');
+// la route des actions
+Route::post('zones/action',[App\Http\Controllers\API\ZoneController::class,'action'])->withoutMiddleware("throttle:api")->name('Zones_api_delete');
+
+
+
+});

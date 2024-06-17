@@ -1,4 +1,4 @@
-<?php
+<?php 
 namespace App\Http\Controllers\WEB;
 
 use Illuminate\Database\Schema\Blueprint;
@@ -37,7 +37,7 @@ ini_set('memory_limit', '8192M');
 ini_set('max_execution_time', '300');
 
             use App\Models\prod\Poste;
-
+    
 class HorairesControllerWeb extends Controller
 {
 
@@ -173,149 +173,137 @@ $horaires_disposition->disposition=$request->get('disposition');
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -343,12 +331,6 @@ $vue = view('/content/Horaires.horaires_component', ['pageConfigs' => $pageConfi
 
 
     'programmes_disposition'=>$programmes_disposition,
-
-
-    'programmesrondes_disposition'=>$programmesrondes_disposition,
-
-
-    'travailleurs_disposition'=>$travailleurs_disposition,
 
 ]);
 return response($vue, 200);
@@ -404,18 +386,6 @@ $horaires_disposition->disposition=$request->get('disposition');
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 $pageConfig = [
  'mainLayoutType' => 'vertical',
 'type' => 'admin',
@@ -429,137 +399,137 @@ $pageConfig = [
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -573,12 +543,6 @@ $vue = view('/content/Horaires.Horaires', ['pageConfigs' => $pageConfig, 'menu' 
 
 
     'programmes_disposition'=>$programmes_disposition,
-
-
-    'programmesrondes_disposition'=>$programmesrondes_disposition,
-
-
-    'travailleurs_disposition'=>$travailleurs_disposition,
 
 ]);
 return response($vue, 200);
@@ -608,6 +572,7 @@ $horaires_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -615,6 +580,7 @@ $horaires_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -622,25 +588,7 @@ $horaires_disposition->disposition=$request->get('disposition');
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 $params=collect($request->all());
 $params=$params->filter(function ($value, $key) {
 //            dd($key);
@@ -672,137 +620,137 @@ abort(401);
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -823,12 +771,6 @@ $vue = view('/content/Horaires.horaires_one', [
 
 
     'programmes_disposition'=>$programmes_disposition,
-
-
-    'programmesrondes_disposition'=>$programmesrondes_disposition,
-
-
-    'travailleurs_disposition'=>$travailleurs_disposition,
 
 ]);
 
@@ -854,6 +796,7 @@ $horaires_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -861,6 +804,7 @@ $horaires_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -868,25 +812,7 @@ $horaires_disposition->disposition=$request->get('disposition');
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 $params=collect($request->all());
 $params=$params->filter(function ($value, $key) {
 //            dd($key);
@@ -918,137 +844,137 @@ abort(401);
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -1069,12 +995,6 @@ $vue = view('/content/Horaires.horaires_one_component', [
 
 
     'programmes_disposition'=>$programmes_disposition,
-
-
-    'programmesrondes_disposition'=>$programmesrondes_disposition,
-
-
-    'travailleurs_disposition'=>$travailleurs_disposition,
 
 ]);
 
@@ -1111,6 +1031,7 @@ $horaires_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1118,6 +1039,7 @@ $horaires_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1125,25 +1047,7 @@ $horaires_disposition->disposition=$request->get('disposition');
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 $params=collect($request->all());
 $params=$params->filter(function ($value, $key) {
 //            dd($key);
@@ -1186,12 +1090,6 @@ $vue = view('/content/Horaires.impression', [
 
 
     'programmes_disposition'=>$programmes_disposition,
-
-
-    'programmesrondes_disposition'=>$programmesrondes_disposition,
-
-
-    'travailleurs_disposition'=>$travailleurs_disposition,
 
 ]);
 return response($vue, 200);

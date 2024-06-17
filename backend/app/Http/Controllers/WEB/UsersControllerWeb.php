@@ -1,4 +1,4 @@
-<?php
+<?php 
 namespace App\Http\Controllers\WEB;
 
 use Illuminate\Database\Schema\Blueprint;
@@ -33,17 +33,14 @@ use Illuminate\Support\Facades\Session;
 ini_set('memory_limit', '8192M');
 ini_set('max_execution_time', '300');
 
-            use App\Models\prod\Actif;
-                use App\Models\prod\Balise;
+            use App\Models\prod\Balise;
                 use App\Models\prod\Categorie;
                 use App\Models\prod\Contrat;
                 use App\Models\prod\Direction;
                 use App\Models\prod\Echelon;
-                use App\Models\prod\Faction;
                 use App\Models\prod\Fonction;
                 use App\Models\prod\Matrimoniale;
                 use App\Models\prod\Nationalite;
-                use App\Models\prod\Online;
                 use App\Models\prod\Poste;
                 use App\Models\prod\Role;
                 use App\Models\prod\Sexe;
@@ -53,7 +50,7 @@ ini_set('max_execution_time', '300');
                 use App\Models\prod\Typeseffectif;
                     use App\Models\prod\Ville;
                 use App\Models\prod\Zone;
-
+    
 class UsersControllerWeb extends Controller
 {
 
@@ -321,495 +318,393 @@ $users_disposition->disposition=$request->get('disposition');
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -833,31 +728,16 @@ $vue = view('/content/Users.users_component', ['pageConfigs' => $pageConfig, 'me
     'abscences_disposition'=>$abscences_disposition,
 
 
-    'activites_disposition'=>$activites_disposition,
-
-
     'agentsrapports_disposition'=>$agentsrapports_disposition,
 
 
     'assignations_disposition'=>$assignations_disposition,
 
 
-    'attributions_disposition'=>$attributions_disposition,
-
-
     'conges_disposition'=>$conges_disposition,
 
 
-    'contratsagents_disposition'=>$contratsagents_disposition,
-
-
     'cruds_disposition'=>$cruds_disposition,
-
-
-    'ecouteurs_disposition'=>$ecouteurs_disposition,
-
-
-    'empreintes_disposition'=>$empreintes_disposition,
 
 
     'historiquemodelslistings_disposition'=>$historiquemodelslistings_disposition,
@@ -867,12 +747,6 @@ $vue = view('/content/Users.users_component', ['pageConfigs' => $pageConfig, 'me
 
 
     'identifications_disposition'=>$identifications_disposition,
-
-
-    'interventionusers_disposition'=>$interventionusers_disposition,
-
-
-    'listesappelsjours_disposition'=>$listesappelsjours_disposition,
 
 
     'listingsetats_disposition'=>$listingsetats_disposition,
@@ -893,19 +767,10 @@ $vue = view('/content/Users.users_component', ['pageConfigs' => $pageConfig, 'me
     'oauth_clients_disposition'=>$oauth_clients_disposition,
 
 
-    'objectifs_disposition'=>$objectifs_disposition,
-
-
-    'permissionsdetails_disposition'=>$permissionsdetails_disposition,
-
-
     'perms_disposition'=>$perms_disposition,
 
 
     'pointages_disposition'=>$pointages_disposition,
-
-
-    'postesagents_disposition'=>$postesagents_disposition,
 
 
     'presences_disposition'=>$presences_disposition,
@@ -914,16 +779,7 @@ $vue = view('/content/Users.users_component', ['pageConfigs' => $pageConfig, 'me
     'programmations_disposition'=>$programmations_disposition,
 
 
-    'programmationsrondes_disposition'=>$programmationsrondes_disposition,
-
-
-    'programmationsusers_disposition'=>$programmationsusers_disposition,
-
-
     'programmes_disposition'=>$programmes_disposition,
-
-
-    'programmesrondes_disposition'=>$programmesrondes_disposition,
 
 
     'statszones_disposition'=>$statszones_disposition,
@@ -932,19 +788,7 @@ $vue = view('/content/Users.users_component', ['pageConfigs' => $pageConfig, 'me
     'surveillances_disposition'=>$surveillances_disposition,
 
 
-    'travailleurs_disposition'=>$travailleurs_disposition,
-
-
-    'userbadges_disposition'=>$userbadges_disposition,
-
-
     'users_disposition'=>$users_disposition,
-
-
-    'usersgraphiques_disposition'=>$usersgraphiques_disposition,
-
-
-    'userstypespostes_disposition'=>$userstypespostes_disposition,
 
 
     'userszones_disposition'=>$userszones_disposition,
@@ -1141,108 +985,6 @@ $users_disposition->disposition=$request->get('disposition');
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 $pageConfig = [
  'mainLayoutType' => 'vertical',
 'type' => 'admin',
@@ -1256,393 +998,393 @@ $pageConfig = [
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -1652,31 +1394,16 @@ $vue = view('/content/Users.Users', ['pageConfigs' => $pageConfig, 'menu' => $th
     'abscences_disposition'=>$abscences_disposition,
 
 
-    'activites_disposition'=>$activites_disposition,
-
-
     'agentsrapports_disposition'=>$agentsrapports_disposition,
 
 
     'assignations_disposition'=>$assignations_disposition,
 
 
-    'attributions_disposition'=>$attributions_disposition,
-
-
     'conges_disposition'=>$conges_disposition,
 
 
-    'contratsagents_disposition'=>$contratsagents_disposition,
-
-
     'cruds_disposition'=>$cruds_disposition,
-
-
-    'ecouteurs_disposition'=>$ecouteurs_disposition,
-
-
-    'empreintes_disposition'=>$empreintes_disposition,
 
 
     'historiquemodelslistings_disposition'=>$historiquemodelslistings_disposition,
@@ -1686,12 +1413,6 @@ $vue = view('/content/Users.Users', ['pageConfigs' => $pageConfig, 'menu' => $th
 
 
     'identifications_disposition'=>$identifications_disposition,
-
-
-    'interventionusers_disposition'=>$interventionusers_disposition,
-
-
-    'listesappelsjours_disposition'=>$listesappelsjours_disposition,
 
 
     'listingsetats_disposition'=>$listingsetats_disposition,
@@ -1712,19 +1433,10 @@ $vue = view('/content/Users.Users', ['pageConfigs' => $pageConfig, 'menu' => $th
     'oauth_clients_disposition'=>$oauth_clients_disposition,
 
 
-    'objectifs_disposition'=>$objectifs_disposition,
-
-
-    'permissionsdetails_disposition'=>$permissionsdetails_disposition,
-
-
     'perms_disposition'=>$perms_disposition,
 
 
     'pointages_disposition'=>$pointages_disposition,
-
-
-    'postesagents_disposition'=>$postesagents_disposition,
 
 
     'presences_disposition'=>$presences_disposition,
@@ -1733,16 +1445,7 @@ $vue = view('/content/Users.Users', ['pageConfigs' => $pageConfig, 'menu' => $th
     'programmations_disposition'=>$programmations_disposition,
 
 
-    'programmationsrondes_disposition'=>$programmationsrondes_disposition,
-
-
-    'programmationsusers_disposition'=>$programmationsusers_disposition,
-
-
     'programmes_disposition'=>$programmes_disposition,
-
-
-    'programmesrondes_disposition'=>$programmesrondes_disposition,
 
 
     'statszones_disposition'=>$statszones_disposition,
@@ -1751,19 +1454,7 @@ $vue = view('/content/Users.Users', ['pageConfigs' => $pageConfig, 'menu' => $th
     'surveillances_disposition'=>$surveillances_disposition,
 
 
-    'travailleurs_disposition'=>$travailleurs_disposition,
-
-
-    'userbadges_disposition'=>$userbadges_disposition,
-
-
     'users_disposition'=>$users_disposition,
-
-
-    'usersgraphiques_disposition'=>$usersgraphiques_disposition,
-
-
-    'userstypespostes_disposition'=>$userstypespostes_disposition,
 
 
     'userszones_disposition'=>$userszones_disposition,
@@ -1802,6 +1493,7 @@ $users_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1809,6 +1501,7 @@ $users_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1816,6 +1509,7 @@ $users_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1823,6 +1517,7 @@ $users_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1830,6 +1525,7 @@ $users_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1837,6 +1533,7 @@ $users_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1844,6 +1541,7 @@ $users_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1851,6 +1549,7 @@ $users_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1858,6 +1557,7 @@ $users_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1865,6 +1565,7 @@ $users_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1872,6 +1573,7 @@ $users_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1879,6 +1581,7 @@ $users_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1886,6 +1589,7 @@ $users_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1893,6 +1597,7 @@ $users_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1900,6 +1605,7 @@ $users_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1907,6 +1613,7 @@ $users_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1914,6 +1621,7 @@ $users_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1921,6 +1629,7 @@ $users_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1928,6 +1637,7 @@ $users_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1935,6 +1645,7 @@ $users_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1942,6 +1653,7 @@ $users_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1949,6 +1661,7 @@ $users_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1956,6 +1669,7 @@ $users_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1963,6 +1677,7 @@ $users_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1970,167 +1685,7 @@ $users_disposition->disposition=$request->get('disposition');
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 $params=collect($request->all());
 $params=$params->filter(function ($value, $key) {
 //            dd($key);
@@ -2162,393 +1717,393 @@ abort(401);
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -2565,31 +2120,16 @@ $vue = view('/content/Users.users_one', [
     'abscences_disposition'=>$abscences_disposition,
 
 
-    'activites_disposition'=>$activites_disposition,
-
-
     'agentsrapports_disposition'=>$agentsrapports_disposition,
 
 
     'assignations_disposition'=>$assignations_disposition,
 
 
-    'attributions_disposition'=>$attributions_disposition,
-
-
     'conges_disposition'=>$conges_disposition,
 
 
-    'contratsagents_disposition'=>$contratsagents_disposition,
-
-
     'cruds_disposition'=>$cruds_disposition,
-
-
-    'ecouteurs_disposition'=>$ecouteurs_disposition,
-
-
-    'empreintes_disposition'=>$empreintes_disposition,
 
 
     'historiquemodelslistings_disposition'=>$historiquemodelslistings_disposition,
@@ -2599,12 +2139,6 @@ $vue = view('/content/Users.users_one', [
 
 
     'identifications_disposition'=>$identifications_disposition,
-
-
-    'interventionusers_disposition'=>$interventionusers_disposition,
-
-
-    'listesappelsjours_disposition'=>$listesappelsjours_disposition,
 
 
     'listingsetats_disposition'=>$listingsetats_disposition,
@@ -2625,19 +2159,10 @@ $vue = view('/content/Users.users_one', [
     'oauth_clients_disposition'=>$oauth_clients_disposition,
 
 
-    'objectifs_disposition'=>$objectifs_disposition,
-
-
-    'permissionsdetails_disposition'=>$permissionsdetails_disposition,
-
-
     'perms_disposition'=>$perms_disposition,
 
 
     'pointages_disposition'=>$pointages_disposition,
-
-
-    'postesagents_disposition'=>$postesagents_disposition,
 
 
     'presences_disposition'=>$presences_disposition,
@@ -2646,16 +2171,7 @@ $vue = view('/content/Users.users_one', [
     'programmations_disposition'=>$programmations_disposition,
 
 
-    'programmationsrondes_disposition'=>$programmationsrondes_disposition,
-
-
-    'programmationsusers_disposition'=>$programmationsusers_disposition,
-
-
     'programmes_disposition'=>$programmes_disposition,
-
-
-    'programmesrondes_disposition'=>$programmesrondes_disposition,
 
 
     'statszones_disposition'=>$statszones_disposition,
@@ -2664,19 +2180,7 @@ $vue = view('/content/Users.users_one', [
     'surveillances_disposition'=>$surveillances_disposition,
 
 
-    'travailleurs_disposition'=>$travailleurs_disposition,
-
-
-    'userbadges_disposition'=>$userbadges_disposition,
-
-
     'users_disposition'=>$users_disposition,
-
-
-    'usersgraphiques_disposition'=>$usersgraphiques_disposition,
-
-
-    'userstypespostes_disposition'=>$userstypespostes_disposition,
 
 
     'userszones_disposition'=>$userszones_disposition,
@@ -2711,6 +2215,7 @@ $users_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -2718,6 +2223,7 @@ $users_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -2725,6 +2231,7 @@ $users_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -2732,6 +2239,7 @@ $users_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -2739,6 +2247,7 @@ $users_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -2746,6 +2255,7 @@ $users_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -2753,6 +2263,7 @@ $users_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -2760,6 +2271,7 @@ $users_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -2767,6 +2279,7 @@ $users_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -2774,6 +2287,7 @@ $users_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -2781,6 +2295,7 @@ $users_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -2788,6 +2303,7 @@ $users_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -2795,6 +2311,7 @@ $users_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -2802,6 +2319,7 @@ $users_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -2809,6 +2327,7 @@ $users_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -2816,6 +2335,7 @@ $users_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -2823,6 +2343,7 @@ $users_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -2830,6 +2351,7 @@ $users_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -2837,6 +2359,7 @@ $users_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -2844,6 +2367,7 @@ $users_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -2851,6 +2375,7 @@ $users_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -2858,6 +2383,7 @@ $users_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -2865,6 +2391,7 @@ $users_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -2872,6 +2399,7 @@ $users_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -2879,167 +2407,7 @@ $users_disposition->disposition=$request->get('disposition');
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 $params=collect($request->all());
 $params=$params->filter(function ($value, $key) {
 //            dd($key);
@@ -3071,393 +2439,393 @@ abort(401);
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -3474,31 +2842,16 @@ $vue = view('/content/Users.users_one_component', [
     'abscences_disposition'=>$abscences_disposition,
 
 
-    'activites_disposition'=>$activites_disposition,
-
-
     'agentsrapports_disposition'=>$agentsrapports_disposition,
 
 
     'assignations_disposition'=>$assignations_disposition,
 
 
-    'attributions_disposition'=>$attributions_disposition,
-
-
     'conges_disposition'=>$conges_disposition,
 
 
-    'contratsagents_disposition'=>$contratsagents_disposition,
-
-
     'cruds_disposition'=>$cruds_disposition,
-
-
-    'ecouteurs_disposition'=>$ecouteurs_disposition,
-
-
-    'empreintes_disposition'=>$empreintes_disposition,
 
 
     'historiquemodelslistings_disposition'=>$historiquemodelslistings_disposition,
@@ -3508,12 +2861,6 @@ $vue = view('/content/Users.users_one_component', [
 
 
     'identifications_disposition'=>$identifications_disposition,
-
-
-    'interventionusers_disposition'=>$interventionusers_disposition,
-
-
-    'listesappelsjours_disposition'=>$listesappelsjours_disposition,
 
 
     'listingsetats_disposition'=>$listingsetats_disposition,
@@ -3534,19 +2881,10 @@ $vue = view('/content/Users.users_one_component', [
     'oauth_clients_disposition'=>$oauth_clients_disposition,
 
 
-    'objectifs_disposition'=>$objectifs_disposition,
-
-
-    'permissionsdetails_disposition'=>$permissionsdetails_disposition,
-
-
     'perms_disposition'=>$perms_disposition,
 
 
     'pointages_disposition'=>$pointages_disposition,
-
-
-    'postesagents_disposition'=>$postesagents_disposition,
 
 
     'presences_disposition'=>$presences_disposition,
@@ -3555,16 +2893,7 @@ $vue = view('/content/Users.users_one_component', [
     'programmations_disposition'=>$programmations_disposition,
 
 
-    'programmationsrondes_disposition'=>$programmationsrondes_disposition,
-
-
-    'programmationsusers_disposition'=>$programmationsusers_disposition,
-
-
     'programmes_disposition'=>$programmes_disposition,
-
-
-    'programmesrondes_disposition'=>$programmesrondes_disposition,
 
 
     'statszones_disposition'=>$statszones_disposition,
@@ -3573,19 +2902,7 @@ $vue = view('/content/Users.users_one_component', [
     'surveillances_disposition'=>$surveillances_disposition,
 
 
-    'travailleurs_disposition'=>$travailleurs_disposition,
-
-
-    'userbadges_disposition'=>$userbadges_disposition,
-
-
     'users_disposition'=>$users_disposition,
-
-
-    'usersgraphiques_disposition'=>$usersgraphiques_disposition,
-
-
-    'userstypespostes_disposition'=>$userstypespostes_disposition,
 
 
     'userszones_disposition'=>$userszones_disposition,
@@ -3631,6 +2948,7 @@ $users_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -3638,6 +2956,7 @@ $users_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -3645,6 +2964,7 @@ $users_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -3652,6 +2972,7 @@ $users_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -3659,6 +2980,7 @@ $users_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -3666,6 +2988,7 @@ $users_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -3673,6 +2996,7 @@ $users_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -3680,6 +3004,7 @@ $users_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -3687,6 +3012,7 @@ $users_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -3694,6 +3020,7 @@ $users_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -3701,6 +3028,7 @@ $users_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -3708,6 +3036,7 @@ $users_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -3715,6 +3044,7 @@ $users_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -3722,6 +3052,7 @@ $users_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -3729,6 +3060,7 @@ $users_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -3736,6 +3068,7 @@ $users_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -3743,6 +3076,7 @@ $users_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -3750,6 +3084,7 @@ $users_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -3757,6 +3092,7 @@ $users_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -3764,6 +3100,7 @@ $users_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -3771,6 +3108,7 @@ $users_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -3778,6 +3116,7 @@ $users_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -3785,6 +3124,7 @@ $users_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -3792,6 +3132,7 @@ $users_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -3799,167 +3140,7 @@ $users_disposition->disposition=$request->get('disposition');
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 $params=collect($request->all());
 $params=$params->filter(function ($value, $key) {
 //            dd($key);
@@ -3998,31 +3179,16 @@ $vue = view('/content/Users.impression', [
     'abscences_disposition'=>$abscences_disposition,
 
 
-    'activites_disposition'=>$activites_disposition,
-
-
     'agentsrapports_disposition'=>$agentsrapports_disposition,
 
 
     'assignations_disposition'=>$assignations_disposition,
 
 
-    'attributions_disposition'=>$attributions_disposition,
-
-
     'conges_disposition'=>$conges_disposition,
 
 
-    'contratsagents_disposition'=>$contratsagents_disposition,
-
-
     'cruds_disposition'=>$cruds_disposition,
-
-
-    'ecouteurs_disposition'=>$ecouteurs_disposition,
-
-
-    'empreintes_disposition'=>$empreintes_disposition,
 
 
     'historiquemodelslistings_disposition'=>$historiquemodelslistings_disposition,
@@ -4032,12 +3198,6 @@ $vue = view('/content/Users.impression', [
 
 
     'identifications_disposition'=>$identifications_disposition,
-
-
-    'interventionusers_disposition'=>$interventionusers_disposition,
-
-
-    'listesappelsjours_disposition'=>$listesappelsjours_disposition,
 
 
     'listingsetats_disposition'=>$listingsetats_disposition,
@@ -4058,19 +3218,10 @@ $vue = view('/content/Users.impression', [
     'oauth_clients_disposition'=>$oauth_clients_disposition,
 
 
-    'objectifs_disposition'=>$objectifs_disposition,
-
-
-    'permissionsdetails_disposition'=>$permissionsdetails_disposition,
-
-
     'perms_disposition'=>$perms_disposition,
 
 
     'pointages_disposition'=>$pointages_disposition,
-
-
-    'postesagents_disposition'=>$postesagents_disposition,
 
 
     'presences_disposition'=>$presences_disposition,
@@ -4079,16 +3230,7 @@ $vue = view('/content/Users.impression', [
     'programmations_disposition'=>$programmations_disposition,
 
 
-    'programmationsrondes_disposition'=>$programmationsrondes_disposition,
-
-
-    'programmationsusers_disposition'=>$programmationsusers_disposition,
-
-
     'programmes_disposition'=>$programmes_disposition,
-
-
-    'programmesrondes_disposition'=>$programmesrondes_disposition,
 
 
     'statszones_disposition'=>$statszones_disposition,
@@ -4097,19 +3239,7 @@ $vue = view('/content/Users.impression', [
     'surveillances_disposition'=>$surveillances_disposition,
 
 
-    'travailleurs_disposition'=>$travailleurs_disposition,
-
-
-    'userbadges_disposition'=>$userbadges_disposition,
-
-
     'users_disposition'=>$users_disposition,
-
-
-    'usersgraphiques_disposition'=>$usersgraphiques_disposition,
-
-
-    'userstypespostes_disposition'=>$userstypespostes_disposition,
 
 
     'userszones_disposition'=>$userszones_disposition,

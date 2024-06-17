@@ -30,7 +30,6 @@ use Spatie\QueryBuilder\QueryBuilder;
 
 
             use App\Models\Poste;
-                use App\Models\Tache;
                     use App\Models\Zone;
     
 class ProgrammationController extends Controller
@@ -248,13 +247,6 @@ $data = QueryBuilder::for(Programmation::class)
             AllowedFilter::exact('min_pointage'),
 
     
-    
-            AllowedFilter::exact('identifiants_sadge'),
-
-    
-            AllowedFilter::exact('creat_by'),
-
-    
             AllowedFilter::exact('valideur_1'),
 
     
@@ -268,6 +260,13 @@ $data = QueryBuilder::for(Programmation::class)
 
     
             AllowedFilter::exact('directions'),
+
+    
+    
+            AllowedFilter::exact('identifiants_sadge'),
+
+    
+            AllowedFilter::exact('creat_by'),
 
     
 AllowedFilter::callback('not_null', function (Builder $query, $value) {
@@ -449,13 +448,6 @@ return $query;
             AllowedSort::field('min_pointage'),
 
     
-    
-            AllowedSort::field('identifiants_sadge'),
-
-    
-            AllowedSort::field('creat_by'),
-
-    
             AllowedSort::field('valideur_1'),
 
     
@@ -471,19 +463,19 @@ return $query;
             AllowedSort::field('directions'),
 
     
+    
+            AllowedSort::field('identifiants_sadge'),
+
+    
+            AllowedSort::field('creat_by'),
+
+    
 ])
     
     
     
-    
 ->allowedIncludes([
-            'programmationsdetails',
-        
-
-                'programmationsusers',
-        
-
-                'programmes',
+            'programmes',
         
 
                 'ventilations',
@@ -491,9 +483,6 @@ return $query;
 
     
             'poste',
-        
-
-                'tache',
         
 
                 'user',
@@ -924,13 +913,6 @@ $data = QueryBuilder::for(Programmation::class)
             AllowedFilter::exact('min_pointage'),
 
     
-    
-            AllowedFilter::exact('identifiants_sadge'),
-
-    
-            AllowedFilter::exact('creat_by'),
-
-    
             AllowedFilter::exact('valideur_1'),
 
     
@@ -944,6 +926,13 @@ $data = QueryBuilder::for(Programmation::class)
 
     
             AllowedFilter::exact('directions'),
+
+    
+    
+            AllowedFilter::exact('identifiants_sadge'),
+
+    
+            AllowedFilter::exact('creat_by'),
 
     
 AllowedFilter::callback('not_null', function (Builder $query, $value) {
@@ -1125,13 +1114,6 @@ return $query;
             AllowedSort::field('min_pointage'),
 
     
-    
-            AllowedSort::field('identifiants_sadge'),
-
-    
-            AllowedSort::field('creat_by'),
-
-    
             AllowedSort::field('valideur_1'),
 
     
@@ -1147,28 +1129,25 @@ return $query;
             AllowedSort::field('directions'),
 
     
+    
+            AllowedSort::field('identifiants_sadge'),
+
+    
+            AllowedSort::field('creat_by'),
+
+    
 ])
     
     
     
-    
 ->allowedIncludes([
-            'programmationsdetails',
-        
-
-                'programmationsusers',
-        
-
-                'programmes',
+            'programmes',
         
 
                 'ventilations',
         
 
                 'poste',
-        
-
-                'tache',
         
 
                 'user',
@@ -1560,14 +1539,14 @@ $champsRechercher=[
     'user_id_3',
     'user_id_4',
     'min_pointage',
-    'deleted_at',
-    'identifiants_sadge',
-    'creat_by',
     'valideur_1',
     'valideur_2',
     'typelistings',
     'postesbaladeur',
     'directions',
+    'deleted_at',
+    'identifiants_sadge',
+    'creat_by',
 ];
 $envoyer=[];
 foreach($data as $key=>$d){
@@ -1740,19 +1719,6 @@ Validator::make($data, [
         
     
     
-    
-                    'identifiants_sadge' => [
-            //'required'
-            ],
-        
-    
-    
-                    'creat_by' => [
-            //'required'
-            ],
-        
-    
-    
                     'valideur_1' => [
             //'required'
             ],
@@ -1778,6 +1744,19 @@ Validator::make($data, [
     
     
                     'directions' => [
+            //'required'
+            ],
+        
+    
+    
+    
+                    'identifiants_sadge' => [
+            //'required'
+            ],
+        
+    
+    
+                    'creat_by' => [
             //'required'
             ],
         
@@ -1896,15 +1875,6 @@ Validator::make($data, [
 
     
     
-    
-        'identifiants_sadge' => ['cette donnee est obligatoire'],
-
-    
-    
-        'creat_by' => ['cette donnee est obligatoire'],
-
-    
-    
         'valideur_1' => ['cette donnee est obligatoire'],
 
     
@@ -1922,6 +1892,15 @@ Validator::make($data, [
     
     
         'directions' => ['cette donnee est obligatoire'],
+
+    
+    
+    
+        'identifiants_sadge' => ['cette donnee est obligatoire'],
+
+    
+    
+        'creat_by' => ['cette donnee est obligatoire'],
 
     
 ])->validate();
@@ -2466,50 +2445,6 @@ $data['creat_by']=Auth::id();
 
     
 
-
-
-
-
-
-
-    
-
-        if(!empty($data['identifiants_sadge'])){
-        
-            $Programmations->identifiants_sadge = $data['identifiants_sadge'];
-        
-        }
-
-
-
-    
-
-
-
-
-
-
-
-    
-
-        if(!empty($data['creat_by'])){
-        
-            $Programmations->creat_by = $data['creat_by'];
-        
-        }
-
-
-
-    
-
-
-
-
-
-
-
-    
-
         if(!empty($data['valideur_1'])){
         
             $Programmations->valideur_1 = $data['valideur_1'];
@@ -2598,6 +2533,50 @@ $data['creat_by']=Auth::id();
 
 
 
+    
+
+
+
+
+
+
+
+    
+
+        if(!empty($data['identifiants_sadge'])){
+        
+            $Programmations->identifiants_sadge = $data['identifiants_sadge'];
+        
+        }
+
+
+
+    
+
+
+
+
+
+
+
+    
+
+        if(!empty($data['creat_by'])){
+        
+            $Programmations->creat_by = $data['creat_by'];
+        
+        }
+
+
+
+    
+
+
+
+
+
+
+
 
 
 
@@ -2673,15 +2652,15 @@ $newCrudData=[];
                 $newCrudData['user_id_3']=$Programmations->user_id_3;
                 $newCrudData['user_id_4']=$Programmations->user_id_4;
                 $newCrudData['min_pointage']=$Programmations->min_pointage;
-                    $newCrudData['identifiants_sadge']=$Programmations->identifiants_sadge;
-                $newCrudData['creat_by']=$Programmations->creat_by;
                 $newCrudData['valideur_1']=$Programmations->valideur_1;
                 $newCrudData['valideur_2']=$Programmations->valideur_2;
                 $newCrudData['typelistings']=$Programmations->typelistings;
                 $newCrudData['postesbaladeur']=$Programmations->postesbaladeur;
                 $newCrudData['directions']=$Programmations->directions;
+                    $newCrudData['identifiants_sadge']=$Programmations->identifiants_sadge;
+                $newCrudData['creat_by']=$Programmations->creat_by;
     
- try{ $newCrudData['poste']=$Programmations->poste->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['tache']=$Programmations->tache->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['user']=$Programmations->user->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['zone']=$Programmations->zone->Selectlabel; }catch(\Throwable $e){}  
+ try{ $newCrudData['poste']=$Programmations->poste->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['user']=$Programmations->user->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['zone']=$Programmations->zone->Selectlabel; }catch(\Throwable $e){}  
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Create", 'entite' => 'Programmations','entite_cle' => $Programmations->id, 'ancien' => json_encode($newCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);
 
 
@@ -2757,15 +2736,15 @@ $oldCrudData=[];
                 $oldCrudData['user_id_3']=$Programmations->user_id_3;
                 $oldCrudData['user_id_4']=$Programmations->user_id_4;
                 $oldCrudData['min_pointage']=$Programmations->min_pointage;
-                    $oldCrudData['identifiants_sadge']=$Programmations->identifiants_sadge;
-                $oldCrudData['creat_by']=$Programmations->creat_by;
                 $oldCrudData['valideur_1']=$Programmations->valideur_1;
                 $oldCrudData['valideur_2']=$Programmations->valideur_2;
                 $oldCrudData['typelistings']=$Programmations->typelistings;
                 $oldCrudData['postesbaladeur']=$Programmations->postesbaladeur;
                 $oldCrudData['directions']=$Programmations->directions;
+                    $oldCrudData['identifiants_sadge']=$Programmations->identifiants_sadge;
+                $oldCrudData['creat_by']=$Programmations->creat_by;
     
- try{ $oldCrudData['poste']=$Programmations->poste->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['tache']=$Programmations->tache->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['user']=$Programmations->user->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['zone']=$Programmations->zone->Selectlabel; }catch(\Throwable $e){}  
+ try{ $oldCrudData['poste']=$Programmations->poste->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['user']=$Programmations->user->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['zone']=$Programmations->zone->Selectlabel; }catch(\Throwable $e){}  
 
 $data=$request->all();
 foreach ($request->allFiles() as $key=>$file){
@@ -2808,14 +2787,14 @@ $champsRechercher=[
     'user_id_3',
     'user_id_4',
     'min_pointage',
-    'deleted_at',
-    'identifiants_sadge',
-    'creat_by',
     'valideur_1',
     'valideur_2',
     'typelistings',
     'postesbaladeur',
     'directions',
+    'deleted_at',
+    'identifiants_sadge',
+    'creat_by',
 ];
 $envoyer=[];
 foreach($data as $key=>$d){
@@ -2988,19 +2967,6 @@ Validator::make($data, [
         
     
     
-    
-                    'identifiants_sadge' => [
-            //'required'
-            ],
-        
-    
-    
-                    'creat_by' => [
-            //'required'
-            ],
-        
-    
-    
                     'valideur_1' => [
             //'required'
             ],
@@ -3026,6 +2992,19 @@ Validator::make($data, [
     
     
                     'directions' => [
+            //'required'
+            ],
+        
+    
+    
+    
+                    'identifiants_sadge' => [
+            //'required'
+            ],
+        
+    
+    
+                    'creat_by' => [
             //'required'
             ],
         
@@ -3144,15 +3123,6 @@ Validator::make($data, [
 
     
     
-    
-        'identifiants_sadge' => ['cette donnee est obligatoire'],
-
-    
-    
-        'creat_by' => ['cette donnee est obligatoire'],
-
-    
-    
         'valideur_1' => ['cette donnee est obligatoire'],
 
     
@@ -3170,6 +3140,15 @@ Validator::make($data, [
     
     
         'directions' => ['cette donnee est obligatoire'],
+
+    
+    
+    
+        'identifiants_sadge' => ['cette donnee est obligatoire'],
+
+    
+    
+        'creat_by' => ['cette donnee est obligatoire'],
 
     
 ])->validate();
@@ -3793,56 +3772,6 @@ $extra_data=array_diff($envoyer,$champsRechercher);
 
     
 
-
-
-
-
-
-
-    
-
-        if(array_key_exists("identifiants_sadge",$data)){
-
-
-        if(!empty($data['identifiants_sadge'])){
-        
-            $Programmations->identifiants_sadge = $data['identifiants_sadge'];
-        
-        }
-
-        }
-
-    
-
-
-
-
-
-
-
-    
-
-        if(array_key_exists("creat_by",$data)){
-
-
-        if(!empty($data['creat_by'])){
-        
-            $Programmations->creat_by = $data['creat_by'];
-        
-        }
-
-        }
-
-    
-
-
-
-
-
-
-
-    
-
         if(array_key_exists("valideur_1",$data)){
 
 
@@ -3946,6 +3875,56 @@ $extra_data=array_diff($envoyer,$champsRechercher);
 
 
 
+    
+
+
+
+
+
+
+
+    
+
+        if(array_key_exists("identifiants_sadge",$data)){
+
+
+        if(!empty($data['identifiants_sadge'])){
+        
+            $Programmations->identifiants_sadge = $data['identifiants_sadge'];
+        
+        }
+
+        }
+
+    
+
+
+
+
+
+
+
+    
+
+        if(array_key_exists("creat_by",$data)){
+
+
+        if(!empty($data['creat_by'])){
+        
+            $Programmations->creat_by = $data['creat_by'];
+        
+        }
+
+        }
+
+    
+
+
+
+
+
+
+
 
 
 
@@ -4028,15 +4007,15 @@ $newCrudData=[];
                 $newCrudData['user_id_3']=$Programmations->user_id_3;
                 $newCrudData['user_id_4']=$Programmations->user_id_4;
                 $newCrudData['min_pointage']=$Programmations->min_pointage;
-                    $newCrudData['identifiants_sadge']=$Programmations->identifiants_sadge;
-                $newCrudData['creat_by']=$Programmations->creat_by;
                 $newCrudData['valideur_1']=$Programmations->valideur_1;
                 $newCrudData['valideur_2']=$Programmations->valideur_2;
                 $newCrudData['typelistings']=$Programmations->typelistings;
                 $newCrudData['postesbaladeur']=$Programmations->postesbaladeur;
                 $newCrudData['directions']=$Programmations->directions;
+                    $newCrudData['identifiants_sadge']=$Programmations->identifiants_sadge;
+                $newCrudData['creat_by']=$Programmations->creat_by;
     
- try{ $newCrudData['poste']=$Programmations->poste->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['tache']=$Programmations->tache->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['user']=$Programmations->user->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['zone']=$Programmations->zone->Selectlabel; }catch(\Throwable $e){}  
+ try{ $newCrudData['poste']=$Programmations->poste->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['user']=$Programmations->user->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['zone']=$Programmations->zone->Selectlabel; }catch(\Throwable $e){}  
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Update", 'entite' => 'Programmations','entite_cle' => $Programmations->id, 'ancien' => json_encode($oldCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);
 
 $response = $Programmations->toArray();
@@ -4107,15 +4086,15 @@ $newCrudData=[];
                 $newCrudData['user_id_3']=$Programmations->user_id_3;
                 $newCrudData['user_id_4']=$Programmations->user_id_4;
                 $newCrudData['min_pointage']=$Programmations->min_pointage;
-                    $newCrudData['identifiants_sadge']=$Programmations->identifiants_sadge;
-                $newCrudData['creat_by']=$Programmations->creat_by;
                 $newCrudData['valideur_1']=$Programmations->valideur_1;
                 $newCrudData['valideur_2']=$Programmations->valideur_2;
                 $newCrudData['typelistings']=$Programmations->typelistings;
                 $newCrudData['postesbaladeur']=$Programmations->postesbaladeur;
                 $newCrudData['directions']=$Programmations->directions;
+                    $newCrudData['identifiants_sadge']=$Programmations->identifiants_sadge;
+                $newCrudData['creat_by']=$Programmations->creat_by;
     
- try{ $newCrudData['poste']=$Programmations->poste->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['tache']=$Programmations->tache->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['user']=$Programmations->user->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['zone']=$Programmations->zone->Selectlabel; }catch(\Throwable $e){}  
+ try{ $newCrudData['poste']=$Programmations->poste->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['user']=$Programmations->user->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['zone']=$Programmations->zone->Selectlabel; }catch(\Throwable $e){}  
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Delete", 'entite' => 'Programmations','entite_cle' => $Programmations->id, 'ancien' => json_encode($newCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);
 
 

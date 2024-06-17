@@ -1,4 +1,4 @@
-<?php
+<?php 
 namespace App\Http\Controllers\WEB;
 
 use Illuminate\Database\Schema\Blueprint;
@@ -40,7 +40,7 @@ ini_set('max_execution_time', '300');
                 use App\Models\prod\Pointeuse;
                 use App\Models\prod\Typessite;
                 use App\Models\prod\Zone;
-
+    
 class SitesControllerWeb extends Controller
 {
 
@@ -224,169 +224,145 @@ $sites_disposition->disposition=$request->get('disposition');
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -410,16 +386,7 @@ $vue = view('/content/Sites.sites_component', ['pageConfigs' => $pageConfig, 'me
     'cartes_disposition'=>$cartes_disposition,
 
 
-    'contratssites_disposition'=>$contratssites_disposition,
-
-
     'controlleursacces_disposition'=>$controlleursacces_disposition,
-
-
-    'interventions_disposition'=>$interventions_disposition,
-
-
-    'listings_disposition'=>$listings_disposition,
 
 
     'passagesrondes_disposition'=>$passagesrondes_disposition,
@@ -441,9 +408,6 @@ $vue = view('/content/Sites.sites_component', ['pageConfigs' => $pageConfig, 'me
 
 
     'sitessdeplacements_disposition'=>$sitessdeplacements_disposition,
-
-
-    'taches_disposition'=>$taches_disposition,
 
 
     'trajets_disposition'=>$trajets_disposition,
@@ -553,30 +517,6 @@ $sites_disposition->disposition=$request->get('disposition');
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 $pageConfig = [
  'mainLayoutType' => 'vertical',
 'type' => 'admin',
@@ -590,145 +530,145 @@ $pageConfig = [
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -738,16 +678,7 @@ $vue = view('/content/Sites.Sites', ['pageConfigs' => $pageConfig, 'menu' => $th
     'cartes_disposition'=>$cartes_disposition,
 
 
-    'contratssites_disposition'=>$contratssites_disposition,
-
-
     'controlleursacces_disposition'=>$controlleursacces_disposition,
-
-
-    'interventions_disposition'=>$interventions_disposition,
-
-
-    'listings_disposition'=>$listings_disposition,
 
 
     'passagesrondes_disposition'=>$passagesrondes_disposition,
@@ -769,9 +700,6 @@ $vue = view('/content/Sites.Sites', ['pageConfigs' => $pageConfig, 'menu' => $th
 
 
     'sitessdeplacements_disposition'=>$sitessdeplacements_disposition,
-
-
-    'taches_disposition'=>$taches_disposition,
 
 
     'trajets_disposition'=>$trajets_disposition,
@@ -807,6 +735,7 @@ $sites_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -814,6 +743,7 @@ $sites_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -821,6 +751,7 @@ $sites_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -828,6 +759,7 @@ $sites_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -835,6 +767,7 @@ $sites_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -842,6 +775,7 @@ $sites_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -849,6 +783,7 @@ $sites_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -856,6 +791,7 @@ $sites_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -863,6 +799,7 @@ $sites_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -870,6 +807,7 @@ $sites_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -877,49 +815,7 @@ $sites_disposition->disposition=$request->get('disposition');
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 $params=collect($request->all());
 $params=$params->filter(function ($value, $key) {
 //            dd($key);
@@ -951,145 +847,145 @@ abort(401);
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -1106,16 +1002,7 @@ $vue = view('/content/Sites.sites_one', [
     'cartes_disposition'=>$cartes_disposition,
 
 
-    'contratssites_disposition'=>$contratssites_disposition,
-
-
     'controlleursacces_disposition'=>$controlleursacces_disposition,
-
-
-    'interventions_disposition'=>$interventions_disposition,
-
-
-    'listings_disposition'=>$listings_disposition,
 
 
     'passagesrondes_disposition'=>$passagesrondes_disposition,
@@ -1137,9 +1024,6 @@ $vue = view('/content/Sites.sites_one', [
 
 
     'sitessdeplacements_disposition'=>$sitessdeplacements_disposition,
-
-
-    'taches_disposition'=>$taches_disposition,
 
 
     'trajets_disposition'=>$trajets_disposition,
@@ -1171,6 +1055,7 @@ $sites_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1178,6 +1063,7 @@ $sites_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1185,6 +1071,7 @@ $sites_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1192,6 +1079,7 @@ $sites_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1199,6 +1087,7 @@ $sites_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1206,6 +1095,7 @@ $sites_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1213,6 +1103,7 @@ $sites_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1220,6 +1111,7 @@ $sites_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1227,6 +1119,7 @@ $sites_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1234,6 +1127,7 @@ $sites_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1241,49 +1135,7 @@ $sites_disposition->disposition=$request->get('disposition');
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 $params=collect($request->all());
 $params=$params->filter(function ($value, $key) {
 //            dd($key);
@@ -1315,145 +1167,145 @@ abort(401);
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -1470,16 +1322,7 @@ $vue = view('/content/Sites.sites_one_component', [
     'cartes_disposition'=>$cartes_disposition,
 
 
-    'contratssites_disposition'=>$contratssites_disposition,
-
-
     'controlleursacces_disposition'=>$controlleursacces_disposition,
-
-
-    'interventions_disposition'=>$interventions_disposition,
-
-
-    'listings_disposition'=>$listings_disposition,
 
 
     'passagesrondes_disposition'=>$passagesrondes_disposition,
@@ -1501,9 +1344,6 @@ $vue = view('/content/Sites.sites_one_component', [
 
 
     'sitessdeplacements_disposition'=>$sitessdeplacements_disposition,
-
-
-    'taches_disposition'=>$taches_disposition,
 
 
     'trajets_disposition'=>$trajets_disposition,
@@ -1546,6 +1386,7 @@ $sites_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1553,6 +1394,7 @@ $sites_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1560,6 +1402,7 @@ $sites_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1567,6 +1410,7 @@ $sites_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1574,6 +1418,7 @@ $sites_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1581,6 +1426,7 @@ $sites_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1588,6 +1434,7 @@ $sites_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1595,6 +1442,7 @@ $sites_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1602,6 +1450,7 @@ $sites_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1609,6 +1458,7 @@ $sites_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -1616,49 +1466,7 @@ $sites_disposition->disposition=$request->get('disposition');
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 $params=collect($request->all());
 $params=$params->filter(function ($value, $key) {
 //            dd($key);
@@ -1697,16 +1505,7 @@ $vue = view('/content/Sites.impression', [
     'cartes_disposition'=>$cartes_disposition,
 
 
-    'contratssites_disposition'=>$contratssites_disposition,
-
-
     'controlleursacces_disposition'=>$controlleursacces_disposition,
-
-
-    'interventions_disposition'=>$interventions_disposition,
-
-
-    'listings_disposition'=>$listings_disposition,
 
 
     'passagesrondes_disposition'=>$passagesrondes_disposition,
@@ -1728,9 +1527,6 @@ $vue = view('/content/Sites.impression', [
 
 
     'sitessdeplacements_disposition'=>$sitessdeplacements_disposition,
-
-
-    'taches_disposition'=>$taches_disposition,
 
 
     'trajets_disposition'=>$trajets_disposition,

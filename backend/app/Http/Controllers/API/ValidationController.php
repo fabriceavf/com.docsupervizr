@@ -178,10 +178,10 @@ $data = QueryBuilder::for(Validation::class)
     
     
     
-            AllowedFilter::exact('identifiants_sadge'),
+            AllowedFilter::exact('nmbvalideurs'),
 
     
-            AllowedFilter::exact('nmbvalideurs'),
+            AllowedFilter::exact('identifiants_sadge'),
 
     
 AllowedFilter::callback('not_null', function (Builder $query, $value) {
@@ -295,10 +295,10 @@ return $query;
     
     
     
-            AllowedSort::field('identifiants_sadge'),
+            AllowedSort::field('nmbvalideurs'),
 
     
-            AllowedSort::field('nmbvalideurs'),
+            AllowedSort::field('identifiants_sadge'),
 
     
 ])
@@ -466,10 +466,10 @@ $data = QueryBuilder::for(Validation::class)
     
     
     
-            AllowedFilter::exact('identifiants_sadge'),
+            AllowedFilter::exact('nmbvalideurs'),
 
     
-            AllowedFilter::exact('nmbvalideurs'),
+            AllowedFilter::exact('identifiants_sadge'),
 
     
 AllowedFilter::callback('not_null', function (Builder $query, $value) {
@@ -583,10 +583,10 @@ return $query;
     
     
     
-            AllowedSort::field('identifiants_sadge'),
+            AllowedSort::field('nmbvalideurs'),
 
     
-            AllowedSort::field('nmbvalideurs'),
+            AllowedSort::field('identifiants_sadge'),
 
     
 ])
@@ -760,8 +760,8 @@ $champsRechercher=[
     'updated_at',
     'extra_attributes',
     'deleted_at',
-    'identifiants_sadge',
     'nmbvalideurs',
+    'identifiants_sadge',
 ];
 $envoyer=[];
 foreach($data as $key=>$d){
@@ -802,13 +802,13 @@ Validator::make($data, [
     
     
     
-                    'identifiants_sadge' => [
+                    'nmbvalideurs' => [
             //'required'
             ],
         
     
     
-                    'nmbvalideurs' => [
+                    'identifiants_sadge' => [
             //'required'
             ],
         
@@ -839,11 +839,11 @@ Validator::make($data, [
     
     
     
-        'identifiants_sadge' => ['cette donnee est obligatoire'],
+        'nmbvalideurs' => ['cette donnee est obligatoire'],
 
     
     
-        'nmbvalideurs' => ['cette donnee est obligatoire'],
+        'identifiants_sadge' => ['cette donnee est obligatoire'],
 
     
 ])->validate();
@@ -982,9 +982,9 @@ $data['creat_by']=Auth::id();
 
     
 
-        if(!empty($data['identifiants_sadge'])){
+        if(!empty($data['nmbvalideurs'])){
         
-            $Validations->identifiants_sadge = $data['identifiants_sadge'];
+            $Validations->nmbvalideurs = $data['nmbvalideurs'];
         
         }
 
@@ -1000,9 +1000,9 @@ $data['creat_by']=Auth::id();
 
     
 
-        if(!empty($data['nmbvalideurs'])){
+        if(!empty($data['identifiants_sadge'])){
         
-            $Validations->nmbvalideurs = $data['nmbvalideurs'];
+            $Validations->identifiants_sadge = $data['identifiants_sadge'];
         
         }
 
@@ -1068,8 +1068,8 @@ $newCrudData=[];
                 $newCrudData['users']=$Validations->users;
                 $newCrudData['modelslisting_id']=$Validations->modelslisting_id;
                 $newCrudData['creat_by']=$Validations->creat_by;
-                                $newCrudData['identifiants_sadge']=$Validations->identifiants_sadge;
-                $newCrudData['nmbvalideurs']=$Validations->nmbvalideurs;
+                                $newCrudData['nmbvalideurs']=$Validations->nmbvalideurs;
+                $newCrudData['identifiants_sadge']=$Validations->identifiants_sadge;
     
  try{ $newCrudData['modelslisting']=$Validations->modelslisting->Selectlabel; }catch(\Throwable $e){}  
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Create", 'entite' => 'Validations','entite_cle' => $Validations->id, 'ancien' => json_encode($newCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);
@@ -1124,8 +1124,8 @@ $oldCrudData=[];
                 $oldCrudData['users']=$Validations->users;
                 $oldCrudData['modelslisting_id']=$Validations->modelslisting_id;
                 $oldCrudData['creat_by']=$Validations->creat_by;
-                                $oldCrudData['identifiants_sadge']=$Validations->identifiants_sadge;
-                $oldCrudData['nmbvalideurs']=$Validations->nmbvalideurs;
+                                $oldCrudData['nmbvalideurs']=$Validations->nmbvalideurs;
+                $oldCrudData['identifiants_sadge']=$Validations->identifiants_sadge;
     
  try{ $oldCrudData['modelslisting']=$Validations->modelslisting->Selectlabel; }catch(\Throwable $e){}  
 
@@ -1148,8 +1148,8 @@ $champsRechercher=[
     'updated_at',
     'extra_attributes',
     'deleted_at',
-    'identifiants_sadge',
     'nmbvalideurs',
+    'identifiants_sadge',
 ];
 $envoyer=[];
 foreach($data as $key=>$d){
@@ -1190,13 +1190,13 @@ Validator::make($data, [
     
     
     
-                    'identifiants_sadge' => [
+                    'nmbvalideurs' => [
             //'required'
             ],
         
     
     
-                    'nmbvalideurs' => [
+                    'identifiants_sadge' => [
             //'required'
             ],
         
@@ -1227,11 +1227,11 @@ Validator::make($data, [
     
     
     
-        'identifiants_sadge' => ['cette donnee est obligatoire'],
+        'nmbvalideurs' => ['cette donnee est obligatoire'],
 
     
     
-        'nmbvalideurs' => ['cette donnee est obligatoire'],
+        'identifiants_sadge' => ['cette donnee est obligatoire'],
 
     
 ])->validate();
@@ -1380,33 +1380,33 @@ $extra_data=array_diff($envoyer,$champsRechercher);
 
     
 
-        if(array_key_exists("identifiants_sadge",$data)){
-
-
-        if(!empty($data['identifiants_sadge'])){
-        
-            $Validations->identifiants_sadge = $data['identifiants_sadge'];
-        
-        }
-
-        }
-
-    
-
-
-
-
-
-
-
-    
-
         if(array_key_exists("nmbvalideurs",$data)){
 
 
         if(!empty($data['nmbvalideurs'])){
         
             $Validations->nmbvalideurs = $data['nmbvalideurs'];
+        
+        }
+
+        }
+
+    
+
+
+
+
+
+
+
+    
+
+        if(array_key_exists("identifiants_sadge",$data)){
+
+
+        if(!empty($data['identifiants_sadge'])){
+        
+            $Validations->identifiants_sadge = $data['identifiants_sadge'];
         
         }
 
@@ -1479,8 +1479,8 @@ $newCrudData=[];
                 $newCrudData['users']=$Validations->users;
                 $newCrudData['modelslisting_id']=$Validations->modelslisting_id;
                 $newCrudData['creat_by']=$Validations->creat_by;
-                                $newCrudData['identifiants_sadge']=$Validations->identifiants_sadge;
-                $newCrudData['nmbvalideurs']=$Validations->nmbvalideurs;
+                                $newCrudData['nmbvalideurs']=$Validations->nmbvalideurs;
+                $newCrudData['identifiants_sadge']=$Validations->identifiants_sadge;
     
  try{ $newCrudData['modelslisting']=$Validations->modelslisting->Selectlabel; }catch(\Throwable $e){}  
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Update", 'entite' => 'Validations','entite_cle' => $Validations->id, 'ancien' => json_encode($oldCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);
@@ -1530,8 +1530,8 @@ $newCrudData=[];
                 $newCrudData['users']=$Validations->users;
                 $newCrudData['modelslisting_id']=$Validations->modelslisting_id;
                 $newCrudData['creat_by']=$Validations->creat_by;
-                                $newCrudData['identifiants_sadge']=$Validations->identifiants_sadge;
-                $newCrudData['nmbvalideurs']=$Validations->nmbvalideurs;
+                                $newCrudData['nmbvalideurs']=$Validations->nmbvalideurs;
+                $newCrudData['identifiants_sadge']=$Validations->identifiants_sadge;
     
  try{ $newCrudData['modelslisting']=$Validations->modelslisting->Selectlabel; }catch(\Throwable $e){}  
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Delete", 'entite' => 'Validations','entite_cle' => $Validations->id, 'ancien' => json_encode($newCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);

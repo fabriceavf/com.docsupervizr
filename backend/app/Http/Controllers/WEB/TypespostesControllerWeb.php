@@ -1,4 +1,4 @@
-<?php
+<?php 
 namespace App\Http\Controllers\WEB;
 
 use Illuminate\Database\Schema\Blueprint;
@@ -172,111 +172,105 @@ $typespostes_disposition->disposition=$request->get('disposition');
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -304,9 +298,6 @@ $vue = view('/content/Typespostes.typespostes_component', ['pageConfigs' => $pag
 
 
     'postes_disposition'=>$postes_disposition,
-
-
-    'userstypespostes_disposition'=>$userstypespostes_disposition,
 
 ]);
 return response($vue, 200);
@@ -362,12 +353,6 @@ $typespostes_disposition->disposition=$request->get('disposition');
 
 
 
-
-
-
-
-
-
 $pageConfig = [
  'mainLayoutType' => 'vertical',
 'type' => 'admin',
@@ -381,105 +366,105 @@ $pageConfig = [
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -493,9 +478,6 @@ $vue = view('/content/Typespostes.Typespostes', ['pageConfigs' => $pageConfig, '
 
 
     'postes_disposition'=>$postes_disposition,
-
-
-    'userstypespostes_disposition'=>$userstypespostes_disposition,
 
 ]);
 return response($vue, 200);
@@ -525,6 +507,7 @@ $typespostes_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -532,6 +515,7 @@ $typespostes_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -539,17 +523,7 @@ $typespostes_disposition->disposition=$request->get('disposition');
 
 
 
-
-
-
-
-
-
-
-
-
-
-
+    
 $params=collect($request->all());
 $params=$params->filter(function ($value, $key) {
 //            dd($key);
@@ -581,105 +555,105 @@ abort(401);
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -700,9 +674,6 @@ $vue = view('/content/Typespostes.typespostes_one', [
 
 
     'postes_disposition'=>$postes_disposition,
-
-
-    'userstypespostes_disposition'=>$userstypespostes_disposition,
 
 ]);
 
@@ -728,6 +699,7 @@ $typespostes_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -735,6 +707,7 @@ $typespostes_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -742,17 +715,7 @@ $typespostes_disposition->disposition=$request->get('disposition');
 
 
 
-
-
-
-
-
-
-
-
-
-
-
+    
 $params=collect($request->all());
 $params=$params->filter(function ($value, $key) {
 //            dd($key);
@@ -784,105 +747,105 @@ abort(401);
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
+            
 
 
 
 
 
+        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            
 
 
 
@@ -903,9 +866,6 @@ $vue = view('/content/Typespostes.typespostes_one_component', [
 
 
     'postes_disposition'=>$postes_disposition,
-
-
-    'userstypespostes_disposition'=>$userstypespostes_disposition,
 
 ]);
 
@@ -942,6 +902,7 @@ $typespostes_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -949,6 +910,7 @@ $typespostes_disposition->disposition=$request->get('disposition');
 
 
 
+    
 
 
 
@@ -956,17 +918,7 @@ $typespostes_disposition->disposition=$request->get('disposition');
 
 
 
-
-
-
-
-
-
-
-
-
-
-
+    
 $params=collect($request->all());
 $params=$params->filter(function ($value, $key) {
 //            dd($key);
@@ -1009,9 +961,6 @@ $vue = view('/content/Typespostes.impression', [
 
 
     'postes_disposition'=>$postes_disposition,
-
-
-    'userstypespostes_disposition'=>$userstypespostes_disposition,
 
 ]);
 return response($vue, 200);

@@ -166,18 +166,18 @@ $data = QueryBuilder::for(Balise::class)
     
     
     
+            AllowedFilter::exact('libelle'),
+
+    
+            AllowedFilter::exact('ref'),
+
+    
     
     
             AllowedFilter::exact('identifiants_sadge'),
 
     
             AllowedFilter::exact('creat_by'),
-
-    
-            AllowedFilter::exact('libelle'),
-
-    
-            AllowedFilter::exact('ref'),
 
     
 AllowedFilter::callback('not_null', function (Builder $query, $value) {
@@ -280,6 +280,12 @@ return $query;
     
     
     
+            AllowedSort::field('libelle'),
+
+    
+            AllowedSort::field('ref'),
+
+    
     
     
             AllowedSort::field('identifiants_sadge'),
@@ -288,18 +294,9 @@ return $query;
             AllowedSort::field('creat_by'),
 
     
-            AllowedSort::field('libelle'),
-
-    
-            AllowedSort::field('ref'),
-
-    
 ])
 ->allowedIncludes([
-            'listings',
-        
-
-                'positions',
+            'positions',
         
 
                 'trackings',
@@ -449,18 +446,18 @@ $data = QueryBuilder::for(Balise::class)
     
     
     
+            AllowedFilter::exact('libelle'),
+
+    
+            AllowedFilter::exact('ref'),
+
+    
     
     
             AllowedFilter::exact('identifiants_sadge'),
 
     
             AllowedFilter::exact('creat_by'),
-
-    
-            AllowedFilter::exact('libelle'),
-
-    
-            AllowedFilter::exact('ref'),
 
     
 AllowedFilter::callback('not_null', function (Builder $query, $value) {
@@ -563,6 +560,12 @@ return $query;
     
     
     
+            AllowedSort::field('libelle'),
+
+    
+            AllowedSort::field('ref'),
+
+    
     
     
             AllowedSort::field('identifiants_sadge'),
@@ -571,18 +574,9 @@ return $query;
             AllowedSort::field('creat_by'),
 
     
-            AllowedSort::field('libelle'),
-
-    
-            AllowedSort::field('ref'),
-
-    
 ])
 ->allowedIncludes([
-            'listings',
-        
-
-                'positions',
+            'positions',
         
 
                 'trackings',
@@ -744,12 +738,12 @@ $champsRechercher=[
     'imei',
     'created_at',
     'updated_at',
+    'libelle',
+    'ref',
     'extra_attributes',
     'deleted_at',
     'identifiants_sadge',
     'creat_by',
-    'libelle',
-    'ref',
 ];
 $envoyer=[];
 foreach($data as $key=>$d){
@@ -770,6 +764,18 @@ Validator::make($data, [
     
     
     
+                    'libelle' => [
+            //'required'
+            ],
+        
+    
+    
+                    'ref' => [
+            //'required'
+            ],
+        
+    
+    
     
     
                     'identifiants_sadge' => [
@@ -779,18 +785,6 @@ Validator::make($data, [
     
     
                     'creat_by' => [
-            //'required'
-            ],
-        
-    
-    
-                    'libelle' => [
-            //'required'
-            ],
-        
-    
-    
-                    'ref' => [
             //'required'
             ],
         
@@ -807,6 +801,14 @@ Validator::make($data, [
     
     
     
+        'libelle' => ['cette donnee est obligatoire'],
+
+    
+    
+        'ref' => ['cette donnee est obligatoire'],
+
+    
+    
     
     
         'identifiants_sadge' => ['cette donnee est obligatoire'],
@@ -814,14 +816,6 @@ Validator::make($data, [
     
     
         'creat_by' => ['cette donnee est obligatoire'],
-
-    
-    
-        'libelle' => ['cette donnee est obligatoire'],
-
-    
-    
-        'ref' => ['cette donnee est obligatoire'],
 
     
 ])->validate();
@@ -890,6 +884,42 @@ $data['creat_by']=Auth::id();
 
     
 
+        if(!empty($data['libelle'])){
+        
+            $Balises->libelle = $data['libelle'];
+        
+        }
+
+
+
+    
+
+
+
+
+
+
+
+    
+
+        if(!empty($data['ref'])){
+        
+            $Balises->ref = $data['ref'];
+        
+        }
+
+
+
+    
+
+
+
+
+
+
+
+    
+
 
 
 
@@ -927,42 +957,6 @@ $data['creat_by']=Auth::id();
         if(!empty($data['creat_by'])){
         
             $Balises->creat_by = $data['creat_by'];
-        
-        }
-
-
-
-    
-
-
-
-
-
-
-
-    
-
-        if(!empty($data['libelle'])){
-        
-            $Balises->libelle = $data['libelle'];
-        
-        }
-
-
-
-    
-
-
-
-
-
-
-
-    
-
-        if(!empty($data['ref'])){
-        
-            $Balises->ref = $data['ref'];
         
         }
 
@@ -1025,10 +1019,10 @@ $Balises=Balise::find($Balises->id);
 $newCrudData=[];
 
                 $newCrudData['imei']=$Balises->imei;
-                                $newCrudData['identifiants_sadge']=$Balises->identifiants_sadge;
-                $newCrudData['creat_by']=$Balises->creat_by;
-                $newCrudData['libelle']=$Balises->libelle;
+                        $newCrudData['libelle']=$Balises->libelle;
                 $newCrudData['ref']=$Balises->ref;
+                        $newCrudData['identifiants_sadge']=$Balises->identifiants_sadge;
+                $newCrudData['creat_by']=$Balises->creat_by;
     
 
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Create", 'entite' => 'Balises','entite_cle' => $Balises->id, 'ancien' => json_encode($newCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);
@@ -1080,10 +1074,10 @@ return response()->json([], 200);
 $oldCrudData=[];
 
                 $oldCrudData['imei']=$Balises->imei;
-                                $oldCrudData['identifiants_sadge']=$Balises->identifiants_sadge;
-                $oldCrudData['creat_by']=$Balises->creat_by;
-                $oldCrudData['libelle']=$Balises->libelle;
+                        $oldCrudData['libelle']=$Balises->libelle;
                 $oldCrudData['ref']=$Balises->ref;
+                        $oldCrudData['identifiants_sadge']=$Balises->identifiants_sadge;
+                $oldCrudData['creat_by']=$Balises->creat_by;
     
 
 
@@ -1101,12 +1095,12 @@ $champsRechercher=[
     'imei',
     'created_at',
     'updated_at',
+    'libelle',
+    'ref',
     'extra_attributes',
     'deleted_at',
     'identifiants_sadge',
     'creat_by',
-    'libelle',
-    'ref',
 ];
 $envoyer=[];
 foreach($data as $key=>$d){
@@ -1127,6 +1121,18 @@ Validator::make($data, [
     
     
     
+                    'libelle' => [
+            //'required'
+            ],
+        
+    
+    
+                    'ref' => [
+            //'required'
+            ],
+        
+    
+    
     
     
                     'identifiants_sadge' => [
@@ -1136,18 +1142,6 @@ Validator::make($data, [
     
     
                     'creat_by' => [
-            //'required'
-            ],
-        
-    
-    
-                    'libelle' => [
-            //'required'
-            ],
-        
-    
-    
-                    'ref' => [
             //'required'
             ],
         
@@ -1164,6 +1158,14 @@ Validator::make($data, [
     
     
     
+        'libelle' => ['cette donnee est obligatoire'],
+
+    
+    
+        'ref' => ['cette donnee est obligatoire'],
+
+    
+    
     
     
         'identifiants_sadge' => ['cette donnee est obligatoire'],
@@ -1171,14 +1173,6 @@ Validator::make($data, [
     
     
         'creat_by' => ['cette donnee est obligatoire'],
-
-    
-    
-        'libelle' => ['cette donnee est obligatoire'],
-
-    
-    
-        'ref' => ['cette donnee est obligatoire'],
 
     
 ])->validate();
@@ -1248,6 +1242,48 @@ $extra_data=array_diff($envoyer,$champsRechercher);
 
     
 
+        if(array_key_exists("libelle",$data)){
+
+
+        if(!empty($data['libelle'])){
+        
+            $Balises->libelle = $data['libelle'];
+        
+        }
+
+        }
+
+    
+
+
+
+
+
+
+
+    
+
+        if(array_key_exists("ref",$data)){
+
+
+        if(!empty($data['ref'])){
+        
+            $Balises->ref = $data['ref'];
+        
+        }
+
+        }
+
+    
+
+
+
+
+
+
+
+    
+
 
 
 
@@ -1291,48 +1327,6 @@ $extra_data=array_diff($envoyer,$champsRechercher);
         if(!empty($data['creat_by'])){
         
             $Balises->creat_by = $data['creat_by'];
-        
-        }
-
-        }
-
-    
-
-
-
-
-
-
-
-    
-
-        if(array_key_exists("libelle",$data)){
-
-
-        if(!empty($data['libelle'])){
-        
-            $Balises->libelle = $data['libelle'];
-        
-        }
-
-        }
-
-    
-
-
-
-
-
-
-
-    
-
-        if(array_key_exists("ref",$data)){
-
-
-        if(!empty($data['ref'])){
-        
-            $Balises->ref = $data['ref'];
         
         }
 
@@ -1402,10 +1396,10 @@ $Balises=Balise::find($Balises->id);
 $newCrudData=[];
 
                 $newCrudData['imei']=$Balises->imei;
-                                $newCrudData['identifiants_sadge']=$Balises->identifiants_sadge;
-                $newCrudData['creat_by']=$Balises->creat_by;
-                $newCrudData['libelle']=$Balises->libelle;
+                        $newCrudData['libelle']=$Balises->libelle;
                 $newCrudData['ref']=$Balises->ref;
+                        $newCrudData['identifiants_sadge']=$Balises->identifiants_sadge;
+                $newCrudData['creat_by']=$Balises->creat_by;
     
 
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Update", 'entite' => 'Balises','entite_cle' => $Balises->id, 'ancien' => json_encode($oldCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);
@@ -1452,10 +1446,10 @@ return response()->json([], 200);
 $newCrudData=[];
 
                 $newCrudData['imei']=$Balises->imei;
-                                $newCrudData['identifiants_sadge']=$Balises->identifiants_sadge;
-                $newCrudData['creat_by']=$Balises->creat_by;
-                $newCrudData['libelle']=$Balises->libelle;
+                        $newCrudData['libelle']=$Balises->libelle;
                 $newCrudData['ref']=$Balises->ref;
+                        $newCrudData['identifiants_sadge']=$Balises->identifiants_sadge;
+                $newCrudData['creat_by']=$Balises->creat_by;
     
 
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Delete", 'entite' => 'Balises','entite_cle' => $Balises->id, 'ancien' => json_encode($newCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);

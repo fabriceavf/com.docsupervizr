@@ -185,6 +185,9 @@ $data = QueryBuilder::for(Sitespointeuse::class)
             AllowedFilter::exact('fin'),
 
     
+            AllowedFilter::exact('identifiants_sadge'),
+
+    
 AllowedFilter::callback('not_null', function (Builder $query, $value) {
 //                    dump($value);
 
@@ -302,6 +305,9 @@ return $query;
             AllowedSort::field('fin'),
 
     
+            AllowedSort::field('identifiants_sadge'),
+
+    
 ])
     
     
@@ -321,6 +327,13 @@ $data=$data->paginate(isset($_REQUEST["limit"]) ? max(0, intval($_REQUEST["limit
 $data=$data->get();
 }
 $donnees=$data->toArray();
+
+
+    
+
+
+
+
 
 
     
@@ -477,6 +490,9 @@ $data = QueryBuilder::for(Sitespointeuse::class)
             AllowedFilter::exact('fin'),
 
     
+            AllowedFilter::exact('identifiants_sadge'),
+
+    
 AllowedFilter::callback('not_null', function (Builder $query, $value) {
 //                    dump($value);
 
@@ -594,6 +610,9 @@ return $query;
             AllowedSort::field('fin'),
 
     
+            AllowedSort::field('identifiants_sadge'),
+
+    
 ])
     
     
@@ -616,6 +635,13 @@ $data=$data->paginate(isset($_REQUEST["limit"]) ? max(0, intval($_REQUEST["limit
 $data=$data->get();
 }
 $donnees=$data->toArray();
+
+
+
+
+
+    
+
 
 
 
@@ -771,6 +797,7 @@ $champsRechercher=[
     'deleted_at',
     'debut',
     'fin',
+    'identifiants_sadge',
 ];
 $envoyer=[];
 foreach($data as $key=>$d){
@@ -822,6 +849,12 @@ Validator::make($data, [
             ],
         
     
+    
+                    'identifiants_sadge' => [
+            //'required'
+            ],
+        
+    
 
 
 ], $messages = [
@@ -853,6 +886,10 @@ Validator::make($data, [
     
     
         'fin' => ['cette donnee est obligatoire'],
+
+    
+    
+        'identifiants_sadge' => ['cette donnee est obligatoire'],
 
     
 ])->validate();
@@ -1025,6 +1062,24 @@ $data['creat_by']=Auth::id();
 
 
 
+    
+
+        if(!empty($data['identifiants_sadge'])){
+        
+            $Sitespointeuses->identifiants_sadge = $data['identifiants_sadge'];
+        
+        }
+
+
+
+    
+
+
+
+
+
+
+
 
 
 
@@ -1079,6 +1134,7 @@ $newCrudData=[];
                 $newCrudData['creat_by']=$Sitespointeuses->creat_by;
                                 $newCrudData['debut']=$Sitespointeuses->debut;
                 $newCrudData['fin']=$Sitespointeuses->fin;
+                $newCrudData['identifiants_sadge']=$Sitespointeuses->identifiants_sadge;
     
  try{ $newCrudData['pointeuse']=$Sitespointeuses->pointeuse->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['site']=$Sitespointeuses->site->Selectlabel; }catch(\Throwable $e){}  
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Create", 'entite' => 'Sitespointeuses','entite_cle' => $Sitespointeuses->id, 'ancien' => json_encode($newCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);
@@ -1135,6 +1191,7 @@ $oldCrudData=[];
                 $oldCrudData['creat_by']=$Sitespointeuses->creat_by;
                                 $oldCrudData['debut']=$Sitespointeuses->debut;
                 $oldCrudData['fin']=$Sitespointeuses->fin;
+                $oldCrudData['identifiants_sadge']=$Sitespointeuses->identifiants_sadge;
     
  try{ $oldCrudData['pointeuse']=$Sitespointeuses->pointeuse->Selectlabel; }catch(\Throwable $e){}   try{ $oldCrudData['site']=$Sitespointeuses->site->Selectlabel; }catch(\Throwable $e){}  
 
@@ -1159,6 +1216,7 @@ $champsRechercher=[
     'deleted_at',
     'debut',
     'fin',
+    'identifiants_sadge',
 ];
 $envoyer=[];
 foreach($data as $key=>$d){
@@ -1210,6 +1268,12 @@ Validator::make($data, [
             ],
         
     
+    
+                    'identifiants_sadge' => [
+            //'required'
+            ],
+        
+    
 
 
 ], $messages = [
@@ -1241,6 +1305,10 @@ Validator::make($data, [
     
     
         'fin' => ['cette donnee est obligatoire'],
+
+    
+    
+        'identifiants_sadge' => ['cette donnee est obligatoire'],
 
     
 ])->validate();
@@ -1429,6 +1497,27 @@ $extra_data=array_diff($envoyer,$champsRechercher);
 
 
 
+    
+
+        if(array_key_exists("identifiants_sadge",$data)){
+
+
+        if(!empty($data['identifiants_sadge'])){
+        
+            $Sitespointeuses->identifiants_sadge = $data['identifiants_sadge'];
+        
+        }
+
+        }
+
+    
+
+
+
+
+
+
+
 
 
 
@@ -1490,6 +1579,7 @@ $newCrudData=[];
                 $newCrudData['creat_by']=$Sitespointeuses->creat_by;
                                 $newCrudData['debut']=$Sitespointeuses->debut;
                 $newCrudData['fin']=$Sitespointeuses->fin;
+                $newCrudData['identifiants_sadge']=$Sitespointeuses->identifiants_sadge;
     
  try{ $newCrudData['pointeuse']=$Sitespointeuses->pointeuse->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['site']=$Sitespointeuses->site->Selectlabel; }catch(\Throwable $e){}  
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Update", 'entite' => 'Sitespointeuses','entite_cle' => $Sitespointeuses->id, 'ancien' => json_encode($oldCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);
@@ -1541,6 +1631,7 @@ $newCrudData=[];
                 $newCrudData['creat_by']=$Sitespointeuses->creat_by;
                                 $newCrudData['debut']=$Sitespointeuses->debut;
                 $newCrudData['fin']=$Sitespointeuses->fin;
+                $newCrudData['identifiants_sadge']=$Sitespointeuses->identifiants_sadge;
     
  try{ $newCrudData['pointeuse']=$Sitespointeuses->pointeuse->Selectlabel; }catch(\Throwable $e){}   try{ $newCrudData['site']=$Sitespointeuses->site->Selectlabel; }catch(\Throwable $e){}  
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Delete", 'entite' => 'Sitespointeuses','entite_cle' => $Sitespointeuses->id, 'ancien' => json_encode($newCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);
