@@ -1,1 +1,1 @@
-{"host":"mariadb","username":"root","password":"NewPass","modules":[""]}
+{"host":"mariadb","username":"root","password":"NewPass","modules":["Effectif","Poste","Listing","rapport","Transport","Equipement","Configuration","Administration","Dashbord"]}
