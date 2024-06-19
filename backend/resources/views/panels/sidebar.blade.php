@@ -7,20 +7,24 @@
     <div class="navbar-header row">
         <ul class="nav navbar-nav " style="width:100%">
             <li class="nav-item mr-auto col-10">
-                <a class="navbar-brand mx-auto d-block" href="{{url('/')}}">
-          <span class="brand-logo">
+                <a class="navbar-brand mx-auto d-block" href="{{url('/')}}"> 
+                
+          <span class="brand-logo ">
           </span>
                     <img class="rounded mx-auto d-block " src="{{Helper::getLogoName()}}" alt="avatar" height="40"
                          width="40">
+                       
+                         
 
                     <h2 class="brand-text text-center mt-1">Documentation</h2>
                 </a>
             </li>
             <li class="nav-item nav-toggle col-2">
                 <a class="nav-link modern-nav-toggle pr-0" data-toggle="collapse">
-                    <i class="d-block d-xl-none text-primary toggle-icon font-medium-4" data-feather="x"></i>
-                    <i class="d-none d-xl-block collapse-toggle-icon font-medium-4  text-primary" data-feather="disc"
-                       data-ticon="disc"></i>
+                    <i class="d-block d-xl-none text-primary toggle-icon font-medium-4" data-feather="x"></i> 
+                    <i class="fa-solid fa-book "></i> 
+                    <!-- icon de documentation  -->
+                   
                 </a>
             </li>
         </ul>
