@@ -16,7 +16,7 @@
             <li><strong>Git</strong> : Pour cloner le dépôt sur votre machine locale.</li>
             <li><strong>Node.js et npm</strong> : Pour gérer les dépendances JavaScript sur votre machine locale.</li>
         </ul>
-        <h3 id="-tapes-de-d-ploiement">Étapes de Déploiement</h3>
+        <h3 id="-tapes-de-d-ploiement">Étapes de Déploiement :</h3>
         <h4 id="1-cloner-le-d-p-t-en-local">1. Cloner le Dépôt en Local</h4>
         <ol>
             <li>Ouvrez un terminal.</li>
