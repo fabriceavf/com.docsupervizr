@@ -1,6 +1,6 @@
 @extends('layouts/contentLayoutMaster')
 
-@section('title', 'Introductions')
+@section('title', 'Introduction')
 
 @section('content')
     <div class="container">
@@ -12,17 +12,17 @@
             </ul>
             <p><strong>2. Description Générale :</strong></p>
             <ul>
-                <li>L&#39;application doit fournir une plateforme centralisée pour la gestion des ressources humaines, incluant la gestion des absences, des congés, la définition et la gestion des postes de travail, la planification des horaires, la génération automatique des programmes de travail, l&#39;intégration avec un système de pointage par badge MYFARE pour enregistrer et vérifier la présence des agents, ainsi que la validation des heures supplémentaires en se basant sur les horaires de travail programmés pour chaque agent et les pointages collectés. De plus, elle doit permettre la gestion des informations personnelles et professionnelles des agents, ainsi que l&#39;impression de leurs badges.</li>
+                <li>L&#39;application doit fournir une plateforme centralisée pour la gestion des ressources humaines, incluant la gestion des absences, des congés, la définition et la gestion des postes de travail, la planification des horaires, la génération automatique des programmes de travail, l&#39;intégration avec un système de pointage par badge MYFARE pour enregistrer et vérifier la présence des agents, ainsi que la validation des heures supplémentaires en se basant sur les horaires de travail programmées pour chaque agent et les pointages collectés. De plus, elle doit permettre la gestion des informations personnelles et professionnelles des agents, ainsi que l&#39;impression de leurs badges.</li>
             </ul>
             <p><strong>3. Fonctionnalités :</strong></p>
             <p><strong>3.1. Gestion des Absences des Salariés</strong></p>
             <ul>
                 <li><strong>Saisie des absences :</strong><ul>
-                        <li>Les gestionnaires peuvent ajouter une absence pour un salarié en spécifiant la date de début, la date de fin, et le motif de l&#39;absence.</li>
+                        <li>Les gestionnaires peuvent signaler l&#39;absence d&#39;un salarié en spécifiant la date de début, la date de fin, et le motif de cette absence.</li>
                     </ul>
                 </li>
                 <li><strong>Modification des absences :</strong><ul>
-                        <li>Les gestionnaires peuvent modifier les informations des absences existantes, telles que les dates et les motifs.</li>
+                        <li>Les gestionnaires peuvent modifier les informations sur des absences existantes, telles que les dates et les motifs.</li>
                     </ul>
                 </li>
                 <li><strong>Consultation des absences :</strong><ul>
@@ -45,7 +45,7 @@
                     </ul>
                 </li>
                 <li><strong>Soumission des demandes de congés :</strong><ul>
-                        <li>Les agents peuvent soumettre des demandes de congés en spécifiant le type de congé, la date de début, la date de fin, et toute information pertinente (comme le motif).</li>
+                        <li>Les agents peuvent soumettre des demandes de congés en spécifiant le type de congé, la date de début, la date de fin, et toute autre information pertinente (comme le motif).</li>
                     </ul>
                 </li>
                 <li><strong>Approbation et refus des demandes :</strong><ul>
@@ -61,7 +61,7 @@
                     </ul>
                 </li>
                 <li><strong>Règles de congés :</strong><ul>
-                        <li>Mise en place de règles et de politiques de congés (par exemple, le nombre maximum de jours de congé consécutifs, les périodes de blackout où les congés ne sont pas autorisés, etc.).</li>
+                        <li>Mise en place de règles et de politiques de congés (par exemple, le nombre maximum de jours de congés consécutifs, les périodes de blackout où les congés ne sont pas autorisés, etc.).</li>
                     </ul>
                 </li>
             </ul>
@@ -103,11 +103,11 @@
                     </ul>
                 </li>
                 <li><strong>Modification des horaires de travail :</strong><ul>
-                        <li>Les gestionnaires peuvent modifier les horaires de travail existants en cas de besoin, par exemple pour accommoder des changements dans la planification ou dans les besoins opérationnels.</li>
+                        <li>Les gestionnaires peuvent modifier les horaires de travail existantes en cas de besoin, par exemple pour accommoder des changements dans la planification ou dans les besoins opérationnels.</li>
                     </ul>
                 </li>
                 <li><strong>Consultation des horaires de travail :</strong><ul>
-                        <li>Les gestionnaires et les agents peuvent consulter les horaires de travail assignés, ainsi que les horaires planifiés pour une période donnée.</li>
+                        <li>Les gestionnaires et les agents peuvent consulter les horaires de travail assignées, ainsi que les horaires planifiées pour une période donnée.</li>
                     </ul>
                 </li>
                 <li><strong>Notifications (si applicable) :</strong><ul>
@@ -144,7 +144,7 @@
             <p><strong>3.7. Validation Automatique des Heures Supplémentaires et Gestion des Anomalies de Pointage</strong></p>
             <ul>
                 <li><strong>Détection des heures supplémentaires :</strong><ul>
-                        <li>L&#39;application analyse les horaires programmés pour chaque agent et les données de pointage collectées pour détecter automatiquement les heures supplémentaires en comparant les heures de début et de fin de service avec les horaires prévus.</li>
+                        <li>L&#39;application analyse les horaires programmées pour chaque agent et les données de pointage collectées pour détecter automatiquement les heures supplémentaires en comparant les heures de début et de fin de service avec les horaires prévues.</li>
                     </ul>
                 </li>
                 <li><strong>Identification des anomalies de pointage :</strong><ul>
