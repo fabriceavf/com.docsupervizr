@@ -1,60 +1,65 @@
 {
     "menu": [
         {
-            "name": "Presentations",
-            "icon": "fa-regular fa-circle",
+            "name": "Presentations ",
+            "icon": "fa-solid fa-file-powerpoint",
             "slug": "Introductions_web_index",
             "permission": "Voir la page d'acceuil"
         },
         {
             "name": "Besoins fonctionels",
             "slug": "Besoinsfonctionels_web_index",
-            "icon": "fa-regular fa-circle"
+            "icon": "fa-solid fa-users-line"
+            
         },
         {
             "name": "Besoins techniques",
             "slug": "Besoinstechniques_web_index",
-            "icon": "fa-regular fa-circle"
+            "icon": "fa-solid fa-gear"
         },
         {
             "name": "Base de donnees",
-            "slug": "Basededonnees_web_index",
-            "icon": "fa-regular fa-circle"
+            "slug": "Basesdedonnees_web_index",
+            "icon": "fa-solid fa-database"
         },
         {
             "name": "Endpoints",
             "slug": "Endpoints_web_index",
-            "icon": "fa-regular fa-circle"
+            "icon": "fi fi-bs-api"
+            
+           
         },
         {
             "name": "Architectures",
             "slug": "Architectures_web_index",
-            "icon": "fa-regular fa-circle"
+            "icon": "fa-solid fa-sitemap"
         },
         {
             "name": "Initialisations du projet",
             "slug": "Initialisations_web_index",
-            "icon": "fa-regular fa-circle"
+            "icon": "fa-solid fa-diagram-project"
         },
         {
             "name": "Structures du projet",
             "slug": "Structures_web_index",
-            "icon": "fa-regular fa-circle"
+            "icon": "fa-solid fa-folder-tree"
         },
         {
             "name": "Technologies du projet",
             "slug": "Technologies_web_index",
-            "icon": "fa-regular fa-circle"
+            "icon": "fa-solid fa-sim-card"
         },
         {
             "name": "Contributions du projet",
             "slug": "Contributions_web_index",
-            "icon": "fa-regular fa-circle"
+            "icon": "fa-solid fa-recycle"
         },
         {
             "name": "Deploiments du projet",
             "slug": "Deploiments_web_index",
-            "icon": "fa-regular fa-circle"
+            "icon": "fa-solid fa-passport"
+            
+         
         }
     ]
 }
