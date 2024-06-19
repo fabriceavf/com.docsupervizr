@@ -11,8 +11,8 @@
     <div>
         <p>Cette section de la documentation technique détaille les besoins fonctionnels de notre application, couvrant divers aspects tels que la gestion des absences, des congés, des postes de travail, des horaires, ainsi que la génération des programmes de travail et la validation des heures supplémentaires</p>
 
-        <p><strong>3. Fonctionnalités :</strong></p>
-        <p><strong>3.1. Gestion des Absences des Salariés</strong></p>
+        <p><strong> Fonctionnalités :</strong></p>
+        <p><strong>1. Gestion des Absences des Salariés</strong></p>
         <ul>
             <li><strong>Saisie des absences :</strong><ul>
                     <li>Les gestionnaires peuvent ajouter une absence pour un salarié en spécifiant la date de début, la date de fin, et le motif de l&#39;absence.</li>
@@ -35,7 +35,7 @@
                 </ul>
             </li>
         </ul>
-        <p><strong>3.2. Définition et Gestion des Congés des Agents</strong></p>
+        <p><strong>2. Définition et Gestion des Congés des Agents</strong></p>
         <ul>
             <li><strong>Définition des types de congés :</strong><ul>
                     <li>Les gestionnaires peuvent créer et gérer différents types de congés (congés annuels, congés maternité/paternité, congés sans solde, etc.).</li>
@@ -62,7 +62,7 @@
                 </ul>
             </li>
         </ul>
-        <p><strong>3.3. Gestion des Postes de Travail</strong></p>
+        <p><strong>3. Gestion des Postes de Travail</strong></p>
         <ul>
             <li><strong>Définition des postes de travail :</strong><ul>
                     <li>Les gestionnaires peuvent créer et gérer des postes de travail, qu&#39;ils soient physiques (dans un bureau) ou virtuels (télétravail).</li>
@@ -89,7 +89,7 @@
                 </ul>
             </li>
         </ul>
-        <p><strong>3.4. Gestion des Horaires de Travail</strong></p>
+        <p><strong>4. Gestion des Horaires de Travail</strong></p>
         <ul>
             <li><strong>Définition des horaires de travail :</strong><ul>
                     <li>Les gestionnaires peuvent définir les horaires de travail pour chaque poste en spécifiant les heures de début et de fin de travail, ainsi que les jours de la semaine.</li>
@@ -112,14 +112,14 @@
                 </ul>
             </li>
         </ul>
-        <p><strong>3.5. Génération Automatique des Programmes de Travail</strong></p>
+        <p><strong>5. Génération Automatique des Programmes de Travail</strong></p>
         <ul>
             <li><strong>Automatisation de la génération :</strong><ul>
                     <li>L&#39;application doit générer automatiquement les programmes de travail des agents en fonction des horaires définis pour chaque poste. Cette fonctionnalité doit prendre en compte les horaires disponibles, les préférences des agents (le cas échéant), ainsi que les règles de gestion des horaires.</li>
                 </ul>
             </li>
         </ul>
-        <p><strong>3.6. Intégration du Système de Pointage par Badge MYFARE</strong></p>
+        <p><strong>6. Intégration du Système de Pointage par Badge MYFARE</strong></p>
         <ul>
             <li><strong>Utilisation de services tiers :</strong><ul>
                     <li>Intégration avec des services tiers comme Teleric pour la gestion des pointeuses mobiles développées spécifiquement pour le système de pointage par badge MYFARE.</li>
@@ -138,7 +138,7 @@
                 </ul>
             </li>
         </ul>
-        <p><strong>3.7. Validation Automatique des Heures Supplémentaires et Gestion des Anomalies de Pointage</strong></p>
+        <p><strong>7. Validation Automatique des Heures Supplémentaires et Gestion des Anomalies de Pointage</strong></p>
         <ul>
             <li><strong>Détection des heures supplémentaires :</strong><ul>
                     <li>L&#39;application analyse les horaires programmés pour chaque agent et les données de pointage collectées pour détecter automatiquement les heures supplémentaires en comparant les heures de début et de fin de service avec les horaires prévus.</li>
@@ -153,7 +153,7 @@
                 </ul>
             </li>
         </ul>
-        <p><strong>3.8. Gestion des Agents et Impression des Badges</strong></p>
+        <p><strong>8. Gestion des Agents et Impression des Badges</strong></p>
         <ul>
             <li><strong>Gestion des Informations des Agents :</strong><ul>
                     <li>Permettre aux administrateurs de saisir et de gérer les informations personnelles et professionnelles des agents, facilitant la génération de rapports précis sur leur activité.</li>
