@@ -53,10 +53,10 @@
                     </ul>
                 </li>
             </ul>
-            <h4 id="contrainte-7-performance-optimale">Contrainte 7 : Performance Optimale</h4>
+            <h4 id="contrainte-7-performance-optimale">Contrainte 7 : Performance Optimale et choix du serveur</h4>
             <ul>
                 <li><strong>Fonctionnalité :</strong> Optimisation de la Performance<ul>
-                        <li><strong>Description :</strong> Utiliser un système d&#39;exploitation performant capable de gérer de grandes charges de travail et de maximiser l&#39;utilisation des ressources matérielles.</li>
+                        <li><strong>Description :</strong> Utiliser un système d&#39;exploitation performant installé sur un serveur pouvant supporter le flux capable de gérer de grandes charges de travail et de maximiser l&#39;utilisation des ressources matérielles.</li>
                     </ul>
                 </li>
             </ul>
@@ -138,17 +138,30 @@
             <h4 id="contrainte-17-exp-rience-utilisateur-am-lior-e">Contrainte 17 : Expérience Utilisateur Améliorée</h4>
             <ul>
                 <li><strong>Fonctionnalité :</strong> Création des Interfaces Utilisateur Interactives<ul>
-                        <li><strong>Description :</strong> Développer des interfaces utilisateur interactives et réactives pour améliorer l&#39;expérience utilisateur.</li>
+                        <li><strong>Description :</strong> Développer des interfaces utilisateur interactives , réactives et responsive pour améliorer l&#39;expérience utilisateur.</li>
                     </ul>
                 </li>
             </ul>
-            <h4 id="contrainte-18-maintenabilit-du-code">Contrainte 18 : Maintenabilité du Code</h4>
+            <!-- <h4 id="contrainte-18-maintenabilit-du-code">Contrainte 18 : Maintenabilité du Code</h4>
             <ul>
                 <li><strong>Fonctionnalité :</strong> Structuration du Code en Composants Réutilisables<ul>
                         <li><strong>Description :</strong> Structurer le code front-end en composants réutilisables et maintenables.</li>
                     </ul>
+
+                  </li>
+            </ul> -->
+
+
+            <h4 id="contrainte-18-maintenabilit-du-code">Contrainte 18 :  Maintenabilité du Code</h4>
+            <ul>
+                <li><strong>Fonctionnalité :</strong> Structuration du Code en Composants Réutilisables<ul>
+                        <li><strong>Description :</strong>  Structurer le code front-end en composants réutilisables et maintenables.</li>
+                    </ul>
                 </li>
-            </ul>
+                <li><strong>Fonctionnalité :</strong>Surveillance de la performance et mise à jour.<ul>
+                        <li><strong>Description :</strong> Mise en place  d&#39;outils de surveillance comme Grafana,planification des mises à jour régulières,corrections des bugs, amélioration continue.</li>
+                    </ul>
+                </li>
             <h4 id="contrainte-19-gestion-efficace-de-l-tat-de-l-application">Contrainte 19 : Gestion Efficace de l&#39;État de l&#39;Application</h4>
             <ul>
                 <li><p><strong>Fonctionnalité :</strong> Gestion de l&#39;État de l&#39;Application</p>
