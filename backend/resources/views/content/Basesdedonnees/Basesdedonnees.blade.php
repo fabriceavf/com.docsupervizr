@@ -7,7 +7,7 @@
 
     <div class="container">
         <div>
-            <p>Cette section de la documentation expose et explique les procédés utilisés pour enrichir, organiser et segmenter notre base de données. Trois principales techniques sont utilisées : les class, les models et les façades DB</p>
+            <p>Cette section de la documentation expose et explique les procédés utilisés pour enrichir, organiser et segmenter notre base de données. Trois principales techniques sont utilisées : la class, les models et les façades DB</p>
             <h2 id="exemple-d-utilisation-lecture-cr-ation-mise-jour-et-suppression">Exemple d&#39;utilisation : Lecture, Création, Mise à jour et Suppression</h2>
             <h3 id="lecture-des-donn-es">Lecture des données</h3>
             <ol>
