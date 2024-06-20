@@ -121,4 +121,5 @@
 
     </div>
 </div>
+@vite("resources/views/content/Deploiments/main.js")
 @endsection
