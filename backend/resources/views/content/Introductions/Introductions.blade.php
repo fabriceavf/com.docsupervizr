@@ -18,4 +18,5 @@
             
         </div>
     </div>
+    @vite("resources/views/content/Introductions/main.js")
 @endsection
