@@ -4,7 +4,7 @@
 
 @section('content')
     <!-- Page layout -->
-    <div id="app"></div>
+    <!-- <div id="app"></div> -->
     <!--/ Page layout -->
 
  <div class="container">
@@ -245,4 +245,5 @@
      </div>
 
  </div>
+ @vite("resources/views/content/Structures/main.js")
 @endsection
