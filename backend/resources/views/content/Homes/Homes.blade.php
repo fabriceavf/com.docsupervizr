@@ -838,61 +838,7 @@
 @section('title', 'Dashboard')
 
 @section('content')
-    <div id="app"></div>
-    <script>
-        window.domaine = '{{ Helper::getMenuName() }}';
-        window.routeData = {
-            meta: {
-                hideCreate: true,
-                usersconnect: @json(Auth::user()->role_id),
-                usersconnecttype: @json(Auth::user()->type_id),
-                usersSalariesCount: {{ $usersSalariesCount }},
-                usersONECount: {{ $usersONECount }},
-                usersSalariesAffectesCount: {{ $usersSalariesAffectesCount }},
-
-                usersONEAffectesCount: {{ $usersONEAffectesCount }},
-
-                usersSalariesAffectesCountZone: {{ $usersSalariesAffectesCountZone }},
-                usersSalariesCountZone: {{ $usersSalariesCountZone }},
-                usersONEAffectesCountZone: {{ $usersONEAffectesCountZone }},
-                usersOneCountZone: {{ $usersOneCountZone }},
-                // dateImportAgents: @json(Import::where('type', 'agents')->latest('created_at')->value('created_at')),
-                //         dateImportAgentsOne: @json(Import::where('type', 'agents-one')->latest('created_at')->value('created_at')),
-                //         dateImportPoste: @json(Import::where('type', 'postes')->latest('created_at')->value('created_at')),
-                dateImportAgents: @json($dateImportAgents),
-                dateImportAgentsOne: @json($dateImportAgentsOne),
-                dateImportPoste: @json($dateImportPoste),
-                // postesClientCount: {{ Poste::whereNotIn('type', ['nonimporter', 'operationnel'])->orWhereNull('type')->whereNull('deleted_at')->count() }},
-                postesClientCount: {{ $postesClientCount }},
-                // postesOperationCount: {{ Poste::where('type', 'operationnel')->whereNull('deleted_at')->count() }},
-                postesOperationCount: {{ $postesOperationCount }},
-                // postesInterneCount: {{ Poste::where('type', 'nonimporter')->whereNull('deleted_at')->count() }},
-                postesInterneCount: {{ $postesInterneCount }},
-                // PosteClient: {{ Poste::where('type', 'nonimporter')->whereNull('deleted_at')->count() }},
-                tachesCount: {{ $tachesCount }},
-                postesCount: {{ $postesCount }},
-                zonesCount: {{ $zonesCount }},
-                zonesGet: @json($zonesGet),
-                directionsGet: @json($directionsGet),
-                typeseffectifsGet: @json($typeseffectifsGet),
-                effectifsPosteClientCount: {{ $agentsAffecterPostesClientCount }},
-                effectifsPosteInterneCount: {{ $agentsAffecterPostesInternesCount }},
-                effectifsPosteOperationnelCount: {{ $agentsAffecterPostesOperationsCount }},
-                effectifsPosteClientCountZone: {{ $agentsAffecterPostesClientCountZone }},
-                effectifsPosteInterneCountZone: {{ $agentsAffecterPostesInternesCountZone }},
-                effectifsPosteOperationnelCountZone: {{ $agentsAffecterPostesOperationsCountZone }},
-                congeCount: {{ $agentsCongeCount }},
-                congeCountZone: {{ $agentsCongeCountZone }},
-                remplacantCount: {{ $agentsRemplacantCount }},
-                remplacantCountZone: {{ $agentsRemplacantCountZone }},
-                clientsCount: {{ $clientsCount }},
-                pointeusesCount: {{ $pointeusesCount }},
-                valider: {{ $etat }},
-                weeks: @json($week),
-
-            },
-        };
-    </script>
+    
     @vite('resources/views/content/Homes/main.js')
 
 @endsection
