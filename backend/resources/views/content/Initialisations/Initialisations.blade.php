@@ -155,5 +155,5 @@
 
         </div>
     </div>
-
+    @vite("resources/views/content/Initialisations/main.js")
 @endsection
