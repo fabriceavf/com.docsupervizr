@@ -63,4 +63,5 @@
 
     </div>
 </div>
+@vite("resources/views/content/Contributions/main.js")
 @endsection
