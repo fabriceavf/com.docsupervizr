@@ -58,8 +58,57 @@
             "name": "Deploiments du projet",
             "slug": "Deploiments_web_index",
             "icon": "fa-solid fa-passport"
-            
-         
+        },
+        {
+            "name": "Administration utilisateurs ",
+            "icon": "fa-solid fa-lock",
+            "slug": "",
+            "module": "Administration",
+            "submenu": [
+                {
+                    "name": "Les users",
+                    "slug": "Users_web_index",
+                    "icon": "fa-solid fa-user-large",
+                    "permission": "Voir la page des utilisateurs"
+                },
+                {
+                    "name": "Les super admin",
+                    "slug": "Users_SU_web_index",
+                    "icon": "fa-solid fa-user-shield",
+                    "isSu": true
+                },
+                {
+                    "name": "Roles / Profils",
+                    "slug": "Roles_web_index",
+                    "icon": "fa-regular fa-circle",
+                    "params": {
+                        "type": "brute"
+                    },
+                    "permission": "Voir la page des roles"
+                },
+                {
+                    "name": "Permissions",
+                    "slug": "Permissions_web_index",
+                    "icon": "fa-regular fa-circle",
+                    "isSu": true,
+                    "params": {
+                        "type": "brute"
+                    },
+                    "permission": "Voir la page des permissions"
+                },
+                {
+                    "name": "Logs",
+                    "slug": "Surveillances_web_index",
+                    "icon": "fa-regular fa-circle",
+                    "permission": "Voir la page des activites recentes"
+                },
+                {
+                    "name": "Entreprises",
+                    "slug": "Entreprises_web_index",
+                    "icon": "fa-regular fa-circle",
+                    "isSu": true
+                }
+            ]
         }
     ]
 }
