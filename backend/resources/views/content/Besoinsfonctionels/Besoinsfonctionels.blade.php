@@ -165,6 +165,14 @@
             </li>
         </ul>
 
+        <p><strong>9. Gestion d'historique</strong></p>
+        <ul>
+            <li><strong>Conservation de tous traitements effectués :</strong><ul>
+                    <li>L'application conservera toutes les transations effectuer afin de mettre un suivi du traitement des données .</li>
+                </ul>
+            </li>
+        </ul>
+
 
     </div>
 </div>
