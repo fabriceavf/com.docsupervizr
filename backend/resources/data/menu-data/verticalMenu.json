@@ -10,7 +10,7 @@
             "name": "Besoins fonctionels",
             "slug": "Besoinsfonctionels_web_index",
             "icon": "fa-solid fa-users-line"
-            
+
         },
         {
             "name": "Besoins techniques",
@@ -26,8 +26,8 @@
             "name": "Endpoints",
             "slug": "Endpoints_web_index",
             "icon": "fi fi-bs-api"
-            
-           
+
+
         },
         {
             "name": "Architectures",
@@ -57,6 +57,11 @@
         {
             "name": "Deploiments du projet",
             "slug": "Deploiments_web_index",
+            "icon": "fa-solid fa-passport"
+        },
+        {
+            "name": "Suivi de tache ",
+            "slug": "Suivitaches_web_index",
             "icon": "fa-solid fa-passport"
         },
         {

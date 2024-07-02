@@ -1,38 +1,275 @@
 {
-  "menu": [
-    {
-      "url": "home",
-      "name": "Home",
-      "icon": "home",
-      "slug": "home"
-    },
-    {
-      "name": "Page Layouts",
-      "icon": "layout",
-      "dropdown": "1",
-      "slug": "",
-      "submenu": [
+    "menu": [
         {
-          "url": "layouts/full",
-          "name": "Layout Full",
-          "slug": "layout-full"
+            "name": "Home",
+            "icon": "fa-solid fa-house",
+            "slug": "HOMES_web_index",
+            "permission": "Voir la page d'acceuil",
+            "module": "Dashbord"
         },
         {
-          "url": "layouts/without-menu",
-          "name": "Without Menu",
-          "slug": "without-menu"
+            "name": "EFFECTIFS",
+            "icon": "fa-solid fa-users",
+            "slug": "Users_VALIDER_web_index",
+            "module": "Effectif"
         },
         {
-          "url": "layouts/empty",
-          "name": "Layout Empty",
-          "slug": "layout-empty"
+            "name": "POSTES",
+            "icon": "fa-solid fa-paste",
+            "slug": "Postes_web_index",
+            "modules": "Poste"
         },
         {
-          "url": "layouts/blank",
-          "name": "Layout Blank",
-          "slug": "layout-blank"
+            "name": "MISE EN PLACE",
+            "icon": "fa-solid fa-list-check",
+            "slug": "",
+            "module": "Listing",
+            "submenu": [
+                {
+                    "name": "Planification",
+                    "slug": "Modelslistings_web_index",
+                    "icon": "fa-regular fa-circle",
+                    "params": {
+                        "type": "brute"
+                    },
+                    "permission": "Voir la page des planifications"
+                },
+                {
+                    "name": "Aperçue listings",
+                    "slug": "Programmations_LISTINGS_web_index",
+                    "icon": "fa-regular fa-circle",
+                    "params": {
+                        "type": "brute"
+                    },
+                    "permission": "Voir la page des listings"
+                },
+                {
+                    "name": "Listings valider1",
+                    "slug": "Programmations_LISTINGS_Valider1_web_index",
+                    "icon": "fa-regular fa-circle",
+                    "params": {
+                        "type": "brute"
+                    },
+                    "permission": "Voir la page des listings valider par le responsable de mise en place"
+                },
+                {
+                    "name": "Listings valider2",
+                    "slug": "Programmations_LISTINGS_Valider2_web_index",
+                    "icon": "fa-regular fa-circle",
+                    "params": {
+                        "type": "brute"
+                    },
+                    "permission": "Voir la page des listings valider par le chef de zone"
+                },
+                {
+                    "name": "Traitements des heures travailler",
+                    "slug": "Ventilations_web_index",
+                    "icon": "fa-regular fa-circle",
+                    "params": {
+                        "type": "brute"
+                    },
+                    "permission": "Voir la page des ventilations"
+                }
+            ]
+        },
+        {
+            "name": "RAPPORT",
+            "icon": "fa-regular fa-newspaper",
+            "slug": "",
+            "module": "Rapport",
+            "submenu": [
+                {
+                    "name": "Journal pointages ",
+                    "icon": "fa-regular fa-circle",
+                    "slug": "JOURNALS_web_index",
+                    "params": {
+                        "type": "journal"
+                    },
+                    "permission": "Voir la page des pointages brutes"
+                },
+                {
+                    "name": "Rapports Pointages ",
+                    "slug": "Rapports_web_index",
+                    "icon": "fa-regular fa-circle",
+                    "params": {
+                        "type": "brute"
+                    },
+                    "permission": "Voir la page des pointages par postes"
+                },
+                {
+                    "name": "Rapports Vacation ",
+                    "slug": "Vacation_postes_web_index",
+                    "icon": "fa-regular fa-circle",
+                    "params": {
+                        "type": "brute"
+                    },
+                    "permission": "Voir la page des vacations par postes"
+                },
+                {
+                    "name": "Pointeuses",
+                    "slug": "Pointeuses_web_index",
+                    "icon": "fa-regular fa-circle",
+                    "permission": "Voir la page des pointeuses"
+                }
+            ]
+        },
+        {
+            "name": "TRANSPORTS",
+            "icon": "fa-solid fa-car",
+            "slug": "",
+            "module": "Transport",
+            "submenu": [
+                {
+                    "name": "Vehicules",
+                    "slug": "Moyenstransports_web_index",
+                    "icon": "fa-regular fa-circle",
+                    "params": {
+                        "type": "brute"
+                    },
+                    "permission": "Voir la page des moyenstransports"
+                },
+                {
+                    "name": "Lignes",
+                    "slug": "Lignes_web_index",
+                    "icon": "fa-regular fa-circle",
+                    "params": {
+                        "type": "brute"
+                    },
+                    "permission": "Voir la page des lignes"
+                },
+                {
+                    "name": "Deplacements",
+                    "slug": "Deplacements_web_index",
+                    "icon": "fa-regular fa-circle",
+                    "params": {
+                        "type": "brute"
+                    },
+                    "permission": "Voir la page des deplacements"
+                }
+            ]
+        },
+        {
+            "name": "EQUIPEMENTS",
+            "icon": "fa-solid fa-tools",
+            "slug": "",
+            "module": "Equipement",
+            "submenu": [
+                {
+                    "name": "Cartes MiFare",
+                    "slug": "Cartes_web_index",
+                    "icon": "fa-regular fa-circle",
+                    "params": {
+                        "type": "brute"
+                    },
+                    "permission": "Voir la page des cartes"
+                },
+                {
+                    "name": "Pointeuses",
+                    "slug": "Pointeuses_web_index",
+                    "icon": "fa-regular fa-circle",
+                    "params": {
+                        "type": "brute"
+                    },
+                    "permission": "Voir la page des pointeuses"
+                },
+                {
+                    "name": "Controlleur d'acces",
+                    "slug": "Controlleursacces_web_index",
+                    "icon": "fa-regular fa-circle",
+                    "params": {
+                        "type": "brute"
+                    },
+                    "permission": "Voir la page des Controlleursdacces"
+                },
+                {
+                    "name": "Balises",
+                    "slug": "Balises_web_index",
+                    "icon": "fa-regular fa-circle",
+                    "params": {
+                        "type": "brute"
+                    },
+                    "permission": "Voir la page des balises"
+                },
+                {
+                    "name": "Trackings",
+                    "slug": "Trackings_web_index",
+                    "icon": "fa-regular fa-circle",
+                    "params": {
+                        "type": "brute"
+                    },
+                    "permission": "Voir la page des trackings"
+                }
+            ]
+        },
+        {
+            "name": "Configurations",
+            "icon": "fa-solid fa-gear",
+            "slug": "Configurations_web_index",
+            "module": "Configuration",
+            "permission": "Voir la page de Configurations"
+        },
+        {
+            "name": "Administration utilisateurs ",
+            "icon": "fa-solid fa-lock",
+            "slug": "",
+            "module": "Administration",
+            "submenu": [
+                {
+                    "name": "Les users",
+                    "slug": "Users_web_index",
+                    "icon": "fa-solid fa-user-large",
+                    "permission": "Voir la page des utilisateurs"
+                },
+                {
+                    "name": "Les super admin",
+                    "slug": "Users_SU_web_index",
+                    "icon": "fa-solid fa-user-shield",
+                    "isSu": true
+                },
+                {
+                    "name": "Roles / Profils",
+                    "slug": "Roles_web_index",
+                    "icon": "fa-regular fa-circle",
+                    "params": {
+                        "type": "brute"
+                    },
+                    "permission": "Voir la page des roles"
+                },
+                {
+                    "name": "Permissions",
+                    "slug": "Permissions_web_index",
+                    "icon": "fa-regular fa-circle",
+                    "isSu": true,
+                    "params": {
+                        "type": "brute"
+                    },
+                    "permission": "Voir la page des permissions"
+                },
+                {
+                    "name": "Logs",
+                    "slug": "Surveillances_web_index",
+                    "icon": "fa-regular fa-circle",
+                    "permission": "Voir la page des activites recentes"
+                },
+                {
+                    "name": "Entreprises",
+                    "slug": "Entreprises_web_index",
+                    "icon": "fa-regular fa-circle",
+                    "isSu": true
+                }
+            ]
+        },
+        {
+            "name": "Tuto Video",
+            "icon": "fa-regular fa-circle",
+            "slug": "Listings_web_index",
+            "modules": "Poste"
+        },
+        {
+            "name": "Attributions",
+            "icon": "fa-regular fa-circle",
+            "slug": "Attributions_web_index",
+            "modules": "Poste"
         }
-      ]
-    }
-  ]
+    ]
 }
