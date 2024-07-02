@@ -1,4 +1,4 @@
-<?php 
+<?php
 namespace App\Http\Controllers\API;
 namespace App\Http\Controllers\API;
 use Illuminate\Support\Facades\Auth;
@@ -160,32 +160,32 @@ $data = QueryBuilder::for(Typessite::class)
 ->allowedFilters([
             AllowedFilter::exact('id'),
 
-    
+
             AllowedFilter::exact('code'),
 
-    
+
             AllowedFilter::exact('libelle'),
 
-    
+
             AllowedFilter::exact('creat_by'),
 
-    
-    
-    
-    
-    
+
+
+
+
+
             AllowedFilter::exact('canCreate'),
 
-    
+
             AllowedFilter::exact('canUpdate'),
 
-    
+
             AllowedFilter::exact('canDelete'),
 
-    
+
             AllowedFilter::exact('identifiants_sadge'),
 
-    
+
 AllowedFilter::callback('not_null', function (Builder $query, $value) {
 //                    dump($value);
 
@@ -280,41 +280,41 @@ return $query;
 ->allowedSorts([
             AllowedSort::field('id'),
 
-    
+
             AllowedSort::field('code'),
 
-    
+
             AllowedSort::field('libelle'),
 
-    
+
             AllowedSort::field('creat_by'),
 
-    
-    
-    
-    
-    
+
+
+
+
+
             AllowedSort::field('canCreate'),
 
-    
+
             AllowedSort::field('canUpdate'),
 
-    
+
             AllowedSort::field('canDelete'),
 
-    
+
             AllowedSort::field('identifiants_sadge'),
 
-    
+
 ])
 ->allowedIncludes([
             'horairestypessites',
-        
+
 
                 'sites',
-        
 
-    
+
+
 ]);
 
 if(!empty($_REQUEST["paginate"]) && $_REQUEST["paginate"]==1 ){
@@ -325,84 +325,84 @@ $data=$data->get();
 $donnees=$data->toArray();
 
 
-    
 
 
 
 
 
 
-    
 
 
 
 
 
 
-    
 
 
 
 
 
 
-    
 
 
 
 
 
 
-    
 
 
 
 
 
 
-    
 
 
 
 
 
 
-    
 
 
 
 
 
 
-    
 
 
 
 
 
 
-    
 
 
 
 
 
 
-    
 
 
 
 
 
 
-    
 
 
 
 
 
 
-    
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -463,32 +463,32 @@ $data = QueryBuilder::for(Typessite::class)
 ->allowedFilters([
             AllowedFilter::exact('id'),
 
-    
+
             AllowedFilter::exact('code'),
 
-    
+
             AllowedFilter::exact('libelle'),
 
-    
+
             AllowedFilter::exact('creat_by'),
 
-    
-    
-    
-    
-    
+
+
+
+
+
             AllowedFilter::exact('canCreate'),
 
-    
+
             AllowedFilter::exact('canUpdate'),
 
-    
+
             AllowedFilter::exact('canDelete'),
 
-    
+
             AllowedFilter::exact('identifiants_sadge'),
 
-    
+
 AllowedFilter::callback('not_null', function (Builder $query, $value) {
 //                    dump($value);
 
@@ -583,39 +583,39 @@ return $query;
 ->allowedSorts([
             AllowedSort::field('id'),
 
-    
+
             AllowedSort::field('code'),
 
-    
+
             AllowedSort::field('libelle'),
 
-    
+
             AllowedSort::field('creat_by'),
 
-    
-    
-    
-    
-    
+
+
+
+
+
             AllowedSort::field('canCreate'),
 
-    
+
             AllowedSort::field('canUpdate'),
 
-    
+
             AllowedSort::field('canDelete'),
 
-    
+
             AllowedSort::field('identifiants_sadge'),
 
-    
+
 ])
 ->allowedIncludes([
             'horairestypessites',
-        
+
 
                 'sites',
-        
+
 
     ]);
 
@@ -634,84 +634,84 @@ $donnees=$data->toArray();
 
 
 
-    
 
 
 
 
 
 
-    
 
 
 
 
 
 
-    
 
 
 
 
 
 
-    
 
 
 
 
 
 
-    
 
 
 
 
 
 
-    
 
 
 
 
 
 
-    
 
 
 
 
 
 
-    
 
 
 
 
 
 
-    
 
 
 
 
 
 
-    
 
 
 
 
 
 
-    
 
 
 
 
 
 
-    
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -802,90 +802,90 @@ $envoyer[]=$key;
 $envoyer=array_unique($envoyer);
 
 Validator::make($data, [
-    
-    
+
+
                     'code' => [
             //'required'
             ],
-        
-    
-    
+
+
+
                     'libelle' => [
             //'required'
             ],
-        
-    
-    
+
+
+
                     'creat_by' => [
             //'required'
             ],
-        
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
                     'canCreate' => [
             //'required'
             ],
-        
-    
-    
+
+
+
                     'canUpdate' => [
             //'required'
             ],
-        
-    
-    
+
+
+
                     'canDelete' => [
             //'required'
             ],
-        
-    
-    
+
+
+
                     'identifiants_sadge' => [
             //'required'
             ],
-        
-    
+
+
 
 
 ], $messages = [
 
-    
-    
+
+
         'code' => ['cette donnee est obligatoire'],
 
-    
-    
+
+
         'libelle' => ['cette donnee est obligatoire'],
 
-    
-    
+
+
         'creat_by' => ['cette donnee est obligatoire'],
 
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
         'canCreate' => ['cette donnee est obligatoire'],
 
-    
-    
+
+
         'canUpdate' => ['cette donnee est obligatoire'],
 
-    
-    
+
+
         'canDelete' => ['cette donnee est obligatoire'],
 
-    
-    
+
+
         'identifiants_sadge' => ['cette donnee est obligatoire'],
 
-    
+
 ])->validate();
 
 
@@ -908,7 +908,6 @@ $data['creat_by']=Auth::id();
 
 
 
-    
 
 
 
@@ -916,17 +915,17 @@ $data['creat_by']=Auth::id();
 
 
 
-    
+
+
 
         if(!empty($data['code'])){
-        
+
             $Typessites->code = $data['code'];
-        
+
         }
 
 
 
-    
 
 
 
@@ -934,17 +933,17 @@ $data['creat_by']=Auth::id();
 
 
 
-    
+
+
 
         if(!empty($data['libelle'])){
-        
+
             $Typessites->libelle = $data['libelle'];
-        
+
         }
 
 
 
-    
 
 
 
@@ -952,17 +951,17 @@ $data['creat_by']=Auth::id();
 
 
 
-    
+
+
 
         if(!empty($data['creat_by'])){
-        
+
             $Typessites->creat_by = $data['creat_by'];
-        
+
         }
 
 
 
-    
 
 
 
@@ -970,7 +969,6 @@ $data['creat_by']=Auth::id();
 
 
 
-    
 
 
 
@@ -978,7 +976,6 @@ $data['creat_by']=Auth::id();
 
 
 
-    
 
 
 
@@ -986,7 +983,6 @@ $data['creat_by']=Auth::id();
 
 
 
-    
 
 
 
@@ -994,7 +990,6 @@ $data['creat_by']=Auth::id();
 
 
 
-    
 
 
 
@@ -1002,17 +997,21 @@ $data['creat_by']=Auth::id();
 
 
 
-    
+
+
+
+
+
+
 
         if(!empty($data['canCreate'])){
-        
+
             $Typessites->canCreate = $data['canCreate'];
-        
+
         }
 
 
 
-    
 
 
 
@@ -1020,17 +1019,17 @@ $data['creat_by']=Auth::id();
 
 
 
-    
+
+
 
         if(!empty($data['canUpdate'])){
-        
+
             $Typessites->canUpdate = $data['canUpdate'];
-        
+
         }
 
 
 
-    
 
 
 
@@ -1038,17 +1037,17 @@ $data['creat_by']=Auth::id();
 
 
 
-    
+
+
 
         if(!empty($data['canDelete'])){
-        
+
             $Typessites->canDelete = $data['canDelete'];
-        
+
         }
 
 
 
-    
 
 
 
@@ -1056,17 +1055,18 @@ $data['creat_by']=Auth::id();
 
 
 
-    
+
+
 
         if(!empty($data['identifiants_sadge'])){
-        
+
             $Typessites->identifiants_sadge = $data['identifiants_sadge'];
-        
+
         }
 
 
 
-    
+
 
 
 
@@ -1129,7 +1129,7 @@ $newCrudData=[];
                 $newCrudData['canUpdate']=$Typessites->canUpdate;
                 $newCrudData['canDelete']=$Typessites->canDelete;
                 $newCrudData['identifiants_sadge']=$Typessites->identifiants_sadge;
-    
+
 
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Create", 'entite' => 'Typessites','entite_cle' => $Typessites->id, 'ancien' => json_encode($newCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);
 
@@ -1186,7 +1186,7 @@ $oldCrudData=[];
                 $oldCrudData['canUpdate']=$Typessites->canUpdate;
                 $oldCrudData['canDelete']=$Typessites->canDelete;
                 $oldCrudData['identifiants_sadge']=$Typessites->identifiants_sadge;
-    
+
 
 
 $data=$request->all();
@@ -1221,90 +1221,90 @@ $envoyer[]=$key;
 $envoyer=array_unique($envoyer);
 
 Validator::make($data, [
-    
-    
+
+
                     'code' => [
             //'required'
             ],
-        
-    
-    
+
+
+
                     'libelle' => [
             //'required'
             ],
-        
-    
-    
+
+
+
                     'creat_by' => [
             //'required'
             ],
-        
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
                     'canCreate' => [
             //'required'
             ],
-        
-    
-    
+
+
+
                     'canUpdate' => [
             //'required'
             ],
-        
-    
-    
+
+
+
                     'canDelete' => [
             //'required'
             ],
-        
-    
-    
+
+
+
                     'identifiants_sadge' => [
             //'required'
             ],
-        
-    
+
+
 
 
 ], $messages = [
 
-    
-    
+
+
         'code' => ['cette donnee est obligatoire'],
 
-    
-    
+
+
         'libelle' => ['cette donnee est obligatoire'],
 
-    
-    
+
+
         'creat_by' => ['cette donnee est obligatoire'],
 
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
         'canCreate' => ['cette donnee est obligatoire'],
 
-    
-    
+
+
         'canUpdate' => ['cette donnee est obligatoire'],
 
-    
-    
+
+
         'canDelete' => ['cette donnee est obligatoire'],
 
-    
-    
+
+
         'identifiants_sadge' => ['cette donnee est obligatoire'],
 
-    
+
 ])->validate();
 
 
@@ -1325,7 +1325,6 @@ $extra_data=array_diff($envoyer,$champsRechercher);
 
 
 
-    
 
 
 
@@ -1333,20 +1332,19 @@ $extra_data=array_diff($envoyer,$champsRechercher);
 
 
 
-    
+
+
 
         if(array_key_exists("code",$data)){
 
 
         if(!empty($data['code'])){
-        
+
             $Typessites->code = $data['code'];
-        
-        }
 
         }
 
-    
+        }
 
 
 
@@ -1354,20 +1352,20 @@ $extra_data=array_diff($envoyer,$champsRechercher);
 
 
 
-    
+
+
+
 
         if(array_key_exists("libelle",$data)){
 
 
         if(!empty($data['libelle'])){
-        
+
             $Typessites->libelle = $data['libelle'];
-        
-        }
 
         }
 
-    
+        }
 
 
 
@@ -1375,20 +1373,20 @@ $extra_data=array_diff($envoyer,$champsRechercher);
 
 
 
-    
+
+
+
 
         if(array_key_exists("creat_by",$data)){
 
 
         if(!empty($data['creat_by'])){
-        
+
             $Typessites->creat_by = $data['creat_by'];
-        
-        }
 
         }
 
-    
+        }
 
 
 
@@ -1396,7 +1394,6 @@ $extra_data=array_diff($envoyer,$champsRechercher);
 
 
 
-    
 
 
 
@@ -1404,7 +1401,6 @@ $extra_data=array_diff($envoyer,$champsRechercher);
 
 
 
-    
 
 
 
@@ -1412,7 +1408,6 @@ $extra_data=array_diff($envoyer,$champsRechercher);
 
 
 
-    
 
 
 
@@ -1420,7 +1415,6 @@ $extra_data=array_diff($envoyer,$champsRechercher);
 
 
 
-    
 
 
 
@@ -1428,20 +1422,24 @@ $extra_data=array_diff($envoyer,$champsRechercher);
 
 
 
-    
+
+
+
+
+
+
+
 
         if(array_key_exists("canCreate",$data)){
 
 
         if(!empty($data['canCreate'])){
-        
+
             $Typessites->canCreate = $data['canCreate'];
-        
-        }
 
         }
 
-    
+        }
 
 
 
@@ -1449,20 +1447,20 @@ $extra_data=array_diff($envoyer,$champsRechercher);
 
 
 
-    
+
+
+
 
         if(array_key_exists("canUpdate",$data)){
 
 
         if(!empty($data['canUpdate'])){
-        
+
             $Typessites->canUpdate = $data['canUpdate'];
-        
-        }
 
         }
 
-    
+        }
 
 
 
@@ -1470,20 +1468,20 @@ $extra_data=array_diff($envoyer,$champsRechercher);
 
 
 
-    
+
+
+
 
         if(array_key_exists("canDelete",$data)){
 
 
         if(!empty($data['canDelete'])){
-        
+
             $Typessites->canDelete = $data['canDelete'];
-        
-        }
 
         }
 
-    
+        }
 
 
 
@@ -1491,20 +1489,22 @@ $extra_data=array_diff($envoyer,$champsRechercher);
 
 
 
-    
+
+
+
 
         if(array_key_exists("identifiants_sadge",$data)){
 
 
         if(!empty($data['identifiants_sadge'])){
-        
+
             $Typessites->identifiants_sadge = $data['identifiants_sadge'];
-        
-        }
 
         }
 
-    
+        }
+
+
 
 
 
@@ -1574,7 +1574,7 @@ $newCrudData=[];
                 $newCrudData['canUpdate']=$Typessites->canUpdate;
                 $newCrudData['canDelete']=$Typessites->canDelete;
                 $newCrudData['identifiants_sadge']=$Typessites->identifiants_sadge;
-    
+
 
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Update", 'entite' => 'Typessites','entite_cle' => $Typessites->id, 'ancien' => json_encode($oldCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);
 
@@ -1626,7 +1626,7 @@ $newCrudData=[];
                 $newCrudData['canUpdate']=$Typessites->canUpdate;
                 $newCrudData['canDelete']=$Typessites->canDelete;
                 $newCrudData['identifiants_sadge']=$Typessites->identifiants_sadge;
-    
+
 
 DB::table('surveillances')->insert(['user_id'=>Auth::id(),'action' => "Delete", 'entite' => 'Typessites','entite_cle' => $Typessites->id, 'ancien' => json_encode($newCrudData),'nouveau'=>json_encode($newCrudData),'created_at'=>now()]);
 

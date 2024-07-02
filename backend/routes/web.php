@@ -1551,6 +1551,12 @@ Route::group(['prefix' => '', 'middleware' => ['auth:sanctum']], function () {
 
 
     Route::get('Basesdedonnees/show/{Basesdedonnees}', [App\Http\Controllers\WEB\BasesdedonneesControllerWeb::class, 'index_one'])->name('Basesdedonnees_web_index_one');
+//Route::resource('Suivitaches',App\Http\Controllers\WEB\SuivitachesControllerWeb::class);
+Route::get('Suivitaches', [App\Http\Controllers\WEB\SuivitachesControllerWeb::class, 'index'])->name('Suivitaches_web_index');
+
+
+Route::get('Suivitaches/show/{Suivitaches}', [App\Http\Controllers\WEB\SuivitachesControllerWeb::class, 'index_one'])->name('Suivitaches_web_index_one');
+
 
 
 //Route::resource('Besoinsfonctionels',App\Http\Controllers\WEB\BesoinsfonctionelsControllerWeb::class);

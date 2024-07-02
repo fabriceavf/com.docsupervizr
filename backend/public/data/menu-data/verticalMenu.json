@@ -1,217 +1,112 @@
 {
     "menu": [
         {
-            "url": "home",
-            "name": "Home",
-            "icon": "fa-solid fa-house",
-            "slug": "home"
+            "name": "Presentations ",
+            "icon": "fa-solid fa-file-powerpoint",
+            "slug": "Introductions_web_index",
+            "permission": "Voir la page d'acceuil"
         },
         {
-            "name": "Effectifs",
-            "icon": "UsersIcon",
+            "name": "Besoins fonctionels",
+            "slug": "Besoinsfonctionels_web_index",
+            "icon": "fa-solid fa-users-line"
+            
+        },
+        {
+            "name": "Besoins techniques",
+            "slug": "Besoinstechniques_web_index",
+            "icon": "fa-solid fa-gear"
+        },
+        {
+            "name": "Base de donnees",
+            "slug": "Basesdedonnees_web_index",
+            "icon": "fa-solid fa-database"
+        },
+        {
+            "name": "Endpoints",
+            "slug": "Endpoints_web_index",
+            "icon": "fi fi-bs-api"
+            
+           
+        },
+        {
+            "name": "Architectures",
+            "slug": "Architectures_web_index",
+            "icon": "fa-solid fa-sitemap"
+        },
+        {
+            "name": "Initialisations du projet",
+            "slug": "Initialisations_web_index",
+            "icon": "fa-solid fa-diagram-project"
+        },
+        {
+            "name": "Structures du projet",
+            "slug": "Structures_web_index",
+            "icon": "fa-solid fa-folder-tree"
+        },
+        {
+            "name": "Technologies du projet",
+            "slug": "Technologies_web_index",
+            "icon": "fa-solid fa-sim-card"
+        },
+        {
+            "name": "Contributions du projet",
+            "slug": "Contributions_web_index",
+            "icon": "fa-solid fa-recycle"
+        },
+        {
+            "name": "Deploiments du projet",
+            "slug": "Deploiments_web_index",
+            "icon": "fa-solid fa-passport"
+        },
+        {
+            "name": "Administration utilisateurs ",
+            "icon": "fa-solid fa-lock",
             "slug": "",
+            "module": "Administration",
             "submenu": [
                 {
-                    "name": "Enrolement",
-                    "slug": "Users_ENROLEMENTS_web_index",
-                    "icon": "fa-regular fa-circle"
+                    "name": "Les users",
+                    "slug": "Users_web_index",
+                    "icon": "fa-solid fa-user-large",
+                    "permission": "Voir la page des utilisateurs"
                 },
                 {
-                    "name": "salariés ",
-                    "slug": "Users_VALIDER_web_index",
-                    "icon": "fa-regular fa-circle",
-                    "params": {
-                        "id": 4987
-                    }
+                    "name": "Les super admin",
+                    "slug": "Users_SU_web_index",
+                    "icon": "fa-solid fa-user-shield",
+                    "isSu": true
                 },
                 {
-                    "name": "ONE",
-                    "slug": "Users_ONE_web_index",
-                    "icon": "fa-regular fa-circle"
-                }
-            ]
-        },
-        {
-            "name": "Entreprises",
-            "icon": "UsersIcon",
-            "slug": "",
-            "submenu": [
-                {
-                    "name": "Directions",
-                    "slug": "Directions_web_index",
+                    "name": "Roles / Profils",
+                    "slug": "Roles_web_index",
                     "icon": "fa-regular fa-circle",
                     "params": {
                         "type": "brute"
-                    }
+                    },
+                    "permission": "Voir la page des roles"
                 },
-                {
-                    "name": "Services",
-                    "slug": "Services_web_index",
-                    "icon": "fa-regular fa-circle"
-                },
-                {
-                    "name": "Fonctions",
-                    "slug": "Fonctions_web_index",
-                    "icon": "fa-regular fa-circle",
-                    "params": {
-                        "id": 4987
-                    }
-                },
-                {
-                    "name": "Clients",
-                    "slug": "Clients_web_index",
-                    "icon": "fa-regular fa-circle",
-                    "params": {
-                        "type": "brute"
-                    }
-                },
-                {
-                    "name": "Postes",
-                    "slug": "Postes_web_index",
-                    "icon": "fa-regular fa-circle"
-                }
-            ]
-        },
-        {
-            "name": "Journals",
-            "icon": "fa-regular fa-circle",
-            "slug": "JOURNALS_web_index",
-            "params": {
-                "type": "journal"
-            }
-        },
-        {
-            "name": "Listings",
-            "icon": "fa-regular fa-circle",
-            "slug": "",
-            "submenu": [
-                {
-                    "name": "Models",
-                    "slug": "Modelslistings_web_index",
-                    "icon": "fa-regular fa-circle",
-                    "params": {
-                        "type": "brute"
-                    }
-                },
-                {
-                    "name": "Déclaratif",
-                    "slug": "Listingsjours_LISTING-MANUEL_web_index",
-                    "icon": "fa-regular fa-circle",
-                    "params": {
-                        "type": "brute"
-                    }
-                },
-                {
-                    "name": "Automatique",
-                    "slug": "Listingsjours_LISTING-AUTOMATIQUE_web_index",
-                    "icon": "fa-regular fa-circle",
-                    "params": {
-                        "type": "brute"
-                    }
-                }
-            ]
-        },
-        {
-            "name": "Configurations",
-            "icon": "fa-regular fa-circle",
-            "slug": "",
-            "submenu": [
-                {
-                    "name": "Zones",
-                    "slug": "Zones_web_index",
-                    "icon": "fa-regular fa-circle",
-                    "params": {
-                        "type": "brute"
-                    }
-                },
-                {
-                    "name": "Sites",
-                    "slug": "Sites_web_index",
-                    "icon": "fa-regular fa-circle",
-                    "params": {
-                        "type": "brute"
-                    }
-                },
-                {
-                    "name": "Categories",
-                    "slug": "Categories_web_index",
-                    "icon": "fa-regular fa-circle",
-                    "params": {
-                        "type": "brute"
-                    }
-                },
-                {
-                    "name": "Nationalites",
-                    "slug": "Nationalites_web_index",
-                    "icon": "fa-regular fa-circle",
-                    "params": {
-                        "type": "brute"
-                    }
-                },
-                {
-                    "name": "Contrats",
-                    "slug": "Contrats_web_index",
-                    "icon": "fa-regular fa-circle",
-                    "params": {
-                        "type": "brute"
-                    }
-                },
-                {
-                    "name": "Villes",
-                    "slug": "Villes_web_index",
-                    "icon": "fa-regular fa-circle",
-                    "params": {
-                        "type": "brute"
-                    }
-                },
-                {
-                    "name": "Situations",
-                    "slug": "Situations_web_index",
-                    "icon": "fa-regular fa-circle",
-                    "params": {
-                        "type": "brute"
-                    }
-                },
-                {
-                    "name": "Pointeuses",
-                    "slug": "Pointeuses_web_index",
-                    "icon": "fa-regular fa-circle",
-                    "params": {
-                        "type": "brute"
-                    }
-                }
-            ]
-        },
-        {
-            "name": "Les users",
-            "slug": "Users_web_index",
-            "icon": "UserIcon"
-        },
-        {
-            "name": "Securites",
-            "icon": "fa-regular fa-circle",
-            "slug": "",
-            "submenu": [
                 {
                     "name": "Permissions",
                     "slug": "Permissions_web_index",
                     "icon": "fa-regular fa-circle",
+                    "isSu": true,
                     "params": {
                         "type": "brute"
-                    }
+                    },
+                    "permission": "Voir la page des permissions"
                 },
                 {
                     "name": "Logs",
-                    "slug": "Logs_web_index",
+                    "slug": "Surveillances_web_index",
                     "icon": "fa-regular fa-circle",
-                    "params": {
-                        "type": "brute"
-                    }
+                    "permission": "Voir la page des activites recentes"
                 },
                 {
-                    "name": "Activite recente",
-                    "slug": "Cruds_web_index",
-                    "icon": "fa-regular fa-circle"
+                    "name": "Entreprises",
+                    "slug": "Entreprises_web_index",
+                    "icon": "fa-regular fa-circle",
+                    "isSu": true
                 }
             ]
         }

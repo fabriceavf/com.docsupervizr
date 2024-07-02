@@ -4046,6 +4046,22 @@ Route::get('besoinsfonctionels/action',[App\Http\Controllers\API\Besoinsfonction
 // la route des actions
 Route::post('besoinsfonctionels/action',[App\Http\Controllers\API\BesoinsfonctionelController::class,'action'])->withoutMiddleware("throttle:api")->name('Besoinsfonctionels_api_delete');
 
+//Route::resource('Suivitaches',App\Http\Controllers\API\SuivitacheController::class);
+// les routes d'affichage
+Route::get('Suivitaches/{key}/{val}',[App\Http\Controllers\API\SuivitacheController::class,'data'])->withoutMiddleware("throttle:api")->name('Suivitaches_api_index2');
+Route::get('Suivitaches',[App\Http\Controllers\API\SuivitacheController::class,'data1'])->withoutMiddleware("throttle:api")->name('Suivitaches_api_index');
+Route::post('Suivitaches-Aggrid', [App\Http\Controllers\API\SuivitacheController::class, 'agGridData'])->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->withoutMiddleware("throttle:api")->name('Suivitaches_api_aggrid');
+
+// la route de creation
+Route::post('Suivitaches',[App\Http\Controllers\API\SuivitacheController::class,'create'])->withoutMiddleware("throttle:api")->name('Suivitaches_api_create');
+// la route d'edition
+Route::post('Suivitaches/{Suivitaches}/update',[App\Http\Controllers\API\SuivitacheController::class,'update'])->withoutMiddleware("throttle:api")->name('Suivitaches_api_update');
+// la route de suppression
+Route::post('Suivitaches/{Suivitaches}/delete',[App\Http\Controllers\API\SuivitacheController::class,'delete'])->withoutMiddleware("throttle:api")->name('Suivitaches_api_delete');
+// la route des actions
+Route::get('Suivitaches/action',[App\Http\Controllers\API\SuivitacheController::class,'action'])->withoutMiddleware("throttle:api")->name('Suivitaches_api_delete');
+// la route des actions
+Route::post('Suivitaches/action',[App\Http\Controllers\API\SuivitacheController::class,'action'])->withoutMiddleware("throttle:api")->name('Suivitaches_api_delete');
 
 
 //Route::resource('Besoinstechniques',App\Http\Controllers\API\BesoinstechniqueController::class);
